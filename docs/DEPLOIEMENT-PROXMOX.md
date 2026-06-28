@@ -78,6 +78,15 @@ Environment=NODE_ENV=production
 Environment=PORT=8080
 # Mot de passe de l'admin générale (/admin). Laisse vide pour un accès libre.
 Environment=ADMIN_PASSWORD=change-moi
+# --- Paiements (à compléter quand prêt ; vide = paiement non actif) ---
+Environment=PAYMENT_CURRENCY=EUR
+Environment=PAYPAL_RECEIVER=marc@fbc.fr
+#Environment=PAYPAL_MODE=live
+#Environment=PAYPAL_CLIENT_ID=...
+#Environment=PAYPAL_SECRET=...
+#Environment=SUMUP_MERCHANT_CODE=...
+#Environment=SUMUP_CLIENT_ID=...
+#Environment=SUMUP_CLIENT_SECRET=...
 
 [Install]
 WantedBy=multi-user.target
@@ -111,7 +120,7 @@ apt update && apt install -y caddy
 ```
 `/etc/caddy/Caddyfile` (remplace par ton domaine) :
 ```
-ton-domaine.fr {
+partyplay.fr {
     reverse_proxy 192.168.1.50:8080 {
         flush_interval -1   # indispensable pour le SSE (pas de buffering)
     }
@@ -145,9 +154,9 @@ vers le reverse-proxy.
 ## 7. Le jour J — check-list
 
 1. `systemctl status partyplay` → running.
-2. **Admin générale** : `https://ton-domaine.fr/admin` → crée/choisis l'événement.
+2. **Admin générale** : `https://partyplay.fr/admin` → crée/choisis l'événement.
 3. Dans la **console de l'événement** (`/e/<id>/admin`) : règle joueurs, activités, thème, et **génère les QR** des joueurs.
-4. Ouvre la **BORNE** sur la tablette : `https://ton-domaine.fr/e/<id>/borne` (plein écran).
+4. Ouvre la **BORNE** sur la tablette : `https://partyplay.fr/e/<id>/borne` (plein écran).
 5. Les invités scannent leur QR → se mettent **PRÊT** → tu cliques **Démarrer** dans la console. 🎬
 
 ---

@@ -21,6 +21,7 @@ import {
 import { getGame, reloadConfig, dropGame } from './store/eventManager.js';
 import { DEFAULT_AVATARS, defaultContent, emptyContent } from './data/defaults.js';
 import { getPricing, savePricing, getPlan, allowedThemes, ALL_THEMES, planExists } from './store/plans.js';
+import { publicPaymentConfig } from './store/payment.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC = path.join(__dirname, 'public');
@@ -69,6 +70,10 @@ app.get('/admin', (req, res) => res.sendFile(path.join(PUBLIC, 'admin.html')));
 
 // Tarifs publics (pour afficher les formules sur la page d'accueil).
 app.get('/api/pricing', (req, res) => res.json(getPricing()));
+
+// État de configuration des paiements (sans secret) : tant que rien n'est
+// configuré, le front sait qu'aucun moyen de paiement n'est encore actif.
+app.get('/api/payment/config', (req, res) => res.json(publicPaymentConfig()));
 
 // Création PUBLIQUE d'une fête (choix d'une formule). Le paiement viendra se
 // greffer ensuite (création libre, non bloquante). Renvoie l'id + le mot de passe.
