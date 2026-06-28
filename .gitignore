@@ -5,5 +5,8 @@ node_modules/
 # Données runtime des événements (config + sauvegardes + photos uploadées)
 server/events/
 
+# Tarifs réglés par le super-admin (runtime ; défauts dans store/plans.js)
+server/pricing.json
+
 # Ancienne sauvegarde mono-événement (héritée)
 server/save.json

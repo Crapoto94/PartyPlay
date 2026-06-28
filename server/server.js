@@ -20,6 +20,7 @@ import {
 } from './store/eventStore.js';
 import { getGame, reloadConfig, dropGame } from './store/eventManager.js';
 import { DEFAULT_AVATARS, defaultContent, emptyContent } from './data/defaults.js';
+import { getPricing, savePricing, getPlan, allowedThemes, ALL_THEMES, planExists } from './store/plans.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC = path.join(__dirname, 'public');
@@ -58,8 +59,50 @@ function renderPage(file, cfg) {
 // =====================================================================
 //  ADMINISTRATION GÉNÉRALE
 // =====================================================================
-app.get('/', (req, res) => res.redirect('/admin'));
+// Page d'accueil PUBLIQUE : rejoindre / créer / accéder à l'admin de sa fête.
+app.get('/', (req, res) => res.sendFile(path.join(PUBLIC, 'landing.html')));
 app.get('/admin', (req, res) => res.sendFile(path.join(PUBLIC, 'admin.html')));
+
+// =====================================================================
+//  ESPACE PUBLIC (sans mot de passe super-admin)
+// =====================================================================
+
+// Tarifs publics (pour afficher les formules sur la page d'accueil).
+app.get('/api/pricing', (req, res) => res.json(getPricing()));
+
+// Création PUBLIQUE d'une fête (choix d'une formule). Le paiement viendra se
+// greffer ensuite (création libre, non bloquante). Renvoie l'id + le mot de passe.
+app.post('/api/parties', (req, res) => {
+  const { name, theme, plan, adminPassword, publicUrl, seed } = req.body || {};
+  if (!name || !name.trim()) return res.status(400).json({ error: 'Nom de la fête requis.' });
+  const planName = planExists(plan) ? plan : 'free';
+  // Mot de passe console : fourni, sinon généré.
+  const pwd = (adminPassword && adminPassword.trim()) || ('p' + Math.random().toString(36).slice(2, 8));
+  const cfg = createEvent({ name: name.trim(), theme, plan: planName, adminPassword: pwd, publicUrl, seed: seed || 'default' });
+  cfg.avatars = DEFAULT_AVATARS;
+  saveConfig(cfg);
+  res.json({ ok: true, event: { id: cfg.id, name: cfg.name, theme: cfg.theme, plan: cfg.plan, paymentStatus: cfg.paymentStatus }, adminPassword: pwd });
+});
+
+// Résout un token joueur → l'événement qui le contient (rejoindre par code).
+function findEventByToken(token) {
+  for (const e of listEvents()) {
+    const cfg = getConfig(e.id);
+    if (cfg && (cfg.players || []).some((p) => p.token === token)) return cfg.id;
+  }
+  return null;
+}
+app.get('/api/resolve/:token', (req, res) => {
+  const id = findEventByToken(req.params.token);
+  if (!id) return res.status(404).json({ error: 'Code joueur inconnu.' });
+  res.json({ eventId: id, url: `/e/${id}/j/${req.params.token}` });
+});
+// Rejoindre directement par token : /j/<token> (racine) → redirige vers la bonne fête.
+app.get('/j/:token', (req, res) => {
+  const id = findEventByToken(req.params.token);
+  if (!id) return res.status(404).send('Code joueur inconnu.');
+  res.redirect(`/e/${id}/j/${req.params.token}`);
+});
 
 function requireAdmin(req, res) {
   if (!ADMIN_PASSWORD) return true; // pas de mot de passe configuré = accès libre
@@ -83,13 +126,13 @@ app.get('/api/admin/events', (req, res) => {
 
 app.post('/api/admin/events', (req, res) => {
   if (!requireAdmin(req, res)) return;
-  const { name, theme, adminPassword, publicUrl, seed } = req.body || {};
+  const { name, theme, adminPassword, publicUrl, seed, plan } = req.body || {};
   if (!name || !name.trim()) return res.status(400).json({ error: 'Nom requis.' });
-  const cfg = createEvent({ name: name.trim(), theme, adminPassword, publicUrl, seed: seed || 'default' });
+  const cfg = createEvent({ name: name.trim(), theme, adminPassword, publicUrl, seed: seed || 'default', plan: plan || 'free' });
   // On dote l'événement des avatars par défaut (réutilisables).
   cfg.avatars = DEFAULT_AVATARS;
   saveConfig(cfg);
-  res.json({ ok: true, event: { id: cfg.id, name: cfg.name, theme: cfg.theme } });
+  res.json({ ok: true, event: { id: cfg.id, name: cfg.name, theme: cfg.theme, plan: cfg.plan } });
 });
 
 app.delete('/api/admin/events/:id', (req, res) => {
@@ -97,6 +140,30 @@ app.delete('/api/admin/events/:id', (req, res) => {
   dropGame(req.params.id);
   removeEvent(req.params.id);
   res.json({ ok: true });
+});
+
+// --- Admin des TARIFS (super-admin) ---------------------------------
+app.get('/api/admin/pricing', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  res.json({ pricing: getPricing() });
+});
+app.post('/api/admin/pricing', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  const p = req.body.pricing;
+  if (!p || !p.plans) return res.status(400).json({ error: 'Tarifs invalides.' });
+  savePricing(p);
+  res.json({ ok: true });
+});
+
+// Marquer le paiement d'une fête (en attendant PayPal/SumUp) : super-admin.
+app.post('/api/admin/events/:id/payment', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  const cfg = getConfig(req.params.id);
+  if (!cfg) return res.status(404).json({ error: 'Événement inconnu.' });
+  cfg.paymentStatus = req.body.status === 'paid' ? 'paid' : 'pending';
+  saveConfig(cfg);
+  reloadConfig(cfg.id);
+  res.json({ ok: true, paymentStatus: cfg.paymentStatus });
 });
 
 // =====================================================================
@@ -254,7 +321,15 @@ ev.post('/api/piano/replay', (req, res) => { const p = requirePlayer(req, res); 
 //  CONSOLE ADMIN DE L'ÉVÉNEMENT (config + pilotage GM)
 // =====================================================================
 // Métadonnées (l'UI sait si un mot de passe est requis)
-ev.get('/api/admin/meta', (req, res) => res.json({ needsPassword: !!req.cfg.adminPassword, name: req.cfg.name, theme: req.cfg.theme, themes: THEMES }));
+ev.get('/api/admin/meta', (req, res) => {
+  const plan = getPlan(req.cfg.plan || 'free');
+  res.json({
+    needsPassword: !!req.cfg.adminPassword, name: req.cfg.name, theme: req.cfg.theme,
+    themes: allowedThemes(req.cfg.plan || 'free'), allThemes: ALL_THEMES,
+    plan: req.cfg.plan || 'free', planLabel: plan.label, planLimits: plan.limits || {},
+    paymentStatus: req.cfg.paymentStatus || 'free',
+  });
+});
 
 // Récupère la config complète (protégée)
 ev.get('/api/admin/config', (req, res) => { if (!requireEventAdmin(req, res)) return; res.json({ config: req.cfg, defaultAvatars: DEFAULT_AVATARS }); });

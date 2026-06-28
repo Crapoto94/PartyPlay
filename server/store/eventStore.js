@@ -10,6 +10,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { defaultSettings, defaultContent, emptyContent, defaultActivities } from '../data/defaults.js';
+import { enforcePlan, planExists } from './plans.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export const EVENTS_DIR = path.join(__dirname, '..', 'events');
@@ -51,7 +52,8 @@ export function listEvents() {
 
 function touchIndex(cfg) {
   const idx = readIndex();
-  const entry = { id: cfg.id, name: cfg.name, theme: cfg.theme, createdAt: cfg.createdAt };
+  const entry = { id: cfg.id, name: cfg.name, theme: cfg.theme, createdAt: cfg.createdAt,
+    plan: cfg.plan || 'free', paymentStatus: cfg.paymentStatus || 'free' };
   const i = idx.events.findIndex((e) => e.id === cfg.id);
   if (i >= 0) idx.events[i] = entry; else idx.events.push(entry);
   writeIndex(idx);
@@ -63,12 +65,13 @@ export function getConfig(id) {
 }
 
 export function saveConfig(cfg) {
+  enforcePlan(cfg); // ramène thème/activités/joueurs dans les limites du plan
   writeJson(configFile(cfg.id), cfg);
   touchIndex(cfg);
   return cfg;
 }
 
-export function createEvent({ name, theme = 'retro', adminPassword = '', publicUrl = '', seed = 'default' }) {
+export function createEvent({ name, theme = 'retro', adminPassword = '', publicUrl = '', seed = 'default', plan = 'free' }) {
   ensureRoot();
   const id = slugify(name);
   fs.mkdirSync(uploadsDir(id), { recursive: true });
@@ -76,6 +79,8 @@ export function createEvent({ name, theme = 'retro', adminPassword = '', publicU
     id,
     name: name || id,
     theme: THEMES.includes(theme) ? theme : 'retro',
+    plan: planExists(plan) ? plan : 'free',
+    paymentStatus: plan === 'free' ? 'free' : 'pending', // pending | paid | free
     adminPassword: adminPassword || '',
     publicUrl: publicUrl || '',
     createdAt: Date.now(),

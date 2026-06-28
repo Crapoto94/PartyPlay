@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PartyPlay — animez votre fête</title>
+  <link rel="stylesheet" href="/static/admin.css">
+  <style>
+    .hero { text-align:center; padding: 30px 0 6px; }
+    .hero h1 { font-size: 40px; }
+    .hero .logo { font-size: 52px; }
+    .tagline { color: var(--a-muted); font-size: 17px; }
+    .grid3 { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:16px; }
+    .plans { display:grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap:12px; margin:12px 0; }
+    .plan { border:2px solid var(--a-border); border-radius:12px; padding:14px; cursor:pointer; background:#fff; transition:border-color .12s, box-shadow .12s; }
+    .plan:hover { border-color:var(--a-accent); }
+    .plan.sel { border-color:var(--a-accent); box-shadow:0 0 0 3px var(--a-accent-soft); }
+    .plan .price { font-size:24px; font-weight:800; margin:4px 0; }
+    .plan .price small { font-size:13px; font-weight:600; color:var(--a-muted); }
+    .plan .pl-name { font-weight:700; }
+    .plan .pl-tag { font-size:12.5px; color:var(--a-muted); }
+    .plan ul { margin:8px 0 0; padding-left:18px; font-size:13px; color:var(--a-ink); }
+    .ok { color: var(--a-ok); }
+    .success-box { background: #f0faf3; border:1px solid #bfe6cd; border-radius:10px; padding:14px; margin-top:12px; }
+    code.pwd { background:#eef2ff; padding:2px 8px; border-radius:6px; font-size:15px; }
+  </style>
+</head>
+<body>
+  <div class="admin-wrap">
+    <div class="hero">
+      <div class="logo">🎉</div>
+      <h1>PartyPlay</h1>
+      <p class="tagline">Animez votre soirée : quiz, blind-test, anecdotes, défis et mini-jeux — sur grand écran et sur les téléphones de vos invités.</p>
+    </div>
+
+    <div class="grid3">
+      <!-- Rejoindre -->
+      <div class="card">
+        <h2>🙋 Rejoindre une fête</h2>
+        <p class="muted">Saisis ton <strong>code invité</strong> (reçu par QR ou par l'organisateur).</p>
+        <div class="field"><input type="text" id="joinCode" placeholder="ex. PXL-LEA1" style="text-transform:uppercase"></div>
+        <button class="btn" onclick="joinParty()">Rejoindre</button>
+        <div id="joinErr" class="muted" style="margin-top:8px"></div>
+      </div>
+
+      <!-- Admin de sa fête -->
+      <div class="card">
+        <h2>🎛️ Gérer ma fête</h2>
+        <p class="muted">Accède à la <strong>console</strong> de ta fête (code = identifiant de l'événement).</p>
+        <div class="field"><input type="text" id="adminCode" placeholder="ex. anniv-lea"></div>
+        <button class="btn secondary" onclick="goConsole()">Ouvrir la console</button>
+      </div>
+
+      <!-- Aide -->
+      <div class="card">
+        <h2>❓ Comment ça marche</h2>
+        <ol style="padding-left:18px; color:var(--a-ink)">
+          <li>Crée ta fête et choisis une formule.</li>
+          <li>Dans la console : ajoute les joueurs, choisis les activités et le thème.</li>
+          <li>Ouvre la borne sur un grand écran, les invités scannent leur QR. 🎬</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Créer une fête -->
+    <div class="card">
+      <h2>✨ Créer une fête</h2>
+      <p class="muted">Choisis ta formule :</p>
+      <div class="plans" id="plans"></div>
+
+      <div class="row">
+        <div class="field"><label>Nom de la fête</label><input type="text" id="cName" placeholder="Anniversaire de Léa"></div>
+        <div class="field"><label>Thème graphique</label><select id="cTheme"></select></div>
+      </div>
+      <div class="field"><label>Mot de passe de la console (optionnel — sinon généré)</label><input type="text" id="cPwd" placeholder="laisser vide"></div>
+      <button class="btn" onclick="createParty()">Créer ma fête</button>
+      <div id="createErr" style="margin-top:10px"></div>
+      <div id="createOk"></div>
+    </div>
+
+    <p class="muted" style="text-align:center; margin-top:24px; font-size:13px">
+      <a href="/admin">Administration</a>
+    </p>
+  </div>
+
+<script>
+let PRICING = null, SELECTED = 'free';
+const THEME_LABELS = { retro:'Rétro jeux vidéo', neon:'Néon / Clubbing', chic:'Chic / Élégant', kids:'Anniversaire enfant', casino:'Casino / Vegas' };
+const ALL_THEMES = ['retro','neon','chic','kids','casino'];
+
+function esc(s){ return (s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function fmtPrice(p, cur){ return p.price===0 ? 'Gratuit' : (p.price+' '+(cur==='EUR'?'€':cur)); }
+
+async function boot(){
+  PRICING = await (await fetch('/api/pricing')).json();
+  renderPlans();
+  selectPlan('free');
+}
+function renderPlans(){
+  const plans = PRICING.plans, order = ['free','full','infinite'];
+  document.getElementById('plans').innerHTML = order.filter(k=>plans[k]).map(k=>{
+    const p = plans[k], lim = p.limits||{};
+    const feats = [];
+    feats.push((lim.maxPlayers? lim.maxPlayers+' joueurs max' : 'Joueurs illimités'));
+    feats.push((lim.maxActivities? lim.maxActivities+' activités' : 'Toutes les activités'));
+    feats.push((lim.themes==='all' || !Array.isArray(lim.themes)) ? 'Tous les thèmes' : (lim.themes.length+' thème'+(lim.themes.length>1?'s':'')));
+    feats.push(lim.photo===false ? 'Sans défi photo' : 'Défi photo + galerie');
+    if (p.premium) feats.push('Accès premium');
+    const sub = p.kind==='subscription' ? '<small>/ abonnement</small>' : (p.kind==='oneshot' ? '<small>/ fête</small>' : '');
+    return `<div class="plan" data-plan="${k}" onclick="selectPlan('${k}')">
+      <div class="pl-name">${esc(p.label)}</div>
+      <div class="price">${fmtPrice(p, PRICING.currency)} ${p.price?sub:''}</div>
+      <div class="pl-tag">${esc(p.tagline||'')}</div>
+      <ul>${feats.map(f=>`<li>${esc(f)}</li>`).join('')}</ul>
+    </div>`;
+  }).join('');
+}
+function selectPlan(k){
+  SELECTED = k;
+  document.querySelectorAll('.plan').forEach(el=>el.classList.toggle('sel', el.dataset.plan===k));
+  // thèmes autorisés pour ce plan
+  const lim = PRICING.plans[k].limits||{};
+  const themes = (lim.themes==='all' || !Array.isArray(lim.themes)) ? ALL_THEMES : lim.themes;
+  document.getElementById('cTheme').innerHTML = themes.map(t=>`<option value="${t}">${THEME_LABELS[t]||t}</option>`).join('');
+}
+
+async function createParty(){
+  const errEl = document.getElementById('createErr'), okEl = document.getElementById('createOk');
+  errEl.textContent=''; errEl.style.color='var(--a-danger)'; okEl.innerHTML='';
+  const name = document.getElementById('cName').value.trim();
+  if (!name){ errEl.textContent = 'Donne un nom à ta fête.'; return; }
+  const body = { name, theme: document.getElementById('cTheme').value, plan: SELECTED,
+    adminPassword: document.getElementById('cPwd').value.trim(), seed:'default' };
+  let d;
+  try {
+    const r = await fetch('/api/parties', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) });
+    d = await r.json();
+    if (!r.ok){ errEl.textContent = d.error || ('Erreur '+r.status); return; }
+  } catch(e){ errEl.textContent = 'Erreur réseau : '+e.message; return; }
+  const paidNote = d.event.paymentStatus==='pending'
+    ? '<p class="muted">Formule payante : le paiement sera proposé prochainement — ta fête est déjà utilisable.</p>' : '';
+  okEl.innerHTML = `<div class="success-box">
+    <strong class="ok">✓ « ${esc(d.event.name)} » créée !</strong>
+    <p>Identifiant : <code class="pwd">${esc(d.event.id)}</code> · Mot de passe console : <code class="pwd">${esc(d.adminPassword)}</code></p>
+    <p>👉 <a href="/e/${d.event.id}/admin" target="_blank"><strong>Ouvrir la console</strong></a> &nbsp;·&nbsp; <a href="/e/${d.event.id}/borne" target="_blank">Ouvrir la borne</a></p>
+    ${paidNote}
+    <p class="muted" style="font-size:12.5px">Note bien ce mot de passe : il protège l'accès à ta console.</p>
+  </div>`;
+  document.getElementById('cName').value=''; document.getElementById('cPwd').value='';
+}
+
+async function joinParty(){
+  const code = document.getElementById('joinCode').value.trim();
+  const err = document.getElementById('joinErr');
+  if (!code){ err.textContent='Saisis ton code.'; return; }
+  err.textContent='Recherche…';
+  try {
+    const r = await fetch('/api/resolve/'+encodeURIComponent(code));
+    if (!r.ok){ err.textContent='Code inconnu. Vérifie auprès de l\'organisateur.'; return; }
+    const d = await r.json();
+    location.href = d.url;
+  } catch(e){ err.textContent='Erreur réseau.'; }
+}
+function goConsole(){
+  const code = document.getElementById('adminCode').value.trim().toLowerCase();
+  if (!code) return;
+  location.href = '/e/'+encodeURIComponent(code)+'/admin';
+}
+boot();
+</script>
+</body>
+</html>

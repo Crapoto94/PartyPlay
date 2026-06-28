@@ -86,6 +86,7 @@
       <!-- ============ GÉNÉRAL ============ -->
       <section data-pane="general" hidden>
         <div class="card">
+          <p class="muted" id="planBanner"></p>
           <div class="field"><label>Nom de l'événement</label><input type="text" id="g_name"></div>
           <div class="field"><label>Thème graphique</label>
             <select id="g_theme">
@@ -154,8 +155,9 @@
 const EVENT = window.__EVENT__;
 const API = '/e/' + EVENT.id;
 let PWD = sessionStorage.getItem('evpwd_'+EVENT.id) || '';
-let CFG = null, AV = {};
+let CFG = null, AV = {}, META = null;
 const AVATAR_KEYS = [];
+const THEME_LABELS = { retro:'Rétro jeux vidéo', neon:'Néon / Clubbing', chic:'Chic / Élégant', kids:'Anniversaire enfant', casino:'Casino / Vegas' };
 
 function H(){ return { 'Content-Type':'application/json', 'x-admin-password': PWD }; }
 function val(id){ return document.getElementById(id).value; }
@@ -163,8 +165,8 @@ function esc(s){ return (s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','
 
 async function boot(){
   document.getElementById('evTitle').textContent = '🎛️ ' + (EVENT.name||'Console');
-  const meta = await (await fetch(API+'/api/admin/meta')).json();
-  if (meta.needsPassword && !PWD){ document.getElementById('loginCard').style.display='block'; return; }
+  META = await (await fetch(API+'/api/admin/meta')).json();
+  if (META.needsPassword && !PWD){ document.getElementById('loginCard').style.display='block'; return; }
   await loadConfig();
 }
 async function login(){
@@ -192,9 +194,20 @@ function tab(name){
 
 /* ---- Général ---- */
 function fillGeneral(){
-  g_name.value=CFG.name||''; g_theme.value=CFG.theme||'retro'; g_url.value=CFG.publicUrl||'';
+  // Thèmes restreints selon la formule de l'événement.
+  const themes = (META && META.themes) ? META.themes : ['retro','neon','chic','kids','casino'];
+  g_theme.innerHTML = themes.map(t=>`<option value="${t}">${THEME_LABELS[t]||t}</option>`).join('');
+  g_name.value=CFG.name||''; g_theme.value=CFG.theme||themes[0]; g_url.value=CFG.publicUrl||'';
   g_pwd.value=CFG.adminPassword||''; g_deadline.value=(CFG.settings&&CFG.settings.deadlineLabel)||'';
   g_amb.value=(CFG.settings&&CFG.settings.ambianceYoutube)||'';
+  // Bandeau formule
+  const planEl = document.getElementById('planBanner');
+  if (planEl && META){
+    const pay = META.paymentStatus==='pending' ? ' · <span style="color:#c98a00">paiement en attente</span>' : '';
+    const lim = META.planLimits||{};
+    const restr = (META.themes && META.themes.length<5) ? ` · thèmes limités` : '';
+    planEl.innerHTML = `Formule : <strong>${esc(META.planLabel||META.plan||'Gratuit')}</strong>${pay}${restr}`;
+  }
 }
 async function saveGeneral(){
   const patch={ name:g_name.value, theme:g_theme.value, publicUrl:g_url.value, adminPassword:g_pwd.value,
