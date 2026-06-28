@@ -1,0 +1,36 @@
+/* THÈME : CASINO / VEGAS — rouge, noir, or, feutrine verte, paillettes. */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Oswald:wght@400;600&display=swap');
+
+:root {
+  --bg: #0a0f0b;       /* presque noir, nuance verte */
+  --bg2: #0e2a17;      /* feutrine de table */
+  --neon: #e4b53d;     /* or */
+  --neon2: #e23b3b;    /* rouge casino */
+  --neon3: #f3e3a6;    /* or pâle */
+  --neon4: #1f6b3a;    /* vert tapis */
+  --ink: #f6efdc;
+  --danger: #ff4d4d;
+  --ok: #5fd08a;
+  --pixel: 'Cinzel', serif;
+  --term: 'Oswald', sans-serif;
+
+  --radius: 10px;
+  --btn-radius: 8px;
+  --neon-lite: #f1cd66;
+  --neon-shade: #8a6a14;
+  --neon2-shade: #8a1f1f;
+  --neon3-shade: #8a7c44;
+  --btn-ink: #1a1405;
+  --btn-ink2: #fff;
+  --input-bg: #0c1a10;
+  --card-glow: rgba(228,181,61,.3);
+  --title-shadow: 0 0 10px rgba(228,181,61,.5), 0 1px 0 #000;
+  --scanlines-opacity: 0;
+}
+body { font-size: 22px; background:
+  radial-gradient(1000px 600px at 50% -10%, #14401f 0%, transparent 60%),
+  repeating-conic-gradient(from 0deg, rgba(255,255,255,.015) 0deg 6deg, transparent 6deg 12deg),
+  var(--bg); }
+h1, h2, h3, .title { letter-spacing: 1px; }
+.card { border-color: var(--neon); }
+.btn { font-family: var(--term); letter-spacing: 1px; text-transform: uppercase; }

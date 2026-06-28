@@ -1,0 +1,60 @@
+{
+  "playlistTracks": {},
+  "pacRotation": [],
+  "mosaicCount": 0,
+  "phase": "activity",
+  "activity": {
+    "type": "quiz",
+    "startedAt": 1782655660917,
+    "state": "running",
+    "data": {
+      "deck": "videogame"
+    },
+    "buzzes": [],
+    "scores": {},
+    "deck": "videogame",
+    "qIndex": 0,
+    "sub": "question",
+    "answers": {}
+  },
+  "currentGage": null,
+  "ambientPaused": false,
+  "ambientRestartAt": 1782655660836,
+  "photos": [],
+  "photoVotes": {},
+  "photoPhase": null,
+  "log": [
+    {
+      "t": 1782655660917,
+      "msg": "🎮 Activité BORNE : quiz."
+    },
+    {
+      "t": 1782655660836,
+      "msg": "🎉 C'est parti — la soirée commence !"
+    }
+  ],
+  "players": [
+    {
+      "id": "lea",
+      "name": "Lea",
+      "avatar": "player_one",
+      "token": "PXL-LEA1",
+      "connected": false,
+      "lives": 3,
+      "coins": 0,
+      "ready": false,
+      "eliminated": false
+    },
+    {
+      "id": "tom",
+      "name": "Tom",
+      "avatar": "riu",
+      "token": "PXL-TOM2",
+      "connected": false,
+      "lives": 3,
+      "coins": 0,
+      "ready": false,
+      "eliminated": false
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+/* THÈME : RÉTRO JEUX VIDÉO (8-bit arcade) — le thème historique. */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+:root {
+  --bg: #0a0118;
+  --bg2: #12042b;
+  --neon: #ff2e88;
+  --neon2: #2effd5;
+  --neon3: #ffe600;
+  --neon4: #7a5cff;
+  --ink: #eafffb;
+  --danger: #ff3b3b;
+  --ok: #38ff9c;
+  --pixel: 'Press Start 2P', monospace;
+  --term: 'VT323', monospace;
+
+  --radius: 10px;
+  --btn-radius: 8px;
+  --neon-lite: #ff6db0;
+  --neon-shade: #8b0040;
+  --neon2-shade: #0a8c74;
+  --neon3-shade: #8a7c00;
+  --btn-ink: #1a0010;
+  --btn-ink2: #00231c;
+  --input-bg: #03010a;
+  --card-glow: rgba(122,92,255,.35);
+  --title-shadow: 0 0 8px var(--neon), 0 0 2px #fff;
+}
+body { background:
+  radial-gradient(1200px 600px at 50% -10%, #2a0a52 0%, transparent 60%),
+  repeating-linear-gradient(0deg, rgba(255,255,255,.025) 0 2px, transparent 2px 4px),
+  var(--bg); }
+input[type=text] { text-transform: uppercase; }

@@ -1,0 +1,2085 @@
+{
+  "id": "soiree-test",
+  "name": "Soiree Test",
+  "theme": "casino",
+  "adminPassword": "",
+  "publicUrl": "",
+  "createdAt": 1782655660252,
+  "settings": {
+    "deadlineLabel": "MINUIT",
+    "ambianceYoutube": "",
+    "briefingYoutube": "",
+    "debriefYoutube": "",
+    "pacmanYoutube": ""
+  },
+  "players": [
+    {
+      "id": "lea",
+      "name": "Lea",
+      "avatar": "player_one",
+      "token": "PXL-LEA1"
+    },
+    {
+      "id": "tom",
+      "name": "Tom",
+      "avatar": "riu",
+      "token": "PXL-TOM2"
+    }
+  ],
+  "activities": {
+    "quiz": true,
+    "blindtest": true,
+    "anecdotes": true,
+    "gages": true,
+    "photo": true,
+    "spotlight": true,
+    "draw": true,
+    "arcade": true,
+    "collab": true
+  },
+  "content": {
+    "quiz": {
+      "decks": {
+        "videogame": [
+          {
+            "prompt": "Avant de s'appeler Mario, le héros de Donkey Kong (1981) était surnommé…",
+            "choices": [
+              "Jumpman",
+              "Mr. Video",
+              "Plombier Joe",
+              "Hammer Bro"
+            ],
+            "answer": 0,
+            "points": 50,
+            "media": null
+          },
+          {
+            "prompt": "Le célèbre « code Konami » (↑ ↑ ↓ ↓ ← → ← → B A) est apparu pour la 1ʳᵉ fois dans…",
+            "choices": [
+              "Contra",
+              "Gradius",
+              "Castlevania",
+              "Metal Gear"
+            ],
+            "answer": 1,
+            "points": 75,
+            "media": null
+          },
+          {
+            "prompt": "Quelle est la console de SALON la plus vendue de l'histoire ?",
+            "choices": [
+              "Wii",
+              "PlayStation 2",
+              "Xbox 360",
+              "Nintendo Switch"
+            ],
+            "answer": 1,
+            "points": 100,
+            "media": null
+          },
+          {
+            "prompt": "Le nom « Pikachu » vient de « pika » (l’étincelle) et « chu », qui imite…",
+            "choices": [
+              "l’aboiement",
+              "le cri de la souris",
+              "le tonnerre",
+              "le bisou"
+            ],
+            "answer": 1,
+            "points": 100,
+            "media": null
+          },
+          {
+            "prompt": "Quel est le jeu vidéo le plus vendu de tous les temps ?",
+            "choices": [
+              "Tetris",
+              "Minecraft",
+              "GTA V",
+              "Wii Sports"
+            ],
+            "answer": 1,
+            "points": 125,
+            "media": null
+          },
+          {
+            "prompt": "Le monstre « Creeper » de Minecraft serait né…",
+            "choices": [
+              "d’un dessin d’enfant",
+              "d’une erreur en modélisant un cochon",
+              "d’un cactus vivant",
+              "d’un bug de lave"
+            ],
+            "answer": 1,
+            "points": 150,
+            "media": null
+          },
+          {
+            "prompt": "Le créateur de Pokémon, Satoshi Tajiri, s'est inspiré de sa passion d'enfance pour…",
+            "choices": [
+              "les trains",
+              "la collecte d’insectes",
+              "les échecs",
+              "l’astronomie"
+            ],
+            "answer": 1,
+            "points": 150,
+            "media": null
+          },
+          {
+            "prompt": "Lara Croft (Tomb Raider) devait à l'origine s'appeler…",
+            "choices": [
+              "Laura Cruz",
+              "Lana Stone",
+              "Indiana Jane",
+              "Lyra Fox"
+            ],
+            "answer": 0,
+            "points": 175,
+            "media": null
+          },
+          {
+            "prompt": "Le nom « SEGA » est la contraction de…",
+            "choices": [
+              "Super Electronic Games",
+              "Service Games",
+              "Sound Engineering",
+              "Sega Galaxy"
+            ],
+            "answer": 1,
+            "points": 200,
+            "media": null
+          },
+          {
+            "prompt": "Les cartouches invendues du jeu E.T. (1982) ont été retrouvées en 2014…",
+            "choices": [
+              "au fond d’un lac",
+              "enterrées dans un désert du Nouveau-Mexique",
+              "dans un bunker",
+              "recyclées en CD"
+            ],
+            "answer": 1,
+            "points": 200,
+            "media": null
+          },
+          {
+            "prompt": "Dans le Pac-Man original, le jeu devient injouable (écran « bugué ») au niveau…",
+            "choices": [
+              "100",
+              "199",
+              "256",
+              "il n’y a pas de fin"
+            ],
+            "answer": 2,
+            "points": 225,
+            "media": null
+          },
+          {
+            "prompt": "Le premier « easter egg » célèbre (le nom caché du créateur) se trouve dans…",
+            "choices": [
+              "Pong",
+              "Adventure (Atari 2600)",
+              "Pac-Man",
+              "Pitfall"
+            ],
+            "answer": 1,
+            "points": 250,
+            "media": null
+          },
+          {
+            "prompt": "Gabe Newell et le studio Valve sont raillés pour ne jamais sortir de jeu portant le numéro…",
+            "choices": [
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "answer": 1,
+            "points": 250,
+            "media": null
+          },
+          {
+            "prompt": "Quel exploit insolite — mais bien RÉEL — a été réalisé avec le jeu Doom ?",
+            "choices": [
+              "Le faire tourner sur un test de grossesse",
+              "Le jouer les yeux fermés",
+              "Le finir en 1 seconde",
+              "Le graver sur une pièce de monnaie"
+            ],
+            "answer": 0,
+            "points": 300,
+            "media": null
+          },
+          {
+            "prompt": "Quel jeu détient le record du plus grand nombre de portages/plateformes ?",
+            "choices": [
+              "Tetris",
+              "Pac-Man",
+              "Doom",
+              "Minecraft"
+            ],
+            "answer": 0,
+            "points": 300,
+            "media": null
+          }
+        ],
+        "eighties": [
+          {
+            "prompt": "Le Rubik’s Cube a été inventé par un professeur hongrois d’…",
+            "choices": [
+              "mathématiques",
+              "architecture",
+              "musique",
+              "chimie"
+            ],
+            "answer": 1,
+            "points": 50,
+            "media": null
+          },
+          {
+            "prompt": "Les portières de la DeLorean (Retour vers le futur) s’ouvrent…",
+            "choices": [
+              "vers le haut (ailes de mouette)",
+              "en coulissant",
+              "normalement",
+              "vers l’arrière"
+            ],
+            "answer": 0,
+            "points": 75,
+            "media": null
+          },
+          {
+            "prompt": "Le tout premier Walkman Sony (1979) avait une particularité :",
+            "choices": [
+              "deux prises casque",
+              "la radio FM",
+              "un petit écran",
+              "un haut-parleur"
+            ],
+            "answer": 0,
+            "points": 100,
+            "media": null
+          },
+          {
+            "prompt": "Le clip « Thriller » de Michael Jackson (1983) dure près de…",
+            "choices": [
+              "4 minutes",
+              "8 minutes",
+              "14 minutes",
+              "20 minutes"
+            ],
+            "answer": 2,
+            "points": 125,
+            "media": null
+          },
+          {
+            "prompt": "En quelle année le Minitel est-il déployé au niveau national en France ?",
+            "choices": [
+              "1978",
+              "1982",
+              "1986",
+              "1990"
+            ],
+            "answer": 1,
+            "points": 150,
+            "media": null
+          },
+          {
+            "prompt": "Quel jouet, lancé en 1983, a provoqué des bousculades dans les magasins ?",
+            "choices": [
+              "Les Transformers",
+              "Les Cabbage Patch Kids",
+              "Le Tamagotchi",
+              "Les Bratz"
+            ],
+            "answer": 1,
+            "points": 150,
+            "media": null
+          },
+          {
+            "prompt": "Tetris a été créé en 1984 par Alexeï Pajitnov dans quel pays ?",
+            "choices": [
+              "Japon",
+              "URSS",
+              "États-Unis",
+              "Pologne"
+            ],
+            "answer": 1,
+            "points": 175,
+            "media": null
+          },
+          {
+            "prompt": "Les Jeux olympiques d’été de 1984 (Los Angeles) furent boycottés par…",
+            "choices": [
+              "les États-Unis",
+              "l’URSS et le bloc de l’Est",
+              "l’Afrique",
+              "personne"
+            ],
+            "answer": 1,
+            "points": 200,
+            "media": null
+          },
+          {
+            "prompt": "Le film « Top Gun » (1986) a fait exploser les engagements dans…",
+            "choices": [
+              "l’armée de terre",
+              "l’US Navy (aviation)",
+              "les pompiers",
+              "la NASA"
+            ],
+            "answer": 1,
+            "points": 200,
+            "media": null
+          },
+          {
+            "prompt": "En 1985, Coca-Cola change sa recette (« New Coke ») puis fait marche arrière au bout de…",
+            "choices": [
+              "79 jours",
+              "6 mois",
+              "2 ans",
+              "jamais"
+            ],
+            "answer": 0,
+            "points": 225,
+            "media": null
+          },
+          {
+            "prompt": "La chute du mur de Berlin (1989) a été précipitée par…",
+            "choices": [
+              "une bourde d’un porte-parole est-allemand",
+              "un référendum",
+              "un vote de l’ONU",
+              "une grève générale"
+            ],
+            "answer": 0,
+            "points": 250,
+            "media": null
+          },
+          {
+            "prompt": "Quel ordinateur familial (1982) est l’un des plus vendus de l’histoire ?",
+            "choices": [
+              "Commodore 64",
+              "Amiga 500",
+              "Apple II",
+              "Atari ST"
+            ],
+            "answer": 0,
+            "points": 250,
+            "media": null
+          },
+          {
+            "prompt": "Comment surnomme-t-on le krach boursier d’octobre 1987 ?",
+            "choices": [
+              "Le Jeudi noir",
+              "Le Lundi noir",
+              "Le Vendredi rouge",
+              "Le Mardi gris"
+            ],
+            "answer": 1,
+            "points": 275,
+            "media": null
+          },
+          {
+            "prompt": "Le tout premier nom de domaine « .com » de l’histoire (1985) était…",
+            "choices": [
+              "apple.com",
+              "symbolics.com",
+              "ibm.com",
+              "microsoft.com"
+            ],
+            "answer": 1,
+            "points": 300,
+            "media": null
+          },
+          {
+            "prompt": "La catastrophe nucléaire de Tchernobyl a été d’abord détectée à l’étranger par…",
+            "choices": [
+              "un satellite américain",
+              "une centrale suédoise (alarme radioactivité)",
+              "la météo",
+              "un avion espion"
+            ],
+            "answer": 1,
+            "points": 300,
+            "media": null
+          }
+        ],
+        "nineties": [
+          {
+            "prompt": "Le « bug de l’an 2000 » venait du fait que les années étaient codées sur…",
+            "choices": [
+              "2 chiffres",
+              "en binaire",
+              "en chiffres romains",
+              "sans année"
+            ],
+            "answer": 0,
+            "points": 50,
+            "media": null
+          },
+          {
+            "prompt": "Dans la série Friends (1994), le café où se retrouvent les amis s’appelle…",
+            "choices": [
+              "Central Perk",
+              "Coffee Bean",
+              "Java Joe’s",
+              "The Grind"
+            ],
+            "answer": 0,
+            "points": 75,
+            "media": null
+          },
+          {
+            "prompt": "Le premier site web de l’histoire (1991) était hébergé par…",
+            "choices": [
+              "le CERN",
+              "la NASA",
+              "Microsoft",
+              "le MIT"
+            ],
+            "answer": 0,
+            "points": 100,
+            "media": null
+          },
+          {
+            "prompt": "Quel film de 1999 a popularisé le ralenti à 360° (« bullet time ») ?",
+            "choices": [
+              "Matrix",
+              "Fight Club",
+              "Gladiator",
+              "Le Sixième Sens"
+            ],
+            "answer": 0,
+            "points": 125,
+            "media": null
+          },
+          {
+            "prompt": "En finale de la Coupe du monde 1998, la France bat le Brésil sur le score de…",
+            "choices": [
+              "2-1",
+              "3-0",
+              "2-0",
+              "3-1"
+            ],
+            "answer": 1,
+            "points": 150,
+            "media": null
+          },
+          {
+            "prompt": "Le mot « spam » (courrier indésirable) vient…",
+            "choices": [
+              "d’un acronyme",
+              "d’un sketch des Monty Python",
+              "d’un virus",
+              "d’un pseudo de hacker"
+            ],
+            "answer": 1,
+            "points": 175,
+            "media": null
+          },
+          {
+            "prompt": "En 1996, Google s’appelait à l’origine…",
+            "choices": [
+              "BackRub",
+              "Googol",
+              "SearchIt",
+              "PageRank"
+            ],
+            "answer": 0,
+            "points": 200,
+            "media": null
+          },
+          {
+            "prompt": "La brebis Dolly (1996), premier clone, a été nommée d’après…",
+            "choices": [
+              "Dolly Parton",
+              "une scientifique",
+              "une marque de pull",
+              "le hasard"
+            ],
+            "answer": 0,
+            "points": 200,
+            "media": null
+          },
+          {
+            "prompt": "La PlayStation est née d’un partenariat raté entre Sony et…",
+            "choices": [
+              "SEGA",
+              "Nintendo",
+              "Atari",
+              "Philips"
+            ],
+            "answer": 1,
+            "points": 225,
+            "media": null
+          },
+          {
+            "prompt": "Le jeu « Snake » est apparu sur les téléphones Nokia en…",
+            "choices": [
+              "1995",
+              "1997",
+              "1999",
+              "2001"
+            ],
+            "answer": 1,
+            "points": 250,
+            "media": null
+          },
+          {
+            "prompt": "Dans Titanic (1997), les mains qui dessinent Rose sont en réalité celles de…",
+            "choices": [
+              "Leonardo DiCaprio",
+              "James Cameron (le réalisateur)",
+              "un peintre pro",
+              "Kate Winslet"
+            ],
+            "answer": 1,
+            "points": 250,
+            "media": null
+          },
+          {
+            "prompt": "Le DVD apparaît commercialement (d’abord au Japon) en…",
+            "choices": [
+              "1993",
+              "1996",
+              "2000",
+              "2003"
+            ],
+            "answer": 1,
+            "points": 250,
+            "media": null
+          },
+          {
+            "prompt": "Quel logiciel de messagerie instantanée, pionnier, est lancé en 1996 ?",
+            "choices": [
+              "MSN Messenger",
+              "ICQ",
+              "Skype",
+              "AIM"
+            ],
+            "answer": 1,
+            "points": 275,
+            "media": null
+          },
+          {
+            "prompt": "Le tout premier objet vendu sur eBay (1995) fut…",
+            "choices": [
+              "un livre",
+              "un pointeur laser cassé",
+              "un CD",
+              "une voiture"
+            ],
+            "answer": 1,
+            "points": 300,
+            "media": null
+          },
+          {
+            "prompt": "Quel jouet virtuel japonais (1996) devait être un animal « de poche » à élever ?",
+            "choices": [
+              "Furby",
+              "Tamagotchi",
+              "Digimon",
+              "Bop It"
+            ],
+            "answer": 1,
+            "points": 300,
+            "media": null
+          }
+        ],
+        "anime": [
+          {
+            "prompt": "Le mot « anime » est l’abréviation japonaise de…",
+            "choices": [
+              "du mot anglais « animation »",
+              "du latin « anima »",
+              "d’un nom de studio",
+              "de « animal »"
+            ],
+            "answer": 0,
+            "points": 50,
+            "media": null
+          },
+          {
+            "prompt": "Combien de Pokémon comptait la 1ʳᵉ génération (Rouge / Bleu) ?",
+            "choices": [
+              "100",
+              "151",
+              "251",
+              "386"
+            ],
+            "answer": 1,
+            "points": 75,
+            "media": null
+          },
+          {
+            "prompt": "Dans Dragon Ball, Goku (« Kakarot ») et les Saiyans portent des noms de…",
+            "choices": [
+              "fruits",
+              "légumes",
+              "épices",
+              "fleurs"
+            ],
+            "answer": 1,
+            "points": 100,
+            "media": null
+          },
+          {
+            "prompt": "Goldorak (1978), énorme succès en France, s’appelle au Japon…",
+            "choices": [
+              "Mazinger",
+              "UFO Robo Grendizer",
+              "Gundam",
+              "Voltron"
+            ],
+            "answer": 1,
+            "points": 125,
+            "media": null
+          },
+          {
+            "prompt": "Dans Naruto, le mot « Naruto » désigne aussi…",
+            "choices": [
+              "un tourbillon (et la garniture rose des ramen)",
+              "une fleur",
+              "une montagne",
+              "un sabre"
+            ],
+            "answer": 0,
+            "points": 150,
+            "media": null
+          },
+          {
+            "prompt": "Osamu Tezuka (Astro Boy), « dieu du manga », a inspiré ses grands yeux de personnages de…",
+            "choices": [
+              "Disney",
+              "la peinture classique",
+              "les estampes",
+              "la BD franco-belge"
+            ],
+            "answer": 0,
+            "points": 175,
+            "media": null
+          },
+          {
+            "prompt": "« Le Voyage de Chihiro » (Ghibli) a remporté en 2003…",
+            "choices": [
+              "la Palme d’or",
+              "l’Oscar du meilleur film d’animation",
+              "un César",
+              "aucun prix"
+            ],
+            "answer": 1,
+            "points": 200,
+            "media": null
+          },
+          {
+            "prompt": "Le studio Ghibli tire son nom…",
+            "choices": [
+              "d’un avion italien (et d’un vent chaud)",
+              "d’un mot japonais",
+              "du nom du fondateur",
+              "d’un dieu shinto"
+            ],
+            "answer": 0,
+            "points": 200,
+            "media": null
+          },
+          {
+            "prompt": "Dans le manga d’origine de Pokémon, la mascotte n’était pas Pikachu mais…",
+            "choices": [
+              "Rondoudou",
+              "Mélofée (Clefairy)",
+              "Évoli",
+              "Miaouss"
+            ],
+            "answer": 1,
+            "points": 225,
+            "media": null
+          },
+          {
+            "prompt": "Dragon Ball s’inspire d’un grand roman chinois classique :",
+            "choices": [
+              "Le Roi Singe (Pérégrination vers l’Ouest)",
+              "L’Art de la guerre",
+              "Les Trois Royaumes",
+              "Le Rêve dans le pavillon rouge"
+            ],
+            "answer": 0,
+            "points": 250,
+            "media": null
+          },
+          {
+            "prompt": "Dans Saint Seiya (Les Chevaliers du Zodiaque), les armures s’appellent des…",
+            "choices": [
+              "Cloth",
+              "Armor",
+              "Zodiac",
+              "Saint"
+            ],
+            "answer": 0,
+            "points": 250,
+            "media": null
+          },
+          {
+            "prompt": "« Death Note » a même été interdit dans certaines écoles à cause…",
+            "choices": [
+              "d’élèves écrivant de vrais « cahiers de la mort »",
+              "de sa violence",
+              "d’un procès",
+              "d’une faute de traduction"
+            ],
+            "answer": 0,
+            "points": 250,
+            "media": null
+          },
+          {
+            "prompt": "One Piece détient le record Guinness du…",
+            "choices": [
+              "plus long manga",
+              "plus d’exemplaires publiés pour un seul auteur",
+              "plus de films dérivés",
+              "plus de langues"
+            ],
+            "answer": 1,
+            "points": 275,
+            "media": null
+          },
+          {
+            "prompt": "À l’origine, le mot « otaku » était une formule POLIE signifiant…",
+            "choices": [
+              "« votre maison » / « vous »",
+              "« fou »",
+              "« enfant »",
+              "« collectionneur »"
+            ],
+            "answer": 0,
+            "points": 300,
+            "media": null
+          },
+          {
+            "prompt": "Quel est le manga le plus vendu de l’histoire ?",
+            "choices": [
+              "Naruto",
+              "One Piece",
+              "Dragon Ball",
+              "Détective Conan"
+            ],
+            "answer": 1,
+            "points": 300,
+            "media": null
+          }
+        ],
+        "cultureT": [
+          {
+            "prompt": "Combien de versants compte la fonction publique française ?",
+            "choices": [
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "answer": 1,
+            "points": 50,
+            "media": null
+          },
+          {
+            "prompt": "Les trois versants sont : l’État, l’Hospitalière et…",
+            "choices": [
+              "la Militaire",
+              "la Territoriale",
+              "la Parlementaire",
+              "l’Associative"
+            ],
+            "answer": 1,
+            "points": 75,
+            "media": null
+          },
+          {
+            "prompt": "Combien de catégories hiérarchiques (A, B, C) existe-t-il dans la FPT ?",
+            "choices": [
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "answer": 1,
+            "points": 75,
+            "media": null
+          },
+          {
+            "prompt": "Que signifie le sigle CNFPT ?",
+            "choices": [
+              "Conseil National de la FP Territoriale",
+              "Centre National de la Fonction Publique Territoriale",
+              "Caisse Nationale…",
+              "Comité National…"
+            ],
+            "answer": 1,
+            "points": 100,
+            "media": null
+          },
+          {
+            "prompt": "La durée annuelle légale de travail d’un agent territorial est de…",
+            "choices": [
+              "1 500 h",
+              "1 547 h",
+              "1 607 h",
+              "1 700 h"
+            ],
+            "answer": 2,
+            "points": 125,
+            "media": null
+          },
+          {
+            "prompt": "Un lauréat d’un concours territorial est-il automatiquement recruté ?",
+            "choices": [
+              "Oui, immédiatement",
+              "Non : inscrit sur liste d’aptitude, il doit trouver un poste",
+              "Oui, après 6 mois",
+              "Non, il repasse un oral"
+            ],
+            "answer": 1,
+            "points": 150,
+            "media": null
+          },
+          {
+            "prompt": "Qui exerce le « contrôle de légalité » des délibérations d’une commune ?",
+            "choices": [
+              "Le maire",
+              "Le préfet",
+              "La Cour des comptes",
+              "Le procureur"
+            ],
+            "answer": 1,
+            "points": 150,
+            "media": null
+          },
+          {
+            "prompt": "Pour quelle mission le maire agit-il « au nom de l’État » (et non de la commune) ?",
+            "choices": [
+              "Le budget",
+              "L’état civil (mariages, etc.)",
+              "Les écoles",
+              "La voirie"
+            ],
+            "answer": 1,
+            "points": 175,
+            "media": null
+          },
+          {
+            "prompt": "Quelle instance a remplacé en 2022 le Comité Technique (CT) et le CHSCT ?",
+            "choices": [
+              "Le CSE",
+              "Le Comité Social Territorial (CST)",
+              "La CAP",
+              "Le CCAS"
+            ],
+            "answer": 1,
+            "points": 200,
+            "media": null
+          },
+          {
+            "prompt": "En cas de partage ÉGAL des voix au conseil municipal (hors scrutin secret)…",
+            "choices": [
+              "on revote",
+              "la voix du maire est prépondérante",
+              "le doyen tranche",
+              "on tire au sort"
+            ],
+            "answer": 1,
+            "points": 200,
+            "media": null
+          },
+          {
+            "prompt": "Le régime indemnitaire de référence dans la FPT depuis 2014 s’appelle…",
+            "choices": [
+              "la NBI",
+              "le RIFSEEP",
+              "le SFT",
+              "la GIPA"
+            ],
+            "answer": 1,
+            "points": 200,
+            "media": null
+          },
+          {
+            "prompt": "Combien d’agents compte, environ, la fonction publique territoriale ?",
+            "choices": [
+              "~600 000",
+              "~1,9 million",
+              "~3,5 millions",
+              "~5 millions"
+            ],
+            "answer": 1,
+            "points": 225,
+            "media": null
+          },
+          {
+            "prompt": "Le principe qui interdit au maire (ordonnateur) d’être aussi le comptable s’appelle…",
+            "choices": [
+              "la règle d’or",
+              "la séparation ordonnateur-comptable",
+              "l’unité de caisse",
+              "la fongibilité"
+            ],
+            "answer": 1,
+            "points": 250,
+            "media": null
+          },
+          {
+            "prompt": "Depuis le 1ᵉʳ janvier 2024, la nomenclature comptable des communes est généralisée sous le nom…",
+            "choices": [
+              "M14",
+              "M52",
+              "M57",
+              "M4"
+            ],
+            "answer": 2,
+            "points": 275,
+            "media": null
+          },
+          {
+            "prompt": "La France compte ~35 000 communes : cela représente, dans l’Union européenne…",
+            "choices": [
+              "environ 5 %",
+              "près de 40 % de toutes les communes de l’UE",
+              "la moitié",
+              "les trois quarts"
+            ],
+            "answer": 1,
+            "points": 300,
+            "media": null
+          }
+        ],
+        "saintmaur": [
+          {
+            "prompt": "Saint-Maur-des-Fossés est entourée par une boucle de quelle rivière ?",
+            "choices": [
+              "La Seine",
+              "La Marne",
+              "L’Oise",
+              "La Bièvre"
+            ],
+            "answer": 1,
+            "points": 50,
+            "media": null
+          },
+          {
+            "prompt": "À quel département appartient Saint-Maur-des-Fossés ?",
+            "choices": [
+              "Seine-Saint-Denis",
+              "Hauts-de-Seine",
+              "Val-de-Marne",
+              "Essonne"
+            ],
+            "answer": 2,
+            "points": 75,
+            "media": null
+          },
+          {
+            "prompt": "Quel est le code postal principal de Saint-Maur-des-Fossés ?",
+            "choices": [
+              "94100",
+              "93100",
+              "92100",
+              "75012"
+            ],
+            "answer": 0,
+            "points": 100,
+            "media": null
+          },
+          {
+            "prompt": "La forme de la ville, cernée par la rivière, en fait surtout une…",
+            "choices": [
+              "Île",
+              "Presqu’île (boucle)",
+              "Vallée",
+              "Colline"
+            ],
+            "answer": 1,
+            "points": 100,
+            "media": null
+          },
+          {
+            "prompt": "Quelle ligne du RER dessert Saint-Maur (Saint-Maur–Créteil, La Varenne…) ?",
+            "choices": [
+              "RER A",
+              "RER B",
+              "RER C",
+              "RER E"
+            ],
+            "answer": 0,
+            "points": 125,
+            "media": null
+          },
+          {
+            "prompt": "Quel vestige médiéval de l’abbaye (1360) subsiste encore à Saint-Maur ?",
+            "choices": [
+              "La Tour Rabelais",
+              "Le Donjon de Vincennes",
+              "La Tour Eiffel",
+              "Le Beffroi"
+            ],
+            "answer": 0,
+            "points": 150,
+            "media": null
+          },
+          {
+            "prompt": "Quelle église du XIIᵉ siècle, classée, se dresse dans le Vieux Saint-Maur ?",
+            "choices": [
+              "Saint-Nicolas",
+              "Notre-Dame",
+              "Saint-Sulpice",
+              "Saint-Eustache"
+            ],
+            "answer": 0,
+            "points": 150,
+            "media": null
+          },
+          {
+            "prompt": "Comment s’appelle la maison des arts / musée municipal, située à La Varenne ?",
+            "choices": [
+              "Villa Médicis",
+              "Villa Savoye",
+              "Le Louvre",
+              "Le Palais de Tokyo"
+            ],
+            "answer": 0,
+            "points": 175,
+            "media": null
+          },
+          {
+            "prompt": "À la mort de quel roi l’abbaye de Saint-Maur fut-elle fondée (639) ?",
+            "choices": [
+              "Clovis",
+              "Dagobert",
+              "Charlemagne",
+              "Louis IX"
+            ],
+            "answer": 1,
+            "points": 200,
+            "media": null
+          },
+          {
+            "prompt": "En quelle année la ville prend-elle le nom de « Saint-Maur-des-Fossés » ?",
+            "choices": [
+              "639",
+              "1137",
+              "1281",
+              "1789"
+            ],
+            "answer": 2,
+            "points": 200,
+            "media": null
+          },
+          {
+            "prompt": "En combien de quartiers Saint-Maur-des-Fossés est-elle découpée ?",
+            "choices": [
+              "4",
+              "6",
+              "8",
+              "12"
+            ],
+            "answer": 2,
+            "points": 200,
+            "media": null
+          },
+          {
+            "prompt": "Quel lycée réputé se trouve dans le Vieux Saint-Maur ?",
+            "choices": [
+              "Lycée Marcelin Berthelot",
+              "Lycée Louis-le-Grand",
+              "Lycée Henri-IV",
+              "Lycée Condorcet"
+            ],
+            "answer": 0,
+            "points": 250,
+            "media": null
+          },
+          {
+            "prompt": "Comment s’appelle le magazine municipal de la ville ?",
+            "choices": [
+              "Saint-Maur Le Mag",
+              "La Gazette",
+              "Le Parisien Local",
+              "Vivre Ici"
+            ],
+            "answer": 0,
+            "points": 250,
+            "media": null
+          },
+          {
+            "prompt": "Quelle affaire de fausses factures a éclaboussé la ville (marché de com’ Idéepôle) ?",
+            "choices": [
+              "L’affaire Cahuzac",
+              "L’affaire Bygmalion",
+              "L’affaire Karachi",
+              "L’affaire Elf"
+            ],
+            "answer": 1,
+            "points": 300,
+            "media": null
+          },
+          {
+            "prompt": "Qui est le maire de Saint-Maur-des-Fossés (depuis 2014) ?",
+            "choices": [
+              "Henri Plagnol",
+              "Sylvain Berrios",
+              "Jean-Louis Borloo",
+              "Laurent Lafon"
+            ],
+            "answer": 1,
+            "points": 300,
+            "media": null
+          }
+        ],
+        "vincent": [
+          {
+            "prompt": "Quel est ce Vincent célèbre ?",
+            "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Self-Portrait_with_a_Straw_Hat_%28obverse-_The_Potato_Peeler%29_MET_ep67.187.70A.R.jpg/330px-Self-Portrait_with_a_Straw_Hat_%28obverse-_The_Potato_Peeler%29_MET_ep67.187.70A.R.jpg",
+            "choices": [
+              "Vincent van Gogh",
+              "Vincent Dupuis",
+              "Vincent Auriol",
+              "Vincent Morin"
+            ],
+            "answer": 0,
+            "points": 75,
+            "media": "image"
+          },
+          {
+            "prompt": "Quel est ce Vincent célèbre ?",
+            "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Vincent_Lindon-64225.jpg/330px-Vincent_Lindon-64225.jpg",
+            "choices": [
+              "Vincent Marchal",
+              "Vincent Lindon",
+              "Vincent Renard",
+              "Vincent Cassel"
+            ],
+            "answer": 1,
+            "points": 100,
+            "media": "image"
+          },
+          {
+            "prompt": "Quel est ce Vincent célèbre ?",
+            "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Vincent_Cassel_at_the_2025_Toronto_International_Film_Festival.jpg/330px-Vincent_Cassel_at_the_2025_Toronto_International_Film_Festival.jpg",
+            "choices": [
+              "Vincent Lacoste",
+              "Vincent Lecomte",
+              "Vincent Cassel",
+              "Vincent Tessier"
+            ],
+            "answer": 2,
+            "points": 100,
+            "media": "image"
+          },
+          {
+            "prompt": "Quel est ce Vincent célèbre ?",
+            "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Vincent_Lacoste-8787.jpg/330px-Vincent_Lacoste-8787.jpg",
+            "choices": [
+              "Vincent Dedienne",
+              "Vincent Perrin",
+              "Vincent Verdier",
+              "Vincent Lacoste"
+            ],
+            "answer": 3,
+            "points": 125,
+            "media": "image"
+          },
+          {
+            "prompt": "Quel est ce Vincent célèbre ?",
+            "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Vincent_Dedienne_2016.jpg/330px-Vincent_Dedienne_2016.jpg",
+            "choices": [
+              "Vincent Mignon",
+              "Vincent Pérez",
+              "Vincent Dedienne",
+              "Vincent Martin"
+            ],
+            "answer": 2,
+            "points": 125,
+            "media": "image"
+          },
+          {
+            "prompt": "Quel est ce Vincent célèbre ?",
+            "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Delerm_2.JPG/330px-Delerm_2.JPG",
+            "choices": [
+              "Vincent Delerm",
+              "Vincent Petit",
+              "Vincent Niclo",
+              "Vincent Mercier"
+            ],
+            "answer": 0,
+            "points": 150,
+            "media": "image"
+          },
+          {
+            "prompt": "Quel est ce Vincent célèbre ?",
+            "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Vincent_Niclo_2011.jpg/330px-Vincent_Niclo_2011.jpg",
+            "choices": [
+              "Vincent Bernard",
+              "Vincent Niclo",
+              "Vincent Delerm",
+              "Vincent Fouché"
+            ],
+            "answer": 1,
+            "points": 150,
+            "media": "image"
+          },
+          {
+            "prompt": "Quel est ce Vincent célèbre ?",
+            "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Vincent_Perez_Cannes_2018.jpg/330px-Vincent_Perez_Cannes_2018.jpg",
+            "choices": [
+              "Vincent Garnier",
+              "Vincent Peillon",
+              "Vincent Fabre",
+              "Vincent Pérez"
+            ],
+            "answer": 3,
+            "points": 150,
+            "media": "image"
+          },
+          {
+            "prompt": "Quel est ce Vincent célèbre ?",
+            "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Vincent_Peillon_le_1er_juin_2012_au_rectorat_d%27Orl%C3%A9ans.JPG/330px-Vincent_Peillon_le_1er_juin_2012_au_rectorat_d%27Orl%C3%A9ans.JPG",
+            "choices": [
+              "Vincent Chabert",
+              "Vincent Peillon",
+              "Vincent Bolloré",
+              "Vincent Baron"
+            ],
+            "answer": 1,
+            "points": 175,
+            "media": "image"
+          },
+          {
+            "prompt": "Quel est ce Vincent célèbre ?",
+            "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Festival_automobile_international_2014_-_Photocall_-_103.jpg/330px-Festival_automobile_international_2014_-_Photocall_-_103.jpg",
+            "choices": [
+              "Vincent Cassel",
+              "Vincent Lacroix",
+              "Vincent Bolloré",
+              "Vincent Poiré"
+            ],
+            "answer": 2,
+            "points": 175,
+            "media": "image"
+          },
+          {
+            "prompt": "Quel est ce Vincent célèbre ?",
+            "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Portrait_officiel_Vincent_Auriol_%28cropped%29.jpg/330px-Portrait_officiel_Vincent_Auriol_%28cropped%29.jpg",
+            "choices": [
+              "Vincent Auriol",
+              "Vincent Niclo",
+              "Vincent Gros",
+              "Vincent Leclerc"
+            ],
+            "answer": 0,
+            "points": 200,
+            "media": "image"
+          }
+        ],
+        "blindtest": [
+          {
+            "prompt": "🎸 EXTRAIT #1 — Quel groupe ?",
+            "play": "AC/DC — Highway to Hell",
+            "choices": [
+              "AC/DC",
+              "Led Zeppelin",
+              "Deep Purple",
+              "The Who"
+            ],
+            "answer": 0,
+            "points": 100,
+            "media": "audio",
+            "yt": "",
+            "start": 0
+          },
+          {
+            "prompt": "🎸 EXTRAIT #2 — Quel titre ?",
+            "play": "Queen — Bohemian Rhapsody",
+            "choices": [
+              "We Will Rock You",
+              "Bohemian Rhapsody",
+              "Don’t Stop Me Now",
+              "Somebody to Love"
+            ],
+            "answer": 1,
+            "points": 100,
+            "media": "audio",
+            "yt": "",
+            "start": 0
+          },
+          {
+            "prompt": "🎸 EXTRAIT #3 — Quel titre ?",
+            "play": "Survivor — Eye of the Tiger",
+            "choices": [
+              "Eye of the Tiger",
+              "The Final Countdown",
+              "Jump",
+              "Livin’ on a Prayer"
+            ],
+            "answer": 0,
+            "points": 100,
+            "media": "audio",
+            "yt": "",
+            "start": 0
+          },
+          {
+            "prompt": "🎸 EXTRAIT #4 — Quel groupe ?",
+            "play": "Deep Purple — Smoke on the Water (riff)",
+            "choices": [
+              "Black Sabbath",
+              "Deep Purple",
+              "Cream",
+              "Rainbow"
+            ],
+            "answer": 1,
+            "points": 100,
+            "media": "audio",
+            "yt": "",
+            "start": 0
+          },
+          {
+            "prompt": "🎸 EXTRAIT #5 — Quel groupe ?",
+            "play": "The Beatles — Hey Jude",
+            "choices": [
+              "The Rolling Stones",
+              "The Beatles",
+              "The Kinks",
+              "The Beach Boys"
+            ],
+            "answer": 1,
+            "points": 100,
+            "media": "audio",
+            "yt": "",
+            "start": 0
+          },
+          {
+            "prompt": "🎸 EXTRAIT #6 — Quel titre ?",
+            "play": "Eagles — Hotel California",
+            "choices": [
+              "Hotel California",
+              "Sweet Home Alabama",
+              "Free Bird",
+              "More Than a Feeling"
+            ],
+            "answer": 0,
+            "points": 150,
+            "media": "audio",
+            "yt": "",
+            "start": 0
+          },
+          {
+            "prompt": "🎸 EXTRAIT #7 — Quel groupe ?",
+            "play": "The Rolling Stones — (I Can’t Get No) Satisfaction",
+            "choices": [
+              "The Doors",
+              "The Rolling Stones",
+              "The Animals",
+              "Creedence"
+            ],
+            "answer": 1,
+            "points": 100,
+            "media": "audio",
+            "yt": "",
+            "start": 0
+          },
+          {
+            "prompt": "🎸 EXTRAIT #8 — Quel titre ?",
+            "play": "Bon Jovi — Livin’ on a Prayer",
+            "choices": [
+              "You Give Love a Bad Name",
+              "Livin’ on a Prayer",
+              "It’s My Life",
+              "Always"
+            ],
+            "answer": 1,
+            "points": 150,
+            "media": "audio",
+            "yt": "",
+            "start": 0
+          },
+          {
+            "prompt": "🎸 EXTRAIT #9 — Quel titre ?",
+            "play": "Toto — Africa",
+            "choices": [
+              "Africa",
+              "Rosanna",
+              "Hold the Line",
+              "Carrie"
+            ],
+            "answer": 0,
+            "points": 100,
+            "media": "audio",
+            "yt": "",
+            "start": 0
+          },
+          {
+            "prompt": "🎸 EXTRAIT #10 — Quel groupe ?",
+            "play": "Dire Straits — Sultans of Swing",
+            "choices": [
+              "Dire Straits",
+              "Fleetwood Mac",
+              "Supertramp",
+              "Pink Floyd"
+            ],
+            "answer": 0,
+            "points": 150,
+            "media": "audio",
+            "yt": "",
+            "start": 0
+          }
+        ]
+      }
+    },
+    "blindtest": {
+      "playlists": {}
+    },
+    "anecdotes": [
+      {
+        "titre": "LE SOUVENIR GÊNANT",
+        "desc": "Vincent raconte son pire souvenir de gamer (manette cassée, sauvegarde perdue, rage quit…)."
+      },
+      {
+        "titre": "PREMIÈRE CONSOLE",
+        "desc": "Quelle a été ta toute première console ? Raconte comment tu l'as eue."
+      },
+      {
+        "titre": "LE BOSS MAUDIT",
+        "desc": "Le boss de jeu vidéo sur lequel tu as le plus galéré — combien de tentatives ?"
+      },
+      {
+        "titre": "L'EXPLOIT LÉGENDAIRE",
+        "desc": "Raconte ton plus grand exploit en jeu (un high score, un speedrun, une victoire improbable)."
+      },
+      {
+        "titre": "LA NUIT BLANCHE",
+        "desc": "Le jeu qui t'a fait passer une nuit blanche. La table devine lequel !"
+      },
+      {
+        "titre": "LE MENSONGE",
+        "desc": "Vincent raconte 2 anecdotes : une vraie, une fausse. La table vote laquelle est fausse."
+      },
+      {
+        "titre": "ENFANT TERRIBLE",
+        "desc": "La pire bêtise que Vincent a faite enfant — quelqu'un d'autre la connaît peut-être mieux que lui."
+      },
+      {
+        "titre": "LE SURNOM",
+        "desc": "D'où vient un de tes surnoms ? Raconte l'histoire derrière."
+      }
+    ],
+    "gages": [
+      {
+        "id": "continue",
+        "titre": "CONTINUE ?",
+        "desc": "Tu as 10 s pour répondre à la BORNE.",
+        "alt": "Sinon : une grimace tenue 30 s OU une gorgée.",
+        "intensity": 1,
+        "pool": [
+          "solo"
+        ]
+      },
+      {
+        "id": "lag",
+        "titre": "LAG",
+        "desc": "Tu parles au RALENTI jusqu’au prochain monde.",
+        "alt": "Si tu craques : 5 pompes OU une gorgée.",
+        "intensity": 1,
+        "pool": [
+          "solo"
+        ]
+      },
+      {
+        "id": "boss-music",
+        "titre": "BOSS MUSIC",
+        "desc": "Chante l’intro d’un jeu vidéo culte (ou un riff rock connu).",
+        "alt": "Refus : tu mimes le boss final pendant 20 s.",
+        "intensity": 1,
+        "pool": [
+          "solo",
+          "rock"
+        ]
+      },
+      {
+        "id": "pixel-perfect",
+        "titre": "PIXEL PERFECT",
+        "desc": "Défi d’adresse : empile 3 objets / vise un gobelet.",
+        "alt": "Raté : tu offres la prochaine tournée (soft ou non).",
+        "intensity": 1,
+        "pool": [
+          "solo",
+          "defi"
+        ]
+      },
+      {
+        "id": "air-guitar",
+        "titre": "AIR GUITAR",
+        "desc": "Solo d’air-guitar de 15 s sur un riff rock culte. La salle juge.",
+        "alt": "Raté : tu chantes le refrain a cappella.",
+        "intensity": 2,
+        "pool": [
+          "solo",
+          "rock"
+        ]
+      },
+      {
+        "id": "marathon",
+        "titre": "MARATHON",
+        "desc": "15 squats ou pompes (au choix). Endurance, l’ami.",
+        "alt": "Refus : course sur place 30 s OU une gorgée.",
+        "intensity": 2,
+        "pool": [
+          "solo",
+          "sport"
+        ]
+      },
+      {
+        "id": "smash",
+        "titre": "SMASH",
+        "desc": "Duel de réflexes : premier à attraper l’objet lancé.",
+        "alt": "Le perdant fait le service de badminton imaginaire 5×.",
+        "intensity": 1,
+        "pool": [
+          "duel",
+          "sport"
+        ]
+      },
+      {
+        "id": "jardin",
+        "titre": "PHOTOSYNTHÈSE",
+        "desc": "Tu deviens une plante : bras en l’air, immobile, jusqu’au prochain indice.",
+        "alt": "Tu bouges : tu arroses (sers) quelqu’un OU gorgée.",
+        "intensity": 1,
+        "pool": [
+          "solo"
+        ]
+      },
+      {
+        "id": "mirror",
+        "titre": "MODE MIROIR",
+        "desc": "Tu parles à l’envers (dernier mot d’abord) jusqu’au prochain monde.",
+        "alt": "Tu craques : accent random pendant 5 min.",
+        "intensity": 2,
+        "pool": [
+          "solo"
+        ]
+      },
+      {
+        "id": "co-op",
+        "titre": "CO-OP",
+        "desc": "Choisis un binôme : vous faites équipe (et trinquez léger) jusqu’au prochain monde.",
+        "alt": "Sans alcool : vous devez tout vous dire en rimes.",
+        "intensity": 1,
+        "pool": [
+          "solo"
+        ]
+      },
+      {
+        "id": "selfie",
+        "titre": "TROPHÉE DÉBLOQUÉ",
+        "desc": "Pose photo héroïque obligatoire avec un objet de la pièce comme “épée légendaire”.",
+        "alt": "—",
+        "intensity": 1,
+        "pool": [
+          "solo",
+          "fun"
+        ]
+      },
+      {
+        "id": "compliment",
+        "titre": "BUFF",
+        "desc": "Lance un “buff” : fais un vrai compliment sincère à la personne à ta gauche.",
+        "alt": "—",
+        "intensity": 1,
+        "pool": [
+          "solo",
+          "fun"
+        ]
+      },
+      {
+        "id": "royalty",
+        "titre": "ROYALTY 👑",
+        "desc": "Le PLAYER ONE désigne qui relève le prochain défi. Sans justification.",
+        "alt": "—",
+        "intensity": 2,
+        "pool": [
+          "vincent"
+        ]
+      },
+      {
+        "id": "exil",
+        "titre": "BANNI 2 MIN",
+        "desc": "Tu es éjecté du jeu 2 min (va “recharger”). Reviens avec une boisson pour quelqu’un.",
+        "intensity": 1,
+        "pool": [
+          "solo",
+          "fun"
+        ]
+      },
+      {
+        "id": "cheers-collectif",
+        "titre": "CHEERS COLLECTIF 🥂",
+        "desc": "Toute la table fait un “cheers” (gorgée ou soft, au choix de chacun).",
+        "alt": "—",
+        "intensity": 1,
+        "pool": [
+          "collectif"
+        ]
+      }
+    ],
+    "spotlightDefis": [
+      "Imite un personnage de jeu vidéo pendant 20 s — la salle doit deviner lequel.",
+      "Chante le refrain d'un générique de dessin animé de ton enfance.",
+      "Fais 10 pompes… ou 10 squats si tu préfères. Au choix !",
+      "Mime un boss de fin de niveau qui meurt de façon ultra dramatique.",
+      "Fais ta meilleure imitation de quelqu'un dans la pièce — on devine qui.",
+      "Danse 15 s sur une musique imaginaire que toi seul·e entends.",
+      "Fais deviner un film culte en le mimant (30 s, sans parler).",
+      "Parle avec un accent étranger de ton choix pendant 1 minute.",
+      "Pousse ton meilleur cri de Tarzan… ou de monstre de jeu vidéo.",
+      "Déclare ta flamme, avec passion, à un meuble ou un objet de la pièce.",
+      "Fais le robot pendant 20 secondes, sans rire.",
+      "Imite un streamer / youtubeur en plein live.",
+      "Fais un compliment sincère et différent à chaque personne de la table.",
+      "Invente un slogan publicitaire pour le jeu PIXEL PANIC.",
+      "Chante \"Joyeux anniversaire\" version metal… ou version berceuse. Au choix.",
+      "Enchaîne 3 imitations d'animaux — la salle doit toutes les deviner.",
+      "Tiens en équilibre sur un pied en récitant l'alphabet à l'envers (essaie !).",
+      "Raconte ta pire honte de soirée en 30 secondes chrono.",
+      "Rejoue une scène de film en accéléré façon jeu vidéo bugué.",
+      "Fais le commentateur sportif de ce qui se passe dans la pièce, 30 s.",
+      "Invente une danse de la victoire et apprends-la à toute la table.",
+      "Parle uniquement en chantant pendant 1 minute (récitatif d'opéra)."
+    ],
+    "drawWords": [
+      {
+        "word": "chat",
+        "cat": "Animal"
+      },
+      {
+        "word": "chien",
+        "cat": "Animal"
+      },
+      {
+        "word": "poisson",
+        "cat": "Animal"
+      },
+      {
+        "word": "serpent",
+        "cat": "Animal"
+      },
+      {
+        "word": "papillon",
+        "cat": "Animal"
+      },
+      {
+        "word": "dinosaure",
+        "cat": "Animal"
+      },
+      {
+        "word": "éléphant",
+        "cat": "Animal"
+      },
+      {
+        "word": "licorne",
+        "cat": "Animal"
+      },
+      {
+        "word": "maison",
+        "cat": "Objet"
+      },
+      {
+        "word": "voiture",
+        "cat": "Objet"
+      },
+      {
+        "word": "bateau",
+        "cat": "Objet"
+      },
+      {
+        "word": "avion",
+        "cat": "Objet"
+      },
+      {
+        "word": "fusée",
+        "cat": "Objet"
+      },
+      {
+        "word": "guitare",
+        "cat": "Objet"
+      },
+      {
+        "word": "lunettes",
+        "cat": "Objet"
+      },
+      {
+        "word": "parapluie",
+        "cat": "Objet"
+      },
+      {
+        "word": "téléphone",
+        "cat": "Objet"
+      },
+      {
+        "word": "ordinateur",
+        "cat": "Objet"
+      },
+      {
+        "word": "échelle",
+        "cat": "Objet"
+      },
+      {
+        "word": "horloge",
+        "cat": "Objet"
+      },
+      {
+        "word": "clé",
+        "cat": "Objet"
+      },
+      {
+        "word": "épée",
+        "cat": "Objet"
+      },
+      {
+        "word": "couronne",
+        "cat": "Objet"
+      },
+      {
+        "word": "ancre",
+        "cat": "Objet"
+      },
+      {
+        "word": "soleil",
+        "cat": "Nature"
+      },
+      {
+        "word": "arbre",
+        "cat": "Nature"
+      },
+      {
+        "word": "fleur",
+        "cat": "Nature"
+      },
+      {
+        "word": "étoile",
+        "cat": "Nature"
+      },
+      {
+        "word": "montagne",
+        "cat": "Nature"
+      },
+      {
+        "word": "champignon",
+        "cat": "Nature"
+      },
+      {
+        "word": "cactus",
+        "cat": "Nature"
+      },
+      {
+        "word": "volcan",
+        "cat": "Nature"
+      },
+      {
+        "word": "pizza",
+        "cat": "Nourriture"
+      },
+      {
+        "word": "gâteau",
+        "cat": "Nourriture"
+      },
+      {
+        "word": "banane",
+        "cat": "Nourriture"
+      },
+      {
+        "word": "glace",
+        "cat": "Nourriture"
+      },
+      {
+        "word": "hamburger",
+        "cat": "Nourriture"
+      },
+      {
+        "word": "fromage",
+        "cat": "Nourriture"
+      },
+      {
+        "word": "fantôme",
+        "cat": "Rigolo"
+      },
+      {
+        "word": "robot",
+        "cat": "Rigolo"
+      },
+      {
+        "word": "château",
+        "cat": "Rigolo"
+      },
+      {
+        "word": "sorcière",
+        "cat": "Rigolo"
+      },
+      {
+        "word": "pirate",
+        "cat": "Rigolo"
+      },
+      {
+        "word": "super-héros",
+        "cat": "Rigolo"
+      },
+      {
+        "word": "bonhomme de neige",
+        "cat": "Rigolo"
+      },
+      {
+        "word": "arc-en-ciel",
+        "cat": "Rigolo"
+      },
+      {
+        "word": "Mario",
+        "cat": "Gaming"
+      },
+      {
+        "word": "Luigi",
+        "cat": "Gaming"
+      },
+      {
+        "word": "Donkey Kong",
+        "cat": "Gaming"
+      },
+      {
+        "word": "Pac-Man",
+        "cat": "Gaming"
+      },
+      {
+        "word": "Sonic",
+        "cat": "Gaming"
+      },
+      {
+        "word": "Pikachu",
+        "cat": "Gaming"
+      },
+      {
+        "word": "Bowser",
+        "cat": "Gaming"
+      },
+      {
+        "word": "Yoshi",
+        "cat": "Gaming"
+      },
+      {
+        "word": "Kirby",
+        "cat": "Gaming"
+      },
+      {
+        "word": "Link",
+        "cat": "Gaming"
+      },
+      {
+        "word": "champignon 1-up",
+        "cat": "Gaming"
+      },
+      {
+        "word": "manette",
+        "cat": "Gaming"
+      },
+      {
+        "word": "tétromino",
+        "cat": "Gaming"
+      },
+      {
+        "word": "fantôme de Pac-Man",
+        "cat": "Gaming"
+      },
+      {
+        "word": "épée de Zelda",
+        "cat": "Gaming"
+      },
+      {
+        "word": "créeper Minecraft",
+        "cat": "Gaming"
+      },
+      {
+        "word": "borne d’arcade",
+        "cat": "Gaming"
+      },
+      {
+        "word": "carapace bleue",
+        "cat": "Gaming"
+      }
+    ],
+    "photoMissions": {
+      "player_one": [
+        {
+          "label": "La Pose du Héros",
+          "desc": "Bras tendus, regard vers l'horizon, l'air de sauver le monde."
+        },
+        {
+          "label": "Le Témoin Suspect",
+          "desc": "Capture en photo quelqu'un qui t'a l'air louche ce soir."
+        },
+        {
+          "label": "Game Master en Action",
+          "desc": "Selfie en train de pointer quelqu'un d'un air très autoritaire."
+        }
+      ],
+      "wilsonik": [
+        {
+          "label": "Le Sprint Légendaire",
+          "desc": "Photo en pleine course (ou pose de sprint) entre deux pièces."
+        },
+        {
+          "label": "L'Épuisement Total",
+          "desc": "Toi et quelqu'un d'autre effondrés de fatigue sur un canapé ou le sol."
+        },
+        {
+          "label": "Le Chrono Imaginaire",
+          "desc": "Photo en train de regarder une montre inexistante (poignet nu) — expression de panique."
+        }
+      ],
+      "riu": [
+        {
+          "label": "Air Guitar",
+          "desc": "Pose guitare air avec l'objet le plus improbable (balai, bouteille, baguette...)."
+        },
+        {
+          "label": "Full Headbang",
+          "desc": "Headbang en action — flou artistique accepté, les cheveux doivent voler."
+        },
+        {
+          "label": "La Scène Légendaire",
+          "desc": "Une scène qui mériterait un solo de guitare épique. Utilise le décor."
+        }
+      ],
+      "zilda": [
+        {
+          "label": "L'Équilibre Parfait",
+          "desc": "Toi sur un pied, bras en croix, l'air de quelqu'un qui vise avec précision."
+        },
+        {
+          "label": "L'Objet en Vol",
+          "desc": "Capture un objet lancé en l'air — il doit être visible en suspension !"
+        },
+        {
+          "label": "Le Tir de Précision",
+          "desc": "Toi en train de viser quelque chose à l'autre bout de la pièce avec un doigt."
+        }
+      ],
+      "super_mariano": [
+        {
+          "label": "Champion du Végétal",
+          "desc": "Trouve quelque chose de végétal et pose avec comme si c'était un trophée."
+        },
+        {
+          "label": "Jardinage Urbain",
+          "desc": "Photo en train de «jardiner» un objet incongru (planter un stylo, arroser un téléphone...)."
+        },
+        {
+          "label": "Le Champignon Humain",
+          "desc": "Photographie le joueur qui «pousse dans son coin» discret comme un champignon."
+        }
+      ],
+      "lara_croute": [
+        {
+          "label": "L'Angle Explorateur",
+          "desc": "Photo depuis le sol en regardant vers le haut — ambiance temple perdu."
+        },
+        {
+          "label": "Le Trésor Caché",
+          "desc": "Capture un objet de la pièce comme s'il était une relique précieuse."
+        },
+        {
+          "label": "L'Espion Discret",
+          "desc": "Selfie à moitié caché derrière un meuble, rideau ou porte entrouverte."
+        }
+      ],
+      "glouton": [
+        {
+          "label": "Le Festin",
+          "desc": "Photo du verre ou de la collation la plus photogénique de la soirée."
+        },
+        {
+          "label": "L'Appétit Légendaire",
+          "desc": "Capture quelqu'un en train de regarder de la nourriture avec des yeux brillants."
+        },
+        {
+          "label": "La Scène Post-Festin",
+          "desc": "Photo dramatique d'un verre vide ou d'assiette terminée — le vide, la tristesse."
+        }
+      ],
+      "lorenzo_auditore": [
+        {
+          "label": "La Photo de l'Ombre",
+          "desc": "Selfie discret où l'on ne voit que ta silhouette ou ton reflet."
+        },
+        {
+          "label": "Le Saut de la Foi",
+          "desc": "Capture quelqu'un en plein élan : saut, geste large ou pose héroïque."
+        },
+        {
+          "label": "La Cible Démasquée",
+          "desc": "Photo volée de quelqu'un qui ne s'y attendait pas du tout."
+        }
+      ]
+    }
+  },
+  "avatars": {
+    "player_one": {
+      "name": "PLAYER ONE",
+      "emoji": "👑",
+      "color": "#FFD700",
+      "tagline": "L'Élu. Celui qui a buggé la réalité.",
+      "power": "Pouvoir DORMANT… (se révèle au Monde 4)"
+    },
+    "wilsonik": {
+      "name": "WILSONIK",
+      "emoji": "🦔",
+      "color": "#0066FF",
+      "tagline": "Gotta go fast. Marathonien du pixel.",
+      "power": "SPEED — bonus quand tu réponds le plus vite."
+    },
+    "riu": {
+      "name": "RIU",
+      "emoji": "👊",
+      "color": "#E63329",
+      "tagline": "Maître du combat. Pur esprit rock’n’roll.",
+      "power": "HADOKEN — tu peux défier un autre joueur en duel."
+    },
+    "zilda": {
+      "name": "ZILDA",
+      "emoji": "🗡️",
+      "color": "#1FA84C",
+      "tagline": "Précision légendaire. Smash parfait.",
+      "power": "TRIFORCE — annule 1 gage sur toi (1×/soirée)."
+    },
+    "super_mariano": {
+      "name": "SUPER MARIANO",
+      "emoji": "🍄",
+      "color": "#E52521",
+      "tagline": "Plombier-jardinier. Cultive les champignons.",
+      "power": "SAUT — double une récompense (1×/monde)."
+    },
+    "lara_croute": {
+      "name": "LARA CROÛTE",
+      "emoji": "🏺",
+      "color": "#A0703C",
+      "tagline": "Exploratrice. Trouve ce que les autres ratent.",
+      "power": "EXPLORATION — tu reçois les indices cachés."
+    },
+    "glouton": {
+      "name": "GLOUTON",
+      "emoji": "🟡",
+      "color": "#FFCC00",
+      "tagline": "Mange tout, surtout les verres orphelins.",
+      "power": "GLOUTONNERIE — finis les verres abandonnés."
+    },
+    "lorenzo_auditore": {
+      "name": "LORENZO AUDITORE",
+      "emoji": "🥷",
+      "color": "#9b59b6",
+      "tagline": "Assassin florentin. Frappe dans l’ombre, signe en pixels.",
+      "power": "SAUT DE LA FOI — rejoue un défi que tu viens de rater (1×/monde)."
+    }
+  }
+}

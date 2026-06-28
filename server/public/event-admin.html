@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Console événement</title>
+  <!--EVENT_HEAD-->
+</head>
+<body class="scanlines">
+  <div class="admin-wrap">
+    <h1 class="neon-pink" id="evTitle">🎛️ Console</h1>
+    <p class="muted">Configurez votre événement et pilotez la soirée en direct.</p>
+
+    <div class="card" id="loginCard" style="display:none">
+      <div class="field"><label>Mot de passe de la console</label><input type="password" id="pwd"></div>
+      <button class="btn" onclick="login()">Entrer</button>
+      <div id="loginErr" class="neon-pink"></div>
+    </div>
+
+    <div id="app" style="display:none">
+      <div class="tabbar">
+        <button class="btn tab active" data-tab="piloter" onclick="tab('piloter')">🎮 Piloter</button>
+        <button class="btn tab" data-tab="general" onclick="tab('general')">⚙️ Général</button>
+        <button class="btn tab" data-tab="joueurs" onclick="tab('joueurs')">🧑‍🤝‍🧑 Joueurs</button>
+        <button class="btn tab" data-tab="activites" onclick="tab('activites')">🕹️ Activités</button>
+        <button class="btn tab" data-tab="contenu" onclick="tab('contenu')">📚 Contenu</button>
+      </div>
+
+      <!-- ============ PILOTER ============ -->
+      <section data-pane="piloter">
+        <div class="card">
+          <div class="inline" style="justify-content:space-between">
+            <div>Phase : <strong id="phase" class="neon-cyan">—</strong></div>
+            <div id="connCount" class="muted"></div>
+          </div>
+          <div class="row mt">
+            <button class="btn secondary" onclick="act('start')">▶ Démarrer la soirée</button>
+            <button class="btn warn" onclick="act('scoreboard')">🏆 Scores</button>
+            <button class="btn" onclick="act('hub')">↩ Hub</button>
+            <button class="btn danger" onclick="if(confirm('Réinitialiser la partie ?'))act('reset')">⟲ Reset</button>
+          </div>
+        </div>
+        <div class="card">
+          <h3 class="neon-yellow">Lancer une activité</h3>
+          <div class="field"><label>Quiz — choisir un deck</label>
+            <div class="inline"><select id="quizDeck"></select><button class="btn" style="width:auto" onclick="launch('quiz',{deck:val('quizDeck')})">Lancer</button></div>
+          </div>
+          <div class="field"><label>Blind-test — thème</label>
+            <div class="inline"><select id="btTheme"></select><button class="btn" style="width:auto" onclick="launch('blindtest',{theme:val('btTheme')})">Lancer</button></div>
+          </div>
+          <div class="row">
+            <button class="btn" onclick="launch('anecdote',{})">📖 Anecdote</button>
+            <button class="btn" onclick="launch('roue_des_gages',{})">🎰 Roue des gages</button>
+            <button class="btn" onclick="launch('spotlight',{})">🔦 Spotlight</button>
+            <button class="btn" onclick="launch('draw',{})">🎨 Dessine-moi</button>
+          </div>
+          <div class="row">
+            <button class="btn" onclick="launch('mosaic',{})">🧩 Mosaïque</button>
+            <button class="btn" onclick="launch('piano',{})">🎹 Piano</button>
+            <button class="btn" onclick="launch('music_seq',{})">🎵 Séquence</button>
+          </div>
+          <div class="row" id="arcadeRow">
+            <button class="btn" onclick="launch('pacman',{})">🟡 Pac-Man</button>
+            <button class="btn" onclick="launch('tetris',{})">🧱 Tetris</button>
+            <button class="btn" onclick="launch('tron',{})">🟦 Tron</button>
+            <button class="btn" onclick="launch('2048',{})">🔢 2048</button>
+            <button class="btn" onclick="launch('pong',{})">🏓 Pong</button>
+          </div>
+          <div class="row mt">
+            <button class="btn warn" onclick="act('stopActivity')">⏹ Stopper l'activité</button>
+            <button class="btn secondary" onclick="act('scoreboard')">Afficher scores</button>
+          </div>
+        </div>
+        <div class="card" id="liveCtl"></div>
+        <div class="card">
+          <h3>Photos</h3>
+          <div class="row">
+            <button class="btn" onclick="act('setPhotoPhase',{phase:'vote'})">📸 Ouvrir le vote</button>
+            <button class="btn" onclick="act('setPhotoPhase',{phase:'results'})">🏆 Résultats</button>
+            <button class="btn" onclick="act('setPhotoPhase',{phase:null})">✕ Fermer</button>
+          </div>
+        </div>
+        <div class="card"><h3>Journal</h3><div class="log" id="log"></div></div>
+      </section>
+
+      <!-- ============ GÉNÉRAL ============ -->
+      <section data-pane="general" hidden>
+        <div class="card">
+          <div class="field"><label>Nom de l'événement</label><input type="text" id="g_name"></div>
+          <div class="field"><label>Thème graphique</label>
+            <select id="g_theme">
+              <option value="retro">Rétro jeux vidéo</option><option value="neon">Néon / Clubbing</option>
+              <option value="chic">Chic / Élégant</option><option value="kids">Anniversaire enfant</option>
+              <option value="casino">Casino / Vegas</option>
+            </select>
+          </div>
+          <div class="field"><label>URL publique (QR)</label><input type="text" id="g_url" placeholder="https://…"></div>
+          <div class="field"><label>Mot de passe console (vide = libre)</label><input type="text" id="g_pwd"></div>
+          <div class="field"><label>Libellé compte à rebours</label><input type="text" id="g_deadline"></div>
+          <div class="field"><label>Ambiance YouTube (playlist)</label><input type="text" id="g_amb" placeholder="lien playlist YouTube"></div>
+          <button class="btn secondary" onclick="saveGeneral()">💾 Enregistrer</button>
+          <span class="muted" id="g_saved"></span>
+        </div>
+      </section>
+
+      <!-- ============ JOUEURS ============ -->
+      <section data-pane="joueurs" hidden>
+        <div class="card">
+          <h3 class="neon-cyan">Joueurs</h3>
+          <div id="players"></div>
+          <button class="btn" onclick="addPlayer()">＋ Ajouter un joueur</button>
+          <button class="btn secondary" onclick="savePlayers()">💾 Enregistrer les joueurs</button>
+          <span class="muted" id="pl_saved"></span>
+        </div>
+      </section>
+
+      <!-- ============ ACTIVITÉS ============ -->
+      <section data-pane="activites" hidden>
+        <div class="card">
+          <h3 class="neon-yellow">Activités actives</h3>
+          <p class="muted">Décochez ce que vous ne voulez pas proposer pendant la soirée.</p>
+          <div id="acts"></div>
+          <button class="btn secondary" onclick="saveActivities()">💾 Enregistrer</button>
+          <span class="muted" id="ac_saved"></span>
+        </div>
+      </section>
+
+      <!-- ============ CONTENU ============ -->
+      <section data-pane="contenu" hidden>
+        <div class="card">
+          <h3 class="neon-pink">Contenu des activités</h3>
+          <p class="muted">Édition avancée en JSON. Le bouton « Importer le contenu par défaut » repart du contenu rétro pré-rempli.</p>
+          <div class="row">
+            <button class="btn" onclick="seed('default')">⬇ Importer le contenu par défaut</button>
+            <button class="btn danger" onclick="if(confirm('Vider tout le contenu ?'))seed('empty')">🗑 Vider</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="field"><label>Decks de quiz <span class="muted">{ deck: [ {prompt, choices[4], answer, points} ] }</span></label><textarea id="c_quiz" rows="8"></textarea></div>
+          <div class="field"><label>Anecdotes <span class="muted">[ {titre, desc} ]</span></label><textarea id="c_anec" rows="5"></textarea></div>
+          <div class="field"><label>Gages <span class="muted">[ {id, titre, desc, alt, intensity, pool[]} ]</span></label><textarea id="c_gages" rows="6"></textarea></div>
+          <div class="field"><label>Défis spotlight <span class="muted">[ "défi", … ]</span></label><textarea id="c_spot" rows="4"></textarea></div>
+          <div class="field"><label>Mots Dessine-moi <span class="muted">[ {word, cat} ]</span></label><textarea id="c_draw" rows="4"></textarea></div>
+          <div class="field"><label>Playlists blind-test <span class="muted">{ theme: "ID ou URL playlist" }</span></label><textarea id="c_bt" rows="3"></textarea></div>
+          <div class="field"><label>Missions photo <span class="muted">{ avatar: [ {label, desc} ] }</span></label><textarea id="c_photo" rows="5"></textarea></div>
+          <button class="btn secondary" onclick="saveContent()">💾 Enregistrer le contenu</button>
+          <span class="neon-pink" id="c_err"></span>
+        </div>
+      </section>
+    </div>
+  </div>
+
+<script>
+const EVENT = window.__EVENT__;
+const API = '/e/' + EVENT.id;
+let PWD = sessionStorage.getItem('evpwd_'+EVENT.id) || '';
+let CFG = null, AV = {};
+const AVATAR_KEYS = [];
+
+function H(){ return { 'Content-Type':'application/json', 'x-admin-password': PWD }; }
+function val(id){ return document.getElementById(id).value; }
+function esc(s){ return (s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+async function boot(){
+  document.getElementById('evTitle').textContent = '🎛️ ' + (EVENT.name||'Console');
+  const meta = await (await fetch(API+'/api/admin/meta')).json();
+  if (meta.needsPassword && !PWD){ document.getElementById('loginCard').style.display='block'; return; }
+  await loadConfig();
+}
+async function login(){
+  PWD = document.getElementById('pwd').value;
+  const r = await fetch(API+'/api/admin/config', { headers:H() });
+  if (!r.ok){ document.getElementById('loginErr').textContent='Mot de passe invalide.'; return; }
+  sessionStorage.setItem('evpwd_'+EVENT.id, PWD);
+  document.getElementById('loginCard').style.display='none';
+  await loadConfig();
+}
+async function loadConfig(){
+  const r = await fetch(API+'/api/admin/config', { headers:H() });
+  if (r.status===403){ document.getElementById('loginCard').style.display='block'; return; }
+  const d = await r.json(); CFG = d.config; AV = d.defaultAvatars || {};
+  AVATAR_KEYS.length=0; Object.keys(AV).forEach(k=>AVATAR_KEYS.push(k));
+  document.getElementById('app').style.display='block';
+  fillGeneral(); fillPlayers(); fillActivities(); fillContent(); fillLaunchers();
+  startGmStream();
+}
+
+function tab(name){
+  document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active', b.dataset.tab===name));
+  document.querySelectorAll('[data-pane]').forEach(s=>s.hidden = s.dataset.pane!==name);
+}
+
+/* ---- Général ---- */
+function fillGeneral(){
+  g_name.value=CFG.name||''; g_theme.value=CFG.theme||'retro'; g_url.value=CFG.publicUrl||'';
+  g_pwd.value=CFG.adminPassword||''; g_deadline.value=(CFG.settings&&CFG.settings.deadlineLabel)||'';
+  g_amb.value=(CFG.settings&&CFG.settings.ambianceYoutube)||'';
+}
+async function saveGeneral(){
+  const patch={ name:g_name.value, theme:g_theme.value, publicUrl:g_url.value, adminPassword:g_pwd.value,
+    settings:{ ...CFG.settings, deadlineLabel:g_deadline.value, ambianceYoutube:g_amb.value } };
+  await push(patch); document.getElementById('g_saved').textContent=' ✓ enregistré';
+  setTimeout(()=>document.getElementById('g_saved').textContent='',1500);
+  if (patch.theme!==EVENT.theme) location.reload();
+}
+
+/* ---- Joueurs ---- */
+function fillPlayers(){
+  const c=document.getElementById('players');
+  c.innerHTML=(CFG.players||[]).map((p,i)=>playerRow(p,i)).join('') || '<p class="muted">Aucun joueur. Ajoutez-en un.</p>';
+}
+function playerRow(p,i){
+  const opts=AVATAR_KEYS.map(k=>`<option value="${k}" ${k===p.avatar?'selected':''}>${esc(AV[k].name||k)} ${AV[k].emoji||''}</option>`).join('');
+  return `<div class="card" style="margin:8px 0" data-pi="${i}">
+    <div class="row">
+      <div class="field"><label>Nom</label><input type="text" class="p_name" value="${esc(p.name||'')}"></div>
+      <div class="field"><label>Avatar</label><select class="p_avatar">${opts}</select></div>
+    </div>
+    <div class="field"><label>Token (URL perso)</label>
+      <div class="inline"><input type="text" class="p_token" value="${esc(p.token||'')}">
+      <button class="btn" style="width:auto" onclick="genToken(${i})">🎲</button>
+      <button class="btn secondary" style="width:auto" onclick="showQR('${esc(p.token||'')}')">QR</button>
+      <button class="btn danger" style="width:auto" onclick="rmPlayer(${i})">✕</button></div>
+    </div>
+    <div class="qrbox"></div>
+  </div>`;
+}
+function collectPlayers(){
+  return [...document.querySelectorAll('[data-pi]')].map(row=>{
+    const name=row.querySelector('.p_name').value.trim();
+    return { id: slug(name)||('p'+Math.random().toString(36).slice(2,6)), name,
+      avatar: row.querySelector('.p_avatar').value, token: row.querySelector('.p_token').value.trim() };
+  }).filter(p=>p.name);
+}
+function slug(s){ return (s||'').toLowerCase().normalize('NFD').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,''); }
+function addPlayer(){ CFG.players=collectPlayers(); CFG.players.push({ id:'', name:'Nouveau', avatar:AVATAR_KEYS[0]||'player_one', token:'PXL-'+Math.random().toString(36).slice(2,7).toUpperCase() }); fillPlayers(); }
+function rmPlayer(i){ CFG.players=collectPlayers(); CFG.players.splice(i,1); fillPlayers(); }
+function genToken(i){ const row=document.querySelector(`[data-pi="${i}"]`); row.querySelector('.p_token').value='PXL-'+Math.random().toString(36).slice(2,8).toUpperCase(); }
+async function showQR(token){
+  const r=await fetch(API+'/api/admin/qr/'+encodeURIComponent(token),{headers:H()}); const d=await r.json();
+  const box=event.target.closest('.card').querySelector('.qrbox');
+  box.innerHTML = d.qr ? `<img src="${d.qr}" style="width:160px"><div class="muted">${esc(d.joinUrl)}</div>` : '';
+}
+async function savePlayers(){ CFG.players=collectPlayers(); await push({players:CFG.players}); document.getElementById('pl_saved').textContent=' ✓'; setTimeout(()=>pl_saved.textContent='',1500); fillLaunchers(); }
+
+/* ---- Activités ---- */
+const ACT_LABELS={ quiz:'Quiz', blindtest:'Blind-test', anecdotes:'Anecdotes', gages:'Roue des gages', photo:'Défi photo', spotlight:'Spotlight', draw:'Dessine-moi', arcade:'Mini-jeux arcade', collab:'Collaboratifs (mosaïque/piano)' };
+function fillActivities(){
+  const a=CFG.activities||{};
+  document.getElementById('acts').innerHTML=Object.keys(ACT_LABELS).map(k=>
+    `<label class="inline" style="margin:6px 0"><input type="checkbox" class="a_${k}" ${a[k]!==false?'checked':''} style="width:auto"> ${ACT_LABELS[k]}</label>`).join('');
+}
+async function saveActivities(){
+  const a={}; Object.keys(ACT_LABELS).forEach(k=>a[k]=document.querySelector('.a_'+k).checked);
+  await push({activities:a}); CFG.activities=a; document.getElementById('ac_saved').textContent=' ✓'; setTimeout(()=>ac_saved.textContent='',1500);
+}
+
+/* ---- Contenu ---- */
+function fillContent(){
+  const ct=CFG.content||{};
+  c_quiz.value=JSON.stringify(ct.quiz?ct.quiz.decks:{},null,1);
+  c_anec.value=JSON.stringify(ct.anecdotes||[],null,1);
+  c_gages.value=JSON.stringify(ct.gages||[],null,1);
+  c_spot.value=JSON.stringify(ct.spotlightDefis||[],null,1);
+  c_draw.value=JSON.stringify(ct.drawWords||[],null,1);
+  c_bt.value=JSON.stringify(ct.blindtest?ct.blindtest.playlists:{},null,1);
+  c_photo.value=JSON.stringify(ct.photoMissions||{},null,1);
+}
+async function saveContent(){
+  try{
+    const content={
+      quiz:{ decks: JSON.parse(c_quiz.value||'{}') },
+      anecdotes: JSON.parse(c_anec.value||'[]'),
+      gages: JSON.parse(c_gages.value||'[]'),
+      spotlightDefis: JSON.parse(c_spot.value||'[]'),
+      drawWords: JSON.parse(c_draw.value||'[]'),
+      blindtest:{ playlists: JSON.parse(c_bt.value||'{}') },
+      photoMissions: JSON.parse(c_photo.value||'{}'),
+    };
+    await push({content}); CFG.content=content; c_err.textContent=' ✓ enregistré'; c_err.className='ok';
+    fillLaunchers();
+  }catch(e){ c_err.textContent=' Erreur JSON : '+e.message; c_err.className='neon-pink'; }
+}
+async function seed(mode){
+  const r=await fetch(API+'/api/admin/seed',{method:'POST',headers:H(),body:JSON.stringify({mode})});
+  const d=await r.json(); if(d.ok){ CFG.content=d.content; fillContent(); fillLaunchers(); }
+}
+
+async function push(patch){ await fetch(API+'/api/admin/config',{method:'POST',headers:H(),body:JSON.stringify({config:patch})}); }
+
+/* ---- Lanceurs dynamiques ---- */
+function fillLaunchers(){
+  const decks=(CFG.content&&CFG.content.quiz&&CFG.content.quiz.decks)||{};
+  document.getElementById('quizDeck').innerHTML=Object.keys(decks).map(d=>`<option value="${d}">${esc(d)}</option>`).join('')||'<option>—</option>';
+  const bt=(CFG.content&&CFG.content.blindtest&&CFG.content.blindtest.playlists)||{};
+  document.getElementById('btTheme').innerHTML=Object.keys(bt).map(t=>`<option value="${t}">${esc(t)}</option>`).join('')||'<option value="rock">rock</option>';
+}
+
+/* ---- Pilotage live ---- */
+function act(action,payload){ fetch(API+'/api/admin/action',{method:'POST',headers:H(),body:JSON.stringify({action,payload})}); }
+function launch(type,opts){ act('startActivity',{type,opts}); }
+function startGmStream(){
+  const es=new EventSource(API+'/events');
+  es.onmessage=e=>{ try{ render(JSON.parse(e.data)); }catch{} };
+}
+function render(st){
+  document.getElementById('phase').textContent=st.phase;
+  document.getElementById('connCount').textContent=(st.players||[]).filter(p=>p.connected).length+' connecté(s)';
+  document.getElementById('log').innerHTML=(st.log||[]).map(l=>`<div>${esc(l.msg)}</div>`).join('');
+  liveControls(st);
+}
+function liveControls(st){
+  const a=st.activity, box=document.getElementById('liveCtl'); if(!a){ box.innerHTML='<span class="muted">Aucune activité en cours.</span>'; return; }
+  let h='<h3>En cours : '+esc(a.type)+'</h3><div class="row">';
+  if(a.type==='quiz'||a.type==='blindtest'){ h+=btn('quizReveal','Révéler')+btn('quizNext','Suivante'); if(a.type==='blindtest')h+=btn('blindtestAsk','Nouvelle chanson'); }
+  if(a.type==='spotlight'){ h+=btn('spotlightOpenVote','Ouvrir le vote')+btn('spotlightTally','Dépouiller'); }
+  if(a.type==='roue_des_gages'){ h+=btn('roueOpenVote','Ouvrir le vote')+btn('roueTally','Dépouiller'); }
+  if(a.type==='draw'){ h+=btn('drawReveal','Révéler')+btn('drawNext','Suivant'); }
+  if(a.type==='mosaic'){ h+=btn('mosaicReveal','Révéler la ligne'); }
+  if(a.type==='piano'){ h+=btn('pianoDemo','Rejouer la mélodie'); }
+  if(a.type==='music_seq'){ h+=btn('musicDemo','Démo')+btn('musicHint','Indice'); }
+  h+=btn('stopActivity','⏹ Stop')+'</div>';
+  box.innerHTML=h;
+}
+function btn(action,label){ return `<button class="btn" style="width:auto" onclick="act('${action}')">${label}</button>`; }
+
+boot();
+</script>
+</body>
+</html>

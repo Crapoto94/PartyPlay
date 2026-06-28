@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Administration — Plateforme événements</title>
+  <link rel="stylesheet" href="/static/admin.css">
+</head>
+<body>
+  <div class="admin-wrap">
+    <h1 class="neon-pink">🎛️ Administration générale</h1>
+    <p class="muted">Créez et gérez vos événements. Chaque événement a sa propre console, ses joueurs et son thème.</p>
+
+    <!-- Connexion (si mot de passe global configuré) -->
+    <div class="card" id="loginCard" style="display:none">
+      <div class="field">
+        <label>Mot de passe administrateur</label>
+        <input type="password" id="admPwd" placeholder="••••••••">
+      </div>
+      <button class="btn" onclick="login()">Entrer</button>
+      <div id="loginErr" class="neon-pink" style="margin-top:8px"></div>
+    </div>
+
+    <div id="app" style="display:none">
+      <!-- Création -->
+      <div class="card">
+        <h2 class="neon-cyan">➕ Nouvel événement</h2>
+        <div class="field"><label>Nom de l'événement</label><input type="text" id="nName" placeholder="Anniversaire de Léa"></div>
+        <div class="row">
+          <div class="field"><label>Thème graphique</label>
+            <select id="nTheme">
+              <option value="retro">Rétro jeux vidéo</option>
+              <option value="neon">Néon / Clubbing</option>
+              <option value="chic">Chic / Élégant</option>
+              <option value="kids">Anniversaire enfant</option>
+              <option value="casino">Casino / Vegas</option>
+            </select>
+          </div>
+          <div class="field"><label>Contenu de départ</label>
+            <select id="nSeed">
+              <option value="default">Pré-rempli (quiz, gages, anecdotes…)</option>
+              <option value="empty">Vierge (tout à créer)</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="field"><label>Mot de passe de la console (optionnel)</label><input type="password" id="nPwd" placeholder="laisser vide = libre"></div>
+          <div class="field"><label>URL publique (pour les QR, optionnel)</label><input type="text" id="nUrl" placeholder="https://monevent.fr"></div>
+        </div>
+        <button class="btn secondary" onclick="createEvent()">Créer l'événement</button>
+        <div id="createErr" class="neon-pink" style="margin-top:8px"></div>
+      </div>
+
+      <!-- Liste -->
+      <div class="card">
+        <h2 class="neon-yellow">📋 Événements</h2>
+        <table class="list"><tbody id="rows"><tr><td class="muted">Chargement…</td></tr></tbody></table>
+      </div>
+    </div>
+  </div>
+
+<script>
+const themeLabel = { retro:'Rétro', neon:'Néon', chic:'Chic', kids:'Enfant', casino:'Casino' };
+let PWD = sessionStorage.getItem('admPwd') || '';
+
+function headers() { return { 'Content-Type':'application/json', 'x-admin-password': PWD }; }
+
+async function boot() {
+  const meta = await (await fetch('/api/admin/meta')).json();
+  if (meta.needsPassword && !PWD) { document.getElementById('loginCard').style.display='block'; return; }
+  await load();
+}
+async function login() {
+  PWD = document.getElementById('admPwd').value;
+  const r = await fetch('/api/admin/login', { method:'POST', headers: headers(), body:'{}' });
+  if (!r.ok) { document.getElementById('loginErr').textContent = 'Mot de passe invalide.'; return; }
+  sessionStorage.setItem('admPwd', PWD);
+  document.getElementById('loginCard').style.display='none';
+  await load();
+}
+async function load() {
+  const r = await fetch('/api/admin/events', { headers: headers() });
+  if (r.status === 403) { sessionStorage.removeItem('admPwd'); PWD=''; document.getElementById('loginCard').style.display='block'; document.getElementById('app').style.display='none'; return; }
+  document.getElementById('app').style.display='block';
+  const { events } = await r.json();
+  const rows = document.getElementById('rows');
+  if (!events.length) { rows.innerHTML = '<tr><td class="muted">Aucun événement pour l\'instant.</td></tr>'; return; }
+  rows.innerHTML = events.map(e => `
+    <tr>
+      <td><strong>${esc(e.name)}</strong><br><span class="tag">${themeLabel[e.theme]||e.theme}</span> <span class="muted">/e/${e.id}</span></td>
+      <td class="inline" style="justify-content:flex-end">
+        <a class="btn" style="width:auto" href="/e/${e.id}/borne" target="_blank">Borne</a>
+        <a class="btn secondary" style="width:auto" href="/e/${e.id}/admin" target="_blank">Console</a>
+        <button class="btn danger" style="width:auto" onclick="del('${e.id}','${esc(e.name)}')">✕</button>
+      </td>
+    </tr>`).join('');
+}
+async function createEvent() {
+  const body = {
+    name: document.getElementById('nName').value,
+    theme: document.getElementById('nTheme').value,
+    seed: document.getElementById('nSeed').value,
+    adminPassword: document.getElementById('nPwd').value,
+    publicUrl: document.getElementById('nUrl').value,
+  };
+  const r = await fetch('/api/admin/events', { method:'POST', headers: headers(), body: JSON.stringify(body) });
+  const d = await r.json();
+  if (!r.ok) { document.getElementById('createErr').textContent = d.error || 'Erreur.'; return; }
+  document.getElementById('nName').value=''; document.getElementById('nPwd').value=''; document.getElementById('nUrl').value='';
+  document.getElementById('createErr').textContent='';
+  await load();
+  window.open('/e/'+d.event.id+'/admin','_blank');
+}
+async function del(id, name) {
+  if (!confirm('Supprimer définitivement « '+name+' » et toutes ses données ?')) return;
+  await fetch('/api/admin/events/'+id, { method:'DELETE', headers: headers() });
+  await load();
+}
+function esc(s){ return (s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+boot();
+</script>
+</body>
+</html>

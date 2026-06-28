@@ -1,0 +1,34 @@
+/* THÈME : CHIC / ÉLÉGANT — sombre, doré, typographie serif. Soirée habillée. */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=EB+Garamond:ital@0;1&display=swap');
+
+:root {
+  --bg: #0c0c0f;
+  --bg2: #16161c;
+  --neon: #c9a227;   /* or */
+  --neon2: #d8c79a;  /* champagne */
+  --neon3: #e8d9a8;  /* doré clair */
+  --neon4: #3a3a44;  /* gris ardoise */
+  --ink: #f4efe6;
+  --danger: #b54b4b;
+  --ok: #6fae7d;
+  --pixel: 'Cormorant Garamond', serif;
+  --term: 'EB Garamond', serif;
+
+  --radius: 6px;
+  --btn-radius: 4px;
+  --neon-lite: #e3c969;
+  --neon-shade: #7a611a;
+  --neon2-shade: #8a7d56;
+  --neon3-shade: #8a7c44;
+  --btn-ink: #1a1505;
+  --btn-ink2: #1a1505;
+  --input-bg: #111114;
+  --card-glow: rgba(201,162,39,.18);
+  --title-shadow: 0 1px 0 rgba(0,0,0,.6);
+  --scanlines-opacity: 0;
+}
+body { font-size: 24px; background:
+  radial-gradient(1200px 700px at 50% -20%, #1d1a12 0%, transparent 60%), var(--bg); }
+h1, h2, h3, .title { letter-spacing: .5px; font-weight: 700; }
+.btn { font-size: 16px; letter-spacing: 1px; text-transform: uppercase; box-shadow: 0 3px 0 var(--neon-shade); }
+.card { border-width: 1px; }

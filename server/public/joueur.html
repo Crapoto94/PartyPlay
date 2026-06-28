@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>PIXEL PANIC — Joueur</title>
+<link rel="stylesheet" href="/static/arcade.css" />
+<script src="/static/fullscreen.js"></script>
+<script src="/static/pacman-render.js"></script>
+<script src="/static/sound.js"></script>
+<style>
+  .dpad { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; max-width:300px; margin:12px auto 0; }
+  .dpad button { font-size:30px; padding:18px 0; border:3px solid #000; border-radius:12px;
+    background:var(--neon4); color:#fff; box-shadow:0 5px 0 #3a2bd0; }
+  .dpad button:active { transform:translateY(4px); box-shadow:0 1px 0 #3a2bd0; }
+  .dpad .empty { visibility:hidden; }
+  .tbtn { font-size:26px; padding:16px 0; border:3px solid #000; border-radius:12px;
+    background:var(--neon4); color:#fff; box-shadow:0 5px 0 #3a2bd0; touch-action:manipulation; }
+  .tbtn:active { transform:translateY(4px); box-shadow:0 1px 0 #3a2bd0; }
+</style>
+</head>
+<body class="scanlines">
+<!-- Barre flottante Game Master (Vincent) : visible pendant les activités du Monde 4
+     pour stopper l'activité en cours et revenir à la checklist des missions. -->
+<div id="gmbar" style="display:none;position:fixed;left:0;right:0;bottom:0;z-index:50;padding:8px;background:#14001aee;border-top:2px solid var(--neon);text-align:center"></div>
+<div class="wrap" id="app">
+  <div class="card center"><span class="pixel blink">CONNEXION…</span></div>
+</div>
+
+<script>
+const TOKEN = location.pathname.split('/').pop();
+const app = document.getElementById('app');
+let STATE = null;
+
+function api(path, body) {
+  return fetch(path, {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ token: TOKEN, ...body })
+  }).then(r => r.json());
+}
+
+// --- Flux temps réel (SSE) + repli en polling si un proxy bufferise le flux ---
+let lastSse = 0;
+// On ne redessine QUE si l'état a vraiment changé : sinon le polling (~1/s)
+// recréerait l'<input> et effacerait le code en cours de frappe + le focus.
+let _lastJoueurJson = null;
+let _prevEnqCount = -1;
+let _tingCtx = null;
+function _getTingCtx(){
+  if (!_tingCtx) try { _tingCtx = new (window.AudioContext || window.webkitAudioContext)(); } catch(_){}
+  if (_tingCtx && _tingCtx.state === 'suspended') _tingCtx.resume().catch(()=>{});
+  return _tingCtx;
+}
+// Crée + résume l'AudioContext dès le premier geste (obligatoire iOS/Android)
+['click','touchstart'].forEach(ev => document.addEventListener(ev, () => {
+  if (!_tingCtx) try { _tingCtx = new (window.AudioContext || window.webkitAudioContext)(); } catch(_){}
+  if (_tingCtx && _tingCtx.state === 'suspended') _tingCtx.resume().catch(()=>{});
+}, { passive: true }));
+function playTing(){
+  try {
+    const ctx = _getTingCtx(); if (!ctx) return;
+    const osc = ctx.createOscillator(); const gain = ctx.createGain();
+    osc.connect(gain); gain.connect(ctx.destination);
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(1047, ctx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(1568, ctx.currentTime + 0.04);
+    gain.gain.setValueAtTime(0.55, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 1.4);
+    osc.start(ctx.currentTime); osc.stop(ctx.currentTime + 1.4);
+  } catch(_){}
+}
+function checkEnqHint(s){
+  const a = s && s.activity;
+  if (!a || a.type !== 'enquete'){ _prevEnqCount = -1; return; }
+  const eq = a.enquete;
+  if (!eq){ _prevEnqCount = -1; return; }
+  const cur = (eq.hintList||[]).length + (eq.myFragments||[]).length;
+  if (_prevEnqCount >= 0 && cur > _prevEnqCount) playTing();
+  _prevEnqCount = cur;
+}
+function applyState(s){
+  const j = JSON.stringify(s);
+  if (j === _lastJoueurJson) return;
+  _lastJoueurJson = j;
+  checkEnqHint(s);
+  STATE = s; render();
+  detectPianoDemo(s); // surligne mes touches si la borne (re)joue la mélodie
+}
+const es = new EventSource('/events?token=' + encodeURIComponent(TOKEN));
+es.onmessage = (e) => { lastSse = Date.now(); applyState(JSON.parse(e.data)); };
+es.onerror = () => { /* l'EventSource se reconnecte tout seul */ };
+function poll(){ fetch('/api/state?token=' + encodeURIComponent(TOKEN)).then(r=>r.json()).then(applyState).catch(()=>{}); }
+poll(); // rendu immédiat dès le chargement (ne reste pas bloqué sur CONNEXION)
+setInterval(() => { if (Date.now() - lastSse > 1500) poll(); }, 1000);
+
+function h(strings, ...vals) { return strings.map((s,i)=>s+(vals[i]??'')).join(''); }
+function esc(s){ return (s||'').replace(/[&<>]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+
+let pacKey = null;
+let mosKey = null;
+let videoKey = null;
+let tetKey = null;
+let tronKey = null;
+let g2048Key = null;
+let pongKey = null;
+let drawKey = null;
+let _drawStrokes = [];
+let _drawCur = null;
+let _drawSendT = null;
+
+// --- Upload photo (input caché, réutilisé) ---
+let _photoMissionIdx = 0;
+const _photoInput = (() => {
+  const inp = document.createElement('input');
+  inp.type = 'file'; inp.accept = 'image/*'; inp.style.display = 'none';
+  document.body.appendChild(inp);
+  inp.addEventListener('change', async () => {
+    const file = inp.files[0]; if (!file) return;
+    const btn = document.getElementById('photo-btn-' + _photoMissionIdx);
+    if (btn) { btn.disabled = true; btn.textContent = '⏳ Envoi…'; }
+    const fd = new FormData();
+    fd.append('photo', file);
+    fd.append('token', TOKEN);
+    fd.append('missionIdx', String(_photoMissionIdx));
+    try {
+      const r = await fetch('/api/photo/upload', { method: 'POST', body: fd });
+      const d = await r.json();
+      if (d.ok) poll();
+    } catch (_) {}
+    inp.value = '';
+  });
+  return inp;
+})();
+function uploadPhoto(idx) { _photoMissionIdx = idx; _photoInput.click(); }
+function render() {
+  if (!STATE) return;
+  const me = STATE.me;
+  if (!me) { app.innerHTML = `<div class="card center"><h2 class="neon-pink">TOKEN INVALIDE</h2><p>Scanne ton QR code perso.</p></div>`; return; }
+  updateHeroBar(me);
+
+  // --- PAC-MAN : contrôleur plein écran ---
+  if (STATE.phase === 'activity' && STATE.activity && STATE.activity.type === 'pacman' && STATE.pacman) {
+    renderPacmanPlayer(me); return;
+  }
+  pacKey = null;
+  // --- TETRIS : ma grille + manette ---
+  if (STATE.phase === 'activity' && STATE.activity && STATE.activity.type === 'tetris' && STATE.tetris) {
+    renderTetrisPlayer(me); return;
+  }
+  tetKey = null;
+  // --- TRON : manette directionnelle ---
+  if (STATE.phase === 'activity' && STATE.activity && STATE.activity.type === 'tron' && STATE.tron) {
+    renderTronPlayer(me); return;
+  }
+  tronKey = null;
+  // --- 2048 : glissements ---
+  if (STATE.phase === 'activity' && STATE.activity && STATE.activity.type === '2048' && STATE.g2048) {
+    render2048Player(me); return;
+  }
+  g2048Key = null;
+  // --- PONG : raquette (appui maintenu) ---
+  if (STATE.phase === 'activity' && STATE.activity && STATE.activity.type === 'pong' && STATE.pong) {
+    renderPongPlayer(me); return;
+  }
+  pongKey = null;
+  // --- DESSINE-MOI : dessinateur ou devineur ---
+  if (STATE.phase === 'activity' && STATE.activity && STATE.activity.type === 'draw') {
+    renderDrawPlayer(me); return;
+  }
+  drawKey = null;
+  // --- MOSAÏQUE : fragment plein écran ---
+  if (STATE.phase === 'activity' && STATE.activity && STATE.activity.type === 'mosaic') {
+    renderMosaicPlayer(me); return;
+  }
+  mosKey = null;
+  // --- DIFFUSION VIDÉO : vidéo plein écran + bandeau ---
+  if (STATE.phase === 'activity' && STATE.activity && STATE.activity.type === 'videoshow') {
+    if (STATE.activity.borneOnly) {
+      main.innerHTML = `<div class="card center" style="margin-top:40px">
+        <div style="font-size:48px">🎬</div>
+        <div class="pixel neon-yellow" style="font-size:22px;margin-top:12px">${esc(STATE.activity.topLabel||'VIDÉO')}</div>
+        <div class="muted mt">${esc(STATE.activity.chyron||'Regardez la borne !')}</div>
+      </div>`;
+      return;
+    }
+    renderVideoPlayer(me); return;
+  }
+  if (videoKey){ videoKey = null; document.body.classList.add('scanlines'); } // sorti de la vidéo : rétablit l'effet CRT
+
+  const av = me.avatarInfo;
+  const hearts = '❤️'.repeat(me.lives) + '🖤'.repeat(Math.max(0,3-me.lives));
+
+  let html = `
+  <div class="card" style="border-color:${av.color}">
+    <div class="row" style="align-items:center">
+      <div style="flex:0 0 auto;font-size:46px">${av.emoji}</div>
+      <div style="flex:1">
+        <div class="pixel" style="color:${av.color};font-size:14px">${esc(av.name)}</div>
+        <div class="muted">${esc(me.name)}</div>
+      </div>
+    </div>
+    <div class="row mt">
+      <div class="hearts">${hearts}</div>
+      <div class="coins center">🪙 ${me.coins}</div>
+    </div>
+    <div class="muted mt" style="font-size:16px">${esc(av.tagline)}</div>
+  </div>`;
+
+  // --- Activité BORNE en cours : la page devient une manette ---
+  if (STATE.phase === 'activity' && STATE.activity) {
+    html += controllerView(STATE.activity);
+    app.innerHTML = html + footer();
+    return;
+  }
+
+  // --- Vote / résultats photo ---
+  if (STATE.photoPhase === 'vote') {
+    html += photoVoteView(me);
+    app.innerHTML = html + footer();
+    return;
+  }
+  if (STATE.photoPhase === 'results') {
+    html += `<div class="card center glow-box"><div class="pill neon-yellow">🏆 PALMARÈS PHOTO</div><p class="big">Regarde la BORNE ! 📺</p></div>`;
+    html += photoSection(me);
+    app.innerHTML = html + footer();
+    return;
+  }
+
+  // --- Lobby ---
+  if (STATE.phase === 'lobby') {
+    html += `
+    <div class="card center">
+      <h2 class="neon-cyan">SALLE D'ATTENTE</h2>
+      <p>La BORNE chauffe… Prépare-toi, ${esc(me.name)}.</p>
+      <button class="btn ${me.ready?'secondary':''}" onclick="toggleReady()">
+        ${me.ready ? '✔ PRÊT' : 'JE SUIS PRÊT'}
+      </button>
+    </div>`;
+  }
+
+  // --- En jeu : monde courant ---
+  if ((STATE.phase === 'world') && STATE.world) {
+    const w = STATE.world;
+    html += `
+    <div class="card glow-box">
+      <div class="pill neon-yellow">MONDE ${w.num}/${STATE.worldCount}</div>
+      <h2 class="neon-pink">${esc(w.titre)}</h2>
+      <p>${esc(w.enigme)}</p>
+      <p class="muted">📦 Colis ${w.colis} livré par les Pixels.</p>`;
+
+    if (me.indices) {
+      html += `<div class="card" style="background:#1a0b00;border-color:${av.color}">
+        <div class="pill" style="color:${av.color}">TON INDICE SECRET</div>
+        <ul>${(Array.isArray(me.indices)?me.indices:[me.indices]).filter(Boolean).map(i=>`<li>${esc(i)}</li>`).join('')}</ul>
+      </div>`;
+    }
+
+    if (w.enqueteWorld) {
+      // Monde 5 : LA GRANDE ENQUÊTE se joue en activité — rien à saisir ici.
+      html += `<div class="card center" style="border-color:var(--neon2)">
+        <div class="pill neon-cyan">🕵️ LA GRANDE ENQUÊTE</div>
+        <p>L'enquête démarre sur la BORNE 📺 — suivez les actes et tapez les codes !</p>
+      </div>`;
+    } else {
+      if (w.pianoWorld && STATE.piano) {
+        // Monde 3 : piano réparti intégré — chaque téléphone a ses touches.
+        html += pianoController(STATE.piano);
+      } else if (w.konamiGate) {
+        // Monde 6 : TOUS les joueurs saisissent le Konami, puis la commande en LEET.
+        html += w6GateHTML(w, me);
+      } else if (w.heroOnly && !me.isHero) {
+        // Énigme réservée au PLAYER ONE : les autres transmettent leurs touches.
+        html += `<div class="card" style="border-color:var(--neon3);background:#1a1400">
+          <div class="pill neon-yellow">🎮 SÉQUENCE LÉGENDAIRE</div>
+          <p>Donne tes touches à <b>VINCENT (Player One)</b> — lui seul peut valider la séquence sur la borne.</p>
+        </div>`;
+      } else if (w.heroOnly) {
+        // Monde 1 (Konami) : Vincent (PLAYER ONE) entre la séquence sur une MANETTE NES.
+        html += konamiPadHTML();
+      } else {
+        html += `
+        <input id="codeInput" type="text" placeholder="CODE" />
+        <button class="btn secondary mt" onclick="submitCode()">VALIDER LE CODE</button>
+        <div id="codeMsg" class="center mt"></div>`;
+      }
+    }
+    // Vidéo-indice : disponible si le monde en propose une (ex. Monde 1).
+    if (w.hintVideo) {
+      html += `<div class="center mt">
+        <button class="btn" onclick="askHint()">💡 Un indice ?</button>
+        <div id="hintMsg" class="muted mt" style="font-size:12px"></div>
+      </div>`;
+    }
+    html += `</div>`;
+  }
+
+  // --- Carnet secret : mission perso + indice sur un autre joueur ---
+  if (me.mission || me.secretClue) {
+    html += `<div class="card" style="border-color:var(--neon2);background:#021a16">
+      <div class="pill neon-cyan">🤫 TON CARNET SECRET</div>
+      ${me.mission ? `<p><b class="neon-cyan">Ta mission :</b> ${esc(me.mission)}</p>` : ''}
+      ${me.secretClue ? `<p><b class="neon-cyan">Ton indice :</b> ${esc(me.secretClue)}</p>` : ''}
+      <p class="muted">Pour toi seul·e. Sers-t'en au bon moment 😉</p>
+    </div>`;
+  }
+
+  // --- Panneau Game Master (Vincent éveillé) ou hôte (Marc) ---
+  if (me.gameMaster || me.isHost) {
+    html += gmPlayerPanel(me);
+  }
+
+  // --- Gage en cours ---
+  if (STATE.currentGage) html += gageView(STATE.currentGage, me);
+
+  // --- Défis photo (toujours visibles hors activité) ---
+  html += photoSection(me);
+
+  app.innerHTML = html + footer();
+}
+
+function footer() {
+  return `<div class="card log"><div class="muted pixel" style="font-size:9px">JOURNAL</div>
+    ${(STATE.log||[]).map(l=>`<div>${esc(l.msg)}</div>`).join('')}</div>`;
+}
+
+function controllerView(act) {
+  // BRIEFING : on invite à regarder la borne
+  if (act.type === 'briefing') {
+    return `<div class="card center glow-box">
+      <div class="pill neon-cyan">📖 BRIEFING</div>
+      <h2 class="neon-pink">Regarde la BORNE 📺</h2>
+      <p>Le scénario et ton rôle sont en train d'être présentés…</p>
+    </div>`;
+  }
+  // SÉQUENCE MUSICALE : les pads de notes du joueur
+  if (act.type === 'music_seq') {
+    return musicController(act);
+  }
+  if (act.type === 'piano') {
+    return pianoController(act);
+  }
+  // QUIZ / BLIND-TEST / QUIZ VINCENT : QCM (question sur la BORNE, réponse ici)
+  if (act.type === 'quiz' || act.type === 'quiz_vincent' || act.type === 'blindtest') {
+    return quizController(act);
+  }
+  // ENQUÊTE : pièces à conviction perso + saisie de code
+  if (act.type === 'enquete') {
+    return enqueteController(act);
+  }
+  // ROUE DES GAGES : détail du défi puis vote du meilleur
+  if (act.type === 'roue_des_gages') {
+    return roueController(act);
+  }
+  // REACTION RACE : gros buzzer
+  if (act.type === 'reaction_race') {
+    const buzzed = (act.buzzes||[]).find(b=>b.id===STATE.me.id);
+    return `<div class="card center glow-box">
+      <h2 class="neon-cyan">REACTION RACE</h2>
+      <p>Regarde la BORNE puis BUZZE !</p>
+      <button class="btn-buzz" ${buzzed?'disabled':''} onclick="buzz()">${buzzed?'BUZZÉ ✔':'BUZZ'}</button>
+    </div>`;
+  }
+  if (act.type === 'spotlight') {
+    const d = act.data || {};
+    const target = d.targetName || '?';
+    const isTarget = d.targetId && d.targetId === STATE.me.id;
+    // Résultat
+    if (act.sub === 'result') {
+      const win = act.verdict === 'ok';
+      return `<div class="card center glow-box">
+        <h2 class="${win?'neon-cyan':'neon-pink'}">${win?'👏 RÉUSSI !':'💀 RATÉ !'}</h2>
+        <p><b>${esc(target)}</b> — ${esc(d.defi||'')}</p>
+        <p class="muted">👏 ${act.okCount||0} · 💀 ${act.koCount||0}${(!win&&isTarget)?' — tu perds une vie 💔':''}</p>
+      </div>`;
+    }
+    // Phase défi (avant le vote) ou défi en cours
+    if (isTarget) {
+      return `<div class="card center glow-box" style="border-color:var(--neon3)">
+        <h2 class="neon-yellow">🔦 C'EST TON DÉFI !</h2>
+        <p class="big">${esc(d.defi||'Relève le défi !')}</p>
+        <p class="muted">${act.sub==='vote'?'La salle vote… croise les doigts !':'Relève-le devant tout le monde 🎤'}</p>
+      </div>`;
+    }
+    if (act.sub === 'vote') {
+      const my = act.votes && act.votes[STATE.me.id];
+      return `<div class="card center glow-box">
+        <h2 class="neon-yellow">🔦 VERDICT</h2>
+        <p><b>${esc(target)}</b> a tenté : <i>${esc(d.defi||'')}</i></p>
+        <p>A-t-il/elle réussi ?</p>
+        <div class="row">
+          <button class="btn ${my==='ok'?'secondary':''}" onclick="spotlightVote('ok')">RÉUSSI 👏</button>
+          <button class="btn ${my==='ko'?'danger':''}" onclick="spotlightVote('ko')">RATÉ 💀</button>
+        </div>
+        ${my?'<p class="neon-cyan mt">Vote enregistré ✔ (modifiable)</p>':''}
+      </div>`;
+    }
+    return `<div class="card center glow-box">
+      <h2 class="neon-yellow">🔦 SPOTLIGHT</h2>
+      <p><b>${esc(target)}</b> relève un défi…</p>
+      <p class="muted">${esc(d.defi||'')}</p>
+      <p class="muted">Regarde, tu voteras juste après ! 👀</p>
+    </div>`;
+  }
+  if (act.type === 'anecdote') {
+    const an = act.anecdote || {};
+    return `<div class="card center glow-box" style="border-color:var(--neon3)">
+      <div class="pill neon-yellow">📖 ANECDOTE</div>
+      <h2 class="neon-pink">${esc(an.titre||'')}</h2>
+      <p class="big">${esc(an.desc||'')}</p>
+      <p class="muted">Regarde la BORNE 📺 — c'est l'heure des histoires !</p>
+    </div>`;
+  }
+  if (act.type === 'heroquiz') {
+    return heroQuizController(act);
+  }
+  return `<div class="card center"><h2>ACTIVITÉ EN COURS</h2><p>Regarde la BORNE.</p></div>`;
+}
+// Anecdote 3 : seul VINCENT (le héros) saisit les initiales.
+function heroQuizController(act){
+  const me = STATE.me || {};
+  if (act.sub === 'win'){
+    return `<div class="card center glow-box" style="border-color:var(--neon3)">
+      <div class="pill neon-yellow">🎆 BRAVO VINCENT !</div>
+      <p class="big">${me.isHero?'Tu as trouvé ! 🏆':'Vincent a trouvé ! 🏆'}</p>
+      <p class="muted">Regarde la BORNE 📺</p>
+    </div>`;
+  }
+  if (act.sub === 'play'){
+    return `<div class="card center glow-box" style="border-color:var(--neon3)">
+      <div class="pill neon-pink">💡 ANECDOTE</div>
+      <p class="big">Regarde la BORNE 📺</p>
+      <p class="muted">La question arrive dans quelques secondes…</p>
+    </div>`;
+  }
+  if (!me.isHero){
+    return `<div class="card center glow-box" style="border-color:var(--neon3)">
+      <div class="pill neon-pink">💡 ANECDOTE</div>
+      <p class="big">Regarde la BORNE 📺</p>
+      <p>C'est à <b class="neon-yellow">VINCENT</b> de deviner !</p>
+    </div>`;
+  }
+  const wrong = act.lastWrong && (Date.now()-act.lastWrong < 3000)
+    ? '<p class="pixel" style="font-size:11px;color:var(--danger)">✘ Pas tout à fait… réessaie !</p>' : '';
+  return `<div class="card glow-box" style="border-color:var(--neon3)">
+    <div class="pill neon-pink">💡 ANECDOTE — À TOI, VINCENT 👑</div>
+    <p style="font-size:15px"><b class="neon-pink">${esc(act.question||'Qui est-ce ?')}</b></p>
+    <p class="muted" style="font-size:13px">Réponse attendue : ${esc(act.hintLabel||'la réponse')}.</p>
+    <input id="hqInput" type="text" placeholder="INITIALES" style="text-transform:uppercase"
+      onkeydown="if(event.key==='Enter')heroQuizAnswer()" autocomplete="off" />
+    <button class="btn warn mt" onclick="heroQuizAnswer()">🔓 VALIDER</button>
+    <div id="hqMsg" class="center mt">${wrong}</div>
+  </div>`;
+}
+function heroQuizAnswer(){
+  const el = document.getElementById('hqInput'); const v = el ? el.value : '';
+  api('/api/heroquiz/answer', { answer: v }).then(r=>{
+    const m = document.getElementById('hqMsg');
+    if (m) m.innerHTML = r.ok ? '<span class="neon-cyan pixel" style="font-size:11px">✔ BRAVO !</span>'
+                              : `<span class="pixel" style="font-size:10px;color:var(--danger)">${esc(r.reason||'NON')}</span>`;
+  });
+}
+
+function renderVideoPlayer(me) {
+  if (videoKey === STATE.activity.startedAt) return; // une seule fois (sinon la vidéo redémarre)
+  videoKey = STATE.activity.startedAt;
+  document.body.classList.remove('scanlines'); // pas de filtre CRT par-dessus la vidéo
+  const a = STATE.activity;
+  const v = a.video || '7kyY29BHTZs';
+  const src = 'https://www.youtube.com/embed/' + v + '?autoplay=1&playsinline=1&loop=1&playlist=' + v + '&rel=0';
+  app.innerHTML = `
+    <div class="center">
+      <div style="background:#d40000;color:#fff;font-family:var(--pixel);font-size:13px;padding:7px 12px;border-radius:6px;display:inline-block" class="blink">${a.topLabel||'📺 VIDÉO'}</div>
+      <div style="position:relative;margin:8px auto 0;border:3px solid #ff2e88;border-radius:10px;overflow:hidden;background:#000;max-width:${a.landscape?'min(94vw,560px)':'340px'}">
+        <iframe id="videoframe" width="100%" style="aspect-ratio:${a.landscape?'16/9':'9/16'};display:block;border:0"
+          src="${src}" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
+        ${a.chyron?`<div style="position:absolute;left:0;right:0;bottom:0;background:rgba(212,0,0,.92);color:#fff;
+          font-family:var(--pixel);font-size:11px;line-height:1.5;padding:8px;text-align:center">${a.chyron}</div>`:''}
+      </div>
+      <button class="btn warn mt" onclick="videoPlay('${v}')">🔊 Touche ici pour lancer le son</button>
+      ${a.footer?`<p class="muted" style="font-size:13px">${a.footer}</p>`:''}
+    </div>`;
+}
+function videoPlay(v){
+  const f = document.getElementById('videoframe');
+  if (f) f.src = 'https://www.youtube.com/embed/' + v + '?autoplay=1&playsinline=1&loop=1&playlist=' + v + '&rel=0';
+}
+
+function mosaicGuessSend(){
+  const inp=document.getElementById('mosans'); if(!inp) return;
+  const txt=inp.value.trim(); if(!txt) return;
+  api('/api/mosaic/guess', { text: txt }).then(r=>{ const fb=document.getElementById('mosfb');
+    if(fb) fb.innerHTML = (r&&r.correct)?'<span class="neon-cyan">🎉 BONNE RÉPONSE !</span>':`<span class="neon-pink">Raté… ${r&&r.wrong?'('+r.wrong+' erreur(s))':''}</span>`;
+    if(!(r&&r.correct)) inp.value='';
+  });
+}
+function renderMosaicPlayer(me) {
+  const a = STATE.activity;
+  const mine = a.mine;
+  const key = (a.round||1) + '-' + (mine ? mine.slice : 'x') + '-' + (a.reveal?1:0) + '-' + (a.solved?'s':'') + (a.failed?'f':'');
+  if (mosKey === key) return; // statique : on ne redessine pas à chaque SSE
+  mosKey = key;
+  // Résolu / échoué : on affiche le résultat (le mot)
+  if (a.solved || a.failed){
+    app.innerHTML = `<div class="card center glow-box">
+      <h2 class="${a.solved?'neon-cyan':'neon-pink'}">${a.solved?'✅ RÉSOLU !':'⏱ Réponse révélée'}</h2>
+      <div class="big pixel neon-yellow" style="letter-spacing:6px">${esc(a.answer||'')}</div>
+      ${a.solved&&a.solvedBy?`<p class="muted">Trouvé par ${esc(a.solvedBy)}</p>`:''}
+      <p class="muted">Regarde la BORNE 📺</p>
+    </div>`;
+    return;
+  }
+  if (!mine) { app.innerHTML = `<div class="card center"><h2 class="neon-cyan">🧩 MOSAÏQUE</h2><p>En attente…</p></div>`; return; }
+  const rows = mine.rows || 1;
+  const bandH = Math.max(70, Math.min(150, Math.floor((window.innerHeight - 96) / rows)));
+  const bands = (mine.bands || []).map((s, r) => {
+    const ok = r === mine.correctRow;
+    const bg = ok ? `hsl(${mine.hue},85%,32%)` : '#0a0a14';
+    const col = ok ? '#ffe600' : '#3a3a52';
+    const sh = ok ? 'text-shadow:0 0 10px #000' : '';
+    return `<div style="height:${bandH}px;display:flex;align-items:center;justify-content:center;background:${bg};border-bottom:2px solid #000;font-family:var(--pixel);font-size:${Math.floor(bandH*0.42)}px;color:${col};letter-spacing:8px;${sh}">${esc(s)}</div>`;
+  }).join('');
+  const hint = rows > 1
+    ? (a.reveal
+        ? `La ligne <b style="color:#ffe600">colorée</b> est la bonne. Décale ton téléphone (en escalier) pour l'aligner avec celles des voisins.`
+        : `UNE seule des ${rows} lignes est la bonne. Trouvez-la en équipe et placez-vous en quinconce. <span class="muted">(le MJ peut révéler un indice couleur)</span>`)
+    : `Place-toi au bon endroit dans la rangée pour reconstituer le mot.`;
+  app.innerHTML = `
+    <div class="center">
+      <div class="pixel neon-cyan" style="font-size:12px;margin:4px">🧩 ${rows>1?'ALIGNE EN QUINCONCE':'ALIGNE TON ÉCRAN'}</div>
+      <div style="border:2px solid #222;border-radius:8px;overflow:hidden;margin:0 auto;max-width:520px">${bands}</div>
+      <p class="muted" style="font-size:14px;margin-top:8px">${hint}</p>
+      <div class="card" style="border-color:var(--neon3);margin-top:8px">
+        <div class="pill neon-yellow">🔤 VOTRE RÉPONSE</div>
+        <div class="row mt">
+          <input id="mosans" type="text" placeholder="Le mot reconstitué…" style="flex:1" />
+          <button class="btn secondary" onclick="mosaicGuessSend()">Valider</button>
+        </div>
+        <div id="mosfb" class="center mt"></div>
+      </div>
+    </div>`;
+  const gi = document.getElementById('mosans');
+  if (gi) gi.addEventListener('keydown', (e)=>{ if(e.key==='Enter') mosaicGuessSend(); });
+}
+
+function renderPacmanPlayer(me) {
+  const pm = STATE.pacman;
+  if (pacKey !== STATE.activity.startedAt) {
+    pacKey = STATE.activity.startedAt;
+    const cw = Math.min(window.innerWidth - 16, 460);
+    const ch = Math.round(cw * pm.h / pm.w);
+    app.innerHTML = `
+      <div class="center">
+        <div id="pacmsg" class="pixel" style="font-size:13px;margin:6px 0"></div>
+        <canvas id="pcv" width="${pm.w*30}" height="${pm.h*30}"
+          style="width:${cw}px;height:${ch}px;border:3px solid var(--neon4);border-radius:10px;background:#05010f"></canvas>
+        <div class="dpad">
+          <div class="empty"></div><button data-d="up">▲</button><div class="empty"></div>
+          <button data-d="left">◄</button><div class="empty"></div><button data-d="right">►</button>
+          <div class="empty"></div><button data-d="down">▼</button><div class="empty"></div>
+        </div>
+      </div>`;
+    app.querySelectorAll('.dpad button').forEach(b=>{
+      const send = (ev)=>{ ev.preventDefault(); pacDir(b.dataset.d); };
+      b.addEventListener('touchstart', send, {passive:false});
+      b.addEventListener('mousedown', send);
+    });
+  }
+  const cv = document.getElementById('pcv');
+  if (cv) drawPacman(cv, pm, me.id);
+  const msg = document.getElementById('pacmsg');
+  if (msg) {
+    const ent = pm.entities.find(e=>e.id===me.id);
+    const role = !ent ? 'SPECTATEUR'
+      : ent.role==='mr' ? '🟡 TU ES Mr PAC-MAN'
+      : ent.role==='mrs' ? '🌸 TU ES Mrs PAC-MAN'
+      : '👻 TU ES UN FANTÔME';
+    if (pm.status!=='playing') {
+      const win = (pm.ranking||[])[0];
+      const iWin = win && win.id===me.id;
+      msg.innerHTML = `<span class="${iWin?'neon-yellow':'neon-cyan'}">${win?('🏆 '+esc(win.name)+' gagne'+(iWin?' — BRAVO !':' !')):'Partie terminée'}</span>`;
+    } else if (ent && ent.eliminated) {
+      msg.innerHTML = `<span class="neon-pink">☠️ ÉLIMINÉ — tu peux encourager les autres !</span>`;
+    } else {
+      const lives = ent ? ('🟡'.repeat(Math.max(0,ent.lives))||'—') : '';
+      msg.innerHTML = `<span class="neon-cyan">${role}</span> <b>${lives}</b>`;
+    }
+  }
+}
+function pacDir(d){ if(window.SFX) {} api('/api/pacman/dir', { dir: d }); }
+
+// =================== TETRIS (manette joueur) ===================
+const TCOLORS = ['#15092e','#2effd5','#ffe600','#b15cff','#38ff9c','#ff2e88','#3a7bff','#ff9a3c'];
+function tetGrid(cells, cell){
+  let html = `<div style="display:inline-grid;grid-template-columns:repeat(10,${cell}px);grid-template-rows:repeat(20,${cell}px);gap:1px;background:#0a0420;padding:3px;border:3px solid var(--neon4);border-radius:8px">`;
+  for(const row of (cells||[])){ for(const ch of row){ const v=+ch; html += `<div style="background:${TCOLORS[v]||'#15092e'};border-radius:2px"></div>`; } }
+  return html + '</div>';
+}
+function tetMini(next, cell){
+  if(!next || !next.mat) return '<span class="muted">—</span>';
+  const cols = next.mat[0].length;
+  let html = `<div style="display:inline-grid;grid-template-columns:repeat(${cols},${cell}px);gap:1px;padding:3px;background:#0a0420;border-radius:6px">`;
+  for(const row of next.mat){ for(const v of row){ html += `<div style="width:${cell}px;height:${cell}px;background:${v?TCOLORS[next.color]:'transparent'};border-radius:2px"></div>`; } }
+  return html + '</div>';
+}
+function tetrisMove(dir){ if(window.SFX){SFX.unlock();} api('/api/tetris/move', { dir }); }
+function renderTetrisPlayer(me){
+  const t = STATE.tetris;
+  const mine = t.players.find(p=>p.id===me.id);
+  if (tetKey !== STATE.activity.startedAt){
+    tetKey = STATE.activity.startedAt;
+    const cell = Math.max(14, Math.floor((Math.min(window.innerWidth-26,300)-8)/10));
+    app._tcell = cell;
+    app.innerHTML = `
+      <div class="center">
+        <div style="display:flex;align-items:center;justify-content:center;gap:14px;margin:4px 0">
+          <div id="tetinfo" class="pixel" style="font-size:12px"></div>
+          <div style="text-align:center"><div class="muted" style="font-size:11px">SUIVANT</div><div id="tetnext"></div></div>
+        </div>
+        <div id="tetgrid"></div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:340px;margin:10px auto 0">
+          <button class="tbtn" data-d="left">◀</button>
+          <button class="tbtn" data-d="rotate">⟳</button>
+          <button class="tbtn" data-d="right">▶</button>
+          <button class="tbtn" data-d="down">▼</button>
+        </div>
+        <button class="tbtn" data-d="drop" style="width:100%;max-width:340px;margin:8px auto 0">⏬ POSER</button>
+      </div>`;
+    app.querySelectorAll('.tbtn[data-d]').forEach(b=>{
+      const f=(ev)=>{ ev.preventDefault(); tetrisMove(b.dataset.d); };
+      b.addEventListener('touchstart', f, {passive:false});
+      b.addEventListener('mousedown', f);
+    });
+  }
+  const cell = app._tcell || 24;
+  const info = document.getElementById('tetinfo');
+  const grid = document.getElementById('tetgrid');
+  const nextEl = document.getElementById('tetnext');
+  if (info){
+    if (t.status!=='playing'){
+      const w=(t.ranking||[])[0];
+      info.innerHTML = (w&&w.id===me.id) ? '<span class="neon-yellow">🏆 TU GAGNES !</span>'
+        : (w?('🏆 '+esc(w.name)+' gagne — '+w.lines+' lignes'):'Terminé');
+    } else if (mine && mine.eliminated){
+      info.innerHTML = '<span class="neon-pink">☠️ ÉLIMINÉ — regarde la borne !</span>';
+    } else {
+      info.innerHTML = mine ? `<span class="neon-cyan">${mine.lines} lignes · ${mine.score} pts</span><br><span class="muted">Niveau ${t.level||1}</span>` : '';
+    }
+  }
+  if (nextEl) nextEl.innerHTML = (mine && !mine.eliminated && t.status==='playing') ? tetMini(mine.next, Math.max(8,Math.floor(cell*0.6))) : '';
+  if (grid && mine) grid.innerHTML = tetGrid(mine.cells, cell);
+}
+
+// =================== TRON (manette joueur) ===================
+function tronDir(d){ api('/api/tron/move', { dir: d }); }
+function renderTronPlayer(me){
+  const t = STATE.tron;
+  const mine = t.players.find(p=>p.id===me.id);
+  if (tronKey !== STATE.activity.startedAt){
+    tronKey = STATE.activity.startedAt;
+    const cw = Math.min(window.innerWidth-16, 420);
+    const ch = Math.round(cw * t.h / t.w);
+    app.innerHTML = `
+      <div class="center">
+        <div id="troninfo" class="pixel" style="font-size:13px;margin:6px 0"></div>
+        <canvas id="troncv" width="${t.w*8}" height="${t.h*8}"
+          style="width:${cw}px;height:${ch}px;border:3px solid var(--neon4);border-radius:10px;background:#05010f"></canvas>
+        <div class="dpad" style="margin-top:10px">
+          <div class="empty"></div><button data-d="up">▲</button><div class="empty"></div>
+          <button data-d="left">◄</button><div class="empty"></div><button data-d="right">►</button>
+          <div class="empty"></div><button data-d="down">▼</button><div class="empty"></div>
+        </div>
+      </div>`;
+    app.querySelectorAll('.dpad button').forEach(b=>{
+      const f=(ev)=>{ ev.preventDefault(); tronDir(b.dataset.d); };
+      b.addEventListener('touchstart', f, {passive:false});
+      b.addEventListener('mousedown', f);
+    });
+  }
+  // L'ARÈNE s'affiche aussi sur le téléphone, ma moto mise en évidence.
+  const cv = document.getElementById('troncv');
+  if (cv){
+    const ctx = cv.getContext('2d');
+    const cell = Math.floor(Math.min(cv.width/t.w, cv.height/t.h));
+    ctx.fillStyle='#05010f'; ctx.fillRect(0,0,cv.width,cv.height);
+    const colByIdx={}; t.players.forEach(p=>colByIdx[p.idx]=p.color);
+    for(let r=0;r<t.h;r++){ const row=t.grid[r]; for(let c=0;c<t.w;c++){ const v=+row[c]; if(v){ const mineCell = mine && v===mine.idx; ctx.fillStyle=colByIdx[v]||'#888'; ctx.globalAlpha = mineCell?0.9:0.45; ctx.fillRect(c*cell,r*cell,cell-1,cell-1); ctx.globalAlpha=1; } } }
+    // têtes : la mienne avec un contour blanc
+    t.players.forEach(p=>{ if(p.alive){ ctx.fillStyle=p.color; ctx.fillRect(p.c*cell-1,p.r*cell-1,cell+1,cell+1); if(mine&&p.id===mine.id){ ctx.strokeStyle='#fff'; ctx.lineWidth=2; ctx.strokeRect(p.c*cell-2,p.r*cell-2,cell+3,cell+3); } } });
+  }
+  const info = document.getElementById('troninfo');
+  if (info){
+    if (t.status!=='playing'){ const w=(t.ranking||[])[0]; info.innerHTML = (w&&w.id===me.id)?'<span class="neon-yellow">🏆 TU GAGNES !</span>':(w?('🏆 '+esc(w.name)+' gagne'):'Terminé'); }
+    else if (mine && !mine.alive) info.innerHTML = '<span class="neon-pink">💥 CRASH — regarde la borne !</span>';
+    else info.innerHTML = mine ? `<span style="color:${mine.color}">● TA MOTO</span> · ${mine.len} cases — demi-tour interdit` : 'Spectateur';
+  }
+}
+
+// =================== 2048 (manette joueur) ===================
+const T2COL = {0:'#1d1133',2:'#3a2bd0',4:'#5a3bd0',8:'#ff9a3c',16:'#ff7a2c',32:'#ff5b6e',64:'#ff2e88',128:'#2effd5',256:'#38ff9c',512:'#ffe600',1024:'#ffd000',2048:'#ff00aa'};
+function g2048Dir(d){ if(window.SFX){SFX.unlock();} api('/api/2048/move', { dir: d }); }
+function grid2048P(board, cell){
+  let h=`<div style="display:inline-grid;grid-template-columns:repeat(4,${cell}px);gap:5px;background:#0a0420;padding:5px;border:3px solid var(--neon4);border-radius:8px">`;
+  for(const row of board){ for(const v of row){ const col=T2COL[v]||'#ff00aa'; h+=`<div style="width:${cell}px;height:${cell}px;display:flex;align-items:center;justify-content:center;background:${col};border-radius:6px;color:#0a0420;font-weight:900;font-size:${v>=128?Math.floor(cell*0.34):Math.floor(cell*0.42)}px">${v||''}</div>`; } }
+  return h+'</div>';
+}
+function render2048Player(me){
+  const t = STATE.g2048;
+  const mine = t.players.find(p=>p.id===me.id);
+  if (g2048Key !== STATE.activity.startedAt){
+    g2048Key = STATE.activity.startedAt;
+    const cell = Math.max(40, Math.floor((Math.min(window.innerWidth-30,300)-25)/4));
+    app._g2cell = cell;
+    app.innerHTML = `
+      <div class="center">
+        <div id="g2info" class="pixel" style="font-size:13px;margin:6px 0"></div>
+        <div id="g2grid"></div>
+        <div class="dpad" style="margin-top:10px">
+          <div class="empty"></div><button data-d="up">▲</button><div class="empty"></div>
+          <button data-d="left">◄</button><div class="empty"></div><button data-d="right">►</button>
+          <div class="empty"></div><button data-d="down">▼</button><div class="empty"></div>
+        </div>
+      </div>`;
+    app.querySelectorAll('.dpad button').forEach(b=>{
+      const f=(ev)=>{ ev.preventDefault(); g2048Dir(b.dataset.d); };
+      b.addEventListener('touchstart', f, {passive:false});
+      b.addEventListener('mousedown', f);
+    });
+  }
+  const cell = app._g2cell || 50;
+  const info = document.getElementById('g2info');
+  const grid = document.getElementById('g2grid');
+  if (info){
+    if (t.status!=='playing'){ const w=(t.ranking||[])[0]; info.innerHTML = (w&&w.id===me.id)?'<span class="neon-yellow">🏆 TU GAGNES !</span>':(w?('🏆 '+esc(w.name)+' gagne — '+w.score+' pts'):'Terminé'); }
+    else if (mine && mine.eliminated) info.innerHTML = '<span class="neon-pink">☠️ BLOQUÉ — regarde la borne !</span>';
+    else info.innerHTML = mine ? `<span class="neon-cyan">${mine.score} pts · top ${mine.best}</span>` : '';
+  }
+  if (grid && mine) grid.innerHTML = grid2048P(mine.board, cell);
+}
+
+// =================== PONG (manette joueur, appui maintenu) ===================
+let _pongHold = null;
+function pongHold(dir){ pongRelease(); pongMoveOnce(dir); _pongHold = setInterval(()=>pongMoveOnce(dir), 70); }
+function pongRelease(){ if(_pongHold){ clearInterval(_pongHold); _pongHold=null; } }
+function pongMoveOnce(dir){ api('/api/pong/move', { dir }); }
+function pongDrawJ(ctx, S, t, mineSide){
+  const k=S/t.size; ctx.fillStyle='#05010f'; ctx.fillRect(0,0,S,S);
+  ctx.strokeStyle='#1b1060'; ctx.lineWidth=2; ctx.strokeRect(2,2,S-4,S-4);
+  const m=t.margin*k, pad=t.pad*k;
+  t.players.forEach(p=>{ if(!p.alive)return; ctx.fillStyle=p.color; const c=p.pos*k;
+    if(p.side==='top') ctx.fillRect(c-pad/2,m-3,pad,6);
+    if(p.side==='bottom') ctx.fillRect(c-pad/2,S-m-3,pad,6);
+    if(p.side==='left') ctx.fillRect(m-3,c-pad/2,6,pad);
+    if(p.side==='right') ctx.fillRect(S-m-3,c-pad/2,6,pad);
+    if(p.side===mineSide){ ctx.strokeStyle='#fff'; ctx.lineWidth=2;
+      if(p.side==='top') ctx.strokeRect(c-pad/2-1,m-5,pad+2,9);
+      if(p.side==='bottom') ctx.strokeRect(c-pad/2-1,S-m-5,pad+2,9);
+      if(p.side==='left') ctx.strokeRect(m-5,c-pad/2-1,9,pad+2);
+      if(p.side==='right') ctx.strokeRect(S-m-5,c-pad/2-1,9,pad+2);
+    }
+  });
+  ctx.fillStyle='#fff'; ctx.beginPath(); ctx.arc(t.ball.x*k,t.ball.y*k,t.ballr*k,0,7); ctx.fill();
+}
+function renderPongPlayer(me){
+  const t = STATE.pong;
+  const mine = t.players.find(p=>p.id===me.id);
+  if (pongKey !== STATE.activity.startedAt){
+    pongKey = STATE.activity.startedAt;
+    const horiz = mine && (mine.side==='top' || mine.side==='bottom');
+    const cw = Math.min(window.innerWidth-16, 360);
+    const b1 = horiz ? '◄' : '▲', b2 = horiz ? '►' : '▼';
+    app.innerHTML = `
+      <div class="center">
+        <div id="ponginfo" class="pixel" style="font-size:13px;margin:6px 0"></div>
+        <canvas id="pongcvj" width="360" height="360" style="width:${cw}px;height:${cw}px;border:3px solid var(--neon4);border-radius:10px;background:#05010f"></canvas>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:340px;margin:12px auto 0">
+          <button class="tbtn" data-d="minus">${b1}</button>
+          <button class="tbtn" data-d="plus">${b2}</button>
+        </div>
+      </div>`;
+    app.querySelectorAll('.tbtn[data-d]').forEach(b=>{
+      const down=(ev)=>{ ev.preventDefault(); pongHold(b.dataset.d); };
+      b.addEventListener('touchstart', down, {passive:false});
+      b.addEventListener('mousedown', down);
+      ['touchend','touchcancel','mouseup','mouseleave'].forEach(e=>b.addEventListener(e, pongRelease));
+    });
+  }
+  const cv=document.getElementById('pongcvj');
+  if(cv) pongDrawJ(cv.getContext('2d'), 360, t, mine?mine.side:null);
+  const info=document.getElementById('ponginfo');
+  if(info){
+    if (t.status!=='playing'){ const w=(t.ranking||[])[0]; info.innerHTML=(w&&w.id===me.id)?'<span class="neon-yellow">🏆 TU GAGNES !</span>':(w?('🏆 '+esc(w.name)+' gagne'):'Terminé'); }
+    else if (mine && !mine.alive) info.innerHTML='<span class="neon-pink">💀 ÉLIMINÉ — regarde la borne !</span>';
+    else info.innerHTML = mine ? `<span style="color:${mine.color}">● côté ${mine.side}</span> · ${'❤'.repeat(Math.max(0,mine.hp))}` : 'Spectateur';
+  }
+}
+
+// =================== DESSINE-MOI (manette joueur) ===================
+function drawStrokesJ(ctx, W, H, strokes){
+  ctx.fillStyle='#fdf6e3'; ctx.fillRect(0,0,W,H);
+  ctx.lineCap='round'; ctx.lineJoin='round';
+  for(const s of (strokes||[])){ const pts=s.p||[]; if(!pts.length) continue;
+    ctx.strokeStyle=s.c||'#160a2e'; ctx.lineWidth=(s.w||3);
+    ctx.beginPath(); ctx.moveTo(pts[0][0]*W, pts[0][1]*H);
+    for(let i=1;i<pts.length;i++) ctx.lineTo(pts[i][0]*W, pts[i][1]*H);
+    if(pts.length===1) ctx.lineTo(pts[0][0]*W+0.1, pts[0][1]*H+0.1);
+    ctx.stroke();
+  }
+}
+function drawSendNow(){ api('/api/draw/update', { strokes: _drawStrokes }); }
+function drawSendThrottled(){ if(_drawSendT) return; _drawSendT=setTimeout(()=>{ _drawSendT=null; drawSendNow(); }, 120); }
+function drawGuessSend(){
+  const inp=document.getElementById('drawguess'); if(!inp) return;
+  const txt=inp.value.trim(); if(!txt) return; inp.value='';
+  api('/api/draw/guess', { text: txt }).then(r=>{ const fb=document.getElementById('drawfb'); if(fb) fb.innerHTML = (r&&r.correct)?'<span class="neon-cyan">🎉 TROUVÉ !</span>':'<span class="muted">Essaie encore…</span>'; });
+}
+function renderDrawPlayer(me){
+  const a = STATE.activity;
+  if (a.phase==='end'){
+    const lb=a.leaderboard||[]; const w=lb[0];
+    if (drawKey !== 'end'){ drawKey='end';
+      app.innerHTML = `<div class="card center glow-box">
+        <div class="pill neon-yellow">🎨 SESSION TERMINÉE</div>
+        ${w?`<p class="center ${w.id===me.id?'neon-yellow':'neon-cyan'} mt">🏆 ${esc(w.name)} — ${w.pts} pts${w.id===me.id?' (toi !)':''}</p>`:''}
+        <div class="leaderboard mt">${lb.map((p,i)=>`<div>${['🥇','🥈','🥉'][i]||(i+1+'.')} ${esc(p.name)} <span class="coins">${p.pts} pts</span></div>`).join('')}</div>
+        <p class="muted mt">Regarde la BORNE 📺</p>
+      </div>`;
+    }
+    return;
+  }
+  const rkey = a.startedAt + '-' + (a.round||0) + '-' + (a.phase||'');
+  if (drawKey !== rkey){
+    drawKey = rkey;
+    const cw = Math.min(window.innerWidth-16, 360);
+    if (a.iAmDrawer && a.phase==='draw'){
+      _drawStrokes = []; _drawCur = null;
+      app.innerHTML = `
+        <div class="center">
+          <div class="card" style="border-color:var(--neon3);margin-bottom:8px"><div class="pill neon-yellow">✏️ DESSINE : ${esc(a.word||'?')}</div><div class="muted">Catégorie : ${esc(a.category||'')}</div></div>
+          <canvas id="drawcvj" width="340" height="340" style="width:${cw}px;height:${cw}px;border:3px solid var(--neon4);border-radius:10px;background:#fdf6e3;touch-action:none"></canvas>
+          <button class="btn warn mt" style="max-width:${cw}px" onclick="_drawStrokes=[];_drawCur=null;drawSendNow();var c=document.getElementById('drawcvj');if(c)drawStrokesJ(c.getContext('2d'),c.width,c.height,[]);">🧽 Effacer</button>
+        </div>`;
+      const cv=document.getElementById('drawcvj');
+      drawStrokesJ(cv.getContext('2d'), cv.width, cv.height, _drawStrokes);
+      const pt=(e)=>{ const r=cv.getBoundingClientRect(); const t=e.touches&&e.touches[0]?e.touches[0]:e; return [Math.max(0,Math.min(1,(t.clientX-r.left)/r.width)), Math.max(0,Math.min(1,(t.clientY-r.top)/r.height))]; };
+      const redraw=()=>drawStrokesJ(cv.getContext('2d'), cv.width, cv.height, _drawStrokes);
+      const start=(e)=>{ e.preventDefault(); _drawCur={c:'#160a2e',w:3,p:[pt(e)]}; _drawStrokes.push(_drawCur); redraw(); drawSendThrottled(); };
+      const move=(e)=>{ if(!_drawCur) return; e.preventDefault(); _drawCur.p.push(pt(e)); redraw(); drawSendThrottled(); };
+      const end=(e)=>{ if(!_drawCur) return; _drawCur=null; drawSendNow(); };
+      cv.addEventListener('touchstart',start,{passive:false}); cv.addEventListener('touchmove',move,{passive:false}); cv.addEventListener('touchend',end);
+      cv.addEventListener('mousedown',start); cv.addEventListener('mousemove',(e)=>{ if(e.buttons) move(e); }); cv.addEventListener('mouseup',end);
+    } else {
+      // devineur (ou dessinateur pendant la révélation)
+      app.innerHTML = `
+        <div class="center">
+          <div id="drawstatus" class="pixel" style="font-size:13px;margin:6px 0"></div>
+          <canvas id="drawcvj" width="340" height="280" style="width:${cw}px;height:${Math.round(cw*280/340)}px;border:3px solid var(--neon4);border-radius:10px;background:#fdf6e3"></canvas>
+          ${a.phase==='draw' ? `<div class="row mt" style="max-width:${cw}px">
+            <input id="drawguess" type="text" placeholder="Ta réponse…" style="flex:1" />
+            <button class="btn secondary" onclick="drawGuessSend()">Deviner</button>
+          </div><div id="drawfb" class="center mt"></div>`:''}
+        </div>`;
+      const gi=document.getElementById('drawguess');
+      if(gi) gi.addEventListener('keydown',(e)=>{ if(e.key==='Enter') drawGuessSend(); });
+    }
+  }
+  // mise à jour continue
+  const cv=document.getElementById('drawcvj');
+  if(cv){ if(a.iAmDrawer && a.phase==='draw') drawStrokesJ(cv.getContext('2d'),cv.width,cv.height,_drawStrokes); else drawStrokesJ(cv.getContext('2d'),cv.width,cv.height,a.strokes); }
+  const st=document.getElementById('drawstatus');
+  if(st){
+    if(a.phase==='reveal') st.innerHTML = a.winnerName?`<span class="neon-cyan">🎉 ${esc(a.winnerName)} a trouvé : ${esc((a.word||'').toUpperCase())}</span>`:`<span class="neon-pink">Mot : ${esc((a.word||'').toUpperCase())}</span>`;
+    else st.innerHTML = `<span class="neon-pink">✏️ ${esc(a.drawerName)} dessine</span> — ${a.wordLen} lettres (${esc(a.category||'')})`;
+  }
+}
+
+function musicController(act) {
+  const slots = act.slots.map(s=>{
+    if(s.st==='done') return `<span class="mslot" style="background:${s.color};color:#111">${esc(s.label)}</span>`;
+    if(s.st==='hint') return `<span class="mslot" style="border-color:${s.color};color:${s.color}">${esc(s.label)}</span>`;
+    return `<span class="mslot mhidden">?</span>`;
+  }).join('');
+  const pads = (act.pads||[]).map(p=>
+    `<button class="mpad" style="background:${p.color}" onclick="musicPress(${p.index},${p.freq})">${esc(p.label)}</button>`
+  ).join('');
+  const win = act.status==='win';
+  return `<div class="card center glow-box">
+    <div class="pill neon-pink">🎵 SÉQUENCE MUSICALE</div>
+    <div class="mrow mt">${slots}</div>
+    <p class="muted">${act.step}/${act.len}${win?' — <span class="neon-yellow">RÉUSSI !</span>':(act.wrongAt?' — <span class="neon-pink">raté, on reprend</span>':'')}</p>
+    <p>${pads?'Ta/tes note(s) — joue au bon moment :':'<span class="muted">Tu observes la borne…</span>'}</p>
+    <div class="mpadrow">${pads}</div>
+  </div>`;
+}
+function musicPress(index, freq){ if(window.SFX){ SFX.unlock(); SFX.note(freq); } api('/api/music/press', { index }); }
+
+// =================== PIANO RÉPARTI (manette joueur = un demi-octave) ===========
+// Vrai look piano : touches blanches jointives, touches noires en surimpression.
+function pianoController(act){
+  if (act.myPos < 0){
+    return `<div class="card center glow-box"><div class="pill neon-pink">🎹 PIANO GÉANT</div>
+      <p>Regarde la BORNE 📺 — tu rejoindras au prochain morceau.</p></div>`;
+  }
+  const win = act.status==='win';
+  const keys = act.myKeys || [];
+  const nW = Math.max(1, keys.filter(k=>k.white).length);
+  const wPct = 100/nW;            // largeur d'une touche blanche
+  const bPct = wPct*0.62;         // largeur d'une touche noire
+  let whiteH = '', blackH = '', wSeen = 0;
+  keys.forEach(k=>{
+    if (k.white){
+      whiteH += `<button id="pk-${k.off}" onpointerdown="pianoPress(${k.off},${k.freq})"
+        style="flex:1;min-width:0;height:100%;background:#f6f6fa;border:1px solid #1a1a1a;border-radius:0 0 7px 7px;
+        color:#444;font-family:var(--pixel);font-size:9px;display:flex;align-items:flex-end;justify-content:center;
+        padding-bottom:8px;cursor:pointer;touch-action:manipulation">${esc(k.name)}</button>`;
+      wSeen++;
+    } else {
+      let left = wSeen*wPct - bPct/2;            // posée sur la jointure des blanches
+      if (left < 0) left = 0; if (left > 100-bPct) left = 100-bPct;
+      blackH += `<button id="pk-${k.off}" onpointerdown="pianoPress(${k.off},${k.freq})"
+        style="position:absolute;top:0;left:${left}%;width:${bPct}%;height:62%;background:#14121d;border:1px solid #000;
+        border-radius:0 0 5px 5px;color:#cbd5ff;font-family:var(--pixel);font-size:7px;display:flex;align-items:flex-end;
+        justify-content:center;padding-bottom:6px;cursor:pointer;touch-action:manipulation;z-index:2;box-shadow:0 3px 4px #0008">${esc(k.name)}</button>`;
+    }
+  });
+  return `<div class="card center glow-box">
+    <div class="pill neon-pink">🎹 PIANO — TÉLÉPHONE N°${act.myPos+1}</div>
+    <p class="muted" style="font-size:12px;margin:4px 0 10px">Écoute la mélodie sur la BORNE, puis retrouve-la sur ton clavier.</p>
+    <div style="position:relative;height:160px;background:#000;padding:3px;border-radius:0 0 12px 12px">
+      <div style="display:flex;gap:1px;height:100%">${whiteH}</div>
+      ${blackH}
+    </div>
+    <button class="btn mt" onclick="pianoReplay()">🔁 Rejouer la séquence</button>
+    ${win ? '<p class="mt"><span class="neon-yellow pixel" style="font-size:12px">🎉 MÉLODIE RÉUSSIE !</span></p>' : ''}
+  </div>`;
+}
+function pianoPress(off, freq){ if(window.SFX){ SFX.unlock(); SFX.note(freq); } api('/api/piano/press', { off }); }
+function pianoReplay(){ if(window.SFX) SFX.unlock(); api('/api/piano/replay', {}); }
+// Surligne MES touches en rythme pendant que la BORNE joue la mélodie (démo).
+let _jpDemoAt = 0, _jpRaf = 0, _jpWrongAt = 0;
+function detectPianoDemo(s){
+  // Le piano peut venir du Monde 3 (s.piano) OU de l'activité (s.activity).
+  const p = (s && s.piano) || (s && s.activity && s.activity.type==='piano' ? s.activity : null);
+  if (!p || p.myPos < 0) return;
+  if (p.demo && p.demo.at && p.demo.at !== _jpDemoAt){
+    _jpDemoAt = p.demo.at;
+    startKeyDemoHighlight(p.demo.seq);
+  }
+  if (p.wrongAt && p.wrongAt !== _jpWrongAt){
+    _jpWrongAt = p.wrongAt;
+    flashKeysWrong();
+  }
+}
+function startKeyDemoHighlight(seq){
+  cancelAnimationFrame(_jpRaf);
+  // Tempo réel : chaque note dure n.dur secondes (rythme Mario).
+  const starts = []; let t = 0;
+  seq.forEach(n => { starts.push(t); t += (n.dur || 0.42) * 1000; });
+  const total = t, start = performance.now();
+  let last = -1;
+  const clearAll = () => { document.querySelectorAll('[id^="pk-"]').forEach(e=>{ e.style.boxShadow=''; e.style.filter=''; }); };
+  const tick = () => {
+    const el = performance.now() - start;
+    if (el > total){ clearAll(); return; }
+    let idx = 0; while (idx+1 < starts.length && starts[idx+1] <= el) idx++;
+    if (idx !== last){
+      clearAll();
+      const k = document.getElementById('pk-' + (seq[idx] && seq[idx].off)); // n'existe que si la note est sur MON clavier
+      if (k){ k.style.boxShadow='0 0 0 4px #ffe600,0 0 22px #ffe600'; k.style.filter='brightness(1.2)'; }
+      last = idx;
+    }
+    _jpRaf = requestAnimationFrame(tick);
+  };
+  tick();
+}
+// Erreur d'un joueur → flash rouge de mes touches (la séquence repart de zéro).
+function flashKeysWrong(){
+  cancelAnimationFrame(_jpRaf);
+  if (window.SFX && SFX.wrong) SFX.wrong();
+  if (navigator.vibrate) navigator.vibrate(180);
+  const keys = document.querySelectorAll('[id^="pk-"]');
+  keys.forEach(e=>{ e.style.boxShadow='0 0 0 4px #ff2e3e,0 0 22px #ff2e3e'; e.style.filter='brightness(1.1)'; });
+  setTimeout(()=> keys.forEach(e=>{ e.style.boxShadow=''; e.style.filter=''; }), 500);
+}
+
+function roueController(act){
+  const g = act.gage || {};
+  const me = STATE.me;
+  if (act.sub === 'spin'){
+    return `<div class="card center glow-box">
+      <h2 class="neon-pink">🎰 LA ROUE TOURNE…</h2>
+      <p class="big">Regarde la BORNE 📺</p>
+      <p class="muted">Un défi va être tiré au sort pour TOUTE la table.</p>
+    </div>`;
+  }
+  if (act.sub === 'challenge'){
+    return `<div class="card center glow-box" style="border-color:var(--neon3)">
+      <div class="pill neon-yellow">🎰 DÉFI À RELEVER</div>
+      <h2 class="neon-pink">${esc(g.titre||'')}</h2>
+      <p class="big">${esc(g.desc||'')}</p>
+      ${g.alt && g.alt!=='—' ? `<p class="muted">Variante sans alcool : ${esc(g.alt)}</p>`:''}
+      <p class="big neon-cyan blink">À toi de jouer ! Le meilleur gagne une vie ❤️</p>
+    </div>`;
+  }
+  if (act.sub === 'vote'){
+    const my = act.votes && act.votes[me.id];
+    const others = STATE.players.filter(p=>p.connected && p.id!==me.id);
+    return `<div class="card glow-box">
+      <div class="pill neon-yellow">🗳️ LE MEILLEUR SUR « ${esc(g.titre||'')} »</div>
+      <p class="muted">Vote pour celui/celle qui a le mieux relevé le défi (pas toi-même).</p>
+      <div class="grid-players mt">
+        ${others.map(p=>`<button class="btn ${my===p.id?'secondary':'warn'}" onclick="roueVote('${p.id}')">${esc(p.name)}${my===p.id?' ✔':''}</button>`).join('')}
+      </div>
+      ${my?'<p class="neon-cyan center mt">Vote enregistré (modifiable) ✔</p>':''}
+    </div>`;
+  }
+  // result
+  const winners=(act.winnerIds||[]);
+  const iWon = winners.includes(me.id);
+  return `<div class="card center glow-box">
+    <h2 class="${iWon?'neon-cyan':'neon-pink'}">${iWon?'🏆 TU GAGNES UNE VIE ❤️':'💔 −1 vie'}</h2>
+    <p class="big">${winners.length?esc(winners.map(id=>(STATE.players.find(p=>p.id===id)||{}).name).filter(Boolean).join(' & ')):'—'} : meilleur(s) sur « ${esc(g.titre||'')} »</p>
+    <p class="muted">Regarde la BORNE 📺</p>
+  </div>`;
+}
+function roueVote(t){ api('/api/roue/vote', { targetId: t }); }
+
+function enqueteController(act) {
+  if (act.done) {
+    const f = act.finale || {};
+    return `<div class="card center glow-box" style="border-color:var(--neon3)">
+      <div class="pill neon-yellow">🔓 AFFAIRE RÉSOLUE</div>
+      <h2 class="neon-pink">${esc(f.culprit||'')}</h2>
+      <p>${esc(f.mobile||'')}</p>
+      <p class="muted">Regarde la BORNE 📺</p>
+    </div>`;
+  }
+  // Briefing d'ouverture en slides : chaque téléphone affiche juste le titre.
+  if (act.sub === 'briefing') {
+    const lines = (act.phoneBrief || '🔪 MEURTRE À SAINT-MAUR\nRegardez la borne 📺').split('\n');
+    return `<div class="card center glow-box" style="border-color:var(--danger);background:#14000a;min-height:60vh;display:flex;flex-direction:column;justify-content:center">
+      <div style="font-size:54px;line-height:1.1">🔪</div>
+      <h2 class="neon-pink pixel" style="font-size:18px;margin:14px 0 6px;letter-spacing:1px">${esc(lines[0]||'')}</h2>
+      <p class="big neon-cyan blink" style="margin-top:6px">${esc(lines.slice(1).join(' ')||'Regarde la borne 📺')}</p>
+      <p class="muted" style="font-size:12px;margin-top:14px">Le dossier s'ouvre… l'enquête va commencer.</p>
+    </div>`;
+  }
+  const a = act.act || {};
+  if (_enqActSeen !== a.num) { _enqActSeen = a.num; _enqDraft = ''; _enqOpenDocs = {}; } // nouvel acte → reset brouillon + docs
+  const frags = (act.myFragments||[]).map(f=>`
+    <div style="border:2px solid var(--neon3);border-radius:10px;padding:10px;margin:8px 0;background:#1a1400">
+      <div class="pill neon-yellow" style="font-size:11px">${esc(f.label||'PIÈCE')}</div>
+      <div style="font-size:15px;margin-top:4px">${esc(f.text||'')}</div>
+    </div>`).join('');
+  // Indices classiques révélés par le MJ (pour les actes sans fragmentsHidden).
+  const hints = (act.hintList||[]).map((h,i)=>`
+    <div style="border:2px solid var(--neon);border-radius:10px;padding:10px;margin:8px 0;background:#14000e">
+      <div class="pill neon-pink" style="font-size:11px">💡 INDICE MJ ${i+1}</div>
+      <div style="font-size:14px;margin-top:6px">${esc(h)}</div>
+    </div>`).join('');
+  // Liens vers les articles sources de l'acte (si disponibles).
+  const srcLinks = (a.sources||[]).filter(s=>s.url).map(s=>`
+    <a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer"
+       style="display:block;border:2px solid var(--neon2);border-radius:8px;padding:10px 12px;margin:6px 0;background:#021018;color:var(--neon2);text-decoration:none;font-size:13px">
+      🔗 ${esc(s.source)}</a>`).join('');
+  // Documents à VISUALISER : chacun s'ouvre/se ferme en cliquant (état conservé).
+  const docs = (act.myDocs||[]).map(d=>`
+    <div style="border:2px solid var(--neon3);border-radius:10px;margin:8px 0;background:#05030f;overflow:hidden">
+      <button id="enqdocbtn-${d.id}" class="btn" style="width:100%;text-align:left;font-size:13px;border-radius:0" onclick="toggleEnqDoc('${d.id}')">${_enqOpenDocs[d.id]?'▼':'▶'} 📄 ${esc(d.label||'DOCUMENT')}</button>
+      <div id="enqdoc-${d.id}" style="display:${_enqOpenDocs[d.id]?'block':'none'};padding:10px">
+        <div class="pill neon-yellow" style="font-size:11px">${esc(d.title||'')}</div>
+        <pre style="white-space:pre-wrap;font-family:var(--term);font-size:13px;line-height:1.45;margin:8px 0 0;color:#dfe7ff">${esc(d.body||'')}</pre>
+      </div>
+    </div>`).join('');
+  const wrong = act.lastWrong && (Date.now()-act.lastWrong < 3000)
+    ? '<p class="pixel" style="font-size:11px;color:var(--danger)">✘ Code refusé — recoupez encore !</p>' : '';
+  return `<div class="card glow-box">
+    <div class="pill neon-pink">🕵️ ENQUÊTE — ACTE ${a.num}/${act.total}</div>
+    <h2 class="neon-cyan">${esc(a.title||'')}</h2>
+    <p class="muted" style="font-size:13px">📍 ${esc(a.place||'')}</p>
+    <p style="font-size:15px"><b class="neon-pink">Énigme :</b> ${esc(a.riddle||'')}</p>
+    ${srcLinks ? `<div style="margin-top:8px"><div class="pill neon-cyan" style="font-size:11px">🔗 ARTICLES SOURCES</div>${srcLinks}</div>` : ''}
+    ${docs ? `<div class="pill neon-cyan mt">🗂️ TES DOCUMENTS — ouvre-les et lis-les à voix haute</div>${docs}
+      <p class="muted" style="font-size:12px">Aucun joueur n'a tout : c'est en recoupant VOS documents que le code apparaît.</p>` : ''}
+    ${frags ? `<div class="pill neon-cyan mt">🔍 TES INDICES</div>${frags}
+      ${(act.myFragmentsPending>0)
+        ? `<p class="muted" style="font-size:12px">🔒 Il te reste <b>${act.myFragmentsPending}</b> indice(s) à venir — le MJ les dévoile un par un. Lis ceux-ci à voix haute !</p>`
+        : `<p class="muted" style="font-size:12px">Partage tes indices à voix haute : c'est en recoupant ceux de toute la table que le code apparaît.</p>`}`
+      : (act.fragmentsHidden && act.myFragmentsPending>0
+          ? `<div class="card center" style="border-color:var(--neon4);background:#100a02;margin-top:8px">
+              <div class="pill" style="color:var(--neon4)">🔒 TU DÉTIENS ${act.myFragmentsPending} INDICE(S)</div>
+              <p style="font-size:13px">Le MJ les dévoilera un par un. Reste attentif·ve à la borne et à la table !</p>
+            </div>`
+          : (docs ? '' : `<p class="muted mt">Tu n'as pas d'indice sur cet acte — écoute les autres et aide à trouver le code. 👂</p>`))}
+    ${hints ? `<div class="pill neon-pink mt" style="font-size:11px">💡 INDICES DU MJ</div>${hints}` : ''}
+    ${(!act.fragmentsHidden && (act.hintsLeft||0) > 0) ? (() => {
+      const rem = Math.max(0, (act.hintUnlockAt||0) - Date.now());
+      if (rem > 0) {
+        const m = Math.floor(rem/60000), s = Math.ceil((rem%60000)/1000);
+        return `<div style="margin-top:10px;padding:10px;border:1px dashed #555;border-radius:8px;text-align:center;color:#888;font-size:13px">
+          ⏳ Indice disponible dans ${m}:${String(s).padStart(2,'0')}</div>`;
+      }
+      return `<button class="btn mt" style="width:100%;background:#1a0029;border-color:var(--neon);color:var(--neon)" onclick="requestEnqHint()">💡 Demander un indice (${act.hintsLeft} restant${act.hintsLeft>1?'s':''})</button>`;
+    })() : ''}
+    <input id="enqCode" type="text" placeholder="CODE DE L'ACTE" style="text-transform:uppercase"
+      value="${esc(_enqDraft)}" oninput="_enqDraft=this.value" onkeydown="if(event.key==='Enter')enqueteCode()" autocomplete="off" />
+    <button class="btn warn mt" onclick="enqueteCode()">🔓 VALIDER LE CODE</button>
+    <div id="enqMsg" class="center mt">${wrong}</div>
+    ${(STATE.me && (STATE.me.gameMaster || STATE.me.isHost)) ? `
+      <div style="border-top:1px solid #ffffff22;margin-top:12px;padding-top:10px">
+        <div class="pill neon-yellow" style="font-size:11px">👑 MJ — INDICES</div>
+        <button id="enqHintBtn" class="btn mt" style="width:100%" onclick="heroEnqueteHint()">💡 Donner un indice</button>
+        <div id="enqHintMsg" class="muted center" style="font-size:12px;margin-top:4px"></div>
+      </div>` : ''}
+  </div>`;
+}
+// Vincent (ou l'hôte) demande un indice d'enquête. Verrou de 3 min géré côté serveur.
+function heroEnqueteHint(){
+  api('/api/gm/hero', { action:'enqueteHint' }).then(r=>{
+    const m = document.getElementById('enqHintMsg');
+    if (m && r && r.reason === 'locked') m.innerHTML = `<span style="color:var(--danger)">⏳ Indices dispo dans ${Math.ceil((r.remaining||0)/1000)}s</span>`;
+    poll();
+  });
+}
+// Minuterie : met à jour le bouton « Donner un indice » (compte à rebours 3 min).
+function updateEnqHintBtn(){
+  const btn = document.getElementById('enqHintBtn');
+  if (!btn || !STATE || !STATE.activity || STATE.activity.type!=='enquete') return;
+  const a = STATE.activity;
+  const remaining = Math.max(0, (a.hintUnlockAt||0) - Date.now());
+  const left = a.hintsLeft || 0;
+  if (left <= 0){ btn.disabled = true; btn.textContent = '✔ Tous les indices donnés'; return; }
+  if (remaining > 0){
+    btn.disabled = true;
+    const s = Math.ceil(remaining/1000);
+    const mm = Math.floor(s/60), ss = String(s%60).padStart(2,'0');
+    btn.textContent = `⏳ Indice dispo dans ${mm}:${ss}`;
+  } else {
+    btn.disabled = false;
+    btn.textContent = '💡 Donner un indice';
+  }
+}
+setInterval(updateEnqHintBtn, 1000);
+// brouillon de code conservé entre les rendus ; réinitialisé à chaque acte
+let _enqDraft = '';
+let _enqActSeen = null;
+// Documents ouverts/fermés (conservé entre les rendus pour ne pas se replier tout seul).
+let _enqOpenDocs = {};
+function toggleEnqDoc(id){
+  _enqOpenDocs[id] = !_enqOpenDocs[id];
+  const el = document.getElementById('enqdoc-'+id);
+  const btn = document.getElementById('enqdocbtn-'+id);
+  if (el) el.style.display = _enqOpenDocs[id] ? 'block' : 'none';
+  if (btn) btn.innerHTML = btn.innerHTML.replace(/^[▶▼]/, _enqOpenDocs[id] ? '▼' : '▶');
+}
+function requestEnqHint(){
+  api('/api/enquete/hint').then(r=>{
+    if (r && !r.ok && r.remaining) {
+      const s = Math.ceil(r.remaining/1000), m = Math.floor(s/60);
+      alert(`⏳ Indice disponible dans ${m}:${String(s%60).padStart(2,'0')}`);
+    }
+  });
+}
+function enqueteCode(){
+  const el = document.getElementById('enqCode');
+  const v = el ? el.value : '';
+  _enqDraft = v;
+  api('/api/enquete/code', { code: v }).then(r=>{
+    const m = document.getElementById('enqMsg');
+    if (r.ok) { _enqDraft = ''; }
+    if (m) m.innerHTML = r.ok
+      ? '<span class="neon-cyan pixel" style="font-size:11px">✔ ACTE DÉBLOQUÉ !</span>'
+      : `<span class="pixel" style="font-size:10px;color:var(--danger)">${esc(r.reason||'NON')}</span>`;
+    poll();
+  });
+}
+
+function quizController(act) {
+  const letters = ['A','B','C','D','E'];
+  const title = act.type==='blindtest' ? '🎵 BLIND-TEST' : act.type==='quiz_vincent' ? '🎭 QUIZ VINCENT' : '❓ QUIZ';
+  // Fin de manche blind-test : classement + perdant
+  if (act.sub === 'final') {
+    const board = act.finalBoard || [];
+    const losers = act.loserNames || [];
+    const winners = act.winnerNames || [];
+    const iLost = losers.length && board.some(b=>b.id===STATE.me.id && losers.includes(b.name));
+    return `<div class="card glow-box">
+      <div class="pill neon-yellow">🏁 BLIND-TEST TERMINÉ</div>
+      ${winners.length ? `<p class="center neon-cyan mt">🏆 Vainqueur : ${winners.map(esc).join(' & ')}</p>` : ''}
+      <div class="leaderboard mt">
+        ${board.map((p,i)=>`<div>${['🥇','🥈','🥉'][i]||(i+1+'.')} ${esc(p.name)} <span class="coins">${p.pts} pts</span></div>`).join('')}
+      </div>
+      ${losers.length
+        ? `<p class="center mt ${iLost?'neon-pink':''}">💔 ${losers.map(esc).join(', ')} perd une vie${iLost?' (toi !)':''}</p>`
+        : `<p class="center muted mt">Égalité — personne ne perd de vie.</p>`}
+    </div>`;
+  }
+  const reveal = act.sub === 'reveal';
+  const my = act.myAnswer;
+  const choices = (act.choices||[]).map((c,i)=>{
+    let cls = 'btn';
+    if (reveal) {
+      if (i === act.answer) cls = 'btn secondary';        // bonne réponse
+      else if (i === my) cls = 'btn danger';              // mon erreur
+      else cls = 'btn';
+    } else if (i === my) {
+      cls = 'btn warn';                                   // mon choix verrouillé
+    }
+    const dis = (reveal || my!==null) ? 'disabled' : '';
+    return `<button class="${cls}" ${dis} onclick="answer(${i})">${letters[i]}. ${esc(c)}</button>`;
+  }).join('');
+
+  let status = '';
+  if (reveal) {
+    const good = my !== null && my === act.answer;
+    status = my===null ? '<p class="muted">Pas de réponse… 😬</p>'
+      : good ? '<p class="neon-cyan pixel" style="font-size:12px">✔ BONNE RÉPONSE !</p>'
+             : '<p class="pixel" style="font-size:11px;color:var(--danger)">✘ Raté !</p>';
+  } else if (my !== null) {
+    status = '<p class="neon-cyan">Réponse enregistrée. Regarde la BORNE…</p>';
+  } else {
+    status = '<p>Question ' + (act.qIndex+1) + '/' + act.total + ' — réponds vite !</p>';
+  }
+
+  const joueurPhoto = act.photo ? (`<img src="${esc(act.photo)}" style="width:140px;height:140px;object-fit:cover;border-radius:10px;border:2px solid #fff3;margin:8px auto;display:block">`) : ``;
+  const btHint = (act.type === "blindtest" && !reveal) ? `<p class="muted">🔊 Écoute l’extrait joué sur la BORNE.</p>` : ``;
+  return `<div class="card glow-box">
+    <div class="pill neon-cyan">${title} — Q${act.qIndex+1}/${act.total}</div>
+    ${joueurPhoto}
+    <h2 class="neon-pink">${esc(act.prompt)}</h2>
+    ${btHint}
+    <div>${choices}</div>
+    <div class="center mt">${status}</div>
+  </div>`;
+}
+
+function gageView(g, me) {
+  const forMe = g.targetId === me.id;
+  return `<div class="card center" style="border-color:var(--neon3)">
+    <div class="pill neon-yellow">🎲 GAGE</div>
+    <h2 class="neon-yellow">${esc(g.titre)}</h2>
+    <p>${esc(g.desc)}</p>
+    ${g.alt && g.alt!=='—' ? `<p class="muted">Alternative : ${esc(g.alt)}</p>`:''}
+    ${g.targetName ? `<p>Pour : <b>${esc(g.targetName)}</b>${forMe?' (toi !)':''}</p>`:'<p class="muted">Pour la table</p>'}
+  </div>`;
+}
+
+function gmPlayerPanel(me) {
+  const title = me.gameMaster ? '👑 POUVOIRS DU GAME MASTER' : '🎛️ CONTRÔLE HÔTE';
+  const targets = STATE.players.map(p=>`<option value="${p.id}">${esc(p.name)}</option>`).join('');
+  // Monde 4 : panneau avec checklist. Mondes 5-6 (et au-delà) : Vincent garde
+  // ses pouvoirs via le panneau « libre » (mêmes activités, sans checklist).
+  const heroPanel = me.heroQuest ? heroQuestPanel(me) : (me.gameMaster ? heroFreePanel(me) : '');
+  return `${heroPanel}
+  <div class="card" style="border-color:var(--neon3);background:#1a1400">
+    <div class="pill neon-yellow">${title}</div>
+    <p class="muted">Distribue un gage à qui tu veux. Longue vie au roi.</p>
+    <select id="gmTarget" style="width:100%;padding:10px;font-family:var(--term);font-size:20px">${targets}</select>
+    <button class="btn warn mt" onclick="gmGage()">🎲 LANCER UN GAGE</button>
+  </div>`;
+}
+
+// Monde 4 : VRAI panneau de contrôle du Game Master. Vincent CHOISIT chaque
+// activité (quel blind-test, quel quiz, quelle vidéo…) comme la console GM.
+// Vidéos de fête (mêmes IDs que la console hôte).
+const HERO_FETE = { 1:'HpCZqG7lxD8', 2:'NoxgPqw4rSY', 3:'dhCDATSf3Ss' };
+function heroFete(n){ heroLaunch('videoshow', { video: HERO_FETE[n],
+  topLabel:'🎉 FÊTE '+n, chyron:'FÊTE '+n+' 🎊<br>À LA SANTÉ DE VINCENT !', footer:'🥂 TCHIN TCHIN !' }); }
+function heroDuck(){ heroLaunch('videoshow', { video:'7kyY29BHTZs',
+  topLabel:'🔴 BREAKING NEWS', chyron:'CONCOURS DE DANSE 🦆<br>DANSEZ TOUS !', footer:'TOUT LE MONDE DANSE ! 🪿' }); }
+// HELL : vidéos jouées DIRECTEMENT (sans intro « breaking news »), borne + téléphones.
+const HERO_HELL = ['tofASIZJeIc','zCKDQNJH7d0','4k7Z9mj4zu4','rX6cEb--QAU','aY0Or8STsPc','PdPydkpaSBE','L8ga6tvWDmc','Cltpjo6vmAk',
+  'CIx0tZ8TwLI','4CN5pMucY4c','vbvkZZZCw3s','_a1NXpp5-h8','T3VtAOflJVA','a-TlvrP22A4','QBZtnFhYyNs','YKAcRwHWlQw','36s1DWf4DOA','KyFAe9Yr_oI','s9OBfkos7Is','2rhP6Mphitc','-Q4eZPv5PjY'];
+function heroHell(n){ heroLaunch('videoshow', { video: HERO_HELL[n-1], skipIntro:true,
+  topLabel:'🔥 HELL '+n, chyron:'🔥 HELL '+n, footer:'🔥🔥🔥' }); }
+
+// Les groupes de boutons du panneau de contrôle. `q` = quête (Monde 4) avec
+// l'état d'avancement ✅, ou null en mode « pouvoirs libres » (Mondes 5-6).
+function heroSections(q) {
+  const free = !q;
+  const g = (q && q.games) || {};
+  // En-tête de section : pastille ✅/⬜ (mode quête) ou 🎛️ (mode libre) + titre.
+  const head = (done, label) => `
+    <div style="display:flex;align-items:center;gap:8px;margin:10px 0 4px">
+      <span style="font-size:18px">${free ? '🎛️' : (done ? '✅' : '⬜')}</span>
+      <div style="flex:1;font-size:14px;color:${(!free&&done)?'var(--ok)':'#fff'}">${label}</div>
+    </div>`;
+  // Mini-bouton de choix (mis en avant tant que la mission n'est pas faite).
+  const pick = (label, call, on) => `<button class="btn ${(!free&&on)?'':'warn'}" style="flex:1 1 auto;min-width:96px;font-size:11px;padding:8px 6px" onclick="${call}">${label}</button>`;
+  const gamesDone = !!(g.tetris && g.pacman && g.draw && g.pong);
+  const dot = (k) => free ? '' : (g[k] ? '✅ ' : '');
+  return `
+    ${head(q&&q.video, '🎉 Vidéo de fête')}
+    <div class="row" style="gap:6px;flex-wrap:wrap">
+      ${pick('🎉 Fête 1','heroFete(1)',q&&q.video)}
+      ${pick('🎉 Fête 2','heroFete(2)',q&&q.video)}
+      ${pick('🎉 Fête 3','heroFete(3)',q&&q.video)}
+      ${pick('🦆 Canards','heroDuck()',q&&q.video)}
+    </div>
+
+    ${head(q&&q.blindtest, '🎵 Blind-test')}
+    <div class="row" style="gap:6px;flex-wrap:wrap">
+      ${pick('🎸 Rock',"heroLaunch('blindtest',{theme:'rock'})",q&&q.blindtest)}
+      ${pick('🎤 Chansons FR',"heroLaunch('blindtest',{theme:'francais'})",q&&q.blindtest)}
+      ${pick('📺 Dessins animés',"heroLaunch('blindtest',{theme:'dessins'})",q&&q.blindtest)}
+    </div>
+
+    ${head(q&&q.quiz, '❓ Quiz')}
+    <div class="row" style="gap:6px;flex-wrap:wrap">
+      ${pick('🎮 Jeu vidéo',"heroLaunch('quiz',{deck:'videogame'})",q&&q.quiz)}
+      ${pick('📼 80s',"heroLaunch('quiz',{deck:'eighties'})",q&&q.quiz)}
+      ${pick('💿 90s',"heroLaunch('quiz',{deck:'nineties'})",q&&q.quiz)}
+      ${pick('🍙 Animés',"heroLaunch('quiz',{deck:'anime'})",q&&q.quiz)}
+      ${pick('🏛️ Culture T',"heroLaunch('quiz',{deck:'cultureT'})",q&&q.quiz)}
+      ${pick('🏘️ Saint-Maur',"heroLaunch('quiz',{deck:'saintmaur'})",q&&q.quiz)}
+    </div>
+
+    ${head(q&&q.roue, '🎰 Roue des gages')}
+    <div class="row" style="gap:6px;flex-wrap:wrap">
+      ${pick('🎰 Lancer la roue',"heroLaunch('roue_des_gages')",q&&q.roue)}
+    </div>
+
+    ${head(q&&q.anecdote, '📖 Anecdote')}
+    <div class="row" style="gap:6px;flex-wrap:wrap">
+      ${pick('📖 Anecdote au hasard',"heroLaunch('anecdote')",q&&q.anecdote)}
+    </div>
+
+    <div style="display:flex;align-items:center;gap:8px;margin:10px 0 4px">
+      <span style="font-size:18px">🔥</span>
+      <div style="flex:1;font-size:14px;color:#ff6a00">HELL — lecture directe (borne + téléphones)</div>
+    </div>
+    <div class="row" style="gap:6px;flex-wrap:wrap">
+      ${HERO_HELL.map((_,i)=>`<button class="btn" style="flex:1 1 auto;min-width:70px;font-size:11px;padding:8px 6px;background:#7f0000;border-color:#ff3d00;color:#ffcc00" onclick="heroHell(${i+1})">🔥 HELL${i+1}</button>`).join('')}
+    </div>
+
+    ${head(gamesDone, '🎮 Jeux (Tetris · Pac-Man · Dessine · Pong)')}
+    <div class="row" style="gap:6px;flex-wrap:wrap">
+      ${pick(dot('tetris')+'Tetris',"heroLaunch('tetris')",g.tetris)}
+      ${pick(dot('pacman')+'Pac-Man',"heroLaunch('pacman')",g.pacman)}
+      ${pick(dot('draw')+'Dessine',"heroLaunch('draw')",g.draw)}
+      ${pick(dot('pong')+'Pong',"heroLaunch('pong')",g.pong)}
+    </div>`;
+}
+
+// Monde 4 : panneau de contrôle AVEC checklist de missions + validation.
+function heroQuestPanel(me) {
+  return `<div class="card" style="border-color:var(--neon);background:#14001a">
+    <div class="pill neon-pink">👑 PANNEAU DU GAME MASTER</div>
+    <p class="muted" style="font-size:13px">À toi d'animer ! Choisis et lance chaque activité. Le Monde 5 s'ouvre quand tout est ✅.</p>
+    ${heroSections(me.heroQuest)}
+    <div class="mt" style="border-top:1px solid #ffffff22;padding-top:10px">
+      ${me.heroQuestComplete
+        ? `<button class="btn" style="width:100%;background:var(--ok);color:#001;font-size:14px" onclick="heroValidate()">✅ VALIDER LE MONDE → MONDE 5</button>`
+        : `<div class="muted center" style="font-size:12px">🔒 Termine toutes les missions pour valider le monde.</div>`}
+    </div>
+    <div id="heroMsg" class="center mt" style="font-size:12px"></div>
+  </div>`;
+}
+
+// Mondes 5-6 : Vincent GARDE ses pouvoirs — mêmes choix, sans checklist.
+function heroFreePanel(me) {
+  return `<div class="card" style="border-color:var(--neon);background:#14001a">
+    <div class="pill neon-pink">👑 POUVOIRS DU GAME MASTER</div>
+    <p class="muted" style="font-size:13px">Tu gardes le contrôle ! Lance une activité quand tu veux.</p>
+    ${heroSections(null)}
+    <div id="heroMsg" class="center mt" style="font-size:12px"></div>
+  </div>`;
+}
+function heroLaunch(type, opts){
+  api('/api/gm/hero', { action:'launch', payload:{ type, opts: opts||{} } }).then(r=>{
+    const m = document.getElementById('heroMsg');
+    if (m && r && r.error) m.innerHTML = `<span style="color:var(--danger)">${esc(r.error)}</span>`;
+    poll();
+  });
+}
+function heroValidate(){
+  api('/api/gm/hero', { action:'validate' }).then(r=>{
+    const m = document.getElementById('heroMsg');
+    if (m) m.innerHTML = (r && r.ok)
+      ? '<span class="neon-cyan">✔ Monde validé !</span>'
+      : `<span style="color:var(--danger)">${esc((r && r.reason) || 'Impossible')}</span>`;
+    poll();
+  });
+}
+function heroStop(){ api('/api/gm/hero', { action:'stop' }).then(poll); }
+// Barre flottante : pendant une activité du Monde 4, Vincent peut la stopper
+// pour revenir à sa checklist de missions et lancer la suivante.
+function updateHeroBar(me){
+  const bar = document.getElementById('gmbar');
+  if (!bar) return;
+  // Vincent (Game Master éveillé) peut stopper une activité qu'il a lancée,
+  // au Monde 4 comme aux Mondes 5-6.
+  const show = me.gameMaster && STATE.phase === 'activity';
+  if (!show){ bar.style.display = 'none'; return; }
+  bar.style.display = 'block';
+  bar.innerHTML = `<span class="pixel neon-yellow" style="font-size:11px;margin-right:10px">👑 GAME MASTER</span>
+    <button class="btn warn" style="font-size:12px;padding:8px 14px" onclick="heroStop()">⏹ STOP — revenir aux missions</button>`;
+}
+
+// --- Défis photo ---
+function photoSection(me) {
+  const missions = me.photoMissions || [];
+  const done = me.myPhotos || [];
+  const items = missions.map((m, i) => {
+    const up = done.find(p => p.missionIdx === i);
+    return `<div style="border:2px solid ${up ? 'var(--ok)' : '#ffffff22'};border-radius:10px;padding:10px;margin:8px 0;background:#021018">
+      ${up ? `<img src="${esc(up.url)}" style="width:100%;max-height:110px;object-fit:cover;border-radius:6px;margin-bottom:6px">` : ''}
+      <div style="font-size:13px;color:${up ? 'var(--ok)' : 'var(--neon2)'}"><b>${esc(m.label)}</b>${up ? ' ✓' : ''}</div>
+      <div class="muted" style="font-size:12px;margin:4px 0 8px">${esc(m.desc)}</div>
+      <button id="photo-btn-${i}" class="btn ${up ? '' : 'warn'}" style="font-size:11px;width:100%" onclick="uploadPhoto(${i})">
+        ${up ? '🔄 Remplacer' : '📸 Prendre / choisir'}
+      </button>
+    </div>`;
+  }).join('');
+  return `<div class="card" style="border-color:var(--neon2)">
+    <div class="pill neon-cyan">📸 DÉFIS PHOTO</div>
+    <p class="muted" style="font-size:13px">Prends des photos au fil de la soirée — elles seront votées à la fin !</p>
+    ${items}
+  </div>`;
+}
+
+function photoVoteView(me) {
+  const photos = (STATE.photos || []).filter(p => p.playerId !== me.id);
+  const myVotes = me.myPhotoVotes || {};
+  if (!photos.length) return `<div class="card center"><div class="pill neon-yellow">📸 VOTE PHOTO</div><p>Pas encore de photos à voter…</p></div>`;
+  const items = photos.map(p => {
+    const bv = myVotes.belle === p.id, rv = myVotes.rigolote === p.id;
+    return `<div style="border:2px solid #ffffff22;border-radius:10px;padding:10px;margin:8px 0;background:#020a18">
+      <img src="${esc(p.url)}" style="width:100%;max-height:160px;object-fit:cover;border-radius:6px;margin-bottom:6px">
+      <div style="font-size:13px"><b>${esc(p.playerName)}</b> — <span class="muted">${esc(p.missionLabel)}</span></div>
+      <div class="row mt" style="gap:8px">
+        <button class="btn ${bv ? 'secondary' : ''}" style="flex:1;font-size:12px" onclick="photoVote('${p.id}','belle')">
+          ${bv ? '🏆 ✓' : '🏆 Belle'}
+        </button>
+        <button class="btn ${rv ? 'secondary' : ''}" style="flex:1;font-size:12px" onclick="photoVote('${p.id}','rigolote')">
+          ${rv ? '😂 ✓' : '😂 Rigolote'}
+        </button>
+      </div>
+    </div>`;
+  }).join('');
+  return `<div class="card" style="border-color:var(--neon)">
+    <div class="pill neon-yellow">📸 VOTE PHOTO</div>
+    <p class="muted" style="font-size:13px">Pas de vote pour tes propres photos !</p>
+    ${items}
+  </div>`;
+}
+function photoVote(photoId, category) {
+  api('/api/photo/vote', { photoId, category }).then(poll);
+}
+
+// --- Actions ---
+function toggleReady(){ api('/api/ready', { ready: !STATE.me.ready }); }
+function buzz(){ api('/api/buzz'); }
+function answer(i){ api('/api/answer', { choice: i }); }
+function spotlightVote(v){ api('/api/spotlight/vote', { verdict: v }); }
+function submitCode(){
+  const v = document.getElementById('codeInput').value;
+  api('/api/code', { code: v }).then(r=>{
+    const m = document.getElementById('codeMsg');
+    if (m) m.innerHTML = r.ok ? '<span class="neon-cyan pixel" style="font-size:11px">✔ DÉBLOQUÉ !</span>'
+                              : `<span class="pixel" style="font-size:10px;color:var(--danger)">${esc(r.reason||'NON')}</span>`;
+  });
+}
+function gmGage(){
+  const t = document.getElementById('gmTarget').value;
+  api('/api/gm/gage', { targetId: t });
+}
+// Demande d'indice : la borne diffuse la vidéo du monde courant.
+function askHint(){
+  api('/api/hint', {}).then(r=>{
+    const m = document.getElementById('hintMsg');
+    if (m) m.textContent = r.ok ? '📺 Indice lancé sur la borne — regardez l’écran !' : (r.reason || 'Pas d’indice ici.');
+  });
+}
+
+// =================== MANETTE NES — Séquence légendaire (Monde 1, Konami) ===================
+let _konamiSeq = [];
+const _KON_LABEL = { up:'▲', down:'▼', left:'◀', right:'▶', b:'B', a:'A' };
+const _KON_TOKEN = { up:'HAUT', down:'BAS', left:'GAUCHE', right:'DROITE', b:'B', a:'A' };
+function konamiSeqText(){ return _konamiSeq.length ? _konamiSeq.map(k=>_KON_LABEL[k]).join('  ') : '· · · · · · · · · ·'; }
+function _konamiRefresh(){ const d = document.getElementById('konamiSeq'); if (d) d.textContent = konamiSeqText(); }
+function konamiPush(k){
+  _konamiSeq.push(k);
+  _konamiRefresh();
+  try { if (navigator.vibrate) navigator.vibrate(25); } catch(_){}
+}
+function konamiClear(){
+  _konamiSeq = [];
+  _konamiRefresh();
+  const m = document.getElementById('codeMsg'); if (m) m.innerHTML = '';
+}
+function konamiSubmit(){ _konamiSend('/api/code'); }
+// Monde 6 : chaque joueur valide SA propre séquence sur sa manette.
+function konamiSubmitW6(){ _konamiSend('/api/w6/konami'); }
+function _konamiSend(path){
+  const code = _konamiSeq.map(k=>_KON_TOKEN[k]).join(' ');
+  api(path, { code }).then(r=>{
+    const m = document.getElementById('codeMsg');
+    if (m) m.innerHTML = r.ok ? '<span class="neon-cyan pixel" style="font-size:11px">✔ SÉQUENCE VALIDÉE !</span>'
+                              : `<span class="pixel" style="font-size:10px;color:var(--danger)">${esc(r.reason||'SÉQUENCE REFUSÉE')}</span>`;
+    _konamiSeq = [];
+    if (!r.ok) _konamiRefresh();
+  });
+}
+// Monde 6 : porte « Konami collectif » puis commande de redémarrage (en LEET).
+function w6GateHTML(w, me){
+  const g = STATE.w6 || {};
+  if (!g.gateComplete){
+    if (me.konamiDone){
+      return `<div class="card center" style="border-color:var(--neon2);background:#021a16">
+        <div class="pill neon-cyan">✔ SÉQUENCE SAISIE</div>
+        <p class="big neon-yellow">« UN POUR TOUS ET TOUS POUR UN »</p>
+        <p>En attente des autres joueurs… <b>${g.doneCount||0}/${g.total||0}</b></p>
+      </div>`;
+    }
+    return konamiPadHTML({
+      submit: 'konamiSubmitW6',
+      intro: 'Reconstituez la séquence et validez-la sur ta manette.',
+      validLabel: '🎮 VALIDER MA SÉQUENCE',
+    }) + (g.hint ? `<div class="card center" style="border-color:var(--neon3);background:#1a1400">
+      <p class="neon-yellow">🤝 Indice : « UN POUR TOUS ET TOUS POUR UN »</p></div>` : '');
+  }
+  // Porte ouverte : tout le monde a saisi le Konami → la commande de redémarrage.
+  return `<div class="card" style="border-color:var(--neon3);background:#1a1400">
+    <div class="pill neon-yellow">⌨️ COMMANDE DE REDÉMARRAGE</div>
+    <p>La porte est ouverte ! Entrez la <b>commande pour redémarrer</b> la réalité.</p>
+    ${g.rebootHint ? `<p class="neon-pink">Presque… mais il faut la saisir en <b>LEET</b> 🔢</p>` : ''}
+    <input id="codeInput" type="text" placeholder="COMMANDE" />
+    <button class="btn secondary mt" onclick="submitCode()">⚡ REDÉMARRER</button>
+    <div id="codeMsg" class="center mt"></div>
+  </div>`;
+}
+function konamiPadHTML(opts){
+  opts = opts || {};
+  const submitFn = opts.submit || 'konamiSubmit';
+  const intro = opts.intro || 'Rassemble les touches de tous les joueurs et entre la séquence sur la manette. Toi seul (PLAYER ONE) peux valider.';
+  const validLabel = opts.validLabel || '👑 VALIDER';
+  const dpad = 'width:38px;height:38px;background:#1a1a1a;color:#fff;border:none;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0';
+  const ab = 'width:48px;height:48px;border-radius:50%;background:#c01b3a;color:#fff;border:3px solid #7c1226;font-family:var(--pixel);font-size:13px;cursor:pointer';
+  return `<div class="card" style="border-color:var(--neon3);background:#1a1400">
+    <div class="pill neon-yellow">🎮 SÉQUENCE LÉGENDAIRE</div>
+    <p class="muted" style="font-size:12px;margin:4px 0 8px">${esc(intro)}</p>
+    <div id="konamiSeq" style="font-size:18px;color:var(--neon3);text-align:center;letter-spacing:2px;min-height:24px;margin-bottom:10px;word-break:break-word">${konamiSeqText()}</div>
+    <div style="display:flex;justify-content:center;align-items:center;gap:20px;background:#cfcfcf;border:3px solid #222;border-radius:14px;padding:14px;max-width:330px;margin:0 auto">
+      <div style="display:grid;grid-template-columns:repeat(3,38px);grid-template-rows:repeat(3,38px)">
+        <span></span>
+        <button onclick="konamiPush('up')" style="${dpad}">▲</button>
+        <span></span>
+        <button onclick="konamiPush('left')" style="${dpad}">◀</button>
+        <span style="background:#1a1a1a"></span>
+        <button onclick="konamiPush('right')" style="${dpad}">▶</button>
+        <span></span>
+        <button onclick="konamiPush('down')" style="${dpad}">▼</button>
+        <span></span>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <button onclick="konamiPush('b')" style="${ab}">B</button>
+        <button onclick="konamiPush('a')" style="${ab}">A</button>
+      </div>
+    </div>
+    <div class="grid mt" style="max-width:330px;margin:10px auto 0">
+      <button class="btn" onclick="konamiClear()">⟲ Effacer</button>
+      <button class="btn secondary" onclick="${submitFn}()">${validLabel}</button>
+    </div>
+    <div id="codeMsg" class="center mt"></div>
+  </div>`;
+}
+</script>
+</body>
+</html>

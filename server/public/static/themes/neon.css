@@ -1,0 +1,37 @@
+/* THÈME : NÉON / CLUBBING — boîte de nuit, violet/rose fluo, glow intense. */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@500;600&display=swap');
+
+:root {
+  --bg: #07010f;
+  --bg2: #1a0533;
+  --neon: #ff2bd6;   /* magenta fluo */
+  --neon2: #18e0ff;  /* cyan électrique */
+  --neon3: #b388ff;  /* violet clair */
+  --neon4: #8a2be2;  /* violet profond */
+  --ink: #f3eaff;
+  --danger: #ff3b6b;
+  --ok: #51ffb0;
+  --pixel: 'Orbitron', sans-serif;
+  --term: 'Rajdhani', sans-serif;
+
+  --radius: 14px;
+  --btn-radius: 12px;
+  --neon-lite: #ff7be8;
+  --neon-shade: #7a1066;
+  --neon2-shade: #0a6b80;
+  --neon3-shade: #5b3a99;
+  --btn-ink: #1a0018;
+  --btn-ink2: #04222a;
+  --input-bg: #120225;
+  --card-glow: rgba(255,43,214,.45);
+  --title-shadow: 0 0 12px var(--neon), 0 0 26px var(--neon4);
+  --scanlines-opacity: 0;
+}
+body {
+  font-size: 23px;
+  background:
+    radial-gradient(900px 500px at 15% -10%, rgba(255,43,214,.28) 0%, transparent 55%),
+    radial-gradient(900px 500px at 85% 0%, rgba(24,224,255,.22) 0%, transparent 55%),
+    var(--bg);
+}
+.btn { letter-spacing: 1px; }

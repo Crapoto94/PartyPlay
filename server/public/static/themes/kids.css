@@ -1,0 +1,40 @@
+/* THÈME : ANNIVERSAIRE ENFANT — couleurs vives, confettis, typo ronde joyeuse. */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Quicksand:wght@500;600;700&display=swap');
+
+:root {
+  --bg: #fff7fb;
+  --bg2: #ffe9f4;
+  --neon: #ff5fa2;   /* rose bonbon */
+  --neon2: #36c5f0;  /* bleu ciel */
+  --neon3: #ffcf3f;  /* jaune soleil */
+  --neon4: #8a5cff;  /* violet ludique */
+  --ink: #3a2b4d;
+  --danger: #ff5a5a;
+  --ok: #3fce7a;
+  --pixel: 'Baloo 2', cursive;
+  --term: 'Quicksand', sans-serif;
+
+  --radius: 18px;
+  --btn-radius: 16px;
+  --neon-lite: #ff8cbe;
+  --neon-shade: #d63d80;
+  --neon2-shade: #1c9bc4;
+  --neon3-shade: #d9a91f;
+  --btn-ink: #fff;
+  --btn-ink2: #06303a;
+  --input-bg: #ffffff;
+  --card-glow: rgba(255,95,162,.25);
+  --title-shadow: 0 2px 0 #fff, 0 3px 6px rgba(138,92,255,.3);
+  --scanlines-opacity: 0;
+}
+body {
+  font-size: 23px; font-weight: 600;
+  background:
+    radial-gradient(700px 380px at 12% -8%, rgba(54,197,240,.25) 0%, transparent 55%),
+    radial-gradient(700px 380px at 88% 0%, rgba(255,207,63,.3) 0%, transparent 55%),
+    var(--bg);
+}
+h1, h2, h3, .title { color: var(--neon4); }
+.card { border-width: 4px; box-shadow: 0 6px 0 rgba(138,92,255,.18); }
+.log div { border-bottom-color: #3a2b4d22; }
+input[type=text] { color: var(--ink); }
