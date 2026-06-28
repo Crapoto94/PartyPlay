@@ -163,6 +163,24 @@ function H(){ return { 'Content-Type':'application/json', 'x-admin-password': PW
 function val(id){ return document.getElementById(id).value; }
 function esc(s){ return (s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
+// PayPal : bouton hébergé (SDK chargé une fois)
+let _ppPromise = null;
+function loadPaypal(clientId, currency){
+  if (_ppPromise) return _ppPromise;
+  if (!clientId) return Promise.reject(new Error('no client-id'));
+  _ppPromise = new Promise((resolve, reject) => {
+    const s = document.createElement('script');
+    s.src = 'https://www.paypal.com/sdk/js?client-id=' + encodeURIComponent(clientId)
+      + '&components=hosted-buttons&disable-funding=venmo&currency=' + (currency || 'EUR');
+    s.onload = () => resolve(window.paypal); s.onerror = reject;
+    document.head.appendChild(s);
+  });
+  return _ppPromise;
+}
+function renderHostedButton(sel, buttonId, clientId, currency){
+  loadPaypal(clientId, currency).then(pp => { try { pp.HostedButtons({ hostedButtonId: buttonId }).render(sel); } catch(_){} }).catch(()=>{});
+}
+
 async function boot(){
   document.getElementById('evTitle').textContent = '🎛️ ' + (EVENT.name||'Console');
   META = await (await fetch(API+'/api/admin/meta')).json();
@@ -208,12 +226,16 @@ function fillGeneral(){
     if (META.paymentStatus==='pending'){
       const price = META.planPrice ? (Number(META.planPrice).toFixed(2).replace('.',',')+' '+(META.currency==='EUR'?'€':META.currency)) : '';
       pay = ' · <span style="color:#c98a00">paiement en attente</span>'
-        + (META.payLink ? ` <a class="btn" style="display:inline-block;width:auto;padding:4px 12px" href="${esc(META.payLink)}" target="_blank" rel="noopener">💳 Carte ${esc(price)}</a>` : '')
-        + (META.paypalLink ? ` <a class="btn secondary" style="display:inline-block;width:auto;padding:4px 12px" href="${esc(META.paypalLink)}" target="_blank" rel="noopener">🅿️ PayPal</a>` : '');
+        + (META.payLink ? ` <a class="btn" style="display:inline-block;width:auto;padding:4px 12px" href="${esc(META.payLink)}" target="_blank" rel="noopener">💳 Carte ${esc(price)}</a>` : '');
     } else if (META.paymentStatus==='paid'){
       pay = ' · <span style="color:#1f9d57">payé ✓</span>';
     }
     planEl.innerHTML = `Formule : <strong>${esc(META.planLabel||META.plan||'Gratuit')}</strong>${restr}${pay}`;
+    if (META.paymentStatus==='pending' && META.paypalButtonId && META.paypalClientId){
+      const box = document.createElement('div'); box.id='pp-console'; box.style.cssText='margin-top:8px;max-width:300px';
+      planEl.appendChild(box);
+      renderHostedButton('#pp-console', META.paypalButtonId, META.paypalClientId, META.currency);
+    }
   }
 }
 async function saveGeneral(){

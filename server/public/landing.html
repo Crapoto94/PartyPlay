@@ -91,6 +91,26 @@ const ALL_THEMES = ['retro','neon','chic','kids','casino'];
 function esc(s){ return (s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 function fmtPrice(p, cur){ return p.price===0 ? 'Gratuit' : (Number(p.price).toFixed(2).replace('.',',')+' '+(cur==='EUR'?'€':cur)); }
 
+// --- PayPal : boutons hébergés (SDK chargé une seule fois) ---
+let _ppPromise = null;
+function loadPaypal(clientId, currency){
+  if (_ppPromise) return _ppPromise;
+  if (!clientId) return Promise.reject(new Error('no client-id'));
+  _ppPromise = new Promise((resolve, reject) => {
+    const s = document.createElement('script');
+    s.src = 'https://www.paypal.com/sdk/js?client-id=' + encodeURIComponent(clientId)
+      + '&components=hosted-buttons&disable-funding=venmo&currency=' + (currency || 'EUR');
+    s.onload = () => resolve(window.paypal); s.onerror = reject;
+    document.head.appendChild(s);
+  });
+  return _ppPromise;
+}
+function renderHostedButton(containerSel, buttonId, clientId, currency){
+  loadPaypal(clientId, currency).then(pp => {
+    try { pp.HostedButtons({ hostedButtonId: buttonId }).render(containerSel); } catch(_){}
+  }).catch(()=>{});
+}
+
 async function boot(){
   PRICING = await (await fetch('/api/pricing')).json();
   renderPlans();
@@ -138,14 +158,15 @@ async function createParty(){
     if (!r.ok){ errEl.textContent = d.error || ('Erreur '+r.status); return; }
   } catch(e){ errEl.textContent = 'Erreur réseau : '+e.message; return; }
   const plan = PRICING.plans[d.event.plan] || {};
+  const price = fmtPrice(plan, PRICING.currency);
+  const ppId = 'paypal-container-' + Math.random().toString(36).slice(2,8);
   let payBlock = '';
   if (d.event.paymentStatus==='pending'){
-    const price = fmtPrice(plan, PRICING.currency);
-    const btns = [];
-    if (plan.payLink) btns.push(`<a class="btn" style="display:inline-block;width:auto" href="${esc(plan.payLink)}" target="_blank" rel="noopener">💳 Payer ${price} par carte</a>`);
-    if (d.paypalLink) btns.push(`<a class="btn secondary" style="display:inline-block;width:auto" href="${esc(d.paypalLink)}" target="_blank" rel="noopener">🅿️ Payer ${price} avec PayPal</a>`);
-    payBlock = btns.length
-      ? `<p class="inline" style="flex-wrap:wrap;gap:8px">${btns.join('')}</p>
+    let inner = '';
+    if (plan.payLink) inner += `<a class="btn" style="display:inline-block;width:auto" href="${esc(plan.payLink)}" target="_blank" rel="noopener">💳 Payer ${price} par carte (SumUp)</a>`;
+    if (plan.paypalButtonId && PRICING.paypalClientId) inner += `<div id="${ppId}" style="margin-top:10px;max-width:320px"></div>`;
+    payBlock = inner
+      ? `<p style="margin-top:6px">${inner}</p>
          <p class="muted" style="font-size:12.5px">Ta fête est déjà utilisable. Après paiement, elle sera validée par l'organisateur.</p>`
       : '<p class="muted">Formule payante : le paiement sera proposé prochainement — ta fête est déjà utilisable.</p>';
   }
@@ -156,6 +177,9 @@ async function createParty(){
     ${payBlock}
     <p class="muted" style="font-size:12.5px">Note bien ce mot de passe : il protège l'accès à ta console.</p>
   </div>`;
+  if (d.event.paymentStatus==='pending' && plan.paypalButtonId && PRICING.paypalClientId){
+    renderHostedButton('#'+ppId, plan.paypalButtonId, PRICING.paypalClientId, PRICING.currency);
+  }
   document.getElementById('cName').value=''; document.getElementById('cPwd').value='';
 }
 

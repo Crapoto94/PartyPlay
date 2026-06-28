@@ -24,21 +24,25 @@ export const ACTIVITY_ORDER = ['quiz', 'anecdotes', 'gages', 'blindtest', 'photo
 export function defaultPricing() {
   return {
     currency: 'EUR',
+    // Client-id PUBLIC du SDK PayPal (boutons hébergés) — commun à toutes les formules.
+    paypalClientId: 'BAA_GeyiQBhixTJkBdublBYuTB6Pi2uvxexEh9DGqD2myYGv_kQ36N4cdyyB_a_wwXl7kXq_Gc1b3v4JXc',
     plans: {
       free: {
-        label: 'Gratuit', price: 0, kind: 'free', premium: false, payLink: '',
+        label: 'Gratuit', price: 0, kind: 'free', premium: false, payLink: '', paypalButtonId: '',
         tagline: 'Pour tester en petit comité.',
         limits: { maxPlayers: 4, maxActivities: 3, themes: ['retro'], photo: false },
       },
       full: {
         label: 'Fête complète', price: 1.99, kind: 'oneshot', premium: false,
         payLink: 'https://pay.sumup.com/b2c/Q7588E2D',
+        paypalButtonId: 'BCJYT88CQHEX8',
         tagline: 'Une fête, tout débloqué.',
         limits: { maxPlayers: 0, maxActivities: 0, themes: 'all', photo: true },
       },
       infinite: {
         label: 'Illimité Premium', price: 9.99, kind: 'oneshot', premium: true,
         payLink: 'https://pay.sumup.com/b2c/QXD1ZZ45',
+        paypalButtonId: '',
         tagline: 'Toutes vos fêtes, en illimité + premium.',
         limits: { maxPlayers: 0, maxActivities: 0, themes: 'all', photo: true },
       },

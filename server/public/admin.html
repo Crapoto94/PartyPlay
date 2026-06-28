@@ -69,6 +69,7 @@
         <h2>💶 Tarifs &amp; formules</h2>
         <p class="muted">Règle les prix et les limites de chaque formule. Devise :
           <input type="text" id="pCurrency" style="width:80px;display:inline-block" maxlength="4"></p>
+        <div class="field"><label>PayPal — Client ID du SDK (boutons hébergés, public)</label><input type="text" id="pPaypalClient" placeholder="BAA_..."></div>
         <div id="pricingEditor"></div>
         <button class="btn" onclick="savePricing()">💾 Enregistrer les tarifs</button>
         <span id="pSaved" class="muted"></span>
@@ -167,6 +168,7 @@ async function del(id, name) {
 function renderPricing(){
   if (!PRICING) return;
   document.getElementById('pCurrency').value = PRICING.currency || 'EUR';
+  document.getElementById('pPaypalClient').value = PRICING.paypalClientId || '';
   const ed = document.getElementById('pricingEditor');
   ed.innerHTML = PLAN_ORDER.filter(k=>PRICING.plans[k]).map(k=>{
     const p = PRICING.plans[k], lim = p.limits||{};
@@ -185,7 +187,10 @@ function renderPricing(){
         </div>
       </div>
       <div class="field"><label>Accroche</label><input type="text" class="pp_tag" data-plan="${k}" value="${esc(p.tagline||'')}"></div>
-      <div class="field"><label>Lien de paiement (SumUp / autre — laisser vide si gratuit)</label><input type="text" class="pp_link" data-plan="${k}" value="${esc(p.payLink||'')}" placeholder="https://pay.sumup.com/b2c/..."></div>
+      <div class="row">
+        <div class="field"><label>Lien SumUp (carte)</label><input type="text" class="pp_link" data-plan="${k}" value="${esc(p.payLink||'')}" placeholder="https://pay.sumup.com/b2c/..."></div>
+        <div class="field"><label>PayPal — Hosted Button ID</label><input type="text" class="pp_ppbtn" data-plan="${k}" value="${esc(p.paypalButtonId||'')}" placeholder="BCJYT88CQHEX8"></div>
+      </div>
       <div class="row">
         <div class="field"><label>Joueurs max (0 = illimité)</label><input type="number" min="0" class="pp_maxp" data-plan="${k}" value="${lim.maxPlayers||0}"></div>
         <div class="field"><label>Activités max (0 = illimité)</label><input type="number" min="0" class="pp_maxa" data-plan="${k}" value="${lim.maxActivities||0}"></div>
@@ -199,14 +204,14 @@ function renderPricing(){
   }).join('');
 }
 async function savePricing(){
-  const pricing = { currency: document.getElementById('pCurrency').value.trim() || 'EUR', plans: {} };
+  const pricing = { currency: document.getElementById('pCurrency').value.trim() || 'EUR', paypalClientId: document.getElementById('pPaypalClient').value.trim(), plans: {} };
   const v = (sel,k)=>document.querySelector(`.${sel}[data-plan="${k}"]`);
   PLAN_ORDER.filter(k=>PRICING.plans[k]).forEach(k=>{
     const themes = [...document.querySelectorAll(`.pp_theme[data-plan="${k}"]:checked`)].map(c=>c.value);
     pricing.plans[k] = {
       label: v('pp_label',k).value, price: parseFloat(v('pp_price',k).value)||0,
       kind: v('pp_kind',k).value, premium: v('pp_premium',k).checked, tagline: v('pp_tag',k).value,
-      payLink: v('pp_link',k).value.trim(),
+      payLink: v('pp_link',k).value.trim(), paypalButtonId: v('pp_ppbtn',k).value.trim(),
       limits: {
         maxPlayers: parseInt(v('pp_maxp',k).value,10)||0,
         maxActivities: parseInt(v('pp_maxa',k).value,10)||0,
