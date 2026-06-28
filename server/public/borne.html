@@ -4,7 +4,6 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>PartyPlay — BORNE</title>
-<link rel="stylesheet" href="/static/arcade.css" />
 <script src="/static/sound.js"></script>
 <script src="/static/fullscreen.js"></script>
 <script src="/static/pacman-render.js"></script>
@@ -61,6 +60,8 @@
 <script>
 const stage = document.getElementById('stage');
 const tickerEl = document.getElementById('ticker');
+const EVENT = window.__EVENT__ || {};
+const API = '/e/' + EVENT.id;            // base event-scopée pour toutes les requêtes
 let STATE = null;
 
 let lastSse = 0;
@@ -71,9 +72,9 @@ function applyState(s){
   const j = JSON.stringify(s);
   if (j !== _lastBorneJson) { _lastBorneJson = j; render(); }
 }
-const es = new EventSource('/events');
+const es = new EventSource(API + '/events');
 es.onmessage = (e) => { lastSse = Date.now(); applyState(JSON.parse(e.data)); };
-function pollBorne(){ fetch('/api/state').then(r=>r.json()).then(applyState).catch(()=>{}); }
+function pollBorne(){ fetch(API + '/api/state').then(r=>r.json()).then(applyState).catch(()=>{}); }
 pollBorne();
 setInterval(() => { if (Date.now() - lastSse > 1500) pollBorne(); }, 1000);
 function esc(s){ return (s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
@@ -188,7 +189,7 @@ function winVideoEnded(){
   tickerEl.textContent = "⚠️ C'EST PAS FINI — place au vote des photos !";
   // Laisse le message à l'écran quelques secondes, puis ouvre le vote photo.
   setTimeout(()=>{
-    try { fetch('/api/photo/openvote', { method:'POST', headers:{'Content-Type':'application/json'}, body:'{}' }); } catch(_){}
+    try { fetch(API + '/api/photo/openvote', { method:'POST', headers:{'Content-Type':'application/json'}, body:'{}' }); } catch(_){}
   }, 6000);
 }
 function render(){
@@ -355,6 +356,10 @@ function render(){
     html = activityView(STATE.activity);
   }
 
+  else if (STATE.phase === 'scoreboard') {
+    html = scoreboardView();
+  }
+
   else if (STATE.phase === 'win') {
     html = `<div style="position:fixed;inset:0;z-index:9000;background:#000">
       <div id="win-video-player" style="width:100%;height:100%"></div>
@@ -381,6 +386,29 @@ function render(){
   stage.innerHTML = html;
   if (STATE.phase === 'win' && !winBuilt){ winBuilt = true; buildWinVideo(); }
   tickerEl.textContent = (STATE.log||[]).map(l=>l.msg).join('   ◆   ') || (window.__EVENT__&&window.__EVENT__.name) || 'PartyPlay';
+}
+
+// Tableau des scores (phase 'scoreboard').
+function scoreboardView(){
+  const board = STATE.scoreboard || [];
+  const medal = ['🥇','🥈','🥉'];
+  tickerEl.textContent = 'CLASSEMENT';
+  return `<div class="center">
+    <h1 class="huge pixel neon-yellow">🏆 CLASSEMENT</h1>
+    <div style="max-width:760px;margin:18px auto 0">
+      ${board.length ? board.map((p,i)=>`
+        <div class="card" style="display:flex;align-items:center;gap:14px;text-align:left;${i===0?'border-color:var(--neon3)':''}">
+          <div class="big pixel" style="width:54px">${medal[i]||(i+1)}</div>
+          <div style="font-size:40px">${avatarEmoji(p.avatar)}</div>
+          <div style="flex:1">
+            <div class="big neon-pink">${esc(p.name)}</div>
+            <div class="muted">${'❤️'.repeat(Math.max(0,p.lives))}</div>
+          </div>
+          <div class="big coins">🪙 ${p.coins}</div>
+        </div>`).join('')
+      : '<p class="big muted">Pas encore de joueurs.</p>'}
+    </div>
+  </div>`;
 }
 
 // Monde 6 : affichage de la porte « Konami collectif » + commande en LEET.
@@ -1763,7 +1791,7 @@ function harvestFrom(player, theme){
     let ids = [];
     try { ids = player.getPlaylist() || []; } catch(_){}
     if (ids && ids.length) {
-      fetch('/api/blindtest/playlist', {
+      fetch(API + '/api/blindtest/playlist', {
         method:'POST', headers:{'Content-Type':'application/json'},
         body: JSON.stringify({ theme, ids })
       }).catch(()=>{});
@@ -1798,7 +1826,7 @@ window.onYouTubeIframeAPIReady = function(){ ytApiReady = true; initYT(); }; // 
 function initYT(){
   if (ytInited || !ytApiReady) return;
   ytInited = true;
-  fetch('/api/ytconfig').then(r=>r.json()).then(cfg=>{
+  fetch(API + '/api/ytconfig').then(r=>r.json()).then(cfg=>{
     if (cfg.ambiance) {
       ytAmb = new YT.Player('yt-amb', {
         height:'1', width:'1',
@@ -1854,7 +1882,7 @@ function initYT(){
               try {
                 const d = e.target.getVideoData();
                 if (d && d.video_id && d.title) {
-                  fetch('/api/blindtest/addtrack', {
+                  fetch(API + '/api/blindtest/addtrack', {
                     method: 'POST', headers: {'Content-Type':'application/json'},
                     body: JSON.stringify({ theme, videoId: d.video_id, videoTitle: d.title }),
                   }).catch(()=>{});
