@@ -89,7 +89,7 @@ const THEME_LABELS = { retro:'Rétro jeux vidéo', neon:'Néon / Clubbing', chic
 const ALL_THEMES = ['retro','neon','chic','kids','casino'];
 
 function esc(s){ return (s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
-function fmtPrice(p, cur){ return p.price===0 ? 'Gratuit' : (p.price+' '+(cur==='EUR'?'€':cur)); }
+function fmtPrice(p, cur){ return p.price===0 ? 'Gratuit' : (Number(p.price).toFixed(2).replace('.',',')+' '+(cur==='EUR'?'€':cur)); }
 
 async function boot(){
   PRICING = await (await fetch('/api/pricing')).json();
@@ -137,13 +137,17 @@ async function createParty(){
     d = await r.json();
     if (!r.ok){ errEl.textContent = d.error || ('Erreur '+r.status); return; }
   } catch(e){ errEl.textContent = 'Erreur réseau : '+e.message; return; }
-  const paidNote = d.event.paymentStatus==='pending'
-    ? '<p class="muted">Formule payante : le paiement sera proposé prochainement — ta fête est déjà utilisable.</p>' : '';
+  const plan = PRICING.plans[d.event.plan] || {};
+  const payBlock = (d.event.paymentStatus==='pending' && plan.payLink)
+    ? `<p><a class="btn" style="display:inline-block;width:auto" href="${esc(plan.payLink)}" target="_blank" rel="noopener">💳 Payer ${fmtPrice(plan, PRICING.currency)} par carte</a></p>
+       <p class="muted" style="font-size:12.5px">Ta fête est déjà utilisable. Après paiement, elle sera validée par l'organisateur.</p>`
+    : (d.event.paymentStatus==='pending'
+        ? '<p class="muted">Formule payante : le paiement sera proposé prochainement — ta fête est déjà utilisable.</p>' : '');
   okEl.innerHTML = `<div class="success-box">
     <strong class="ok">✓ « ${esc(d.event.name)} » créée !</strong>
     <p>Identifiant : <code class="pwd">${esc(d.event.id)}</code> · Mot de passe console : <code class="pwd">${esc(d.adminPassword)}</code></p>
     <p>👉 <a href="/e/${d.event.id}/admin" target="_blank"><strong>Ouvrir la console</strong></a> &nbsp;·&nbsp; <a href="/e/${d.event.id}/borne" target="_blank">Ouvrir la borne</a></p>
-    ${paidNote}
+    ${payBlock}
     <p class="muted" style="font-size:12.5px">Note bien ce mot de passe : il protège l'accès à ta console.</p>
   </div>`;
   document.getElementById('cName').value=''; document.getElementById('cPwd').value='';

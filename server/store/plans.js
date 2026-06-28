@@ -26,17 +26,19 @@ export function defaultPricing() {
     currency: 'EUR',
     plans: {
       free: {
-        label: 'Gratuit', price: 0, kind: 'free', premium: false,
+        label: 'Gratuit', price: 0, kind: 'free', premium: false, payLink: '',
         tagline: 'Pour tester en petit comité.',
         limits: { maxPlayers: 4, maxActivities: 3, themes: ['retro'], photo: false },
       },
       full: {
-        label: 'Fête complète', price: 9.9, kind: 'oneshot', premium: false,
+        label: 'Fête complète', price: 1.99, kind: 'oneshot', premium: false,
+        payLink: 'https://pay.sumup.com/b2c/Q7588E2D',
         tagline: 'Une fête, tout débloqué.',
         limits: { maxPlayers: 0, maxActivities: 0, themes: 'all', photo: true },
       },
       infinite: {
-        label: 'Illimité Premium', price: 99, kind: 'subscription', premium: true,
+        label: 'Illimité Premium', price: 9.99, kind: 'oneshot', premium: true,
+        payLink: 'https://pay.sumup.com/b2c/QXD1ZZ45',
         tagline: 'Toutes vos fêtes, en illimité + premium.',
         limits: { maxPlayers: 0, maxActivities: 0, themes: 'all', photo: true },
       },

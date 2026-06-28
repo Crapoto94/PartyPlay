@@ -203,10 +203,16 @@ function fillGeneral(){
   // Bandeau formule
   const planEl = document.getElementById('planBanner');
   if (planEl && META){
-    const pay = META.paymentStatus==='pending' ? ' · <span style="color:#c98a00">paiement en attente</span>' : '';
-    const lim = META.planLimits||{};
     const restr = (META.themes && META.themes.length<5) ? ` · thèmes limités` : '';
-    planEl.innerHTML = `Formule : <strong>${esc(META.planLabel||META.plan||'Gratuit')}</strong>${pay}${restr}`;
+    let pay = '';
+    if (META.paymentStatus==='pending'){
+      const price = META.planPrice ? (Number(META.planPrice).toFixed(2).replace('.',',')+' '+(META.currency==='EUR'?'€':META.currency)) : '';
+      pay = ' · <span style="color:#c98a00">paiement en attente</span>'
+        + (META.payLink ? ` <a class="btn" style="display:inline-block;width:auto;padding:4px 12px" href="${esc(META.payLink)}" target="_blank" rel="noopener">💳 Payer ${esc(price)}</a>` : '');
+    } else if (META.paymentStatus==='paid'){
+      pay = ' · <span style="color:#1f9d57">payé ✓</span>';
+    }
+    planEl.innerHTML = `Formule : <strong>${esc(META.planLabel||META.plan||'Gratuit')}</strong>${restr}${pay}`;
   }
 }
 async function saveGeneral(){

@@ -332,6 +332,7 @@ ev.get('/api/admin/meta', (req, res) => {
     needsPassword: !!req.cfg.adminPassword, name: req.cfg.name, theme: req.cfg.theme,
     themes: allowedThemes(req.cfg.plan || 'free'), allThemes: ALL_THEMES,
     plan: req.cfg.plan || 'free', planLabel: plan.label, planLimits: plan.limits || {},
+    planPrice: plan.price || 0, payLink: plan.payLink || '', currency: getPricing().currency || 'EUR',
     paymentStatus: req.cfg.paymentStatus || 'free',
   });
 });

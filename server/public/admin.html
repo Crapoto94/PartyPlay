@@ -185,6 +185,7 @@ function renderPricing(){
         </div>
       </div>
       <div class="field"><label>Accroche</label><input type="text" class="pp_tag" data-plan="${k}" value="${esc(p.tagline||'')}"></div>
+      <div class="field"><label>Lien de paiement (SumUp / autre — laisser vide si gratuit)</label><input type="text" class="pp_link" data-plan="${k}" value="${esc(p.payLink||'')}" placeholder="https://pay.sumup.com/b2c/..."></div>
       <div class="row">
         <div class="field"><label>Joueurs max (0 = illimité)</label><input type="number" min="0" class="pp_maxp" data-plan="${k}" value="${lim.maxPlayers||0}"></div>
         <div class="field"><label>Activités max (0 = illimité)</label><input type="number" min="0" class="pp_maxa" data-plan="${k}" value="${lim.maxActivities||0}"></div>
@@ -205,6 +206,7 @@ async function savePricing(){
     pricing.plans[k] = {
       label: v('pp_label',k).value, price: parseFloat(v('pp_price',k).value)||0,
       kind: v('pp_kind',k).value, premium: v('pp_premium',k).checked, tagline: v('pp_tag',k).value,
+      payLink: v('pp_link',k).value.trim(),
       limits: {
         maxPlayers: parseInt(v('pp_maxp',k).value,10)||0,
         maxActivities: parseInt(v('pp_maxa',k).value,10)||0,
