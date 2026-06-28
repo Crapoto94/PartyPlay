@@ -4,7 +4,6 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 <title>PartyPlay — Joueur</title>
-<link rel="stylesheet" href="/static/arcade.css" />
 <script src="/static/fullscreen.js"></script>
 <script src="/static/pacman-render.js"></script>
 <script src="/static/sound.js"></script>
@@ -29,11 +28,13 @@
 
 <script>
 const TOKEN = location.pathname.split('/').pop();
+const EVENT = window.__EVENT__ || {};
+const API = '/e/' + EVENT.id;            // base event-scopée pour toutes les requêtes
 const app = document.getElementById('app');
 let STATE = null;
 
 function api(path, body) {
-  return fetch(path, {
+  return fetch(API + path, {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ token: TOKEN, ...body })
   }).then(r => r.json());
@@ -86,10 +87,10 @@ function applyState(s){
   STATE = s; render();
   detectPianoDemo(s); // surligne mes touches si la borne (re)joue la mélodie
 }
-const es = new EventSource('/events?token=' + encodeURIComponent(TOKEN));
+const es = new EventSource(API + '/events?token=' + encodeURIComponent(TOKEN));
 es.onmessage = (e) => { lastSse = Date.now(); applyState(JSON.parse(e.data)); };
 es.onerror = () => { /* l'EventSource se reconnecte tout seul */ };
-function poll(){ fetch('/api/state?token=' + encodeURIComponent(TOKEN)).then(r=>r.json()).then(applyState).catch(()=>{}); }
+function poll(){ fetch(API + '/api/state?token=' + encodeURIComponent(TOKEN)).then(r=>r.json()).then(applyState).catch(()=>{}); }
 poll(); // rendu immédiat dès le chargement (ne reste pas bloqué sur CONNEXION)
 setInterval(() => { if (Date.now() - lastSse > 1500) poll(); }, 1000);
 
@@ -123,7 +124,7 @@ const _photoInput = (() => {
     fd.append('token', TOKEN);
     fd.append('missionIdx', String(_photoMissionIdx));
     try {
-      const r = await fetch('/api/photo/upload', { method: 'POST', body: fd });
+      const r = await fetch(API + '/api/photo/upload', { method: 'POST', body: fd });
       const d = await r.json();
       if (d.ok) poll();
     } catch (_) {}

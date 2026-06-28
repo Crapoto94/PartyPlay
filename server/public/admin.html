@@ -96,20 +96,30 @@ async function load() {
     </tr>`).join('');
 }
 async function createEvent() {
+  const errEl = document.getElementById('createErr');
+  const name = document.getElementById('nName').value.trim();
+  if (!name) { errEl.textContent = 'Donne un nom à l\'événement.'; return; }
   const body = {
-    name: document.getElementById('nName').value,
+    name,
     theme: document.getElementById('nTheme').value,
     seed: document.getElementById('nSeed').value,
     adminPassword: document.getElementById('nPwd').value,
     publicUrl: document.getElementById('nUrl').value,
   };
-  const r = await fetch('/api/admin/events', { method:'POST', headers: headers(), body: JSON.stringify(body) });
-  const d = await r.json();
-  if (!r.ok) { document.getElementById('createErr').textContent = d.error || 'Erreur.'; return; }
+  errEl.textContent = '';
+  let d;
+  try {
+    const r = await fetch('/api/admin/events', { method:'POST', headers: headers(), body: JSON.stringify(body) });
+    d = await r.json();
+    if (!r.ok) { errEl.textContent = d.error || ('Erreur '+r.status); return; }
+  } catch (e) { errEl.textContent = 'Erreur réseau : ' + e.message; return; }
   document.getElementById('nName').value=''; document.getElementById('nPwd').value=''; document.getElementById('nUrl').value='';
-  document.getElementById('createErr').textContent='';
   await load();
-  window.open('/e/'+d.event.id+'/admin','_blank');
+  // Pas de window.open (bloqué comme pop-up après un await) : on affiche des liens cliquables.
+  errEl.style.color = 'var(--a-ok)';
+  errEl.innerHTML = '✓ « '+esc(d.event.name)+' » créé — '
+    + '<a href="/e/'+d.event.id+'/admin" target="_blank">ouvrir la console</a> · '
+    + '<a href="/e/'+d.event.id+'/borne" target="_blank">ouvrir la borne</a>';
 }
 async function del(id, name) {
   if (!confirm('Supprimer définitivement « '+name+' » et toutes ses données ?')) return;
