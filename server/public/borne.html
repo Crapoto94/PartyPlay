@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>PIXEL PANIC — BORNE</title>
+<title>PartyPlay — BORNE</title>
 <link rel="stylesheet" href="/static/arcade.css" />
 <script src="/static/sound.js"></script>
 <script src="/static/fullscreen.js"></script>
@@ -56,7 +56,7 @@
 <div id="yt-pac-intro" style="position:fixed;width:1px;height:1px;top:-9px;left:-9px"></div>
 <div id="soundhint" class="pixel">🔊 Activer le son</div>
 <div class="stage" id="stage"><div class="center huge pixel blink">INSERT COIN</div></div>
-<div class="ticker"><span id="ticker">PIXEL PANIC — la réalité a buggé…</span></div>
+<div class="ticker"><span id="ticker">PartyPlay</span></div>
 
 <script>
 const stage = document.getElementById('stage');
@@ -380,7 +380,7 @@ function render(){
 
   stage.innerHTML = html;
   if (STATE.phase === 'win' && !winBuilt){ winBuilt = true; buildWinVideo(); }
-  tickerEl.textContent = (STATE.log||[]).map(l=>l.msg).join('   ◆   ') || 'PIXEL PANIC';
+  tickerEl.textContent = (STATE.log||[]).map(l=>l.msg).join('   ◆   ') || (window.__EVENT__&&window.__EVENT__.name) || 'PartyPlay';
 }
 
 // Monde 6 : affichage de la porte « Konami collectif » + commande en LEET.

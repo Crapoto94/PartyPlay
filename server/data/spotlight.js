@@ -18,7 +18,7 @@ export const SPOTLIGHT_DEFIS = [
   'Fais le robot pendant 20 secondes, sans rire.',
   'Imite un streamer / youtubeur en plein live.',
   'Fais un compliment sincère et différent à chaque personne de la table.',
-  'Invente un slogan publicitaire pour le jeu PIXEL PANIC.',
+  'Invente un slogan publicitaire pour la soirée.',
   'Chante "Joyeux anniversaire" version metal… ou version berceuse. Au choix.',
   'Enchaîne 3 imitations d\'animaux — la salle doit toutes les deviner.',
   'Tiens en équilibre sur un pied en récitant l\'alphabet à l\'envers (essaie !).',

@@ -1,12 +1,11 @@
 {
-  "name": "pixel-panic",
-  "version": "1.0.0",
-  "description": "PIXEL PANIC - jeu d'anniversaire retro-arcade pour Vincent",
+  "name": "partyplay",
+  "version": "2.0.0",
+  "description": "PartyPlay — plateforme multi-événements (jeux, quiz, blind-test, anecdotes, défis) avec borne partagée et téléphones joueurs.",
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node server.js",
-    "qr": "node tools/generate-qr.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "express": "^4.19.2",

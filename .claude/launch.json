@@ -2,7 +2,7 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "pixel-panic",
+      "name": "partyplay",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["start"],
       "cwd": "server",

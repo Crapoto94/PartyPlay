@@ -1,41 +1,37 @@
-# 🕹️ PIXEL PANIC
+# 🎉 PartyPlay
 
-Jeu d'anniversaire **rétro-arcade** pour **Vincent** — 7 joueurs, ~4 h 30, énigmes + grande enquête + gages légers + écran partagé interactif.
+Plateforme **multi-événements** pour animer une soirée : jeux, quiz, blind-test, anecdotes, roue des
+gages, défi photo, mini-jeux arcade et collaboratifs — sur une **borne partagée** + les **téléphones**
+des joueurs, en temps réel. Chaque événement a son **admin**, ses joueurs, son contenu et son **thème graphique**.
 
-## Documentation
-- 📖 [Scénario complet (la bible)](docs/SCENARIO.md) — histoire, rôles, déroulé minute par minute, rebondissements.
-- 🎒 [Matériel & préparation](docs/MATERIEL.md) — liste de courses (fournitures de bureau).
-- 🚀 [Déploiement Proxmox](docs/DEPLOIEMENT-PROXMOX.md) — LXC + Node + HTTPS sur `pixel.fbc.fr`.
+## Architecture
+Serveur Node.js + temps réel (SSE), **un dossier JSON par événement** (`server/events/<id>/`).
 
-## L'appli (dossier `server/`)
-Serveur Node.js + temps réel (SSE). Trois interfaces :
-- **`/borne`** — l'écran partagé (tablette) : intros, activités, scores, classement.
-- **`/j/<token>`** — la page perso de chaque joueur (manette / buzzer / énigmes / gages).
-- **`/gm`** — ton cockpit caché (Marc) pour piloter et dépanner.
+- **`/admin`** — administration **générale** : crée/liste/supprime les événements.
+- **`/e/<id>/admin`** — **console** de l'événement : config (joueurs, activités, contenu, thème) + pilotage live.
+- **`/e/<id>/borne`** — l'écran partagé (tablette) : activités, scores, classement.
+- **`/e/<id>/j/<token>`** — la page perso d'un joueur (manette / buzzer / réponses / photos).
 
-### Lancer en local (test)
+### Thèmes graphiques
+`server/public/static/themes/` : `retro` (jeux vidéo), `neon`, `chic`, `kids`, `casino`.
+Structure commune dans `base.css`, l'admin générale a son propre style neutre (`admin.css`).
+
+### Lancer en local
 ```bash
 cd server
 npm install
 npm start
-#   Borne  : http://localhost:8080/borne
-#   GM     : http://localhost:8080/gm  (mot de passe dans config.js)
-#   Joueur : http://localhost:8080/j/PXL-WLLY-2310
+#   Admin général : http://localhost:8080/admin
+#   (puis créer un événement → ouvre sa console et sa borne)
 ```
+Mot de passe de l'admin générale : variable d'environnement `ADMIN_PASSWORD` (vide = libre).
 
-### Générer les QR codes (à imprimer)
-```bash
-cd server
-npm run qr            # utilise les tokens de config.js
-npm run qr -- --rotate   # régénère des tokens aléatoires (à reporter dans config.js)
-#   → images dans server/qr/
-```
-
-### Configurer
-Tout est dans **`server/config.js`** : joueurs, avatars, tokens, URL publique, mot de passe GM.
-Contenu du jeu : `server/data/` (avatars, gages, mondes).
+## Déploiement
+🚀 [Déploiement Proxmox](docs/DEPLOIEMENT-PROXMOX.md) — LXC + Node + service systemd `partyplay` + HTTPS.
 
 ## Statut
-✅ Moteur de jeu, 3 interfaces, SSE temps réel, 6 mondes, **grande enquête (Monde 5)** dont la résolution ouvre le boss, twist Game Master de Vincent (pouvoirs gardés jusqu'à la fin), activités BORNE (réaction / blind-test / quiz / spotlight / roue / piano réparti / boss), gages, défis photo, QR codes, sauvegarde auto. Testé : démarre et répond.
+✅ Moteur multi-tenant, administration générale + console par événement, 5 thèmes, SSE temps réel,
+catalogue d'activités (quiz / blind-test / anecdotes / roue des gages / défi photo / spotlight /
+dessine-moi / mini-jeux arcade / collaboratifs), sauvegarde auto par événement.
 
-🔜 À affiner ensemble : énigmes définitives selon ton lieu, cartes-avatars à imprimer, sons/musiques de la borne, contenu blind-test metal.
+🔜 Adaptation des écrans `borne.html` et `joueur.html` au routage multi-événements (en cours).

@@ -1,5 +1,5 @@
 // =====================================================================
-//  PIXEL PANIC — moteur de sons 8-bit (Web Audio API, zéro fichier).
+//  PartyPlay — moteur de sons 8-bit (Web Audio API, zéro fichier).
 //  Les navigateurs bloquent l'audio tant que l'utilisateur n'a pas
 //  interagi : appelle SFX.unlock() au premier tap (cf. borne.html).
 // =====================================================================
