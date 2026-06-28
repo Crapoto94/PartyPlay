@@ -47,7 +47,7 @@
           <div class="field"><label>Mot de passe de la console (optionnel)</label><input type="password" id="nPwd" placeholder="laisser vide = libre"></div>
           <div class="field"><label>URL publique (pour les QR, optionnel)</label><input type="text" id="nUrl" placeholder="https://monevent.fr"></div>
         </div>
-        <button class="btn secondary" onclick="createEvent()">Créer l'événement</button>
+        <button class="btn secondary" onclick="createParty()">Créer l'événement</button>
         <div id="createErr" class="neon-pink" style="margin-top:8px"></div>
       </div>
 
@@ -95,7 +95,7 @@ async function load() {
       </td>
     </tr>`).join('');
 }
-async function createEvent() {
+async function createParty() {
   const errEl = document.getElementById('createErr');
   const name = document.getElementById('nName').value.trim();
   if (!name) { errEl.textContent = 'Donne un nom à l\'événement.'; return; }
