@@ -1,0 +1,9 @@
+node_modules/
+*.log
+.DS_Store
+
+# Données runtime des événements (config + sauvegardes + photos uploadées)
+server/events/
+
+# Ancienne sauvegarde mono-événement (héritée)
+server/save.json
