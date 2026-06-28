@@ -6,7 +6,8 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["start"],
       "cwd": "server",
-      "port": 8080
+      "port": 8080,
+      "env": { "PAYPAL_RECEIVER": "marc@fbc.fr" }
     }
   ]
 }

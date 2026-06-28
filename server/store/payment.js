@@ -36,6 +36,24 @@ export function paymentConfig() {
   };
 }
 
+export function paypalEnabled() { return !!paymentConfig().paypal.receiver; }
+
+// Lien de paiement PayPal « Buy Now » (PayPal Standard, sans API) : pré-rempli
+// vers l'e-mail receiver avec le montant. Vide si non configuré.
+export function paypalLink({ label, price, currency }) {
+  const c = paymentConfig();
+  if (!c.paypal.receiver || !price) return '';
+  const params = new URLSearchParams({
+    cmd: '_xclick',
+    business: c.paypal.receiver,
+    item_name: 'PartyPlay — ' + (label || 'Fête'),
+    amount: Number(price).toFixed(2),
+    currency_code: currency || c.currency || 'EUR',
+    no_shipping: '1',
+  });
+  return 'https://www.paypal.com/cgi-bin/webscr?' + params.toString();
+}
+
 // Données publiques exposables au front (jamais le secret).
 export function publicPaymentConfig() {
   const c = paymentConfig();

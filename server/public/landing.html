@@ -138,11 +138,17 @@ async function createParty(){
     if (!r.ok){ errEl.textContent = d.error || ('Erreur '+r.status); return; }
   } catch(e){ errEl.textContent = 'Erreur réseau : '+e.message; return; }
   const plan = PRICING.plans[d.event.plan] || {};
-  const payBlock = (d.event.paymentStatus==='pending' && plan.payLink)
-    ? `<p><a class="btn" style="display:inline-block;width:auto" href="${esc(plan.payLink)}" target="_blank" rel="noopener">💳 Payer ${fmtPrice(plan, PRICING.currency)} par carte</a></p>
-       <p class="muted" style="font-size:12.5px">Ta fête est déjà utilisable. Après paiement, elle sera validée par l'organisateur.</p>`
-    : (d.event.paymentStatus==='pending'
-        ? '<p class="muted">Formule payante : le paiement sera proposé prochainement — ta fête est déjà utilisable.</p>' : '');
+  let payBlock = '';
+  if (d.event.paymentStatus==='pending'){
+    const price = fmtPrice(plan, PRICING.currency);
+    const btns = [];
+    if (plan.payLink) btns.push(`<a class="btn" style="display:inline-block;width:auto" href="${esc(plan.payLink)}" target="_blank" rel="noopener">💳 Payer ${price} par carte</a>`);
+    if (d.paypalLink) btns.push(`<a class="btn secondary" style="display:inline-block;width:auto" href="${esc(d.paypalLink)}" target="_blank" rel="noopener">🅿️ Payer ${price} avec PayPal</a>`);
+    payBlock = btns.length
+      ? `<p class="inline" style="flex-wrap:wrap;gap:8px">${btns.join('')}</p>
+         <p class="muted" style="font-size:12.5px">Ta fête est déjà utilisable. Après paiement, elle sera validée par l'organisateur.</p>`
+      : '<p class="muted">Formule payante : le paiement sera proposé prochainement — ta fête est déjà utilisable.</p>';
+  }
   okEl.innerHTML = `<div class="success-box">
     <strong class="ok">✓ « ${esc(d.event.name)} » créée !</strong>
     <p>Identifiant : <code class="pwd">${esc(d.event.id)}</code> · Mot de passe console : <code class="pwd">${esc(d.adminPassword)}</code></p>

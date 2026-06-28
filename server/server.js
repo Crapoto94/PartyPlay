@@ -21,7 +21,7 @@ import {
 import { getGame, reloadConfig, dropGame } from './store/eventManager.js';
 import { DEFAULT_AVATARS, defaultContent, emptyContent } from './data/defaults.js';
 import { getPricing, savePricing, getPlan, allowedThemes, ALL_THEMES, planExists } from './store/plans.js';
-import { publicPaymentConfig } from './store/payment.js';
+import { publicPaymentConfig, paypalLink } from './store/payment.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC = path.join(__dirname, 'public');
@@ -86,7 +86,9 @@ app.post('/api/parties', (req, res) => {
   const cfg = createEvent({ name: name.trim(), theme, plan: planName, adminPassword: pwd, publicUrl, seed: seed || 'default' });
   cfg.avatars = DEFAULT_AVATARS;
   saveConfig(cfg);
-  res.json({ ok: true, event: { id: cfg.id, name: cfg.name, theme: cfg.theme, plan: cfg.plan, paymentStatus: cfg.paymentStatus }, adminPassword: pwd });
+  const pl = getPlan(cfg.plan);
+  const paypal = (cfg.paymentStatus === 'pending') ? paypalLink({ label: pl.label, price: pl.price, currency: getPricing().currency }) : '';
+  res.json({ ok: true, event: { id: cfg.id, name: cfg.name, theme: cfg.theme, plan: cfg.plan, paymentStatus: cfg.paymentStatus }, adminPassword: pwd, paypalLink: paypal });
 });
 
 // Résout un token joueur → l'événement qui le contient (rejoindre par code).
@@ -333,6 +335,7 @@ ev.get('/api/admin/meta', (req, res) => {
     themes: allowedThemes(req.cfg.plan || 'free'), allThemes: ALL_THEMES,
     plan: req.cfg.plan || 'free', planLabel: plan.label, planLimits: plan.limits || {},
     planPrice: plan.price || 0, payLink: plan.payLink || '', currency: getPricing().currency || 'EUR',
+    paypalLink: (req.cfg.paymentStatus === 'pending') ? paypalLink({ label: plan.label, price: plan.price, currency: getPricing().currency }) : '',
     paymentStatus: req.cfg.paymentStatus || 'free',
   });
 });
