@@ -11,6 +11,22 @@
     <h1 class="neon-pink" id="evTitle">🎛️ Console</h1>
     <p class="muted">Configurez votre événement et pilotez la soirée en direct.</p>
 
+    <!-- Toast : email vérifié avec succès -->
+    <div id="verifiedToast" style="display:none;background:#e8f7ee;border:1px solid #bfe6cd;border-radius:10px;padding:14px 16px;margin-bottom:16px">
+      <strong style="color:#1f9d57">✅ Email confirmé !</strong> Votre fête est maintenant activée — vous pouvez démarrer la soirée.
+    </div>
+
+    <!-- Bannière : email en attente de vérification -->
+    <div id="verifyBanner" style="display:none;background:#fef3c7;border:1px solid #f59e0b;border-radius:10px;padding:14px 16px;margin-bottom:16px">
+      <strong>📧 Email non vérifié</strong>
+      <p class="muted" style="margin:6px 0">Un lien de confirmation a été envoyé à <strong id="verifyEmailAddr"></strong>. Cliquez dessus pour activer votre fête.</p>
+      <p class="muted" style="font-size:12.5px;margin:0 0 10px">⚠️ Le démarrage de la soirée est bloqué jusqu'à la confirmation.</p>
+      <div class="inline">
+        <button class="btn secondary" style="width:auto" onclick="resendVerification(this)">Renvoyer l'email</button>
+        <span id="resendStatus" style="font-size:13px"></span>
+      </div>
+    </div>
+
     <div class="card" id="loginCard" style="display:none">
       <div class="field"><label>Mot de passe de la console</label><input type="password" id="pwd"></div>
       <button class="btn" onclick="login()">Entrer</button>
@@ -185,6 +201,11 @@ async function boot(){
   document.getElementById('evTitle').textContent = '🎛️ ' + (EVENT.name||'Console');
   META = await (await fetch(API+'/api/admin/meta')).json();
   if (META.needsPassword && !PWD){ document.getElementById('loginCard').style.display='block'; return; }
+  // Toast si on revient après confirmation email
+  if (new URLSearchParams(location.search).get('verified') === '1') {
+    document.getElementById('verifiedToast').style.display = 'block';
+    history.replaceState({}, '', location.pathname);
+  }
   await loadConfig();
 }
 async function login(){
@@ -201,8 +222,26 @@ async function loadConfig(){
   const d = await r.json(); CFG = d.config; AV = d.defaultAvatars || {};
   AVATAR_KEYS.length=0; Object.keys(AV).forEach(k=>AVATAR_KEYS.push(k));
   document.getElementById('app').style.display='block';
+  // Bannière email non vérifié
+  if (META.emailVerified === false) {
+    document.getElementById('verifyBanner').style.display = 'block';
+    document.getElementById('verifyEmailAddr').textContent = META.contactEmail || '';
+  }
   fillGeneral(); fillPlayers(); fillActivities(); fillContent(); fillLaunchers();
   startGmStream();
+}
+
+async function resendVerification(btn) {
+  btn.disabled = true;
+  const st = document.getElementById('resendStatus'); st.textContent = 'Envoi…'; st.style.color = '';
+  try {
+    const r = await fetch(API+'/api/admin/resend-verification', { method:'POST', headers:H() });
+    const d = await r.json();
+    if (r.ok) { st.textContent = '✓ Email renvoyé !'; st.style.color = '#1f9d57'; }
+    else { st.textContent = '✗ '+(d.error||'Erreur'); st.style.color = '#d63a3a'; }
+  } catch { st.textContent = '✗ Erreur réseau'; st.style.color = '#d63a3a'; }
+  btn.disabled = false;
+  setTimeout(() => { st.textContent = ''; st.style.color = ''; }, 4000);
 }
 
 function tab(name){

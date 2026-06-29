@@ -16,7 +16,7 @@ import QRCode from 'qrcode';
 
 import {
   listEvents, getConfig, saveConfig, createEvent, removeEvent, eventExists,
-  uploadsDir, THEMES,
+  findEventByVerificationToken, uploadsDir, THEMES,
 } from './store/eventStore.js';
 import { getGame, reloadConfig, dropGame } from './store/eventManager.js';
 import { DEFAULT_AVATARS, defaultContent, emptyContent } from './data/defaults.js';
@@ -93,6 +93,19 @@ app.post('/api/parties', (req, res) => {
   const cfg = createEvent({ name: name.trim(), theme, plan: planName, adminPassword: pwd, publicUrl, seed: seed || 'default', contactEmail: contactEmail || '' });
   cfg.avatars = DEFAULT_AVATARS;
   saveConfig(cfg);
+  // Envoi de l'email de vérification (non-bloquant)
+  if (cfg.contactEmail && !cfg.emailVerified) {
+    const proto = req.get('x-forwarded-proto') || req.protocol;
+    const host = req.get('x-forwarded-host') || req.get('host');
+    const baseUrl = process.env.PUBLIC_URL || `${proto}://${host}`;
+    const verifyUrl = `${baseUrl}/verify/${cfg.verificationToken}`;
+    const consoleUrl = `${baseUrl}/e/${cfg.id}/admin`;
+    sendMail({
+      to: cfg.contactEmail,
+      subject: `Confirmez votre fête « ${cfg.name} » sur PartyPlay`,
+      htmlContent: buildVerifyEmail(cfg, verifyUrl, consoleUrl),
+    }).catch(() => {});
+  }
   res.json({ ok: true, event: { id: cfg.id, name: cfg.name, theme: cfg.theme, plan: cfg.plan, paymentStatus: cfg.paymentStatus }, adminPassword: pwd });
 });
 
@@ -140,8 +153,8 @@ app.post('/api/admin/events', (req, res) => {
   if (!requireAdmin(req, res)) return;
   const { name, theme, adminPassword, publicUrl, seed, plan } = req.body || {};
   if (!name || !name.trim()) return res.status(400).json({ error: 'Nom requis.' });
-  const cfg = createEvent({ name: name.trim(), theme, adminPassword, publicUrl, seed: seed || 'default', plan: plan || 'free' });
-  // On dote l'événement des avatars par défaut (réutilisables).
+  // Les événements créés par le super-admin sont directement vérifiés.
+  const cfg = createEvent({ name: name.trim(), theme, adminPassword, publicUrl, seed: seed || 'default', plan: plan || 'free', bypassVerification: true });
   cfg.avatars = DEFAULT_AVATARS;
   saveConfig(cfg);
   res.json({ ok: true, event: { id: cfg.id, name: cfg.name, theme: cfg.theme, plan: cfg.plan } });
@@ -215,6 +228,38 @@ app.post('/api/admin/events/:id/payment', (req, res) => {
   saveConfig(cfg);
   reloadConfig(cfg.id);
   res.json({ ok: true, paymentStatus: cfg.paymentStatus });
+});
+
+// =====================================================================
+//  VÉRIFICATION D'EMAIL
+// =====================================================================
+function buildVerifyEmail(cfg, verifyUrl, consoleUrl) {
+  return `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:520px;margin:0 auto;padding:24px;color:#1f2430">
+  <h2 style="color:#3b6ef5;margin:0 0 16px">Confirmez votre email 📧</h2>
+  <p>Bonjour !</p>
+  <p>Votre fête <strong>« ${cfg.name} »</strong> a bien été créée sur <strong>PartyPlay</strong>.</p>
+  <p>Cliquez sur le bouton ci-dessous pour confirmer votre adresse et activer votre fête :</p>
+  <p style="text-align:center;margin:28px 0">
+    <a href="${verifyUrl}" style="display:inline-block;background:#3b6ef5;color:#fff;padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:700;font-size:16px">✅ Confirmer mon email</a>
+  </p>
+  <p style="font-size:13px;color:#6b7280">Lien de confirmation :<br><a href="${verifyUrl}" style="color:#3b6ef5;word-break:break-all">${verifyUrl}</a></p>
+  <hr style="border:none;border-top:1px solid #e2e5ea;margin:20px 0">
+  <p style="font-size:13px;color:#6b7280">
+    Console d'administration : <a href="${consoleUrl}" style="color:#3b6ef5">${consoleUrl}</a><br>
+    ${cfg.adminPassword ? `Mot de passe console : <strong>${cfg.adminPassword}</strong>` : ''}
+  </p>
+  <p style="font-size:12px;color:#9ca3af">Si vous n'avez pas créé cette fête, ignorez cet email.</p>
+</div>`;
+}
+
+app.get('/verify/:token', (req, res) => {
+  const cfg = findEventByVerificationToken(req.params.token);
+  if (!cfg) return res.status(410).send(`<!doctype html><html><head><meta charset="utf-8"><title>Lien invalide</title></head><body style="font-family:system-ui;text-align:center;padding:60px"><h1>🔗 Lien invalide ou déjà utilisé</h1><p><a href="/">Retour à l'accueil</a></p></body></html>`);
+  cfg.emailVerified = true;
+  cfg.verificationToken = null;
+  saveConfig(cfg);
+  reloadConfig(cfg.id);
+  res.redirect(`/e/${cfg.id}/admin?verified=1`);
 });
 
 // =====================================================================
@@ -381,6 +426,8 @@ ev.get('/api/admin/meta', (req, res) => {
     planPrice: plan.price || 0, payLink: plan.payLink || '', currency: getPricing().currency || 'EUR',
     paypalButtonId: plan.paypalButtonId || '', paypalClientId: getPricing().paypalClientId || '',
     paymentStatus: req.cfg.paymentStatus || 'free',
+    emailVerified: req.cfg.emailVerified !== false,
+    contactEmail: req.cfg.contactEmail || '',
   });
 });
 
@@ -434,9 +481,30 @@ ev.get('/api/admin/gmstate', (req, res) => {
   });
 });
 
+// Renvoi de l'email de vérification (depuis la console de l'événement).
+ev.post('/api/admin/resend-verification', async (req, res) => {
+  if (!requireEventAdmin(req, res)) return;
+  const cfg = req.cfg;
+  if (cfg.emailVerified !== false) return res.json({ ok: true, alreadyVerified: true });
+  if (!cfg.contactEmail) return res.status(400).json({ error: 'Aucun email de contact configuré.' });
+  const proto = req.get('x-forwarded-proto') || req.protocol;
+  const host = req.get('x-forwarded-host') || req.get('host');
+  const baseUrl = process.env.PUBLIC_URL || `${proto}://${host}`;
+  const verifyUrl = `${baseUrl}/verify/${cfg.verificationToken}`;
+  const consoleUrl = `${baseUrl}/e/${cfg.id}/admin`;
+  try {
+    await sendMail({ to: cfg.contactEmail, subject: `Confirmez votre fête « ${cfg.name} » sur PartyPlay`, htmlContent: buildVerifyEmail(cfg, verifyUrl, consoleUrl) });
+    res.json({ ok: true });
+  } catch (e) { res.status(500).json({ error: e.message }); }
+});
+
 // Actions de pilotage GM (protégées).
 ev.post('/api/admin/action', (req, res) => {
   if (!requireEventAdmin(req, res)) return;
+  // Bloquer toute action de jeu tant que l'email n'est pas vérifié.
+  if (req.cfg.emailVerified === false) {
+    return res.status(403).json({ error: 'Vérifiez votre email avant de démarrer la soirée.' });
+  }
   const g = req.game;
   const { action, payload = {} } = req.body;
   switch (action) {

@@ -8,6 +8,7 @@
 
 import fs from 'fs';
 import path from 'path';
+import { randomBytes } from 'crypto';
 import { fileURLToPath } from 'url';
 import { defaultSettings, defaultContent, emptyContent, defaultActivities } from '../data/defaults.js';
 import { enforcePlan, planExists } from './plans.js';
@@ -71,10 +72,20 @@ export function saveConfig(cfg) {
   return cfg;
 }
 
-export function createEvent({ name, theme = 'retro', adminPassword = '', publicUrl = '', seed = 'default', plan = 'free', contactEmail = '' }) {
+export function findEventByVerificationToken(token) {
+  if (!token) return null;
+  for (const e of listEvents()) {
+    const cfg = getConfig(e.id);
+    if (cfg && cfg.verificationToken === token) return cfg;
+  }
+  return null;
+}
+
+export function createEvent({ name, theme = 'retro', adminPassword = '', publicUrl = '', seed = 'default', plan = 'free', contactEmail = '', bypassVerification = false }) {
   ensureRoot();
   const id = slugify(name);
   fs.mkdirSync(uploadsDir(id), { recursive: true });
+  const needsVerification = !!contactEmail && !bypassVerification;
   const cfg = {
     id,
     name: name || id,
@@ -84,6 +95,8 @@ export function createEvent({ name, theme = 'retro', adminPassword = '', publicU
     adminPassword: adminPassword || '',
     contactEmail: contactEmail || '',
     publicUrl: publicUrl || '',
+    emailVerified: !needsVerification,
+    verificationToken: needsVerification ? randomBytes(32).toString('hex') : null,
     createdAt: Date.now(),
     settings: defaultSettings(),
     players: [],

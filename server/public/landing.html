@@ -251,9 +251,17 @@ async function createParty(){
       : `<p class="muted" style="font-size:12.5px">Formule payante — le paiement sera proposé prochainement.</p>`;
   }
 
+  const verifyNotice = `
+    <div style="background:#fef3c7;border:1px solid #f59e0b;border-radius:9px;padding:12px 14px;margin-bottom:14px;font-size:13.5px">
+      <strong>📧 Vérifiez votre email</strong><br>
+      Un lien de confirmation a été envoyé à <strong>${esc(email)}</strong>.<br>
+      <span style="color:#92400e">La fête sera activée dès que vous aurez cliqué sur ce lien.</span>
+    </div>`;
+
   const modalHtml = `
     <div class="modal-icon">🎉</div>
     <h2 class="modal-title">« ${esc(d.event.name)} » est créée !</h2>
+    ${verifyNotice}
     <div class="info-grid">
       <div class="info-row"><span class="info-label">Identifiant</span><code class="pwd">${esc(d.event.id)}</code></div>
       <div class="info-row"><span class="info-label">Mot de passe console</span><code class="pwd">${esc(d.adminPassword)}</code></div>
