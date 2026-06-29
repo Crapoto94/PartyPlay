@@ -41,6 +41,9 @@
           <a class="nav-item" data-sec="email" onclick="showSection('email')">
             <span>📧</span> Emails
           </a>
+          <a class="nav-item" data-sec="legal" onclick="showSection('legal')">
+            <span>⚖️</span> Légal
+          </a>
         </nav>
         <div class="sidebar-footer">
           <a href="/" class="nav-item"><span>←</span> Accueil public</a>
@@ -188,6 +191,43 @@
           </div>
         </section>
 
+        <!-- ===== SECTION : LÉGAL ===== -->
+        <section id="sec-legal" class="admin-section" style="display:none">
+          <h1 class="section-title">⚖️ Pages légales</h1>
+          <p class="muted" style="margin-bottom:20px">Textes affichés sur les pages <a href="/contact" target="_blank">Contact</a>, <a href="/rgpd" target="_blank">RGPD</a> et <a href="/mentions-legales" target="_blank">Mentions légales</a> accessibles depuis le footer.</p>
+
+          <div class="card">
+            <h2>🏷️ Identité du site</h2>
+            <div class="row">
+              <div class="field"><label>Nom du site</label><input type="text" id="lSiteName" placeholder="PartyPlay"></div>
+              <div class="field"><label>Email de contact public</label><input type="email" id="lContactEmail" placeholder="contact@partyplay.fr"></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2>📬 Page Contact</h2>
+            <p class="muted" style="font-size:13px;margin:0 0 10px">Texte affiché sur <code>/contact</code>. L'email public sera automatiquement ajouté comme lien cliquable.</p>
+            <div class="field"><textarea id="lContactText" rows="5" style="font-family:inherit;resize:vertical"></textarea></div>
+          </div>
+
+          <div class="card">
+            <h2>🔒 Politique de confidentialité (RGPD)</h2>
+            <p class="muted" style="font-size:13px;margin:0 0 10px">Texte affiché sur <code>/rgpd</code>. Modifiez les parties entre crochets [À compléter].</p>
+            <div class="field"><textarea id="lRgpdText" rows="16" style="font-family:inherit;resize:vertical"></textarea></div>
+          </div>
+
+          <div class="card">
+            <h2>📄 Mentions légales</h2>
+            <p class="muted" style="font-size:13px;margin:0 0 10px">Texte affiché sur <code>/mentions-legales</code>. Complétez les informations sur l'éditeur et l'hébergeur.</p>
+            <div class="field"><textarea id="lMentionsText" rows="14" style="font-family:inherit;resize:vertical"></textarea></div>
+          </div>
+
+          <div class="inline">
+            <button class="btn" onclick="saveLegalContent()">💾 Enregistrer les pages légales</button>
+            <span id="lSaved" class="muted"></span>
+          </div>
+        </section>
+
       </main>
     </div>
   </div>
@@ -197,7 +237,7 @@ const themeLabel = { retro:'Rétro', neon:'Néon', chic:'Chic', kids:'Enfant', c
 const ALL_THEMES = ['retro','neon','chic','kids','casino'];
 const PLAN_ORDER = ['free','full','infinite'];
 let PWD = sessionStorage.getItem('admPwd') || '';
-let PRICING = null, BREVO = null, _emailLoaded = false;
+let PRICING = null, BREVO = null, _emailLoaded = false, _legalLoaded = false;
 
 function headers() { return { 'Content-Type':'application/json', 'x-admin-password': PWD }; }
 function esc(s) { return (s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
@@ -210,6 +250,7 @@ function showSection(name) {
   document.querySelectorAll('.nav-item[data-sec]').forEach(el =>
     el.classList.toggle('active', el.dataset.sec === name));
   if (name === 'email' && !_emailLoaded) { _emailLoaded = true; loadBrevoConfig(); }
+  if (name === 'legal' && !_legalLoaded) { _legalLoaded = true; loadLegalContent(); }
 }
 
 // ---- Auth ----
@@ -480,6 +521,35 @@ async function sendEmail() {
     else { errEl.textContent = '✗ '+(d.error||'Erreur d\'envoi'); errEl.style.color = 'var(--a-danger)'; }
   } catch { errEl.textContent = '✗ Erreur réseau'; errEl.style.color = 'var(--a-danger)'; }
   btn.disabled = false; btn.textContent = 'Envoyer';
+}
+
+// ---- Légal ----
+async function loadLegalContent() {
+  try {
+    const r = await fetch('/api/admin/legal', { headers: headers() });
+    if (!r.ok) return;
+    const d = await r.json();
+    document.getElementById('lSiteName').value = d.siteName || '';
+    document.getElementById('lContactEmail').value = d.contactEmail || '';
+    document.getElementById('lContactText').value = d.contactText || '';
+    document.getElementById('lRgpdText').value = d.rgpdText || '';
+    document.getElementById('lMentionsText').value = d.mentionsText || '';
+  } catch {}
+}
+
+async function saveLegalContent() {
+  const body = {
+    siteName: document.getElementById('lSiteName').value.trim(),
+    contactEmail: document.getElementById('lContactEmail').value.trim(),
+    contactText: document.getElementById('lContactText').value,
+    rgpdText: document.getElementById('lRgpdText').value,
+    mentionsText: document.getElementById('lMentionsText').value,
+  };
+  const r = await fetch('/api/admin/legal', { method: 'POST', headers: headers(), body: JSON.stringify(body) });
+  const d = await r.json();
+  const s = document.getElementById('lSaved');
+  if (d.ok) { s.textContent = '✓ Enregistré'; setTimeout(() => s.textContent = '', 2000); }
+  else { s.textContent = '✗ Erreur'; s.style.color = 'var(--a-danger)'; }
 }
 
 boot();

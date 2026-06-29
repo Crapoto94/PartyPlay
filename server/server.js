@@ -23,6 +23,7 @@ import { DEFAULT_AVATARS, defaultContent, emptyContent } from './data/defaults.j
 import { getPricing, savePricing, getPlan, allowedThemes, ALL_THEMES, planExists } from './store/plans.js';
 import { publicPaymentConfig } from './store/payment.js';
 import { getBrevoConfig, saveBrevoConfig, sendMail } from './store/brevo.js';
+import { getLegal, saveLegal } from './store/legal.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC = path.join(__dirname, 'public');
@@ -33,8 +34,11 @@ const PORT = process.env.PORT || 8080;
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || '';
 
 const app = express();
+app.set('trust proxy', 1); // X-Forwarded-For derrière Nginx/Caddy
 app.use(express.json({ limit: '2mb' }));
 app.use('/static', express.static(path.join(PUBLIC, 'static')));
+
+const htmlEsc = s => String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 
 // ---------------------------------------------------------------------
 //  Rendu d'une page avec injection du contexte événement + thème.
@@ -92,6 +96,7 @@ app.post('/api/parties', (req, res) => {
   const pwd = (adminPassword && adminPassword.trim()) || ('p' + Math.random().toString(36).slice(2, 8));
   const cfg = createEvent({ name: name.trim(), theme, plan: planName, adminPassword: pwd, publicUrl, seed: seed || 'default', contactEmail: contactEmail || '' });
   cfg.avatars = DEFAULT_AVATARS;
+  cfg.creatorIp = (req.get('x-forwarded-for') || '').split(',')[0].trim() || req.ip || 'unknown';
   saveConfig(cfg);
   // Envoi de l'email de vérification + infos (non-bloquant)
   if (cfg.contactEmail && !cfg.emailVerified) {
@@ -230,6 +235,67 @@ app.post('/api/admin/events/:id/payment', (req, res) => {
   saveConfig(cfg);
   reloadConfig(cfg.id);
   res.json({ ok: true, paymentStatus: cfg.paymentStatus });
+});
+
+// =====================================================================
+//  PAGES LÉGALES
+// =====================================================================
+function buildLegalPage(title, content) {
+  const legal = getLegal();
+  return `<!doctype html><html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>${htmlEsc(title)} — ${htmlEsc(legal.siteName)}</title>
+<link rel="stylesheet" href="/static/admin.css">
+<style>
+  body{background:var(--a-bg);color:var(--a-text)}
+  .legal-wrap{max-width:760px;margin:0 auto;padding:40px 20px 80px}
+  .legal-back{display:inline-block;margin-bottom:24px;color:var(--a-accent);font-size:14px;text-decoration:none}
+  .legal-back:hover{text-decoration:underline}
+  h1{font-size:26px;font-weight:800;margin:0 0 24px}
+  .legal-body{white-space:pre-line;line-height:1.8;font-size:15px;color:var(--a-text)}
+  .legal-footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--a-border);font-size:13px;color:var(--a-muted)}
+  .legal-footer a{color:var(--a-accent);text-decoration:none;margin:0 8px}
+</style>
+</head><body>
+<div class="legal-wrap">
+  <a href="/" class="legal-back">← Retour à l'accueil</a>
+  <h1>${htmlEsc(title)}</h1>
+  <div class="legal-body">${content}</div>
+  <div class="legal-footer">
+    <a href="/contact">Contact</a><a href="/rgpd">Confidentialité</a><a href="/mentions-legales">Mentions légales</a>
+  </div>
+</div>
+</body></html>`;
+}
+
+app.get('/contact', (req, res) => {
+  const l = getLegal();
+  res.send(buildLegalPage('Contact', htmlEsc(l.contactText) + `\n\n<a href="mailto:${htmlEsc(l.contactEmail)}" style="color:var(--a-accent);font-weight:600">${htmlEsc(l.contactEmail)}</a>`));
+});
+app.get('/rgpd', (req, res) => {
+  const l = getLegal();
+  res.send(buildLegalPage('Politique de confidentialité (RGPD)', htmlEsc(l.rgpdText)));
+});
+app.get('/mentions-legales', (req, res) => {
+  const l = getLegal();
+  res.send(buildLegalPage('Mentions légales', htmlEsc(l.mentionsText)));
+});
+
+app.get('/api/legal', (req, res) => {
+  const l = getLegal();
+  res.json({ siteName: l.siteName, contactEmail: l.contactEmail });
+});
+app.get('/api/admin/legal', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  res.json(getLegal());
+});
+app.post('/api/admin/legal', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  const allowed = ['siteName', 'contactEmail', 'contactText', 'rgpdText', 'mentionsText'];
+  const patch = {};
+  for (const k of allowed) if (req.body[k] !== undefined) patch[k] = req.body[k];
+  saveLegal(patch);
+  res.json({ ok: true });
 });
 
 // =====================================================================
