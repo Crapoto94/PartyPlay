@@ -71,7 +71,7 @@ export function saveConfig(cfg) {
   return cfg;
 }
 
-export function createEvent({ name, theme = 'retro', adminPassword = '', publicUrl = '', seed = 'default', plan = 'free' }) {
+export function createEvent({ name, theme = 'retro', adminPassword = '', publicUrl = '', seed = 'default', plan = 'free', contactEmail = '' }) {
   ensureRoot();
   const id = slugify(name);
   fs.mkdirSync(uploadsDir(id), { recursive: true });
@@ -82,6 +82,7 @@ export function createEvent({ name, theme = 'retro', adminPassword = '', publicU
     plan: planExists(plan) ? plan : 'free',
     paymentStatus: plan === 'free' ? 'free' : 'pending', // pending | paid | free
     adminPassword: adminPassword || '',
+    contactEmail: contactEmail || '',
     publicUrl: publicUrl || '',
     createdAt: Date.now(),
     settings: defaultSettings(),

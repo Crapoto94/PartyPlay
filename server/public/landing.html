@@ -21,12 +21,53 @@
     .plan .pl-name { font-weight:700; }
     .plan .pl-tag { font-size:12.5px; color:var(--a-muted); }
     .plan ul { margin:8px 0 0; padding-left:18px; font-size:13px; color:var(--a-ink); }
-    .ok { color: var(--a-ok); }
-    .success-box { background: #f0faf3; border:1px solid #bfe6cd; border-radius:10px; padding:14px; margin-top:12px; }
-    code.pwd { background:#eef2ff; padding:2px 8px; border-radius:6px; font-size:15px; }
+
+    /* ---- Modale ---- */
+    .modal-overlay {
+      position:fixed; inset:0; background:rgba(0,0,0,.48); z-index:900;
+      display:flex; align-items:center; justify-content:center; padding:16px;
+      animation:moFade .18s ease;
+    }
+    @keyframes moFade { from { opacity:0 } }
+    .modal {
+      background:#fff; border-radius:18px; padding:28px 24px 22px;
+      max-width:500px; width:100%; max-height:90vh; overflow-y:auto;
+      box-shadow:0 28px 72px rgba(0,0,0,.22); position:relative;
+      animation:moUp .2s ease;
+    }
+    @keyframes moUp { from { transform:translateY(20px); opacity:0 } }
+    .modal-close {
+      position:absolute; top:12px; right:14px; background:none; border:none;
+      font-size:20px; cursor:pointer; color:var(--a-muted); padding:5px 7px;
+      border-radius:7px; line-height:1;
+    }
+    .modal-close:hover { background:var(--a-bg); color:var(--a-ink); }
+    .modal-icon { font-size:52px; text-align:center; margin-bottom:10px; }
+    .modal-title { font-size:20px; font-weight:700; margin:0 0 18px; text-align:center; }
+    .info-grid {
+      background:var(--a-bg); border-radius:10px; padding:4px 14px; margin:0 0 16px;
+    }
+    .info-row { display:flex; align-items:center; gap:10px; padding:9px 0; border-bottom:1px solid var(--a-border); font-size:14px; }
+    .info-row:last-child { border-bottom:none; }
+    .info-label { font-size:11.5px; font-weight:600; color:var(--a-muted); min-width:130px; flex-shrink:0; }
+    code.pwd { background:#eef2ff; padding:2px 8px; border-radius:6px; font-size:14px; font-family:monospace; }
+    .modal-actions { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px; }
+    .modal-actions .btn { flex:1; min-width:140px; text-align:center; }
+    .modal-note { font-size:12px; color:var(--a-muted); border-top:1px solid var(--a-border); padding-top:10px; margin-top:4px; }
+    .pay-block { margin:4px 0 12px; }
+    .pay-block p { margin:0 0 8px; }
   </style>
 </head>
 <body>
+
+  <!-- Modale résultat de création -->
+  <div class="modal-overlay" id="resultModal" style="display:none" onclick="if(event.target===this)closeModal()">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal()" title="Fermer">✕</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
   <div class="admin-wrap">
     <div class="hero">
       <div class="logo">🎉</div>
@@ -73,10 +114,16 @@
         <div class="field"><label>Nom de la fête</label><input type="text" id="cName" placeholder="Anniversaire de Léa"></div>
         <div class="field"><label>Thème graphique</label><select id="cTheme"></select></div>
       </div>
-      <div class="field"><label>Mot de passe de la console (optionnel — sinon généré)</label><input type="text" id="cPwd" placeholder="laisser vide"></div>
+      <div class="field">
+        <label>Email de contact <span class="muted" style="font-weight:400">(pour retrouver votre fête)</span></label>
+        <input type="email" id="cEmail" placeholder="vous@exemple.com" autocomplete="email">
+      </div>
+      <div class="field">
+        <label>Mot de passe de la console <span class="muted" style="font-weight:400">(optionnel — sinon généré)</span></label>
+        <input type="text" id="cPwd" placeholder="laisser vide">
+      </div>
       <button class="btn" onclick="createParty()">Créer ma fête</button>
-      <div id="createErr" style="margin-top:10px"></div>
-      <div id="createOk"></div>
+      <div id="createErr" style="margin-top:10px;color:var(--a-danger)"></div>
     </div>
 
     <p class="muted" style="text-align:center; margin-top:24px; font-size:13px">
@@ -92,7 +139,20 @@ const ALL_THEMES = ['retro','neon','chic','kids','casino'];
 function esc(s){ return (s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 function fmtPrice(p, cur){ return p.price===0 ? 'Gratuit' : (Number(p.price).toFixed(2).replace('.',',')+' '+(cur==='EUR'?'€':cur)); }
 
-// --- PayPal : boutons hébergés (SDK chargé une seule fois) ---
+// ---- Modale ----
+function openModal(html, afterOpen) {
+  document.getElementById('modalBody').innerHTML = html;
+  document.getElementById('resultModal').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  if (afterOpen) setTimeout(afterOpen, 80);
+}
+function closeModal() {
+  document.getElementById('resultModal').style.display = 'none';
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// ---- PayPal : boutons hébergés (SDK chargé une seule fois) ----
 let _ppPromise = null;
 function loadPaypal(clientId, currency){
   if (_ppPromise) return _ppPromise;
@@ -117,13 +177,14 @@ async function boot(){
   renderPlans();
   selectPlan('free');
 }
+
 function renderPlans(){
   const plans = PRICING.plans, order = ['free','full','infinite'];
   document.getElementById('plans').innerHTML = order.filter(k=>plans[k]).map(k=>{
     const p = plans[k], lim = p.limits||{};
     const feats = [];
-    feats.push((lim.maxPlayers? lim.maxPlayers+' joueurs max' : 'Joueurs illimités'));
-    feats.push((lim.maxActivities? lim.maxActivities+' activités' : 'Toutes les activités'));
+    feats.push(lim.maxPlayers ? lim.maxPlayers+' joueurs max' : 'Joueurs illimités');
+    feats.push(lim.maxActivities ? lim.maxActivities+' activités' : 'Toutes les activités');
     feats.push((lim.themes==='all' || !Array.isArray(lim.themes)) ? 'Tous les thèmes' : (lim.themes.length+' thème'+(lim.themes.length>1?'s':'')));
     feats.push(lim.photo===false ? 'Sans défi photo' : 'Défi photo + galerie');
     if (p.premium) feats.push('Accès premium');
@@ -136,58 +197,84 @@ function renderPlans(){
     </div>`;
   }).join('');
 }
+
 function selectPlan(k){
   SELECTED = k;
   document.querySelectorAll('.plan').forEach(el=>el.classList.toggle('sel', el.dataset.plan===k));
-  // thèmes autorisés pour ce plan
   const lim = PRICING.plans[k].limits||{};
   const themes = (lim.themes==='all' || !Array.isArray(lim.themes)) ? ALL_THEMES : lim.themes;
   document.getElementById('cTheme').innerHTML = themes.map(t=>`<option value="${t}">${THEME_LABELS[t]||t}</option>`).join('');
 }
 
 async function createParty(){
-  const errEl = document.getElementById('createErr'), okEl = document.getElementById('createOk');
-  errEl.textContent=''; errEl.style.color='var(--a-danger)'; okEl.innerHTML='';
-  const name = document.getElementById('cName').value.trim();
-  if (!name){ errEl.textContent = 'Donne un nom à ta fête.'; return; }
-  const body = { name, theme: document.getElementById('cTheme').value, plan: SELECTED,
-    adminPassword: document.getElementById('cPwd').value.trim(), seed:'default' };
+  const errEl = document.getElementById('createErr');
+  errEl.textContent = '';
+  const name  = document.getElementById('cName').value.trim();
+  const email = document.getElementById('cEmail').value.trim();
+  if (!name)  { errEl.textContent = 'Donne un nom à ta fête.'; return; }
+  if (!email) { errEl.textContent = 'Saisis ton adresse email de contact.'; return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { errEl.textContent = 'Adresse email invalide.'; return; }
+
+  const body = {
+    name, contactEmail: email,
+    theme: document.getElementById('cTheme').value,
+    plan: SELECTED,
+    adminPassword: document.getElementById('cPwd').value.trim(),
+    seed: 'default',
+  };
   let d;
   try {
     const r = await fetch('/api/parties', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) });
     d = await r.json();
     if (!r.ok){ errEl.textContent = d.error || ('Erreur '+r.status); return; }
   } catch(e){ errEl.textContent = 'Erreur réseau : '+e.message; return; }
-  const plan = PRICING.plans[d.event.plan] || {};
+
+  // Réinitialise le formulaire
+  document.getElementById('cName').value = '';
+  document.getElementById('cEmail').value = '';
+  document.getElementById('cPwd').value = '';
+
+  // Construit le contenu de la modale
+  const plan  = PRICING.plans[d.event.plan] || {};
   const price = fmtPrice(plan, PRICING.currency);
-  const ppId = 'paypal-container-' + Math.random().toString(36).slice(2,8);
-  let payBlock = '';
-  if (d.event.paymentStatus==='pending'){
-    let inner = '';
-    if (plan.payLink) inner += `<a class="btn" style="display:inline-block;width:auto" href="${esc(plan.payLink)}" target="_blank" rel="noopener">💳 Payer ${price} par carte (SumUp)</a>`;
-    if (plan.paypalButtonId && PRICING.paypalClientId) inner += `<div id="${ppId}" style="margin-top:10px;max-width:320px"></div>`;
-    payBlock = inner
-      ? `<p style="margin-top:6px">${inner}</p>
-         <p class="muted" style="font-size:12.5px">Ta fête est déjà utilisable. Après paiement, elle sera validée par l'organisateur.</p>`
-      : '<p class="muted">Formule payante : le paiement sera proposé prochainement — ta fête est déjà utilisable.</p>';
+  const ppId  = 'pp-' + Math.random().toString(36).slice(2,8);
+
+  let payHtml = '';
+  if (d.event.paymentStatus === 'pending') {
+    let btns = '';
+    if (plan.payLink)
+      btns += `<p><a class="btn" style="display:inline-block;width:auto" href="${esc(plan.payLink)}" target="_blank" rel="noopener">💳 Payer ${price} par carte (SumUp)</a></p>`;
+    if (plan.paypalButtonId && PRICING.paypalClientId)
+      btns += `<div id="${ppId}" style="max-width:320px;margin-top:8px"></div>`;
+    payHtml = btns
+      ? `<div class="pay-block">${btns}<p class="muted" style="font-size:12px;margin-top:6px">Ta fête est déjà utilisable. Après paiement, elle sera validée.</p></div>`
+      : `<p class="muted" style="font-size:12.5px">Formule payante — le paiement sera proposé prochainement.</p>`;
   }
-  okEl.innerHTML = `<div class="success-box">
-    <strong class="ok">✓ « ${esc(d.event.name)} » créée !</strong>
-    <p>Identifiant : <code class="pwd">${esc(d.event.id)}</code> · Mot de passe console : <code class="pwd">${esc(d.adminPassword)}</code></p>
-    <p>👉 <a href="/e/${d.event.id}/admin" target="_blank"><strong>Ouvrir la console</strong></a> &nbsp;·&nbsp; <a href="/e/${d.event.id}/borne" target="_blank">Ouvrir la borne</a></p>
-    ${payBlock}
-    <p class="muted" style="font-size:12.5px">Note bien ce mot de passe : il protège l'accès à ta console.</p>
-  </div>`;
-  if (d.event.paymentStatus==='pending' && plan.paypalButtonId && PRICING.paypalClientId){
-    renderHostedButton('#'+ppId, plan.paypalButtonId, PRICING.paypalClientId, PRICING.currency);
-  }
-  try { okEl.scrollIntoView({ behavior:'smooth', block:'center' }); } catch(_){}
-  document.getElementById('cName').value=''; document.getElementById('cPwd').value='';
+
+  const modalHtml = `
+    <div class="modal-icon">🎉</div>
+    <h2 class="modal-title">« ${esc(d.event.name)} » est créée !</h2>
+    <div class="info-grid">
+      <div class="info-row"><span class="info-label">Identifiant</span><code class="pwd">${esc(d.event.id)}</code></div>
+      <div class="info-row"><span class="info-label">Mot de passe console</span><code class="pwd">${esc(d.adminPassword)}</code></div>
+      <div class="info-row"><span class="info-label">Email de contact</span><span>${esc(email)}</span></div>
+      <div class="info-row"><span class="info-label">Formule</span><span>${esc(plan.label || d.event.plan)}</span></div>
+    </div>
+    <div class="modal-actions">
+      <a class="btn" href="/e/${d.event.id}/admin" target="_blank">🎛️ Ouvrir la console</a>
+      <a class="btn secondary" href="/e/${d.event.id}/borne" target="_blank">📺 Ouvrir la borne</a>
+    </div>
+    ${payHtml}
+    <p class="modal-note">⚠️ Conserve bien ce mot de passe — il est la seule clé d'accès à ta console d'administration.</p>
+  `;
+
+  const needPP = d.event.paymentStatus === 'pending' && plan.paypalButtonId && PRICING.paypalClientId;
+  openModal(modalHtml, needPP ? () => renderHostedButton('#'+ppId, plan.paypalButtonId, PRICING.paypalClientId, PRICING.currency) : null);
 }
 
 async function joinParty(){
   const code = document.getElementById('joinCode').value.trim();
-  const err = document.getElementById('joinErr');
+  const err  = document.getElementById('joinErr');
   if (!code){ err.textContent='Saisis ton code.'; return; }
   err.textContent='Recherche…';
   try {
@@ -197,11 +284,13 @@ async function joinParty(){
     location.href = d.url;
   } catch(e){ err.textContent='Erreur réseau.'; }
 }
+
 function goConsole(){
   const code = document.getElementById('adminCode').value.trim().toLowerCase();
   if (!code) return;
   location.href = '/e/'+encodeURIComponent(code)+'/admin';
 }
+
 boot();
 </script>
 </body>

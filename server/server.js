@@ -85,12 +85,12 @@ app.get('/api/payment/config', (req, res) => res.json(publicPaymentConfig()));
 // Création PUBLIQUE d'une fête (choix d'une formule). Le paiement viendra se
 // greffer ensuite (création libre, non bloquante). Renvoie l'id + le mot de passe.
 app.post('/api/parties', (req, res) => {
-  const { name, theme, plan, adminPassword, publicUrl, seed } = req.body || {};
+  const { name, theme, plan, adminPassword, publicUrl, seed, contactEmail } = req.body || {};
   if (!name || !name.trim()) return res.status(400).json({ error: 'Nom de la fête requis.' });
   const planName = planExists(plan) ? plan : 'free';
   // Mot de passe console : fourni, sinon généré.
   const pwd = (adminPassword && adminPassword.trim()) || ('p' + Math.random().toString(36).slice(2, 8));
-  const cfg = createEvent({ name: name.trim(), theme, plan: planName, adminPassword: pwd, publicUrl, seed: seed || 'default' });
+  const cfg = createEvent({ name: name.trim(), theme, plan: planName, adminPassword: pwd, publicUrl, seed: seed || 'default', contactEmail: contactEmail || '' });
   cfg.avatars = DEFAULT_AVATARS;
   saveConfig(cfg);
   res.json({ ok: true, event: { id: cfg.id, name: cfg.name, theme: cfg.theme, plan: cfg.plan, paymentStatus: cfg.paymentStatus }, adminPassword: pwd });
