@@ -317,6 +317,23 @@ const photoUpload = multer({
   fileFilter(req, file, cb) { cb(null, /^image\//.test(file.mimetype)); },
 });
 
+// Uploads d'avatars personnalisés : sous-dossier avatars/ dans uploads/.
+const avatarUpload = multer({
+  storage: multer.diskStorage({
+    destination(req, file, cb) {
+      const d = path.join(uploadsDir(req.params.eventId), 'avatars');
+      mkdirSync(d, { recursive: true });
+      cb(null, d);
+    },
+    filename(req, file, cb) {
+      const ext = path.extname(file.originalname).toLowerCase() || '.jpg';
+      cb(null, `av_${Date.now()}_${Math.random().toString(36).slice(2, 6)}${ext}`);
+    },
+  }),
+  limits: { fileSize: 3 * 1024 * 1024 },
+  fileFilter(req, file, cb) { cb(null, /^image\//.test(file.mimetype)); },
+});
+
 // --- Pages de l'événement (avec injection thème) ---------------------
 ev.get('/', (req, res) => res.redirect(`/e/${req.eventId}/borne`));
 ev.get('/borne', (req, res) => res.send(renderPage('borne.html', req.cfg)));
@@ -479,6 +496,100 @@ ev.post('/api/admin/seed', (req, res) => {
   const cfg = { ...req.cfg, content: req.body.mode === 'empty' ? emptyContent() : defaultContent() };
   saveConfig(cfg); reloadConfig(cfg.id);
   res.json({ ok: true, content: cfg.content });
+});
+
+// --- Avatars personnalisés ------------------------------------------
+ev.post('/api/admin/avatars', avatarUpload.single('image'), (req, res) => {
+  if (!requireEventAdmin(req, res)) return;
+  if (!req.file) return res.status(400).json({ error: 'Image requise.' });
+  const name = (req.body.name || '').trim();
+  if (!name) return res.status(400).json({ error: 'Nom de l\'avatar requis.' });
+  const cfg = getConfig(req.eventId);
+  const key = 'custom_' + Date.now();
+  const imgUrl = `/e/${req.eventId}/uploads/avatars/${req.file.filename}`;
+  cfg.avatars = cfg.avatars || {};
+  cfg.avatars[key] = { name, img: imgUrl, color: req.body.color || '#8b5cf6', emoji: req.body.emoji || '🎭', custom: true };
+  saveConfig(cfg);
+  reloadConfig(cfg.id);
+  res.json({ ok: true, key, avatar: cfg.avatars[key] });
+});
+
+ev.delete('/api/admin/avatars/:key', (req, res) => {
+  if (!requireEventAdmin(req, res)) return;
+  const cfg = getConfig(req.eventId);
+  const key = req.params.key;
+  if (!cfg.avatars || !cfg.avatars[key] || !cfg.avatars[key].custom) {
+    return res.status(400).json({ error: 'Avatar introuvable ou non personnalisé.' });
+  }
+  delete cfg.avatars[key];
+  saveConfig(cfg);
+  reloadConfig(cfg.id);
+  res.json({ ok: true });
+});
+
+// --- Invitations joueurs --------------------------------------------
+function buildInviteEmail(cfg, player, joinUrl) {
+  const av = (cfg.avatars || {})[player.avatar] || {};
+  const avatarDisplay = av.img
+    ? `<img src="${av.img}" style="width:64px;height:64px;border-radius:12px;object-fit:cover;vertical-align:middle;margin-right:8px">`
+    : (av.emoji ? `<span style="font-size:40px">${av.emoji}</span>` : '🎮');
+  return `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:520px;margin:0 auto;color:#1f2430">
+  <div style="background:#3b6ef5;border-radius:12px 12px 0 0;padding:28px 28px 20px;text-align:center">
+    <p style="color:#c7d7ff;font-size:13px;margin:0 0 6px;text-transform:uppercase;letter-spacing:.05em">PartyPlay</p>
+    <h1 style="color:#fff;margin:0;font-size:22px;font-weight:800">Tu es invité(e) à jouer ! 🎉</h1>
+  </div>
+  <div style="background:#fff;border:1px solid #e2e5ea;border-top:none;border-radius:0 0 12px 12px;padding:28px">
+    <p>Bonjour <strong>${player.name}</strong>,</p>
+    <p>Tu as été ajouté(e) à la fête <strong>« ${cfg.name} »</strong> sur PartyPlay.</p>
+    <div style="text-align:center;margin:16px 0">${avatarDisplay}
+      ${av.name ? `<p style="margin:6px 0;font-weight:700;font-size:16px">${av.name}</p>` : ''}
+    </div>
+    <p>Clique sur le bouton ci-dessous pour rejoindre depuis ton téléphone :</p>
+    <p style="text-align:center;margin:24px 0">
+      <a href="${joinUrl}" style="display:inline-block;background:#3b6ef5;color:#fff;padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:700;font-size:16px">🎮 Rejoindre la fête</a>
+    </p>
+    <p style="font-size:12px;color:#9ca3af;margin:0 0 4px">Lien de connexion :</p>
+    <p style="font-size:12px;margin:0"><a href="${joinUrl}" style="color:#3b6ef5;word-break:break-all">${joinUrl}</a></p>
+    <hr style="border:none;border-top:1px solid #e2e5ea;margin:20px 0">
+    <p style="font-size:12px;color:#9ca3af;margin:0">Ce lien est personnel — ne le partage pas avec d'autres joueurs.</p>
+  </div>
+</div>`;
+}
+
+ev.post('/api/admin/send-invite', async (req, res) => {
+  if (!requireEventAdmin(req, res)) return;
+  const cfg = req.cfg;
+  const { token } = req.body || {};
+  const player = (cfg.players || []).find(p => p.token === token);
+  if (!player) return res.status(404).json({ error: 'Joueur introuvable.' });
+  if (!player.email) return res.status(400).json({ error: 'Ce joueur n\'a pas d\'email renseigné.' });
+  const proto = req.get('x-forwarded-proto') || req.protocol;
+  const host = req.get('x-forwarded-host') || req.get('host');
+  const baseUrl = process.env.PUBLIC_URL || `${proto}://${host}`;
+  const joinUrl = `${baseUrl}/e/${cfg.id}/j/${player.token}`;
+  try {
+    await sendMail({ to: player.email, subject: `Tu es invité(e) à « ${cfg.name} » — ton lien de jeu`, htmlContent: buildInviteEmail(cfg, player, joinUrl) });
+    res.json({ ok: true });
+  } catch (e) { res.status(500).json({ error: e.message }); }
+});
+
+ev.post('/api/admin/send-invites-all', async (req, res) => {
+  if (!requireEventAdmin(req, res)) return;
+  const cfg = req.cfg;
+  const proto = req.get('x-forwarded-proto') || req.protocol;
+  const host = req.get('x-forwarded-host') || req.get('host');
+  const baseUrl = process.env.PUBLIC_URL || `${proto}://${host}`;
+  const players = (cfg.players || []).filter(p => p.email);
+  const noEmail = (cfg.players || []).length - players.length;
+  let sent = 0, errors = 0;
+  for (const player of players) {
+    const joinUrl = `${baseUrl}/e/${cfg.id}/j/${player.token}`;
+    try {
+      await sendMail({ to: player.email, subject: `Tu es invité(e) à « ${cfg.name} » — ton lien de jeu`, htmlContent: buildInviteEmail(cfg, player, joinUrl) });
+      sent++;
+    } catch { errors++; }
+  }
+  res.json({ ok: true, sent, errors, noEmail });
 });
 
 // QR code d'un joueur (data URL) à partir de son token + publicUrl de l'événement.

@@ -123,11 +123,31 @@
       <!-- ============ JOUEURS ============ -->
       <section data-pane="joueurs" hidden>
         <div class="card">
-          <h3 class="neon-cyan">Joueurs</h3>
+          <div class="inline" style="justify-content:space-between;flex-wrap:wrap;gap:8px">
+            <h3 class="neon-cyan" style="margin:0">Joueurs</h3>
+            <button class="btn secondary" style="width:auto" onclick="sendAllInvites(this)">📧 Envoyer à tous</button>
+          </div>
           <div id="players"></div>
-          <button class="btn" onclick="addPlayer()">＋ Ajouter un joueur</button>
-          <button class="btn secondary" onclick="savePlayers()">💾 Enregistrer les joueurs</button>
-          <span class="muted" id="pl_saved"></span>
+          <div class="row" style="margin-top:12px">
+            <button class="btn" onclick="addPlayer()">＋ Ajouter un joueur</button>
+            <button class="btn secondary" onclick="savePlayers()">💾 Enregistrer</button>
+            <span class="muted" id="pl_saved"></span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="neon-yellow" style="margin:0 0 10px">Avatars personnalisés</h3>
+          <p class="muted" style="margin:0 0 12px">Créez vos propres avatars avec une photo ou illustration.</p>
+          <div id="customAvatars"></div>
+          <form id="avForm" onsubmit="addCustomAvatar(event)" style="margin-top:14px">
+            <div class="row">
+              <div class="field"><label>Nom</label><input type="text" id="av_name" placeholder="Nom de l'avatar" required></div>
+              <div class="field" style="flex:0;min-width:90px"><label>Couleur</label><input type="color" id="av_color" value="#8b5cf6" style="height:38px;padding:2px 4px"></div>
+            </div>
+            <div class="field"><label>Image (JPG/PNG, max 3 Mo)</label><input type="file" id="av_img" accept="image/*" required></div>
+            <button class="btn" type="submit">＋ Créer l'avatar</button>
+            <span class="muted" id="av_status"></span>
+          </form>
         </div>
       </section>
 
@@ -289,19 +309,29 @@ async function saveGeneral(){
 function fillPlayers(){
   const c=document.getElementById('players');
   c.innerHTML=(CFG.players||[]).map((p,i)=>playerRow(p,i)).join('') || '<p class="muted">Aucun joueur. Ajoutez-en un.</p>';
+  fillAvatars();
 }
 function playerRow(p,i){
-  const opts=AVATAR_KEYS.map(k=>`<option value="${k}" ${k===p.avatar?'selected':''}>${esc(AV[k].name||k)} ${AV[k].emoji||''}</option>`).join('');
-  return `<div class="card" style="margin:8px 0" data-pi="${i}">
+  const opts=AVATAR_KEYS.map(k=>`<option value="${k}" ${k===p.avatar?'selected':''}>${esc((AV[k]&&AV[k].name)||k)} ${(AV[k]&&AV[k].emoji)||''}</option>`).join('');
+  const joinUrl=location.origin+API+'/j/'+esc(p.token||'');
+  return `<div class="card" style="margin:8px 0;padding:14px" data-pi="${i}">
     <div class="row">
       <div class="field"><label>Nom</label><input type="text" class="p_name" value="${esc(p.name||'')}"></div>
       <div class="field"><label>Avatar</label><select class="p_avatar">${opts}</select></div>
     </div>
-    <div class="field"><label>Token (URL perso)</label>
-      <div class="inline"><input type="text" class="p_token" value="${esc(p.token||'')}">
-      <button class="btn" style="width:auto" onclick="genToken(${i})">🎲</button>
-      <button class="btn secondary" style="width:auto" onclick="showQR('${esc(p.token||'')}')">QR</button>
-      <button class="btn danger" style="width:auto" onclick="rmPlayer(${i})">✕</button></div>
+    <div class="row" style="align-items:flex-end">
+      <div class="field" style="flex:2"><label>Email (invitation)</label><input type="email" class="p_email" value="${esc(p.email||'')}" placeholder="joueur@exemple.com"></div>
+      <button class="btn secondary" style="width:auto;margin-bottom:2px" title="Envoyer le lien par email" onclick="sendInvite(${i},this)">📧 Inviter</button>
+    </div>
+    <div class="field"><label>Token &amp; URL de connexion</label>
+      <div class="inline">
+        <input type="text" class="p_token" value="${esc(p.token||'')}">
+        <button class="btn" style="width:auto" onclick="genToken(${i})">🎲</button>
+        <button class="btn secondary" style="width:auto" onclick="copyJoinUrl('${esc(p.token||'')}',this)" title="Copier l'URL">⎘</button>
+        <button class="btn secondary" style="width:auto" onclick="showQR('${esc(p.token||'')}')">QR</button>
+        <button class="btn danger" style="width:auto" onclick="rmPlayer(${i})">✕</button>
+      </div>
+      <small class="muted" style="word-break:break-all;display:block;margin-top:4px">${joinUrl}</small>
     </div>
     <div class="qrbox"></div>
   </div>`;
@@ -310,19 +340,97 @@ function collectPlayers(){
   return [...document.querySelectorAll('[data-pi]')].map(row=>{
     const name=row.querySelector('.p_name').value.trim();
     return { id: slug(name)||('p'+Math.random().toString(36).slice(2,6)), name,
-      avatar: row.querySelector('.p_avatar').value, token: row.querySelector('.p_token').value.trim() };
+      avatar: row.querySelector('.p_avatar').value,
+      email: row.querySelector('.p_email').value.trim(),
+      token: row.querySelector('.p_token').value.trim() };
   }).filter(p=>p.name);
 }
 function slug(s){ return (s||'').toLowerCase().normalize('NFD').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,''); }
-function addPlayer(){ CFG.players=collectPlayers(); CFG.players.push({ id:'', name:'Nouveau', avatar:AVATAR_KEYS[0]||'player_one', token:'PXL-'+Math.random().toString(36).slice(2,7).toUpperCase() }); fillPlayers(); }
+function addPlayer(){ CFG.players=collectPlayers(); CFG.players.push({ id:'', name:'Nouveau', avatar:AVATAR_KEYS[0]||'player_one', email:'', token:'PXL-'+Math.random().toString(36).slice(2,7).toUpperCase() }); fillPlayers(); }
 function rmPlayer(i){ CFG.players=collectPlayers(); CFG.players.splice(i,1); fillPlayers(); }
 function genToken(i){ const row=document.querySelector(`[data-pi="${i}"]`); row.querySelector('.p_token').value='PXL-'+Math.random().toString(36).slice(2,8).toUpperCase(); }
+function copyJoinUrl(token,btn){
+  const url=location.origin+API+'/j/'+token;
+  navigator.clipboard.writeText(url).then(()=>{ btn.textContent='✓'; setTimeout(()=>btn.textContent='⎘',1200); });
+}
 async function showQR(token){
   const r=await fetch(API+'/api/admin/qr/'+encodeURIComponent(token),{headers:H()}); const d=await r.json();
   const box=event.target.closest('.card').querySelector('.qrbox');
   box.innerHTML = d.qr ? `<img src="${d.qr}" style="width:160px"><div class="muted">${esc(d.joinUrl)}</div>` : '';
 }
+async function sendInvite(i,btn){
+  CFG.players=collectPlayers();
+  const player=CFG.players[i];
+  if(!player||!player.email){ alert('Renseignez d\'abord l\'email du joueur.'); return; }
+  await push({players:CFG.players});
+  btn.disabled=true; btn.textContent='…';
+  try{
+    const r=await fetch(API+'/api/admin/send-invite',{method:'POST',headers:H(),body:JSON.stringify({token:player.token})});
+    const d=await r.json();
+    btn.textContent=d.ok?'✓ Envoyé':'✗ Erreur';
+    setTimeout(()=>{ btn.textContent='📧 Inviter'; btn.disabled=false; },2500);
+  }catch{ btn.textContent='✗'; btn.disabled=false; }
+}
+async function sendAllInvites(btn){
+  CFG.players=collectPlayers();
+  await push({players:CFG.players});
+  const withEmail=CFG.players.filter(p=>p.email);
+  if(!withEmail.length){ alert('Aucun joueur n\'a d\'email renseigné.'); return; }
+  if(!confirm(`Envoyer le lien de connexion à ${withEmail.length} joueur(s) ?`)) return;
+  btn.disabled=true; btn.textContent='Envoi…';
+  const r=await fetch(API+'/api/admin/send-invites-all',{method:'POST',headers:H()});
+  const d=await r.json();
+  btn.disabled=false; btn.textContent='📧 Envoyer à tous';
+  if(d.ok){
+    const msg=[`✓ ${d.sent} email(s) envoyé(s).`];
+    if(d.noEmail) msg.push(`${d.noEmail} joueur(s) sans email ignoré(s).`);
+    if(d.errors) msg.push(`${d.errors} échec(s).`);
+    alert(msg.join('\n'));
+  } else { alert('Erreur : '+(d.error||'Échec')); }
+}
 async function savePlayers(){ CFG.players=collectPlayers(); await push({players:CFG.players}); document.getElementById('pl_saved').textContent=' ✓'; setTimeout(()=>pl_saved.textContent='',1500); fillLaunchers(); }
+
+/* ---- Avatars personnalisés ---- */
+function fillAvatars(){
+  const customs=Object.entries(AV).filter(([,v])=>v&&v.custom);
+  const c=document.getElementById('customAvatars');
+  if(!c) return;
+  c.innerHTML=customs.length===0
+    ? '<p class="muted" style="margin:0 0 6px">Aucun avatar personnalisé pour l\'instant.</p>'
+    : customs.map(([k,v])=>`<div class="inline" style="margin:6px 0;gap:10px;align-items:center">
+        ${v.img?`<img src="${esc(v.img)}" style="width:42px;height:42px;border-radius:8px;object-fit:cover">`:`<span style="font-size:28px">${v.emoji||'🎭'}</span>`}
+        <strong>${esc(v.name)}</strong>
+        <button class="btn danger" style="width:auto;padding:4px 10px" onclick="removeAvatar('${k}')">✕</button>
+      </div>`).join('');
+}
+async function addCustomAvatar(e){
+  e.preventDefault();
+  const name=document.getElementById('av_name').value.trim();
+  const color=document.getElementById('av_color').value;
+  const file=document.getElementById('av_img').files[0];
+  const st=document.getElementById('av_status');
+  if(!name||!file){ st.textContent=' Nom et image requis.'; return; }
+  st.textContent=' Envoi…';
+  const fd=new FormData();
+  fd.append('name',name); fd.append('color',color); fd.append('image',file);
+  const r=await fetch(API+'/api/admin/avatars',{method:'POST',headers:{'x-admin-password':PWD||''},body:fd});
+  const d=await r.json();
+  if(d.ok){
+    AV[d.key]=d.avatar; AVATAR_KEYS.push(d.key);
+    document.getElementById('av_name').value='';
+    document.getElementById('av_img').value='';
+    st.textContent=' ✓ Avatar créé !';
+    setTimeout(()=>st.textContent='',2000);
+    fillAvatars(); fillPlayers();
+  } else { st.textContent=' ✗ '+(d.error||'Erreur'); }
+}
+async function removeAvatar(key){
+  if(!confirm('Supprimer cet avatar ?')) return;
+  const r=await fetch(API+'/api/admin/avatars/'+encodeURIComponent(key),{method:'DELETE',headers:H()});
+  const d=await r.json();
+  if(d.ok){ delete AV[key]; AVATAR_KEYS.splice(AVATAR_KEYS.indexOf(key),1); fillAvatars(); fillPlayers(); }
+  else alert('Erreur : '+(d.error||'Échec'));
+}
 
 /* ---- Activités ---- */
 const ACT_LABELS={ quiz:'Quiz', blindtest:'Blind-test', anecdotes:'Anecdotes', gages:'Roue des gages', photo:'Défi photo', spotlight:'Spotlight', draw:'Dessine-moi', arcade:'Mini-jeux arcade', collab:'Collaboratifs (mosaïque/piano)' };
