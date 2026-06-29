@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PartyPlay — animez votre fête</title>
   <link rel="stylesheet" href="/static/admin.css">
+  <script src="/static/version-badge.js" defer></script>
   <style>
     .hero { text-align:center; padding: 30px 0 6px; }
     .hero h1 { font-size: 40px; }
@@ -180,6 +181,7 @@ async function createParty(){
   if (d.event.paymentStatus==='pending' && plan.paypalButtonId && PRICING.paypalClientId){
     renderHostedButton('#'+ppId, plan.paypalButtonId, PRICING.paypalClientId, PRICING.currency);
   }
+  try { okEl.scrollIntoView({ behavior:'smooth', block:'center' }); } catch(_){}
   document.getElementById('cName').value=''; document.getElementById('cPwd').value='';
 }
 

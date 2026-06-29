@@ -42,7 +42,7 @@ export function defaultPricing() {
       infinite: {
         label: 'Illimité Premium', price: 9.99, kind: 'oneshot', premium: true,
         payLink: 'https://pay.sumup.com/b2c/QXD1ZZ45',
-        paypalButtonId: '',
+        paypalButtonId: 'GDRAYFJFQHCH4',
         tagline: 'Toutes vos fêtes, en illimité + premium.',
         limits: { maxPlayers: 0, maxActivities: 0, themes: 'all', photo: true },
       },
@@ -54,9 +54,20 @@ export function getPricing() {
   try {
     if (fs.existsSync(PRICING_FILE)) {
       const data = JSON.parse(fs.readFileSync(PRICING_FILE, 'utf8'));
-      // fusion douce avec les défauts (au cas où un champ manque)
       const def = defaultPricing();
-      return { ...def, ...data, plans: { ...def.plans, ...(data.plans || {}) } };
+      // Fusion PROFONDE : un pricing.json ancien (sans payLink/paypalButtonId/…)
+      // hérite quand même des champs par défaut, par plan.
+      const plans = {};
+      const keys = new Set([...Object.keys(def.plans), ...Object.keys(data.plans || {})]);
+      for (const k of keys) {
+        const dp = def.plans[k] || {}, sp = (data.plans || {})[k] || {};
+        plans[k] = { ...dp, ...sp, limits: { ...(dp.limits || {}), ...(sp.limits || {}) } };
+      }
+      return {
+        ...def, ...data,
+        paypalClientId: data.paypalClientId || def.paypalClientId,
+        plans,
+      };
     }
   } catch (e) { console.error('pricing.json illisible:', e.message); }
   return defaultPricing();

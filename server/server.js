@@ -25,6 +25,8 @@ import { publicPaymentConfig } from './store/payment.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC = path.join(__dirname, 'public');
+let APP_VERSION = '0.0.1';
+try { APP_VERSION = JSON.parse(readFileSync(path.join(__dirname, 'version.json'), 'utf8')).version || APP_VERSION; } catch {}
 const PORT = process.env.PORT || 8080;
 // Mot de passe de l'administration GÉNÉRALE (créer/supprimer des événements).
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || '';
@@ -51,7 +53,8 @@ function renderPage(file, cfg) {
   const head = `
     <link rel="stylesheet" href="/static/base.css">
     <link rel="stylesheet" href="/static/themes/${theme}.css" id="theme-css">
-    <script>window.__EVENT__ = ${JSON.stringify(ctx)};</script>`;
+    <script>window.__EVENT__ = ${JSON.stringify(ctx)};</script>
+    <script src="/static/version-badge.js" defer></script>`;
   if (html.includes('<!--EVENT_HEAD-->')) html = html.replace('<!--EVENT_HEAD-->', head);
   else html = html.replace(/<head([^>]*)>/i, `<head$1>${head}`);
   return html;
@@ -67,6 +70,9 @@ app.get('/admin', (req, res) => res.sendFile(path.join(PUBLIC, 'admin.html')));
 // =====================================================================
 //  ESPACE PUBLIC (sans mot de passe super-admin)
 // =====================================================================
+
+// Version de l'application (affichée en bas à gauche de chaque page).
+app.get('/api/version', (req, res) => res.json({ version: APP_VERSION }));
 
 // Tarifs publics (pour afficher les formules sur la page d'accueil).
 app.get('/api/pricing', (req, res) => res.json(getPricing()));
