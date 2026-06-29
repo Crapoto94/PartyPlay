@@ -10,3 +10,6 @@ server/pricing.json
 
 # Ancienne sauvegarde mono-événement (héritée)
 server/save.json
+
+# Config Brevo (clé API — ne jamais versionner)
+server/brevo.json

@@ -22,6 +22,7 @@ import { getGame, reloadConfig, dropGame } from './store/eventManager.js';
 import { DEFAULT_AVATARS, defaultContent, emptyContent } from './data/defaults.js';
 import { getPricing, savePricing, getPlan, allowedThemes, ALL_THEMES, planExists } from './store/plans.js';
 import { publicPaymentConfig } from './store/payment.js';
+import { getBrevoConfig, saveBrevoConfig, sendMail } from './store/brevo.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC = path.join(__dirname, 'public');
@@ -164,6 +165,45 @@ app.post('/api/admin/pricing', (req, res) => {
   if (!p || !p.plans) return res.status(400).json({ error: 'Tarifs invalides.' });
   savePricing(p);
   res.json({ ok: true });
+});
+
+// --- Admin emails / Brevo ---
+app.get('/api/admin/brevo', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  const cfg = getBrevoConfig();
+  res.json({ config: { apiKeyConfigured: !!cfg.apiKey, senderName: cfg.senderName, senderEmail: cfg.senderEmail } });
+});
+
+app.post('/api/admin/brevo', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  const { apiKey, senderName, senderEmail } = req.body || {};
+  const cur = getBrevoConfig();
+  saveBrevoConfig({
+    apiKey: (apiKey && apiKey.trim()) ? apiKey.trim() : cur.apiKey,
+    senderName: (senderName && senderName.trim()) || cur.senderName,
+    senderEmail: (senderEmail && senderEmail.trim()) || cur.senderEmail,
+  });
+  res.json({ ok: true });
+});
+
+app.post('/api/admin/email/send', async (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  const { to, subject, html } = req.body || {};
+  if (!to || !subject) return res.status(400).json({ error: 'Destinataire et objet requis.' });
+  try {
+    await sendMail({ to, subject, htmlContent: html });
+    res.json({ ok: true });
+  } catch (e) { res.status(500).json({ error: e.message }); }
+});
+
+app.post('/api/admin/email/test', async (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  const { to } = req.body || {};
+  if (!to) return res.status(400).json({ error: 'Email de test requis.' });
+  try {
+    await sendMail({ to, subject: 'Test PartyPlay ✓', htmlContent: '<h2 style="color:#3b6ef5">Test réussi ! 🎉</h2><p>Votre configuration Brevo fonctionne correctement.</p><p>— L\'équipe PartyPlay</p>' });
+    res.json({ ok: true });
+  } catch (e) { res.status(500).json({ error: e.message }); }
 });
 
 // Marquer le paiement d'une fête (en attendant PayPal/SumUp) : super-admin.
