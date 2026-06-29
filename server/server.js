@@ -93,17 +93,19 @@ app.post('/api/parties', (req, res) => {
   const cfg = createEvent({ name: name.trim(), theme, plan: planName, adminPassword: pwd, publicUrl, seed: seed || 'default', contactEmail: contactEmail || '' });
   cfg.avatars = DEFAULT_AVATARS;
   saveConfig(cfg);
-  // Envoi de l'email de vérification (non-bloquant)
+  // Envoi de l'email de vérification + infos (non-bloquant)
   if (cfg.contactEmail && !cfg.emailVerified) {
     const proto = req.get('x-forwarded-proto') || req.protocol;
     const host = req.get('x-forwarded-host') || req.get('host');
     const baseUrl = process.env.PUBLIC_URL || `${proto}://${host}`;
     const verifyUrl = `${baseUrl}/verify/${cfg.verificationToken}`;
     const consoleUrl = `${baseUrl}/e/${cfg.id}/admin`;
+    const borneUrl = `${baseUrl}/e/${cfg.id}/borne`;
+    const planInfo = (getPricing().plans || {})[cfg.plan] || {};
     sendMail({
       to: cfg.contactEmail,
-      subject: `Confirmez votre fête « ${cfg.name} » sur PartyPlay`,
-      htmlContent: buildVerifyEmail(cfg, verifyUrl, consoleUrl),
+      subject: `Votre fête « ${cfg.name} » sur PartyPlay — confirmez votre email`,
+      htmlContent: buildVerifyEmail(cfg, verifyUrl, consoleUrl, borneUrl, planInfo),
     }).catch(() => {});
   }
   res.json({ ok: true, event: { id: cfg.id, name: cfg.name, theme: cfg.theme, plan: cfg.plan, paymentStatus: cfg.paymentStatus }, adminPassword: pwd });
@@ -233,22 +235,45 @@ app.post('/api/admin/events/:id/payment', (req, res) => {
 // =====================================================================
 //  VÉRIFICATION D'EMAIL
 // =====================================================================
-function buildVerifyEmail(cfg, verifyUrl, consoleUrl) {
-  return `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:520px;margin:0 auto;padding:24px;color:#1f2430">
-  <h2 style="color:#3b6ef5;margin:0 0 16px">Confirmez votre email 📧</h2>
-  <p>Bonjour !</p>
-  <p>Votre fête <strong>« ${cfg.name} »</strong> a bien été créée sur <strong>PartyPlay</strong>.</p>
-  <p>Cliquez sur le bouton ci-dessous pour confirmer votre adresse et activer votre fête :</p>
-  <p style="text-align:center;margin:28px 0">
-    <a href="${verifyUrl}" style="display:inline-block;background:#3b6ef5;color:#fff;padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:700;font-size:16px">✅ Confirmer mon email</a>
-  </p>
-  <p style="font-size:13px;color:#6b7280">Lien de confirmation :<br><a href="${verifyUrl}" style="color:#3b6ef5;word-break:break-all">${verifyUrl}</a></p>
-  <hr style="border:none;border-top:1px solid #e2e5ea;margin:20px 0">
-  <p style="font-size:13px;color:#6b7280">
-    Console d'administration : <a href="${consoleUrl}" style="color:#3b6ef5">${consoleUrl}</a><br>
-    ${cfg.adminPassword ? `Mot de passe console : <strong>${cfg.adminPassword}</strong>` : ''}
-  </p>
-  <p style="font-size:12px;color:#9ca3af">Si vous n'avez pas créé cette fête, ignorez cet email.</p>
+function buildVerifyEmail(cfg, verifyUrl, consoleUrl, borneUrl, planInfo) {
+  const row = (label, value) =>
+    `<tr><td style="padding:6px 12px 6px 0;color:#6b7280;white-space:nowrap;vertical-align:top;font-size:13.5px">${label}</td><td style="padding:6px 0;font-weight:600;color:#1f2430;word-break:break-all;font-size:13.5px">${value}</td></tr>`;
+
+  const paymentSection = (cfg.paymentStatus === 'pending' && planInfo && planInfo.payLink)
+    ? `<div style="background:#fef3c7;border:1px solid #f59e0b;border-radius:10px;padding:14px 16px;margin:20px 0">
+        <p style="margin:0 0 8px;font-weight:600;color:#92400e">💳 Paiement en attente — ${planInfo.label || cfg.plan}</p>
+        <p style="margin:0 0 12px;font-size:13.5px;color:#78350f">Finalisez le règlement pour activer votre formule :</p>
+        <a href="${planInfo.payLink}" style="display:inline-block;background:#f59e0b;color:#fff;padding:11px 24px;border-radius:8px;text-decoration:none;font-weight:700">Payer maintenant</a>
+      </div>` : '';
+
+  return `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:540px;margin:0 auto;color:#1f2430">
+  <div style="background:#3b6ef5;border-radius:12px 12px 0 0;padding:28px 28px 20px;text-align:center">
+    <p style="color:#c7d7ff;font-size:13px;margin:0 0 6px;text-transform:uppercase;letter-spacing:.05em">PartyPlay</p>
+    <h1 style="color:#fff;margin:0;font-size:22px;font-weight:800">🎉 Votre fête est créée !</h1>
+  </div>
+  <div style="background:#fff;border:1px solid #e2e5ea;border-top:none;border-radius:0 0 12px 12px;padding:28px">
+    <p style="margin:0 0 6px">Bonjour,</p>
+    <p style="margin:0 0 20px">La fête <strong>« ${cfg.name} »</strong> a bien été créée. Voici toutes vos informations :</p>
+    <table style="width:100%;border-collapse:collapse;background:#f8f9fb;border-radius:9px;padding:4px 4px 4px 12px;margin-bottom:20px">
+      <tbody>
+        ${row('Identifiant', `<code style="background:#e8ebf0;padding:2px 6px;border-radius:4px;font-size:13px">${cfg.id}</code>`)}
+        ${cfg.adminPassword ? row('Mot de passe console', `<code style="background:#e8ebf0;padding:2px 6px;border-radius:4px;font-size:13px">${cfg.adminPassword}</code>`) : ''}
+        ${row('Formule', planInfo && planInfo.label ? planInfo.label : cfg.plan)}
+        ${row('Console admin', `<a href="${consoleUrl}" style="color:#3b6ef5">${consoleUrl}</a>`)}
+        ${row('Borne joueurs', `<a href="${borneUrl}" style="color:#3b6ef5">${borneUrl}</a>`)}
+      </tbody>
+    </table>
+    ${paymentSection}
+    <p style="margin:0 0 8px;font-weight:600">📧 Confirmez votre email pour activer la fête</p>
+    <p style="margin:0 0 20px;font-size:13.5px;color:#555">Le démarrage est bloqué jusqu'à confirmation :</p>
+    <p style="text-align:center;margin:0 0 20px">
+      <a href="${verifyUrl}" style="display:inline-block;background:#3b6ef5;color:#fff;padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:700;font-size:16px">✅ Confirmer mon email</a>
+    </p>
+    <p style="font-size:12px;color:#9ca3af;margin:0 0 4px">Lien de confirmation :</p>
+    <p style="font-size:12px;margin:0 0 20px"><a href="${verifyUrl}" style="color:#3b6ef5;word-break:break-all">${verifyUrl}</a></p>
+    <hr style="border:none;border-top:1px solid #e2e5ea;margin:0 0 16px">
+    <p style="font-size:12px;color:#9ca3af;margin:0">Si vous n'avez pas créé cette fête, ignorez cet email.</p>
+  </div>
 </div>`;
 }
 
@@ -492,8 +517,10 @@ ev.post('/api/admin/resend-verification', async (req, res) => {
   const baseUrl = process.env.PUBLIC_URL || `${proto}://${host}`;
   const verifyUrl = `${baseUrl}/verify/${cfg.verificationToken}`;
   const consoleUrl = `${baseUrl}/e/${cfg.id}/admin`;
+  const borneUrl = `${baseUrl}/e/${cfg.id}/borne`;
+  const planInfo = (getPricing().plans || {})[cfg.plan] || {};
   try {
-    await sendMail({ to: cfg.contactEmail, subject: `Confirmez votre fête « ${cfg.name} » sur PartyPlay`, htmlContent: buildVerifyEmail(cfg, verifyUrl, consoleUrl) });
+    await sendMail({ to: cfg.contactEmail, subject: `Votre fête « ${cfg.name} » sur PartyPlay — confirmez votre email`, htmlContent: buildVerifyEmail(cfg, verifyUrl, consoleUrl, borneUrl, planInfo) });
     res.json({ ok: true });
   } catch (e) { res.status(500).json({ error: e.message }); }
 });
