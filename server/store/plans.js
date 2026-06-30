@@ -24,6 +24,8 @@ export const ACTIVITY_ORDER = ['quiz', 'anecdotes', 'gages', 'blindtest', 'photo
 export function defaultPricing() {
   return {
     currency: 'EUR',
+    freeMode: true,       // Mode bêta : tout gratuit, aucune limite, aucun paiement demandé
+    coffeeLink: '',       // Lien PayPal "offre un café" (vide = bouton masqué)
     // Client-id PUBLIC du SDK PayPal (boutons hébergés) — commun à toutes les formules.
     paypalClientId: 'BAA_GeyiQBhixTJkBdublBYuTB6Pi2uvxexEh9DGqD2myYGv_kQ36N4cdyyB_a_wwXl7kXq_Gc1b3v4JXc',
     plans: {
@@ -85,16 +87,21 @@ export function getPlan(name) {
 
 export function planExists(name) { return !!getPricing().plans[name]; }
 
-// Thèmes autorisés pour un plan donné.
+export function isFreeMode() { return !!getPricing().freeMode; }
+
+// Thèmes autorisés pour un plan donné (tout en mode gratuit).
 export function allowedThemes(planName) {
+  if (isFreeMode()) return ALL_THEMES.slice();
   const lim = getPlan(planName).limits || {};
   return lim.themes === 'all' || !Array.isArray(lim.themes) ? ALL_THEMES.slice() : lim.themes.slice();
 }
 
-// Applique les limites du plan à une config d'événement (mutation + retour).
-// N'est PAS destructif au-delà du nécessaire : thème ramené dans l'autorisé,
-// activités plafonnées, photo coupée, joueurs tronqués au maximum.
+// Applique les limites du plan. En mode gratuit : aucune restriction.
 export function enforcePlan(cfg) {
+  if (isFreeMode()) {
+    cfg.premium = true;
+    return cfg;
+  }
   const plan = getPlan(cfg.plan || 'free');
   const lim = plan.limits || {};
   cfg.premium = !!plan.premium;
@@ -112,7 +119,7 @@ export function enforcePlan(cfg) {
     for (const key of ACTIVITY_ORDER) {
       if (cfg.activities[key]) {
         if (kept < max) kept++;
-        else cfg.activities[key] = false; // au-delà du quota → désactivé
+        else cfg.activities[key] = false;
       }
     }
   }

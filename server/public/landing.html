@@ -68,6 +68,12 @@
     </div>
   </div>
 
+  <!-- Bannière "en cours de développement" -->
+  <div id="devBanner" style="background:#fbbf24;color:#78350f;text-align:center;padding:10px 16px;font-size:14px;font-weight:600;position:relative">
+    🚧 Site en cours de développement — Certaines fonctionnalités peuvent être instables. Merci pour votre patience !
+    <button onclick="this.parentElement.style.display='none';localStorage.setItem('devBannerDismissed','1')" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;font-size:18px;cursor:pointer;color:#78350f;line-height:1" title="Fermer">×</button>
+  </div>
+
   <div class="admin-wrap">
     <div class="hero">
       <div class="logo">🎉</div>
@@ -122,6 +128,19 @@
         <label>Mot de passe de la console <span class="muted" style="font-weight:400">(optionnel — sinon généré)</span></label>
         <input type="text" id="cPwd" placeholder="laisser vide">
       </div>
+
+      <!-- Code promo -->
+      <div style="margin:6px 0 14px">
+        <button type="button" onclick="togglePromo(this)" style="background:none;border:none;color:var(--a-accent);font-size:13.5px;cursor:pointer;padding:0;text-decoration:underline">🎟️ J'ai un code promo</button>
+        <div id="promoBox" style="display:none;margin-top:10px">
+          <div class="inline" style="gap:8px">
+            <input type="text" id="cPromo" placeholder="CODE-PROMO" style="text-transform:uppercase;max-width:220px" oninput="this.value=this.value.toUpperCase()">
+            <button class="btn secondary" style="width:auto" onclick="validatePromo()">Valider</button>
+          </div>
+          <div id="promoStatus" style="margin-top:6px;font-size:13.5px"></div>
+        </div>
+      </div>
+
       <button class="btn" onclick="createParty()">Créer ma fête</button>
       <div id="createErr" style="margin-top:10px;color:var(--a-danger)"></div>
     </div>
@@ -132,9 +151,36 @@
   </div>
 
 <script>
-let PRICING = null, SELECTED = 'free';
+let PRICING = null, SELECTED = 'free', PROMO = null;
 const THEME_LABELS = { retro:'Rétro jeux vidéo', neon:'Néon / Clubbing', chic:'Chic / Élégant', kids:'Anniversaire enfant', casino:'Casino / Vegas' };
 const ALL_THEMES = ['retro','neon','chic','kids','casino'];
+
+// Masquer la bannière si déjà fermée
+if (localStorage.getItem('devBannerDismissed') === '1') document.getElementById('devBanner').style.display = 'none';
+
+function togglePromo(btn) {
+  const box = document.getElementById('promoBox');
+  const open = box.style.display !== 'none';
+  box.style.display = open ? 'none' : 'block';
+  btn.textContent = open ? '🎟️ J\'ai un code promo' : '× Fermer le code promo';
+  if (open) { PROMO = null; document.getElementById('cPromo').value = ''; document.getElementById('promoStatus').textContent = ''; renderPlans(); }
+}
+
+async function validatePromo() {
+  const code = document.getElementById('cPromo').value.trim();
+  const st = document.getElementById('promoStatus');
+  if (!code) { st.textContent = 'Entrez un code.'; st.style.color = 'var(--a-danger)'; return; }
+  st.textContent = 'Vérification…'; st.style.color = '';
+  const r = await fetch('/api/promo/validate', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ code }) });
+  const d = await r.json();
+  if (!r.ok) { st.textContent = '✗ ' + (d.error || 'Code invalide'); st.style.color = 'var(--a-danger)'; PROMO = null; return; }
+  PROMO = { code, plan: d.plan, label: d.label };
+  st.innerHTML = `✅ Code valide — <strong>${esc(d.label)}</strong> offerte !${d.note ? ' <span class="muted">'+esc(d.note)+'</span>' : ''}`;
+  st.style.color = 'var(--a-ok, #1f9d57)';
+  // Sélectionner automatiquement le plan du code promo
+  SELECTED = d.plan;
+  renderPlans();
+}
 
 function esc(s){ return (s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 function fmtPrice(p, cur){ return p.price===0 ? 'Gratuit' : (Number(p.price).toFixed(2).replace('.',',')+' '+(cur==='EUR'?'€':cur)); }
@@ -174,8 +220,24 @@ function renderHostedButton(containerSel, buttonId, clientId, currency){
 
 async function boot(){
   PRICING = await (await fetch('/api/pricing')).json();
-  renderPlans();
-  selectPlan('free');
+  if (PRICING.freeMode) {
+    renderFreeMode();
+  } else {
+    renderPlans();
+    selectPlan('free');
+  }
+  renderCoffeeButton();
+}
+
+function renderFreeMode(){
+  SELECTED = 'full';
+  document.getElementById('plans').innerHTML = `
+    <div style="background:#e8f7ee;border:1.5px solid #86efac;border-radius:12px;padding:16px 20px;text-align:center;width:100%;grid-column:1/-1">
+      <div style="font-size:28px;margin-bottom:6px">🎉</div>
+      <strong style="color:#1f9d57;font-size:16px">Accès complet gratuit !</strong>
+      <p style="color:#166534;margin:6px 0 0;font-size:14px">Toutes les fonctionnalités sont disponibles pendant la période de développement — sans limites ni paiement.</p>
+    </div>`;
+  document.getElementById('cTheme').innerHTML = ALL_THEMES.map(t=>`<option value="${t}">${THEME_LABELS[t]||t}</option>`).join('');
 }
 
 function renderPlans(){
@@ -206,6 +268,13 @@ function selectPlan(k){
   document.getElementById('cTheme').innerHTML = themes.map(t=>`<option value="${t}">${THEME_LABELS[t]||t}</option>`).join('');
 }
 
+function renderCoffeeButton(){
+  const link = PRICING.coffeeLink;
+  const el = document.getElementById('coffeeSection');
+  if (el) el.style.display = link ? 'block' : 'none';
+  if (el && link) el.querySelector('a').href = link;
+}
+
 async function createParty(){
   const errEl = document.getElementById('createErr');
   errEl.textContent = '';
@@ -218,9 +287,10 @@ async function createParty(){
   const body = {
     name, contactEmail: email,
     theme: document.getElementById('cTheme').value,
-    plan: SELECTED,
+    plan: PROMO ? PROMO.plan : SELECTED,
     adminPassword: document.getElementById('cPwd').value.trim(),
     seed: 'default',
+    ...(PROMO ? { promoCode: PROMO.code } : {}),
   };
   let d;
   try {
@@ -240,7 +310,7 @@ async function createParty(){
   const ppId  = 'pp-' + Math.random().toString(36).slice(2,8);
 
   let payHtml = '';
-  if (d.event.paymentStatus === 'pending') {
+  if (d.event.paymentStatus === 'pending' && !PRICING.freeMode) {
     let btns = '';
     if (plan.payLink)
       btns += `<p><a class="btn" style="display:inline-block;width:auto" href="${esc(plan.payLink)}" target="_blank" rel="noopener">💳 Payer ${price} par carte (SumUp)</a></p>`;
@@ -301,6 +371,16 @@ function goConsole(){
 
 boot();
 </script>
+
+<!-- Section café — masquée jusqu'au chargement du pricing -->
+<div id="coffeeSection" style="display:none;margin:32px auto;max-width:500px;text-align:center">
+  <div style="background:#fff8f0;border:1.5px solid #fed7aa;border-radius:14px;padding:20px 24px">
+    <div style="font-size:36px;margin-bottom:8px">☕</div>
+    <p style="margin:0 0 6px;font-size:15px;font-weight:600;color:#7c2d12">PartyPlay est gratuit !</p>
+    <p style="margin:0 0 14px;font-size:13.5px;color:#92400e">Le service est hébergé sur mes propres serveurs, sans frais pour vous. Si vous souhaitez soutenir le projet et m'offrir un café, c'est avec grand plaisir !</p>
+    <a id="coffeeLink" href="#" target="_blank" rel="noopener" class="btn" style="background:#f97316;border-color:#f97316;color:#fff;width:auto;display:inline-block;padding:10px 22px;font-size:14.5px">☕ Offrir un café</a>
+  </div>
+</div>
 
 <footer style="margin-top:48px;padding:20px 0 32px;border-top:1px solid var(--a-border);text-align:center;font-size:13px;color:var(--a-muted)">
   <a href="/contact" style="color:var(--a-muted);text-decoration:none;margin:0 12px" onmouseover="this.style.color='var(--a-accent)'" onmouseout="this.style.color='var(--a-muted)'">Contact</a>

@@ -7,6 +7,7 @@
   --a-surface: #ffffff;
   --a-border: #e2e5ea;
   --a-ink: #1f2430;
+  --a-text: #1f2430;  /* alias pour compatibilité pages légales */
   --a-muted: #6b7280;
   --a-accent: #3b6ef5;
   --a-accent-ink: #ffffff;
@@ -32,8 +33,8 @@ body {
 .admin-wrap { max-width: 920px; margin: 0 auto; padding: 28px 20px 60px; }
 
 h1 { font-size: 24px; font-weight: 700; margin: 0 0 4px; letter-spacing: -.01em; }
-h2 { font-size: 17px; font-weight: 650; margin: 0 0 14px; }
-h3 { font-size: 15px; font-weight: 650; margin: 0 0 10px; }
+h2 { font-size: 17px; font-weight: 700; margin: 0 0 14px; }
+h3 { font-size: 15px; font-weight: 600; margin: 0 0 10px; }
 .muted { color: var(--a-muted); }
 .neon-pink, .neon-cyan, .neon-yellow { color: var(--a-ink); } /* neutralise les accents festifs */
 a { color: var(--a-accent); text-decoration: none; }

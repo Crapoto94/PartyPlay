@@ -13,3 +13,6 @@ server/save.json
 
 # Config Brevo (clé API — ne jamais versionner)
 server/brevo.json
+
+# Codes promo (runtime — contient les compteurs d'utilisation)
+server/promos.json

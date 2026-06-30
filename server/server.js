@@ -20,10 +20,11 @@ import {
 } from './store/eventStore.js';
 import { getGame, reloadConfig, dropGame } from './store/eventManager.js';
 import { DEFAULT_AVATARS, defaultContent, emptyContent } from './data/defaults.js';
-import { getPricing, savePricing, getPlan, allowedThemes, ALL_THEMES, planExists } from './store/plans.js';
+import { getPricing, savePricing, getPlan, allowedThemes, ALL_THEMES, planExists, isFreeMode } from './store/plans.js';
 import { publicPaymentConfig } from './store/payment.js';
 import { getBrevoConfig, saveBrevoConfig, sendMail } from './store/brevo.js';
 import { getLegal, saveLegal } from './store/legal.js';
+import { validatePromoCode, usePromoCode, listPromoCodes, addPromoCode, removePromoCode } from './store/promos.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC = path.join(__dirname, 'public');
@@ -88,15 +89,35 @@ app.get('/api/payment/config', (req, res) => res.json(publicPaymentConfig()));
 
 // Création PUBLIQUE d'une fête (choix d'une formule). Le paiement viendra se
 // greffer ensuite (création libre, non bloquante). Renvoie l'id + le mot de passe.
+// Validation publique d'un code promo (avant création).
+app.post('/api/promo/validate', (req, res) => {
+  const result = validatePromoCode((req.body || {}).code);
+  if (!result) return res.status(400).json({ error: 'Code invalide, expiré ou épuisé.' });
+  const plan = getPlan(result.plan);
+  res.json({ ok: true, plan: result.plan, label: plan.label || result.plan, note: result.note });
+});
+
 app.post('/api/parties', (req, res) => {
-  const { name, theme, plan, adminPassword, publicUrl, seed, contactEmail } = req.body || {};
+  const { name, theme, plan, adminPassword, publicUrl, seed, contactEmail, promoCode } = req.body || {};
   if (!name || !name.trim()) return res.status(400).json({ error: 'Nom de la fête requis.' });
-  const planName = planExists(plan) ? plan : 'free';
+
+  // Code promo : valider avant tout
+  const promo = promoCode ? validatePromoCode(promoCode) : null;
+  if (promoCode && !promo) return res.status(400).json({ error: 'Code promo invalide, expiré ou épuisé.' });
+
+  const planName = promo ? promo.plan : (planExists(plan) ? plan : 'free');
   // Mot de passe console : fourni, sinon généré.
   const pwd = (adminPassword && adminPassword.trim()) || ('p' + Math.random().toString(36).slice(2, 8));
   const cfg = createEvent({ name: name.trim(), theme, plan: planName, adminPassword: pwd, publicUrl, seed: seed || 'default', contactEmail: contactEmail || '' });
   cfg.avatars = DEFAULT_AVATARS;
   cfg.creatorIp = (req.get('x-forwarded-for') || '').split(',')[0].trim() || req.ip || 'unknown';
+  if (promo) {
+    cfg.paymentStatus = 'free';
+    cfg.promoCode = promoCode.toUpperCase().trim();
+    usePromoCode(promoCode);
+  } else if (isFreeMode()) {
+    cfg.paymentStatus = 'free'; // mode bêta gratuit global
+  }
   saveConfig(cfg);
   // Envoi de l'email de vérification + infos (non-bloquant)
   if (cfg.contactEmail && !cfg.emailVerified) {
@@ -235,6 +256,29 @@ app.post('/api/admin/events/:id/payment', (req, res) => {
   saveConfig(cfg);
   reloadConfig(cfg.id);
   res.json({ ok: true, paymentStatus: cfg.paymentStatus });
+});
+
+// =====================================================================
+//  CODES PROMO
+// =====================================================================
+app.get('/api/admin/promos', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  res.json({ codes: listPromoCodes() });
+});
+app.post('/api/admin/promos', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  const { code, plan, maxUses, note, expiresAt } = req.body || {};
+  if (!code || !plan) return res.status(400).json({ error: 'Code et formule requis.' });
+  if (!planExists(plan)) return res.status(400).json({ error: 'Formule inconnue.' });
+  try {
+    const entry = addPromoCode({ code, plan, maxUses: maxUses || 1, note: note || '', expiresAt: expiresAt || null });
+    res.json({ ok: true, entry });
+  } catch (e) { res.status(400).json({ error: e.message }); }
+});
+app.delete('/api/admin/promos/:code', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  removePromoCode(req.params.code);
+  res.json({ ok: true });
 });
 
 // =====================================================================

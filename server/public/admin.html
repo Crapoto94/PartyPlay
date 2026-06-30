@@ -41,6 +41,9 @@
           <a class="nav-item" data-sec="email" onclick="showSection('email')">
             <span>📧</span> Emails
           </a>
+          <a class="nav-item" data-sec="promos" onclick="showSection('promos')">
+            <span>🎟️</span> Codes promo
+          </a>
           <a class="nav-item" data-sec="legal" onclick="showSection('legal')">
             <span>⚖️</span> Légal
           </a>
@@ -103,6 +106,29 @@
         <section id="sec-pricing" class="admin-section" style="display:none">
           <h1 class="section-title">💶 Tarifs & formules</h1>
           <p class="muted" style="margin-bottom:20px">Configurez les prix et les limites de chaque formule.</p>
+
+          <div class="card" style="border-color:#f59e0b;background:#fffbf0">
+            <div class="inline" style="justify-content:space-between;flex-wrap:wrap;gap:12px">
+              <div>
+                <h2 style="margin:0 0 4px">🎁 Mode gratuit (bêta)</h2>
+                <p class="muted" style="margin:0;font-size:13.5px">Quand activé : toutes les fêtes sont gratuites, aucune limite, aucun paiement demandé aux créateurs.</p>
+              </div>
+              <label style="display:flex;align-items:center;gap:10px;cursor:pointer;flex-shrink:0">
+                <span id="freeModeLabel" style="font-weight:600;font-size:14px"></span>
+                <input type="checkbox" id="freeMode" onchange="saveFreeMode(this)" style="width:20px;height:20px;cursor:pointer">
+              </label>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2>☕ Bouton « Offre un café »</h2>
+            <p class="muted" style="font-size:13px;margin:0 0 12px">Affiché sur la page d'accueil quand un lien est renseigné. Laissez vide pour masquer le bouton.</p>
+            <div class="row" style="align-items:flex-end">
+              <div class="field" style="flex:2"><label>Lien PayPal (ou autre) pour un don café</label><input type="url" id="pCoffeeLink" placeholder="https://paypal.me/votre-lien-don"></div>
+              <button class="btn secondary" style="width:auto;margin-bottom:2px" onclick="saveCoffeeLink()">Enregistrer</button>
+              <span id="coffeeSaved" class="muted" style="font-size:13px"></span>
+            </div>
+          </div>
 
           <div class="card">
             <div class="row" style="align-items:flex-end">
@@ -191,6 +217,40 @@
           </div>
         </section>
 
+        <!-- ===== SECTION : CODES PROMO ===== -->
+        <section id="sec-promos" class="admin-section" style="display:none">
+          <h1 class="section-title">🎟️ Codes promo</h1>
+          <p class="muted" style="margin-bottom:20px">Créez des codes qui permettent d'obtenir une formule payante gratuitement. Chaque code incrémente un compteur d'utilisation.</p>
+
+          <div class="card">
+            <h2>➕ Nouveau code promo</h2>
+            <div class="row">
+              <div class="field"><label>Code</label><input type="text" id="prCode" placeholder="BETA2024" style="text-transform:uppercase" oninput="this.value=this.value.toUpperCase()"></div>
+              <div class="field"><label>Formule offerte</label>
+                <select id="prPlan">
+                  <option value="full">Fête complète</option>
+                  <option value="infinite">Illimité Premium</option>
+                  <option value="free">Gratuit (formule de base)</option>
+                </select>
+              </div>
+              <div class="field" style="max-width:120px"><label>Utilisations max</label><input type="number" id="prMax" value="10" min="1"></div>
+            </div>
+            <div class="row">
+              <div class="field" style="flex:2"><label>Note interne</label><input type="text" id="prNote" placeholder="Beta testeurs, partenariat…"></div>
+              <div class="field"><label>Expiration (optionnel)</label><input type="date" id="prExpiry"></div>
+            </div>
+            <div class="inline mt">
+              <button class="btn" onclick="createPromo()">Créer le code</button>
+              <span id="prErr" style="font-size:13.5px"></span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2>📋 Codes actifs</h2>
+            <div id="promoList"><p class="muted">Chargement…</p></div>
+          </div>
+        </section>
+
         <!-- ===== SECTION : LÉGAL ===== -->
         <section id="sec-legal" class="admin-section" style="display:none">
           <h1 class="section-title">⚖️ Pages légales</h1>
@@ -237,7 +297,7 @@ const themeLabel = { retro:'Rétro', neon:'Néon', chic:'Chic', kids:'Enfant', c
 const ALL_THEMES = ['retro','neon','chic','kids','casino'];
 const PLAN_ORDER = ['free','full','infinite'];
 let PWD = sessionStorage.getItem('admPwd') || '';
-let PRICING = null, BREVO = null, _emailLoaded = false, _legalLoaded = false;
+let PRICING = null, BREVO = null, _emailLoaded = false, _legalLoaded = false, _promosLoaded = false;
 
 function headers() { return { 'Content-Type':'application/json', 'x-admin-password': PWD }; }
 function esc(s) { return (s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
@@ -251,6 +311,7 @@ function showSection(name) {
     el.classList.toggle('active', el.dataset.sec === name));
   if (name === 'email' && !_emailLoaded) { _emailLoaded = true; loadBrevoConfig(); }
   if (name === 'legal' && !_legalLoaded) { _legalLoaded = true; loadLegalContent(); }
+  if (name === 'promos' && !_promosLoaded) { _promosLoaded = true; loadPromos(); }
 }
 
 // ---- Auth ----
@@ -354,6 +415,12 @@ async function del(id, name) {
 // ---- Tarifs ----
 function renderPricing() {
   if (!PRICING) return;
+  const fm = !!PRICING.freeMode;
+  const toggle = document.getElementById('freeMode');
+  toggle.checked = fm;
+  document.getElementById('freeModeLabel').textContent = fm ? '✅ Activé' : '⬜ Désactivé';
+  document.getElementById('freeModeLabel').style.color = fm ? 'var(--a-ok)' : 'var(--a-muted)';
+  document.getElementById('pCoffeeLink').value = PRICING.coffeeLink || '';
   document.getElementById('pCurrency').value = PRICING.currency || 'EUR';
   document.getElementById('pPaypalClient').value = PRICING.paypalClientId || '';
   const ed = document.getElementById('pricingEditor');
@@ -393,8 +460,22 @@ function renderPricing() {
   }).join('');
 }
 
+async function saveFreeMode(checkbox) {
+  const fm = checkbox.checked;
+  document.getElementById('freeModeLabel').textContent = fm ? '✅ Activé' : '⬜ Désactivé';
+  document.getElementById('freeModeLabel').style.color = fm ? 'var(--a-ok)' : 'var(--a-muted)';
+  PRICING.freeMode = fm;
+  await fetch('/api/admin/pricing', { method:'POST', headers: headers(), body: JSON.stringify({ pricing: PRICING }) });
+}
+
+async function saveCoffeeLink() {
+  PRICING.coffeeLink = document.getElementById('pCoffeeLink').value.trim();
+  await fetch('/api/admin/pricing', { method:'POST', headers: headers(), body: JSON.stringify({ pricing: PRICING }) });
+  const s = document.getElementById('coffeeSaved'); s.textContent = '✓ Enregistré'; setTimeout(()=>s.textContent='', 1800);
+}
+
 async function savePricing() {
-  const pricing = { currency: document.getElementById('pCurrency').value.trim()||'EUR', paypalClientId: document.getElementById('pPaypalClient').value.trim(), plans: {} };
+  const pricing = { currency: document.getElementById('pCurrency').value.trim()||'EUR', paypalClientId: document.getElementById('pPaypalClient').value.trim(), freeMode: !!PRICING.freeMode, coffeeLink: PRICING.coffeeLink||'', plans: {} };
   const v = (sel, k) => document.querySelector(`.${sel}[data-plan="${k}"]`);
   PLAN_ORDER.filter(k => PRICING.plans[k]).forEach(k => {
     const themes = [...document.querySelectorAll(`.pp_theme[data-plan="${k}"]:checked`)].map(c => c.value);
@@ -521,6 +602,58 @@ async function sendEmail() {
     else { errEl.textContent = '✗ '+(d.error||'Erreur d\'envoi'); errEl.style.color = 'var(--a-danger)'; }
   } catch { errEl.textContent = '✗ Erreur réseau'; errEl.style.color = 'var(--a-danger)'; }
   btn.disabled = false; btn.textContent = 'Envoyer';
+}
+
+// ---- Codes promo ----
+const PLAN_LABELS = { free: 'Gratuit', full: 'Fête complète', infinite: 'Illimité Premium' };
+
+async function loadPromos() {
+  const r = await fetch('/api/admin/promos', { headers: headers() });
+  const d = await r.json();
+  const el = document.getElementById('promoList');
+  const codes = Object.entries(d.codes || {});
+  if (!codes.length) { el.innerHTML = '<p class="muted">Aucun code promo pour l\'instant.</p>'; return; }
+  el.innerHTML = `<table class="list"><tbody>${codes.map(([code, c]) => {
+    const expired = c.expiresAt && new Date(c.expiresAt) < new Date();
+    const exhausted = c.maxUses > 0 && c.uses >= c.maxUses;
+    const status = expired ? '<span class="tag" style="background:#fee2e2;color:#b91c1c">expiré</span>'
+      : exhausted ? '<span class="tag" style="background:#fee2e2;color:#b91c1c">épuisé</span>'
+      : '<span class="tag" style="background:#e8f7ee;color:#1f9d57">actif</span>';
+    return `<tr>
+      <td><strong>${esc(code)}</strong> ${status}<br>
+        <span class="muted" style="font-size:12px">${esc(PLAN_LABELS[c.plan]||c.plan)} · ${c.uses}/${c.maxUses||'∞'} utilisations${c.expiresAt?' · exp. '+c.expiresAt:''}${c.note?' · '+esc(c.note):''}</span>
+      </td>
+      <td style="text-align:right">
+        <button class="btn danger" style="width:auto" onclick="deletePromo('${esc(code)}')">✕</button>
+      </td>
+    </tr>`;
+  }).join('')}</tbody></table>`;
+}
+
+async function createPromo() {
+  const code = document.getElementById('prCode').value.trim();
+  const plan = document.getElementById('prPlan').value;
+  const maxUses = parseInt(document.getElementById('prMax').value, 10) || 1;
+  const note = document.getElementById('prNote').value.trim();
+  const expiresAt = document.getElementById('prExpiry').value || null;
+  const errEl = document.getElementById('prErr'); errEl.textContent = ''; errEl.style.color = '';
+  if (!code) { errEl.textContent = 'Le code est requis.'; errEl.style.color = 'var(--a-danger)'; return; }
+  const r = await fetch('/api/admin/promos', { method:'POST', headers: headers(), body: JSON.stringify({ code, plan, maxUses, note, expiresAt }) });
+  const d = await r.json();
+  if (r.ok) {
+    document.getElementById('prCode').value = '';
+    document.getElementById('prNote').value = '';
+    document.getElementById('prExpiry').value = '';
+    errEl.textContent = '✓ Code créé !'; errEl.style.color = 'var(--a-ok)';
+    setTimeout(() => errEl.textContent = '', 2000);
+    _promosLoaded = false; loadPromos();
+  } else { errEl.textContent = '✗ ' + (d.error || 'Erreur'); errEl.style.color = 'var(--a-danger)'; }
+}
+
+async function deletePromo(code) {
+  if (!confirm(`Supprimer le code « ${code} » ?`)) return;
+  await fetch('/api/admin/promos/' + encodeURIComponent(code), { method:'DELETE', headers: headers() });
+  _promosLoaded = false; loadPromos();
 }
 
 // ---- Légal ----
