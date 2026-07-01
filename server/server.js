@@ -25,6 +25,7 @@ import { publicPaymentConfig } from './store/payment.js';
 import { getBrevoConfig, saveBrevoConfig, sendMail } from './store/brevo.js';
 import { getLegal, saveLegal } from './store/legal.js';
 import { validatePromoCode, usePromoCode, listPromoCodes, addPromoCode, removePromoCode } from './store/promos.js';
+import { PRIVACY_QUESTIONS, PRIVACY_LEVELS } from './data/privacy.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC = path.join(__dirname, 'public');
@@ -81,7 +82,17 @@ app.get('/admin', (req, res) => res.sendFile(path.join(PUBLIC, 'admin.html')));
 app.get('/api/version', (req, res) => res.json({ version: APP_VERSION }));
 
 // Tarifs publics (pour afficher les formules sur la page d'accueil).
-app.get('/api/pricing', (req, res) => res.json(getPricing()));
+// Sans lien café configuré dans l'admin, on retombe sur un lien de don
+// PayPal construit depuis PAYPAL_RECEIVER (env).
+app.get('/api/pricing', (req, res) => {
+  const pricing = { ...getPricing() };
+  if (!pricing.coffeeLink && process.env.PAYPAL_RECEIVER) {
+    pricing.coffeeLink = 'https://www.paypal.com/donate/?business='
+      + encodeURIComponent(process.env.PAYPAL_RECEIVER)
+      + '&currency_code=EUR&item_name=' + encodeURIComponent('Un café pour PartyPlay ☕');
+  }
+  res.json(pricing);
+});
 
 // État de configuration des paiements (sans secret) : tant que rien n'est
 // configuré, le front sait qu'aucun moyen de paiement n'est encore actif.
@@ -110,7 +121,7 @@ app.post('/api/parties', (req, res) => {
   const pwd = (adminPassword && adminPassword.trim()) || ('p' + Math.random().toString(36).slice(2, 8));
   const cfg = createEvent({ name: name.trim(), theme, plan: planName, adminPassword: pwd, publicUrl, seed: seed || 'default', contactEmail: contactEmail || '' });
   cfg.avatars = DEFAULT_AVATARS;
-  cfg.creatorIp = (req.get('x-forwarded-for') || '').split(',')[0].trim() || req.ip || 'unknown';
+  cfg.creatorIp = clientIp(req) || 'unknown';
   if (promo) {
     cfg.paymentStatus = 'free';
     cfg.promoCode = promoCode.toUpperCase().trim();
@@ -157,6 +168,11 @@ app.get('/j/:token', (req, res) => {
   res.redirect(`/e/${id}/j/${req.params.token}`);
 });
 
+// IP réelle du client (derrière Nginx/Caddy grâce à trust proxy).
+function clientIp(req) {
+  return (req.get('x-forwarded-for') || '').split(',')[0].trim() || req.ip || '';
+}
+
 function requireAdmin(req, res) {
   if (!ADMIN_PASSWORD) return true; // pas de mot de passe configuré = accès libre
   const pwd = req.body?.password || req.query?.password || req.get('x-admin-password');
@@ -174,7 +190,53 @@ app.post('/api/admin/login', (req, res) => {
 
 app.get('/api/admin/events', (req, res) => {
   if (!requireAdmin(req, res)) return;
-  res.json({ events: listEvents() });
+  // Enrichit l'index léger avec les infos sensibles utiles au super-admin :
+  // mot de passe console, email (+ statut de vérification), IP du créateur.
+  const events = listEvents().map((e) => {
+    const cfg = getConfig(e.id) || {};
+    return {
+      ...e,
+      adminPassword: cfg.adminPassword || '',
+      contactEmail: cfg.contactEmail || '',
+      emailVerified: cfg.emailVerified !== false,
+      creatorIp: cfg.creatorIp || '',
+      playerCount: (cfg.players || []).length,
+    };
+  });
+  res.json({ events });
+});
+
+// Détails d'un événement pour le super-admin : IP créateur + IPs des joueurs.
+app.get('/api/admin/events/:id/details', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  const cfg = getConfig(req.params.id);
+  if (!cfg) return res.status(404).json({ error: 'Événement inconnu.' });
+  res.json({
+    id: cfg.id,
+    name: cfg.name,
+    createdAt: cfg.createdAt,
+    adminPassword: cfg.adminPassword || '',
+    contactEmail: cfg.contactEmail || '',
+    emailVerified: cfg.emailVerified !== false,
+    creatorIp: cfg.creatorIp || null,
+    players: (cfg.players || []).map((p) => ({
+      id: p.id, name: p.name, sim: !!p.sim,
+      lastIp: p.lastIp || null, lastIpAt: p.lastIpAt || null,
+    })),
+  });
+});
+
+// Validation FORCÉE de l'email par le super-admin (pratique en phase de dev
+// pour ne pas dépendre de l'envoi Brevo / de la boîte mail du testeur).
+app.post('/api/admin/events/:id/force-verify', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  const cfg = getConfig(req.params.id);
+  if (!cfg) return res.status(404).json({ error: 'Événement inconnu.' });
+  cfg.emailVerified = true;
+  cfg.verificationToken = null;
+  saveConfig(cfg);
+  reloadConfig(cfg.id);
+  res.json({ ok: true });
 });
 
 app.post('/api/admin/events', (req, res) => {
@@ -264,6 +326,18 @@ app.post('/api/admin/events/:id/payment', (req, res) => {
 app.get('/api/admin/promos', (req, res) => {
   if (!requireAdmin(req, res)) return;
   res.json({ codes: listPromoCodes() });
+});
+
+// =====================================================================
+//  SANS FILTRE !? — listing des questions (admin générale, lecture seule)
+// =====================================================================
+app.get('/api/admin/privacy-questions', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  const levels = {};
+  for (const [key, meta] of Object.entries(PRIVACY_LEVELS)) {
+    levels[key] = { ...meta, count: (PRIVACY_QUESTIONS[key] || []).length, questions: PRIVACY_QUESTIONS[key] || [] };
+  }
+  res.json({ levels });
 });
 app.post('/api/admin/promos', (req, res) => {
   if (!requireAdmin(req, res)) return;
@@ -449,7 +523,16 @@ ev.get('/', (req, res) => res.redirect(`/e/${req.eventId}/borne`));
 ev.get('/borne', (req, res) => res.send(renderPage('borne.html', req.cfg)));
 ev.get('/admin', (req, res) => res.send(renderPage('event-admin.html', req.cfg)));
 ev.get('/photos', (req, res) => res.send(renderPage('photos.html', req.cfg)));
-ev.get('/j/:token', (req, res) => res.send(renderPage('joueur.html', req.cfg)));
+ev.get('/j/:token', (req, res) => {
+  // Trace l'IP du joueur (mentionnée dans la politique de confidentialité).
+  // On n'écrit sur disque que si l'IP a changé, pas à chaque rechargement.
+  const p = (req.cfg.players || []).find((x) => x.token === req.params.token);
+  if (p) {
+    const ip = clientIp(req);
+    if (ip && p.lastIp !== ip) { p.lastIp = ip; p.lastIpAt = Date.now(); saveConfig(req.cfg); }
+  }
+  res.send(renderPage('joueur.html', req.cfg));
+});
 
 // Fichiers uploadés de l'événement
 ev.use('/uploads', (req, res, next) => express.static(uploadsDir(req.eventId))(req, res, next));
@@ -551,6 +634,10 @@ ev.post('/api/blindtest/playlist', async (req, res) => { const theme = req.body?
 // Spotlight
 ev.post('/api/spotlight/vote', (req, res) => { const p = requirePlayer(req, res); if (!p) return; req.game.spotlightVote(p.id, req.body.verdict); res.json({ ok: true }); });
 
+// Sans Filtre !? — réponse secrète (oui/non) puis pari sur le nombre de OUI.
+ev.post('/api/privacy/answer', (req, res) => { const p = requirePlayer(req, res); if (!p) return; req.game.privacyAnswer(p.id, !!req.body.yes); res.json({ ok: true }); });
+ev.post('/api/privacy/guess', (req, res) => { const p = requirePlayer(req, res); if (!p) return; req.game.privacyGuess(p.id, req.body.n); res.json({ ok: true }); });
+
 // Mini-jeux & collaboratifs (manettes)
 ev.post('/api/pacman/dir', (req, res) => { const p = requirePlayer(req, res); if (!p) return; req.game.pacmanDir(p.id, req.body.dir); res.json({ ok: true }); });
 ev.post('/api/tetris/move', (req, res) => { const p = requirePlayer(req, res); if (!p) return; req.game.tetrisMove(p.id, req.body.dir); res.json({ ok: true }); });
@@ -591,7 +678,7 @@ ev.post('/api/admin/config', (req, res) => {
   if (!requireEventAdmin(req, res)) return;
   const patch = req.body.config || {};
   const cfg = { ...req.cfg };
-  for (const k of ['name', 'theme', 'publicUrl', 'adminPassword', 'settings', 'players', 'activities', 'content', 'avatars']) {
+  for (const k of ['name', 'theme', 'publicUrl', 'adminPassword', 'settings', 'players', 'activities', 'content', 'avatars', 'onboarded']) {
     if (patch[k] !== undefined) cfg[k] = patch[k];
   }
   if (!THEMES.includes(cfg.theme)) cfg.theme = 'retro';
@@ -749,12 +836,15 @@ ev.post('/api/admin/resend-verification', async (req, res) => {
 // Actions de pilotage GM (protégées).
 ev.post('/api/admin/action', (req, res) => {
   if (!requireEventAdmin(req, res)) return;
-  // Bloquer toute action de jeu tant que l'email n'est pas vérifié.
-  if (req.cfg.emailVerified === false) {
-    return res.status(403).json({ error: 'Vérifiez votre email avant de démarrer la soirée.' });
-  }
   const g = req.game;
   const { action, payload = {} } = req.body;
+  // Bloquer toute action de jeu tant que l'email n'est pas vérifié — sauf la
+  // simulation (test solo/démo), utile pour découvrir la console avant de
+  // confirmer son email.
+  const SIM_ACTIONS = new Set(['simStart', 'simStop']);
+  if (req.cfg.emailVerified === false && !SIM_ACTIONS.has(action)) {
+    return res.status(403).json({ error: 'Vérifiez votre email avant de démarrer la soirée.' });
+  }
   switch (action) {
     case 'start': g.startGame(); break;
     case 'scoreboard': g.showScoreboard(); break;
@@ -778,6 +868,45 @@ ev.post('/api/admin/action', (req, res) => {
     case 'drawReveal': g.drawReveal(); break;
     case 'roueOpenVote': g.roueOpenVote(); break;
     case 'roueTally': g.roueTally(); break;
+    case 'privacyCloseAnswers': g.privacyCloseAnswers(); break;
+    case 'privacyReveal': g.privacyReveal(); break;
+    case 'privacyNext': g.privacyNext(); break;
+    // Simulation : ajoute 4 joueurs de test (1 pilotable + 3 bots) dans la
+    // config, puis active le pilote automatique des bots.
+    case 'simStart': {
+      const cfg = req.cfg;
+      cfg.players = cfg.players || [];
+      const avKeys = Object.keys(cfg.avatars || {});
+      const ensureSim = (id, name, simBot) => {
+        let p = cfg.players.find((x) => x.id === id);
+        if (!p) {
+          p = {
+            id, name, simBot, sim: true,
+            avatar: avKeys.length ? avKeys[Math.floor(Math.random() * avKeys.length)] : '',
+            token: 'SIM-' + Math.random().toString(36).slice(2, 8).toUpperCase(),
+          };
+          cfg.players.push(p);
+        }
+        return p;
+      };
+      const hero = ensureSim('sim-hero', '🧪 Toi (test)', false);
+      ensureSim('sim-bot1', '🤖 Bot Léa', true);
+      ensureSim('sim-bot2', '🤖 Bot Max', true);
+      ensureSim('sim-bot3', '🤖 Bot Zoé', true);
+      saveConfig(cfg);
+      g.applyConfig(cfg);
+      g.simStart();
+      return res.json({ ok: true, heroToken: hero.token });
+    }
+    case 'simStop': {
+      const cfg = req.cfg;
+      cfg.players = (cfg.players || []).filter((p) => !p.sim);
+      saveConfig(cfg);
+      g.simStop();
+      g.applyConfig(cfg);
+      g.touch();
+      break;
+    }
     case 'mosaicReveal': g.mosaicReveal(payload.on !== false); break;
     case 'ambientPlay': g.setAmbientPaused(false); break;
     case 'ambientStop': g.setAmbientPaused(true); break;

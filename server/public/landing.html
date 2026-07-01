@@ -4,61 +4,320 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PartyPlay — animez votre fête</title>
-  <link rel="stylesheet" href="/static/admin.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
   <script src="/static/version-badge.js" defer></script>
   <style>
-    .hero { text-align:center; padding: 30px 0 6px; }
-    .hero h1 { font-size: 40px; }
-    .hero .logo { font-size: 52px; }
-    .tagline { color: var(--a-muted); font-size: 17px; }
-    .grid3 { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:16px; }
-    .plans { display:grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap:12px; margin:12px 0; }
-    .plan { border:2px solid var(--a-border); border-radius:12px; padding:14px; cursor:pointer; background:#fff; transition:border-color .12s, box-shadow .12s; }
-    .plan:hover { border-color:var(--a-accent); }
-    .plan.sel { border-color:var(--a-accent); box-shadow:0 0 0 3px var(--a-accent-soft); }
-    .plan .price { font-size:24px; font-weight:800; margin:4px 0; }
-    .plan .price small { font-size:13px; font-weight:600; color:var(--a-muted); }
-    .plan .pl-name { font-weight:700; }
-    .plan .pl-tag { font-size:12.5px; color:var(--a-muted); }
-    .plan ul { margin:8px 0 0; padding-left:18px; font-size:13px; color:var(--a-ink); }
+    /* =================================================================
+       PARTYPLAY — landing festive (dark, néons, illustrations)
+       ================================================================= */
+    :root {
+      --bg: #0c0a1e;
+      --ink: #f5f3ff;
+      --muted: #a5a0c6;
+      --border: rgba(255,255,255,.1);
+      --surface: rgba(255,255,255,.05);
+      --surface-2: rgba(255,255,255,.08);
+      --accent: #8b5cf6;
+      --pink: #ec4899;
+      --cyan: #22d3ee;
+      --amber: #fbbf24;
+      --lime: #a3e635;
+      --orange: #fb923c;
+      --grad: linear-gradient(100deg, #8b5cf6, #ec4899 45%, #fb923c 80%, #fbbf24);
+      --ok: #4ade80;
+      --danger: #fb7185;
+      --radius: 18px;
+      --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-display: 'Sora', var(--font);
+      /* alias utilisés par le JS injecté et le footer */
+      --a-ink: var(--ink);
+      --a-muted: var(--muted);
+      --a-border: var(--border);
+      --a-accent: #a78bfa;
+      --a-accent-soft: rgba(139,92,246,.22);
+      --a-danger: var(--danger);
+      --a-ok: var(--ok);
+      --a-bg: rgba(255,255,255,.06);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; min-height: 100vh;
+      background: var(--bg); color: var(--ink);
+      font-family: var(--font); font-size: 16px; line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-    /* ---- Modale ---- */
+    /* ---- Décor : halos de lumière colorés ---- */
+    .glow { position: fixed; border-radius: 50%; filter: blur(110px); pointer-events: none; z-index: 0; opacity: .6; }
+    .glow-1 { width: 560px; height: 560px; background: #7c3aed; top: -180px; left: -140px; animation: drift1 18s ease-in-out infinite alternate; }
+    .glow-2 { width: 480px; height: 480px; background: #db2777; top: 40px; right: -160px; animation: drift2 22s ease-in-out infinite alternate; }
+    .glow-3 { width: 430px; height: 430px; background: #0891b2; bottom: -140px; left: 28%; animation: drift1 26s ease-in-out infinite alternate-reverse; }
+    .glow-4 { width: 340px; height: 340px; background: #d97706; top: 46%; left: -120px; opacity: .35; animation: drift2 30s ease-in-out infinite alternate; }
+    @keyframes drift1 { to { transform: translate(60px, 40px) scale(1.12); } }
+    @keyframes drift2 { to { transform: translate(-50px, 60px) scale(.92); } }
+
+    .page { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; padding: 0 22px 40px; }
+
+    /* ---- Bannière dev ---- */
+    #devBanner {
+      position: relative; z-index: 5;
+      background: linear-gradient(90deg, rgba(251,191,36,.18), rgba(249,115,22,.18));
+      border-bottom: 1px solid rgba(251,191,36,.3);
+      color: #fcd34d; text-align: center; padding: 9px 44px;
+      font-size: 13.5px; font-weight: 600; backdrop-filter: blur(6px);
+    }
+    #devBanner button {
+      position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+      background: none; border: none; font-size: 18px; cursor: pointer; color: #fcd34d; line-height: 1;
+    }
+
+    /* ---- Nav ---- */
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 22px 0 10px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 800; font-size: 19px; color: var(--ink); text-decoration: none; letter-spacing: -.02em; }
+    .nav-logo .emo { font-size: 24px; filter: drop-shadow(0 0 12px rgba(236,72,153,.7)); }
+    .nav a.admin-link { color: var(--muted); font-size: 13.5px; text-decoration: none; padding: 7px 14px; border: 1px solid var(--border); border-radius: 999px; transition: .15s; }
+    .nav a.admin-link:hover { color: var(--ink); border-color: rgba(255,255,255,.25); }
+
+    /* ---- Hero ---- */
+    .hero { position: relative; text-align: center; padding: 58px 0 26px; }
+    .hero .kicker {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12.5px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase;
+      color: #fbcfe8; background: linear-gradient(90deg, rgba(139,92,246,.22), rgba(236,72,153,.22));
+      border: 1px solid rgba(236,72,153,.45);
+      padding: 6px 16px; border-radius: 999px; margin-bottom: 22px;
+    }
+    .hero h1 {
+      font-family: var(--font-display); font-weight: 800;
+      font-size: clamp(42px, 7.5vw, 76px); line-height: 1.04; letter-spacing: -.03em; margin: 0 0 18px;
+    }
+    .hero h1 .grad {
+      background: var(--grad); background-size: 200% auto;
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      animation: gradShift 6s ease-in-out infinite alternate;
+    }
+    @keyframes gradShift { to { background-position: 100% center; } }
+    .tagline { color: var(--muted); font-size: clamp(16px, 2.4vw, 19px); max-width: 640px; margin: 0 auto 30px; }
+    .hero-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* emojis flottants du hero */
+    .float-emo { position: absolute; font-size: 38px; pointer-events: none; opacity: .9; animation: floaty 5s ease-in-out infinite; filter: drop-shadow(0 6px 18px rgba(0,0,0,.4)); }
+    .fe-1 { top: 60px; left: 4%; animation-delay: 0s; }
+    .fe-2 { top: 180px; left: 10%; font-size: 30px; animation-delay: 1.2s; }
+    .fe-3 { top: 80px; right: 5%; animation-delay: .6s; }
+    .fe-4 { top: 210px; right: 11%; font-size: 30px; animation-delay: 1.8s; }
+    @keyframes floaty { 0%,100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-16px) rotate(5deg); } }
+
+    /* ---- Boutons ---- */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      font-family: var(--font); font-size: 15px; font-weight: 700;
+      padding: 13px 26px; border-radius: 14px; border: none; cursor: pointer;
+      background: var(--grad); background-size: 160% auto; color: #fff; text-decoration: none;
+      box-shadow: 0 8px 28px rgba(236,72,153,.4);
+      transition: transform .15s, box-shadow .15s, background-position .3s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(251,146,60,.45); background-position: 90% center; }
+    .btn:active { transform: translateY(0); }
+    .btn.secondary {
+      background: var(--surface-2); color: var(--ink); box-shadow: none;
+      border: 1px solid var(--border);
+    }
+    .btn.secondary:hover { background: rgba(255,255,255,.12); box-shadow: none; }
+    .btn:disabled { opacity: .5; cursor: not-allowed; }
+
+    /* ---- Chips activités (multicolores) ---- */
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; padding: 34px 0 8px; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 13.5px; font-weight: 700; color: var(--ink);
+      padding: 8px 16px; border-radius: 999px; backdrop-filter: blur(8px);
+      border: 1px solid; transition: transform .15s, filter .15s;
+    }
+    .chip:hover { transform: translateY(-3px) scale(1.04); filter: brightness(1.2); }
+    .chip.c1 { background: rgba(236,72,153,.16);  border-color: rgba(236,72,153,.5);  color: #f9a8d4; }
+    .chip.c2 { background: rgba(34,211,238,.14);  border-color: rgba(34,211,238,.5);  color: #67e8f9; }
+    .chip.c3 { background: rgba(251,191,36,.14);  border-color: rgba(251,191,36,.5);  color: #fcd34d; }
+    .chip.c4 { background: rgba(139,92,246,.18);  border-color: rgba(139,92,246,.55); color: #c4b5fd; }
+    .chip.c5 { background: rgba(163,230,53,.13);  border-color: rgba(163,230,53,.45); color: #bef264; }
+    .chip.c6 { background: rgba(251,146,60,.15);  border-color: rgba(251,146,60,.5);  color: #fdba74; }
+    .chip.c7 { background: rgba(74,222,128,.13);  border-color: rgba(74,222,128,.45); color: #86efac; }
+
+    /* ---- Titres de section ---- */
+    .sec-head { text-align: center; margin: 50px 0 26px; }
+    .sec-head h2 { font-family: var(--font-display); font-weight: 800; font-size: clamp(24px, 3.6vw, 34px); letter-spacing: -.02em; margin: 0 0 8px; }
+    .sec-head h2 .grad { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .sec-head p { color: var(--muted); margin: 0; font-size: 15.5px; }
+
+    /* ---- Illustrations ---- */
+    .illus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 22px; margin: 0 0 20px; }
+    .illus-card {
+      border-radius: 22px; overflow: hidden; border: 1px solid var(--border);
+      background: var(--surface); backdrop-filter: blur(14px);
+      transition: transform .18s, box-shadow .18s, border-color .18s;
+    }
+    .illus-card:hover { transform: translateY(-5px); box-shadow: 0 22px 54px rgba(0,0,0,.42); }
+    .illus-card.kids:hover  { border-color: rgba(251,191,36,.5); }
+    .illus-card.adult:hover { border-color: rgba(236,72,153,.5); }
+    .illus-card svg { display: block; width: 100%; height: auto; }
+    .illus-body { padding: 20px 24px 22px; }
+    .illus-body h3 { font-family: var(--font-display); font-size: 19px; font-weight: 700; margin: 0 0 8px; }
+    .illus-body h3 .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 9px; }
+    .illus-card.kids  .dot { background: var(--amber); box-shadow: 0 0 12px var(--amber); }
+    .illus-card.adult .dot { background: var(--pink);  box-shadow: 0 0 12px var(--pink); }
+    .illus-body p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    /* ---- Cartes accès rapide ---- */
+    .grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 18px; margin: 20px 0 44px; }
+    .card {
+      position: relative; background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 26px 26px 24px;
+      backdrop-filter: blur(14px); overflow: hidden;
+      transition: transform .18s, border-color .18s, box-shadow .18s;
+    }
+    .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
+    .card.t-pink::before   { background: linear-gradient(90deg, #ec4899, #fb923c); }
+    .card.t-violet::before { background: linear-gradient(90deg, #8b5cf6, #22d3ee); }
+    .card.t-lime::before   { background: linear-gradient(90deg, #a3e635, #fbbf24); }
+    .grid3 .card:hover { transform: translateY(-4px); box-shadow: 0 18px 44px rgba(0,0,0,.38); }
+    .card.t-pink:hover   { border-color: rgba(236,72,153,.45); }
+    .card.t-violet:hover { border-color: rgba(139,92,246,.5); }
+    .card.t-lime:hover   { border-color: rgba(163,230,53,.4); }
+    .card h2 { font-family: var(--font-display); font-size: 19px; font-weight: 700; margin: 0 0 10px; letter-spacing: -.01em; }
+    .card .icon {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 52px; height: 52px; border-radius: 15px; font-size: 26px; margin-bottom: 14px;
+    }
+    .card.t-pink .icon   { background: rgba(236,72,153,.18); box-shadow: inset 0 0 0 1px rgba(236,72,153,.4); }
+    .card.t-violet .icon { background: rgba(139,92,246,.2);  box-shadow: inset 0 0 0 1px rgba(139,92,246,.45); }
+    .card.t-lime .icon   { background: rgba(163,230,53,.14); box-shadow: inset 0 0 0 1px rgba(163,230,53,.4); }
+    .muted { color: var(--muted); }
+    .card p.muted { font-size: 14px; margin: 0 0 14px; }
+    .card ol { padding-left: 18px; color: var(--muted); font-size: 14px; margin: 0; }
+    .card ol li { margin-bottom: 6px; }
+    .card ol li::marker { color: #fbbf24; font-weight: 700; }
+
+    /* ---- Champs ---- */
+    .field { margin: 12px 0; }
+    .field label { display: block; font-size: 12.5px; font-weight: 700; color: var(--muted); margin-bottom: 7px; letter-spacing: .02em; }
+    .field input, .field select, .field textarea {
+      width: 100%; padding: 12px 15px; font-family: var(--font); font-size: 15px;
+      background: rgba(255,255,255,.055); color: var(--ink);
+      border: 1px solid var(--border); border-radius: 12px; outline: none;
+      transition: border-color .15s, box-shadow .15s, background .15s;
+    }
+    .field input::placeholder { color: rgba(165,160,198,.6); }
+    .field input:focus, .field select:focus {
+      border-color: var(--pink); box-shadow: 0 0 0 3px rgba(236,72,153,.22); background: rgba(255,255,255,.08);
+    }
+    .field select option { background: #191434; color: var(--ink); }
+    .row { display: flex; gap: 14px; flex-wrap: wrap; }
+    .row > .field { flex: 1; min-width: 200px; }
+
+    /* ---- Section créer ---- */
+    .create-section { margin: 10px 0 40px; }
+    .create-card {
+      background: linear-gradient(150deg, rgba(139,92,246,.16), rgba(236,72,153,.1) 40%, rgba(251,146,60,.08) 75%, rgba(255,255,255,.04));
+      border: 1px solid rgba(236,72,153,.32);
+      border-radius: 24px; padding: 36px 34px 32px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 24px 70px rgba(0,0,0,.4);
+    }
+    .create-card h2 { font-family: var(--font-display); font-size: clamp(24px, 3.4vw, 32px); font-weight: 800; margin: 0 0 6px; letter-spacing: -.02em; }
+    .create-card > p.muted { margin: 0 0 20px; font-size: 15px; }
+
+    .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 16px 0 22px; }
+    .plan {
+      border: 1.5px solid var(--border); border-radius: 16px; padding: 18px;
+      cursor: pointer; background: rgba(255,255,255,.04);
+      transition: border-color .15s, box-shadow .15s, transform .15s, background .15s;
+    }
+    .plan:hover { border-color: rgba(236,72,153,.55); transform: translateY(-2px); }
+    .plan.sel { border-color: var(--pink); background: rgba(236,72,153,.12); box-shadow: 0 0 0 3px rgba(236,72,153,.2), 0 10px 30px rgba(236,72,153,.18); }
+    .plan .pl-name { font-weight: 800; font-size: 15px; }
+    .plan .price { font-size: 26px; font-weight: 800; margin: 5px 0; font-family: var(--font-display); }
+    .plan .price small { font-size: 12.5px; font-weight: 600; color: var(--muted); }
+    .plan .pl-tag { font-size: 12.5px; color: var(--muted); }
+    .plan ul { margin: 10px 0 0; padding-left: 18px; font-size: 13px; color: var(--muted); }
+    .plan ul li { margin-bottom: 3px; }
+    .plan ul li::marker { color: var(--cyan); }
+
+    /* ---- Café ---- */
+    #coffeeSection { margin: 40px auto; max-width: 560px; text-align: center; }
+    .coffee-card {
+      background: linear-gradient(150deg, rgba(249,115,22,.16), rgba(251,191,36,.09));
+      border: 1px solid rgba(249,115,22,.35); border-radius: 20px; padding: 28px 30px;
+      backdrop-filter: blur(12px);
+    }
+    .coffee-card .emo { font-size: 40px; margin-bottom: 10px; }
+    .coffee-card h3 { font-family: var(--font-display); font-size: 19px; font-weight: 700; margin: 0 0 8px; color: #fdba74; }
+    .coffee-card p { margin: 0 0 18px; font-size: 14px; color: var(--muted); }
+    .btn.coffee { background: linear-gradient(100deg, #f97316, #f59e0b); box-shadow: 0 8px 26px rgba(249,115,22,.4); }
+    .btn.coffee:hover { box-shadow: 0 12px 32px rgba(249,115,22,.5); }
+
+    /* ---- Footer ---- */
+    footer { margin-top: 50px; padding: 26px 0 34px; border-top: 1px solid var(--border); text-align: center; font-size: 13px; color: var(--muted); }
+    footer a { color: var(--muted); text-decoration: none; margin: 0 13px; transition: color .15s; }
+    footer a:hover { color: var(--ink); }
+
+    /* =================================================================
+       MODALE — reste claire (variables re-scopées en thème light)
+       ================================================================= */
     .modal-overlay {
-      position:fixed; inset:0; background:rgba(0,0,0,.48); z-index:900;
-      display:flex; align-items:center; justify-content:center; padding:16px;
-      animation:moFade .18s ease;
+      position: fixed; inset: 0; background: rgba(5,3,16,.72); z-index: 900;
+      display: flex; align-items: center; justify-content: center; padding: 16px;
+      backdrop-filter: blur(6px); animation: moFade .18s ease;
     }
-    @keyframes moFade { from { opacity:0 } }
+    @keyframes moFade { from { opacity: 0 } }
     .modal {
-      background:#fff; border-radius:18px; padding:28px 24px 22px;
-      max-width:500px; width:100%; max-height:90vh; overflow-y:auto;
-      box-shadow:0 28px 72px rgba(0,0,0,.22); position:relative;
-      animation:moUp .2s ease;
+      --a-bg: #f4f5f7; --a-ink: #1f2430; --a-muted: #6b7280; --a-border: #e6e8ee;
+      --a-accent: #7c3aed; --a-accent-soft: #ede9fe; --a-danger: #d63a3a; --a-ok: #1f9d57;
+      background: #fff; color: #1f2430; border-radius: 22px; padding: 30px 26px 24px;
+      max-width: 500px; width: 100%; max-height: 90vh; overflow-y: auto;
+      box-shadow: 0 32px 90px rgba(0,0,0,.5); position: relative;
+      animation: moUp .22s cubic-bezier(.2,.9,.3,1.2);
     }
-    @keyframes moUp { from { transform:translateY(20px); opacity:0 } }
+    @keyframes moUp { from { transform: translateY(26px) scale(.97); opacity: 0 } }
+    .modal .muted { color: #6b7280; }
+    .modal .btn { border-radius: 12px; }
+    .modal .btn.secondary { background: #f3f4f6; color: #1f2430; border: 1px solid #e6e8ee; }
+    .modal .btn.secondary:hover { background: #e9ebf0; }
     .modal-close {
-      position:absolute; top:12px; right:14px; background:none; border:none;
-      font-size:20px; cursor:pointer; color:var(--a-muted); padding:5px 7px;
-      border-radius:7px; line-height:1;
+      position: absolute; top: 12px; right: 14px; background: none; border: none;
+      font-size: 20px; cursor: pointer; color: #6b7280; padding: 5px 7px;
+      border-radius: 7px; line-height: 1;
     }
-    .modal-close:hover { background:var(--a-bg); color:var(--a-ink); }
-    .modal-icon { font-size:52px; text-align:center; margin-bottom:10px; }
-    .modal-title { font-size:20px; font-weight:700; margin:0 0 18px; text-align:center; }
-    .info-grid {
-      background:var(--a-bg); border-radius:10px; padding:4px 14px; margin:0 0 16px;
+    .modal-close:hover { background: #f3f4f6; color: #1f2430; }
+    .modal-icon { font-size: 52px; text-align: center; margin-bottom: 10px; }
+    .modal-title { font-size: 20px; font-weight: 800; margin: 0 0 18px; text-align: center; font-family: var(--font-display); }
+    .info-grid { background: #f4f5f7; border-radius: 12px; padding: 4px 14px; margin: 0 0 16px; }
+    .info-row { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #e6e8ee; font-size: 14px; }
+    .info-row:last-child { border-bottom: none; }
+    .info-label { font-size: 11.5px; font-weight: 700; color: #6b7280; min-width: 130px; flex-shrink: 0; }
+    code.pwd { background: #ede9fe; color: #5b21b6; padding: 2px 8px; border-radius: 6px; font-size: 14px; font-family: monospace; }
+    .modal-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+    .modal-actions .btn { flex: 1; min-width: 140px; text-align: center; }
+    .modal-note { font-size: 12px; color: #6b7280; border-top: 1px solid #e6e8ee; padding-top: 10px; margin-top: 4px; }
+    .pay-block { margin: 4px 0 12px; }
+    .pay-block p { margin: 0 0 8px; }
+
+    @media (max-width: 640px) {
+      .hero { padding: 40px 0 18px; }
+      .create-card { padding: 26px 20px 24px; }
+      .hero-cta .btn { width: 100%; }
+      .float-emo { display: none; }
     }
-    .info-row { display:flex; align-items:center; gap:10px; padding:9px 0; border-bottom:1px solid var(--a-border); font-size:14px; }
-    .info-row:last-child { border-bottom:none; }
-    .info-label { font-size:11.5px; font-weight:600; color:var(--a-muted); min-width:130px; flex-shrink:0; }
-    code.pwd { background:#eef2ff; padding:2px 8px; border-radius:6px; font-size:14px; font-family:monospace; }
-    .modal-actions { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px; }
-    .modal-actions .btn { flex:1; min-width:140px; text-align:center; }
-    .modal-note { font-size:12px; color:var(--a-muted); border-top:1px solid var(--a-border); padding-top:10px; margin-top:4px; }
-    .pay-block { margin:4px 0 12px; }
-    .pay-block p { margin:0 0 8px; }
   </style>
 </head>
 <body>
+
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+  <div class="glow glow-3"></div>
+  <div class="glow glow-4"></div>
 
   <!-- Modale résultat de création -->
   <div class="modal-overlay" id="resultModal" style="display:none" onclick="if(event.target===this)closeModal()">
@@ -69,118 +328,291 @@
   </div>
 
   <!-- Bannière "en cours de développement" -->
-  <div id="devBanner" style="background:#fbbf24;color:#78350f;text-align:center;padding:10px 16px;font-size:14px;font-weight:600;position:relative">
+  <div id="devBanner">
     🚧 Site en cours de développement — Certaines fonctionnalités peuvent être instables. Merci pour votre patience !
-    <button onclick="this.parentElement.style.display='none';localStorage.setItem('devBannerDismissed','1')" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;font-size:18px;cursor:pointer;color:#78350f;line-height:1" title="Fermer">×</button>
+    <button onclick="this.parentElement.style.display='none';localStorage.setItem('devBannerDismissed','1')" title="Fermer">×</button>
   </div>
 
-  <div class="admin-wrap">
-    <div class="hero">
-      <div class="logo">🎉</div>
-      <h1>PartyPlay</h1>
-      <p class="tagline">Animez votre soirée : quiz, blind-test, anecdotes, défis et mini-jeux — sur grand écran et sur les téléphones de vos invités.</p>
+  <div class="page">
+
+    <nav class="nav">
+      <a class="nav-logo" href="/"><span class="emo">🎉</span> PartyPlay</a>
+      <a class="admin-link" href="/admin">Administration</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+      <span class="float-emo fe-1">🎈</span>
+      <span class="float-emo fe-2">🎊</span>
+      <span class="float-emo fe-3">🪩</span>
+      <span class="float-emo fe-4">🎂</span>
+      <div class="kicker">✨ Gratuit pendant la bêta</div>
+      <h1>Transformez votre soirée<br>en <span class="grad">jeu géant</span></h1>
+      <p class="tagline">Quiz, blind-test, défis photo, roue des gages et mini-jeux — sur grand écran et sur les téléphones de vos invités. Prêt en 2 minutes.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#create">✨ Créer ma fête</a>
+        <a class="btn secondary" href="#join">🙋 J'ai un code invité</a>
+      </div>
+      <div class="chips">
+        <span class="chip c1">🧠 Quiz</span>
+        <span class="chip c2">🎵 Blind-test</span>
+        <span class="chip c3">📸 Défi photo</span>
+        <span class="chip c4">🎡 Roue des gages</span>
+        <span class="chip c5">🕹️ Mini-jeux arcade</span>
+        <span class="chip c6">🎨 Dessine-moi</span>
+        <span class="chip c7">💬 Anecdotes</span>
+      </div>
+    </section>
+
+    <!-- Illustrations : pour tous les publics -->
+    <div class="sec-head">
+      <h2>Pour les petits <span class="grad">comme pour les grands</span></h2>
+      <p>Un anniversaire d'enfant l'après-midi, une soirée endiablée le soir — PartyPlay s'adapte.</p>
     </div>
 
-    <div class="grid3">
-      <!-- Rejoindre -->
-      <div class="card">
-        <h2>🙋 Rejoindre une fête</h2>
-        <p class="muted">Saisis ton <strong>code invité</strong> (reçu par QR ou par l'organisateur).</p>
+    <div class="illus-grid">
+      <!-- Anniversaire enfants -->
+      <div class="illus-card kids">
+        <svg viewBox="0 0 420 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Anniversaire d'enfants">
+          <defs>
+            <linearGradient id="kbg" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#fef9c3"/><stop offset="1" stop-color="#fbcfe8"/>
+            </linearGradient>
+          </defs>
+          <rect width="420" height="250" fill="url(#kbg)"/>
+          <!-- guirlande de fanions -->
+          <path d="M0 16 Q105 40 210 16 T420 16" stroke="#a78bfa" stroke-width="3" fill="none"/>
+          <path d="M42 24 l10 20 l11 -17 z" fill="#f472b6"/>
+          <path d="M96 31 l10 20 l11 -17 z" fill="#60a5fa"/>
+          <path d="M152 33 l10 20 l11 -17 z" fill="#4ade80"/>
+          <path d="M212 27 l10 20 l11 -17 z" fill="#fbbf24"/>
+          <path d="M268 30 l10 20 l11 -17 z" fill="#f472b6"/>
+          <path d="M322 30 l10 20 l11 -17 z" fill="#22d3ee"/>
+          <path d="M372 23 l10 20 l11 -17 z" fill="#fb923c"/>
+          <!-- confettis -->
+          <circle cx="60" cy="88" r="4" fill="#f472b6"/><circle cx="350" cy="75" r="4" fill="#60a5fa"/>
+          <circle cx="120" cy="66" r="3.5" fill="#4ade80"/><circle cx="300" cy="105" r="3.5" fill="#fbbf24"/>
+          <rect x="200" y="70" width="7" height="7" rx="2" fill="#fb923c" transform="rotate(24 203 73)"/>
+          <rect x="88" y="118" width="7" height="7" rx="2" fill="#22d3ee" transform="rotate(-18 91 121)"/>
+          <rect x="330" y="130" width="7" height="7" rx="2" fill="#a78bfa" transform="rotate(40 333 133)"/>
+          <!-- ballons gauche -->
+          <path d="M46 178 Q40 150 48 128" stroke="#9ca3af" stroke-width="1.6" fill="none"/>
+          <ellipse cx="48" cy="112" rx="19" ry="23" fill="#f472b6"/>
+          <ellipse cx="42" cy="104" rx="6" ry="8" fill="#fff" opacity=".45"/>
+          <path d="M78 176 Q84 152 76 132" stroke="#9ca3af" stroke-width="1.6" fill="none"/>
+          <ellipse cx="76" cy="116" rx="17" ry="21" fill="#60a5fa"/>
+          <ellipse cx="71" cy="109" rx="5" ry="7" fill="#fff" opacity=".45"/>
+          <!-- ballon droite -->
+          <path d="M382 180 Q388 154 378 134" stroke="#9ca3af" stroke-width="1.6" fill="none"/>
+          <ellipse cx="378" cy="118" rx="19" ry="23" fill="#4ade80"/>
+          <ellipse cx="372" cy="110" rx="6" ry="8" fill="#fff" opacity=".45"/>
+          <!-- table + gâteau -->
+          <rect x="160" y="196" width="120" height="10" rx="5" fill="#c084fc"/>
+          <rect x="170" y="206" width="8" height="26" rx="3" fill="#a855f7"/>
+          <rect x="262" y="206" width="8" height="26" rx="3" fill="#a855f7"/>
+          <rect x="178" y="158" width="84" height="38" rx="8" fill="#fff"/>
+          <path d="M178 170 q10 10 21 0 q10 10 21 0 q10 10 21 0 q10 10 21 0 v-4 q-10 8 -21 0 q-10 8 -21 0 q-10 8 -21 0 q-10 8 -21 0 z" fill="#f9a8d4"/>
+          <rect x="192" y="132" width="56" height="26" rx="6" fill="#fbcfe8"/>
+          <rect x="192" y="132" width="56" height="9" rx="4.5" fill="#f472b6"/>
+          <!-- bougies -->
+          <rect x="206" y="112" width="5" height="20" rx="2" fill="#60a5fa"/>
+          <rect x="218" y="108" width="5" height="24" rx="2" fill="#fbbf24"/>
+          <rect x="230" y="112" width="5" height="20" rx="2" fill="#4ade80"/>
+          <ellipse cx="208.5" cy="106" rx="4" ry="6" fill="#fb923c"/>
+          <ellipse cx="220.5" cy="102" rx="4" ry="6" fill="#fb923c"/>
+          <ellipse cx="232.5" cy="106" rx="4" ry="6" fill="#fb923c"/>
+          <!-- enfant 1 (gauche du gâteau) -->
+          <path d="M118 168 l14 -26 l14 26 z" fill="#8b5cf6"/>
+          <circle cx="132" cy="140" r="4" fill="#fbbf24"/>
+          <circle cx="132" cy="184" r="16" fill="#fcd9b8"/>
+          <circle cx="126" cy="182" r="2" fill="#432"/>
+          <circle cx="138" cy="182" r="2" fill="#432"/>
+          <path d="M126 190 q6 5 12 0" stroke="#432" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="M118 232 v-22 q0 -12 14 -12 q14 0 14 12 v22 z" fill="#f472b6"/>
+          <path d="M118 212 q-12 -8 -14 -22" stroke="#f472b6" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <path d="M146 212 q12 -8 14 -22" stroke="#f472b6" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <!-- enfant 2 (droite du gâteau) -->
+          <path d="M294 164 l14 -26 l14 26 z" fill="#22d3ee"/>
+          <circle cx="308" cy="136" r="4" fill="#f472b6"/>
+          <circle cx="308" cy="180" r="16" fill="#a9744f"/>
+          <circle cx="302" cy="178" r="2" fill="#241105"/>
+          <circle cx="314" cy="178" r="2" fill="#241105"/>
+          <path d="M302 186 q6 5 12 0" stroke="#241105" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="M294 228 v-22 q0 -12 14 -12 q14 0 14 12 v22 z" fill="#60a5fa"/>
+          <path d="M294 208 q-12 -8 -14 -22" stroke="#60a5fa" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <path d="M322 208 q12 -8 14 -22" stroke="#60a5fa" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <!-- cadeaux -->
+          <rect x="110" y="236" width="200" height="14" fill="#f3e8ff"/>
+          <rect x="30" y="212" width="34" height="26" rx="4" fill="#fb923c"/>
+          <rect x="44" y="212" width="6" height="26" fill="#fff7ed"/>
+          <rect x="30" y="222" width="34" height="5" fill="#fff7ed"/>
+          <rect x="356" y="216" width="30" height="22" rx="4" fill="#a78bfa"/>
+          <rect x="368" y="216" width="6" height="22" fill="#f5f3ff"/>
+        </svg>
+        <div class="illus-body">
+          <h3><span class="dot"></span>Anniversaires d'enfants</h3>
+          <p>Quiz adaptés, dessins, défis photo rigolos et mini-jeux : les enfants jouent sur une tablette ou un téléphone pendant que l'écran fait le show. Thème « Anniversaire enfant » inclus. 🎈</p>
+        </div>
+      </div>
+
+      <!-- Soirée adultes -->
+      <div class="illus-card adult">
+        <svg viewBox="0 0 420 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Soirée entre adultes">
+          <defs>
+            <linearGradient id="abg" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#312e81"/><stop offset="1" stop-color="#701a75"/>
+            </linearGradient>
+            <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#f0abfc" stop-opacity=".5"/><stop offset="1" stop-color="#f0abfc" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <rect width="420" height="250" fill="url(#abg)"/>
+          <!-- rayons boule à facettes -->
+          <path d="M210 66 L150 250 L270 250 Z" fill="url(#beam)"/>
+          <path d="M210 66 L60 250 L120 250 Z" fill="url(#beam)" opacity=".5"/>
+          <path d="M210 66 L300 250 L360 250 Z" fill="url(#beam)" opacity=".5"/>
+          <!-- boule à facettes -->
+          <line x1="210" y1="0" x2="210" y2="38" stroke="#e9d5ff" stroke-width="2"/>
+          <circle cx="210" cy="52" r="22" fill="#c4b5fd"/>
+          <path d="M188 52 h44 M210 30 v44 M194 38 l32 28 M226 38 l-32 28" stroke="#8b5cf6" stroke-width="1.6"/>
+          <circle cx="203" cy="45" r="4" fill="#fff" opacity=".8"/>
+          <!-- éclats lumineux -->
+          <path d="M92 60 l4 9 9 4 -9 4 -4 9 -4 -9 -9 -4 9 -4 z" fill="#f0abfc"/>
+          <path d="M330 48 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3 z" fill="#67e8f9"/>
+          <path d="M370 120 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3 z" fill="#fcd34d"/>
+          <path d="M48 130 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3 z" fill="#4ade80"/>
+          <!-- notes de musique -->
+          <g fill="#f9a8d4">
+            <circle cx="96" cy="106" r="6"/><rect x="100" y="82" width="3" height="26" rx="1.5"/>
+            <path d="M100 82 q10 2 12 10 q-6 -4 -12 -2 z"/>
+          </g>
+          <g fill="#67e8f9">
+            <circle cx="336" cy="96" r="5"/><rect x="339.5" y="74" width="3" height="24" rx="1.5"/>
+            <path d="M339.5 74 q9 2 11 9 q-5 -4 -11 -2 z"/>
+          </g>
+          <!-- danseur 1 : bras en l'air -->
+          <circle cx="120" cy="158" r="15" fill="#fcd9b8"/>
+          <path d="M108 244 v-40 q0 -14 12 -14 q12 0 12 14 v40 z" fill="#ec4899"/>
+          <path d="M109 200 q-16 -12 -18 -30" stroke="#ec4899" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <path d="M131 200 q16 -12 18 -30" stroke="#ec4899" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <circle cx="91" cy="168" r="6" fill="#fcd9b8"/>
+          <circle cx="149" cy="168" r="6" fill="#fcd9b8"/>
+          <!-- danseuse 2 : au centre, téléphone en main (quiz) -->
+          <circle cx="210" cy="150" r="15" fill="#a9744f"/>
+          <path d="M210 128 q-16 -4 -14 14 q7 -8 14 -6 q7 -2 14 6 q2 -18 -14 -14 z" fill="#3b0764"/>
+          <path d="M197 244 v-38 q0 -16 13 -16 q13 0 13 16 v38 z" fill="#8b5cf6"/>
+          <path d="M198 196 q-14 -6 -20 -20" stroke="#8b5cf6" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <path d="M222 196 q14 2 22 -8" stroke="#8b5cf6" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <rect x="240" y="176" width="15" height="24" rx="3" fill="#0f172a" transform="rotate(14 247 188)"/>
+          <rect x="243" y="180" width="9" height="14" rx="1.5" fill="#22d3ee" transform="rotate(14 247 187)"/>
+          <!-- danseur 3 : cocktail -->
+          <circle cx="300" cy="160" r="15" fill="#e8b88a"/>
+          <path d="M288 244 v-40 q0 -14 12 -14 q12 0 12 14 v40 z" fill="#22d3ee"/>
+          <path d="M289 202 q-14 -8 -16 -24" stroke="#22d3ee" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <path d="M311 202 q16 -14 16 -32" stroke="#22d3ee" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <!-- verre cocktail -->
+          <path d="M318 148 l18 0 l-9 13 z" fill="#f0abfc"/>
+          <line x1="327" y1="161" x2="327" y2="172" stroke="#e9d5ff" stroke-width="2"/>
+          <line x1="321" y1="172" x2="333" y2="172" stroke="#e9d5ff" stroke-width="2"/>
+          <circle cx="332" cy="146" r="3.5" fill="#4ade80"/>
+          <!-- piste de danse -->
+          <g>
+            <rect x="0" y="244" width="60" height="6" fill="#8b5cf6"/>
+            <rect x="60" y="244" width="60" height="6" fill="#ec4899"/>
+            <rect x="120" y="244" width="60" height="6" fill="#22d3ee"/>
+            <rect x="180" y="244" width="60" height="6" fill="#fbbf24"/>
+            <rect x="240" y="244" width="60" height="6" fill="#8b5cf6"/>
+            <rect x="300" y="244" width="60" height="6" fill="#ec4899"/>
+            <rect x="360" y="244" width="60" height="6" fill="#22d3ee"/>
+          </g>
+        </svg>
+        <div class="illus-body">
+          <h3><span class="dot"></span>Soirées entre adultes</h3>
+          <p>Blind-test, roue des gages, anecdotes croustillantes et buzzer sur téléphone : la borne sur grand écran, les invités en pleine bataille. Thèmes Néon, Casino, Chic… 🪩</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Accès rapide -->
+    <div class="grid3" id="join">
+      <div class="card t-pink">
+        <span class="icon">🙋</span>
+        <h2>Rejoindre une fête</h2>
+        <p class="muted">Saisis ton <strong style="color:var(--ink)">code invité</strong> (reçu par QR ou par l'organisateur).</p>
         <div class="field"><input type="text" id="joinCode" placeholder="ex. PXL-LEA1" style="text-transform:uppercase"></div>
-        <button class="btn" onclick="joinParty()">Rejoindre</button>
-        <div id="joinErr" class="muted" style="margin-top:8px"></div>
+        <button class="btn" style="width:100%" onclick="joinParty()">Rejoindre</button>
+        <div id="joinErr" class="muted" style="margin-top:10px;font-size:13.5px"></div>
       </div>
 
-      <!-- Admin de sa fête -->
-      <div class="card">
-        <h2>🎛️ Gérer ma fête</h2>
-        <p class="muted">Accède à la <strong>console</strong> de ta fête (code = identifiant de l'événement).</p>
+      <div class="card t-violet">
+        <span class="icon">🎛️</span>
+        <h2>Gérer ma fête</h2>
+        <p class="muted">Accède à la <strong style="color:var(--ink)">console</strong> de ta fête (code = identifiant de l'événement).</p>
         <div class="field"><input type="text" id="adminCode" placeholder="ex. anniv-lea"></div>
-        <button class="btn secondary" onclick="goConsole()">Ouvrir la console</button>
+        <button class="btn secondary" style="width:100%" onclick="goConsole()">Ouvrir la console</button>
       </div>
 
-      <!-- Aide -->
-      <div class="card">
-        <h2>❓ Comment ça marche</h2>
-        <ol style="padding-left:18px; color:var(--a-ink)">
-          <li>Crée ta fête et choisis une formule.</li>
-          <li>Dans la console : ajoute les joueurs, choisis les activités et le thème.</li>
+      <div class="card t-lime">
+        <span class="icon">❓</span>
+        <h2>Comment ça marche</h2>
+        <ol>
+          <li>Crée ta fête et choisis un thème.</li>
+          <li>Dans la console : ajoute les joueurs et les activités.</li>
           <li>Ouvre la borne sur un grand écran, les invités scannent leur QR. 🎬</li>
         </ol>
       </div>
     </div>
 
     <!-- Créer une fête -->
-    <div class="card">
-      <h2>✨ Créer une fête</h2>
-      <p class="muted">Choisis ta formule :</p>
-      <div class="plans" id="plans"></div>
+    <section class="create-section" id="create">
+      <div class="create-card">
+        <h2>✨ Créer une fête</h2>
+        <p class="muted">Choisis ta formule :</p>
+        <div class="plans" id="plans"></div>
 
-      <div class="row">
-        <div class="field"><label>Nom de la fête</label><input type="text" id="cName" placeholder="Anniversaire de Léa"></div>
-        <div class="field"><label>Thème graphique</label><select id="cTheme"></select></div>
-      </div>
-      <div class="field">
-        <label>Email de contact <span class="muted" style="font-weight:400">(pour retrouver votre fête)</span></label>
-        <input type="email" id="cEmail" placeholder="vous@exemple.com" autocomplete="email">
-      </div>
-      <div class="field">
-        <label>Mot de passe de la console <span class="muted" style="font-weight:400">(optionnel — sinon généré)</span></label>
-        <input type="text" id="cPwd" placeholder="laisser vide">
-      </div>
-
-      <!-- Code promo -->
-      <div style="margin:6px 0 14px">
-        <button type="button" onclick="togglePromo(this)" style="background:none;border:none;color:var(--a-accent);font-size:13.5px;cursor:pointer;padding:0;text-decoration:underline">🎟️ J'ai un code promo</button>
-        <div id="promoBox" style="display:none;margin-top:10px">
-          <div class="inline" style="gap:8px">
-            <input type="text" id="cPromo" placeholder="CODE-PROMO" style="text-transform:uppercase;max-width:220px" oninput="this.value=this.value.toUpperCase()">
-            <button class="btn secondary" style="width:auto" onclick="validatePromo()">Valider</button>
-          </div>
-          <div id="promoStatus" style="margin-top:6px;font-size:13.5px"></div>
+        <div class="row">
+          <div class="field"><label>Nom de la fête</label><input type="text" id="cName" placeholder="Anniversaire de Léa"></div>
+          <div class="field"><label>Thème graphique</label><select id="cTheme"></select></div>
         </div>
-      </div>
+        <div class="field">
+          <label>Email de contact <span class="muted" style="font-weight:400">(pour retrouver votre fête)</span></label>
+          <input type="email" id="cEmail" placeholder="vous@exemple.com" autocomplete="email">
+        </div>
+        <div class="field">
+          <label>Mot de passe de la console <span class="muted" style="font-weight:400">(optionnel — sinon généré)</span></label>
+          <input type="text" id="cPwd" placeholder="laisser vide">
+        </div>
 
-      <button class="btn" onclick="createParty()">Créer ma fête</button>
-      <div id="createErr" style="margin-top:10px;color:var(--a-danger)"></div>
+        <button class="btn" style="font-size:16px;padding:15px 34px;margin-top:8px" onclick="createParty()">🎉 Créer ma fête</button>
+        <div id="createErr" style="margin-top:12px;color:var(--danger);font-size:14px"></div>
+      </div>
+    </section>
+
+    <!-- Section café — masquée jusqu'au chargement du pricing -->
+    <div id="coffeeSection" style="display:none">
+      <div class="coffee-card">
+        <div class="emo">☕</div>
+        <h3>PartyPlay est gratuit !</h3>
+        <p>Le service est hébergé sur mes propres serveurs, sans frais pour vous. Si vous souhaitez soutenir le projet et m'offrir un café, c'est avec grand plaisir !</p>
+        <a id="coffeeLink" href="#" target="_blank" rel="noopener" class="btn coffee">☕ Offrir un café</a>
+      </div>
     </div>
 
-    <p class="muted" style="text-align:center; margin-top:24px; font-size:13px">
-      <a href="/admin">Administration</a>
-    </p>
-  </div>
+    <footer>
+      <a href="/contact">Contact</a>
+      <a href="/rgpd">Confidentialité (RGPD)</a>
+      <a href="/mentions-legales">Mentions légales</a>
+    </footer>
+
+  </div><!-- /.page -->
 
 <script>
-let PRICING = null, SELECTED = 'free', PROMO = null;
+let PRICING = null, SELECTED = 'free';
 const THEME_LABELS = { retro:'Rétro jeux vidéo', neon:'Néon / Clubbing', chic:'Chic / Élégant', kids:'Anniversaire enfant', casino:'Casino / Vegas' };
 const ALL_THEMES = ['retro','neon','chic','kids','casino'];
 
 // Masquer la bannière si déjà fermée
 if (localStorage.getItem('devBannerDismissed') === '1') document.getElementById('devBanner').style.display = 'none';
-
-function togglePromo(btn) {
-  const box = document.getElementById('promoBox');
-  const open = box.style.display !== 'none';
-  box.style.display = open ? 'none' : 'block';
-  btn.textContent = open ? '🎟️ J\'ai un code promo' : '× Fermer le code promo';
-  if (open) { PROMO = null; document.getElementById('cPromo').value = ''; document.getElementById('promoStatus').textContent = ''; renderPlans(); }
-}
-
-async function validatePromo() {
-  const code = document.getElementById('cPromo').value.trim();
-  const st = document.getElementById('promoStatus');
-  if (!code) { st.textContent = 'Entrez un code.'; st.style.color = 'var(--a-danger)'; return; }
-  st.textContent = 'Vérification…'; st.style.color = '';
-  const r = await fetch('/api/promo/validate', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ code }) });
-  const d = await r.json();
-  if (!r.ok) { st.textContent = '✗ ' + (d.error || 'Code invalide'); st.style.color = 'var(--a-danger)'; PROMO = null; return; }
-  PROMO = { code, plan: d.plan, label: d.label };
-  st.innerHTML = `✅ Code valide — <strong>${esc(d.label)}</strong> offerte !${d.note ? ' <span class="muted">'+esc(d.note)+'</span>' : ''}`;
-  st.style.color = 'var(--a-ok, #1f9d57)';
-  // Sélectionner automatiquement le plan du code promo
-  SELECTED = d.plan;
-  renderPlans();
-}
 
 function esc(s){ return (s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 function fmtPrice(p, cur){ return p.price===0 ? 'Gratuit' : (Number(p.price).toFixed(2).replace('.',',')+' '+(cur==='EUR'?'€':cur)); }
@@ -232,10 +664,11 @@ async function boot(){
 function renderFreeMode(){
   SELECTED = 'full';
   document.getElementById('plans').innerHTML = `
-    <div style="background:#e8f7ee;border:1.5px solid #86efac;border-radius:12px;padding:16px 20px;text-align:center;width:100%;grid-column:1/-1">
+    <div style="background:rgba(74,222,128,.1);border:1.5px solid rgba(74,222,128,.4);border-radius:16px;padding:18px 22px;text-align:center;width:100%;grid-column:1/-1">
       <div style="font-size:28px;margin-bottom:6px">🎉</div>
-      <strong style="color:#1f9d57;font-size:16px">Accès complet gratuit !</strong>
-      <p style="color:#166534;margin:6px 0 0;font-size:14px">Toutes les fonctionnalités sont disponibles pendant la période de développement — sans limites ni paiement.</p>
+      <strong style="color:#4ade80;font-size:16px">Accès complet gratuit !</strong>
+      <p style="color:var(--muted);margin:6px 0 0;font-size:14px">Toutes les fonctionnalités sont disponibles pendant la période de développement — sans limites ni paiement.</p>
+      <p style="margin:10px 0 0;font-size:13.5px"><a href="#coffeeSection" style="color:#fdba74;font-weight:600;text-decoration:underline;text-underline-offset:3px">☕ Envie de soutenir le projet ? Offrez un café au créateur</a></p>
     </div>`;
   document.getElementById('cTheme').innerHTML = ALL_THEMES.map(t=>`<option value="${t}">${THEME_LABELS[t]||t}</option>`).join('');
 }
@@ -269,10 +702,15 @@ function selectPlan(k){
 }
 
 function renderCoffeeButton(){
+  // La carte café est toujours visible ; seul le bouton disparaît
+  // si aucun lien PayPal n'est disponible (ni admin, ni PAYPAL_RECEIVER).
   const link = PRICING.coffeeLink;
   const el = document.getElementById('coffeeSection');
-  if (el) el.style.display = link ? 'block' : 'none';
-  if (el && link) el.querySelector('a').href = link;
+  if (!el) return;
+  el.style.display = 'block';
+  const a = el.querySelector('a');
+  if (link) a.href = link;
+  else a.style.display = 'none';
 }
 
 async function createParty(){
@@ -287,10 +725,9 @@ async function createParty(){
   const body = {
     name, contactEmail: email,
     theme: document.getElementById('cTheme').value,
-    plan: PROMO ? PROMO.plan : SELECTED,
+    plan: SELECTED,
     adminPassword: document.getElementById('cPwd').value.trim(),
     seed: 'default',
-    ...(PROMO ? { promoCode: PROMO.code } : {}),
   };
   let d;
   try {
@@ -322,7 +759,7 @@ async function createParty(){
   }
 
   const verifyNotice = `
-    <div style="background:#fef3c7;border:1px solid #f59e0b;border-radius:9px;padding:12px 14px;margin-bottom:14px;font-size:13.5px">
+    <div style="background:#fef3c7;border:1px solid #f59e0b;border-radius:9px;padding:12px 14px;margin-bottom:14px;font-size:13.5px;color:#78350f">
       <strong>📧 Vérifiez votre email</strong><br>
       Un lien de confirmation a été envoyé à <strong>${esc(email)}</strong>.<br>
       <span style="color:#92400e">La fête sera activée dès que vous aurez cliqué sur ce lien.</span>
@@ -346,7 +783,7 @@ async function createParty(){
     <p class="modal-note">⚠️ Conserve bien ce mot de passe — il est la seule clé d'accès à ta console d'administration.</p>
   `;
 
-  const needPP = d.event.paymentStatus === 'pending' && plan.paypalButtonId && PRICING.paypalClientId;
+  const needPP = d.event.paymentStatus === 'pending' && !PRICING.freeMode && plan.paypalButtonId && PRICING.paypalClientId;
   openModal(modalHtml, needPP ? () => renderHostedButton('#'+ppId, plan.paypalButtonId, PRICING.paypalClientId, PRICING.currency) : null);
 }
 
@@ -371,21 +808,5 @@ function goConsole(){
 
 boot();
 </script>
-
-<!-- Section café — masquée jusqu'au chargement du pricing -->
-<div id="coffeeSection" style="display:none;margin:32px auto;max-width:500px;text-align:center">
-  <div style="background:#fff8f0;border:1.5px solid #fed7aa;border-radius:14px;padding:20px 24px">
-    <div style="font-size:36px;margin-bottom:8px">☕</div>
-    <p style="margin:0 0 6px;font-size:15px;font-weight:600;color:#7c2d12">PartyPlay est gratuit !</p>
-    <p style="margin:0 0 14px;font-size:13.5px;color:#92400e">Le service est hébergé sur mes propres serveurs, sans frais pour vous. Si vous souhaitez soutenir le projet et m'offrir un café, c'est avec grand plaisir !</p>
-    <a id="coffeeLink" href="#" target="_blank" rel="noopener" class="btn" style="background:#f97316;border-color:#f97316;color:#fff;width:auto;display:inline-block;padding:10px 22px;font-size:14.5px">☕ Offrir un café</a>
-  </div>
-</div>
-
-<footer style="margin-top:48px;padding:20px 0 32px;border-top:1px solid var(--a-border);text-align:center;font-size:13px;color:var(--a-muted)">
-  <a href="/contact" style="color:var(--a-muted);text-decoration:none;margin:0 12px" onmouseover="this.style.color='var(--a-accent)'" onmouseout="this.style.color='var(--a-muted)'">Contact</a>
-  <a href="/rgpd" style="color:var(--a-muted);text-decoration:none;margin:0 12px" onmouseover="this.style.color='var(--a-accent)'" onmouseout="this.style.color='var(--a-muted)'">Confidentialité (RGPD)</a>
-  <a href="/mentions-legales" style="color:var(--a-muted);text-decoration:none;margin:0 12px" onmouseover="this.style.color='var(--a-accent)'" onmouseout="this.style.color='var(--a-muted)'">Mentions légales</a>
-</footer>
 </body>
 </html>

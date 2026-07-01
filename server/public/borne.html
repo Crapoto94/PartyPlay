@@ -432,6 +432,9 @@ function activityView(act){
   if (act.type==='quiz' || act.type==='quiz_vincent' || act.type==='blindtest'){
     return quizBorne(act);
   }
+  if (act.type==='privacy'){
+    return privacyBorne(act);
+  }
   if (act.type==='reaction_race'){
     const board = (act.buzzes||[]).slice().sort((a,b)=>a.t-b.t);
     const t0 = board.length ? board[0].t : 0;
@@ -492,6 +495,62 @@ function activityView(act){
     </div>`;
   }
   return `<div class="center"><h1 class="big">ACTIVITÉ</h1></div>`;
+}
+
+// SANS FILTRE !? — confessions anonymes : question → réponses secrètes →
+// paris sur le nombre de OUI → révélation. Personne ne sait qui a dit quoi.
+function privacyBorne(act){
+  const trash = act.level==='trash';
+  const pill = `<div class="pill ${trash?'neon-pink':'neon-cyan'}">🤫 SANS FILTRE !? · ${esc(act.levelLabel||'')} · QUESTION ${act.asked}/${act.total}</div>`;
+  tickerEl.textContent = `SANS FILTRE !? (${act.levelLabel}) — question ${act.asked}/${act.total}`;
+
+  if (act.sub==='answer'){
+    return `<div class="center">
+      ${pill}
+      <div class="card glow-box" style="display:inline-block;max-width:900px;margin-top:14px${trash?';border-color:var(--neon1)':''}">
+        <h1 class="big ${trash?'neon-pink':'neon-cyan'}" style="margin:8px 0">${esc(act.prompt||'')}</h1>
+      </div>
+      <p class="big neon-yellow blink" style="margin-top:18px">Répondez OUI ou NON en SECRET sur vos téléphones 📱</p>
+      <p class="muted">Personne ne saura jamais qui a répondu quoi 😉</p>
+      <div class="huge pixel" style="margin-top:10px">${act.answeredCount} / ${act.playerCount}</div>
+    </div>`;
+  }
+  if (act.sub==='guess'){
+    return `<div class="center">
+      ${pill}
+      <p class="big" style="max-width:860px;margin:12px auto"><i>${esc(act.prompt||'')}</i></p>
+      <h1 class="huge neon-yellow">COMBIEN ONT DIT OUI ?</h1>
+      <p class="big">Pariez sur vos téléphones — de 0 à ${act.maxGuess} 🎲</p>
+      <p class="muted">Pari exact = 3 pts + 1 🪙 · à ±1 = 1 pt</p>
+      <div class="huge pixel" style="margin-top:10px">${act.guessedCount} / ${act.playerCount}</div>
+    </div>`;
+  }
+  if (act.sub==='reveal'){
+    const res = act.roundResults||[];
+    return `<div class="center">
+      ${pill}
+      <p style="max-width:860px;margin:8px auto"><i>${esc(act.prompt||'')}</i></p>
+      <div class="glow-box" style="display:inline-block;padding:10px 34px;margin:8px 0">
+        <div class="huge pixel ${trash?'neon-pink':'neon-cyan'}">${act.yesCount} OUI</div>
+        <div class="big muted">sur ${act.maxGuess} réponses</div>
+      </div>
+      <div class="card leaderboard" style="max-width:640px;margin:12px auto;text-align:left">
+        ${res.map(r=>`<div>${r.exact?'🎯':(r.gain?'👌':'▫️')} ${esc(r.name)} — pari : <b>${r.guess}</b> ${r.gain?`<span class="coins">+${r.gain} pt${r.gain>1?'s':''}</span>`:''}</div>`).join('')||'<div class="muted center">Aucun pari.</div>'}
+      </div>
+      ${(act.leaderboard||[]).length?`<p class="muted">En tête : ${esc(act.leaderboard[0].name)} (${act.leaderboard[0].pts} pts)</p>`:''}
+    </div>`;
+  }
+  if (act.sub==='final'){
+    const board = act.finalBoard||[];
+    return `<div class="center">
+      <h1 class="huge neon-yellow pixel">🏁 SANS FILTRE — TERMINÉ !</h1>
+      <div class="card leaderboard" style="max-width:620px;margin:14px auto;text-align:left">
+        ${board.map((p,i)=>`<div>${['🥇','🥈','🥉'][i]||(i+1+'.')} ${esc(p.name)} <span class="coins">${p.pts} pts</span></div>`).join('')||'<div class="muted center">Pas de score.</div>'}
+      </div>
+      ${board.length?`<p class="big neon-cyan">Bravo ${esc(board[0].name)} — le/la plus fin(e) psychologue du groupe ! 🧠</p>`:''}
+    </div>`;
+  }
+  return `<div class="center">${pill}</div>`;
 }
 
 function quizBorne(act){

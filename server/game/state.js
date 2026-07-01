@@ -16,6 +16,7 @@ import { PongGame } from './pong.js';
 import { NOTE_PALETTE, MELODY, MOSAIC_DEFAULT_WORD, pickMosaicWord,
   PIANO_KEYS_PER_PHONE, PIANO_BASE_MIDI, PIANO_MELODY, pianoNoteInfo,
   pianoDemoSeq, pianoKeyLayout } from '../data/collab.js';
+import { PRIVACY_QUESTIONS, PRIVACY_LEVELS } from '../data/privacy.js';
 
 // Normalise un texte pour comparaison (accents/casse/espaces) — utilisé par les
 // activités « Dessine-moi » et « Mosaïque ».
@@ -71,6 +72,7 @@ export class GameState {
 
   dispose() {
     this.reset(false); // purge les timers
+    if (this._simTimer) { clearInterval(this._simTimer); this._simTimer = null; }
     this.listeners.clear();
   }
 
@@ -596,6 +598,27 @@ export class GameState {
       this.activity.borneOnly = opts.borneOnly || false;
       this.activity.landscape = opts.landscape || false;
     }
+    // Sans Filtre !? : confessions anonymes. Chaque joueur répond OUI/NON
+    // en secret, puis tout le monde parie sur le nombre de OUI.
+    // Pari exact = 3 pts (+1 pièce), à ±1 = 1 pt. Personne ne sait jamais
+    // qui a répondu quoi (les réponses ne quittent JAMAIS le serveur).
+    if (type === 'privacy') {
+      const level = opts.level === 'trash' ? 'trash' : 'intime';
+      const pool = PRIVACY_QUESTIONS[level] || [];
+      const order = [...pool.keys()].sort(() => Math.random() - 0.5);
+      this.activity.level = level;
+      this.activity.levelLabel = PRIVACY_LEVELS[level]?.label || level;
+      this.activity.order = order;
+      this.activity.qPos = 0;                       // position dans order
+      this.activity.total = Math.max(1, Math.min(parseInt(opts.count, 10) || 10, order.length));
+      this.activity.asked = 1;
+      this.activity.sub = 'answer';                 // answer | guess | reveal | final
+      this.activity.answers = {};                   // { playerId: bool } — SECRET, jamais exposé
+      this.activity.guesses = {};                   // { playerId: n }
+      this.activity.scores = {};                    // cumul des points
+      this.activity.yesCount = null;
+      this.addLog(`🤫 SANS FILTRE !? (${this.activity.levelLabel}) — répondez en secret sur vos téléphones !`);
+    }
     // Anecdote : la borne affiche un prompt (souvenir / histoire) à raconter.
     if (type === 'anecdote') {
       const list = this._content.anecdotes || [];
@@ -767,6 +790,7 @@ export class GameState {
     if (a.type === 'piano') return this.pianoPublic(forPlayerId);
     if (a.type === 'mosaic') return this.mosaicPublic(forPlayerId);
     if (a.type === 'draw') return this._drawPublic(forPlayerId);
+    if (a.type === 'privacy') return this.privacyPublic(forPlayerId);
     if (a.type !== 'quiz' && a.type !== 'quiz_vincent' && a.type !== 'blindtest') return a;
     const q = this.quizQuestion();
     const list = a.dynamicBlindtest ? [] : (this.quizDeck(a.deck));
@@ -886,6 +910,186 @@ export class GameState {
       this.addLog(`👏 ${a.data.targetName} a relevé le défi avec brio ! (${ok}👏/${ko}💀)`);
     }
     this.touch();
+  }
+
+  // ---- Sans Filtre !? : confessions anonymes ------------------------
+  privacyQuestion() {
+    const a = this.activity;
+    if (!a || a.type !== 'privacy') return null;
+    const pool = PRIVACY_QUESTIONS[a.level] || [];
+    return pool[a.order[a.qPos]] || null;
+  }
+
+  // Réponse SECRÈTE d'un joueur (oui/non). Modifiable tant que la phase
+  // de réponse est ouverte ; on passe aux paris quand tout le monde a répondu.
+  privacyAnswer(playerId, yes) {
+    const a = this.activity;
+    if (!a || a.type !== 'privacy' || a.sub !== 'answer') return;
+    if (!this.player(playerId)) return;
+    a.answers[playerId] = !!yes;
+    const connected = this.players.filter((p) => p.connected);
+    if (Object.keys(a.answers).length >= connected.length) this.privacyCloseAnswers();
+    else this.touch();
+  }
+
+  // Clôt la phase de réponse (auto quand tout le monde a répondu, ou GM).
+  privacyCloseAnswers() {
+    const a = this.activity;
+    if (!a || a.type !== 'privacy' || a.sub !== 'answer') return;
+    if (!Object.keys(a.answers).length) return; // rien à parier sans réponses
+    a.sub = 'guess';
+    a.guesses = {};
+    this.addLog('🎲 SANS FILTRE : les réponses sont verrouillées — pariez sur le nombre de OUI !');
+    this.touch();
+  }
+
+  // Pari d'un joueur sur le nombre de OUI. Modifiable jusqu'à la révélation.
+  privacyGuess(playerId, n) {
+    const a = this.activity;
+    if (!a || a.type !== 'privacy' || a.sub !== 'guess') return;
+    if (!this.player(playerId)) return;
+    const max = Object.keys(a.answers).length;
+    const g = Math.max(0, Math.min(max, parseInt(n, 10) || 0));
+    a.guesses[playerId] = g;
+    const connected = this.players.filter((p) => p.connected);
+    if (Object.keys(a.guesses).length >= connected.length) this.privacyReveal();
+    else this.touch();
+  }
+
+  // Révélation : compte des OUI + attribution des points (exact 3, ±1 → 1).
+  privacyReveal() {
+    const a = this.activity;
+    if (!a || a.type !== 'privacy' || a.sub !== 'guess') return;
+    const yes = Object.values(a.answers).filter(Boolean).length;
+    a.yesCount = yes;
+    a.roundResults = Object.entries(a.guesses).map(([pid, guess]) => {
+      const p = this.player(pid);
+      const delta = Math.abs(guess - yes);
+      const gain = delta === 0 ? 3 : delta === 1 ? 1 : 0;
+      a.scores[pid] = (a.scores[pid] || 0) + gain;
+      if (delta === 0 && p) p.coins += 1;
+      return { id: pid, name: p?.name || '?', avatar: p?.avatar || null, guess, gain, exact: delta === 0 };
+    }).sort((x, y) => y.gain - x.gain || x.guess - y.guess);
+    a.sub = 'reveal';
+    const winners = a.roundResults.filter((r) => r.exact).map((r) => r.name);
+    this.addLog(winners.length
+      ? `🤫 SANS FILTRE : ${yes} OUI sur ${Object.keys(a.answers).length} — pari exact pour ${winners.join(', ')} (+3 pts, +1 pièce) !`
+      : `🤫 SANS FILTRE : ${yes} OUI sur ${Object.keys(a.answers).length} — personne n'avait le compte exact.`);
+    this.touch();
+  }
+
+  // Question suivante (GM). Après la dernière : classement final.
+  privacyNext() {
+    const a = this.activity;
+    if (!a || a.type !== 'privacy') return;
+    if (a.sub === 'answer') return; // rien à passer, la manche démarre à peine
+    if (a.asked >= a.total || a.qPos >= a.order.length - 1) {
+      a.sub = 'final';
+      a.finalBoard = this.privacyLeaderboard();
+      const top = a.finalBoard[0];
+      this.addLog(top
+        ? `🏁 SANS FILTRE terminé — ${top.name} remporte la partie avec ${top.pts} pts !`
+        : '🏁 SANS FILTRE terminé.');
+      this.touch();
+      return;
+    }
+    a.qPos += 1;
+    a.asked += 1;
+    a.sub = 'answer';
+    a.answers = {};
+    a.guesses = {};
+    a.yesCount = null;
+    a.roundResults = null;
+    this.touch();
+  }
+
+  privacyLeaderboard() {
+    const a = this.activity;
+    if (!a || a.type !== 'privacy') return [];
+    return this.players
+      .filter((p) => p.connected || (a.scores[p.id] || 0) > 0)
+      .map((p) => ({ id: p.id, name: p.name, avatar: p.avatar, pts: a.scores[p.id] || 0 }))
+      .sort((x, y) => y.pts - x.pts);
+  }
+
+  // Vue publique : les réponses individuelles NE SORTENT JAMAIS d'ici.
+  // Chacun ne voit que sa propre réponse ; seul le TOTAL de OUI est révélé.
+  privacyPublic(forPlayerId = null) {
+    const a = this.activity;
+    const connected = this.players.filter((p) => p.connected);
+    const answered = Object.keys(a.answers).length;
+    return {
+      type: 'privacy',
+      state: a.state,
+      level: a.level,
+      levelLabel: a.levelLabel,
+      sub: a.sub,
+      asked: a.asked,
+      total: a.total,
+      prompt: this.privacyQuestion() || '',
+      answeredCount: answered,
+      guessedCount: Object.keys(a.guesses).length,
+      playerCount: connected.length,
+      maxGuess: answered,
+      myAnswered: forPlayerId != null && Object.prototype.hasOwnProperty.call(a.answers, forPlayerId),
+      myAnswer: forPlayerId != null && Object.prototype.hasOwnProperty.call(a.answers, forPlayerId) ? a.answers[forPlayerId] : null,
+      myGuess: forPlayerId != null && Object.prototype.hasOwnProperty.call(a.guesses, forPlayerId) ? a.guesses[forPlayerId] : null,
+      // Révélation uniquement :
+      yesCount: (a.sub === 'reveal' || a.sub === 'final') ? a.yesCount : null,
+      roundResults: a.sub === 'reveal' ? (a.roundResults || []) : null,
+      leaderboard: (a.sub === 'reveal' || a.sub === 'final') ? this.privacyLeaderboard() : null,
+      finalBoard: a.sub === 'final' ? (a.finalBoard || []) : null,
+    };
+  }
+
+  // ---- Simulation : 4 joueurs de test (1 pilotable + 3 bots) --------
+  // Les joueurs « sim » sont ajoutés dans la config par la route GM ;
+  // ici on les connecte et on fait jouer les bots automatiquement.
+  simStart() {
+    this.players.forEach((p) => { if (p.sim) { p.connected = true; if (p.simBot) p.ready = true; } });
+    if (this._simTimer) clearInterval(this._simTimer);
+    this.simActive = true;
+    this._simTimer = setInterval(() => this._simTick(), 1500);
+    this.addLog('🧪 Simulation activée : 4 joueurs de test (3 bots répondent tout seuls).');
+    this.touch();
+  }
+
+  simStop() {
+    if (this._simTimer) { clearInterval(this._simTimer); this._simTimer = null; }
+    this.simActive = false;
+    this.addLog('🧪 Simulation terminée — joueurs de test retirés.');
+    this.touch();
+  }
+
+  // Un « tick » de bots : chaque bot a une chance d'agir, pour étaler les
+  // réponses sur quelques secondes comme de vrais joueurs.
+  _simTick() {
+    if (!this.simActive) return;
+    const bots = this.players.filter((p) => p.simBot);
+    if (!bots.length) return;
+    bots.forEach((b) => { b.connected = true; b.ready = true; }); // ré-assert silencieux
+    const a = this.activity;
+    if (!a) return;
+    const rint = (n) => Math.floor(Math.random() * n);
+    for (const b of bots) {
+      if (Math.random() > 0.5) continue; // étalement des actions
+      if (a.type === 'privacy') {
+        if (a.sub === 'answer' && !(b.id in a.answers)) this.privacyAnswer(b.id, Math.random() < 0.5);
+        else if (a.sub === 'guess' && !(b.id in a.guesses)) this.privacyGuess(b.id, rint(Object.keys(a.answers).length + 1));
+      } else if (a.type === 'quiz' || a.type === 'quiz_vincent' || a.type === 'blindtest') {
+        const q = this.quizQuestion();
+        if (a.sub === 'question' && q && !a.answers[b.id]) this.quizAnswer(b.id, rint((q.choices || []).length || 1));
+      } else if (a.type === 'spotlight') {
+        if (a.sub === 'vote' && !a.votes[b.id] && b.id !== a.data?.targetId) this.spotlightVote(b.id, Math.random() < 0.7 ? 'ok' : 'ko');
+      } else if (a.type === 'roue_des_gages') {
+        if (a.sub === 'vote' && !a.votes[b.id]) {
+          const targets = this.players.filter((p) => p.connected && p.id !== b.id);
+          if (targets.length) this.roueVote(b.id, targets[rint(targets.length)].id);
+        }
+      } else if (a.type === 'reaction_race') {
+        if (a.state === 'running' && !a.resolved && !(a.buzzes || []).find((x) => x.id === b.id)) this.buzz(b.id);
+      }
+    }
   }
 
   // ---- Ambiance sonore --------------------------------------------

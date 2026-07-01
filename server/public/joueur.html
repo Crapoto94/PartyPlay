@@ -411,6 +411,10 @@ function controllerView(act) {
       <p class="muted">Regarde la BORNE 📺 — c'est l'heure des histoires !</p>
     </div>`;
   }
+  // SANS FILTRE !? : réponse secrète OUI/NON, puis pari sur le nombre de OUI
+  if (act.type === 'privacy') {
+    return privacyController(act);
+  }
   if (act.type === 'heroquiz') {
     return heroQuizController(act);
   }
@@ -1453,6 +1457,68 @@ function toggleReady(){ api('/api/ready', { ready: !STATE.me.ready }); }
 function buzz(){ api('/api/buzz'); }
 function answer(i){ api('/api/answer', { choice: i }); }
 function spotlightVote(v){ api('/api/spotlight/vote', { verdict: v }); }
+function privacyAnswer(v){ api('/api/privacy/answer', { yes: v }); }
+function privacyGuess(n){ api('/api/privacy/guess', { n }); }
+
+// SANS FILTRE !? — manette du joueur : réponse secrète puis pari.
+function privacyController(act){
+  const head = `<div class="pill ${act.level==='trash'?'neon-pink':'neon-cyan'}">🤫 SANS FILTRE !? · ${esc(act.levelLabel||'')} · ${act.asked}/${act.total}</div>`;
+  // Phase 1 : réponse SECRÈTE
+  if (act.sub === 'answer') {
+    const mine = act.myAnswered;
+    return `<div class="card center glow-box">
+      ${head}
+      <p class="big" style="margin:14px 0">${esc(act.prompt||'')}</p>
+      <p class="muted">Réponse 100% SECRÈTE — personne ne saura jamais qui a dit quoi.</p>
+      <div class="row">
+        <button class="btn ${mine && act.myAnswer===true?'secondary':''}" onclick="privacyAnswer(true)">OUI 😏</button>
+        <button class="btn ${mine && act.myAnswer===false?'secondary':''}" onclick="privacyAnswer(false)">NON 😇</button>
+      </div>
+      ${mine?'<p class="neon-cyan mt">Réponse enregistrée ✔ (modifiable tant que tout le monde n\'a pas répondu)</p>':''}
+      <p class="muted mt">${act.answeredCount}/${act.playerCount} ont répondu…</p>
+    </div>`;
+  }
+  // Phase 2 : pari sur le nombre de OUI
+  if (act.sub === 'guess') {
+    const btns = [];
+    for (let i = 0; i <= (act.maxGuess||0); i++) {
+      const sel = act.myGuess === i;
+      btns.push(`<button class="btn ${sel?'secondary':''}" style="min-width:64px;flex:0 1 auto" onclick="privacyGuess(${i})">${i}</button>`);
+    }
+    return `<div class="card center glow-box">
+      ${head}
+      <p style="margin:10px 0"><i>${esc(act.prompt||'')}</i></p>
+      <h2 class="neon-yellow">Combien ont répondu OUI ?</h2>
+      <div class="row" style="justify-content:center;flex-wrap:wrap;gap:8px">${btns.join('')}</div>
+      ${act.myGuess!=null?'<p class="neon-cyan mt">Pari enregistré ✔ (modifiable)</p>':''}
+      <p class="muted mt">Pari exact = 3 pts + 1 pièce · à ±1 = 1 pt</p>
+      <p class="muted">${act.guessedCount}/${act.playerCount} ont parié…</p>
+    </div>`;
+  }
+  // Phase 3 : révélation
+  if (act.sub === 'reveal') {
+    const me = (act.roundResults||[]).find(r=>r.id===STATE.me.id);
+    return `<div class="card center glow-box" style="border-color:var(--neon3)">
+      ${head}
+      <p style="margin:10px 0"><i>${esc(act.prompt||'')}</i></p>
+      <h2 class="neon-pink">${act.yesCount} OUI ${act.yesCount>1?'':''} sur ${act.maxGuess}</h2>
+      ${me ? `<p class="big">${me.exact?'🎯 PARI EXACT ! +3 pts +1 🪙':(me.gain?'👌 À une unité près : +1 pt':'❌ Raté — ton pari : '+me.guess)}</p>` : '<p class="muted">Tu n\'avais pas parié.</p>'}
+      <p class="muted">Regarde la BORNE pour le détail 📺</p>
+    </div>`;
+  }
+  // Fin de partie
+  if (act.sub === 'final') {
+    const board = act.finalBoard || [];
+    const myRank = board.findIndex(b=>b.id===STATE.me.id);
+    return `<div class="card center glow-box" style="border-color:var(--neon3)">
+      ${head}
+      <h2 class="neon-yellow">🏁 TERMINÉ !</h2>
+      ${myRank>=0?`<p class="big">Tu finis ${myRank===0?'🥇 PREMIER(E)':myRank+1+'ᵉ'} avec ${board[myRank].pts} pts</p>`:''}
+      <p class="muted">Classement complet sur la BORNE 📺</p>
+    </div>`;
+  }
+  return `<div class="card center"><h2>🤫 SANS FILTRE !?</h2><p>Regarde la BORNE.</p></div>`;
+}
 function submitCode(){
   const v = document.getElementById('codeInput').value;
   api('/api/code', { code: v }).then(r=>{

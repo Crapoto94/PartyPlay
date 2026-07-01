@@ -20,7 +20,7 @@
     <div id="verifyBanner" style="display:none;background:#fef3c7;border:1px solid #f59e0b;border-radius:10px;padding:14px 16px;margin-bottom:16px">
       <strong>📧 Email non vérifié</strong>
       <p class="muted" style="margin:6px 0">Un lien de confirmation a été envoyé à <strong id="verifyEmailAddr"></strong>. Cliquez dessus pour activer votre fête.</p>
-      <p class="muted" style="font-size:12.5px;margin:0 0 10px">⚠️ Le démarrage de la soirée est bloqué jusqu'à la confirmation.</p>
+      <p class="muted" style="font-size:12.5px;margin:0 0 10px">⚠️ Le démarrage de la soirée est bloqué jusqu'à la confirmation (la 🧪 Simulation reste disponible pour découvrir la console).</p>
       <div class="inline">
         <button class="btn secondary" style="width:auto" onclick="resendVerification(this)">Renvoyer l'email</button>
         <span id="resendStatus" style="font-size:13px"></span>
@@ -54,28 +54,42 @@
             <button class="btn warn" onclick="act('scoreboard')">🏆 Scores</button>
             <button class="btn" onclick="act('hub')">↩ Hub</button>
             <button class="btn danger" onclick="if(confirm('Réinitialiser la partie ?'))act('reset')">⟲ Reset</button>
+            <button class="btn" id="simBtn" onclick="toggleSim()">🧪 Simulation</button>
           </div>
         </div>
         <div class="card">
           <h3 class="neon-yellow">Lancer une activité</h3>
-          <div class="field"><label>Quiz — choisir un deck</label>
+          <p class="muted" style="font-size:12.5px;margin:0 0 10px" id="actFilterHint" hidden>Seules les activités choisies au démarrage sont affichées — modifiable dans l'onglet 🕹️ Activités.</p>
+          <div class="field" data-cat="quiz"><label>Quiz — choisir un deck</label>
             <div class="inline"><select id="quizDeck"></select><button class="btn" style="width:auto" onclick="launch('quiz',{deck:val('quizDeck')})">Lancer</button></div>
           </div>
-          <div class="field"><label>Blind-test — thème</label>
+          <div class="field" data-cat="blindtest"><label>Blind-test — thème</label>
             <div class="inline"><select id="btTheme"></select><button class="btn" style="width:auto" onclick="launch('blindtest',{theme:val('btTheme')})">Lancer</button></div>
           </div>
           <div class="row">
-            <button class="btn" onclick="launch('anecdote',{})">📖 Anecdote</button>
-            <button class="btn" onclick="launch('roue_des_gages',{})">🎰 Roue des gages</button>
-            <button class="btn" onclick="launch('spotlight',{})">🔦 Spotlight</button>
-            <button class="btn" onclick="launch('draw',{})">🎨 Dessine-moi</button>
+            <button class="btn" data-cat="anecdotes" onclick="launch('anecdote',{})">📖 Anecdote</button>
+            <button class="btn" data-cat="gages" onclick="launch('roue_des_gages',{})">🎰 Roue des gages</button>
+            <button class="btn" data-cat="spotlight" onclick="launch('spotlight',{})">🔦 Spotlight</button>
+            <button class="btn" data-cat="draw" onclick="launch('draw',{})">🎨 Dessine-moi</button>
           </div>
-          <div class="row">
+          <div class="field" data-cat="privacy" style="margin-top:10px"><label>🤫 Sans Filtre !? — confessions anonymes (adultes)</label>
+            <div class="row">
+              <button class="btn" onclick="launch('privacy',{level:'intime',count:privacyCount()})">💗 Version intime</button>
+              <button class="btn" onclick="launch('privacy',{level:'trash',count:privacyCount()})">🌶️ Version intime TRASH</button>
+              <select id="privacyCount" style="width:auto">
+                <option value="5">5 questions</option>
+                <option value="10" selected>10 questions</option>
+                <option value="15">15 questions</option>
+                <option value="20">20 questions</option>
+              </select>
+            </div>
+          </div>
+          <div class="row" data-cat="collab">
             <button class="btn" onclick="launch('mosaic',{})">🧩 Mosaïque</button>
             <button class="btn" onclick="launch('piano',{})">🎹 Piano</button>
             <button class="btn" onclick="launch('music_seq',{})">🎵 Séquence</button>
           </div>
-          <div class="row" id="arcadeRow">
+          <div class="row" id="arcadeRow" data-cat="arcade">
             <button class="btn" onclick="launch('pacman',{})">🟡 Pac-Man</button>
             <button class="btn" onclick="launch('tetris',{})">🧱 Tetris</button>
             <button class="btn" onclick="launch('tron',{})">🟦 Tron</button>
@@ -88,7 +102,7 @@
           </div>
         </div>
         <div class="card" id="liveCtl"></div>
-        <div class="card">
+        <div class="card" data-cat="photo">
           <h3>Photos</h3>
           <div class="row">
             <button class="btn" onclick="act('setPhotoPhase',{phase:'vote'})">📸 Ouvrir le vote</button>
@@ -154,8 +168,11 @@
       <!-- ============ ACTIVITÉS ============ -->
       <section data-pane="activites" hidden>
         <div class="card">
-          <h3 class="neon-yellow">Activités actives</h3>
-          <p class="muted">Décochez ce que vous ne voulez pas proposer pendant la soirée.</p>
+          <div class="inline" style="justify-content:space-between">
+            <h3 class="neon-yellow" style="margin:0">Activités actives</h3>
+            <button class="btn secondary" style="width:auto" onclick="showOnboarding(true)">❓ Revoir le tuto</button>
+          </div>
+          <p class="muted">Décochez ce que vous ne voulez pas proposer pendant la soirée. Ça filtre directement les boutons de l'onglet 🎮 Piloter.</p>
           <div id="acts"></div>
           <button class="btn secondary" onclick="saveActivities()">💾 Enregistrer</button>
           <span class="muted" id="ac_saved"></span>
@@ -184,6 +201,15 @@
           <span class="neon-pink" id="c_err"></span>
         </div>
       </section>
+    </div>
+  </div>
+
+  <!-- Tutoriel de bienvenue (première connexion à la console) -->
+  <div id="onboardWrap" style="display:none;position:fixed;inset:0;z-index:9800;background:rgba(0,0,0,.78);backdrop-filter:blur(3px);align-items:center;justify-content:center;padding:16px">
+    <div class="card glow-box" style="max-width:580px;width:100%;max-height:88vh;overflow-y:auto;position:relative">
+      <button id="onbSkipBtn" onclick="skipOnboarding()" style="position:absolute;top:12px;right:14px;background:none;border:none;color:inherit;opacity:.65;font-size:12.5px;cursor:pointer;font-family:inherit">Passer ✕</button>
+      <div id="onbSlide"></div>
+      <div class="row mt" id="onbNav"></div>
     </div>
   </div>
 
@@ -248,7 +274,9 @@ async function loadConfig(){
     document.getElementById('verifyEmailAddr').textContent = META.contactEmail || '';
   }
   fillGeneral(); fillPlayers(); fillActivities(); fillContent(); fillLaunchers();
+  applyActivityFilter();
   startGmStream();
+  if (!CFG.onboarded) showOnboarding();
 }
 
 async function resendVerification(btn) {
@@ -433,15 +461,105 @@ async function removeAvatar(key){
 }
 
 /* ---- Activités ---- */
-const ACT_LABELS={ quiz:'Quiz', blindtest:'Blind-test', anecdotes:'Anecdotes', gages:'Roue des gages', photo:'Défi photo', spotlight:'Spotlight', draw:'Dessine-moi', arcade:'Mini-jeux arcade', collab:'Collaboratifs (mosaïque/piano)' };
+const ACT_LABELS={ quiz:'Quiz', blindtest:'Blind-test', anecdotes:'Anecdotes', gages:'Roue des gages', photo:'Défi photo', spotlight:'Spotlight', draw:'Dessine-moi', arcade:'Mini-jeux arcade', collab:'Collaboratifs (mosaïque/piano)', privacy:'🤫 Sans Filtre !? (confessions, adultes)' };
+// Sans Filtre !? est un contenu adulte : activé seulement si explicitement
+// coché (contrairement aux autres activités, actives par défaut).
+function actDefaultOn(k, a){ return k==='privacy' ? (a[k]===true) : (a[k]!==false); }
 function fillActivities(){
   const a=CFG.activities||{};
   document.getElementById('acts').innerHTML=Object.keys(ACT_LABELS).map(k=>
-    `<label class="inline" style="margin:6px 0"><input type="checkbox" class="a_${k}" ${a[k]!==false?'checked':''} style="width:auto"> ${ACT_LABELS[k]}</label>`).join('');
+    `<label class="inline" style="margin:6px 0"><input type="checkbox" class="a_${k}" ${actDefaultOn(k,a)?'checked':''} style="width:auto"> ${ACT_LABELS[k]}</label>`).join('');
 }
 async function saveActivities(){
   const a={}; Object.keys(ACT_LABELS).forEach(k=>a[k]=document.querySelector('.a_'+k).checked);
   await push({activities:a}); CFG.activities=a; document.getElementById('ac_saved').textContent=' ✓'; setTimeout(()=>ac_saved.textContent='',1500);
+  applyActivityFilter();
+}
+
+// Filtre la console « Piloter » selon les activités choisies (tuto initial
+// ou onglet 🕹️ Activités). Chaque bloc concerné porte un attribut data-cat.
+function applyActivityFilter(){
+  const a = CFG.activities || {};
+  let anyHidden = false;
+  document.querySelectorAll('[data-cat]').forEach(el=>{
+    const on = actDefaultOn(el.dataset.cat, a);
+    el.style.display = on ? '' : 'none';
+    if (!on) anyHidden = true;
+  });
+  const hint = document.getElementById('actFilterHint');
+  if (hint) hint.hidden = !anyHidden;
+}
+
+/* ---- Tutoriel de bienvenue (première connexion) ---- */
+const ONB_SLIDES = [
+  { icon:'🎉', title:'Bienvenue dans ta console PartyPlay !', body:`
+    <p>Cette console te permet de <b>configurer</b> ta fête puis de la <b>piloter en direct</b> le jour J.</p>
+    <ul style="text-align:left;line-height:1.7">
+      <li><b>🎮 Piloter</b> — lance les activités et pilote le déroulé en direct.</li>
+      <li><b>⚙️ Général</b> — nom, thème graphique, mot de passe, ambiance musicale.</li>
+      <li><b>🧑‍🤝‍🧑 Joueurs</b> — ajoute tes invités, envoie-leur leur lien/QR personnel.</li>
+      <li><b>🕹️ Activités</b> — choisis quelles activités proposer ce soir (modifiable à tout moment).</li>
+      <li><b>📚 Contenu</b> — personnalise quiz, gages, anecdotes, missions photo…</li>
+    </ul>` },
+  { icon:'📺', title:'Deux écrans, un seul jeu', body:`
+    <p><b>La BORNE</b> — à brancher sur une TV ou un grand écran : tout le monde la regarde ensemble, c'est l'écran collectif.</p>
+    <p><b>Le téléphone des joueurs</b> — leur sert de manette perso : ils y répondent, buzzent, votent, dessinent, jouent…</p>
+    <p style="margin-top:14px">💡 <b>Astuce</b> : le bouton <b>🧪 Simulation</b> de l'onglet Piloter ajoute 4 joueurs de test (dont un que tu contrôles toi-même) pour essayer toute la console avant l'arrivée de tes invités.</p>` },
+  { icon:'🕹️', title:'Les activités principales', body:`
+    <ul style="text-align:left;line-height:1.7">
+      <li><b>🧠 Quiz / 🎵 Blind-test</b> — les questions s'affichent sur la borne, les invités répondent depuis leur téléphone.</li>
+      <li><b>🎰 Roue des gages</b> — un gage tiré au sort, la salle vote la performance.</li>
+      <li><b>🔦 Spotlight</b> — un défi individuel jugé par tout le monde.</li>
+      <li><b>🎨 Dessine-moi</b> — un joueur dessine sur son téléphone, les autres devinent.</li>
+      <li><b>🧩 Mosaïque / 🎹 Piano / 🎵 Séquence</b> — mini-jeux collaboratifs à plusieurs téléphones.</li>
+      <li><b>🕹️ Mini-jeux arcade</b> — Pac-Man, Tetris, Tron, 2048, Pong en multijoueur.</li>
+      <li><b>📸 Défi photo</b> — missions photo à réaliser, puis vote de la salle.</li>
+      <li><b>🤫 Sans Filtre !?</b> — confessions anonymes : chacun répond OUI/NON en secret, puis on parie sur le nombre de OUI. Version « Intime » ou « Intime trash » (réservée aux adultes).</li>
+    </ul>` },
+];
+let onbStep = 0;
+function showOnboarding(force){
+  if (!force && CFG.onboarded) return;
+  onbStep = 0;
+  document.getElementById('onbSkipBtn').style.display = '';
+  document.getElementById('onboardWrap').style.display = 'flex';
+  renderOnbSlide();
+}
+function renderOnbSlide(){
+  const s = ONB_SLIDES[onbStep];
+  const last = onbStep === ONB_SLIDES.length - 1;
+  document.getElementById('onbSlide').innerHTML = `
+    <div class="center"><div style="font-size:44px">${s.icon}</div><h2 class="neon-pink" style="margin:8px 0">${s.title}</h2></div>
+    <div style="margin-top:6px">${s.body}</div>`;
+  document.getElementById('onbNav').innerHTML = `
+    ${onbStep>0?'<button class="btn secondary" onclick="onbPrev()">◀ Précédent</button>':''}
+    <button class="btn" onclick="${last?'goToActivityPicker()':'onbNext()'}">${last?"Choisir les activités ▶":'Suivant ▶'}</button>`;
+}
+function onbNext(){ onbStep++; renderOnbSlide(); }
+function onbPrev(){ onbStep--; renderOnbSlide(); }
+function skipOnboarding(){ goToActivityPicker(); }
+
+// Étape finale, obligatoire : le choix des activités du soir. Elle alimente
+// directement CFG.activities, ce qui filtre l'onglet 🎮 Piloter.
+function goToActivityPicker(){
+  document.getElementById('onbSkipBtn').style.display = 'none';
+  const a = CFG.activities || {};
+  document.getElementById('onbSlide').innerHTML = `
+    <div class="center"><div style="font-size:44px">✅</div><h2 class="neon-cyan" style="margin:8px 0">Quelles activités pour ce soir ?</h2>
+    <p class="muted">Décoche ce que tu ne veux pas proposer — modifiable à tout moment dans l'onglet 🕹️ Activités.</p></div>
+    <div id="onbActs" style="margin-top:12px"></div>`;
+  document.getElementById('onbActs').innerHTML = Object.keys(ACT_LABELS).map(k =>
+    `<label class="inline" style="margin:7px 0"><input type="checkbox" class="onb_${k}" ${actDefaultOn(k,a)?'checked':''} style="width:auto"> ${ACT_LABELS[k]}</label>`
+  ).join('');
+  document.getElementById('onbNav').innerHTML = `<button class="btn" onclick="finishOnboarding()">🎉 C'est parti !</button>`;
+}
+async function finishOnboarding(){
+  const a = {};
+  Object.keys(ACT_LABELS).forEach(k => { const el = document.querySelector('.onb_'+k); a[k] = el ? el.checked : true; });
+  CFG.activities = a; CFG.onboarded = true;
+  await push({ activities:a, onboarded:true });
+  fillActivities(); applyActivityFilter();
+  document.getElementById('onboardWrap').style.display = 'none';
 }
 
 /* ---- Contenu ---- */
@@ -488,6 +606,46 @@ function fillLaunchers(){
 /* ---- Pilotage live ---- */
 function act(action,payload){ fetch(API+'/api/admin/action',{method:'POST',headers:H(),body:JSON.stringify({action,payload})}); }
 function launch(type,opts){ act('startActivity',{type,opts}); }
+function privacyCount(){ return parseInt(document.getElementById('privacyCount').value,10)||10; }
+
+/* ---- Simulation : 4 joueurs de test + smartphone en overlay ---- */
+async function toggleSim(){
+  if (document.getElementById('simOverlay')) return stopSim();
+  const btn = document.getElementById('simBtn');
+  btn.disabled = true;
+  try {
+    const r = await fetch(API+'/api/admin/action',{method:'POST',headers:H(),body:JSON.stringify({action:'simStart'})});
+    const d = await r.json();
+    if (!r.ok || !d.heroToken) { alert(d.error||'Erreur au lancement de la simulation.'); return; }
+    showSimOverlay(d.heroToken);
+    btn.textContent = '🧪 Stop simulation';
+  } finally { btn.disabled = false; }
+}
+function showSimOverlay(token){
+  const div = document.createElement('div');
+  div.id = 'simOverlay';
+  div.style.cssText = 'position:fixed;right:18px;bottom:18px;z-index:9500;width:375px;max-width:calc(100vw - 36px);'
+    + 'background:#0b0918;border:2px solid #8b5cf6;border-radius:26px;overflow:hidden;'
+    + 'box-shadow:0 24px 70px rgba(0,0,0,.6);display:flex;flex-direction:column';
+  div.innerHTML = `
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 14px;background:#181230;color:#f5f3ff;font-size:13px">
+      <strong>📱 Joueur test — 🧪 Toi</strong>
+      <span style="display:flex;gap:6px">
+        <a href="${API}/borne" target="_blank" style="color:#a78bfa;text-decoration:none;font-weight:600">📺 Borne</a>
+        <button onclick="stopSim()" title="Arrêter la simulation" style="background:none;border:none;color:#fb7185;font-size:15px;cursor:pointer;line-height:1">✕</button>
+      </span>
+    </div>
+    <iframe src="${API}/j/${encodeURIComponent(token)}" style="width:100%;height:min(640px,70vh);border:none;background:#000"></iframe>
+    <div style="padding:7px 12px;background:#181230;color:#9b96b8;font-size:11.5px;text-align:center">
+      3 bots 🤖 répondent automatiquement — ouvre la borne dans un autre onglet pour tout voir.
+    </div>`;
+  document.body.appendChild(div);
+}
+async function stopSim(){
+  await fetch(API+'/api/admin/action',{method:'POST',headers:H(),body:JSON.stringify({action:'simStop'})});
+  const el = document.getElementById('simOverlay'); if (el) el.remove();
+  const btn = document.getElementById('simBtn'); if (btn) btn.textContent = '🧪 Simulation';
+}
 function startGmStream(){
   const es=new EventSource(API+'/events');
   es.onmessage=e=>{ try{ render(JSON.parse(e.data)); }catch{} };
@@ -504,6 +662,12 @@ function liveControls(st){
   if(a.type==='quiz'||a.type==='blindtest'){ h+=btn('quizReveal','Révéler')+btn('quizNext','Suivante'); if(a.type==='blindtest')h+=btn('blindtestAsk','Nouvelle chanson'); }
   if(a.type==='spotlight'){ h+=btn('spotlightOpenVote','Ouvrir le vote')+btn('spotlightTally','Dépouiller'); }
   if(a.type==='roue_des_gages'){ h+=btn('roueOpenVote','Ouvrir le vote')+btn('roueTally','Dépouiller'); }
+  if(a.type==='privacy'){
+    h+='<span class="muted" style="align-self:center">Q '+(a.asked||1)+'/'+(a.total||'?')+' · '+esc(a.sub||'')+'</span>';
+    if(a.sub==='answer') h+=btn('privacyCloseAnswers','Clore les réponses ('+(a.answeredCount||0)+'/'+(a.playerCount||0)+')');
+    if(a.sub==='guess')  h+=btn('privacyReveal','Révéler ('+(a.guessedCount||0)+'/'+(a.playerCount||0)+' paris)');
+    if(a.sub==='reveal'||a.sub==='final') h+=btn('privacyNext', a.sub==='final'?'—':'Question suivante');
+  }
   if(a.type==='draw'){ h+=btn('drawReveal','Révéler')+btn('drawNext','Suivant'); }
   if(a.type==='mosaic'){ h+=btn('mosaicReveal','Révéler la ligne'); }
   if(a.type==='piano'){ h+=btn('pianoDemo','Rejouer la mélodie'); }
