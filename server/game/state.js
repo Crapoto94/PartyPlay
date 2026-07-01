@@ -99,6 +99,7 @@ export class GameState {
     if (this.g2048Timer) { clearInterval(this.g2048Timer); this.g2048Timer = null; }
     if (this.pongTimer) { clearInterval(this.pongTimer); this.pongTimer = null; }
     if (this._autoAdvanceTimer) { clearTimeout(this._autoAdvanceTimer); this._autoAdvanceTimer = null; }
+    if (this._privacyTimer) { clearTimeout(this._privacyTimer); this._privacyTimer = null; }
     if (this._roueTimer) { clearTimeout(this._roueTimer); this._roueTimer = null; }
     if (this._briefTimer) { clearTimeout(this._briefTimer); this._briefTimer = null; }
     if (this._drawTimer) { clearTimeout(this._drawTimer); this._drawTimer = null; }
@@ -971,16 +972,23 @@ export class GameState {
       return { id: pid, name: p?.name || '?', avatar: p?.avatar || null, guess, gain, exact: delta === 0 };
     }).sort((x, y) => y.gain - x.gain || x.guess - y.guess);
     a.sub = 'reveal';
+    a.revealAt = Date.now();
+    a.autoNextSeconds = 20; // passage auto à la question suivante après 20 s
     const winners = a.roundResults.filter((r) => r.exact).map((r) => r.name);
     this.addLog(winners.length
       ? `🤫 SANS FILTRE : ${yes} OUI sur ${Object.keys(a.answers).length} — pari exact pour ${winners.join(', ')} (+3 pts, +1 pièce) !`
       : `🤫 SANS FILTRE : ${yes} OUI sur ${Object.keys(a.answers).length} — personne n'avait le compte exact.`);
     this.touch();
+    // Auto-passage à la question suivante après 20 s (comme le quiz). Le GM
+    // peut toujours cliquer « Question suivante » avant la fin du décompte.
+    if (this._privacyTimer) clearTimeout(this._privacyTimer);
+    this._privacyTimer = setTimeout(() => { this._privacyTimer = null; this.privacyNext(); }, 20000);
   }
 
-  // Question suivante (GM). Après la dernière : classement final.
+  // Question suivante (GM ou auto après 20 s). Après la dernière : classement final.
   privacyNext() {
     const a = this.activity;
+    if (this._privacyTimer) { clearTimeout(this._privacyTimer); this._privacyTimer = null; }
     if (!a || a.type !== 'privacy') return;
     if (a.sub === 'answer') return; // rien à passer, la manche démarre à peine
     if (a.asked >= a.total || a.qPos >= a.order.length - 1) {
@@ -1000,6 +1008,8 @@ export class GameState {
     a.guesses = {};
     a.yesCount = null;
     a.roundResults = null;
+    a.revealAt = null;
+    a.autoNextSeconds = null;
     this.touch();
   }
 
@@ -1039,6 +1049,9 @@ export class GameState {
       roundResults: a.sub === 'reveal' ? (a.roundResults || []) : null,
       leaderboard: (a.sub === 'reveal' || a.sub === 'final') ? this.privacyLeaderboard() : null,
       finalBoard: a.sub === 'final' ? (a.finalBoard || []) : null,
+      // Décompte d'auto-passage (borne) : instant de révélation + durée en s.
+      revealAt: a.sub === 'reveal' ? (a.revealAt || null) : null,
+      autoNextSeconds: a.sub === 'reveal' ? (a.autoNextSeconds || null) : null,
     };
   }
 
@@ -1102,6 +1115,7 @@ export class GameState {
 
   stopActivity() {
     if (this._briefTimer) { clearTimeout(this._briefTimer); this._briefTimer = null; }
+    if (this._privacyTimer) { clearTimeout(this._privacyTimer); this._privacyTimer = null; }
     if (this._roueTimer) { clearTimeout(this._roueTimer); this._roueTimer = null; }
     if (this.pacmanTimer) { clearInterval(this.pacmanTimer); this.pacmanTimer = null; }
     if (this.tetrisTimer) { clearInterval(this.tetrisTimer); this.tetrisTimer = null; }
