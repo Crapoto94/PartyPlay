@@ -16,3 +16,6 @@ server/brevo.json
 
 # Codes promo (runtime — contient les compteurs d'utilisation)
 server/promos.json
+
+# Blind-tests par défaut (runtime — configurés dans l'admin générale)
+server/blindtests.json

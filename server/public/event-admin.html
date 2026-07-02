@@ -182,6 +182,16 @@
       <!-- ============ CONTENU ============ -->
       <section data-pane="contenu" hidden>
         <div class="card">
+          <h3 class="neon-yellow">🎵 Mes blind-tests</h3>
+          <p class="muted">Crée tes propres blind-tests : donne un nom et colle l'URL d'une playlist YouTube. Ils apparaîtront dans l'onglet 🎮 Piloter.</p>
+          <div id="btList"></div>
+          <div class="row" style="margin-top:12px">
+            <button class="btn" onclick="addBtRow()">＋ Ajouter un blind-test</button>
+            <button class="btn secondary" onclick="saveBlindtestList()">💾 Enregistrer</button>
+            <span class="muted" id="bt_saved"></span>
+          </div>
+        </div>
+        <div class="card">
           <h3 class="neon-pink">Contenu des activités</h3>
           <p class="muted">Édition avancée en JSON. Le bouton « Importer le contenu par défaut » repart du contenu rétro pré-rempli.</p>
           <div class="row">
@@ -562,6 +572,39 @@ async function finishOnboarding(){
   document.getElementById('onboardWrap').style.display = 'none';
 }
 
+/* ---- Blind-tests (éditeur convivial nom + URL) ---- */
+function fillBlindtests(){
+  const pl=(CFG.content&&CFG.content.blindtest&&CFG.content.blindtest.playlists)||{};
+  const box=document.getElementById('btList');
+  const entries=Object.entries(pl);
+  box.innerHTML = entries.length ? entries.map(([name,url])=>btRowHtml(name,url)).join('')
+    : '<p class="muted" id="btEmpty">Aucun blind-test pour l\'instant. Ajoutes-en un !</p>';
+}
+function btRowHtml(name,url){
+  return `<div class="row bt-row" style="align-items:flex-end;gap:8px;margin:8px 0">
+    <div class="field" style="flex:1;margin:0"><label>Nom</label><input type="text" class="bt-name" value="${esc(name)}" placeholder="Rock 80s"></div>
+    <div class="field" style="flex:2;margin:0"><label>URL playlist YouTube</label><input type="text" class="bt-url" value="${esc(url)}" placeholder="https://www.youtube.com/playlist?list=..."></div>
+    <button class="btn danger" style="width:auto" onclick="this.closest('.bt-row').remove()">✕</button>
+  </div>`;
+}
+function addBtRow(){
+  const box=document.getElementById('btList');
+  const empty=document.getElementById('btEmpty'); if(empty) empty.remove();
+  box.insertAdjacentHTML('beforeend', btRowHtml('',''));
+}
+async function saveBlindtestList(){
+  const playlists={};
+  document.querySelectorAll('#btList .bt-row').forEach(row=>{
+    const name=row.querySelector('.bt-name').value.trim();
+    const url=row.querySelector('.bt-url').value.trim();
+    if(name && url) playlists[name]=url;
+  });
+  const content={ ...(CFG.content||{}), blindtest:{ playlists } };
+  await push({content}); CFG.content=content;
+  const s=document.getElementById('bt_saved'); s.textContent=' ✓ enregistré'; setTimeout(()=>s.textContent='',1500);
+  fillContent(); fillLaunchers();
+}
+
 /* ---- Contenu ---- */
 function fillContent(){
   const ct=CFG.content||{};
@@ -572,6 +615,7 @@ function fillContent(){
   c_draw.value=JSON.stringify(ct.drawWords||[],null,1);
   c_bt.value=JSON.stringify(ct.blindtest?ct.blindtest.playlists:{},null,1);
   c_photo.value=JSON.stringify(ct.photoMissions||{},null,1);
+  fillBlindtests();
 }
 async function saveContent(){
   try{

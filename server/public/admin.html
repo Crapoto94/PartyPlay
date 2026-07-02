@@ -47,6 +47,9 @@
           <a class="nav-item" data-sec="privacy" onclick="showSection('privacy')">
             <span>🤫</span> Sans Filtre !?
           </a>
+          <a class="nav-item" data-sec="blindtests" onclick="showSection('blindtests')">
+            <span>🎵</span> Blind-tests
+          </a>
           <a class="nav-item" data-sec="legal" onclick="showSection('legal')">
             <span>⚖️</span> Légal
           </a>
@@ -279,6 +282,22 @@
           </div>
         </section>
 
+        <!-- ===== SECTION : BLIND-TESTS PAR DÉFAUT ===== -->
+        <section id="sec-blindtests" class="admin-section" style="display:none">
+          <h1 class="section-title">🎵 Blind-tests par défaut</h1>
+          <p class="muted" style="margin-bottom:20px">Ces blind-tests sont proposés automatiquement à chaque <strong>nouvelle fête</strong> créée. Chaque organisateur pourra ensuite les garder, les modifier ou ajouter les siens depuis sa console.</p>
+
+          <div class="card">
+            <h2>🎶 Liste des blind-tests</h2>
+            <div id="btAdminList"><p class="muted">Chargement…</p></div>
+            <div class="inline mt">
+              <button class="btn secondary" onclick="addBtAdminRow()">➕ Ajouter un blind-test</button>
+              <button class="btn" onclick="saveBlindtestsAdmin()">💾 Enregistrer</button>
+              <span id="btAdminSaved" class="muted"></span>
+            </div>
+          </div>
+        </section>
+
         <!-- ===== SECTION : LÉGAL ===== -->
         <section id="sec-legal" class="admin-section" style="display:none">
           <h1 class="section-title">⚖️ Pages légales</h1>
@@ -325,7 +344,7 @@ const themeLabel = { retro:'Rétro', neon:'Néon', chic:'Chic', kids:'Enfant', c
 const ALL_THEMES = ['retro','neon','chic','kids','casino'];
 const PLAN_ORDER = ['free','full','infinite'];
 let PWD = sessionStorage.getItem('admPwd') || '';
-let PRICING = null, BREVO = null, _emailLoaded = false, _legalLoaded = false, _promosLoaded = false, _privacyLoaded = false;
+let PRICING = null, BREVO = null, _emailLoaded = false, _legalLoaded = false, _promosLoaded = false, _privacyLoaded = false, _btLoaded = false;
 let PRIVACY_DATA = null;
 
 function headers() { return { 'Content-Type':'application/json', 'x-admin-password': PWD }; }
@@ -342,6 +361,7 @@ function showSection(name) {
   if (name === 'legal' && !_legalLoaded) { _legalLoaded = true; loadLegalContent(); }
   if (name === 'promos' && !_promosLoaded) { _promosLoaded = true; loadPromos(); }
   if (name === 'privacy' && !_privacyLoaded) { _privacyLoaded = true; loadPrivacyQuestions(); }
+  if (name === 'blindtests' && !_btLoaded) { _btLoaded = true; loadBlindtestsAdmin(); }
 }
 
 // ---- Auth ----
@@ -737,6 +757,47 @@ function renderPrivacyQuestions() {
   el.innerHTML = `<table class="list"><tbody>${filtered.map(({ q, i }) =>
     `<tr><td style="width:52px" class="muted">${i + 1}</td><td>${esc(q)}</td></tr>`
   ).join('')}</tbody></table>`;
+}
+
+// ---- Blind-tests par défaut ----
+async function loadBlindtestsAdmin() {
+  const el = document.getElementById('btAdminList');
+  try {
+    const r = await fetch('/api/admin/blindtests', { headers: headers() });
+    if (!r.ok) { el.innerHTML = '<p class="muted">Erreur ('+r.status+').</p>'; return; }
+    const list = (await r.json()).blindtests || [];
+    renderBlindtestsAdmin(list);
+  } catch { el.innerHTML = '<p class="muted">Erreur réseau.</p>'; }
+}
+function btAdminRowHtml(name, url) {
+  return `<div class="row bt-admin-row" style="align-items:flex-end;gap:10px;margin:8px 0">
+    <div class="field" style="flex:1;margin:0"><label>Nom</label><input type="text" class="bta-name" value="${esc(name)}" placeholder="Rock 80s"></div>
+    <div class="field" style="flex:2;margin:0"><label>URL playlist YouTube</label><input type="text" class="bta-url" value="${esc(url)}" placeholder="https://www.youtube.com/playlist?list=..."></div>
+    <button class="btn danger" style="width:auto" onclick="this.closest('.bt-admin-row').remove()">✕</button>
+  </div>`;
+}
+function renderBlindtestsAdmin(list) {
+  const el = document.getElementById('btAdminList');
+  el.innerHTML = (list && list.length)
+    ? list.map(b => btAdminRowHtml(b.name, b.url)).join('')
+    : '<p class="muted" id="btAdminEmpty">Aucun blind-test par défaut. Ajoutez-en un ci-dessous.</p>';
+}
+function addBtAdminRow() {
+  const el = document.getElementById('btAdminList');
+  const empty = document.getElementById('btAdminEmpty'); if (empty) empty.remove();
+  el.insertAdjacentHTML('beforeend', btAdminRowHtml('', ''));
+}
+async function saveBlindtestsAdmin() {
+  const blindtests = [];
+  document.querySelectorAll('#btAdminList .bt-admin-row').forEach(row => {
+    const name = row.querySelector('.bta-name').value.trim();
+    const url = row.querySelector('.bta-url').value.trim();
+    if (name && url) blindtests.push({ name, url });
+  });
+  const r = await fetch('/api/admin/blindtests', { method:'POST', headers: headers(), body: JSON.stringify({ blindtests }) });
+  const d = await r.json();
+  renderBlindtestsAdmin(d.blindtests || []);
+  const s = document.getElementById('btAdminSaved'); s.textContent = ' ✓ enregistré'; setTimeout(()=>s.textContent='', 1500);
 }
 
 // ---- Codes promo ----

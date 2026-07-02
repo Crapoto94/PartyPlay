@@ -12,6 +12,7 @@ import { randomBytes } from 'crypto';
 import { fileURLToPath } from 'url';
 import { defaultSettings, defaultContent, emptyContent, defaultActivities } from '../data/defaults.js';
 import { enforcePlan, planExists } from './plans.js';
+import { defaultPlaylistsMap } from './blindtests.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export const EVENTS_DIR = path.join(__dirname, '..', 'events');
@@ -103,6 +104,9 @@ export function createEvent({ name, theme = 'retro', adminPassword = '', publicU
     activities: defaultActivities(),
     content: seed === 'default' ? defaultContent() : emptyContent(),
   };
+  // Amorce les blind-tests par défaut (configurés dans l'admin générale).
+  cfg.content.blindtest = cfg.content.blindtest || { playlists: {} };
+  cfg.content.blindtest.playlists = { ...defaultPlaylistsMap(), ...(cfg.content.blindtest.playlists || {}) };
   return saveConfig(cfg);
 }
 

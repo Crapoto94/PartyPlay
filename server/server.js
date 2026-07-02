@@ -26,6 +26,7 @@ import { getBrevoConfig, saveBrevoConfig, sendMail } from './store/brevo.js';
 import { getLegal, saveLegal } from './store/legal.js';
 import { validatePromoCode, usePromoCode, listPromoCodes, addPromoCode, removePromoCode } from './store/promos.js';
 import { PRIVACY_QUESTIONS, PRIVACY_LEVELS } from './data/privacy.js';
+import { getBlindtests, saveBlindtests, defaultPlaylistsMap } from './store/blindtests.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC = path.join(__dirname, 'public');
@@ -338,6 +339,19 @@ app.get('/api/admin/privacy-questions', (req, res) => {
     levels[key] = { ...meta, count: (PRIVACY_QUESTIONS[key] || []).length, questions: PRIVACY_QUESTIONS[key] || [] };
   }
   res.json({ levels });
+});
+
+// =====================================================================
+//  BLIND-TESTS PAR DÉFAUT (proposés à chaque nouvelle fête)
+// =====================================================================
+app.get('/api/admin/blindtests', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  res.json({ blindtests: getBlindtests() });
+});
+app.post('/api/admin/blindtests', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  const list = Array.isArray(req.body?.blindtests) ? req.body.blindtests : [];
+  res.json({ ok: true, blindtests: saveBlindtests(list) });
 });
 app.post('/api/admin/promos', (req, res) => {
   if (!requireAdmin(req, res)) return;
