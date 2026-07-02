@@ -576,7 +576,14 @@ ev.get('/api/ytconfig', (req, res) => {
   const s = req.cfg.settings || {};
   const btSrc = req.cfg.content?.blindtest?.playlists || {};
   const blindtest = {};
-  for (const theme of Object.keys(btSrc)) { const id = extractList(btSrc[theme]); if (id) blindtest[theme] = id; }
+  // Seules les playlists YouTube sont moissonnées par la borne ; les playlists
+  // Deezer sont récupérées côté serveur (API publique) au lancement du jeu.
+  for (const theme of Object.keys(btSrc)) {
+    const url = btSrc[theme] || '';
+    if (/deezer/i.test(url)) continue;
+    const id = extractList(url);
+    if (id) blindtest[theme] = id;
+  }
   res.set('Cache-Control', 'no-store');
   res.json({
     ambiance: extractList(s.ambianceYoutube),

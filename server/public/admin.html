@@ -285,7 +285,7 @@
         <!-- ===== SECTION : BLIND-TESTS PAR DÉFAUT ===== -->
         <section id="sec-blindtests" class="admin-section" style="display:none">
           <h1 class="section-title">🎵 Blind-tests par défaut</h1>
-          <p class="muted" style="margin-bottom:20px">Ces blind-tests sont proposés automatiquement à chaque <strong>nouvelle fête</strong> créée. Chaque organisateur pourra ensuite les garder, les modifier ou ajouter les siens depuis sa console.</p>
+          <p class="muted" style="margin-bottom:20px">Ces blind-tests sont proposés automatiquement à chaque <strong>nouvelle fête</strong> créée. Collez une URL de playlist <strong>YouTube</strong> ou <strong>Deezer</strong> (extraits 30 s). Chaque organisateur pourra ensuite les garder, les modifier ou ajouter les siens depuis sa console.</p>
 
           <div class="card">
             <h2>🎶 Liste des blind-tests</h2>
@@ -772,7 +772,7 @@ async function loadBlindtestsAdmin() {
 function btAdminRowHtml(name, url) {
   return `<div class="row bt-admin-row" style="align-items:flex-end;gap:10px;margin:8px 0">
     <div class="field" style="flex:1;margin:0"><label>Nom</label><input type="text" class="bta-name" value="${esc(name)}" placeholder="Rock 80s"></div>
-    <div class="field" style="flex:2;margin:0"><label>URL playlist YouTube</label><input type="text" class="bta-url" value="${esc(url)}" placeholder="https://www.youtube.com/playlist?list=..."></div>
+    <div class="field" style="flex:2;margin:0"><label>URL playlist YouTube ou Deezer</label><input type="text" class="bta-url" value="${esc(url)}" placeholder="YouTube …playlist?list=…  ou  Deezer …/playlist/…"></div>
     <button class="btn danger" style="width:auto" onclick="this.closest('.bt-admin-row').remove()">✕</button>
   </div>`;
 }

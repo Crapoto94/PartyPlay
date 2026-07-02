@@ -90,6 +90,7 @@ function enableSound(){
   else initYT(); // API pas encore prête, on démarre normalement
   if (ytBrief) { try { ytBrief.unMute(); } catch(_){} }
   if (ytEnq) { try { ytEnq.unMute(); } catch(_){} }
+  if (dzAudio) { try { dzAudio.muted = false; dzAudio.play().catch(()=>{}); } catch(_){} } // extrait Deezer en cours
 }
 document.getElementById('soundhint').addEventListener('click', enableSound);
 ['click','touchstart','keydown'].forEach(ev => document.addEventListener(ev, enableSound, { once: false }));
@@ -1877,14 +1878,31 @@ function harvestFrom(player, theme){
 // Le serveur a pioché une vidéo au hasard (a.playVideoId) : la borne la charge
 // et la joue. playRequestedAt change à chaque nouvelle chanson (même id rejouable).
 let _lastPlayReq = 0;
+let dzAudio = null; // élément <audio> pour les extraits Deezer 30 s
 function syncBlindtest(s) {
   const a = s.activity;
-  if (!a || a.type !== 'blindtest') { _lastPlayReq = 0; return; }
-  if (a.playVideoId && a.playRequestedAt && a.playRequestedAt !== _lastPlayReq && a.sub === 'question') {
+  if (!a || a.type !== 'blindtest') {
+    _lastPlayReq = 0;
+    if (dzAudio) { try { dzAudio.pause(); } catch(_){} } // stoppe l'extrait Deezer hors blind-test
+    return;
+  }
+  if (a.playRequestedAt && a.playRequestedAt !== _lastPlayReq && a.sub === 'question') {
     _lastPlayReq = a.playRequestedAt;
     try {
-      if (ytBt) { ytBt.loadVideoById(a.playVideoId); ytBt.unMute(); ytBt.playVideo(); }
-      if (ytAmb) ytAmb.pauseVideo();
+      if (a.playAudioUrl) {
+        // DEEZER : lecture de l'extrait MP3 30 s via un <audio> natif.
+        if (ytBt) { try { ytBt.stopVideo(); } catch(_){} }
+        if (ytAmb) ytAmb.pauseVideo();
+        if (!dzAudio) { dzAudio = new Audio(); dzAudio.preload = 'auto'; }
+        dzAudio.src = a.playAudioUrl;
+        dzAudio.currentTime = 0;
+        dzAudio.play().catch(()=>{}); // silencieux tant qu'aucune interaction (comme YouTube muet)
+      } else if (a.playVideoId) {
+        // YOUTUBE : lecture de la vidéo piochée.
+        if (dzAudio) { try { dzAudio.pause(); } catch(_){} }
+        if (ytBt) { ytBt.loadVideoById(a.playVideoId); ytBt.unMute(); ytBt.playVideo(); }
+        if (ytAmb) ytAmb.pauseVideo();
+      }
     } catch(_) {}
   }
 }

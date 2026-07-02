@@ -25,6 +25,17 @@ function normalize(s) {
     .replace(/[̀-ͯ]/g, '').replace(/[^A-Z0-9]/g, '');
 }
 
+// Détecte une URL de playlist Deezer et en extrait l'identifiant numérique.
+//   https://www.deezer.com/fr/playlist/908622995  → "908622995"
+//   deezer.com/playlist/908622995                 → "908622995"
+// Renvoie null si ce n'est pas une playlist Deezer.
+function deezerPlaylistId(url) {
+  const s = (url || '').toString();
+  if (!/deezer/i.test(s)) return null;
+  const m = s.match(/playlist\/(\d+)/);
+  return m ? m[1] : null;
+}
+
 // Mosaïque : répartit L lettres en n parts entières aussi égales que possible.
 function mosaicSplit(L, n) {
   const base = Math.floor(L / n), rem = L % n;
@@ -263,10 +274,38 @@ export class GameState {
   themeTrackCount(theme) {
     return theme ? this.themePool(theme).length : 0;
   }
-  addPlaylistTrack(theme, videoId, videoTitle) {
+  addPlaylistTrack(theme, videoId, videoTitle, audioUrl = null) {
     if (!videoId || !videoTitle) return;
     const pool = this.themePool(theme);
-    if (!pool.find(t => t.id === videoId)) pool.push({ id: videoId, title: videoTitle });
+    if (!pool.find(t => t.id === videoId)) pool.push({ id: videoId, title: videoTitle, audioUrl: audioUrl || null });
+  }
+
+  // URL de playlist configurée pour ce blind-test (clé = nom du blind-test).
+  blindtestUrl(theme) {
+    return (this._content.blindtest?.playlists || {})[theme] || '';
+  }
+
+  // Récupère la liste des titres + extraits 30 s d'une playlist DEEZER
+  // (API publique, sans authentification). Peuple themePool avec des pistes
+  // { id, title, audioUrl } directement jouables via <audio> sur la borne.
+  async ingestDeezer(theme, playlistId) {
+    if (!playlistId) return 0;
+    const url = `https://api.deezer.com/playlist/${encodeURIComponent(playlistId)}/tracks?limit=100`;
+    const d = await this._getJson(url);
+    const tracks = (d && Array.isArray(d.data)) ? d.data : [];
+    let added = 0;
+    for (const t of tracks) {
+      if (!t || !t.preview || !t.title) continue; // on ne garde que les titres avec extrait
+      const label = t.artist?.name ? `${t.title} — ${t.artist.name}` : t.title;
+      const id = 'dz' + t.id;
+      const pool = this.themePool(theme);
+      if (!pool.find((x) => x.id === id)) { pool.push({ id, title: label, audioUrl: t.preview }); added++; }
+    }
+    if (added) {
+      this.addLog(`🎵 Blind-test Deezer (${theme}) : ${this.themePool(theme).length} titres chargés.`);
+      this.touch();
+    }
+    return added;
   }
 
   // Petit GET JSON sans dépendance (oEmbed YouTube — endpoint public, pas de clé)
@@ -330,7 +369,8 @@ export class GameState {
       answer: choices.indexOf(correct.title),
       points: 100,
     };
-    a.playVideoId = correct.id;       // la borne charge CETTE vidéo
+    a.playVideoId = correct.audioUrl ? null : correct.id; // YouTube : id vidéo
+    a.playAudioUrl = correct.audioUrl || null;            // Deezer : extrait MP3 30 s
     a.playRequestedAt = Date.now();   // force le rechargement même si même id
     a.firstCorrectName = null;
     a.sub = 'question';
@@ -557,15 +597,27 @@ export class GameState {
     // La 1ère chanson démarre automatiquement (si les titres sont déjà collectés ;
     // sinon le GM dispose d'un bouton de secours « Lancer la 1ère chanson »).
     if (type === 'blindtest') {
-      this.activity.theme = opts.theme || 'rock'; // rock | francais | dessins
+      const theme = opts.theme || 'rock';
+      this.activity.theme = theme; // nom du blind-test choisi
       this.activity.dynamicBlindtest = true;
       this.activity.generatedQuestion = null;
       this.activity.playVideoId = null;
+      this.activity.playAudioUrl = null;
       this.activity.playRequestedAt = 0;
       this.activity.firstCorrectName = null;
       this.activity.total = 15; // 15 morceaux par séance
       this.activity.asked = 0;  // morceaux déjà joués
-      this.blindtestAsk();      // pioche et lance la 1ère chanson tout de suite
+      // Deezer : on récupère les titres + extraits 30 s côté serveur (API
+      // publique), puis on lance la 1ère chanson. YouTube : titres moissonnés
+      // par la borne, la 1ère chanson part dès qu'il y en a assez.
+      const dzId = deezerPlaylistId(this.blindtestUrl(theme));
+      if (dzId) {
+        this.activity.source = 'deezer';
+        this.ingestDeezer(theme, dzId).then(() => this.blindtestAsk());
+      } else {
+        this.activity.source = 'youtube';
+        this.blindtestAsk();
+      }
     }
     // Roue des gages : segments affichés, la roue tourne et tombe sur un gage,
     // puis décompte, puis vote « meilleur » (+1 vie au gagnant, −1 aux autres).
@@ -819,8 +871,10 @@ export class GameState {
       myAnswer: forPlayerId && a.answers[forPlayerId] ? a.answers[forPlayerId].choice : null,
       // Blind-test dynamique
       dynamicBlindtest: a.dynamicBlindtest || false,
+      source: a.source || 'youtube',
       theme: a.theme || null,
       playVideoId: a.playVideoId || null,
+      playAudioUrl: a.playAudioUrl || null,
       playRequestedAt: a.playRequestedAt || 0,
       firstCorrectName: reveal ? (a.firstCorrectName || null) : null,
       finalBoard: a.sub === 'final' ? (a.finalBoard || []) : null,

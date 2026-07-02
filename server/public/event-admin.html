@@ -183,7 +183,7 @@
       <section data-pane="contenu" hidden>
         <div class="card">
           <h3 class="neon-yellow">🎵 Mes blind-tests</h3>
-          <p class="muted">Crée tes propres blind-tests : donne un nom et colle l'URL d'une playlist YouTube. Ils apparaîtront dans l'onglet 🎮 Piloter.</p>
+          <p class="muted">Crée tes propres blind-tests : donne un nom et colle l'URL d'une playlist <b>YouTube</b> ou <b>Deezer</b> (extraits 30 s). Ils apparaîtront dans l'onglet 🎮 Piloter.</p>
           <div id="btList"></div>
           <div class="row" style="margin-top:12px">
             <button class="btn" onclick="addBtRow()">＋ Ajouter un blind-test</button>
@@ -583,7 +583,7 @@ function fillBlindtests(){
 function btRowHtml(name,url){
   return `<div class="row bt-row" style="align-items:flex-end;gap:8px;margin:8px 0">
     <div class="field" style="flex:1;margin:0"><label>Nom</label><input type="text" class="bt-name" value="${esc(name)}" placeholder="Rock 80s"></div>
-    <div class="field" style="flex:2;margin:0"><label>URL playlist YouTube</label><input type="text" class="bt-url" value="${esc(url)}" placeholder="https://www.youtube.com/playlist?list=..."></div>
+    <div class="field" style="flex:2;margin:0"><label>URL playlist YouTube ou Deezer</label><input type="text" class="bt-url" value="${esc(url)}" placeholder="YouTube …playlist?list=…  ou  Deezer …/playlist/…"></div>
     <button class="btn danger" style="width:auto" onclick="this.closest('.bt-row').remove()">✕</button>
   </div>`;
 }
