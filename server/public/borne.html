@@ -598,13 +598,21 @@ function quizBorne(act){
     </div>`;
   }
 
-  // Blind-test dynamique : avant la 1ère chanson (le GM doit appuyer sur ❓)
+  // Blind-test dynamique : avant la 1ère chanson.
   if (act.dynamicBlindtest && !(act.choices && act.choices.length)) {
+    let msg, sub;
+    if (act.loadError) {
+      msg = '😕 Playlist introuvable ou vide'; sub = 'Vérifiez l\'URL de la playlist dans la console (onglet 📚 Contenu).';
+    } else if (act.loading || act.source === 'deezer') {
+      msg = '⏳ Chargement de la playlist…'; sub = 'Les morceaux arrivent, ça démarre dans un instant.';
+    } else {
+      msg = 'Préparez vos oreilles…'; sub = 'Collecte des titres en cours — patientez quelques secondes.';
+    }
     return `<div class="center">
       <div ${pill}>${title}</div>
       <p class="huge">🎵</p>
-      <p class="big neon-yellow blink">Préparez vos oreilles…</p>
-      <p class="muted">Le maître du jeu lance la première chanson.</p>
+      <p class="big ${act.loadError?'neon-pink':'neon-yellow blink'}">${msg}</p>
+      <p class="muted">${sub}</p>
     </div>`;
   }
 

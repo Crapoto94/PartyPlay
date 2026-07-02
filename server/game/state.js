@@ -17,6 +17,7 @@ import { NOTE_PALETTE, MELODY, MOSAIC_DEFAULT_WORD, pickMosaicWord,
   PIANO_KEYS_PER_PHONE, PIANO_BASE_MIDI, PIANO_MELODY, pianoNoteInfo,
   pianoDemoSeq, pianoKeyLayout } from '../data/collab.js';
 import { PRIVACY_QUESTIONS, PRIVACY_LEVELS } from '../data/privacy.js';
+import { defaultPlaylistsMap } from '../store/blindtests.js';
 
 // Normalise un texte pour comparaison (accents/casse/espaces) — utilisé par les
 // activités « Dessine-moi » et « Mosaïque ».
@@ -281,8 +282,12 @@ export class GameState {
   }
 
   // URL de playlist configurée pour ce blind-test (clé = nom du blind-test).
+  // Repli sur les blind-tests par défaut de l'admin générale, pour que les
+  // événements créés AVANT leur configuration puissent quand même les lancer.
   blindtestUrl(theme) {
-    return (this._content.blindtest?.playlists || {})[theme] || '';
+    const own = (this._content.blindtest?.playlists || {})[theme];
+    if (own) return own;
+    try { return defaultPlaylistsMap()[theme] || ''; } catch { return ''; }
   }
 
   // Récupère la liste des titres + extraits 30 s d'une playlist DEEZER
@@ -613,7 +618,16 @@ export class GameState {
       const dzId = deezerPlaylistId(this.blindtestUrl(theme));
       if (dzId) {
         this.activity.source = 'deezer';
-        this.ingestDeezer(theme, dzId).then(() => this.blindtestAsk());
+        this.activity.loading = true;   // ingestion en cours (borne : « chargement… »)
+        this.activity.loadError = false;
+        this.ingestDeezer(theme, dzId).then(() => {
+          if (!this.activity || this.activity.type !== 'blindtest') return;
+          this.activity.loading = false;
+          if (this.themePool(theme).length < 4) { this.activity.loadError = true; this.touch(); }
+          else this.blindtestAsk();
+        }).catch(() => {
+          if (this.activity && this.activity.type === 'blindtest') { this.activity.loading = false; this.activity.loadError = true; this.touch(); }
+        });
       } else {
         this.activity.source = 'youtube';
         this.blindtestAsk();
@@ -872,6 +886,8 @@ export class GameState {
       // Blind-test dynamique
       dynamicBlindtest: a.dynamicBlindtest || false,
       source: a.source || 'youtube',
+      loading: a.loading || false,
+      loadError: a.loadError || false,
       theme: a.theme || null,
       playVideoId: a.playVideoId || null,
       playAudioUrl: a.playAudioUrl || null,

@@ -692,7 +692,7 @@ ev.get('/api/admin/meta', (req, res) => {
 });
 
 // Récupère la config complète (protégée)
-ev.get('/api/admin/config', (req, res) => { if (!requireEventAdmin(req, res)) return; res.json({ config: req.cfg, defaultAvatars: DEFAULT_AVATARS }); });
+ev.get('/api/admin/config', (req, res) => { if (!requireEventAdmin(req, res)) return; res.json({ config: req.cfg, defaultAvatars: DEFAULT_AVATARS, defaultBlindtests: defaultPlaylistsMap() }); });
 
 // Enregistre la config (protégée) — fusionne puis recharge le GameState à chaud.
 ev.post('/api/admin/config', (req, res) => {

@@ -227,7 +227,7 @@
 const EVENT = window.__EVENT__;
 const API = '/e/' + EVENT.id;
 let PWD = sessionStorage.getItem('evpwd_'+EVENT.id) || '';
-let CFG = null, AV = {}, META = null;
+let CFG = null, AV = {}, META = null, DEFAULT_BT = {};
 const AVATAR_KEYS = [];
 const THEME_LABELS = { retro:'Rétro jeux vidéo', neon:'Néon / Clubbing', chic:'Chic / Élégant', kids:'Anniversaire enfant', casino:'Casino / Vegas' };
 
@@ -276,6 +276,7 @@ async function loadConfig(){
   const r = await fetch(API+'/api/admin/config', { headers:H() });
   if (r.status===403){ document.getElementById('loginCard').style.display='block'; return; }
   const d = await r.json(); CFG = d.config; AV = d.defaultAvatars || {};
+  DEFAULT_BT = d.defaultBlindtests || {}; // blind-tests par défaut (admin générale)
   AVATAR_KEYS.length=0; Object.keys(AV).forEach(k=>AVATAR_KEYS.push(k));
   document.getElementById('app').style.display='block';
   // Bannière email non vérifié
@@ -574,7 +575,8 @@ async function finishOnboarding(){
 
 /* ---- Blind-tests (éditeur convivial nom + URL) ---- */
 function fillBlindtests(){
-  const pl=(CFG.content&&CFG.content.blindtest&&CFG.content.blindtest.playlists)||{};
+  // Affiche les blind-tests par défaut (admin générale) + ceux de l'événement.
+  const pl={ ...DEFAULT_BT, ...((CFG.content&&CFG.content.blindtest&&CFG.content.blindtest.playlists)||{}) };
   const box=document.getElementById('btList');
   const entries=Object.entries(pl);
   box.innerHTML = entries.length ? entries.map(([name,url])=>btRowHtml(name,url)).join('')
@@ -643,8 +645,12 @@ async function push(patch){ await fetch(API+'/api/admin/config',{method:'POST',h
 function fillLaunchers(){
   const decks=(CFG.content&&CFG.content.quiz&&CFG.content.quiz.decks)||{};
   document.getElementById('quizDeck').innerHTML=Object.keys(decks).map(d=>`<option value="${d}">${esc(d)}</option>`).join('')||'<option>—</option>';
-  const bt=(CFG.content&&CFG.content.blindtest&&CFG.content.blindtest.playlists)||{};
-  document.getElementById('btTheme').innerHTML=Object.keys(bt).map(t=>`<option value="${t}">${esc(t)}</option>`).join('')||'<option value="rock">rock</option>';
+  // Fusionne les blind-tests de l'événement AVEC ceux par défaut (admin générale).
+  const bt={ ...DEFAULT_BT, ...((CFG.content&&CFG.content.blindtest&&CFG.content.blindtest.playlists)||{}) };
+  const keys=Object.keys(bt);
+  document.getElementById('btTheme').innerHTML = keys.length
+    ? keys.map(t=>`<option value="${t}">${esc(t)}</option>`).join('')
+    : '<option value="">— aucun blind-test configuré —</option>';
 }
 
 /* ---- Pilotage live ---- */
