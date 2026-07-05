@@ -27,6 +27,7 @@ import { getLegal, saveLegal } from './store/legal.js';
 import { validatePromoCode, usePromoCode, listPromoCodes, addPromoCode, removePromoCode } from './store/promos.js';
 import { PRIVACY_QUESTIONS, PRIVACY_LEVELS } from './data/privacy.js';
 import { getBlindtests, saveBlindtests, defaultPlaylistsMap } from './store/blindtests.js';
+import { getCarton, saveCarton, CARTON_LEVELS } from './store/carton.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC = path.join(__dirname, 'public');
@@ -353,6 +354,18 @@ app.post('/api/admin/blindtests', (req, res) => {
   const list = Array.isArray(req.body?.blindtests) ? req.body.blindtests : [];
   res.json({ ok: true, blindtests: saveBlindtests(list) });
 });
+
+// =====================================================================
+//  BOUCHE-TROU !? — catalogue éditable des questions/réponses (admin général)
+// =====================================================================
+app.get('/api/admin/carton', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  res.json({ levels: CARTON_LEVELS, carton: getCarton() });
+});
+app.post('/api/admin/carton', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  res.json({ ok: true, carton: saveCarton(req.body?.carton || {}) });
+});
 app.post('/api/admin/promos', (req, res) => {
   if (!requireAdmin(req, res)) return;
   const { code, plan, maxUses, note, expiresAt } = req.body || {};
@@ -659,6 +672,10 @@ ev.post('/api/spotlight/vote', (req, res) => { const p = requirePlayer(req, res)
 ev.post('/api/privacy/answer', (req, res) => { const p = requirePlayer(req, res); if (!p) return; req.game.privacyAnswer(p.id, !!req.body.yes); res.json({ ok: true }); });
 ev.post('/api/privacy/guess', (req, res) => { const p = requirePlayer(req, res); if (!p) return; req.game.privacyGuess(p.id, req.body.n); res.json({ ok: true }); });
 
+// Bouche-Trou !? — le joueur joue une/des carte(s) ; l'arbitre élit la gagnante.
+ev.post('/api/carton/play', (req, res) => { const p = requirePlayer(req, res); if (!p) return; res.json(req.game.cartonPlay(p.id, req.body.cards)); });
+ev.post('/api/carton/pick', (req, res) => { const p = requirePlayer(req, res); if (!p) return; res.json(req.game.cartonPick(p.id, req.body.choice)); });
+
 // Mini-jeux & collaboratifs (manettes)
 ev.post('/api/pacman/dir', (req, res) => { const p = requirePlayer(req, res); if (!p) return; req.game.pacmanDir(p.id, req.body.dir); res.json({ ok: true }); });
 ev.post('/api/tetris/move', (req, res) => { const p = requirePlayer(req, res); if (!p) return; req.game.tetrisMove(p.id, req.body.dir); res.json({ ok: true }); });
@@ -892,6 +909,9 @@ ev.post('/api/admin/action', (req, res) => {
     case 'privacyCloseAnswers': g.privacyCloseAnswers(); break;
     case 'privacyReveal': g.privacyReveal(); break;
     case 'privacyNext': g.privacyNext(); break;
+    case 'cartonClose': g.cartonClose(); break;
+    case 'cartonNext': g.cartonNext(); break;
+    case 'cartonSkip': g.cartonSkip(); break;
     // Simulation : ajoute 4 joueurs de test (1 pilotable + 3 bots) dans la
     // config, puis active le pilote automatique des bots.
     case 'simStart': {

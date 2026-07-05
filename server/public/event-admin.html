@@ -84,6 +84,18 @@
               </select>
             </div>
           </div>
+          <div class="field" data-cat="carton" style="margin-top:10px"><label>🃏 Bouche-Trou !? — questions à trou + cartes-réponses</label>
+            <div class="row">
+              <button class="btn" onclick="launch('carton',{level:'classique',rounds:cartonRounds()})">🎉 Classique</button>
+              <button class="btn" onclick="launch('carton',{level:'adulte',rounds:cartonRounds()})">🔞 Version 18+</button>
+              <select id="cartonRounds" style="width:auto">
+                <option value="5">5 manches</option>
+                <option value="8" selected>8 manches</option>
+                <option value="12">12 manches</option>
+                <option value="16">16 manches</option>
+              </select>
+            </div>
+          </div>
           <div class="row" data-cat="collab">
             <button class="btn" onclick="launch('mosaic',{})">🧩 Mosaïque</button>
             <button class="btn" onclick="launch('piano',{})">🎹 Piano</button>
@@ -189,6 +201,16 @@
             <button class="btn" onclick="addBtRow()">＋ Ajouter un blind-test</button>
             <button class="btn secondary" onclick="saveBlindtestList()">💾 Enregistrer</button>
             <span class="muted" id="bt_saved"></span>
+          </div>
+        </div>
+        <div class="card">
+          <h3 class="neon-yellow">🃏 Bouche-Trou !? — mes questions perso</h3>
+          <p class="muted">Ajoute tes propres <b>questions à trou</b> et <b>cartes-réponses</b> : elles sont <b>prioritaires</b> (tirées en premier) et s'ajoutent au catalogue. Une par ligne. Utilise <code>___</code> pour marquer le trou (deux <code>___</code> = deux cartes à jouer).</p>
+          <div class="field"><label>Questions perso <span class="muted">(une par ligne, ex. « Le pire cadeau, c'est ___. »)</span></label><textarea id="c_carton_p" rows="5" placeholder="Ma question avec un ___ à remplir."></textarea></div>
+          <div class="field"><label>Cartes-réponses perso <span class="muted">(une par ligne)</span></label><textarea id="c_carton_a" rows="5" placeholder="ma réponse absurde"></textarea></div>
+          <div class="row">
+            <button class="btn secondary" onclick="saveCartonCustom()">💾 Enregistrer mes questions</button>
+            <span class="muted" id="carton_saved"></span>
           </div>
         </div>
         <div class="card">
@@ -472,7 +494,7 @@ async function removeAvatar(key){
 }
 
 /* ---- Activités ---- */
-const ACT_LABELS={ quiz:'Quiz', blindtest:'Blind-test', anecdotes:'Anecdotes', gages:'Roue des gages', photo:'Défi photo', spotlight:'Spotlight', draw:'Dessine-moi', arcade:'Mini-jeux arcade', collab:'Collaboratifs (mosaïque/piano)', privacy:'🤫 Sans Filtre !? (confessions, adultes)' };
+const ACT_LABELS={ quiz:'Quiz', blindtest:'Blind-test', anecdotes:'Anecdotes', gages:'Roue des gages', photo:'Défi photo', spotlight:'Spotlight', draw:'Dessine-moi', arcade:'Mini-jeux arcade', collab:'Collaboratifs (mosaïque/piano)', carton:'🃏 Bouche-Trou !? (cartes à trou)', privacy:'🤫 Sans Filtre !? (confessions, adultes)' };
 // Sans Filtre !? est un contenu adulte : activé seulement si explicitement
 // coché (contrairement aux autres activités, actives par défaut).
 function actDefaultOn(k, a){ return k==='privacy' ? (a[k]===true) : (a[k]!==false); }
@@ -526,6 +548,7 @@ const ONB_SLIDES = [
       <li><b>🕹️ Mini-jeux arcade</b> — Pac-Man, Tetris, Tron, 2048, Pong en multijoueur.</li>
       <li><b>📸 Défi photo</b> — missions photo à réaliser, puis vote de la salle.</li>
       <li><b>🤫 Sans Filtre !?</b> — confessions anonymes : chacun répond OUI/NON en secret, puis on parie sur le nombre de OUI. Version « Intime » ou « Intime trash » (réservée aux adultes).</li>
+      <li><b>🃏 Bouche-Trou !?</b> — une question à trou sur la borne, chacun joue sa carte-réponse la plus drôle, un arbitre tournant élit la meilleure. Version « Classique » ou « 18+ ». Tu peux ajouter tes propres questions (onglet 📚 Contenu).</li>
     </ul>` },
 ];
 let onbStep = 0;
@@ -617,7 +640,18 @@ function fillContent(){
   c_draw.value=JSON.stringify(ct.drawWords||[],null,1);
   c_bt.value=JSON.stringify(ct.blindtest?ct.blindtest.playlists:{},null,1);
   c_photo.value=JSON.stringify(ct.photoMissions||{},null,1);
+  const cart=ct.carton||{};
+  document.getElementById('c_carton_p').value=(cart.prompts||[]).join('\n');
+  document.getElementById('c_carton_a').value=(cart.answers||[]).join('\n');
   fillBlindtests();
+}
+// Enregistre les questions/réponses perso « Bouche-Trou » (prioritaires).
+async function saveCartonCustom(){
+  const lines=(id)=>document.getElementById(id).value.split('\n').map(s=>s.trim()).filter(Boolean);
+  const carton={ prompts:lines('c_carton_p'), answers:lines('c_carton_a') };
+  const content={ ...(CFG.content||{}), carton };
+  await push({content}); CFG.content=content;
+  const s=document.getElementById('carton_saved'); s.textContent=' ✓ enregistré ('+carton.prompts.length+' Q / '+carton.answers.length+' R)'; setTimeout(()=>s.textContent='',2500);
 }
 async function saveContent(){
   try{
@@ -629,6 +663,7 @@ async function saveContent(){
       drawWords: JSON.parse(c_draw.value||'[]'),
       blindtest:{ playlists: JSON.parse(c_bt.value||'{}') },
       photoMissions: JSON.parse(c_photo.value||'{}'),
+      carton: (CFG.content&&CFG.content.carton)||{ prompts:[], answers:[] },
     };
     await push({content}); CFG.content=content; c_err.textContent=' ✓ enregistré'; c_err.className='ok';
     fillLaunchers();
@@ -657,6 +692,7 @@ function fillLaunchers(){
 function act(action,payload){ fetch(API+'/api/admin/action',{method:'POST',headers:H(),body:JSON.stringify({action,payload})}); }
 function launch(type,opts){ act('startActivity',{type,opts}); }
 function privacyCount(){ return parseInt(document.getElementById('privacyCount').value,10)||10; }
+function cartonRounds(){ return parseInt(document.getElementById('cartonRounds').value,10)||8; }
 
 /* ---- Simulation : 4 joueurs de test + smartphone en overlay ---- */
 async function toggleSim(){
@@ -717,6 +753,14 @@ function liveControls(st){
     if(a.sub==='answer') h+=btn('privacyCloseAnswers','Clore les réponses ('+(a.answeredCount||0)+'/'+(a.playerCount||0)+')');
     if(a.sub==='guess')  h+=btn('privacyReveal','Révéler ('+(a.guessedCount||0)+'/'+(a.playerCount||0)+' paris)');
     if(a.sub==='reveal'||a.sub==='final') h+=btn('privacyNext', a.sub==='final'?'—':'Question suivante');
+  }
+  if(a.type==='carton'){
+    h+='<span class="muted" style="align-self:center">Manche '+(a.round||1)+'/'+(a.totalRounds||'?')+' · arbitre : '+esc(a.judgeName||'?')+' · '+esc(a.sub||'')+'</span>';
+    if(a.sub==='pick')  h+=btn('cartonClose','Clore les cartes ('+(a.submittedCount||0)+'/'+(a.neededCount||0)+')');
+    if(a.sub==='judge') h+='<span class="muted" style="align-self:center">En attente du choix de l\'arbitre…</span>';
+    if(a.sub==='reveal') h+=btn('cartonNext','Manche suivante ▶');
+    // Le GM peut TOUJOURS forcer la manche suivante (arbitre absent, blocage…).
+    if(a.sub!=='final') h+=btn('cartonSkip', a.sub==='reveal'?'Passer ⏭':'Passer la manche ⏭');
   }
   if(a.type==='draw'){ h+=btn('drawReveal','Révéler')+btn('drawNext','Suivant'); }
   if(a.type==='mosaic'){ h+=btn('mosaicReveal','Révéler la ligne'); }

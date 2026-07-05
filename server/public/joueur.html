@@ -415,6 +415,10 @@ function controllerView(act) {
   if (act.type === 'privacy') {
     return privacyController(act);
   }
+  // BOUCHE-TROU !? : joue une carte de ta main ; l'arbitre élit la plus drôle
+  if (act.type === 'carton') {
+    return cartonController(act);
+  }
   if (act.type === 'heroquiz') {
     return heroQuizController(act);
   }
@@ -1459,6 +1463,31 @@ function answer(i){ api('/api/answer', { choice: i }); }
 function spotlightVote(v){ api('/api/spotlight/vote', { verdict: v }); }
 function privacyAnswer(v){ api('/api/privacy/answer', { yes: v }); }
 function privacyGuess(n){ api('/api/privacy/guess', { n }); }
+// BOUCHE-TROU !? — sélection locale de cartes + envoi.
+let cartonSel = [];
+let _cartonRound = -1;
+function cartonToggle(i, blanks){
+  const pos = cartonSel.indexOf(i);
+  if (pos >= 0) cartonSel.splice(pos, 1);
+  else { if (cartonSel.length >= blanks) cartonSel.shift(); cartonSel.push(i); }
+  if (blanks === 1 && cartonSel.length === 1){ cartonSubmit(); return; }
+  render();
+}
+function cartonSubmit(){
+  if (!cartonSel.length) return;
+  const cards = cartonSel.slice();
+  cartonSel = [];
+  api('/api/carton/play', { cards });
+}
+function cartonPick(i){ api('/api/carton/pick', { choice: i }); }
+// Remplit les trous : question sobre, RÉPONSE mise en couleur (jaune).
+function cartonFillHtml(prompt, cards){
+  let i = 0;
+  const hi = (c)=>`<span class="neon-yellow" style="font-weight:800">« ${esc(c)} »</span>`;
+  let html = esc(prompt||'').replace(/___/g, ()=>{ const c=(cards&&cards[i]!=null)?cards[i]:'___'; i++; return hi(c); });
+  if (i===0 && cards && cards.length) html = esc(prompt||'') + ' → ' + hi(cards.join(' + '));
+  return html;
+}
 
 // SANS FILTRE !? — manette du joueur : réponse secrète puis pari.
 function privacyController(act){
@@ -1518,6 +1547,117 @@ function privacyController(act){
     </div>`;
   }
   return `<div class="card center"><h2>🤫 SANS FILTRE !?</h2><p>Regarde la BORNE.</p></div>`;
+}
+
+// BOUCHE-TROU !? — manette du joueur : joue une carte de ta main ; si tu es
+// l'arbitre, choisis la plus drôle.
+function cartonController(act){
+  // Réinitialise la sélection quand la manche change.
+  if (act.round !== _cartonRound){ _cartonRound = act.round; cartonSel = []; }
+  const adulte = act.level==='adulte';
+  const head = `<div class="pill ${adulte?'neon-pink':'neon-cyan'}">🃏 BOUCHE-TROU !? · ${esc(act.levelLabel||'')} · manche ${act.round}/${act.totalRounds}</div>`;
+  const promptHtml = `<p class="big" style="margin:12px 0">${esc(act.prompt||'')}</p>`;
+
+  // ---- Fin de partie ----
+  if (act.sub==='final'){
+    const board = act.finalBoard||[];
+    const myRank = board.findIndex(b=>b.id===STATE.me.id);
+    return `<div class="card center glow-box" style="border-color:var(--neon3)">
+      ${head}
+      <h2 class="neon-yellow">🏁 TERMINÉ !</h2>
+      ${myRank>=0?`<p class="big">Tu finis ${myRank===0?'🥇 PREMIER(E)':(myRank+1)+'ᵉ'} avec ${board[myRank].pts} pt(s)</p>`:''}
+      <p class="muted">Classement complet sur la BORNE 📺</p>
+    </div>`;
+  }
+
+  // ---- Je suis l'ARBITRE ----
+  if (act.iAmJudge){
+    if (act.sub==='judge'){
+      const subs = act.submissions||[];
+      const btns = subs.map(s=>`<button class="btn" style="text-align:left;white-space:normal;height:auto;padding:12px 14px;margin:6px 0" onclick="cartonPick(${s.i})">${cartonFillHtml(act.prompt, s.cards)}</button>`).join('');
+      return `<div class="card center glow-box" style="border-color:var(--neon3)">
+        ${head}
+        <div class="pill neon-yellow">👑 TU ES L'ARBITRE</div>
+        ${promptHtml}
+        <p class="muted">Choisis la réponse la plus drôle :</p>
+        <div style="display:flex;flex-direction:column;gap:2px">${btns||'<p class="muted">Aucune carte.</p>'}</div>
+      </div>`;
+    }
+    if (act.sub==='reveal'){
+      return `<div class="card center glow-box" style="border-color:var(--neon3)">
+        ${head}
+        <div class="pill neon-yellow">👑 TU ES L'ARBITRE</div>
+        <h2 class="neon-cyan">🏆 ${esc(act.winnerName||'')}</h2>
+        <p class="big">${cartonFillHtml(act.prompt, act.winningCards)}</p>
+        <p class="muted">Manche suivante dans un instant… 📺</p>
+      </div>`;
+    }
+    // pick : l'arbitre attend
+    return `<div class="card center glow-box">
+      ${head}
+      <div class="pill neon-yellow">👑 TU ES L'ARBITRE</div>
+      ${promptHtml}
+      <p class="neon-cyan blink">En attente des cartes des joueurs… 📱</p>
+      <p class="muted mt">${act.submittedCount}/${act.neededCount} ont joué</p>
+    </div>`;
+  }
+
+  // ---- Je suis un JOUEUR ----
+  if (act.sub==='reveal'){
+    const iWon = act.leaderboard && act.winnerName && STATE.me && (act.winnerName===STATE.me.name);
+    return `<div class="card center glow-box" style="border-color:var(--neon3)">
+      ${head}
+      <h2 class="neon-pink">🏆 ${esc(act.winnerName||'')} gagne la manche</h2>
+      <p class="big">${cartonFillHtml(act.prompt, act.winningCards)}</p>
+      ${iWon?'<p class="big neon-yellow">C\'est TOI ! +1 pt +1 🪙 🎉</p>':''}
+      <p class="muted">Regarde la BORNE 📺</p>
+    </div>`;
+  }
+  if (act.sub==='judge'){
+    const mine = act.mySubmission ? act.mySubmission.map(c=>'« '+esc(c)+' »').join(' + ') : null;
+    return `<div class="card center glow-box">
+      ${head}
+      ${promptHtml}
+      <p class="neon-cyan blink">👑 ${esc(act.judgeName||'')} choisit la meilleure carte…</p>
+      ${mine?`<p class="muted mt">Ta carte : <b>${mine}</b></p>`:'<p class="muted mt">Tu n\'as pas joué cette manche.</p>'}
+    </div>`;
+  }
+  // pick : je choisis ma carte
+  if (act.mySubmitted){
+    const mine = act.mySubmission ? act.mySubmission.map(c=>'« '+esc(c)+' »').join(' + ') : '';
+    return `<div class="card center glow-box">
+      ${head}
+      ${promptHtml}
+      <p class="neon-cyan">Carte jouée ✔</p>
+      <p class="big">${mine}</p>
+      <p class="muted mt">En attente des autres… ${act.submittedCount}/${act.neededCount}</p>
+    </div>`;
+  }
+  const hand = act.myHand||[];
+  if (!hand.length){
+    return `<div class="card center glow-box">
+      ${head}
+      ${promptHtml}
+      <p class="muted">Tu rejoins à la prochaine manche — regarde la BORNE 📺</p>
+    </div>`;
+  }
+  const blanks = act.blanks||1;
+  const cards = hand.map(c=>{
+    const sel = cartonSel.includes(c.i);
+    const badge = sel && blanks>1 ? `<span class="neon-yellow">${cartonSel.indexOf(c.i)+1}. </span>` : '';
+    return `<button class="btn ${sel?'secondary':''}" style="text-align:left;white-space:normal;height:auto;padding:12px 14px;margin:6px 0" onclick="cartonToggle(${c.i},${blanks})">${badge}${esc(c.text)}</button>`;
+  }).join('');
+  const validate = blanks>1
+    ? `<button class="btn ${cartonSel.length===blanks?'':'ghost'}" ${cartonSel.length===blanks?'':'disabled'} onclick="cartonSubmit()">✅ Jouer ${cartonSel.length}/${blanks}</button>`
+    : '';
+  return `<div class="card center glow-box">
+    ${head}
+    <div class="pill neon-yellow">👤 Arbitre : ${esc(act.judgeName||'')}</div>
+    ${promptHtml}
+    <p class="muted">${blanks>1?`Choisis ${blanks} cartes (dans l'ordre) :`:'Choisis ta carte la plus drôle :'}</p>
+    <div style="display:flex;flex-direction:column;gap:2px">${cards}</div>
+    ${validate}
+  </div>`;
 }
 function submitCode(){
   const v = document.getElementById('codeInput').value;

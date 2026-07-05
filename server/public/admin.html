@@ -47,6 +47,9 @@
           <a class="nav-item" data-sec="privacy" onclick="showSection('privacy')">
             <span>🤫</span> Sans Filtre !?
           </a>
+          <a class="nav-item" data-sec="carton" onclick="showSection('carton')">
+            <span>🃏</span> Bouche-Trou !?
+          </a>
           <a class="nav-item" data-sec="blindtests" onclick="showSection('blindtests')">
             <span>🎵</span> Blind-tests
           </a>
@@ -282,6 +285,37 @@
           </div>
         </section>
 
+        <!-- ===== SECTION : BOUCHE-TROU !? (questions + réponses) ===== -->
+        <section id="sec-carton" class="admin-section" style="display:none">
+          <h1 class="section-title">🃏 Bouche-Trou !?</h1>
+          <p class="muted" style="margin-bottom:20px">Catalogue du jeu de cartes à trou : une <strong>question</strong> à compléter (avec <code>___</code>) et des <strong>cartes-réponses</strong>. Deux niveaux : <strong>Classique</strong> (tout public) et <strong>18+</strong> (cartes crues, cumulées avec les classiques en jeu). Ces textes sont proposés à toutes les fêtes ; chaque organisateur peut aussi ajouter ses propres questions depuis sa console.</p>
+
+          <div class="card">
+            <div class="inline" style="gap:12px;flex-wrap:wrap">
+              <div class="field" style="margin:0;min-width:220px"><label>Niveau</label>
+                <select id="ctLevel" onchange="fillCartonEditor()">
+                  <option value="classique">🎉 Classique</option>
+                  <option value="adulte">🔞 18+</option>
+                </select>
+              </div>
+              <div style="align-self:flex-end;padding-bottom:9px"><span class="tag" id="ctCount">—</span></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="field"><label>Questions à trou <span class="muted">(une par ligne · <code>___</code> = trou ; deux <code>___</code> = deux cartes)</span></label>
+              <textarea id="ctPrompts" rows="12" style="width:100%"></textarea>
+            </div>
+            <div class="field"><label>Cartes-réponses <span class="muted">(une par ligne)</span></label>
+              <textarea id="ctAnswers" rows="12" style="width:100%"></textarea>
+            </div>
+            <div class="inline">
+              <button class="btn" onclick="saveCartonAdmin()">💾 Enregistrer</button>
+              <span id="ctSaved" class="muted"></span>
+            </div>
+          </div>
+        </section>
+
         <!-- ===== SECTION : BLIND-TESTS PAR DÉFAUT ===== -->
         <section id="sec-blindtests" class="admin-section" style="display:none">
           <h1 class="section-title">🎵 Blind-tests par défaut</h1>
@@ -344,8 +378,9 @@ const themeLabel = { retro:'Rétro', neon:'Néon', chic:'Chic', kids:'Enfant', c
 const ALL_THEMES = ['retro','neon','chic','kids','casino'];
 const PLAN_ORDER = ['free','full','infinite'];
 let PWD = sessionStorage.getItem('admPwd') || '';
-let PRICING = null, BREVO = null, _emailLoaded = false, _legalLoaded = false, _promosLoaded = false, _privacyLoaded = false, _btLoaded = false;
+let PRICING = null, BREVO = null, _emailLoaded = false, _legalLoaded = false, _promosLoaded = false, _privacyLoaded = false, _btLoaded = false, _cartonLoaded = false;
 let PRIVACY_DATA = null;
+let CARTON_DATA = null;
 
 function headers() { return { 'Content-Type':'application/json', 'x-admin-password': PWD }; }
 function esc(s) { return (s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
@@ -361,6 +396,7 @@ function showSection(name) {
   if (name === 'legal' && !_legalLoaded) { _legalLoaded = true; loadLegalContent(); }
   if (name === 'promos' && !_promosLoaded) { _promosLoaded = true; loadPromos(); }
   if (name === 'privacy' && !_privacyLoaded) { _privacyLoaded = true; loadPrivacyQuestions(); }
+  if (name === 'carton' && !_cartonLoaded) { _cartonLoaded = true; loadCartonAdmin(); }
   if (name === 'blindtests' && !_btLoaded) { _btLoaded = true; loadBlindtestsAdmin(); }
 }
 
@@ -757,6 +793,44 @@ function renderPrivacyQuestions() {
   el.innerHTML = `<table class="list"><tbody>${filtered.map(({ q, i }) =>
     `<tr><td style="width:52px" class="muted">${i + 1}</td><td>${esc(q)}</td></tr>`
   ).join('')}</tbody></table>`;
+}
+
+// ---- Bouche-Trou !? : édition des questions + réponses ----
+let _ctLevel = 'classique';
+function ctLines(id){ return document.getElementById(id).value.split('\n').map(s=>s.trim()).filter(Boolean); }
+async function loadCartonAdmin() {
+  try {
+    const r = await fetch('/api/admin/carton', { headers: headers() });
+    if (!r.ok) { document.getElementById('ctCount').textContent = 'Erreur ('+r.status+')'; return; }
+    CARTON_DATA = (await r.json()).carton || {};
+    _ctLevel = document.getElementById('ctLevel').value;
+    renderCartonLevel(_ctLevel);
+  } catch { document.getElementById('ctCount').textContent = 'Erreur réseau'; }
+}
+function captureCartonLevel(level) {
+  if (!CARTON_DATA || !CARTON_DATA[level]) return;
+  CARTON_DATA[level].prompts = ctLines('ctPrompts');
+  CARTON_DATA[level].answers = ctLines('ctAnswers');
+}
+function renderCartonLevel(level) {
+  const d = (CARTON_DATA && CARTON_DATA[level]) || { prompts: [], answers: [] };
+  document.getElementById('ctPrompts').value = (d.prompts || []).join('\n');
+  document.getElementById('ctAnswers').value = (d.answers || []).join('\n');
+  document.getElementById('ctCount').textContent = (d.prompts || []).length + ' questions · ' + (d.answers || []).length + ' réponses';
+}
+// Changement de niveau : on mémorise les éventuelles modifs du niveau courant.
+function fillCartonEditor() {
+  captureCartonLevel(_ctLevel);
+  _ctLevel = document.getElementById('ctLevel').value;
+  renderCartonLevel(_ctLevel);
+}
+async function saveCartonAdmin() {
+  captureCartonLevel(document.getElementById('ctLevel').value);
+  const r = await fetch('/api/admin/carton', { method:'POST', headers: headers(), body: JSON.stringify({ carton: CARTON_DATA }) });
+  const d = await r.json();
+  if (d.carton) CARTON_DATA = d.carton;
+  renderCartonLevel(document.getElementById('ctLevel').value);
+  const s = document.getElementById('ctSaved'); s.textContent = ' ✓ enregistré'; setTimeout(()=>s.textContent='', 1800);
 }
 
 // ---- Blind-tests par défaut ----

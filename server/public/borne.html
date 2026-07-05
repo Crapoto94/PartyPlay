@@ -26,7 +26,7 @@
   .ticker { position: fixed; bottom: 0; left: 0; right: 0; background:#000; border-top:3px solid var(--neon);
             white-space: nowrap; overflow: hidden; }
   .ticker span { display: inline-block; padding: 10px 0; font-family: var(--pixel); font-size: 16px;
-            color: var(--neon3); animation: scroll 24s linear infinite; }
+            color: var(--neon3); animation: scroll 60s linear infinite; }
   @keyframes scroll { from { transform: translateX(100%);} to { transform: translateX(-100%);} }
   @keyframes spin { from { transform: rotate(0);} to { transform: rotate(360deg);} }
   .leaderboard div { font-size: clamp(16px, 2.6vh, 28px); padding: clamp(3px,0.7vh,8px); border-bottom: 1px solid #fff2; }
@@ -391,7 +391,7 @@ function render(){
   stage.innerHTML = html;
   // Décompte visible d'auto-passage « Sans Filtre » (phase de révélation).
   const _pa = STATE.activity;
-  if (_pa && _pa.type==='privacy' && _pa.sub==='reveal' && _pa.revealAt){
+  if (_pa && (_pa.type==='privacy'||_pa.type==='carton') && _pa.sub==='reveal' && _pa.revealAt){
     const total = _pa.autoNextSeconds || 20;
     const el = document.getElementById('privacyCountdown');
     const tick = ()=>{ const left=Math.max(0,Math.ceil((_pa.revealAt+total*1000-Date.now())/1000)); const e=document.getElementById('privacyCountdown'); if(e)e.textContent=left; };
@@ -447,6 +447,9 @@ function activityView(act){
   }
   if (act.type==='privacy'){
     return privacyBorne(act);
+  }
+  if (act.type==='carton'){
+    return cartonBorne(act);
   }
   if (act.type==='reaction_race'){
     const board = (act.buzzes||[]).slice().sort((a,b)=>a.t-b.t);
@@ -565,6 +568,91 @@ function privacyBorne(act){
     </div>`;
   }
   return `<div class="center">${pill}</div>`;
+}
+
+// Remplit les trous d'une question — la QUESTION reste sobre, la RÉPONSE est
+// mise en couleur (jaune) pour bien la distinguer.
+function cartonFillHtml(prompt, cards){
+  let i = 0;
+  const hi = (c)=>`<span class="neon-yellow" style="font-weight:800">« ${esc(c)} »</span>`;
+  let html = esc(prompt||'').replace(/___/g, ()=>{ const c=(cards&&cards[i]!=null)?cards[i]:'___'; i++; return hi(c); });
+  if (i===0 && cards && cards.length) html = esc(prompt||'') + ' → ' + hi(cards.join(' + '));
+  return html;
+}
+// Affiche UNIQUEMENT la/les carte(s)-réponse (la question est déjà affichée une
+// seule fois au-dessus) — évite de répéter toute la phrase pour chaque proposition.
+function cartonCardsHtml(cards){
+  const c = cards||[];
+  return `<span class="neon-yellow" style="font-weight:800">${c.map(x=>'« '+esc(x)+' »').join(' + ')||'—'}</span>`;
+}
+// Bandeau de scores permanent (points de la manche en cours) affiché sur la borne.
+function cartonScores(board){
+  const b = board||[];
+  if (!b.length) return '';
+  return `<div class="card leaderboard" style="max-width:720px;margin:16px auto 0;text-align:left">
+    <div class="pixel neon-yellow center" style="font-size:13px;margin-bottom:6px">SCORES</div>
+    ${b.map((p,i)=>`<div>${['🥇','🥈','🥉'][i]||(i+1+'.')} ${esc(p.name)} <span class="coins">${p.pts} pt${p.pts>1?'s':''}</span></div>`).join('')}
+  </div>`;
+}
+
+// BOUCHE-TROU !? — question à trou → cartes des joueurs → l'arbitre élit
+// la plus drôle. Les cartes restent anonymes jusqu'au verdict.
+function cartonBorne(act){
+  const adulte = act.level==='adulte';
+  const pill = `<div class="pill ${adulte?'neon-pink':'neon-cyan'}">🃏 BOUCHE-TROU !? · ${esc(act.levelLabel||'')} · MANCHE ${act.round}/${act.totalRounds}</div>`;
+  tickerEl.textContent = `BOUCHE-TROU !? (${act.levelLabel}) — manche ${act.round}/${act.totalRounds}`;
+  const scores = cartonScores(act.leaderboard);
+  const promptCard = `<div class="card glow-box" style="display:inline-block;max-width:1000px;margin-top:14px${adulte?';border-color:var(--neon1)':''}">
+      <h1 class="big ${adulte?'neon-pink':'neon-cyan'}" style="margin:8px 0">${esc(act.prompt||'')}</h1>
+    </div>`;
+  let body;
+
+  if (act.sub==='pick'){
+    body = `
+      ${pill}
+      <p class="big neon-yellow">👑 Arbitre : <b>${esc(act.judgeName||'?')}</b></p>
+      ${promptCard}
+      <p class="big neon-cyan blink" style="margin-top:16px">Choisissez votre carte sur vos téléphones 📱</p>
+      <div class="huge pixel" style="margin-top:10px">${act.submittedCount} / ${act.neededCount}</div>`;
+  }
+  else if (act.sub==='judge'){
+    const subs = act.submissions||[];
+    body = `
+      ${pill}
+      <p class="big" style="max-width:900px;margin:8px auto"><i>${esc(act.prompt||'')}</i></p>
+      <h1 class="huge neon-yellow">👑 ${esc(act.judgeName||'')} DÉLIBÈRE…</h1>
+      <div class="card" style="max-width:860px;margin:12px auto;text-align:left">
+        ${subs.map((s,i)=>`<div style="padding:9px 6px;border-bottom:1px solid rgba(255,255,255,.08)"><b class="neon-cyan">${i+1}.</b> ${cartonCardsHtml(s.cards)}</div>`).join('')||'<div class="muted center">Aucune carte jouée.</div>'}
+      </div>
+      <p class="muted">L'arbitre choisit la plus drôle sur son téléphone.</p>`;
+  }
+  else if (act.sub==='reveal'){
+    const all = act.allSubmissions||[];
+    body = `
+      ${pill}
+      <div class="glow-box" style="display:inline-block;padding:12px 30px;margin:8px 0">
+        <div class="big muted"><i>${esc(act.prompt||'')}</i></div>
+        <div class="huge pixel ${adulte?'neon-pink':'neon-cyan'}" style="margin-top:6px">🏆 ${esc(act.winnerName||'')}</div>
+        <div class="big">${cartonCardsHtml(act.winningCards)}</div>
+      </div>
+      <div class="card" style="max-width:860px;margin:12px auto;text-align:left">
+        ${all.map(s=>`<div style="padding:8px 6px;border-bottom:1px solid rgba(255,255,255,.08)">${s.win?'🏆 ':'▫️ '}${cartonCardsHtml(s.cards)} <span class="muted">— ${esc(s.name)}</span></div>`).join('')}
+      </div>
+      ${act.revealAt?`<p class="big neon-yellow" style="margin-top:10px">⏱ Manche suivante dans <b id="privacyCountdown">${act.autoNextSeconds||14}</b> s…</p>`:''}`;
+  }
+  else if (act.sub==='final'){
+    const board = act.finalBoard||[];
+    return `<div class="center">
+      <h1 class="huge neon-yellow pixel">🏁 BOUCHE-TROU — TERMINÉ !</h1>
+      <div class="card leaderboard" style="max-width:640px;margin:14px auto;text-align:left">
+        ${board.map((p,i)=>`<div>${['🥇','🥈','🥉'][i]||(i+1+'.')} ${esc(p.name)} <span class="coins">${p.pts} pt${p.pts>1?'s':''}</span></div>`).join('')||'<div class="muted center">Pas de score.</div>'}
+      </div>
+      ${board.length?`<p class="big neon-cyan">Bravo ${esc(board[0].name)} — le plus drôle de la soirée ! 🎭</p>`:''}
+    </div>`;
+  }
+  else body = pill;
+
+  return `<div class="center">${body}${scores}</div>`;
 }
 
 function quizBorne(act){

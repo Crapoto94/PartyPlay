@@ -17,7 +17,16 @@ import { NOTE_PALETTE, MELODY, MOSAIC_DEFAULT_WORD, pickMosaicWord,
   PIANO_KEYS_PER_PHONE, PIANO_BASE_MIDI, PIANO_MELODY, pianoNoteInfo,
   pianoDemoSeq, pianoKeyLayout } from '../data/collab.js';
 import { PRIVACY_QUESTIONS, PRIVACY_LEVELS } from '../data/privacy.js';
+import { CARTON_HAND_SIZE, CARTON_DEFAULT_ROUNDS } from '../data/carton.js';
+import { cartonPools, CARTON_LEVELS } from '../store/carton.js';
 import { defaultPlaylistsMap } from '../store/blindtests.js';
+
+// Mélange (Fisher-Yates) — copie mélangée d'un tableau.
+function shuffled(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+  return a;
+}
 
 // Normalise un texte pour comparaison (accents/casse/espaces) — utilisé par les
 // activités « Dessine-moi » et « Mosaïque ».
@@ -112,6 +121,7 @@ export class GameState {
     if (this.pongTimer) { clearInterval(this.pongTimer); this.pongTimer = null; }
     if (this._autoAdvanceTimer) { clearTimeout(this._autoAdvanceTimer); this._autoAdvanceTimer = null; }
     if (this._privacyTimer) { clearTimeout(this._privacyTimer); this._privacyTimer = null; }
+    if (this._cartonTimer) { clearTimeout(this._cartonTimer); this._cartonTimer = null; }
     if (this._roueTimer) { clearTimeout(this._roueTimer); this._roueTimer = null; }
     if (this._briefTimer) { clearTimeout(this._briefTimer); this._briefTimer = null; }
     if (this._drawTimer) { clearTimeout(this._drawTimer); this._drawTimer = null; }
@@ -686,6 +696,37 @@ export class GameState {
       this.activity.yesCount = null;
       this.addLog(`🤫 SANS FILTRE !? (${this.activity.levelLabel}) — répondez en secret sur vos téléphones !`);
     }
+    // Bouche-Trou !? : une question à trou sur la borne, chacun joue une
+    // carte-réponse de sa main, un ARBITRE tournant élit la plus drôle.
+    // Version « Classique » (tout public) ou « 18+ » (cartes crues en plus).
+    // Les questions PERSO du maître de jeu (content.carton.prompts) passent
+    // en PRIORITÉ, avant les questions du catalogue.
+    if (type === 'carton') {
+      const level = opts.level === 'adulte' ? 'adulte' : 'classique';
+      const pools = cartonPools(level);
+      const custom = this._content.carton || {};
+      const customPrompts = (Array.isArray(custom.prompts) ? custom.prompts : [])
+        .map((s) => (s == null ? '' : String(s)).trim()).filter(Boolean);
+      const customAnswers = (Array.isArray(custom.answers) ? custom.answers : [])
+        .map((s) => (s == null ? '' : String(s)).trim()).filter(Boolean);
+      // Questions perso EN TÊTE (prioritaires), puis catalogue mélangé.
+      this.activity.prompts = [...customPrompts, ...shuffled(pools.prompts)];
+      this.activity.answerPool = [...customAnswers, ...pools.answers];
+      this.activity.level = level;
+      this.activity.levelLabel = CARTON_LEVELS[level]?.label || level;
+      this.activity.handSize = CARTON_HAND_SIZE;
+      this.activity.totalRounds = Math.max(1, Math.min(parseInt(opts.rounds, 10) || CARTON_DEFAULT_ROUNDS, 30));
+      this.activity.round = 0;
+      this.activity.promptPos = 0;
+      this.activity.judgePtr = -1;
+      this.activity.order = this.players.filter((p) => p.connected).map((p) => p.id);
+      this.activity.hands = {};
+      this.activity.deck = shuffled(this.activity.answerPool);
+      this.activity.scores = {};
+      this.activity.roundWins = {};
+      this.addLog(`🃏 BOUCHE-TROU !? (${this.activity.levelLabel}) — préparez vos meilleures cartes !`);
+      this._cartonNewRound();
+    }
     // Anecdote : la borne affiche un prompt (souvenir / histoire) à raconter.
     if (type === 'anecdote') {
       const list = this._content.anecdotes || [];
@@ -858,6 +899,7 @@ export class GameState {
     if (a.type === 'mosaic') return this.mosaicPublic(forPlayerId);
     if (a.type === 'draw') return this._drawPublic(forPlayerId);
     if (a.type === 'privacy') return this.privacyPublic(forPlayerId);
+    if (a.type === 'carton') return this.cartonPublic(forPlayerId);
     if (a.type !== 'quiz' && a.type !== 'quiz_vincent' && a.type !== 'blindtest') return a;
     const q = this.quizQuestion();
     const list = a.dynamicBlindtest ? [] : (this.quizDeck(a.deck));
@@ -1125,6 +1167,226 @@ export class GameState {
     };
   }
 
+  // ---- Bouche-Trou !? : cartes à trou jugées par un arbitre tournant ----
+
+  // Pioche une carte-réponse ; recharge le paquet mélangé si épuisé.
+  _cartonDraw() {
+    const a = this.activity;
+    if (!a.deck || !a.deck.length) a.deck = shuffled(a.answerPool || []);
+    return a.deck.pop();
+  }
+
+  // Nombre de trous « ___ » d'une question (au moins 1).
+  _cartonBlanks(prompt) {
+    const m = (prompt || '').match(/___/g);
+    return Math.max(1, m ? m.length : 1);
+  }
+
+  // Recharge les mains de tous les joueurs connectés jusqu'à handSize.
+  _cartonRefill() {
+    const a = this.activity;
+    const size = a.handSize || CARTON_HAND_SIZE;
+    for (const p of this.players.filter((x) => x.connected)) {
+      if (!a.hands[p.id]) a.hands[p.id] = [];
+      while (a.hands[p.id].length < size) {
+        const c = this._cartonDraw();
+        if (c == null) break;
+        a.hands[p.id].push(c);
+      }
+    }
+  }
+
+  // Ordre des sièges (rotation de l'arbitre) : ordre d'arrivée, complété par
+  // les nouveaux connectés en fin de liste.
+  _cartonSeats() {
+    const a = this.activity;
+    const connectedIds = this.players.filter((p) => p.connected).map((p) => p.id);
+    a.order = (a.order || []).filter((id) => connectedIds.includes(id));
+    for (const id of connectedIds) if (!a.order.includes(id)) a.order.push(id);
+    return a.order;
+  }
+
+  // Nouvelle manche : nouvel arbitre, nouvelle question, mains rechargées.
+  _cartonNewRound() {
+    const a = this.activity;
+    if (!a || a.type !== 'carton') return;
+    if (this._cartonTimer) { clearTimeout(this._cartonTimer); this._cartonTimer = null; }
+    const seats = this._cartonSeats();
+    a.round = (a.round || 0) + 1;
+    a.judgePtr = (a.judgePtr ?? -1) + 1;
+    a.judgeId = seats.length ? seats[a.judgePtr % seats.length] : null;
+    if (a.promptPos >= a.prompts.length) a.promptPos = 0; // boucle sur le paquet
+    a.prompt = a.prompts[a.promptPos] || '___';
+    a.blanks = this._cartonBlanks(a.prompt);
+    a.promptPos += 1;
+    this._cartonRefill();
+    a.submissions = {};
+    a.subOrder = [];
+    a.winnerId = null;
+    a.winningCards = null;
+    a.sub = 'pick';
+    this.addLog(`🃏 Bouche-Trou — manche ${a.round}/${a.totalRounds} : ${this.player(a.judgeId)?.name || '?'} est l'arbitre !`);
+    this.touch();
+  }
+
+  // Un joueur joue une (ou deux) carte(s) de sa main.
+  cartonPlay(playerId, indices) {
+    const a = this.activity;
+    if (!a || a.type !== 'carton' || a.sub !== 'pick') return { ok: false };
+    if (playerId === a.judgeId) return { ok: false, judge: true };
+    const p = this.player(playerId);
+    if (!p || !p.connected) return { ok: false };
+    if (a.submissions[playerId]) return { ok: false, already: true };
+    const hand = a.hands[playerId] || [];
+    let idx = Array.isArray(indices) ? indices : [indices];
+    idx = idx.map((n) => parseInt(n, 10)).filter((n) => Number.isInteger(n) && n >= 0 && n < hand.length);
+    idx = [...new Set(idx)];
+    if (idx.length !== a.blanks) return { ok: false, need: a.blanks };
+    a.submissions[playerId] = idx.map((i) => hand[i]);
+    a.hands[playerId] = hand.filter((_, i) => !idx.includes(i));
+    // Auto-clôture quand tous les non-arbitres connectés ont joué.
+    const submitters = this.players.filter((x) => x.connected && x.id !== a.judgeId);
+    if (submitters.length && submitters.every((x) => a.submissions[x.id])) this.cartonClose();
+    else this.touch();
+    return { ok: true };
+  }
+
+  // Clôt les soumissions → jugement (ordre anonyme mélangé).
+  cartonClose() {
+    const a = this.activity;
+    if (!a || a.type !== 'carton' || a.sub !== 'pick') return;
+    const ids = Object.keys(a.submissions);
+    if (!ids.length) return;
+    a.subOrder = shuffled(ids);
+    a.sub = 'judge';
+    this.addLog(`🃏 Bouche-Trou — ${ids.length} carte(s) jouée(s) : à l'arbitre de trancher !`);
+    this.touch();
+  }
+
+  // L'arbitre choisit la soumission gagnante (index dans subOrder).
+  cartonPick(judgeId, choice) {
+    const a = this.activity;
+    if (!a || a.type !== 'carton' || a.sub !== 'judge') return { ok: false };
+    if (judgeId !== a.judgeId) return { ok: false, notJudge: true };
+    const pos = parseInt(choice, 10);
+    if (!Number.isInteger(pos) || pos < 0 || pos >= (a.subOrder || []).length) return { ok: false };
+    const winnerId = a.subOrder[pos];
+    a.winnerId = winnerId;
+    a.winningCards = a.submissions[winnerId] || [];
+    a.scores[winnerId] = (a.scores[winnerId] || 0) + 1;
+    a.roundWins[winnerId] = (a.roundWins[winnerId] || 0) + 1;
+    const w = this.player(winnerId);
+    if (w) w.coins += 1;
+    a.sub = 'reveal';
+    a.revealAt = Date.now();
+    a.autoNextSeconds = 14;
+    this.addLog(`🏆 Bouche-Trou — ${w?.name || '?'} remporte la manche ${a.round} ! (+1 pt, +1 🪙)`);
+    this.touch();
+    if (this._cartonTimer) clearTimeout(this._cartonTimer);
+    this._cartonTimer = setTimeout(() => { this._cartonTimer = null; this.cartonNext(); }, 14000);
+    return { ok: true };
+  }
+
+  // Manche suivante (arbitre ou auto). Après la dernière : classement final.
+  cartonNext() {
+    const a = this.activity;
+    if (this._cartonTimer) { clearTimeout(this._cartonTimer); this._cartonTimer = null; }
+    if (!a || a.type !== 'carton') return;
+    if (a.sub === 'pick') { this.cartonClose(); return; } // sécurité
+    if ((a.round || 0) >= (a.totalRounds || 1)) {
+      a.sub = 'final';
+      a.finalBoard = this.cartonLeaderboard();
+      const top = a.finalBoard[0];
+      this.addLog(top ? `🏁 BOUCHE-TROU terminé — ${top.name} gagne avec ${top.pts} pt(s) !` : '🏁 BOUCHE-TROU terminé.');
+      this.touch();
+      return;
+    }
+    this._cartonNewRound();
+  }
+
+  // Passage FORCÉ à la manche suivante (GM) depuis n'importe quelle phase, même
+  // sans vainqueur (utile si l'arbitre est absent ou qu'un blocage survient).
+  cartonSkip() {
+    const a = this.activity;
+    if (this._cartonTimer) { clearTimeout(this._cartonTimer); this._cartonTimer = null; }
+    if (!a || a.type !== 'carton') return;
+    if ((a.round || 0) >= (a.totalRounds || 1)) {
+      a.sub = 'final';
+      a.finalBoard = this.cartonLeaderboard();
+      const top = a.finalBoard[0];
+      this.addLog(top ? `🏁 BOUCHE-TROU terminé — ${top.name} gagne avec ${top.pts} pt(s) !` : '🏁 BOUCHE-TROU terminé.');
+      this.touch();
+      return;
+    }
+    this.addLog('⏭️ Bouche-Trou — manche passée par le maître de jeu.');
+    this._cartonNewRound();
+  }
+
+  cartonLeaderboard() {
+    const a = this.activity;
+    if (!a || a.type !== 'carton') return [];
+    return this.players
+      .filter((p) => p.connected || (a.scores[p.id] || 0) > 0)
+      .map((p) => ({ id: p.id, name: p.name, avatar: p.avatar, pts: a.scores[p.id] || 0 }))
+      .sort((x, y) => y.pts - x.pts);
+  }
+
+  // Remplit les trous d'une question avec des cartes (affichage).
+  _cartonFill(prompt, cards) {
+    let i = 0;
+    const filled = (prompt || '').replace(/___/g, () => {
+      const c = (cards && cards[i] != null) ? cards[i] : '___';
+      i++;
+      return `« ${c} »`;
+    });
+    if (i === 0 && cards && cards.length) return `${prompt} → « ${cards.join(' + ')} »`;
+    return filled;
+  }
+
+  // Vue publique : la main n'est visible QUE par son propriétaire ; les
+  // soumissions restent anonymes jusqu'à la révélation du gagnant.
+  cartonPublic(forPlayerId) {
+    const a = this.activity;
+    const connected = this.players.filter((p) => p.connected);
+    const submitters = connected.filter((p) => p.id !== a.judgeId);
+    const iAmJudge = forPlayerId != null && forPlayerId === a.judgeId;
+    const myHand = (forPlayerId != null && a.hands[forPlayerId])
+      ? a.hands[forPlayerId].map((text, i) => ({ i, text })) : [];
+    const base = {
+      type: 'carton', state: a.state, level: a.level, levelLabel: a.levelLabel,
+      sub: a.sub, round: a.round, totalRounds: a.totalRounds,
+      prompt: a.prompt || '', blanks: a.blanks || 1,
+      judgeId: a.judgeId, judgeName: this.player(a.judgeId)?.name || '?',
+      playerCount: connected.length,
+      submittedCount: Object.keys(a.submissions || {}).length,
+      neededCount: submitters.length,
+      iAmJudge, myHand,
+      mySubmitted: forPlayerId != null && !!(a.submissions || {})[forPlayerId],
+      mySubmission: (forPlayerId != null && (a.submissions || {})[forPlayerId]) || null,
+      // Classement TOUJOURS exposé : la borne l'affiche en permanence.
+      leaderboard: this.cartonLeaderboard(),
+    };
+    if (a.sub === 'judge') {
+      base.submissions = (a.subOrder || []).map((pid, i) => ({
+        i, cards: a.submissions[pid], filled: this._cartonFill(a.prompt, a.submissions[pid]),
+      }));
+    }
+    if (a.sub === 'reveal') {
+      base.winnerName = this.player(a.winnerId)?.name || '?';
+      base.winnerAvatar = this.player(a.winnerId)?.avatar || null;
+      base.winningCards = a.winningCards || [];
+      base.winningFilled = this._cartonFill(a.prompt, a.winningCards);
+      base.revealAt = a.revealAt || null;
+      base.autoNextSeconds = a.autoNextSeconds || null;
+      base.allSubmissions = (a.subOrder || []).map((pid) => ({
+        name: this.player(pid)?.name || '?', cards: a.submissions[pid],
+        filled: this._cartonFill(a.prompt, a.submissions[pid]), win: pid === a.winnerId,
+      }));
+    }
+    if (a.sub === 'final') base.finalBoard = a.finalBoard || this.cartonLeaderboard();
+    return base;
+  }
+
   // ---- Simulation : 4 joueurs de test (1 pilotable + 3 bots) --------
   // Les joueurs « sim » sont ajoutés dans la config par la route GM ;
   // ici on les connecte et on fait jouer les bots automatiquement.
@@ -1159,6 +1421,15 @@ export class GameState {
       if (a.type === 'privacy') {
         if (a.sub === 'answer' && !(b.id in a.answers)) this.privacyAnswer(b.id, Math.random() < 0.5);
         else if (a.sub === 'guess' && !(b.id in a.guesses)) this.privacyGuess(b.id, rint(Object.keys(a.answers).length + 1));
+      } else if (a.type === 'carton') {
+        if (a.sub === 'pick' && b.id !== a.judgeId && !a.submissions[b.id]) {
+          const hand = a.hands[b.id] || [];
+          const need = a.blanks || 1;
+          if (hand.length >= need) this.cartonPlay(b.id, shuffled([...hand.keys()]).slice(0, need));
+        } else if (a.sub === 'judge' && b.id === a.judgeId) {
+          const n = (a.subOrder || []).length;
+          if (n) this.cartonPick(b.id, rint(n));
+        }
       } else if (a.type === 'quiz' || a.type === 'quiz_vincent' || a.type === 'blindtest') {
         const q = this.quizQuestion();
         if (a.sub === 'question' && q && !a.answers[b.id]) this.quizAnswer(b.id, rint((q.choices || []).length || 1));
@@ -1186,6 +1457,7 @@ export class GameState {
   stopActivity() {
     if (this._briefTimer) { clearTimeout(this._briefTimer); this._briefTimer = null; }
     if (this._privacyTimer) { clearTimeout(this._privacyTimer); this._privacyTimer = null; }
+    if (this._cartonTimer) { clearTimeout(this._cartonTimer); this._cartonTimer = null; }
     if (this._roueTimer) { clearTimeout(this._roueTimer); this._roueTimer = null; }
     if (this.pacmanTimer) { clearInterval(this.pacmanTimer); this.pacmanTimer = null; }
     if (this.tetrisTimer) { clearInterval(this.tetrisTimer); this.tetrisTimer = null; }
