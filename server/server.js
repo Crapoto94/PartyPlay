@@ -30,7 +30,11 @@ import { PRIVACY_QUESTIONS, PRIVACY_LEVELS } from './data/privacy.js';
 import { getBlindtests, saveBlindtests, defaultPlaylistsMap } from './store/blindtests.js';
 import { getCarton, saveCarton, CARTON_LEVELS } from './store/carton.js';
 import { getJustone, saveJustone } from './store/justone.js';
-import { getTtcq, saveTtcq } from './store/ttcq.js';
+import { getTtcq, saveTtcq, resetTtcq } from './store/ttcq.js';
+import { getQuiz, saveQuiz } from './store/quiz.js';
+import { getGages, saveGages } from './store/gages.js';
+import { getPhotos, savePhotos } from './store/photos.js';
+import { getSpotlight, saveSpotlight } from './store/spotlight.js';
 import { getGoogleConfig, googleClientId, googleEnabled, saveGoogleConfig } from './store/google.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -450,6 +454,59 @@ app.post('/api/admin/ttcq', (req, res) => {
   if (!requireAdmin(req, res)) return;
   res.json({ ok: true, themes: saveTtcq(req.body?.themes || []) });
 });
+app.post('/api/admin/ttcq/reset', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  res.json({ ok: true, themes: resetTtcq() });
+});
+
+// =====================================================================
+//  QUIZ — banque de questions (admin général)
+// =====================================================================
+app.get('/api/admin/quiz', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  res.json({ decks: getQuiz() });
+});
+app.post('/api/admin/quiz', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  res.json({ ok: true, decks: saveQuiz(req.body?.decks || {}) });
+});
+
+// =====================================================================
+//  GAGES — catalogue de défis (admin général)
+// =====================================================================
+app.get('/api/admin/gages', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  res.json({ gages: getGages() });
+});
+app.post('/api/admin/gages', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  res.json({ ok: true, gages: saveGages(req.body?.gages || []) });
+});
+
+// =====================================================================
+//  DÉFIS PHOTO — missions photo par avatar (admin général)
+// =====================================================================
+app.get('/api/admin/photos', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  res.json({ missions: getPhotos() });
+});
+app.post('/api/admin/photos', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  res.json({ ok: true, missions: savePhotos(req.body?.missions || {}) });
+});
+
+// =====================================================================
+//  DEVINE-MOI (SPOTLIGHT) — défis scène (admin général)
+// =====================================================================
+app.get('/api/admin/spotlight', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  res.json({ defis: getSpotlight() });
+});
+app.post('/api/admin/spotlight', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  res.json({ ok: true, defis: saveSpotlight(req.body?.defis || []) });
+});
+
 app.post('/api/admin/promos', (req, res) => {
   if (!requireAdmin(req, res)) return;
   const { code, plan, maxUses, note, expiresAt } = req.body || {};

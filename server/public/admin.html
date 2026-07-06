@@ -89,6 +89,18 @@
           <a class="nav-item" data-sec="blindtests" onclick="showSection('blindtests')">
             <span>🎵</span> Blind-tests
           </a>
+          <a class="nav-item" data-sec="quiz" onclick="showSection('quiz')">
+            <span>❓</span> Quiz
+          </a>
+          <a class="nav-item" data-sec="gages" onclick="showSection('gages')">
+            <span>💪</span> Gages / Défis
+          </a>
+          <a class="nav-item" data-sec="photos" onclick="showSection('photos')">
+            <span>📸</span> Défis photo
+          </a>
+          <a class="nav-item" data-sec="spotlight" onclick="showSection('spotlight')">
+            <span>🎭</span> Devine-moi
+          </a>
           <a class="nav-item" data-sec="legal" onclick="showSection('legal')">
             <span>⚖️</span> Légal
           </a>
@@ -392,6 +404,7 @@
               </div>
               <input id="ttcqSearch" class="ttcq-search" type="search" placeholder="🔍 Rechercher un thème…" oninput="renderTtcqAdmin()" style="margin-bottom:2px">
               <button class="btn" onclick="saveTtcqAdmin()">💾 Enregistrer</button>
+              <button class="btn danger" onclick="resetTtcqAdmin()" title="Recharge les 343 thèmes d'origine (annule toute sauvegarde précédente)">🔄 Réinitialiser aux valeurs par défaut</button>
               <span id="ttcqSaved" class="muted" style="font-size:13px"></span>
               <span class="tag" id="ttcqCount" style="font-size:12px">—</span>
               <span id="ttcqCatList" class="muted" style="font-size:12px"></span>
@@ -445,6 +458,74 @@
           </div>
         </section>
 
+        <!-- ===== SECTION : QUIZ ===== -->
+        <section id="sec-quiz" class="admin-section" style="display:none">
+          <h1 class="section-title">❓ Quiz — Banque de questions</h1>
+          <p class="muted" style="margin-bottom:20px">Catalogue des <strong>decks de quiz</strong> proposés par défaut à chaque nouvelle fête. Chaque deck contient 15 questions classées du plus facile au plus dur, avec 4 choix et un index de réponse correcte.</p>
+
+          <div class="card">
+            <div class="inline" style="gap:10px;flex-wrap:wrap;align-items:flex-end">
+              <button class="btn" onclick="qzAddDeck()">➕ Ajouter un deck</button>
+              <button class="btn" onclick="saveQuizAdmin()">💾 Enregistrer</button>
+              <span id="qzSaved" class="muted"></span>
+              <span class="tag" id="qzCount">—</span>
+            </div>
+          </div>
+
+          <div id="qzList"></div>
+        </section>
+
+        <!-- ===== SECTION : GAGES / DÉFIS ===== -->
+        <section id="sec-gages" class="admin-section" style="display:none">
+          <h1 class="section-title">💪 Gages / Défis</h1>
+          <p class="muted" style="margin-bottom:20px">Catalogue des <strong>gages</strong> proposés par défaut à chaque nouvelle fête (Roue des gages, défis aléatoires).</p>
+
+          <div class="card">
+            <div class="inline" style="gap:10px;flex-wrap:wrap;align-items:flex-end">
+              <button class="btn" onclick="ggAdd()">➕ Ajouter un gage</button>
+              <button class="btn" onclick="saveGagesAdmin()">💾 Enregistrer</button>
+              <span id="ggSaved" class="muted"></span>
+              <span class="tag" id="ggCount">—</span>
+            </div>
+          </div>
+
+          <div id="ggList"></div>
+        </section>
+
+        <!-- ===== SECTION : DÉFIS PHOTO ===== -->
+        <section id="sec-photos" class="admin-section" style="display:none">
+          <h1 class="section-title">📸 Défis photo</h1>
+          <p class="muted" style="margin-bottom:20px">Catalogue des <strong>missions photo</strong> par avatar, proposées par défaut à chaque nouvelle fête. Chaque avatar peut avoir plusieurs missions (label + description).</p>
+
+          <div class="card">
+            <div class="inline" style="gap:10px;flex-wrap:wrap;align-items:flex-end">
+              <button class="btn" onclick="phAddAvatar()">➕ Ajouter un avatar</button>
+              <button class="btn" onclick="savePhotosAdmin()">💾 Enregistrer</button>
+              <span id="phSaved" class="muted"></span>
+              <span class="tag" id="phCount">—</span>
+            </div>
+          </div>
+
+          <div id="phList"></div>
+        </section>
+
+        <!-- ===== SECTION : DEVINE-MOI (SPOTLIGHT) ===== -->
+        <section id="sec-spotlight" class="admin-section" style="display:none">
+          <h1 class="section-title">🎭 Devine-moi (Spotlight)</h1>
+          <p class="muted" style="margin-bottom:20px">Catalogue des <strong>défis scène</strong> (Spotlight) proposés par défaut. Un défi par ligne. Le maître du jeu en choisit un (ou tire au sort) et la salle vote « réussi / raté ».</p>
+
+          <div class="card">
+            <div class="field">
+              <textarea id="slDefis" rows="16" style="width:100%" placeholder="Un défi par ligne..."></textarea>
+            </div>
+            <div class="inline">
+              <button class="btn" onclick="saveSpotlightAdmin()">💾 Enregistrer</button>
+              <span id="slSaved" class="muted"></span>
+              <span class="tag" id="slCount">—</span>
+            </div>
+          </div>
+        </section>
+
         <!-- ===== SECTION : LÉGAL ===== -->
         <section id="sec-legal" class="admin-section" style="display:none">
           <h1 class="section-title">⚖️ Pages légales</h1>
@@ -491,14 +572,14 @@ const themeLabel = { retro:'Rétro', neon:'Néon', chic:'Chic', kids:'Enfant', c
 const ALL_THEMES = ['retro','neon','chic','kids','casino'];
 const PLAN_ORDER = ['free','full','infinite'];
 let PWD = sessionStorage.getItem('admPwd') || '';
-let PRICING = null, BREVO = null, _emailLoaded = false, _legalLoaded = false, _promosLoaded = false, _privacyLoaded = false, _btLoaded = false, _cartonLoaded = false, _ttcqLoaded = false, _googleLoaded = false, _justoneLoaded = false;
+let PRICING = null, BREVO = null, _emailLoaded = false, _legalLoaded = false, _promosLoaded = false, _privacyLoaded = false, _btLoaded = false, _cartonLoaded = false, _ttcqLoaded = false, _googleLoaded = false, _justoneLoaded = false, _quizLoaded = false, _gagesLoaded = false, _photosLoaded = false, _spotlightLoaded = false;
 let PRIVACY_DATA = null;
 let CARTON_DATA = null;
 let TTCQ_DATA = null;
 let JUSTONE_DATA = null;
 
 function headers() { return { 'Content-Type':'application/json', 'x-admin-password': PWD }; }
-function esc(s) { return (s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function esc(s) { return String(s==null?'':s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
 // ---- Navigation sidebar ----
 function showSection(name) {
@@ -516,6 +597,10 @@ function showSection(name) {
   if (name === 'google' && !_googleLoaded) { _googleLoaded = true; loadGoogleConfig(); }
   if (name === 'ttcq' && !_ttcqLoaded) { _ttcqLoaded = true; loadTtcqAdmin(); }
   if (name === 'justone' && !_justoneLoaded) { _justoneLoaded = true; loadJustoneAdmin(); }
+  if (name === 'quiz' && !_quizLoaded) { _quizLoaded = true; loadQuizAdmin(); }
+  if (name === 'gages' && !_gagesLoaded) { _gagesLoaded = true; loadGagesAdmin(); }
+  if (name === 'photos' && !_photosLoaded) { _photosLoaded = true; loadPhotosAdmin(); }
+  if (name === 'spotlight' && !_spotlightLoaded) { _spotlightLoaded = true; loadSpotlightAdmin(); }
 }
 
 // ---- Auth ----
@@ -1211,6 +1296,24 @@ function ttcqDeleteTheme(btn) {
     ttcqUpdateMeta();
   }, 200);
 }
+async function resetTtcqAdmin() {
+  if (!confirm('Recharger les 343 thèmes par défaut ? Toute modification enregistrée précédemment sera perdue.')) return;
+  try {
+    const r = await fetch('/api/admin/ttcq/reset', { method: 'POST', headers: headers() });
+    const d = await r.json();
+    if (!r.ok) throw new Error(d.error || 'Erreur ' + r.status);
+    TTCQ_DATA = d.themes || [];
+    renderTtcqAdmin();
+    const s = document.getElementById('ttcqSaved');
+    s.textContent = ' ✓ ' + TTCQ_DATA.length + ' thèmes par défaut rechargés';
+    s.style.color = 'var(--a-ok)';
+    setTimeout(() => { s.textContent = ''; s.style.color = ''; }, 2500);
+  } catch (e) {
+    const s = document.getElementById('ttcqSaved');
+    s.textContent = ' ✗ ' + e.message;
+    s.style.color = 'var(--a-danger)';
+  }
+}
 async function saveTtcqAdmin() {
   try {
     const level = document.getElementById('ttcqLevel').value;
@@ -1352,6 +1455,317 @@ async function saveLegalContent() {
   const s = document.getElementById('lSaved');
   if (d.ok) { s.textContent = '✓ Enregistré'; setTimeout(() => s.textContent = '', 2000); }
   else { s.textContent = '✗ Erreur'; s.style.color = 'var(--a-danger)'; }
+}
+
+// ---- Quiz ----
+let QZ_DATA = null;
+async function loadQuizAdmin() {
+  try {
+    const r = await fetch('/api/admin/quiz', { headers: headers() });
+    if (!r.ok) { document.getElementById('qzCount').textContent = 'Erreur ('+r.status+')'; return; }
+    QZ_DATA = (await r.json()).decks || {};
+    renderQuizAdmin();
+  } catch { document.getElementById('qzCount').textContent = 'Erreur réseau'; }
+}
+function renderQuizAdmin() {
+  if (!QZ_DATA) return;
+  const el = document.getElementById('qzList');
+  const keys = Object.keys(QZ_DATA);
+  document.getElementById('qzCount').textContent = keys.length + ' deck(s)';
+  if (!keys.length) { el.innerHTML = '<p class="muted" style="padding:20px 0">Aucun deck. Cliquez sur « Ajouter un deck ».</p>'; return; }
+  el.innerHTML = keys.map(k => {
+    const qs = QZ_DATA[k] || [];
+    const filled = qs.filter(q => q && q.prompt).length;
+    return `<div class="card" style="margin-top:12px;padding:12px 16px">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <input type="text" class="qz-deck-name" value="${esc(k)}" placeholder="Nom du deck" style="flex:1;font-size:15px;font-weight:600;background:transparent;border:1px solid var(--a-border);border-radius:6px;padding:6px 10px">
+        <span class="tag">${qs.length} question(s) · ${filled} remplie(s)</span>
+        <button class="btn secondary" style="width:auto;padding:4px 12px;font-size:12px" onclick="qzAddQuestion(this)">➕ Question</button>
+        <button class="btn danger" style="width:auto;padding:4px 12px;font-size:12px" onclick="qzDeleteDeck(this)">✕ Suppr.</button>
+      </div>
+      <div class="qz-questions">${qs.map((q, i) => qzQuestionHtml(q, i)).join('')}</div>
+    </div>`;
+  }).join('');
+}
+function qzQuestionHtml(q, i) {
+  const p = esc(q ? q.prompt || '' : '');
+  const c = (q && q.choices) || ['', '', '', ''];
+  const a = q ? (q.a ?? 0) : 0;
+  const pts = q ? (q.points || 50) : 50;
+  const choicesHtml = c.map((ch, ci) =>
+    `<div class="field" style="margin:0;flex:1;min-width:60px"><label style="font-size:10px;color:var(--a-muted);font-weight:700">${'ABCD'[ci]}</label>
+      <input type="text" class="qz-choice" data-ci="${ci}" value="${esc(ch||'')}" placeholder="Choix ${'ABCD'[ci]}" style="font-size:12px;background:rgba(0,0,0,.1);border:1px solid rgba(255,255,255,.06);border-radius:6px;padding:4px 6px"></div>`
+  ).join('');
+  return `<div class="qz-question" style="background:rgba(0,0,0,.08);border-radius:8px;padding:8px 10px;margin-bottom:8px;border:1px solid rgba(255,255,255,.04)">
+    <div style="display:flex;gap:8px;align-items:flex-start;margin-bottom:4px">
+      <span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.06);font-size:11px;font-weight:700;flex-shrink:0">${i+1}</span>
+      <div class="field" style="margin:0;flex:4"><label style="font-size:10px;color:var(--a-muted)">Question</label>
+        <input type="text" class="qz-prompt" value="${p}" placeholder="Question..." style="font-size:13px;background:rgba(0,0,0,.1);border:1px solid rgba(255,255,255,.06);border-radius:6px;padding:5px 8px;width:100%"></div>
+      <div class="field" style="margin:0;width:70px"><label style="font-size:10px;color:var(--a-muted)">Points</label>
+        <input type="number" class="qz-points" value="${pts}" min="0" step="5" style="font-size:12px;background:rgba(0,0,0,.1);border:1px solid rgba(255,255,255,.06);border-radius:6px;padding:4px 6px;width:100%"></div>
+      <button class="btn danger" style="width:auto;padding:2px 8px;font-size:11px;margin-top:16px" onclick="qzDeleteQuestion(this)">✕</button>
+    </div>
+    <div style="display:flex;gap:6px;align-items:flex-end;flex-wrap:wrap;padding-left:32px">
+      ${choicesHtml}
+      <div class="field" style="margin:0;width:70px"><label style="font-size:10px;color:var(--a-muted);font-weight:700">Correcte</label>
+        <select class="qz-answer" style="font-size:12px;background:rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.06);border-radius:6px;padding:4px 6px">
+          ${[0,1,2,3].map(ci => `<option value="${ci}"${ci===a?' selected':''}>${'ABCD'[ci]}</option>`).join('')}
+        </select>
+      </div>
+    </div>
+  </div>`;
+}
+function qzCollect() {
+  const decks = {};
+  document.querySelectorAll('#qzList .card').forEach(card => {
+    const name = card.querySelector('.qz-deck-name').value.trim();
+    if (!name) return;
+    const questions = [];
+    card.querySelectorAll('.qz-question').forEach(el => {
+      const prompt = el.querySelector('.qz-prompt').value.trim();
+      const choices = [];
+      el.querySelectorAll('.qz-choice').forEach(inp => { choices[parseInt(inp.dataset.ci)] = inp.value.trim(); });
+      const a = parseInt(el.querySelector('.qz-answer').value, 10);
+      const points = parseInt(el.querySelector('.qz-points').value, 10) || 50;
+      questions.push({ prompt, choices: choices.length ? choices : ['','','',''], answer: a, points, media: null });
+    });
+    decks[name] = questions;
+  });
+  return decks;
+}
+function qzAddDeck() {
+  const name = prompt('Nom du nouveau deck :');
+  if (!name || !name.trim()) return;
+  QZ_DATA[name.trim()] = [];
+  renderQuizAdmin();
+}
+function qzAddQuestion(btn) {
+  const card = btn.closest('.card');
+  const qs = card.querySelector('.qz-questions');
+  const deckName = card.querySelector('.qz-deck-name').value.trim();
+  if (!deckName) { alert('Donnez d\'abord un nom au deck.'); return; }
+  if (!QZ_DATA[deckName]) QZ_DATA[deckName] = [];
+  const idx = QZ_DATA[deckName].length;
+  QZ_DATA[deckName].push({ prompt: '', choices: ['', '', '', ''], answer: 0, points: 50, media: null });
+  qs.insertAdjacentHTML('beforeend', qzQuestionHtml({ prompt: '', choices: ['', '', '', ''], answer: 0, points: 50 }, idx));
+}
+function qzDeleteDeck(btn) {
+  if (!confirm('Supprimer ce deck ?')) return;
+  btn.closest('.card').remove();
+}
+function qzDeleteQuestion(btn) {
+  if (!confirm('Supprimer cette question ?')) return;
+  const q = btn.closest('.qz-question');
+  q.style.transition = 'opacity .2s';
+  q.style.opacity = '0';
+  setTimeout(() => q.remove(), 200);
+}
+async function saveQuizAdmin() {
+  const decks = qzCollect();
+  const r = await fetch('/api/admin/quiz', { method:'POST', headers: headers(), body: JSON.stringify({ decks }) });
+  const d = await r.json();
+  if (d.decks) QZ_DATA = d.decks;
+  renderQuizAdmin();
+  const s = document.getElementById('qzSaved');
+  s.textContent = ' ✓ enregistré'; s.style.color = 'var(--a-ok)';
+  setTimeout(() => { s.textContent = ''; s.style.color = ''; }, 1800);
+}
+
+// ---- Gages / Défis ----
+let GG_DATA = null;
+async function loadGagesAdmin() {
+  try {
+    const r = await fetch('/api/admin/gages', { headers: headers() });
+    if (!r.ok) { document.getElementById('ggCount').textContent = 'Erreur ('+r.status+')'; return; }
+    GG_DATA = (await r.json()).gages || [];
+    renderGagesAdmin();
+  } catch { document.getElementById('ggCount').textContent = 'Erreur réseau'; }
+}
+function renderGagesAdmin() {
+  if (!GG_DATA) return;
+  const el = document.getElementById('ggList');
+  document.getElementById('ggCount').textContent = GG_DATA.length + ' gage(s)';
+  if (!GG_DATA.length) { el.innerHTML = '<p class="muted" style="padding:20px 0">Aucun gage. Cliquez sur « Ajouter un gage ».</p>'; return; }
+  el.innerHTML = `<table class="list"><thead><tr>
+    <th style="width:80px">ID</th>
+    <th style="width:140px">Titre</th>
+    <th>Description</th>
+    <th>Alternative</th>
+    <th style="width:60px">Intens.</th>
+    <th style="width:120px">Pools</th>
+    <th style="width:40px"></th>
+  </tr></thead><tbody>${GG_DATA.map((g, i) => gageRowHtml(g, i)).join('')}</tbody></table>`;
+}
+function gageRowHtml(g, i) {
+  const pools = ['solo','duel','collectif','sport','rock','fun','defi','vincent'];
+  const poolChecks = pools.map(p =>
+    `<label style="display:inline-flex;align-items:center;gap:2px;margin:0 4px 0 0;font-size:11px;cursor:pointer">
+      <input type="checkbox" class="gg-pool" value="${p}" ${(g.pool||[]).includes(p)?'checked':''} style="width:auto;margin:0">${p.slice(0,3)}</label>`
+  ).join('');
+  return `<tr>
+    <td><input type="text" class="gg-id" value="${esc(g.id||'')}" placeholder="id" style="width:70px;font-size:11px;background:rgba(0,0,0,.1);border:1px solid rgba(255,255,255,.06);border-radius:4px;padding:3px 5px"></td>
+    <td><input type="text" class="gg-titre" value="${esc(g.titre||'')}" placeholder="Titre" style="width:130px;font-size:12px;background:rgba(0,0,0,.1);border:1px solid rgba(255,255,255,.06);border-radius:4px;padding:3px 5px"></td>
+    <td><input type="text" class="gg-desc" value="${esc(g.desc||'')}" placeholder="Description" style="width:100%;font-size:12px;background:rgba(0,0,0,.1);border:1px solid rgba(255,255,255,.06);border-radius:4px;padding:3px 5px"></td>
+    <td><input type="text" class="gg-alt" value="${esc(g.alt||'')}" placeholder="Alternative" style="width:100%;font-size:12px;background:rgba(0,0,0,.1);border:1px solid rgba(255,255,255,.06);border-radius:4px;padding:3px 5px"></td>
+    <td><select class="gg-intensity" style="font-size:12px;background:rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.06);border-radius:4px;padding:3px 4px">
+      ${[1,2,3].map(v => `<option value="${v}"${g.intensity===v?' selected':''}>${v}</option>`).join('')}
+    </select></td>
+    <td style="font-size:11px">${poolChecks}</td>
+    <td><button class="btn danger" style="width:auto;padding:2px 8px;font-size:11px" onclick="ggDelete(this)">✕</button></td>
+  </tr>`;
+}
+function ggCollect() {
+  const gages = [];
+  document.querySelectorAll('#ggList tbody tr').forEach(row => {
+    const titre = row.querySelector('.gg-titre').value.trim();
+    if (!titre) return;
+    const pool = [...row.querySelectorAll('.gg-pool:checked')].map(c => c.value);
+    gages.push({
+      id: row.querySelector('.gg-id').value.trim() || 'gage_' + Date.now(),
+      titre,
+      desc: row.querySelector('.gg-desc').value.trim(),
+      alt: row.querySelector('.gg-alt').value.trim(),
+      intensity: parseInt(row.querySelector('.gg-intensity').value, 10) || 1,
+      pool,
+    });
+  });
+  return gages;
+}
+function ggAdd() {
+  if (!GG_DATA) GG_DATA = [];
+  GG_DATA.push({ id: 'gage_' + Date.now(), titre: '', desc: '', alt: '', intensity: 1, pool: [] });
+  renderGagesAdmin();
+}
+function ggDelete(btn) {
+  if (!confirm('Supprimer ce gage ?')) return;
+  const row = btn.closest('tr');
+  row.style.transition = 'opacity .2s';
+  row.style.opacity = '0';
+  setTimeout(() => { row.remove(); }, 200);
+}
+async function saveGagesAdmin() {
+  const gages = ggCollect();
+  const r = await fetch('/api/admin/gages', { method:'POST', headers: headers(), body: JSON.stringify({ gages }) });
+  const d = await r.json();
+  if (d.gages) GG_DATA = d.gages;
+  renderGagesAdmin();
+  const s = document.getElementById('ggSaved');
+  s.textContent = ' ✓ enregistré'; s.style.color = 'var(--a-ok)';
+  setTimeout(() => { s.textContent = ''; s.style.color = ''; }, 1800);
+}
+
+// ---- Défis photo ----
+let PH_DATA = null;
+async function loadPhotosAdmin() {
+  try {
+    const r = await fetch('/api/admin/photos', { headers: headers() });
+    if (!r.ok) { document.getElementById('phCount').textContent = 'Erreur ('+r.status+')'; return; }
+    PH_DATA = (await r.json()).missions || {};
+    renderPhotosAdmin();
+  } catch { document.getElementById('phCount').textContent = 'Erreur réseau'; }
+}
+function renderPhotosAdmin() {
+  if (!PH_DATA) return;
+  const el = document.getElementById('phList');
+  const keys = Object.keys(PH_DATA);
+  const total = keys.reduce((s, k) => s + (PH_DATA[k]||[]).length, 0);
+  document.getElementById('phCount').textContent = keys.length + ' avatar(s) · ' + total + ' mission(s)';
+  if (!keys.length) { el.innerHTML = '<p class="muted" style="padding:20px 0">Aucun avatar. Cliquez sur « Ajouter un avatar ».</p>'; return; }
+  el.innerHTML = keys.map(k => {
+    const missions = PH_DATA[k] || [];
+    return `<div class="card" style="margin-top:12px;padding:12px 16px">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <input type="text" class="ph-avatar" value="${esc(k)}" placeholder="Clé avatar" style="flex:1;font-size:15px;font-weight:600;background:transparent;border:1px solid var(--a-border);border-radius:6px;padding:6px 10px">
+        <span class="tag">${missions.length} mission(s)</span>
+        <button class="btn secondary" style="width:auto;padding:4px 12px;font-size:12px" onclick="phAddMission(this)">➕ Mission</button>
+        <button class="btn danger" style="width:auto;padding:4px 12px;font-size:12px" onclick="phDeleteAvatar(this)">✕ Suppr.</button>
+      </div>
+      <div class="ph-missions">${missions.map((m, i) => phMissionHtml(m, i)).join('')}</div>
+    </div>`;
+  }).join('');
+}
+function phMissionHtml(m, i) {
+  return `<div class="ph-mission" style="background:rgba(0,0,0,.08);border-radius:8px;padding:8px 10px;margin-bottom:6px;display:flex;gap:10px;align-items:flex-start">
+    <span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.06);font-size:11px;font-weight:700;flex-shrink:0;margin-top:2px">${i+1}</span>
+    <div class="field" style="margin:0;flex:1"><label style="font-size:10px;color:var(--a-muted)">Label</label>
+      <input type="text" class="ph-label" value="${esc(m.label||'')}" placeholder="Nom de la mission" style="font-size:13px;background:rgba(0,0,0,.1);border:1px solid rgba(255,255,255,.06);border-radius:6px;padding:5px 8px;width:100%"></div>
+    <div class="field" style="margin:0;flex:2"><label style="font-size:10px;color:var(--a-muted)">Description</label>
+      <input type="text" class="ph-desc" value="${esc(m.desc||'')}" placeholder="Description du défi" style="font-size:13px;background:rgba(0,0,0,.1);border:1px solid rgba(255,255,255,.06);border-radius:6px;padding:5px 8px;width:100%"></div>
+    <button class="btn danger" style="width:auto;padding:2px 8px;font-size:11px;margin-top:14px" onclick="phDeleteMission(this)">✕</button>
+  </div>`;
+}
+function phCollect() {
+  const missions = {};
+  document.querySelectorAll('#phList .card').forEach(card => {
+    const key = card.querySelector('.ph-avatar').value.trim();
+    if (!key) return;
+    const list = [];
+    card.querySelectorAll('.ph-mission').forEach(el => {
+      const label = el.querySelector('.ph-label').value.trim();
+      const desc = el.querySelector('.ph-desc').value.trim();
+      if (label) list.push({ label, desc });
+    });
+    missions[key] = list;
+  });
+  return missions;
+}
+function phAddAvatar() {
+  const name = prompt('Clé de l\'avatar (ex: my_avatar) :');
+  if (!name || !name.trim()) return;
+  PH_DATA[name.trim()] = [];
+  renderPhotosAdmin();
+}
+function phAddMission(btn) {
+  const card = btn.closest('.card');
+  const key = card.querySelector('.ph-avatar').value.trim();
+  if (!key) { alert('Donnez d\'abord une clé à l\'avatar.'); return; }
+  if (!PH_DATA[key]) PH_DATA[key] = [];
+  const idx = PH_DATA[key].length;
+  PH_DATA[key].push({ label: '', desc: '' });
+  card.querySelector('.ph-missions').insertAdjacentHTML('beforeend', phMissionHtml({ label: '', desc: '' }, idx));
+}
+function phDeleteAvatar(btn) {
+  if (!confirm('Supprimer cet avatar et ses missions ?')) return;
+  btn.closest('.card').remove();
+}
+function phDeleteMission(btn) {
+  btn.closest('.ph-mission').remove();
+}
+async function savePhotosAdmin() {
+  const missions = phCollect();
+  const r = await fetch('/api/admin/photos', { method:'POST', headers: headers(), body: JSON.stringify({ missions }) });
+  const d = await r.json();
+  if (d.missions) PH_DATA = d.missions;
+  renderPhotosAdmin();
+  const s = document.getElementById('phSaved');
+  s.textContent = ' ✓ enregistré'; s.style.color = 'var(--a-ok)';
+  setTimeout(() => { s.textContent = ''; s.style.color = ''; }, 1800);
+}
+
+// ---- Spotlight / Devine-moi ----
+let SL_DATA = null;
+async function loadSpotlightAdmin() {
+  try {
+    const r = await fetch('/api/admin/spotlight', { headers: headers() });
+    if (!r.ok) { document.getElementById('slCount').textContent = 'Erreur ('+r.status+')'; return; }
+    SL_DATA = (await r.json()).defis || [];
+    renderSpotlightAdmin();
+  } catch { document.getElementById('slCount').textContent = 'Erreur réseau'; }
+}
+function renderSpotlightAdmin() {
+  if (!SL_DATA) return;
+  document.getElementById('slDefis').value = SL_DATA.join('\n');
+  document.getElementById('slCount').textContent = SL_DATA.length + ' défi(s)';
+}
+async function saveSpotlightAdmin() {
+  const lines = document.getElementById('slDefis').value.split('\n').map(s => s.trim()).filter(Boolean);
+  const r = await fetch('/api/admin/spotlight', { method:'POST', headers: headers(), body: JSON.stringify({ defis: lines }) });
+  const d = await r.json();
+  if (d.defis) SL_DATA = d.defis;
+  renderSpotlightAdmin();
+  const s = document.getElementById('slSaved');
+  s.textContent = ' ✓ enregistré'; s.style.color = 'var(--a-ok)';
+  setTimeout(() => { s.textContent = ''; s.style.color = ''; }, 1800);
 }
 
 boot();

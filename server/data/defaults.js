@@ -6,16 +6,14 @@
 // =====================================================================
 
 import { AVATARS } from './avatars.js';
-import { QUESTIONS } from './quiz.js';
-import { GAGES } from './gages.js';
-import { SPOTLIGHT_DEFIS } from './spotlight.js';
 import { DRAW_WORDS } from './draw_words.js';
-import { PHOTO_MISSIONS } from './photos.js';
+import { getQuiz } from '../store/quiz.js';
+import { getGages } from '../store/gages.js';
+import { getSpotlight } from '../store/spotlight.js';
+import { getPhotos } from '../store/photos.js';
 
-// Avatars génériques disponibles pour tout événement (indépendants du thème).
 export const DEFAULT_AVATARS = AVATARS;
 
-// Réglages par défaut d'un événement neuf.
 export function defaultSettings() {
   return {
     deadlineLabel: 'MINUIT',
@@ -26,18 +24,15 @@ export function defaultSettings() {
   };
 }
 
-// Contenu d'activités par défaut (copie profonde — l'admin l'éditera ensuite).
 export function defaultContent() {
   return JSON.parse(JSON.stringify({
-    quiz: { decks: QUESTIONS },
+    quiz: { decks: getQuiz() },
     blindtest: { playlists: {} },
-    // Anecdotes « Breaking News » : VIDE par défaut — le maître de jeu ajoute
-    // ses propres vidéos (lien YouTube ou upload) depuis sa console.
     anecdotes: [],
-    gages: GAGES,
-    spotlightDefis: SPOTLIGHT_DEFIS,
+    gages: getGages(),
+    spotlightDefis: getSpotlight(),
     drawWords: DRAW_WORDS,
-    photoMissions: PHOTO_MISSIONS,
+    photoMissions: getPhotos(),
     ttcq: { themes: [] },
   }));
 }
