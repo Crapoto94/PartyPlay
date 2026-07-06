@@ -383,7 +383,7 @@ function render(){
   stage.innerHTML = html;
   // Décompte visible d'auto-passage « Sans Filtre » (phase de révélation).
   const _pa = STATE.activity;
-  if (_pa && (_pa.type==='privacy'||_pa.type==='carton') && _pa.sub==='reveal' && _pa.revealAt){
+  if (_pa && (_pa.type==='privacy'||_pa.type==='carton'||_pa.type==='justone') && _pa.sub==='reveal' && _pa.revealAt){
     const total = _pa.autoNextSeconds || 20;
     const el = document.getElementById('privacyCountdown');
     const tick = ()=>{ const left=Math.max(0,Math.ceil((_pa.revealAt+total*1000-Date.now())/1000)); const e=document.getElementById('privacyCountdown'); if(e)e.textContent=left; };
@@ -445,6 +445,9 @@ function activityView(act){
   }
   if (act.type==='ttcq'){
     return ttcqBorne(act);
+  }
+  if (act.type==='justone'){
+    return justoneBorne(act);
   }
   if (act.type==='reaction_race'){
     const board = (act.buzzes||[]).slice().sort((a,b)=>a.t-b.t);
@@ -648,6 +651,68 @@ function cartonBorne(act){
   else body = pill;
 
   return `<div class="center">${body}${scores}</div>`;
+}
+
+// UN SEUL MOT !? — la borne montre le mot secret + la progression des
+// indices à TOUT LE MONDE SAUF le devineur (qui ne regarde pas l'écran) ;
+// en phase de révélation, tout s'affiche (indices annulés barrés).
+function justoneBorne(act){
+  const pill = `<div class="pill neon-cyan">🧠 UN SEUL MOT !? · MANCHE ${act.round}/${act.totalRounds} · ${act.successCount||0} trouvé(s)</div>`;
+  tickerEl.textContent = `UN SEUL MOT !? — manche ${act.round}/${act.totalRounds} — ${act.successCount||0} trouvé(s)`;
+
+  if (act.sub==='clue'){
+    return `<div class="center">
+      ${pill}
+      <p class="big neon-yellow">🙈 ${esc(act.guesserName||'?')} NE REGARDE PAS L'ÉCRAN !</p>
+      ${act.secretWord?`<div class="card glow-box" style="display:inline-block;margin-top:10px;padding:14px 30px">
+        <div class="muted">Mot secret</div>
+        <div class="huge pixel neon-pink">${esc(act.secretWord)}</div>
+      </div>`:''}
+      <p class="big neon-cyan blink" style="margin-top:16px">Chacun écrit SON indice (un seul mot) sur son téléphone 📱</p>
+      <div class="huge pixel" style="margin-top:8px">${act.clueCount} / ${act.neededCount}</div>
+    </div>`;
+  }
+  if (act.sub==='guess'){
+    const survivors = act.survivors||[];
+    return `<div class="center">
+      ${pill}
+      <p class="big neon-yellow">🤔 ${esc(act.guesserName||'?')} RÉFLÉCHIT…</p>
+      <div class="card" style="max-width:820px;margin:14px auto">
+        <div class="muted center" style="margin-bottom:8px">Indices restants (doublons déjà annulés)</div>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center">
+          ${survivors.map(t=>`<span class="pill neon-cyan" style="font-size:18px">${esc(t)}</span>`).join('') || '<span class="muted">Aucun indice n\'a survécu…</span>'}
+        </div>
+      </div>
+    </div>`;
+  }
+  if (act.sub==='reveal'){
+    const all = act.allClues||[];
+    return `<div class="center">
+      ${pill}
+      <div class="glow-box" style="display:inline-block;padding:12px 30px;margin:8px 0">
+        <div class="muted">Le mot était</div>
+        <div class="huge pixel neon-yellow">${esc(act.secretWord||'')}</div>
+        <div class="big ${act.guessCorrect?'neon-cyan':'neon-pink'}" style="margin-top:6px">${act.guessCorrect?'✅ TROUVÉ':'❌ RATÉ'} — réponse de ${esc(act.guesserName||'?')} : « ${esc(act.guess||'')} »</div>
+      </div>
+      <div class="card" style="max-width:820px;margin:12px auto;text-align:left">
+        ${all.map(c=>`<div style="padding:7px 6px;border-bottom:1px solid rgba(255,255,255,.08)${c.cancelled?';opacity:.5;text-decoration:line-through':''}">${c.cancelled?'🚫':'✔️'} ${esc(c.text)} <span class="muted">— ${esc(c.name)}</span></div>`).join('')||'<div class="muted center">Aucun indice.</div>'}
+      </div>
+      <p class="big neon-yellow">Score d'équipe : ${act.successCount||0}/${act.totalRounds}</p>
+      ${act.revealAt?`<p class="big neon-yellow" style="margin-top:8px">⏱ Manche suivante dans <b id="privacyCountdown">${act.autoNextSeconds||16}</b> s…</p>`:''}
+    </div>`;
+  }
+  if (act.sub==='final'){
+    const hist = act.history||[];
+    return `<div class="center">
+      <h1 class="huge neon-yellow pixel">🏁 UN SEUL MOT !? — TERMINÉ !</h1>
+      <div class="huge pixel neon-cyan" style="margin:10px 0">${act.successCount||0} / ${act.totalRounds}</div>
+      <div class="card" style="max-width:700px;margin:14px auto;text-align:left">
+        ${hist.map((h,i)=>`<div>${h.success?'✅':'❌'} Manche ${i+1} — ${esc(h.word)}</div>`).join('')||'<div class="muted center">Pas de manche jouée.</div>'}
+      </div>
+      <p class="big neon-cyan">Bravo à toute l'équipe ! 🎉</p>
+    </div>`;
+  }
+  return `<div class="center">${pill}</div>`;
 }
 
 // TTCQ « TU TE METS COMBIEN ? » — plateau de jeu, pari, questions

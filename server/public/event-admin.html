@@ -102,6 +102,7 @@
             <div class="row" style="margin-bottom:6px">
               <button class="btn" onclick="ttcqLaunch('classique')">🎉 Classique</button>
               <button class="btn" onclick="ttcqLaunch('adulte')">🔞 18+</button>
+              <button class="btn secondary" onclick="ttcqLaunch('classique',true)">📋 Mes questionnaires</button>
               <select id="ttcqRounds" style="width:auto">
                 <option value="5">5 manches</option>
                 <option value="8" selected>10 manches</option>
@@ -110,6 +111,17 @@
               </select>
             </div>
             <div id="ttcqCatToggles" style="display:flex;flex-wrap:wrap;gap:4px;font-size:13px"></div>
+          </div>
+          <div class="field" data-cat="justone" style="margin-top:10px"><label>🧠 Un Seul Mot !? — un indice, un seul mot, en équipe</label>
+            <div class="row">
+              <button class="btn" onclick="launch('justone',{rounds:justoneRounds()})">🧠 Lancer la partie</button>
+              <select id="justoneRounds" style="width:auto">
+                <option value="5">5 manches</option>
+                <option value="8" selected>8 manches</option>
+                <option value="10">10 manches</option>
+                <option value="13">13 manches</option>
+              </select>
+            </div>
           </div>
           <div class="row" data-cat="collab">
             <button class="btn" onclick="launch('mosaic',{})">🧩 Mosaïque</button>
@@ -529,7 +541,7 @@ async function removeAvatar(key){
 }
 
 /* ---- Activités ---- */
-const ACT_LABELS={ quiz:'Quiz', blindtest:'Blind-test', anecdotes:'Anecdotes', gages:'Roue des gages', photo:'Défi photo', spotlight:'Spotlight', draw:'Dessine-moi', arcade:'Mini-jeux arcade', collab:'Collaboratifs (mosaïque/piano)', carton:'🃏 Bouche-Trou !? (cartes à trou)', privacy:'🤫 Sans Filtre !? (confessions, adultes)', ttcq:'🎯 TTCQ (Tu Te Cotes Combien)' };
+const ACT_LABELS={ quiz:'Quiz', blindtest:'Blind-test', anecdotes:'Anecdotes', gages:'Roue des gages', photo:'Défi photo', spotlight:'Spotlight', draw:'Dessine-moi', arcade:'Mini-jeux arcade', collab:'Collaboratifs (mosaïque/piano)', carton:'🃏 Bouche-Trou !? (cartes à trou)', privacy:'🤫 Sans Filtre !? (confessions, adultes)', ttcq:'🎯 TTCQ (Tu Te Cotes Combien)', justone:'🧠 Un Seul Mot !? (coopératif)' };
 // Sans Filtre !? est un contenu adulte : activé seulement si explicitement
 // coché (contrairement aux autres activités, actives par défaut).
 function actDefaultOn(k, a){ return k==='privacy' ? (a[k]===true) : (a[k]!==false); }
@@ -584,6 +596,7 @@ const ONB_SLIDES = [
       <li><b>📸 Défi photo</b> — missions photo à réaliser, puis vote de la salle.</li>
       <li><b>🤫 Sans Filtre !?</b> — confessions anonymes : chacun répond OUI/NON en secret, puis on parie sur le nombre de OUI. Version « Intime » ou « Intime trash » (réservée aux adultes).</li>
       <li><b>🃏 Bouche-Trou !?</b> — une question à trou sur la borne, chacun joue sa carte-réponse la plus drôle, un arbitre tournant élit la meilleure. Version « Classique » ou « 18+ ». Tu peux ajouter tes propres questions (onglet 📚 Contenu).</li>
+      <li><b>🧠 Un Seul Mot !?</b> — coopératif : un·e devineur·se tournant·e ne voit jamais le mot secret, les autres proposent chacun UN indice (les doublons s'annulent), puis il/elle tente sa chance. Score d'équipe !</li>
     </ul>` },
 ];
 let onbStep = 0;
@@ -832,12 +845,13 @@ function act(action,payload){ fetch(API+'/api/admin/action',{method:'POST',heade
 function launch(type,opts){ act('startActivity',{type,opts}); }
 function privacyCount(){ return parseInt(document.getElementById('privacyCount').value,10)||10; }
 function cartonRounds(){ return parseInt(document.getElementById('cartonRounds').value,10)||8; }
+function justoneRounds(){ return parseInt(document.getElementById('justoneRounds').value,10)||8; }
 function ttcqRounds(){ return parseInt(document.getElementById('ttcqRounds').value,10)||10; }
-function ttcqLaunch(level){
+function ttcqLaunch(level, customOnly){
   const cats = document.querySelectorAll('#ttcqCatToggles input[type=checkbox]');
   const disabledCats = [];
   cats.forEach(cb => { if (!cb.checked) disabledCats.push(cb.value); });
-  launch('ttcq',{ level, rounds: ttcqRounds(), disabledCats });
+  launch('ttcq',{ level, rounds: ttcqRounds(), disabledCats, customOnly: !!customOnly });
 }
 function ttcqInitCats(){
   // Les catégories classique sont toujours disponibles
@@ -920,6 +934,16 @@ function liveControls(st){
     h+='<span class="muted" style="align-self:center">Manche '+(a.round||0)+'/'+(a.totalRounds||'?')+' · '+esc(a.sub||'')+'</span>';
     if(a.sub==='reveal') h+=btn('ttcqNext','Manche suivante ▶');
     if(a.sub==='final') h+=btn('ttcqNext','Terminer ▶');
+    if(a.sub!=='final') h+=btn('ttcqSkip', a.sub==='reveal'?'Passer ⏭':'Forcer ⏭');
+  }
+  if(a.type==='justone'){
+    h+='<span class="muted" style="align-self:center">Manche '+(a.round||1)+'/'+(a.totalRounds||'?')+' · devineur : '+esc(a.guesserName||'?')+' · '+esc(a.sub||'')+' · '+(a.successCount||0)+' trouvé(s)</span>';
+    if(a.sub==='clue')   h+=btn('justoneCloseClues','Clore les indices ('+(a.clueCount||0)+'/'+(a.neededCount||0)+')');
+    if(a.sub==='guess')  h+='<span class="muted" style="align-self:center">En attente de la réponse du devineur…</span>';
+    if(a.sub==='reveal'){
+      h+=btnP('justoneJudge',{correct:true},'✅ Valider trouvé')+btnP('justoneJudge',{correct:false},'❌ Marquer raté')+btn('justoneNext','Manche suivante ▶');
+    }
+    if(a.sub!=='final') h+=btn('justoneSkip', a.sub==='reveal'?'Passer ⏭':'Passer la manche ⏭');
   }
   if(a.type==='draw'){ h+=btn('drawReveal','Révéler')+btn('drawNext','Suivant'); }
   if(a.type==='mosaic'){ h+=btn('mosaicReveal','Révéler la ligne'); }
@@ -929,6 +953,7 @@ function liveControls(st){
   box.innerHTML=h;
 }
 function btn(action,label){ return `<button class="btn" style="width:auto" onclick="act('${action}')">${label}</button>`; }
+function btnP(action,payload,label){ return `<button class="btn" style="width:auto" onclick='act("${action}",${JSON.stringify(payload)})'>${label}</button>`; }
 
 boot();
 </script>

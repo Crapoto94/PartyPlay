@@ -421,6 +421,10 @@ function controllerView(act) {
   if (act.type === 'ttcq') {
     return ttcqController(act);
   }
+  // UN SEUL MOT !? : indice à un mot (ou devine si c'est ton tour)
+  if (act.type === 'justone') {
+    return justoneController(act);
+  }
   if (act.type === 'heroquiz') {
     return heroQuizController(act);
   }
@@ -1482,6 +1486,17 @@ function cartonSubmit(){
   api('/api/carton/play', { cards });
 }
 function cartonPick(i){ api('/api/carton/pick', { choice: i }); }
+// UN SEUL MOT !? — envoi de l'indice (un mot) ou de la réponse du devineur.
+function justoneClue(){
+  const el = document.getElementById('joClueInput'); if (!el) return;
+  const text = el.value.trim(); if (!text) return;
+  api('/api/justone/clue', { text }).then(r=>{ if (r && r.ok) render(); else if(r&&r.tooClose){ el.value=''; el.placeholder='Trop proche du mot secret, réessaie…'; } });
+}
+function justoneGuess(){
+  const el = document.getElementById('joGuessInput'); if (!el) return;
+  const text = el.value.trim(); if (!text) return;
+  api('/api/justone/guess', { text });
+}
 // Remplit les trous : question sobre, RÉPONSE mise en couleur (jaune).
 function cartonFillHtml(prompt, cards){
   let i = 0;
@@ -1660,6 +1675,88 @@ function cartonController(act){
     <div style="display:flex;flex-direction:column;gap:2px">${cards}</div>
     ${validate}
   </div>`;
+}
+
+// UN SEUL MOT !? — manette du joueur : indiceur (mot secret + 1 indice) ou
+// devineur (ne voit jamais le mot, lit les indices survivants, propose sa réponse).
+function justoneController(act){
+  const head = `<div class="pill neon-cyan">🧠 UN SEUL MOT !? · manche ${act.round}/${act.totalRounds} · ${act.successCount||0} trouvé(s)</div>`;
+
+  if (act.sub==='final'){
+    return `<div class="card center glow-box" style="border-color:var(--neon3)">
+      ${head}
+      <h2 class="neon-yellow">🏁 TERMINÉ !</h2>
+      <p class="big">Votre équipe a trouvé <b class="neon-cyan">${act.successCount||0}</b> mot(s) sur ${act.totalRounds} !</p>
+      <p class="muted">Classement complet sur la BORNE 📺</p>
+    </div>`;
+  }
+
+  // ---- Je suis le·la DEVINEUR·SE : je ne vois JAMAIS le mot secret avant la révélation ----
+  if (act.iAmGuesser){
+    if (act.sub==='clue'){
+      return `<div class="card center glow-box">
+        ${head}
+        <div class="pill neon-yellow">🙈 C'EST TOI QUI DEVINES</div>
+        <p class="big" style="margin-top:10px">Ne regarde pas la BORNE ! Les autres préparent leurs indices…</p>
+        <p class="muted mt">${act.clueCount}/${act.neededCount} ont écrit leur indice</p>
+      </div>`;
+    }
+    if (act.sub==='guess'){
+      const survivors = act.survivors||[];
+      return `<div class="card center glow-box">
+        ${head}
+        <div class="pill neon-yellow">🙈 À TOI DE DEVINER</div>
+        <p class="muted mt">Indices proposés par l'équipe :</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:10px 0">
+          ${survivors.map(t=>`<span class="pill neon-cyan" style="font-size:16px">${esc(t)}</span>`).join('') || '<span class="muted">Aucun indice n\'a survécu…</span>'}
+        </div>
+        <input id="joGuessInput" type="text" placeholder="Ta réponse…" style="width:100%;box-sizing:border-box;padding:10px;font-size:16px;border-radius:8px;margin-top:8px" onkeydown="if(event.key==='Enter')justoneGuess()">
+        <button class="btn mt" onclick="justoneGuess()">✅ Valider ma réponse</button>
+      </div>`;
+    }
+    if (act.sub==='reveal'){
+      return `<div class="card center glow-box" style="border-color:var(--neon3)">
+        ${head}
+        <h2 class="${act.guessCorrect?'neon-cyan':'neon-pink'}">${act.guessCorrect?'✅ TROUVÉ !':'❌ RATÉ…'}</h2>
+        <p class="big">Le mot était : <b class="neon-yellow">${esc(act.secretWord||'')}</b></p>
+        <p class="muted">Ta réponse : « ${esc(act.guess||'')} »</p>
+        <p class="muted mt">Manche suivante dans un instant… 📺</p>
+      </div>`;
+    }
+  }
+
+  // ---- Je suis un INDICEUR (je connais le mot secret) ----
+  if (act.sub==='clue'){
+    const mine = act.myClue;
+    return `<div class="card center glow-box">
+      ${head}
+      <p class="muted">Mot secret pour <b>${esc(act.guesserName||'')}</b> :</p>
+      <h2 class="neon-yellow" style="margin:6px 0">${esc(act.secretWord||'')}</h2>
+      ${mine
+        ? `<p class="neon-cyan mt">Ton indice : <b>${esc(mine)}</b> ✔ (envoyé)</p>`
+        : `<input id="joClueInput" type="text" placeholder="Un seul mot…" style="width:100%;box-sizing:border-box;padding:10px;font-size:16px;border-radius:8px;margin-top:8px" onkeydown="if(event.key==='Enter')justoneClue()">
+           <button class="btn mt" onclick="justoneClue()">Envoyer mon indice</button>
+           <p class="muted mt" style="font-size:12px">Un seul mot — s'il est identique (même approximativement) à celui d'un autre joueur, les deux seront annulés !</p>`}
+      <p class="muted mt">${act.clueCount}/${act.neededCount} ont proposé un indice</p>
+    </div>`;
+  }
+  if (act.sub==='guess'){
+    return `<div class="card center glow-box">
+      ${head}
+      <p class="muted">${esc(act.guesserName||'')} réfléchit…</p>
+      <p class="big neon-cyan blink">🤔 En attente de sa réponse</p>
+    </div>`;
+  }
+  if (act.sub==='reveal'){
+    return `<div class="card center glow-box" style="border-color:var(--neon3)">
+      ${head}
+      <h2 class="${act.guessCorrect?'neon-cyan':'neon-pink'}">${act.guessCorrect?'✅ TROUVÉ !':'❌ RATÉ…'}</h2>
+      <p class="big">Le mot était : <b class="neon-yellow">${esc(act.secretWord||'')}</b></p>
+      <p class="muted">${esc(act.guesserName||'')} a répondu : « ${esc(act.guess||'')} »</p>
+      <p class="muted mt">Regarde la BORNE pour le détail des indices 📺</p>
+    </div>`;
+  }
+  return `<div class="card center"><h2>🧠 UN SEUL MOT !?</h2><p>Regarde la BORNE.</p></div>`;
 }
 // TTCQ « TU TE METS COMBIEN ? » — choisis ton niveau, réponds à la question
 function ttcqController(act){

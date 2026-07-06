@@ -21,6 +21,7 @@ import { CARTON_HAND_SIZE, CARTON_DEFAULT_ROUNDS } from '../data/carton.js';
 import { cartonPools, CARTON_LEVELS } from '../store/carton.js';
 import { defaultPlaylistsMap } from '../store/blindtests.js';
 import { getTtcq } from '../store/ttcq.js';
+import { JUSTONE_WORDS } from '../data/justone.js';
 
 // Mélange (Fisher-Yates) — copie mélangée d'un tableau.
 function shuffled(arr) {
@@ -34,6 +35,35 @@ function shuffled(arr) {
 function normalize(s) {
   return (s || '').toString().toUpperCase().normalize('NFD')
     .replace(/[̀-ͯ]/g, '').replace(/[^A-Z0-9]/g, '');
+}
+
+// Distance de Levenshtein (nombre minimal d'éditions lettre à lettre).
+function levenshtein(a, b) {
+  const m = a.length, n = b.length;
+  if (!m) return n; if (!n) return m;
+  let prev = Array.from({ length: n + 1 }, (_, j) => j);
+  for (let i = 1; i <= m; i++) {
+    const cur = [i];
+    for (let j = 1; j <= n; j++) {
+      cur[j] = a[i - 1] === b[j - 1] ? prev[j - 1]
+        : 1 + Math.min(prev[j - 1], prev[j], cur[j - 1]);
+    }
+    prev = cur;
+  }
+  return prev[n];
+}
+// Comparaison TOLÉRANTE (fautes de frappe/orthographe) entre deux mots saisis
+// à la main — utilisée par « Un Seul Mot !? » pour annuler les indices
+// identiques (même approximatifs) et valider la réponse du devineur.
+// Normalise (accents/casse/espaces) puis autorise une petite distance
+// d'édition, proportionnelle à la longueur du mot.
+function looseMatch(a, b) {
+  const na = normalize(a), nb = normalize(b);
+  if (!na || !nb) return false;
+  if (na === nb) return true;
+  const len = Math.max(na.length, nb.length);
+  const tol = len <= 4 ? 0 : len <= 7 ? 1 : 2;
+  return levenshtein(na, nb) <= tol;
 }
 
 // Détecte une URL de playlist Deezer et en extrait l'identifiant numérique.
@@ -143,6 +173,7 @@ export class GameState {
     if (this._enqueteFinaleTimer) { clearTimeout(this._enqueteFinaleTimer); this._enqueteFinaleTimer = null; }
     if (this._hqTimer) { clearTimeout(this._hqTimer); this._hqTimer = null; }
     if (this._ttcqTimer) { clearTimeout(this._ttcqTimer); this._ttcqTimer = null; }
+    if (this._justoneTimer) { clearTimeout(this._justoneTimer); this._justoneTimer = null; }
     this.pacman = null; // partie Pac-Man en cours
     this.tetris = null; // partie Tetris en cours
     this.tron = null;   // partie Tron en cours
@@ -192,7 +223,7 @@ export class GameState {
     //  - pacman (partie en cours, recréée à chaque manche)
     const { listeners, cfg, savePath, eventId, pacmanTimer, pacman, tetrisTimer, tetris, tronTimer, tron,
       g2048Timer, g2048, pongTimer, pong,
-      _autoAdvanceTimer, _roueTimer, _briefTimer, _drawTimer, _celebrateTimer, _enqueteBriefTimer, _enqueteDebriefTimer, _enqueteFinaleTimer, _hqTimer, _ttcqTimer, ...data } = this;
+      _autoAdvanceTimer, _roueTimer, _briefTimer, _drawTimer, _celebrateTimer, _enqueteBriefTimer, _enqueteDebriefTimer, _enqueteFinaleTimer, _hqTimer, _ttcqTimer, _justoneTimer, ...data } = this;
     try {
       if (savePath) fs.writeFileSync(savePath, JSON.stringify(data, null, 2));
     } catch (e) {
@@ -746,9 +777,14 @@ export class GameState {
       const totalRounds = Math.min(Math.max(parseInt(opts.rounds, 10) || 10, 3), 20);
       const level = opts.level === 'adulte' ? 'adulte' : 'classique';
       const disabledCats = Array.isArray(opts.disabledCats) ? opts.disabledCats : [];
-      const pool = getTtcq().filter(t => t.level === level && !disabledCats.includes(t.cat));
       const custom = (this._content?.ttcq?.themes || []).filter(t => t.level === level);
-      custom.forEach(t => { pool.push(t); });
+      let pool;
+      if (opts.customOnly) {
+        pool = [...custom];
+      } else {
+        pool = getTtcq().filter(t => t.level === level && !disabledCats.includes(t.cat));
+        custom.forEach(t => { pool.push(t); });
+      }
       const cats = [...new Set(pool.map(t => t.cat))].sort();
       const a = this.activity;
       a.level = level;
@@ -772,6 +808,24 @@ export class GameState {
       this.players.forEach(p => { a.positions[p.id] = 0; a.coins[p.id] = 0; a.doubleNext[p.id] = false; });
       const catNames = cats.join(', ');
       this.addLog(`🎯 TTCQ ! (${level === 'adulte' ? '🔞 18+' : '🎉 Classique'}) — ${totalRounds} manches, catégories : ${catNames}`);
+    }
+    // UN SEUL MOT !? : à chaque manche, un·e DEVINEUR·SE tournant·e ne voit
+    // JAMAIS le mot secret ; les autres joueurs le voient et proposent chacun
+    // UN SEUL mot-indice en secret. Les indices identiques (même approximatifs,
+    // fautes de frappe tolérées) s'annulent automatiquement avant d'être
+    // montrés au devineur. Jeu coopératif : score d'équipe X/totalRounds.
+    if (type === 'justone') {
+      const a = this.activity;
+      a.totalRounds = Math.min(Math.max(parseInt(opts.rounds, 10) || 8, 3), 20);
+      a.round = 0;
+      a.guesserPtr = -1;
+      a.order = this.players.filter(p => p.connected).map(p => p.id);
+      a.deck = shuffled(JUSTONE_WORDS);
+      a.successCount = 0;
+      a.history = []; // [{word, success}] — petit récap en fin de partie
+      this.addLog(`🧠 UN SEUL MOT !? — ${a.totalRounds} manches, en équipe !`);
+      this._justoneNewRound();
+      return; // _justoneNewRound() gère déjà phase/touch()
     }
     // Anecdote « BREAKING NEWS » : la borne diffuse une vidéo (lien YouTube ou
     // fichier uploadé par le maître de jeu), précédée d'un bandeau breaking news.
@@ -958,6 +1012,7 @@ export class GameState {
     if (a.type === 'privacy') return this.privacyPublic(forPlayerId);
     if (a.type === 'carton') return this.cartonPublic(forPlayerId);
     if (a.type === 'ttcq') return this.ttcqPublic(forPlayerId);
+    if (a.type === 'justone') return this.justonePublic(forPlayerId);
     if (a.type !== 'quiz' && a.type !== 'quiz_vincent' && a.type !== 'blindtest') return a;
     const q = this.quizQuestion();
     const list = a.dynamicBlindtest ? [] : (this.quizDeck(a.deck));
@@ -1580,6 +1635,41 @@ export class GameState {
     this.addLog(`🔄 Nouvelle manche — ${nextPicker?.name || '?'} choisit le thème !`);
     this.touch();
   }
+  // Passage forcé par le GM depuis n'importe quelle phase (blocage, joueur absent…).
+  ttcqSkip() {
+    const a = this.activity;
+    if (!a || a.type !== 'ttcq' || a.sub === 'final') return;
+    if (this._ttcqTimer) { clearTimeout(this._ttcqTimer); this._ttcqTimer = null; }
+    if (a.sub === 'theme_pick') {
+      const used = a._usedThemes || [];
+      const avail = a._pool.filter(t => !used.includes(t.id));
+      const pick = avail.length > 0 ? avail[Math.floor(Math.random() * avail.length)] : a._pool[Math.floor(Math.random() * a._pool.length)];
+      if (!pick) return;
+      a.currentTheme = pick;
+      if (!a._usedThemes) a._usedThemes = [];
+      a._usedThemes.push(pick.id);
+      a.sub = 'bet';
+      a.bets = {};
+      a.answers = {};
+      a.results = {};
+      this.addLog(`⏭ GM force — thème choisi au hasard : ${pick.name}`);
+    } else if (a.sub === 'bet') {
+      const connected = this.players.filter(p => p.connected);
+      connected.forEach(p => { if (a.bets[p.id] == null) a.bets[p.id] = 1; });
+      a.sub = 'answer';
+      this.addLog(`⏭ GM force — paris par défaut pour les absents.`);
+    } else if (a.sub === 'answer') {
+      const connected = this.players.filter(p => p.connected);
+      connected.forEach(p => { if (a.answers[p.id] == null) a.answers[p.id] = 0; });
+      this.addLog(`⏭ GM force — révélation forcée.`);
+      this.ttcqReveal();
+      return;
+    } else if (a.sub === 'reveal') {
+      this.ttcqNext();
+      return;
+    }
+    this.touch();
+  }
   ttcqPublic(forPlayerId) {
     const a = this.activity;
     if (!a || a.type !== 'ttcq') return null;
@@ -1666,6 +1756,196 @@ export class GameState {
     }
   }
 
+  // ---- UN SEUL MOT !? : devineur·se tournant·e, indices à un mot ---------
+
+  // Sièges (rotation du devineur) : ordre d'arrivée, complété par les
+  // nouveaux connectés en fin de liste (comme pour l'arbitre de Bouche-Trou).
+  _justoneSeats() {
+    const a = this.activity;
+    const connectedIds = this.players.filter((p) => p.connected).map((p) => p.id);
+    a.order = (a.order || []).filter((id) => connectedIds.includes(id));
+    for (const id of connectedIds) if (!a.order.includes(id)) a.order.push(id);
+    return a.order;
+  }
+
+  // Nouvelle manche : nouveau·elle devineur·se, nouveau mot secret.
+  _justoneNewRound() {
+    const a = this.activity;
+    if (!a || a.type !== 'justone') return;
+    if (this._justoneTimer) { clearTimeout(this._justoneTimer); this._justoneTimer = null; }
+    const seats = this._justoneSeats();
+    if (!seats.length) {
+      this.addLog('🧠 Un Seul Mot !? : aucun joueur connecté.');
+      this.phase = 'activity'; this.touch();
+      return;
+    }
+    a.round = (a.round || 0) + 1;
+    a.guesserPtr = (a.guesserPtr ?? -1) + 1;
+    a.guesserId = seats[a.guesserPtr % seats.length];
+    if (!a.deck || !a.deck.length) a.deck = shuffled(JUSTONE_WORDS);
+    a.secretWord = a.deck.pop();
+    a.clues = {};        // { playerId: texte tel que saisi }
+    a.cancelled = {};    // { playerId: true } — indice annulé (doublon/invalide)
+    a.survivors = null;  // [{ text }] mélangé, visible du devineur en phase 'guess'
+    a.guess = null;
+    a.guessCorrect = null;
+    a.sub = 'clue';
+    a.revealAt = null;
+    a.autoNextSeconds = null;
+    this.phase = 'activity';
+    this.addLog(`🧠 Un Seul Mot !? — manche ${a.round}/${a.totalRounds} : ${this.player(a.guesserId)?.name || '?'} devine !`);
+    this.touch();
+  }
+
+  // Un joueur (pas le devineur) propose SON indice — un seul mot.
+  justoneClue(playerId, text) {
+    const a = this.activity;
+    if (!a || a.type !== 'justone' || a.sub !== 'clue') return { ok: false };
+    if (playerId === a.guesserId) return { ok: false, guesser: true };
+    if (!this.player(playerId)) return { ok: false };
+    if (a.clues[playerId]) return { ok: false, already: true };
+    // Un seul mot : on ne garde que le premier "token" saisi.
+    const word = (text || '').toString().trim().split(/\s+/)[0] || '';
+    if (!word) return { ok: false, empty: true };
+    if (looseMatch(word, a.secretWord)) return { ok: false, tooClose: true };
+    a.clues[playerId] = word;
+    const submitters = this.players.filter((p) => p.connected && p.id !== a.guesserId);
+    if (submitters.length && submitters.every((p) => a.clues[p.id])) this.justoneCloseClues();
+    else this.touch();
+    return { ok: true };
+  }
+
+  // Clôt la collecte d'indices : annule les indices identiques (même
+  // approximatifs — fautes de frappe tolérées) entre eux, puis expose au
+  // devineur la liste mélangée des indices SURVIVANTS uniquement.
+  justoneCloseClues() {
+    const a = this.activity;
+    if (!a || a.type !== 'justone' || a.sub !== 'clue') return;
+    const entries = Object.entries(a.clues || {});
+    const cancelled = {};
+    for (let i = 0; i < entries.length; i++) {
+      for (let j = i + 1; j < entries.length; j++) {
+        if (looseMatch(entries[i][1], entries[j][1])) { cancelled[entries[i][0]] = true; cancelled[entries[j][0]] = true; }
+      }
+    }
+    a.cancelled = cancelled;
+    a.survivors = shuffled(entries.filter(([pid]) => !cancelled[pid]).map(([, text]) => text));
+    a.sub = 'guess';
+    const nCancel = Object.keys(cancelled).length;
+    this.addLog(nCancel
+      ? `🧠 Indices clos — ${nCancel} annulé(s) pour doublon, ${a.survivors.length} restant(s) pour ${this.player(a.guesserId)?.name || '?'}.`
+      : `🧠 Indices clos — ${a.survivors.length} indice(s) pour ${this.player(a.guesserId)?.name || '?'}.`);
+    this.touch();
+  }
+
+  // Le·la devineur·se propose sa réponse.
+  justoneGuess(playerId, text) {
+    const a = this.activity;
+    if (!a || a.type !== 'justone' || a.sub !== 'guess') return { ok: false };
+    if (playerId !== a.guesserId) return { ok: false, notGuesser: true };
+    const guess = (text || '').toString().trim();
+    if (!guess) return { ok: false, empty: true };
+    a.guess = guess;
+    a.guessCorrect = looseMatch(guess, a.secretWord);
+    if (a.guessCorrect) a.successCount = (a.successCount || 0) + 1;
+    a.history = a.history || [];
+    a.history.push({ word: a.secretWord, success: a.guessCorrect });
+    a.sub = 'reveal';
+    a.revealAt = Date.now();
+    a.autoNextSeconds = 16;
+    this.addLog(a.guessCorrect
+      ? `✅ Trouvé ! Le mot était « ${a.secretWord} » — bravo à l'équipe !`
+      : `❌ Raté… le mot était « ${a.secretWord} » (réponse : « ${guess} »).`);
+    this.touch();
+    if (this._justoneTimer) clearTimeout(this._justoneTimer);
+    this._justoneTimer = setTimeout(() => { this._justoneTimer = null; this.justoneNext(); }, 16000);
+    return { ok: true };
+  }
+
+  // Le MJ peut corriger le verdict automatique (synonyme valable, faute non
+  // couverte par la tolérance, etc.) tant que la révélation est affichée.
+  justoneJudge(correct) {
+    const a = this.activity;
+    if (!a || a.type !== 'justone' || a.sub !== 'reveal') return;
+    const want = !!correct;
+    if (a.guessCorrect === want) return;
+    a.successCount = (a.successCount || 0) + (want ? 1 : -1);
+    a.guessCorrect = want;
+    if (a.history && a.history.length) a.history[a.history.length - 1].success = want;
+    this.addLog(`✏️ MJ : verdict corrigé → ${want ? '✅ trouvé' : '❌ raté'}.`);
+    this.touch();
+  }
+
+  // Manche suivante (MJ ou auto). Après la dernière : score final coopératif.
+  justoneNext() {
+    const a = this.activity;
+    if (this._justoneTimer) { clearTimeout(this._justoneTimer); this._justoneTimer = null; }
+    if (!a || a.type !== 'justone') return;
+    if (a.sub === 'clue') { this.justoneCloseClues(); return; } // sécurité
+    if ((a.round || 0) >= (a.totalRounds || 1)) {
+      a.sub = 'final';
+      this.addLog(`🏁 UN SEUL MOT !? terminé — ${a.successCount || 0}/${a.totalRounds} mots trouvés en équipe !`);
+      this.touch();
+      return;
+    }
+    this._justoneNewRound();
+  }
+
+  // Passage FORCÉ (MJ) depuis n'importe quelle phase — utile en cas de
+  // blocage (devineur déconnecté, indice qui ne vient jamais...).
+  justoneSkip() {
+    const a = this.activity;
+    if (this._justoneTimer) { clearTimeout(this._justoneTimer); this._justoneTimer = null; }
+    if (!a || a.type !== 'justone') return;
+    if ((a.round || 0) >= (a.totalRounds || 1)) {
+      a.sub = 'final';
+      this.addLog(`🏁 UN SEUL MOT !? terminé — ${a.successCount || 0}/${a.totalRounds} mots trouvés en équipe !`);
+      this.touch();
+      return;
+    }
+    this.addLog('⏭️ Un Seul Mot !? — manche passée par le maître de jeu.');
+    this._justoneNewRound();
+  }
+
+  // Vue publique ASYMÉTRIQUE : le devineur ne voit JAMAIS le mot secret avant
+  // la révélation ; les autres ne voient jamais qui a écrit quel indice.
+  justonePublic(forPlayerId) {
+    const a = this.activity;
+    const connected = this.players.filter((p) => p.connected);
+    const iAmGuesser = forPlayerId != null && forPlayerId === a.guesserId;
+    const submitters = connected.filter((p) => p.id !== a.guesserId);
+    const base = {
+      type: 'justone', state: a.state, sub: a.sub,
+      round: a.round, totalRounds: a.totalRounds,
+      guesserId: a.guesserId, guesserName: this.player(a.guesserId)?.name || '?',
+      iAmGuesser,
+      playerCount: connected.length,
+      clueCount: Object.keys(a.clues || {}).length,
+      neededCount: submitters.length,
+      successCount: a.successCount || 0,
+      // Le mot secret n'est JAMAIS envoyé au devineur avant la révélation.
+      secretWord: (!iAmGuesser && (a.sub === 'clue' || a.sub === 'guess')) ? a.secretWord
+        : (a.sub === 'reveal' || a.sub === 'final') ? a.secretWord : null,
+      myClue: (forPlayerId != null && (a.clues || {})[forPlayerId]) || null,
+      // Indices survivants (anonymes) : visibles de TOUS dès la phase 'guess'.
+      survivors: (a.sub === 'guess' || a.sub === 'reveal' || a.sub === 'final') ? (a.survivors || []) : null,
+    };
+    if (a.sub === 'reveal') {
+      base.guess = a.guess;
+      base.guessCorrect = a.guessCorrect;
+      // Détail complet (qui a écrit quoi, annulé ou non) pour la borne/spectateurs.
+      base.allClues = Object.entries(a.clues || {}).map(([pid, text]) => ({
+        name: this.player(pid)?.name || '?', text, cancelled: !!(a.cancelled || {})[pid],
+      }));
+      base.revealAt = a.revealAt || null;
+      base.autoNextSeconds = a.autoNextSeconds || null;
+    }
+    if (a.sub === 'final') {
+      base.history = a.history || [];
+    }
+    return base;
+  }
+
   // ---- Simulation : 4 joueurs de test (1 pilotable + 3 bots) --------
   // Les joueurs « sim » sont ajoutés dans la config par la route GM ;
   // ici on les connecte et on fait jouer les bots automatiquement.
@@ -1735,6 +2015,13 @@ export class GameState {
           if (avail.length) this.ttcqSelectTheme(b.id, avail[rint(avail.length)].id);
           break;
         }
+      } else if (a.type === 'justone') {
+        if (a.sub === 'clue' && b.id !== a.guesserId && !a.clues[b.id]) {
+          const pool = JUSTONE_WORDS.filter(w => w.split(' ').length === 1);
+          this.justoneClue(b.id, pool[rint(pool.length)]);
+        } else if (a.sub === 'guess' && b.id === a.guesserId) {
+          this.justoneGuess(b.id, a.secretWord); // le bot devineur « triche » pour la démo
+        }
       }
     }
   }
@@ -1765,6 +2052,7 @@ export class GameState {
     if (this._enqueteFinaleTimer) { clearTimeout(this._enqueteFinaleTimer); this._enqueteFinaleTimer = null; }
     if (this._hqTimer) { clearTimeout(this._hqTimer); this._hqTimer = null; }
     if (this._ttcqTimer) { clearTimeout(this._ttcqTimer); this._ttcqTimer = null; }
+    if (this._justoneTimer) { clearTimeout(this._justoneTimer); this._justoneTimer = null; }
     this.pacman = null;
     this.tetris = null;
     this.tron = null;

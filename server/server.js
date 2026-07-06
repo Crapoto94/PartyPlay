@@ -770,6 +770,10 @@ ev.post('/api/ttcq/selectTheme', (req, res) => { const p = requirePlayer(req, re
 ev.post('/api/ttcq/bet', (req, res) => { const p = requirePlayer(req, res); if (!p) return; res.json(req.game.ttcqBet(p.id, req.body.level)); });
 ev.post('/api/ttcq/answer', (req, res) => { const p = requirePlayer(req, res); if (!p) return; res.json(req.game.ttcqAnswer(p.id, req.body.choice)); });
 
+// Un Seul Mot !? — un indice (un seul mot) pour tous sauf le devineur, qui propose sa réponse.
+ev.post('/api/justone/clue', (req, res) => { const p = requirePlayer(req, res); if (!p) return; res.json(req.game.justoneClue(p.id, req.body.text)); });
+ev.post('/api/justone/guess', (req, res) => { const p = requirePlayer(req, res); if (!p) return; res.json(req.game.justoneGuess(p.id, req.body.text)); });
+
 // Mini-jeux & collaboratifs (manettes)
 ev.post('/api/pacman/dir', (req, res) => { const p = requirePlayer(req, res); if (!p) return; req.game.pacmanDir(p.id, req.body.dir); res.json({ ok: true }); });
 ev.post('/api/tetris/move', (req, res) => { const p = requirePlayer(req, res); if (!p) return; req.game.tetrisMove(p.id, req.body.dir); res.json({ ok: true }); });
@@ -1017,6 +1021,11 @@ ev.post('/api/admin/action', (req, res) => {
     case 'cartonNext': g.cartonNext(); break;
     case 'cartonSkip': g.cartonSkip(); break;
     case 'ttcqNext': g.ttcqNext(); break;
+    case 'justoneCloseClues': g.justoneCloseClues(); break;
+    case 'justoneJudge': g.justoneJudge(payload.correct !== false); break;
+    case 'justoneNext': g.justoneNext(); break;
+    case 'justoneSkip': g.justoneSkip(); break;
+    case 'ttcqSkip': g.ttcqSkip(); break;
     // Simulation : ajoute 4 joueurs de test (1 pilotable + 3 bots) dans la
     // config, puis active le pilote automatique des bots.
     case 'simStart': {
