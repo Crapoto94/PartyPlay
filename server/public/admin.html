@@ -1022,7 +1022,7 @@ async function loadTtcqAdmin() {
     const r = await fetch('/api/admin/ttcq', { headers: headers() });
     if (!r.ok) { document.getElementById('ttcqCount').textContent = 'Erreur ('+r.status+')'; return; }
     TTCQ_DATA = (await r.json()).themes || [];
-    renderTtcqAdmin();
+    console.log('loadTtcqAdmin loaded '+TTCQ_DATA.length+' themes'); renderTtcqAdmin();
   } catch { document.getElementById('ttcqCount').textContent = 'Erreur réseau'; }
 }
 function ttcqUpdateMeta() {
@@ -1035,8 +1035,11 @@ function ttcqUpdateMeta() {
 function renderTtcqAdmin() {
   const level = document.getElementById('ttcqLevel').value;
   const search = (document.getElementById('ttcqSearch')?.value || '').toLowerCase();
+  if (!TTCQ_DATA) { console.warn('TTCQ_DATA is null'); return; }
+  console.log('renderTtcqAdmin level='+level+' search='+search+' total='+TTCQ_DATA.length);
   const filtered = TTCQ_DATA.filter(t => t.level === level && (!search || t.name.toLowerCase().includes(search) || t.cat.includes(search)));
   const cats = [...new Set(filtered.map(t => t.cat))].sort();
+  console.log('filtered='+filtered.length+' cats='+cats.join(','));
   const el = document.getElementById('ttcqList');
   if (!cats.length) {
     el.innerHTML = `<div class="center muted" style="padding:40px 0">${search ? 'Aucun thème ne correspond à la recherche.' : 'Aucun thème pour ce niveau.'}</div>`;
