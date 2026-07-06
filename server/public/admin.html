@@ -53,10 +53,12 @@
 
   <!-- Application principale -->
   <div id="app" style="display:none">
+    <button class="hamburger" id="hamBtn" onclick="toggleSidebar()" aria-label="Menu">☰</button>
+    <div class="sidebar-backdrop" id="hamBackdrop" onclick="toggleSidebar()"></div>
     <div class="admin-layout">
 
       <!-- Sidebar -->
-      <aside class="sidebar">
+      <aside class="sidebar" id="sidebar">
         <div class="sidebar-logo">🎉 <span>PartyPlay</span></div>
         <nav class="sidebar-nav">
           <a class="nav-item" data-sec="events" onclick="showSection('events')">
@@ -582,12 +584,21 @@ function headers() { return { 'Content-Type':'application/json', 'x-admin-passwo
 function esc(s) { return String(s==null?'':s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
 // ---- Navigation sidebar ----
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('hamBackdrop').classList.toggle('open');
+}
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('hamBackdrop').classList.remove('open');
+}
 function showSection(name) {
   document.querySelectorAll('.admin-section').forEach(s => s.style.display = 'none');
   const sec = document.getElementById('sec-' + name);
   if (sec) sec.style.display = 'block';
   document.querySelectorAll('.nav-item[data-sec]').forEach(el =>
     el.classList.toggle('active', el.dataset.sec === name));
+  closeSidebar();
   if (name === 'email' && !_emailLoaded) { _emailLoaded = true; loadBrevoConfig(); }
   if (name === 'legal' && !_legalLoaded) { _legalLoaded = true; loadLegalContent(); }
   if (name === 'promos' && !_promosLoaded) { _promosLoaded = true; loadPromos(); }
