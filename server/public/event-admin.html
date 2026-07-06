@@ -252,6 +252,16 @@
           </div>
         </div>
         <div class="card">
+          <h3 class="neon-yellow">🧠 Un Seul Mot !? — mes mots perso</h3>
+          <p class="muted">Ajoute tes propres <b>mots à deviner</b> : ils s'ajoutent au catalogue existant. Un mot (ou petite expression) par ligne. En 18+, les mots « classiques » ET « adultes » sont mélangés dans la même partie.</p>
+          <div class="field"><label>Mots perso — tout public <span class="muted">(utilisés en Classique ET en 18+)</span></label><textarea id="c_jo_words" rows="4" placeholder="mon mot perso"></textarea></div>
+          <div class="field"><label>Mots perso — adultes <span class="muted">(utilisés UNIQUEMENT en 18+)</span></label><textarea id="c_jo_adult" rows="4" placeholder="mon mot perso 18+"></textarea></div>
+          <div class="row">
+            <button class="btn secondary" onclick="saveJustoneCustom()">💾 Enregistrer mes mots</button>
+            <span class="muted" id="jo_saved"></span>
+          </div>
+        </div>
+        <div class="card">
           <h3 class="neon-pink">Contenu des activités</h3>
           <p class="muted">Édition avancée en JSON. Le bouton « Importer le contenu par défaut » repart du contenu rétro pré-rempli.</p>
           <div class="row">
@@ -773,6 +783,9 @@ function fillContent(){
   document.getElementById('c_carton_a').value=(cart.answers||[]).join('\n');
   const ttcq=ct.ttcq||{};
   document.getElementById('c_ttcq').value=JSON.stringify(ttcq.themes||[],null,1);
+  const jo=ct.justone||{};
+  document.getElementById('c_jo_words').value=(jo.words||[]).join('\n');
+  document.getElementById('c_jo_adult').value=(jo.wordsAdult||[]).join('\n');
   fillBlindtests();
   fillAnecdotes();
 }
@@ -783,6 +796,14 @@ async function saveCartonCustom(){
   const content={ ...(CFG.content||{}), carton };
   await push({content}); CFG.content=content;
   const s=document.getElementById('carton_saved'); s.textContent=' ✓ enregistré ('+carton.prompts.length+' Q / '+carton.answers.length+' R)'; setTimeout(()=>s.textContent='',2500);
+}
+// Enregistre les mots perso « Un Seul Mot !? » (tout public + adultes).
+async function saveJustoneCustom(){
+  const lines=(id)=>document.getElementById(id).value.split('\n').map(s=>s.trim()).filter(Boolean);
+  const justone={ words:lines('c_jo_words'), wordsAdult:lines('c_jo_adult') };
+  const content={ ...(CFG.content||{}), justone };
+  await push({content}); CFG.content=content;
+  const s=document.getElementById('jo_saved'); s.textContent=' ✓ enregistré ('+justone.words.length+' + '+justone.wordsAdult.length+' 18+)'; setTimeout(()=>s.textContent='',2500);
 }
 async function saveTtcqCustom(){
   try{
@@ -811,6 +832,7 @@ async function saveContent(){
       photoMissions: JSON.parse(c_photo.value||'{}'),
       carton: (CFG.content&&CFG.content.carton)||{ prompts:[], answers:[] },
       ttcq: (CFG.content&&CFG.content.ttcq)||{ themes:[] },
+      justone: (CFG.content&&CFG.content.justone)||{ words:[], wordsAdult:[] },
     };
     await push({content}); CFG.content=content; c_err.textContent=' ✓ enregistré'; c_err.className='ok';
     fillLaunchers();

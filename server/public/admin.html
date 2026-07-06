@@ -83,6 +83,9 @@
           <a class="nav-item" data-sec="ttcq" onclick="showSection('ttcq')">
             <span>🎯</span> TTCQ
           </a>
+          <a class="nav-item" data-sec="justone" onclick="showSection('justone')">
+            <span>🧠</span> Un Seul Mot !?
+          </a>
           <a class="nav-item" data-sec="blindtests" onclick="showSection('blindtests')">
             <span>🎵</span> Blind-tests
           </a>
@@ -398,6 +401,34 @@
           <div id="ttcqList"></div>
         </section>
 
+        <!-- ===== SECTION : UN SEUL MOT !? (mots à deviner) ===== -->
+        <section id="sec-justone" class="admin-section" style="display:none">
+          <h1 class="section-title">🧠 Un Seul Mot !?</h1>
+          <p class="muted" style="margin-bottom:20px">Catalogue des <strong>mots à deviner</strong> (adaptation coopérative façon « Just One » : un·e devineur·se ne voit jamais le mot, les autres proposent chacun un indice). Deux niveaux : <strong>Classique</strong> (tout public) et <strong>18+</strong> (mots adultes, cumulés avec les classiques en jeu). Chaque organisateur peut aussi ajouter ses propres mots depuis sa console.</p>
+
+          <div class="card">
+            <div class="inline" style="gap:12px;flex-wrap:wrap">
+              <div class="field" style="margin:0;min-width:220px"><label>Niveau</label>
+                <select id="joLevel" onchange="fillJustoneEditor()">
+                  <option value="classique">🎉 Classique</option>
+                  <option value="adulte">🔞 18+</option>
+                </select>
+              </div>
+              <div style="align-self:flex-end;padding-bottom:9px"><span class="tag" id="joCount">—</span></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="field"><label>Mots à deviner <span class="muted">(un mot ou petite expression par ligne)</span></label>
+              <textarea id="joWords" rows="16" style="width:100%"></textarea>
+            </div>
+            <div class="inline">
+              <button class="btn" onclick="saveJustoneAdmin()">💾 Enregistrer</button>
+              <span id="joSaved" class="muted"></span>
+            </div>
+          </div>
+        </section>
+
         <!-- ===== SECTION : BLIND-TESTS PAR DÉFAUT ===== -->
         <section id="sec-blindtests" class="admin-section" style="display:none">
           <h1 class="section-title">🎵 Blind-tests par défaut</h1>
@@ -460,10 +491,11 @@ const themeLabel = { retro:'Rétro', neon:'Néon', chic:'Chic', kids:'Enfant', c
 const ALL_THEMES = ['retro','neon','chic','kids','casino'];
 const PLAN_ORDER = ['free','full','infinite'];
 let PWD = sessionStorage.getItem('admPwd') || '';
-let PRICING = null, BREVO = null, _emailLoaded = false, _legalLoaded = false, _promosLoaded = false, _privacyLoaded = false, _btLoaded = false, _cartonLoaded = false, _ttcqLoaded = false, _googleLoaded = false;
+let PRICING = null, BREVO = null, _emailLoaded = false, _legalLoaded = false, _promosLoaded = false, _privacyLoaded = false, _btLoaded = false, _cartonLoaded = false, _ttcqLoaded = false, _googleLoaded = false, _justoneLoaded = false;
 let PRIVACY_DATA = null;
 let CARTON_DATA = null;
 let TTCQ_DATA = null;
+let JUSTONE_DATA = null;
 
 function headers() { return { 'Content-Type':'application/json', 'x-admin-password': PWD }; }
 function esc(s) { return (s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
@@ -483,6 +515,7 @@ function showSection(name) {
   if (name === 'blindtests' && !_btLoaded) { _btLoaded = true; loadBlindtestsAdmin(); }
   if (name === 'google' && !_googleLoaded) { _googleLoaded = true; loadGoogleConfig(); }
   if (name === 'ttcq' && !_ttcqLoaded) { _ttcqLoaded = true; loadTtcqAdmin(); }
+  if (name === 'justone' && !_justoneLoaded) { _justoneLoaded = true; loadJustoneAdmin(); }
 }
 
 // ---- Auth ----
@@ -945,6 +978,41 @@ async function saveCartonAdmin() {
   if (d.carton) CARTON_DATA = d.carton;
   renderCartonLevel(document.getElementById('ctLevel').value);
   const s = document.getElementById('ctSaved'); s.textContent = ' ✓ enregistré'; setTimeout(()=>s.textContent='', 1800);
+}
+
+// ---- Un Seul Mot !? : édition des mots à deviner ----
+let _joLevel = 'classique';
+async function loadJustoneAdmin() {
+  try {
+    const r = await fetch('/api/admin/justone', { headers: headers() });
+    if (!r.ok) { document.getElementById('joCount').textContent = 'Erreur ('+r.status+')'; return; }
+    JUSTONE_DATA = (await r.json()).justone || {};
+    _joLevel = document.getElementById('joLevel').value;
+    renderJustoneLevel(_joLevel);
+  } catch { document.getElementById('joCount').textContent = 'Erreur réseau'; }
+}
+function captureJustoneLevel(level) {
+  if (!JUSTONE_DATA) return;
+  JUSTONE_DATA[level] = ctLines('joWords');
+}
+function renderJustoneLevel(level) {
+  const words = (JUSTONE_DATA && JUSTONE_DATA[level]) || [];
+  document.getElementById('joWords').value = words.join('\n');
+  document.getElementById('joCount').textContent = words.length + ' mot(s)';
+}
+// Changement de niveau : on mémorise les éventuelles modifs du niveau courant.
+function fillJustoneEditor() {
+  captureJustoneLevel(_joLevel);
+  _joLevel = document.getElementById('joLevel').value;
+  renderJustoneLevel(_joLevel);
+}
+async function saveJustoneAdmin() {
+  captureJustoneLevel(document.getElementById('joLevel').value);
+  const r = await fetch('/api/admin/justone', { method:'POST', headers: headers(), body: JSON.stringify({ justone: JUSTONE_DATA }) });
+  const d = await r.json();
+  if (d.justone) JUSTONE_DATA = d.justone;
+  renderJustoneLevel(document.getElementById('joLevel').value);
+  const s = document.getElementById('joSaved'); s.textContent = ' ✓ enregistré'; setTimeout(()=>s.textContent='', 1800);
 }
 
 // ---- TTCQ : édition moderne avec arborescence animée ----

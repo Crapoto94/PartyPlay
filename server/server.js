@@ -29,6 +29,7 @@ import { validatePromoCode, usePromoCode, listPromoCodes, addPromoCode, removePr
 import { PRIVACY_QUESTIONS, PRIVACY_LEVELS } from './data/privacy.js';
 import { getBlindtests, saveBlindtests, defaultPlaylistsMap } from './store/blindtests.js';
 import { getCarton, saveCarton, CARTON_LEVELS } from './store/carton.js';
+import { getJustone, saveJustone } from './store/justone.js';
 import { getTtcq, saveTtcq } from './store/ttcq.js';
 import { getGoogleConfig, googleClientId, googleEnabled, saveGoogleConfig } from './store/google.js';
 
@@ -425,6 +426,18 @@ app.get('/api/admin/carton', (req, res) => {
 app.post('/api/admin/carton', (req, res) => {
   if (!requireAdmin(req, res)) return;
   res.json({ ok: true, carton: saveCarton(req.body?.carton || {}) });
+});
+
+// =====================================================================
+//  UN SEUL MOT !? — catalogue éditable des mots à deviner (admin général)
+// =====================================================================
+app.get('/api/admin/justone', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  res.json({ justone: getJustone() });
+});
+app.post('/api/admin/justone', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  res.json({ ok: true, justone: saveJustone(req.body?.justone || {}) });
 });
 // =====================================================================
 //  TTCQ — catalogue éditable des thèmes/questions (admin général)

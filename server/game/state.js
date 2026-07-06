@@ -21,7 +21,8 @@ import { CARTON_HAND_SIZE, CARTON_DEFAULT_ROUNDS } from '../data/carton.js';
 import { cartonPools, CARTON_LEVELS } from '../store/carton.js';
 import { defaultPlaylistsMap } from '../store/blindtests.js';
 import { getTtcq } from '../store/ttcq.js';
-import { JUSTONE_WORDS, JUSTONE_WORDS_ADULT } from '../data/justone.js';
+import { JUSTONE_WORDS } from '../data/justone.js';
+import { justonePools } from '../store/justone.js';
 
 // Mélange (Fisher-Yates) — copie mélangée d'un tableau.
 function shuffled(arr) {
@@ -817,9 +818,14 @@ export class GameState {
     if (type === 'justone') {
       const a = this.activity;
       const level = opts.level === 'adulte' ? 'adulte' : 'classique';
+      const builtIn = justonePools(level); // adulte CUMULE classique+adulte (comme Bouche-Trou)
+      const customAll = this._content?.justone?.words || [];
+      const customAdult = this._content?.justone?.wordsAdult || [];
+      const custom = [...customAll, ...(level === 'adulte' ? customAdult : [])]
+        .map((s) => (s == null ? '' : String(s)).trim()).filter(Boolean);
       a.level = level;
       a.levelLabel = level === 'adulte' ? '18+' : 'Classique';
-      a.wordPool = level === 'adulte' ? JUSTONE_WORDS_ADULT : JUSTONE_WORDS;
+      a.wordPool = [...custom, ...builtIn];
       a.totalRounds = Math.min(Math.max(parseInt(opts.rounds, 10) || 8, 3), 20);
       a.round = 0;
       a.guesserPtr = -1;
