@@ -170,6 +170,19 @@ table.list tr:last-child td { border-bottom: none; }
 .nav-item:hover { background: rgba(255,255,255,.07); color: #fff; }
 .nav-item.active { background: rgba(255,255,255,.1); color: #fff; font-weight: 600; border-left-color: var(--a-accent); }
 
+.nav-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: rgba(255,255,255,.25);
+  padding: 14px 16px 4px;
+}
+.nav-divider {
+  height: 1px;
+  margin: 6px 16px;
+  background: rgba(255,255,255,.08);
+}
 .sidebar-footer { border-top: 1px solid rgba(255,255,255,.08); padding: 6px 0; }
 .sidebar-footer .nav-item { color: rgba(255,255,255,.45); }
 
