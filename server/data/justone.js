@@ -19,7 +19,9 @@
 //  tous les mots à deviner sont adultes, pour une soirée cohérente.
 // =====================================================================
 
-export const JUSTONE_WORDS = [
+const SINGLE_WORDS_ONLY = arr => arr.filter(s => !/\s/.test(s));
+
+const ALL_WORDS = [
   'chat', 'chien', 'cheval', 'vache', 'mouton', 'cochon', 'poule', 'canard',
   'lion', 'tigre', 'éléphant', 'girafe', 'singe', 'ours', 'loup', 'renard',
   'lapin', 'souris', 'baleine', 'dauphin', 'requin', 'poisson', 'aigle', 'hibou',
@@ -27,13 +29,13 @@ export const JUSTONE_WORDS = [
   'maison', 'château', 'immeuble', 'garage', 'jardin', 'piscine', 'tente', 'cabane',
   'voiture', 'vélo', 'moto', 'train', 'avion', 'bateau', 'fusée', 'camion',
   'table', 'chaise', 'canapé', 'lit', 'armoire', 'miroir', 'lampe', 'tapis',
-  'téléphone', 'ordinateur', 'télévision', 'radio', 'appareil photo', 'montre', 'clavier', 'imprimante',
+  'téléphone', 'ordinateur', 'télévision', 'radio', 'montre', 'clavier', 'imprimante',
   'livre', 'journal', 'stylo', 'crayon', 'gomme', 'ciseaux', 'cahier', 'enveloppe',
   'pain', 'fromage', 'beurre', 'lait', 'œuf', 'sucre', 'sel', 'poivre',
   'pomme', 'banane', 'orange', 'fraise', 'raisin', 'citron', 'ananas', 'cerise',
-  'carotte', 'tomate', 'pomme de terre', 'oignon', 'salade', 'champignon', 'courgette', 'poireau',
+  'carotte', 'tomate', 'oignon', 'salade', 'champignon', 'courgette', 'poireau',
   'pizza', 'gâteau', 'chocolat', 'glace', 'bonbon', 'biscuit', 'confiture', 'miel',
-  'café', 'thé', 'eau', 'jus', 'vin', 'bière', 'soupe', 'jus de fruit',
+  'café', 'thé', 'eau', 'jus', 'vin', 'bière', 'soupe',
   'soleil', 'lune', 'étoile', 'nuage', 'pluie', 'neige', 'arc-en-ciel', 'orage',
   'montagne', 'rivière', 'forêt', 'désert', 'île', 'volcan', 'plage', 'lac',
   'arbre', 'fleur', 'herbe', 'feuille', 'racine', 'graine', 'cactus', 'champ',
@@ -45,39 +47,39 @@ export const JUSTONE_WORDS = [
   'roi', 'reine', 'prince', 'princesse', 'chevalier', 'sorcière', 'pirate', 'fantôme',
   'dragon', 'licorne', 'sirène', 'vampire', 'zombie', 'monstre', 'robot', 'extraterrestre',
   'anniversaire', 'mariage', 'noël', 'vacances', 'pique-nique', 'fête', 'carnaval', 'concert',
-  'valise', 'passeport', 'billet', 'carte', 'boussole', 'jumelles', 'sac à dos',
+  'valise', 'passeport', 'billet', 'carte', 'boussole', 'jumelles',
   'chapeau', 'lunettes', 'gants', 'écharpe', 'manteau', 'chaussures', 'ceinture', 'cravate',
   'parapluie', 'sac', 'portefeuille', 'bijou', 'bague', 'collier', 'bracelet',
-  'ballon', 'raquette', 'trottinette', 'skateboard', 'patins', 'corde à sauter',
+  'ballon', 'raquette', 'trottinette', 'skateboard', 'patins',
   'poupée', 'peluche', 'puzzle', 'cerf-volant', 'toupie', 'dé', 'domino',
   'horloge', 'calendrier', 'bougie', 'allumette', 'bougeoir', 'lanterne', 'phare',
   'marteau', 'clou', 'vis', 'tournevis', 'échelle', 'pinceau', 'seau',
-  'iceberg', 'pingouin', 'ours polaire', 'traîneau', 'igloo',
+  'iceberg', 'pingouin', 'traîneau', 'igloo',
   'pyramide', 'tour', 'pont', 'moulin', 'cathédrale', 'temple', 'statue',
   'astronaute', 'planète', 'comète', 'satellite', 'télescope', 'galaxie', 'météorite', 'orbite',
   'clown', 'magicien', 'acrobate', 'jongleur', 'trapèze', 'cirque', 'chapiteau', 'dompteur',
-  'trésor', 'île au trésor', 'perroquet', 'carte au trésor', 'coffre', 'épée',
+  'trésor', 'perroquet', 'coffre', 'épée',
   'rêve', 'cauchemar', 'sommeil', 'oreiller', 'couverture', 'pyjama', 'doudou', 'berceuse',
 ];
 
-// ================================================================
-//  NIVEAU ADULTE (18+) — mots à deviner réservés aux soirées entre adultes.
-// ================================================================
-export const JUSTONE_WORDS_ADULT = [
-  'préservatif', 'sextoy', 'menottes', 'lingerie', 'strip-tease', 'lap dance', 'orgie', 'gode',
-  'plan cul', 'plan à trois', 'sexfriend', 'fessée', 'kamasutra', 'bondage', 'masturbation', 'gang bang',
+const ALL_WORDS_ADULT = [
+  'préservatif', 'sextoy', 'menottes', 'lingerie', 'strip-tease', 'orgie', 'gode',
+  'fessée', 'kamasutra', 'bondage', 'masturbation',
   'nudiste', 'sperme', 'orgasme', 'préliminaires', 'fellation', 'cunnilingus', 'pénétration', 'missionnaire',
-  'levrette', 'soixante-neuf', 'french kiss', 'suçon', 'coup d\'un soir', 'infidélité', 'adultère', 'jalousie',
+  'levrette', 'soixante-neuf', 'infidélité', 'adultère', 'jalousie',
   'viagra', 'aphrodisiaque', 'libido', 'érection', 'excitation', 'fantasme', 'voyeurisme', 'exhibitionnisme',
-  'god ceinture', 'huile de massage', 'chantilly', 'fouet', 'bandeau', 'string', 'porte-jarretelles', 'talons hauts',
-  'bar à hôtesses', 'boîte échangiste', 'club libertin', 'peep-show', 'strip-poker', 'jeu de la bouteille', 'action ou vérité', 'gage',
-  'ivresse', 'gueule de bois', 'cuite', 'coma éthylique', 'apéro', 'shot', 'binge drinking', 'happy hour',
+  'fouet', 'bandeau', 'chantilly', 'string', 'porte-jarretelles',
+  'strip-poker', 'gage',
+  'ivresse', 'cuite', 'apéro', 'shot',
   'vodka', 'tequila', 'whisky', 'rhum', 'champagne', 'cocktail', 'sangria', 'absinthe',
-  'joint', 'cannabis', 'cocaïne', 'ecstasy', 'poppers', 'shisha', 'défonce', 'dealer',
-  'strip-club', 'stripteaseur', 'escort', 'bordel', 'maison close', 'proxénète', 'call-girl', 'sugar daddy',
-  'tinder', 'appli de rencontre', 'sexting', 'nude', 'onlyfans', 'webcam', 'sexcam', 'film pour adultes',
-  'vomi', 'gerbe', 'diarrhée', 'chiasse', 'caca', 'pipi', 'pet', 'rot',
-  'nudité', 'seins', 'fesses', 'entrejambe', 'pénis', 'vagin', 'poitrine', 'nombril',
-  'walk of shame', 'after', 'descente', 'bad trip', 'gueule cassée', 'strip', 'orgie romaine', 'décadence',
-  'vitesse excessive', 'rodéo urbain', 'conduite dangereuse', 'saut à l\'élastique', 'enterrement de vie de garçon', 'défi extrême', 'sport extrême', 'base jump',
+  'cannabis', 'cocaïne', 'ecstasy', 'shisha',
+  'stripteaseur',
+  'tinder', 'sexting', 'nude', 'sexcam', 'onlyfans', 'webcam',
+  'vomi', 'gerbe', 'diarrhée', 'caca', 'pipi', 'pet', 'rot',
+  'nudité', 'seins', 'fesses', 'pénis', 'vagin', 'poitrine', 'nombril',
+  'strip', 'décadence', 'after', 'descente',
+  'rodéo', 'conduite', 'défi', 'sport',
 ];
+
+export const JUSTONE_WORDS = SINGLE_WORDS_ONLY(ALL_WORDS);
+export const JUSTONE_WORDS_ADULT = SINGLE_WORDS_ONLY(ALL_WORDS_ADULT);
