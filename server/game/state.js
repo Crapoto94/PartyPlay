@@ -146,15 +146,6 @@ export class GameState {
   avatarInfo(key) { return this._avatars[key] || null; }
   quizDeck(name) { return (this._content.quiz?.decks?.[name]) || []; }
   photoMissions(avatar) { return (this._content.photoMissions?.[avatar]) || []; }
-  // Pioche un gage du catalogue de l'événement, filtré par pool si fourni.
-  pickGage(pool = null) {
-    const all = this._content.gages || [];
-    const cand = pool ? all.filter((g) => (g.pool || []).includes(pool)) : all;
-    const list = cand.length ? cand : all;
-    return list.length ? list[Math.floor(Math.random() * list.length)]
-      : { id: 'gage', titre: 'GAGE', desc: 'Relève un petit défi !', alt: '—', intensity: 1, pool: ['solo'] };
-  }
-
   // ---- Cycle de vie -------------------------------------------------
   reset(persist = true) {
     if (this.pacmanTimer) { clearInterval(this.pacmanTimer); this.pacmanTimer = null; }
@@ -165,7 +156,6 @@ export class GameState {
     if (this._autoAdvanceTimer) { clearTimeout(this._autoAdvanceTimer); this._autoAdvanceTimer = null; }
     if (this._privacyTimer) { clearTimeout(this._privacyTimer); this._privacyTimer = null; }
     if (this._cartonTimer) { clearTimeout(this._cartonTimer); this._cartonTimer = null; }
-    if (this._roueTimer) { clearTimeout(this._roueTimer); this._roueTimer = null; }
     if (this._briefTimer) { clearTimeout(this._briefTimer); this._briefTimer = null; }
     if (this._drawTimer) { clearTimeout(this._drawTimer); this._drawTimer = null; }
     if (this._celebrateTimer) { clearTimeout(this._celebrateTimer); this._celebrateTimer = null; }
@@ -224,7 +214,7 @@ export class GameState {
     //  - pacman (partie en cours, recréée à chaque manche)
     const { listeners, cfg, savePath, eventId, pacmanTimer, pacman, tetrisTimer, tetris, tronTimer, tron,
       g2048Timer, g2048, pongTimer, pong,
-      _autoAdvanceTimer, _roueTimer, _briefTimer, _drawTimer, _celebrateTimer, _enqueteBriefTimer, _enqueteDebriefTimer, _enqueteFinaleTimer, _hqTimer, _ttcqTimer, _justoneTimer, ...data } = this;
+      _autoAdvanceTimer, _briefTimer, _drawTimer, _celebrateTimer, _enqueteBriefTimer, _enqueteDebriefTimer, _enqueteFinaleTimer, _hqTimer, _ttcqTimer, _justoneTimer, ...data } = this;
     try {
       if (savePath) fs.writeFileSync(savePath, JSON.stringify(data, null, 2));
     } catch (e) {
@@ -523,7 +513,7 @@ export class GameState {
     }
   }
 
-  // ---- Activités BORNE (reaction, buzzer, spotlight, roue...) -------
+  // ---- Activités BORNE (reaction, buzzer, spotlight...) -------
   startActivity(type, opts = {}) {
     // Toute nouvelle activité annule un éventuel auto-lancement du briefing.
     if (this._briefTimer) { clearTimeout(this._briefTimer); this._briefTimer = null; }
@@ -688,27 +678,6 @@ export class GameState {
         this.blindtestAsk();
       }
     }
-    // Roue des gages : segments affichés, la roue tourne et tombe sur un gage,
-    // puis décompte, puis vote « meilleur » (+1 vie au gagnant, −1 aux autres).
-    if (type === 'roue_des_gages') {
-      const pool = opts.pool || null;
-      const allGages = this._content.gages || [];
-      if (!allGages.length) { this.addLog('🎰 Roue des gages : aucun gage configuré pour cet événement.'); this.touch(); return; }
-      const filtered = pool ? allGages.filter((g) => (g.pool || []).includes(pool)) : allGages;
-      const src = filtered.length >= 6 ? filtered : allGages;
-      const shuffled = [...src].sort(() => Math.random() - 0.5);
-      const options = shuffled.slice(0, Math.min(8, shuffled.length));
-      const chosenIndex = Math.floor(Math.random() * options.length);
-      this.activity.options = options.map((g) => ({ id: g.id, titre: g.titre, desc: g.desc, alt: g.alt || null }));
-      this.activity.chosenIndex = chosenIndex;
-      this.activity.gage = this.activity.options[chosenIndex];
-      this.activity.sub = 'spin';               // spin | challenge | vote | result
-      this.activity.spinAt = Date.now();
-      this.activity.challengeSeconds = opts.seconds || 20;
-      this.activity.votes = {};                 // voterId -> targetId
-      this.activity.winnerIds = [];
-      this._scheduleRoue();
-    }
     // Diffusion vidéo : tout le monde (borne + téléphones) joue une vidéo
     // YouTube avec un bandeau (danse des canards, anecdotes, etc.).
     if (type === 'videoshow') {
@@ -863,73 +832,6 @@ export class GameState {
     // (rien à planifier ici)
     this.phase = 'activity';
     this.addLog(`🎮 Activité BORNE : ${type}.`);
-    this.touch();
-  }
-
-  // ---- Roue des gages : déroulé minuté --------------------------------
-  _scheduleRoue() {
-    if (this._roueTimer) { clearTimeout(this._roueTimer); this._roueTimer = null; }
-    // 1) La roue tourne ~5 s, puis tombe sur le gage → phase « challenge ».
-    this._roueTimer = setTimeout(() => {
-      const a = this.activity;
-      if (!a || a.type !== 'roue_des_gages') return;
-      a.sub = 'challenge';
-      a.challengeAt = Date.now();
-      this.addLog(`🎰 La roue est tombée sur « ${a.gage.titre} » ! ${a.challengeSeconds} s pour briller.`);
-      this.touch();
-      // 2) Décompte écoulé → ouverture du vote.
-      this._roueTimer = setTimeout(() => {
-        const b = this.activity;
-        if (!b || b.type !== 'roue_des_gages') return;
-        b.sub = 'vote';
-        b.votes = {};
-        this.addLog('🗳️ Roue : votez pour le MEILLEUR — il gagne une vie, les autres en perdent une !');
-        this.touch();
-      }, (a.challengeSeconds || 20) * 1000);
-    }, 5000);
-  }
-
-  roueVote(voterId, targetId) {
-    const a = this.activity;
-    if (!a || a.type !== 'roue_des_gages' || a.sub !== 'vote') return;
-    if (!this.player(targetId)) return;
-    a.votes[voterId] = targetId;
-    const connected = this.players.filter((p) => p.connected);
-    if (Object.keys(a.votes).length >= connected.length) this.roueTally();
-    else this.touch();
-  }
-
-  roueOpenVote() {
-    const a = this.activity;
-    if (!a || a.type !== 'roue_des_gages') return;
-    if (this._roueTimer) { clearTimeout(this._roueTimer); this._roueTimer = null; }
-    a.sub = 'vote';
-    a.votes = {};
-    this.addLog('🗳️ Roue : vote ouvert (le meilleur gagne une vie) !');
-    this.touch();
-  }
-
-  roueTally() {
-    const a = this.activity;
-    if (!a || a.type !== 'roue_des_gages') return;
-    if (this._roueTimer) { clearTimeout(this._roueTimer); this._roueTimer = null; }
-    const counts = {};
-    for (const t of Object.values(a.votes || {})) counts[t] = (counts[t] || 0) + 1;
-    let max = -1;
-    for (const n of Object.values(counts)) if (n > max) max = n;
-    const winners = max > 0 ? Object.keys(counts).filter((id) => counts[id] === max) : [];
-    a.winnerIds = winners;
-    a.voteCounts = counts;
-    a.sub = 'result';
-    const connected = this.players.filter((p) => p.connected);
-    connected.forEach((p) => {
-      if (winners.includes(p.id)) p.lives = Math.min(3, p.lives + 1);
-      else if (p.lives > 0) p.lives -= 1;
-    });
-    const wn = winners.map((id) => this.player(id)?.name).filter(Boolean);
-    this.addLog(wn.length
-      ? `🏆 Roue : ${wn.join(', ')} gagne(nt) une vie ❤️ ; les autres en perdent une 💔`
-      : '🎰 Roue : aucun vote — personne ne bouge.');
     this.touch();
   }
 
@@ -2005,11 +1907,6 @@ export class GameState {
         if (a.sub === 'question' && q && !a.answers[b.id]) this.quizAnswer(b.id, rint((q.choices || []).length || 1));
       } else if (a.type === 'spotlight') {
         if (a.sub === 'vote' && !a.votes[b.id] && b.id !== a.data?.targetId) this.spotlightVote(b.id, Math.random() < 0.7 ? 'ok' : 'ko');
-      } else if (a.type === 'roue_des_gages') {
-        if (a.sub === 'vote' && !a.votes[b.id]) {
-          const targets = this.players.filter((p) => p.connected && p.id !== b.id);
-          if (targets.length) this.roueVote(b.id, targets[rint(targets.length)].id);
-        }
       } else if (a.type === 'reaction_race') {
         if (a.state === 'running' && !a.resolved && !(a.buzzes || []).find((x) => x.id === b.id)) this.buzz(b.id);
       } else if (a.type === 'ttcq') {
@@ -2049,7 +1946,6 @@ export class GameState {
     if (this._briefTimer) { clearTimeout(this._briefTimer); this._briefTimer = null; }
     if (this._privacyTimer) { clearTimeout(this._privacyTimer); this._privacyTimer = null; }
     if (this._cartonTimer) { clearTimeout(this._cartonTimer); this._cartonTimer = null; }
-    if (this._roueTimer) { clearTimeout(this._roueTimer); this._roueTimer = null; }
     if (this.pacmanTimer) { clearInterval(this.pacmanTimer); this.pacmanTimer = null; }
     if (this.tetrisTimer) { clearInterval(this.tetrisTimer); this.tetrisTimer = null; }
     if (this.tronTimer) { clearInterval(this.tronTimer); this.tronTimer = null; }

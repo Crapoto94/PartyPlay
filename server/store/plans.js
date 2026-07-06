@@ -15,7 +15,7 @@ const PRICING_FILE = path.join(__dirname, '..', 'pricing.json');
 
 export const ALL_THEMES = ['retro', 'neon', 'chic', 'kids', 'casino'];
 // Ordre canonique des activités (sert au plafonnement du plan gratuit).
-export const ACTIVITY_ORDER = ['quiz', 'anecdotes', 'gages', 'blindtest', 'photo', 'spotlight', 'draw', 'arcade', 'collab'];
+export const ACTIVITY_ORDER = ['quiz', 'anecdotes', 'blindtest', 'photo', 'spotlight', 'draw', 'arcade', 'collab'];
 
 // Valeurs par défaut (éditables ensuite dans l'admin des tarifs).
 //  limits.maxPlayers / maxActivities : 0 = illimité.

@@ -70,7 +70,7 @@
             <div class="inline"><select id="anecPick"></select><button class="btn" style="width:auto" onclick="launchAnecdote()">🔴 Lancer</button></div>
           </div>
           <div class="row">
-            <button class="btn" data-cat="gages" onclick="launch('roue_des_gages',{})">🎰 Roue des gages</button>
+  
             <button class="btn" data-cat="spotlight" onclick="launch('spotlight',{})">🔦 Spotlight</button>
             <button class="btn" data-cat="draw" onclick="launch('draw',{})">🎨 Dessine-moi</button>
           </div>
@@ -287,19 +287,6 @@
             <button class="btn" onclick="eqzAddDeck()">➕ Ajouter un deck</button>
           </div>
           <div id="eqzList"></div>
-        </div>
-
-        <!-- Gages -->
-        <div class="card">
-          <h3 class="neon-yellow">💪 Gages / Défis</h3>
-          <p class="muted">Ajoute/modifie les gages personnalisés.</p>
-          <div class="row" style="margin-bottom:10px">
-            <button class="btn" onclick="eggAdd()">➕ Ajouter un gage</button>
-            <button class="btn secondary" onclick="saveGagesCustom()">💾 Enregistrer</button>
-            <span class="muted" id="egg_saved"></span>
-            <span class="tag" id="eggCount">—</span>
-          </div>
-          <div id="eggList"></div>
         </div>
 
         <!-- Spotlight / Devine-moi -->
@@ -614,7 +601,7 @@ async function removeAvatar(key){
 }
 
 /* ---- Activités ---- */
-const ACT_LABELS={ quiz:'Quiz', blindtest:'Blind-test', anecdotes:'Anecdotes', gages:'Roue des gages', photo:'Défi photo', spotlight:'Spotlight', draw:'Dessine-moi', arcade:'Mini-jeux arcade', collab:'Collaboratifs (mosaïque/piano)', carton:'🃏 Bouche-Trou !? (cartes à trou)', privacy:'🤫 Sans Filtre !? (confessions, adultes)', ttcq:'🎯 TTCQ (Tu Te Cotes Combien)', justone:'🧠 Un Seul Mot !? (coopératif)' };
+const ACT_LABELS={ quiz:'Quiz', blindtest:'Blind-test', anecdotes:'Anecdotes', photo:'Défi photo', spotlight:'Spotlight', draw:'Dessine-moi', arcade:'Mini-jeux arcade', collab:'Collaboratifs (mosaïque/piano)', carton:'🃏 Bouche-Trou !? (cartes à trou)', privacy:'🤫 Sans Filtre !? (confessions, adultes)', ttcq:'🎯 TTCQ (Tu Te Cotes Combien)', justone:'🧠 Un Seul Mot !? (coopératif)' };
 // Sans Filtre !? est un contenu adulte : activé seulement si explicitement
 // coché (contrairement aux autres activités, actives par défaut).
 function actDefaultOn(k, a){ return k==='privacy' ? (a[k]===true) : (a[k]!==false); }
@@ -652,7 +639,7 @@ const ONB_SLIDES = [
       <li><b>⚙️ Général</b> — nom, thème graphique, mot de passe, ambiance musicale.</li>
       <li><b>🧑‍🤝‍🧑 Joueurs</b> — ajoute tes invités, envoie-leur leur lien/QR personnel.</li>
       <li><b>🕹️ Activités</b> — choisis quelles activités proposer ce soir (modifiable à tout moment).</li>
-      <li><b>📚 Contenu</b> — personnalise quiz, gages, anecdotes, missions photo…</li>
+      <li><b>📚 Contenu</b> — personnalise quiz, anecdotes, missions photo…</li>
     </ul>` },
   { icon:'📺', title:'Deux écrans, un seul jeu', body:`
     <p><b>La BORNE</b> — à brancher sur une TV ou un grand écran : tout le monde la regarde ensemble, c'est l'écran collectif.</p>
@@ -661,7 +648,7 @@ const ONB_SLIDES = [
   { icon:'🕹️', title:'Les activités principales', body:`
     <ul style="text-align:left;line-height:1.7">
       <li><b>🧠 Quiz / 🎵 Blind-test</b> — les questions s'affichent sur la borne, les invités répondent depuis leur téléphone.</li>
-      <li><b>🎰 Roue des gages</b> — un gage tiré au sort, la salle vote la performance.</li>
+      
       <li><b>🔦 Spotlight</b> — un défi individuel jugé par tout le monde.</li>
       <li><b>🎨 Dessine-moi</b> — un joueur dessine sur son téléphone, les autres devinent.</li>
       <li><b>🧩 Mosaïque / 🎹 Piano / 🎵 Séquence</b> — mini-jeux collaboratifs à plusieurs téléphones.</li>
@@ -839,8 +826,6 @@ function fillContent(){
   eqzCustom=JSON.parse(JSON.stringify((ct.quiz&&ct.quiz.customDecks)||{}));
   renderEqz();
   // Gages
-  eggData=JSON.parse(JSON.stringify(ct.gages||[]));
-  renderEgg();
   // Spotlight
   espData=[...(ct.spotlightDefis||[])];
   renderEsp();
@@ -1034,48 +1019,6 @@ async function saveQuizCustom(){
   const s=document.getElementById('eqz_saved'); s.textContent=' ✓ enregistré'; setTimeout(()=>s.textContent='',2000);
 }
 
-/* ---- Gages (graphique) ---- */
-let eggData=[];
-function renderEgg(){
-  document.getElementById('eggCount').textContent=eggData.length+' gage(s)';
-  const el=document.getElementById('eggList');
-  const pools=['solo','duel','collectif','sport','rock','fun','defi','vincent'];
-  if(!eggData.length){ el.innerHTML='<p class="muted">Aucun gage personnalisé. Cliquez sur « Ajouter un gage ».</p>'; return; }
-  el.innerHTML=`<table class="list"><thead><tr><th style="width:60px">ID</th><th style="width:110px">Titre</th><th>Description</th><th>Alternative</th><th style="width:50px">Int.</th><th style="width:100px">Pools</th><th style="width:30px"></th></tr></thead><tbody>${eggData.map((g,i)=>eggRow(g,i,pools)).join('')}</tbody></table>`;
-}
-function eggRow(g,i,pools){
-  return `<tr>
-    <td><input type="text" class="egg-id" value="${eqzEsc(g.id||'')}" style="width:50px;font-size:10px;background:rgba(0,0,0,.1);border:1px solid rgba(255,255,255,.06);border-radius:3px;padding:2px 4px"></td>
-    <td><input type="text" class="egg-titre" value="${eqzEsc(g.titre||'')}" placeholder="Titre" style="width:100px;font-size:11px;background:rgba(0,0,0,.1);border:1px solid rgba(255,255,255,.06);border-radius:3px;padding:2px 4px"></td>
-    <td><input type="text" class="egg-desc" value="${eqzEsc(g.desc||'')}" placeholder="Description" style="width:100%;font-size:11px;background:rgba(0,0,0,.1);border:1px solid rgba(255,255,255,.06);border-radius:3px;padding:2px 4px"></td>
-    <td><input type="text" class="egg-alt" value="${eqzEsc(g.alt||'')}" placeholder="Alternative" style="width:100%;font-size:11px;background:rgba(0,0,0,.1);border:1px solid rgba(255,255,255,.06);border-radius:3px;padding:2px 4px"></td>
-    <td><select class="egg-intensity" style="font-size:10px;background:rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.06);border-radius:3px;padding:2px 3px">${[1,2,3].map(v=>`<option value="${v}"${g.intensity===v?' selected':''}>${v}</option>`).join('')}</select></td>
-    <td style="font-size:10px">${pools.map(p=>`<label style="display:inline-flex;align-items:center;gap:1px;margin:0 3px;font-size:10px;cursor:pointer"><input type="checkbox" class="egg-pool" value="${p}" ${(g.pool||[]).includes(p)?'checked':''} style="width:auto;margin:0">${p.slice(0,3)}</label>`).join('')}</td>
-    <td><button class="btn danger" style="width:auto;padding:1px 6px;font-size:10px" onclick="this.closest('tr').remove()">✕</button></td>
-  </tr>`;
-}
-function eggCollect(){
-  const r=[];
-  document.querySelectorAll('#eggList tbody tr').forEach(row=>{
-    const titre=row.querySelector('.egg-titre').value.trim();
-    if(!titre) return;
-    r.push({id:row.querySelector('.egg-id').value.trim()||'gage_'+Date.now(),titre,desc:row.querySelector('.egg-desc').value.trim(),alt:row.querySelector('.egg-alt').value.trim(),intensity:parseInt(row.querySelector('.egg-intensity').value,10)||1,pool:[...row.querySelectorAll('.egg-pool:checked')].map(c=>c.value)});
-  });
-  return r;
-}
-function eggAdd(){
-  eggData.push({id:'gage_'+Date.now(),titre:'',desc:'',alt:'',intensity:1,pool:[]}); renderEgg();
-}
-function eggSaveToCfg(gages){
-  const content={...(CFG.content||{}),gages};
-  CFG.content=content; return content;
-}
-async function saveGagesCustom(){
-  const gages=eggCollect();
-  await push({content:eggSaveToCfg(gages)});
-  const s=document.getElementById('egg_saved'); s.textContent=' ✓ enregistré'; setTimeout(()=>s.textContent='',2000);
-}
-
 /* ---- Spotlight (graphique) ---- */
 let espData=[];
 function renderEsp(){
@@ -1188,7 +1131,7 @@ async function saveContent(){
     const content={
       quiz:{ decks: JSON.parse(c_quiz.value||'{}') },
       anecdotes: (CFG.content&&CFG.content.anecdotes)||[],
-      gages: JSON.parse(c_gages.value||'[]'),
+
       spotlightDefis: JSON.parse(c_spot.value||'[]'),
       drawWords: JSON.parse(c_draw.value||'[]'),
       blindtest:{ playlists: JSON.parse(c_bt.value||'{}') },
@@ -1301,7 +1244,7 @@ function liveControls(st){
   let h='<h3>En cours : '+esc(a.type)+'</h3><div class="row">';
   if(a.type==='quiz'||a.type==='blindtest'){ h+=btn('quizReveal','Révéler')+btn('quizNext','Suivante'); if(a.type==='blindtest')h+=btn('blindtestAsk','Nouvelle chanson'); }
   if(a.type==='spotlight'){ h+=btn('spotlightOpenVote','Ouvrir le vote')+btn('spotlightTally','Dépouiller'); }
-  if(a.type==='roue_des_gages'){ h+=btn('roueOpenVote','Ouvrir le vote')+btn('roueTally','Dépouiller'); }
+
   if(a.type==='privacy'){
     h+='<span class="muted" style="align-self:center">Q '+(a.asked||1)+'/'+(a.total||'?')+' · '+esc(a.sub||'')+'</span>';
     if(a.sub==='answer') h+=btn('privacyCloseAnswers','Clore les réponses ('+(a.answeredCount||0)+'/'+(a.playerCount||0)+')');

@@ -348,10 +348,7 @@ function controllerView(act) {
   if (act.type === 'enquete') {
     return enqueteController(act);
   }
-  // ROUE DES GAGES : détail du défi puis vote du meilleur
-  if (act.type === 'roue_des_gages') {
-    return roueController(act);
-  }
+  // GAGE DU ROI : attribué par le roi à un joueur
   // REACTION RACE : gros buzzer
   if (act.type === 'reaction_race') {
     const buzzed = (act.buzzes||[]).find(b=>b.id===STATE.me.id);
@@ -997,47 +994,7 @@ function flashKeysWrong(){
   setTimeout(()=> keys.forEach(e=>{ e.style.boxShadow=''; e.style.filter=''; }), 500);
 }
 
-function roueController(act){
-  const g = act.gage || {};
-  const me = STATE.me;
-  if (act.sub === 'spin'){
-    return `<div class="card center glow-box">
-      <h2 class="neon-pink">🎰 LA ROUE TOURNE…</h2>
-      <p class="big">Regarde la BORNE 📺</p>
-      <p class="muted">Un défi va être tiré au sort pour TOUTE la table.</p>
-    </div>`;
-  }
-  if (act.sub === 'challenge'){
-    return `<div class="card center glow-box" style="border-color:var(--neon3)">
-      <div class="pill neon-yellow">🎰 DÉFI À RELEVER</div>
-      <h2 class="neon-pink">${esc(g.titre||'')}</h2>
-      <p class="big">${esc(g.desc||'')}</p>
-      ${g.alt && g.alt!=='—' ? `<p class="muted">Variante sans alcool : ${esc(g.alt)}</p>`:''}
-      <p class="big neon-cyan blink">À toi de jouer ! Le meilleur gagne une vie ❤️</p>
-    </div>`;
-  }
-  if (act.sub === 'vote'){
-    const my = act.votes && act.votes[me.id];
-    const others = STATE.players.filter(p=>p.connected && p.id!==me.id);
-    return `<div class="card glow-box">
-      <div class="pill neon-yellow">🗳️ LE MEILLEUR SUR « ${esc(g.titre||'')} »</div>
-      <p class="muted">Vote pour celui/celle qui a le mieux relevé le défi (pas toi-même).</p>
-      <div class="grid-players mt">
-        ${others.map(p=>`<button class="btn ${my===p.id?'secondary':'warn'}" onclick="roueVote('${p.id}')">${esc(p.name)}${my===p.id?' ✔':''}</button>`).join('')}
-      </div>
-      ${my?'<p class="neon-cyan center mt">Vote enregistré (modifiable) ✔</p>':''}
-    </div>`;
-  }
-  // result
-  const winners=(act.winnerIds||[]);
-  const iWon = winners.includes(me.id);
-  return `<div class="card center glow-box">
-    <h2 class="${iWon?'neon-cyan':'neon-pink'}">${iWon?'🏆 TU GAGNES UNE VIE ❤️':'💔 −1 vie'}</h2>
-    <p class="big">${winners.length?esc(winners.map(id=>(STATE.players.find(p=>p.id===id)||{}).name).filter(Boolean).join(' & ')):'—'} : meilleur(s) sur « ${esc(g.titre||'')} »</p>
-    <p class="muted">Regarde la BORNE 📺</p>
-  </div>`;
-}
-function roueVote(t){ api('/api/roue/vote', { targetId: t }); }
+
 
 function enqueteController(act) {
   if (act.done) {
@@ -1327,11 +1284,6 @@ function heroSections(q) {
       ${pick('🍙 Animés',"heroLaunch('quiz',{deck:'anime'})",q&&q.quiz)}
       ${pick('🏛️ Culture T',"heroLaunch('quiz',{deck:'cultureT'})",q&&q.quiz)}
       ${pick('🏘️ Saint-Maur',"heroLaunch('quiz',{deck:'saintmaur'})",q&&q.quiz)}
-    </div>
-
-    ${head(q&&q.roue, '🎰 Roue des gages')}
-    <div class="row" style="gap:6px;flex-wrap:wrap">
-      ${pick('🎰 Lancer la roue',"heroLaunch('roue_des_gages')",q&&q.roue)}
     </div>
 
     ${head(q&&q.anecdote, '📖 Anecdote')}

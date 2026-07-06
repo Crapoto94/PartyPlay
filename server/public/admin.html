@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Administration — PartyPlay</title>
-  <link rel="stylesheet" href="/static/admin.css">
+  <link rel="stylesheet" href="/static/admin.css?v=2">
   <script src="/static/version-badge.js" defer></script>
   <style>
     .ttcq-cat { border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.2); transition: box-shadow .25s; }
@@ -100,9 +100,7 @@
           <a class="nav-item" data-sec="quiz" onclick="showSection('quiz')">
             <span>❓</span> Quiz
           </a>
-          <a class="nav-item" data-sec="gages" onclick="showSection('gages')">
-            <span>💪</span> Gages / Défis
-          </a>
+
           <a class="nav-item" data-sec="photos" onclick="showSection('photos')">
             <span>📸</span> Défis photo
           </a>
@@ -480,23 +478,6 @@
           <div id="qzList"></div>
         </section>
 
-        <!-- ===== SECTION : GAGES / DÉFIS ===== -->
-        <section id="sec-gages" class="admin-section" style="display:none">
-          <h1 class="section-title">💪 Gages / Défis</h1>
-          <p class="muted" style="margin-bottom:20px">Catalogue des <strong>gages</strong> proposés par défaut à chaque nouvelle fête (Roue des gages, défis aléatoires).</p>
-
-          <div class="card">
-            <div class="inline" style="gap:10px;flex-wrap:wrap;align-items:flex-end">
-              <button class="btn" onclick="ggAdd()">➕ Ajouter un gage</button>
-              <button class="btn" onclick="saveGagesAdmin()">💾 Enregistrer</button>
-              <span id="ggSaved" class="muted"></span>
-              <span class="tag" id="ggCount">—</span>
-            </div>
-          </div>
-
-          <div id="ggList"></div>
-        </section>
-
         <!-- ===== SECTION : DÉFIS PHOTO ===== -->
         <section id="sec-photos" class="admin-section" style="display:none">
           <h1 class="section-title">📸 Défis photo</h1>
@@ -577,7 +558,7 @@ const themeLabel = { retro:'Rétro', neon:'Néon', chic:'Chic', kids:'Enfant', c
 const ALL_THEMES = ['retro','neon','chic','kids','casino'];
 const PLAN_ORDER = ['free','full','infinite'];
 let PWD = sessionStorage.getItem('admPwd') || '';
-let PRICING = null, BREVO = null, _emailLoaded = false, _legalLoaded = false, _promosLoaded = false, _privacyLoaded = false, _btLoaded = false, _cartonLoaded = false, _ttcqLoaded = false, _googleLoaded = false, _justoneLoaded = false, _quizLoaded = false, _gagesLoaded = false, _photosLoaded = false, _spotlightLoaded = false;
+let PRICING = null, BREVO = null, _emailLoaded = false, _legalLoaded = false, _promosLoaded = false, _privacyLoaded = false, _btLoaded = false, _cartonLoaded = false, _ttcqLoaded = false, _googleLoaded = false, _justoneLoaded = false, _quizLoaded = false, _photosLoaded = false, _spotlightLoaded = false;
 let PRIVACY_DATA = null;
 let CARTON_DATA = null;
 let TTCQ_DATA = null;
@@ -612,7 +593,6 @@ function showSection(name) {
   if (name === 'ttcq' && !_ttcqLoaded) { _ttcqLoaded = true; loadTtcqAdmin(); }
   if (name === 'justone' && !_justoneLoaded) { _justoneLoaded = true; loadJustoneAdmin(); }
   if (name === 'quiz' && !_quizLoaded) { _quizLoaded = true; loadQuizAdmin(); }
-  if (name === 'gages' && !_gagesLoaded) { _gagesLoaded = true; loadGagesAdmin(); }
   if (name === 'photos' && !_photosLoaded) { _photosLoaded = true; loadPhotosAdmin(); }
   if (name === 'spotlight' && !_spotlightLoaded) { _spotlightLoaded = true; loadSpotlightAdmin(); }
 }
@@ -656,10 +636,13 @@ async function loadEvents() {
         ? '<span class="tag" style="background:#fdeecf;color:#a06a00">à payer</span>' : '';
     const payBtn = e.paymentStatus === 'pending'
       ? `<button class="btn secondary" style="width:auto" onclick="markPaid('${e.id}')">Marquer payé</button>` : '';
+    const verifiedTag = e.emailVerified
+      ? (e.verificationMethod === 'google'
+        ? '<span class="tag" style="background:#e8f7ee;color:#1f9d57">✓ Google</span>'
+        : '<span class="tag" style="background:#e8f7ee;color:#1f9d57">✓ lien</span>')
+      : '<span class="tag" style="background:#fdeecf;color:#a06a00">⏳ non confirmé</span>';
     const mail = e.contactEmail
-      ? `📧 ${esc(e.contactEmail)} ${e.emailVerified
-          ? '<span class="tag" style="background:#e8f7ee;color:#1f9d57">✓ confirmé</span>'
-          : `<span class="tag" style="background:#fdeecf;color:#a06a00">⏳ non confirmé</span> <button class="btn secondary" style="width:auto;padding:2px 9px;font-size:11.5px" onclick="forceVerify('${e.id}','${esc(e.name)}')">Forcer la validation</button>`}`
+      ? `📧 ${esc(e.contactEmail)} ${verifiedTag}${e.emailVerified?'':` <button class="btn secondary" style="width:auto;padding:2px 9px;font-size:11.5px" onclick="forceVerify('${e.id}','${esc(e.name)}')">Forcer</button>`}`
       : '<span class="muted">📧 — (créé par l\'admin)</span>';
     return `<tr>
       <td>
@@ -1581,89 +1564,6 @@ async function saveQuizAdmin() {
   if (d.decks) QZ_DATA = d.decks;
   renderQuizAdmin();
   const s = document.getElementById('qzSaved');
-  s.textContent = ' ✓ enregistré'; s.style.color = 'var(--a-ok)';
-  setTimeout(() => { s.textContent = ''; s.style.color = ''; }, 1800);
-}
-
-// ---- Gages / Défis ----
-let GG_DATA = null;
-async function loadGagesAdmin() {
-  try {
-    const r = await fetch('/api/admin/gages', { headers: headers() });
-    if (!r.ok) { document.getElementById('ggCount').textContent = 'Erreur ('+r.status+')'; return; }
-    GG_DATA = (await r.json()).gages || [];
-    renderGagesAdmin();
-  } catch { document.getElementById('ggCount').textContent = 'Erreur réseau'; }
-}
-function renderGagesAdmin() {
-  if (!GG_DATA) return;
-  const el = document.getElementById('ggList');
-  document.getElementById('ggCount').textContent = GG_DATA.length + ' gage(s)';
-  if (!GG_DATA.length) { el.innerHTML = '<p class="muted" style="padding:20px 0">Aucun gage. Cliquez sur « Ajouter un gage ».</p>'; return; }
-  el.innerHTML = `<table class="list"><thead><tr>
-    <th style="width:80px">ID</th>
-    <th style="width:140px">Titre</th>
-    <th>Description</th>
-    <th>Alternative</th>
-    <th style="width:60px">Intens.</th>
-    <th style="width:120px">Pools</th>
-    <th style="width:40px"></th>
-  </tr></thead><tbody>${GG_DATA.map((g, i) => gageRowHtml(g, i)).join('')}</tbody></table>`;
-}
-function gageRowHtml(g, i) {
-  const pools = ['solo','duel','collectif','sport','rock','fun','defi','vincent'];
-  const poolChecks = pools.map(p =>
-    `<label style="display:inline-flex;align-items:center;gap:2px;margin:0 4px 0 0;font-size:11px;cursor:pointer">
-      <input type="checkbox" class="gg-pool" value="${p}" ${(g.pool||[]).includes(p)?'checked':''} style="width:auto;margin:0">${p.slice(0,3)}</label>`
-  ).join('');
-  return `<tr>
-    <td><input type="text" class="gg-id" value="${esc(g.id||'')}" placeholder="id" style="width:70px;font-size:11px;background:rgba(0,0,0,.1);border:1px solid rgba(255,255,255,.06);border-radius:4px;padding:3px 5px"></td>
-    <td><input type="text" class="gg-titre" value="${esc(g.titre||'')}" placeholder="Titre" style="width:130px;font-size:12px;background:rgba(0,0,0,.1);border:1px solid rgba(255,255,255,.06);border-radius:4px;padding:3px 5px"></td>
-    <td><input type="text" class="gg-desc" value="${esc(g.desc||'')}" placeholder="Description" style="width:100%;font-size:12px;background:rgba(0,0,0,.1);border:1px solid rgba(255,255,255,.06);border-radius:4px;padding:3px 5px"></td>
-    <td><input type="text" class="gg-alt" value="${esc(g.alt||'')}" placeholder="Alternative" style="width:100%;font-size:12px;background:rgba(0,0,0,.1);border:1px solid rgba(255,255,255,.06);border-radius:4px;padding:3px 5px"></td>
-    <td><select class="gg-intensity" style="font-size:12px;background:rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.06);border-radius:4px;padding:3px 4px">
-      ${[1,2,3].map(v => `<option value="${v}"${g.intensity===v?' selected':''}>${v}</option>`).join('')}
-    </select></td>
-    <td style="font-size:11px">${poolChecks}</td>
-    <td><button class="btn danger" style="width:auto;padding:2px 8px;font-size:11px" onclick="ggDelete(this)">✕</button></td>
-  </tr>`;
-}
-function ggCollect() {
-  const gages = [];
-  document.querySelectorAll('#ggList tbody tr').forEach(row => {
-    const titre = row.querySelector('.gg-titre').value.trim();
-    if (!titre) return;
-    const pool = [...row.querySelectorAll('.gg-pool:checked')].map(c => c.value);
-    gages.push({
-      id: row.querySelector('.gg-id').value.trim() || 'gage_' + Date.now(),
-      titre,
-      desc: row.querySelector('.gg-desc').value.trim(),
-      alt: row.querySelector('.gg-alt').value.trim(),
-      intensity: parseInt(row.querySelector('.gg-intensity').value, 10) || 1,
-      pool,
-    });
-  });
-  return gages;
-}
-function ggAdd() {
-  if (!GG_DATA) GG_DATA = [];
-  GG_DATA.push({ id: 'gage_' + Date.now(), titre: '', desc: '', alt: '', intensity: 1, pool: [] });
-  renderGagesAdmin();
-}
-function ggDelete(btn) {
-  if (!confirm('Supprimer ce gage ?')) return;
-  const row = btn.closest('tr');
-  row.style.transition = 'opacity .2s';
-  row.style.opacity = '0';
-  setTimeout(() => { row.remove(); }, 200);
-}
-async function saveGagesAdmin() {
-  const gages = ggCollect();
-  const r = await fetch('/api/admin/gages', { method:'POST', headers: headers(), body: JSON.stringify({ gages }) });
-  const d = await r.json();
-  if (d.gages) GG_DATA = d.gages;
-  renderGagesAdmin();
-  const s = document.getElementById('ggSaved');
   s.textContent = ' ✓ enregistré'; s.style.color = 'var(--a-ok)';
   setTimeout(() => { s.textContent = ''; s.style.color = ''; }, 1800);
 }

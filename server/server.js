@@ -32,7 +32,6 @@ import { getCarton, saveCarton, CARTON_LEVELS } from './store/carton.js';
 import { getJustone, saveJustone } from './store/justone.js';
 import { getTtcq, saveTtcq, resetTtcq } from './store/ttcq.js';
 import { getQuiz, saveQuiz } from './store/quiz.js';
-import { getGages, saveGages } from './store/gages.js';
 import { getPhotos, savePhotos } from './store/photos.js';
 import { getSpotlight, saveSpotlight } from './store/spotlight.js';
 import { getGoogleConfig, googleClientId, googleEnabled, saveGoogleConfig } from './store/google.js';
@@ -266,6 +265,7 @@ app.get('/api/admin/events', (req, res) => {
       adminPassword: cfg.adminPassword || '',
       contactEmail: cfg.contactEmail || '',
       emailVerified: cfg.emailVerified !== false,
+      verificationMethod: cfg.emailVerified ? (cfg.verificationToken ? 'email' : 'google') : null,
       creatorIp: cfg.creatorIp || '',
       playerCount: (cfg.players || []).length,
     };
@@ -469,18 +469,6 @@ app.get('/api/admin/quiz', (req, res) => {
 app.post('/api/admin/quiz', (req, res) => {
   if (!requireAdmin(req, res)) return;
   res.json({ ok: true, decks: saveQuiz(req.body?.decks || {}) });
-});
-
-// =====================================================================
-//  GAGES — catalogue de défis (admin général)
-// =====================================================================
-app.get('/api/admin/gages', (req, res) => {
-  if (!requireAdmin(req, res)) return;
-  res.json({ gages: getGages() });
-});
-app.post('/api/admin/gages', (req, res) => {
-  if (!requireAdmin(req, res)) return;
-  res.json({ ok: true, gages: saveGages(req.body?.gages || []) });
 });
 
 // =====================================================================
@@ -853,7 +841,6 @@ ev.post('/api/pong/move', (req, res) => { const p = requirePlayer(req, res); if 
 ev.post('/api/mosaic/guess', (req, res) => { const p = requirePlayer(req, res); if (!p) return; res.json(req.game.mosaicGuess(p.id, req.body.text || '')); });
 ev.post('/api/draw/update', (req, res) => { const p = requirePlayer(req, res); if (!p) return; req.game.drawUpdate(p.id, req.body.strokes); res.json({ ok: true }); });
 ev.post('/api/draw/guess', (req, res) => { const p = requirePlayer(req, res); if (!p) return; res.json(req.game.drawGuess(p.id, req.body.text || '')); });
-ev.post('/api/roue/vote', (req, res) => { const p = requirePlayer(req, res); if (!p) return; req.game.roueVote(p.id, req.body.targetId); res.json({ ok: true }); });
 ev.post('/api/music/press', (req, res) => { const p = requirePlayer(req, res); if (!p) return; req.game.musicPress(p.id, req.body.index); res.json({ ok: true }); });
 ev.post('/api/piano/press', (req, res) => { const p = requirePlayer(req, res); if (!p) return; req.game.pianoPress(p.id, req.body.off); res.json({ ok: true }); });
 ev.post('/api/piano/replay', (req, res) => { const p = requirePlayer(req, res); if (!p) return; req.game.pianoDemo(); res.json({ ok: true }); });
@@ -1082,8 +1069,6 @@ ev.post('/api/admin/action', (req, res) => {
     case 'spotlightTally': g.spotlightTally(); break;
     case 'drawNext': g.drawNext(); break;
     case 'drawReveal': g.drawReveal(); break;
-    case 'roueOpenVote': g.roueOpenVote(); break;
-    case 'roueTally': g.roueTally(); break;
     case 'privacyCloseAnswers': g.privacyCloseAnswers(); break;
     case 'privacyReveal': g.privacyReveal(); break;
     case 'privacyNext': g.privacyNext(); break;

@@ -8,7 +8,6 @@
 import { AVATARS } from './avatars.js';
 import { DRAW_WORDS } from './draw_words.js';
 import { getQuiz } from '../store/quiz.js';
-import { getGages } from '../store/gages.js';
 import { getSpotlight } from '../store/spotlight.js';
 import { getPhotos } from '../store/photos.js';
 
@@ -29,7 +28,6 @@ export function defaultContent() {
     quiz: { decks: getQuiz() },
     blindtest: { playlists: {} },
     anecdotes: [],
-    gages: getGages(),
     spotlightDefis: getSpotlight(),
     drawWords: DRAW_WORDS,
     photoMissions: getPhotos(),
@@ -43,7 +41,6 @@ export function emptyContent() {
     quiz: { decks: {} },
     blindtest: { playlists: {} },
     anecdotes: [],
-    gages: [],
     spotlightDefis: [],
     drawWords: [],
     photoMissions: {},
@@ -54,7 +51,7 @@ export function emptyContent() {
 // Toutes les activités du catalogue, activées par défaut.
 export function defaultActivities() {
   return {
-    quiz: true, blindtest: true, anecdotes: true, gages: true, photo: true,
+    quiz: true, blindtest: true, anecdotes: true, photo: true,
     spotlight: true, draw: true, arcade: true, collab: true,
   };
 }
