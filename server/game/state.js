@@ -1660,6 +1660,9 @@ export class GameState {
         const avail = pool.filter(t => !used.includes(t.id));
         if (avail.length) this.ttcqSelectTheme(a.themePickerId, avail[Math.floor(Math.random() * avail.length)].id);
       }
+    } else if (a.sub === 'theme_pick' && !a.themePickerId && bots.length) {
+      const picker = bots[Math.floor(Math.random() * bots.length)];
+      this.ttcqSelectTheme(picker.id, this._ttcqRandomTheme().id);
     }
   }
 
@@ -1726,6 +1729,11 @@ export class GameState {
           const pool = a._pool || getTtcq();
           const avail = pool.filter(t => !used.includes(t.id));
           if (avail.length) this.ttcqSelectTheme(b.id, avail[rint(avail.length)].id);
+        } else if (a.sub === 'theme_pick' && !a.themePickerId) {
+          const pool = a._pool || getTtcq();
+          const avail = pool.filter(t => !(a._usedThemes||[]).includes(t.id));
+          if (avail.length) this.ttcqSelectTheme(b.id, avail[rint(avail.length)].id);
+          break;
         }
       }
     }
