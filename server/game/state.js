@@ -20,7 +20,7 @@ import { PRIVACY_QUESTIONS, PRIVACY_LEVELS } from '../data/privacy.js';
 import { CARTON_HAND_SIZE, CARTON_DEFAULT_ROUNDS } from '../data/carton.js';
 import { cartonPools, CARTON_LEVELS } from '../store/carton.js';
 import { defaultPlaylistsMap } from '../store/blindtests.js';
-import { TTCQ_THEMES } from '../data/ttcq.js';
+import { getTtcq } from '../store/ttcq.js';
 
 // Mélange (Fisher-Yates) — copie mélangée d'un tableau.
 function shuffled(arr) {
@@ -746,7 +746,7 @@ export class GameState {
       const totalRounds = Math.min(Math.max(parseInt(opts.rounds, 10) || 10, 3), 20);
       const level = opts.level === 'adulte' ? 'adulte' : 'classique';
       const disabledCats = Array.isArray(opts.disabledCats) ? opts.disabledCats : [];
-      const pool = TTCQ_THEMES.filter(t => t.level === level && !disabledCats.includes(t.cat));
+      const pool = getTtcq().filter(t => t.level === level && !disabledCats.includes(t.cat));
       const custom = (this._content?.ttcq?.themes || []).filter(t => t.level === level);
       custom.forEach(t => { pool.push(t); });
       const cats = [...new Set(pool.map(t => t.cat))].sort();
@@ -1460,7 +1460,7 @@ export class GameState {
   }
   _ttcqRandomTheme(category) {
     const a = this.activity;
-    const basePool = a._pool || TTCQ_THEMES;
+    const basePool = a._pool || getTtcq();
     const pool = category
       ? basePool.filter(t => t.cat === category && !a._usedThemes?.includes(t.id))
       : basePool.filter(t => !a._usedThemes?.includes(t.id));
@@ -1474,7 +1474,7 @@ export class GameState {
   ttcqSelectTheme(playerId, themeId) {
     const a = this.activity;
     if (!a || a.type !== 'ttcq' || a.sub !== 'theme_pick') return { error: 'Pas le bon moment' };
-    const theme = (a._pool || TTCQ_THEMES).find(t => t.id === themeId);
+    const theme = (a._pool || getTtcq()).find(t => t.id === themeId);
     if (!theme) return { error: 'Thème inconnu' };
     a.currentTheme = theme;
     a.themePickerId = playerId;
@@ -1635,7 +1635,7 @@ export class GameState {
     // En phase theme_pick, envoyer les thèmes disponibles de la catégorie
     if (a.sub === 'theme_pick' && forPlayerId != null) {
       const used = a._usedThemes || [];
-      const pool = a._pool || TTCQ_THEMES;
+      const pool = a._pool || getTtcq();
       const available = pool.filter(t => !used.includes(t.id));
       const byCat = {};
       available.forEach(t => { if (!byCat[t.cat]) byCat[t.cat] = []; byCat[t.cat].push({ id: t.id, name: t.name }); });
@@ -1656,7 +1656,7 @@ export class GameState {
       const picker = this.player(a.themePickerId);
       if (picker && picker.simBot && !a.currentTheme) {
         const used = a._usedThemes || [];
-        const pool = a._pool || TTCQ_THEMES;
+        const pool = a._pool || getTtcq();
         const avail = pool.filter(t => !used.includes(t.id));
         if (avail.length) this.ttcqSelectTheme(a.themePickerId, avail[Math.floor(Math.random() * avail.length)].id);
       }
@@ -1723,7 +1723,7 @@ export class GameState {
         if (a.sub === 'answer' && a.answers[b.id] == null) this.ttcqAnswer(b.id, rint(4));
         if (a.sub === 'theme_pick' && a.themePickerId === b.id && !a.currentTheme) {
           const used = a._usedThemes || [];
-          const pool = a._pool || TTCQ_THEMES;
+          const pool = a._pool || getTtcq();
           const avail = pool.filter(t => !used.includes(t.id));
           if (avail.length) this.ttcqSelectTheme(b.id, avail[rint(avail.length)].id);
         }

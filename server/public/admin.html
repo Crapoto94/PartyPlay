@@ -50,6 +50,9 @@
           <a class="nav-item" data-sec="carton" onclick="showSection('carton')">
             <span>🃏</span> Bouche-Trou !?
           </a>
+          <a class="nav-item" data-sec="ttcq" onclick="showSection('ttcq')">
+            <span>🎯</span> TTCQ
+          </a>
           <a class="nav-item" data-sec="blindtests" onclick="showSection('blindtests')">
             <span>🎵</span> Blind-tests
           </a>
@@ -316,6 +319,37 @@
           </div>
         </section>
 
+        <!-- ===== SECTION : TTCQ ===== -->
+        <section id="sec-ttcq" class="admin-section" style="display:none">
+          <h1 class="section-title">🎯 TTCQ — Tu Te Cotes Combien</h1>
+          <p class="muted" style="margin-bottom:20px">Catalogue des thèmes et questions (8 niveaux par thème). Modifiez le JSON ci-dessous pour ajouter, éditer ou supprimer des thèmes. Les thèmes personnalisés des organisateurs (depuis leur console) viennent en complément.</p>
+
+          <div class="card">
+            <div class="inline" style="gap:12px;flex-wrap:wrap">
+              <div class="field" style="margin:0;min-width:200px"><label>Niveau</label>
+                <select id="ttcqLevel" onchange="renderTtcqAdmin()">
+                  <option value="classique">🎉 Classique</option>
+                  <option value="adulte">🔞 18+</option>
+                </select>
+              </div>
+              <div style="align-self:flex-end;padding-bottom:9px">
+                <span class="tag" id="ttcqCount">—</span>
+                <span id="ttcqCatList" class="muted" style="font-size:12px;margin-left:8px"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="field"><label>Thèmes TTCQ <span class="muted">(chaque thème doit avoir id, name, cat, level, levels[8] avec q, c[4], a)</span></label>
+              <textarea id="ttcqEditor" rows="24" style="width:100%;font-size:12.5px"></textarea>
+            </div>
+            <div class="inline">
+              <button class="btn" onclick="saveTtcqAdmin()">💾 Enregistrer</button>
+              <span id="ttcqSaved" class="muted"></span>
+            </div>
+          </div>
+        </section>
+
         <!-- ===== SECTION : BLIND-TESTS PAR DÉFAUT ===== -->
         <section id="sec-blindtests" class="admin-section" style="display:none">
           <h1 class="section-title">🎵 Blind-tests par défaut</h1>
@@ -378,9 +412,10 @@ const themeLabel = { retro:'Rétro', neon:'Néon', chic:'Chic', kids:'Enfant', c
 const ALL_THEMES = ['retro','neon','chic','kids','casino'];
 const PLAN_ORDER = ['free','full','infinite'];
 let PWD = sessionStorage.getItem('admPwd') || '';
-let PRICING = null, BREVO = null, _emailLoaded = false, _legalLoaded = false, _promosLoaded = false, _privacyLoaded = false, _btLoaded = false, _cartonLoaded = false;
+let PRICING = null, BREVO = null, _emailLoaded = false, _legalLoaded = false, _promosLoaded = false, _privacyLoaded = false, _btLoaded = false, _cartonLoaded = false, _ttcqLoaded = false;
 let PRIVACY_DATA = null;
 let CARTON_DATA = null;
+let TTCQ_DATA = null;
 
 function headers() { return { 'Content-Type':'application/json', 'x-admin-password': PWD }; }
 function esc(s) { return (s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
@@ -398,6 +433,7 @@ function showSection(name) {
   if (name === 'privacy' && !_privacyLoaded) { _privacyLoaded = true; loadPrivacyQuestions(); }
   if (name === 'carton' && !_cartonLoaded) { _cartonLoaded = true; loadCartonAdmin(); }
   if (name === 'blindtests' && !_btLoaded) { _btLoaded = true; loadBlindtestsAdmin(); }
+  if (name === 'ttcq' && !_ttcqLoaded) { _ttcqLoaded = true; loadTtcqAdmin(); }
 }
 
 // ---- Auth ----
@@ -831,6 +867,42 @@ async function saveCartonAdmin() {
   if (d.carton) CARTON_DATA = d.carton;
   renderCartonLevel(document.getElementById('ctLevel').value);
   const s = document.getElementById('ctSaved'); s.textContent = ' ✓ enregistré'; setTimeout(()=>s.textContent='', 1800);
+}
+
+// ---- TTCQ : édition des thèmes / questions ----
+async function loadTtcqAdmin() {
+  try {
+    const r = await fetch('/api/admin/ttcq', { headers: headers() });
+    if (!r.ok) { document.getElementById('ttcqCount').textContent = 'Erreur ('+r.status+')'; return; }
+    TTCQ_DATA = (await r.json()).themes || [];
+    renderTtcqAdmin();
+  } catch { document.getElementById('ttcqCount').textContent = 'Erreur réseau'; }
+}
+function renderTtcqAdmin() {
+  const level = document.getElementById('ttcqLevel').value;
+  const filtered = TTCQ_DATA.filter(t => t.level === level);
+  document.getElementById('ttcqEditor').value = JSON.stringify(filtered, null, 1);
+  document.getElementById('ttcqCount').textContent = filtered.length + ' thèmes';
+  const cats = [...new Set(filtered.map(t => t.cat))].sort();
+  document.getElementById('ttcqCatList').textContent = 'Catégories : ' + cats.join(', ');
+}
+async function saveTtcqAdmin() {
+  try {
+    const level = document.getElementById('ttcqLevel').value;
+    const raw = document.getElementById('ttcqEditor').value;
+    const edited = JSON.parse(raw || '[]');
+    if (!Array.isArray(edited)) throw new Error('Doit être un tableau');
+    // Merge back: replace themes of this level, keep other level
+    const other = TTCQ_DATA.filter(t => t.level !== level);
+    const merged = [...other, ...edited];
+    const r = await fetch('/api/admin/ttcq', { method:'POST', headers: headers(), body: JSON.stringify({ themes: merged }) });
+    const d = await r.json();
+    if (d.themes) TTCQ_DATA = d.themes;
+    renderTtcqAdmin();
+    const s = document.getElementById('ttcqSaved'); s.textContent = ' ✓ enregistré ('+edited.length+' thèmes)'; setTimeout(()=>s.textContent='', 1800);
+  } catch(e) {
+    document.getElementById('ttcqSaved').textContent = ' ✗ Erreur JSON : '+e.message;
+  }
 }
 
 // ---- Blind-tests par défaut ----

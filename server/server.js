@@ -28,6 +28,7 @@ import { validatePromoCode, usePromoCode, listPromoCodes, addPromoCode, removePr
 import { PRIVACY_QUESTIONS, PRIVACY_LEVELS } from './data/privacy.js';
 import { getBlindtests, saveBlindtests, defaultPlaylistsMap } from './store/blindtests.js';
 import { getCarton, saveCarton, CARTON_LEVELS } from './store/carton.js';
+import { getTtcq, saveTtcq } from './store/ttcq.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC = path.join(__dirname, 'public');
@@ -365,6 +366,17 @@ app.get('/api/admin/carton', (req, res) => {
 app.post('/api/admin/carton', (req, res) => {
   if (!requireAdmin(req, res)) return;
   res.json({ ok: true, carton: saveCarton(req.body?.carton || {}) });
+});
+// =====================================================================
+//  TTCQ — catalogue éditable des thèmes/questions (admin général)
+// =====================================================================
+app.get('/api/admin/ttcq', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  res.json({ themes: getTtcq() });
+});
+app.post('/api/admin/ttcq', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  res.json({ ok: true, themes: saveTtcq(req.body?.themes || []) });
 });
 app.post('/api/admin/promos', (req, res) => {
   if (!requireAdmin(req, res)) return;
