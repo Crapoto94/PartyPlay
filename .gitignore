@@ -25,3 +25,6 @@ server/carton.json
 
 # Config Client ID Google (runtime — public mais non versionne ; sinon env GOOGLE_CLIENT_ID)
 server/google.json
+
+# Catalogue Un Seul Mot !? (runtime — édité dans l'admin générale ; défauts dans data/justone.js)
+server/justone.json
