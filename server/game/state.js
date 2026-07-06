@@ -747,6 +747,8 @@ export class GameState {
       const level = opts.level === 'adulte' ? 'adulte' : 'classique';
       const disabledCats = Array.isArray(opts.disabledCats) ? opts.disabledCats : [];
       const pool = TTCQ_THEMES.filter(t => t.level === level && !disabledCats.includes(t.cat));
+      const custom = (this._content?.ttcq?.themes || []).filter(t => t.level === level);
+      custom.forEach(t => { pool.push(t); });
       const cats = [...new Set(pool.map(t => t.cat))].sort();
       const a = this.activity;
       a.level = level;
@@ -1472,7 +1474,7 @@ export class GameState {
   ttcqSelectTheme(playerId, themeId) {
     const a = this.activity;
     if (!a || a.type !== 'ttcq' || a.sub !== 'theme_pick') return { error: 'Pas le bon moment' };
-    const theme = TTCQ_THEMES.find(t => t.id === themeId);
+    const theme = (a._pool || TTCQ_THEMES).find(t => t.id === themeId);
     if (!theme) return { error: 'Thème inconnu' };
     a.currentTheme = theme;
     a.themePickerId = playerId;

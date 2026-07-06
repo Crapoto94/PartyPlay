@@ -38,6 +38,7 @@ export function defaultContent() {
     spotlightDefis: SPOTLIGHT_DEFIS,
     drawWords: DRAW_WORDS,
     photoMissions: PHOTO_MISSIONS,
+    ttcq: { themes: [] },
   }));
 }
 
@@ -51,6 +52,7 @@ export function emptyContent() {
     spotlightDefis: [],
     drawWords: [],
     photoMissions: {},
+    ttcq: { themes: [] },
   };
 }
 

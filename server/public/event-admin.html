@@ -247,7 +247,17 @@
           </div>
         </div>
         <div class="card">
-          <div class="field"><label>Decks de quiz <span class="muted">{ deck: [ {prompt, choices[4], answer, points} ] }</span></label><textarea id="c_quiz" rows="8"></textarea></div>
+          <div class="card">
+            <h3 class="neon-yellow">🎯 TTCQ — mes thèmes perso</h3>
+            <p class="muted">Ajoute tes propres <b>thèmes de questions</b> : chaque thème contient 8 questions (niveaux 1 à 8). Format JSON : <code>[ { id, name, cat, level, levels: [{q, c:[4], a}] } ]</code>. Ils sont prioritaires sur le catalogue.</p>
+            <div class="field"><label>Thèmes TTCQ perso <span class="muted">(tableau JSON)</span></label><textarea id="c_ttcq" rows="8" placeholder='[{"id":"mon_theme","name":"Mon thème","cat":"custom","level":"classique","levels":[{"q":"Question niveau 1 ?","c":["A","B","C","D"],"a":0},{"q":"Question niveau 2 ?","c":["A","B","C","D"],"a":1},{"q":"Question niveau 3 ?","c":["A","B","C","D"],"a":2},{"q":"Question niveau 4 ?","c":["A","B","C","D"],"a":3},{"q":"Question niveau 5 ?","c":["A","B","C","D"],"a":0},{"q":"Question niveau 6 ?","c":["A","B","C","D"],"a":1},{"q":"Question niveau 7 ?","c":["A","B","C","D"],"a":2},{"q":"Question niveau 8 ?","c":["A","B","C","D"],"a":3}]}]'></textarea></div>
+            <div class="row">
+              <button class="btn secondary" onclick="saveTtcqCustom()">💾 Enregistrer mes thèmes</button>
+              <span class="muted" id="ttcq_saved"></span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="field"><label>Decks de quiz <span class="muted">{ deck: [ {prompt, choices[4], answer, points} ] }</span></label><textarea id="c_quiz" rows="8"></textarea></div>
           <div class="field"><label>Gages <span class="muted">[ {id, titre, desc, alt, intensity, pool[]} ]</span></label><textarea id="c_gages" rows="6"></textarea></div>
           <div class="field"><label>Défis spotlight <span class="muted">[ "défi", … ]</span></label><textarea id="c_spot" rows="4"></textarea></div>
           <div class="field"><label>Mots Dessine-moi <span class="muted">[ {word, cat} ]</span></label><textarea id="c_draw" rows="4"></textarea></div>
@@ -747,6 +757,8 @@ function fillContent(){
   const cart=ct.carton||{};
   document.getElementById('c_carton_p').value=(cart.prompts||[]).join('\n');
   document.getElementById('c_carton_a').value=(cart.answers||[]).join('\n');
+  const ttcq=ct.ttcq||{};
+  document.getElementById('c_ttcq').value=JSON.stringify(ttcq.themes||[],null,1);
   fillBlindtests();
   fillAnecdotes();
 }
@@ -757,6 +769,21 @@ async function saveCartonCustom(){
   const content={ ...(CFG.content||{}), carton };
   await push({content}); CFG.content=content;
   const s=document.getElementById('carton_saved'); s.textContent=' ✓ enregistré ('+carton.prompts.length+' Q / '+carton.answers.length+' R)'; setTimeout(()=>s.textContent='',2500);
+}
+async function saveTtcqCustom(){
+  try{
+    const raw=document.getElementById('c_ttcq').value;
+    const themes=JSON.parse(raw||'[]');
+    if(!Array.isArray(themes)) throw new Error('Doit être un tableau');
+    themes.forEach((t,i)=>{
+      if(!t.name) throw new Error('Thème '+(i+1)+' : name requis');
+      if(!Array.isArray(t.levels)||t.levels.length!==8) throw new Error('Thème "'+t.name+'" : 8 niveaux requis');
+    });
+    const ttcq={ themes };
+    const content={ ...(CFG.content||{}), ttcq };
+    await push({content}); CFG.content=content;
+    const s=document.getElementById('ttcq_saved'); s.textContent=' ✓ '+themes.length+' thème(s) enregistré(s)'; setTimeout(()=>s.textContent='',2500);
+  }catch(e){ document.getElementById('ttcq_saved').textContent=' ✗ Erreur : '+e.message; }
 }
 async function saveContent(){
   try{
@@ -769,6 +796,7 @@ async function saveContent(){
       blindtest:{ playlists: JSON.parse(c_bt.value||'{}') },
       photoMissions: JSON.parse(c_photo.value||'{}'),
       carton: (CFG.content&&CFG.content.carton)||{ prompts:[], answers:[] },
+      ttcq: (CFG.content&&CFG.content.ttcq)||{ themes:[] },
     };
     await push({content}); CFG.content=content; c_err.textContent=' ✓ enregistré'; c_err.className='ok';
     fillLaunchers();
