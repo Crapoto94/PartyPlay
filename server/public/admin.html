@@ -322,32 +322,25 @@
         <!-- ===== SECTION : TTCQ ===== -->
         <section id="sec-ttcq" class="admin-section" style="display:none">
           <h1 class="section-title">🎯 TTCQ — Tu Te Cotes Combien</h1>
-          <p class="muted" style="margin-bottom:20px">Catalogue des thèmes et questions (8 niveaux par thème). Modifiez le JSON ci-dessous pour ajouter, éditer ou supprimer des thèmes. Les thèmes personnalisés des organisateurs (depuis leur console) viennent en complément.</p>
+          <p class="muted" style="margin-bottom:20px">Catalogue des thèmes et questions (8 niveaux par thème). Ajoutez, modifiez ou supprimez des thèmes directement. Les thèmes personnalisés des organisateurs (depuis leur console) viennent en complément.</p>
 
           <div class="card">
-            <div class="inline" style="gap:12px;flex-wrap:wrap">
+            <div class="inline" style="gap:12px;flex-wrap:wrap;align-items:flex-end">
               <div class="field" style="margin:0;min-width:200px"><label>Niveau</label>
                 <select id="ttcqLevel" onchange="renderTtcqAdmin()">
                   <option value="classique">🎉 Classique</option>
                   <option value="adulte">🔞 18+</option>
                 </select>
               </div>
-              <div style="align-self:flex-end;padding-bottom:9px">
-                <span class="tag" id="ttcqCount">—</span>
-                <span id="ttcqCatList" class="muted" style="font-size:12px;margin-left:8px"></span>
-              </div>
+              <button class="btn secondary" onclick="ttcqAddTheme()">➕ Ajouter un thème</button>
+              <button class="btn" onclick="saveTtcqAdmin()">💾 Enregistrer</button>
+              <span id="ttcqSaved" class="muted"></span>
+              <span class="tag" id="ttcqCount">—</span>
+              <span id="ttcqCatList" class="muted" style="font-size:12px"></span>
             </div>
           </div>
 
-          <div class="card">
-            <div class="field"><label>Thèmes TTCQ <span class="muted">(chaque thème doit avoir id, name, cat, level, levels[8] avec q, c[4], a)</span></label>
-              <textarea id="ttcqEditor" rows="24" style="width:100%;font-size:12.5px"></textarea>
-            </div>
-            <div class="inline">
-              <button class="btn" onclick="saveTtcqAdmin()">💾 Enregistrer</button>
-              <span id="ttcqSaved" class="muted"></span>
-            </div>
-          </div>
+          <div id="ttcqList"></div>
         </section>
 
         <!-- ===== SECTION : BLIND-TESTS PAR DÉFAUT ===== -->
@@ -881,27 +874,96 @@ async function loadTtcqAdmin() {
 function renderTtcqAdmin() {
   const level = document.getElementById('ttcqLevel').value;
   const filtered = TTCQ_DATA.filter(t => t.level === level);
-  document.getElementById('ttcqEditor').value = JSON.stringify(filtered, null, 1);
+  const el = document.getElementById('ttcqList');
+  if (!filtered.length) { el.innerHTML = '<p class="muted" style="margin-top:20px">Aucun thème pour ce niveau. Cliquez sur « Ajouter un thème ».</p>'; }
+  else el.innerHTML = filtered.map((t, i) => ttcqThemeHtml(t, i)).join('');
   document.getElementById('ttcqCount').textContent = filtered.length + ' thèmes';
   const cats = [...new Set(filtered.map(t => t.cat))].sort();
-  document.getElementById('ttcqCatList').textContent = 'Catégories : ' + cats.join(', ');
+  document.getElementById('ttcqCatList').textContent = cats.length ? '· ' + cats.join(', ') : '';
+}
+function ttcqThemeHtml(t, idx) {
+  const id = esc(t.id || '');
+  const name = esc(t.name || '');
+  const cat = esc(t.cat || '');
+  const levelsHtml = (t.levels || Array(8).fill(null)).map((l, li) => ttcqLevelHtml(l, idx, li)).join('');
+  return `<div class="card ttcq-theme" style="margin-top:16px" data-idx="${idx}">
+    <div class="inline" style="justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+      <div class="field" style="margin:0;flex:2;min-width:200px"><label>Nom du thème</label><input type="text" class="ttcq-name" value="${name}" placeholder="Mon thème"></div>
+      <div class="field" style="margin:0;flex:1;min-width:120px"><label>ID technique</label><input type="text" class="ttcq-id" value="${id}" placeholder="mon_theme_001"></div>
+      <div class="field" style="margin:0;flex:1;min-width:120px"><label>Catégorie</label><input type="text" class="ttcq-cat" value="${cat}" placeholder="culture"></div>
+      <button class="btn danger" style="width:auto;margin-bottom:2px" onclick="ttcqDeleteTheme(this)">🗑 Supprimer</button>
+    </div>
+    <div style="margin-top:12px;border-top:1px solid var(--a-border);padding-top:12px">
+      ${levelsHtml}
+    </div>
+  </div>`;
+}
+function ttcqLevelHtml(l, tIdx, lIdx) {
+  const q = l ? esc(l.q || '') : '';
+  const c = l ? l.c || ['','','',''] : ['','','',''];
+  const a = l ? (l.a ?? 0) : 0;
+  const choicesHtml = c.map((ch, ci) =>
+    `<div class="field" style="margin:0;flex:1"><label>${'ABCD'[ci]}</label><input type="text" class="ttcq-choice" data-ci="${ci}" value="${esc(ch||'')}" placeholder="Choix ${'ABCD'[ci]}"></div>`
+  ).join('');
+  return `<div class="ttcq-level" style="margin-bottom:12px;padding:10px;background:var(--a-bg);border-radius:8px">
+    <div class="inline" style="gap:8px;align-items:flex-start;flex-wrap:nowrap;margin-bottom:6px">
+      <span class="tag" style="white-space:nowrap;margin-top:4px">Niv. ${lIdx+1}</span>
+      <div class="field" style="margin:0;flex:4"><label>Question</label><input type="text" class="ttcq-q" value="${q}" placeholder="Question niveau ${lIdx+1} ?"></div>
+    </div>
+    <div class="inline" style="gap:6px;align-items:flex-end;flex-wrap:wrap;margin-top:4px">
+      ${choicesHtml}
+      <div class="field" style="margin:0;width:80px"><label>Réponse</label>
+        <select class="ttcq-a">
+          ${[0,1,2,3].map(ci => `<option value="${ci}"${ci===a?' selected':''}>${'ABCD'[ci]}</option>`).join('')}
+        </select>
+      </div>
+    </div>
+  </div>`;
+}
+function ttcqCollect() {
+  const level = document.getElementById('ttcqLevel').value;
+  const themes = [];
+  document.querySelectorAll('.ttcq-theme').forEach(el => {
+    const name = el.querySelector('.ttcq-name').value.trim();
+    const id = el.querySelector('.ttcq-id').value.trim();
+    const cat = el.querySelector('.ttcq-cat').value.trim();
+    if (!name) return;
+    const levels = [];
+    el.querySelectorAll('.ttcq-level').forEach(lel => {
+      const q = lel.querySelector('.ttcq-q').value.trim();
+      const choices = [];
+      lel.querySelectorAll('.ttcq-choice').forEach(inp => { choices[parseInt(inp.dataset.ci)] = inp.value.trim(); });
+      const a = parseInt(lel.querySelector('.ttcq-a').value, 10);
+      levels.push({ q, c: choices.length ? choices : ['','','',''], a });
+    });
+    themes.push({ id: id || 'custom_' + Date.now() + '_' + Math.random().toString(36).slice(2,6), name, cat: cat || 'custom', level, levels });
+  });
+  return themes;
+}
+function ttcqAddTheme() {
+  const el = document.getElementById('ttcqList');
+  const empty = el.querySelector('.muted'); if (empty) empty.remove();
+  const idx = TTCQ_DATA.length;
+  const t = { id: '', name: '', cat: 'custom', level: document.getElementById('ttcqLevel').value, levels: Array(8).fill(null) };
+  el.insertAdjacentHTML('beforeend', ttcqThemeHtml(t, idx));
+}
+function ttcqDeleteTheme(btn) {
+  if (!confirm('Supprimer ce thème ?')) return;
+  btn.closest('.ttcq-theme').remove();
 }
 async function saveTtcqAdmin() {
   try {
     const level = document.getElementById('ttcqLevel').value;
-    const raw = document.getElementById('ttcqEditor').value;
-    const edited = JSON.parse(raw || '[]');
-    if (!Array.isArray(edited)) throw new Error('Doit être un tableau');
-    // Merge back: replace themes of this level, keep other level
+    const edited = ttcqCollect().filter(t => t.level === level);
     const other = TTCQ_DATA.filter(t => t.level !== level);
     const merged = [...other, ...edited];
     const r = await fetch('/api/admin/ttcq', { method:'POST', headers: headers(), body: JSON.stringify({ themes: merged }) });
     const d = await r.json();
     if (d.themes) TTCQ_DATA = d.themes;
     renderTtcqAdmin();
-    const s = document.getElementById('ttcqSaved'); s.textContent = ' ✓ enregistré ('+edited.length+' thèmes)'; setTimeout(()=>s.textContent='', 1800);
-  } catch(e) {
-    document.getElementById('ttcqSaved').textContent = ' ✗ Erreur JSON : '+e.message;
+    const s = document.getElementById('ttcqSaved'); s.textContent = ' ✓ ' + edited.length + ' thème(s) enregistré(s)'; setTimeout(() => s.textContent = '', 1800);
+  } catch (e) {
+    document.getElementById('ttcqSaved').textContent = ' ✗ Erreur : ' + e.message;
   }
 }
 
