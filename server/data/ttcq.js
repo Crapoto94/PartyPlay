@@ -5303,10 +5303,10 @@ export const TTCQ_THEMES = [
    {
     "q": "Combien de joueurs par équipe en Football ?",
     "c": [
-     7,
-     11,
-     9,
-     5
+     "7",
+     "11",
+     "9",
+     "5"
     ],
     "a": 1
    },
@@ -5391,10 +5391,10 @@ export const TTCQ_THEMES = [
    {
     "q": "Combien de joueurs par équipe en Tennis ?",
     "c": [
-     3,
-     2,
-     1,
-     4
+     "3",
+     "2",
+     "1",
+     "4"
     ],
     "a": 2
    },
@@ -5567,10 +5567,10 @@ export const TTCQ_THEMES = [
    {
     "q": "Combien de joueurs par équipe en Rugby ?",
     "c": [
-     7,
-     11,
-     15,
-     13
+     "7",
+     "11",
+     "15",
+     "13"
     ],
     "a": 2
    },
@@ -5655,10 +5655,10 @@ export const TTCQ_THEMES = [
    {
     "q": "Combien de joueurs par équipe en Cyclisme ?",
     "c": [
-     5,
-     4,
-     3,
-     1
+     "5",
+     "4",
+     "3",
+     "1"
     ],
     "a": 3
    },
@@ -5743,10 +5743,10 @@ export const TTCQ_THEMES = [
    {
     "q": "Combien de joueurs par équipe en Natation ?",
     "c": [
-     3,
-     1,
-     4,
-     2
+     "3",
+     "1",
+     "4",
+     "2"
     ],
     "a": 1
    },
@@ -5831,10 +5831,10 @@ export const TTCQ_THEMES = [
    {
     "q": "Combien de joueurs par équipe en Athlétisme ?",
     "c": [
-     4,
-     3,
-     2,
-     1
+     "4",
+     "3",
+     "2",
+     "1"
     ],
     "a": 3
    },
@@ -5919,10 +5919,10 @@ export const TTCQ_THEMES = [
    {
     "q": "Combien de joueurs par équipe en Boxe ?",
     "c": [
-     4,
-     3,
-     2,
-     1
+     "4",
+     "3",
+     "2",
+     "1"
     ],
     "a": 3
    },
@@ -6007,10 +6007,10 @@ export const TTCQ_THEMES = [
    {
     "q": "Combien de joueurs par équipe en Ski ?",
     "c": [
-     4,
-     3,
-     1,
-     2
+     "4",
+     "3",
+     "1",
+     "2"
     ],
     "a": 2
    },
@@ -6095,10 +6095,10 @@ export const TTCQ_THEMES = [
    {
     "q": "Combien de joueurs par équipe en Formule 1 ?",
     "c": [
-     1,
-     3,
-     2,
-     4
+     "1",
+     "3",
+     "2",
+     "4"
     ],
     "a": 0
    },
@@ -6183,10 +6183,10 @@ export const TTCQ_THEMES = [
    {
     "q": "Combien de joueurs par équipe en Judo ?",
     "c": [
-     2,
-     1,
-     4,
-     3
+     "2",
+     "1",
+     "4",
+     "3"
     ],
     "a": 1
    },
@@ -6271,10 +6271,10 @@ export const TTCQ_THEMES = [
    {
     "q": "Combien de joueurs par équipe en Golf ?",
     "c": [
-     1,
-     4,
-     2,
-     3
+     "1",
+     "4",
+     "2",
+     "3"
     ],
     "a": 0
    },
@@ -6359,10 +6359,10 @@ export const TTCQ_THEMES = [
    {
     "q": "Combien de joueurs par équipe en Escrime ?",
     "c": [
-     1,
-     3,
-     2,
-     4
+     "1",
+     "3",
+     "2",
+     "4"
     ],
     "a": 0
    },
@@ -6447,10 +6447,10 @@ export const TTCQ_THEMES = [
    {
     "q": "Combien de joueurs par équipe en Handball ?",
     "c": [
-     9,
-     5,
-     7,
-     11
+     "9",
+     "5",
+     "7",
+     "11"
     ],
     "a": 2
    },
@@ -6535,10 +6535,10 @@ export const TTCQ_THEMES = [
    {
     "q": "Combien de joueurs par équipe en Volley-ball ?",
     "c": [
-     8,
-     4,
-     6,
-     10
+     "8",
+     "4",
+     "6",
+     "10"
     ],
     "a": 2
    },
@@ -6623,10 +6623,10 @@ export const TTCQ_THEMES = [
    {
     "q": "Combien de joueurs par équipe en Surf ?",
     "c": [
-     2,
-     4,
-     3,
-     1
+     "2",
+     "4",
+     "3",
+     "1"
     ],
     "a": 3
    },
@@ -6711,10 +6711,10 @@ export const TTCQ_THEMES = [
    {
     "q": "Combien de joueurs par équipe en Escalade ?",
     "c": [
-     4,
-     1,
-     2,
-     3
+     "4",
+     "1",
+     "2",
+     "3"
     ],
     "a": 1
    },
@@ -6799,10 +6799,10 @@ export const TTCQ_THEMES = [
    {
     "q": "Combien de joueurs par équipe en MMA ?",
     "c": [
-     2,
-     1,
-     4,
-     3
+     "2",
+     "1",
+     "4",
+     "3"
     ],
     "a": 1
    },
@@ -6887,10 +6887,10 @@ export const TTCQ_THEMES = [
    {
     "q": "Combien de joueurs par équipe en Badminton ?",
     "c": [
-     3,
-     2,
-     1,
-     4
+     "3",
+     "2",
+     "1",
+     "4"
     ],
     "a": 2
    },
@@ -6975,10 +6975,10 @@ export const TTCQ_THEMES = [
    {
     "q": "Combien de joueurs par équipe en Baseball ?",
     "c": [
-     7,
-     5,
-     11,
-     9
+     "7",
+     "5",
+     "11",
+     "9"
     ],
     "a": 3
    },

@@ -95,7 +95,7 @@ poll(); // rendu immédiat dès le chargement (ne reste pas bloqué sur CONNEXIO
 setInterval(() => { if (Date.now() - lastSse > 1500) poll(); }, 1000);
 
 function h(strings, ...vals) { return strings.map((s,i)=>s+(vals[i]??'')).join(''); }
-function esc(s){ return (s||'').replace(/[&<>]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+function esc(s){ return String(s==null?'':s).replace(/[&<>]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
 
 let pacKey = null;
 let mosKey = null;

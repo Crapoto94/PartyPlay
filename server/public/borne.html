@@ -77,7 +77,7 @@ es.onmessage = (e) => { lastSse = Date.now(); applyState(JSON.parse(e.data)); };
 function pollBorne(){ fetch(API + '/api/state').then(r=>r.json()).then(applyState).catch(()=>{}); }
 pollBorne();
 setInterval(() => { if (Date.now() - lastSse > 1500) pollBorne(); }, 1000);
-function esc(s){ return (s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+function esc(s){ return String(s==null?'':s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
 
 // --- Activation du son au 1er clic n'importe où (obligatoire sur navigateur) ---
 let SOUND_ON = false;

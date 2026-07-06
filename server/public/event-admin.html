@@ -312,7 +312,7 @@ const THEME_LABELS = { retro:'Rétro jeux vidéo', neon:'Néon / Clubbing', chic
 
 function H(){ return { 'Content-Type':'application/json', 'x-admin-password': PWD }; }
 function val(id){ return document.getElementById(id).value; }
-function esc(s){ return (s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
 // PayPal : bouton hébergé (SDK chargé une fois)
 let _ppPromise = null;
