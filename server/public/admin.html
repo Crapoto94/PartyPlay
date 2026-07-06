@@ -68,6 +68,9 @@
           <a class="nav-item" data-sec="email" onclick="showSection('email')">
             <span>📧</span> Emails
           </a>
+          <a class="nav-item" data-sec="google" onclick="showSection('google')">
+            <span>🔑</span> Connexion Google
+          </a>
           <a class="nav-item" data-sec="promos" onclick="showSection('promos')">
             <span>🎟️</span> Codes promo
           </a>
@@ -256,6 +259,31 @@
           </div>
         </section>
 
+        <!-- ===== SECTION : CONNEXION GOOGLE ===== -->
+        <section id="sec-google" class="admin-section" style="display:none">
+          <h1 class="section-title">🔑 Connexion Google</h1>
+          <p class="muted" style="margin-bottom:20px">
+            Permet à l'utilisateur de cliquer sur <strong>« Se connecter avec Google »</strong> à la création d'une fête : son email est alors <strong>déjà vérifié</strong> par Google, la fête est activée immédiatement (aucun email de confirmation à cliquer). Tant qu'aucun Client ID n'est configuré ici, ce bouton reste <strong>masqué</strong> sur la page d'accueil.
+          </p>
+
+          <div class="card">
+            <h2>⚙️ Client ID OAuth</h2>
+            <p class="muted" style="font-size:13px;margin:0 0 14px">
+              À créer gratuitement dans la <a href="https://console.cloud.google.com/apis/credentials" target="_blank" rel="noopener"><strong>Google Cloud Console</strong></a> → <em>Créer des identifiants → ID client OAuth</em> → type <strong>Application Web</strong>. Ajoutez votre domaine (ex. <code>https://partyplay.fr</code>) dans <em>Origines JavaScript autorisées</em>. Copiez le Client ID obtenu (se terminant par <code>.apps.googleusercontent.com</code>) ci-dessous — aucun secret n'est requis.
+            </p>
+            <div id="googleStatus" style="margin-bottom:14px;font-size:13.5px;font-weight:600"></div>
+            <div class="field">
+              <label>Client ID Google</label>
+              <input type="text" id="gClientId" placeholder="1234567890-abc123.apps.googleusercontent.com">
+            </div>
+            <div class="inline mt">
+              <button class="btn" onclick="saveGoogleConfig()">💾 Enregistrer</button>
+              <button class="btn danger" onclick="clearGoogleConfig()">🗑 Désactiver</button>
+              <span id="googleSaved" class="muted"></span>
+            </div>
+          </div>
+        </section>
+
         <!-- ===== SECTION : CODES PROMO ===== -->
         <section id="sec-promos" class="admin-section" style="display:none">
           <h1 class="section-title">🎟️ Codes promo</h1>
@@ -432,7 +460,7 @@ const themeLabel = { retro:'Rétro', neon:'Néon', chic:'Chic', kids:'Enfant', c
 const ALL_THEMES = ['retro','neon','chic','kids','casino'];
 const PLAN_ORDER = ['free','full','infinite'];
 let PWD = sessionStorage.getItem('admPwd') || '';
-let PRICING = null, BREVO = null, _emailLoaded = false, _legalLoaded = false, _promosLoaded = false, _privacyLoaded = false, _btLoaded = false, _cartonLoaded = false, _ttcqLoaded = false;
+let PRICING = null, BREVO = null, _emailLoaded = false, _legalLoaded = false, _promosLoaded = false, _privacyLoaded = false, _btLoaded = false, _cartonLoaded = false, _ttcqLoaded = false, _googleLoaded = false;
 let PRIVACY_DATA = null;
 let CARTON_DATA = null;
 let TTCQ_DATA = null;
@@ -453,6 +481,7 @@ function showSection(name) {
   if (name === 'privacy' && !_privacyLoaded) { _privacyLoaded = true; loadPrivacyQuestions(); }
   if (name === 'carton' && !_cartonLoaded) { _cartonLoaded = true; loadCartonAdmin(); }
   if (name === 'blindtests' && !_btLoaded) { _btLoaded = true; loadBlindtestsAdmin(); }
+  if (name === 'google' && !_googleLoaded) { _googleLoaded = true; loadGoogleConfig(); }
   if (name === 'ttcq' && !_ttcqLoaded) { _ttcqLoaded = true; loadTtcqAdmin(); }
 }
 
@@ -757,6 +786,35 @@ async function sendTestEmail() {
     else { st.textContent = '✗ '+( d.error||'Erreur'); st.style.color = 'var(--a-danger)'; }
   } catch { st.textContent = '✗ Erreur réseau'; st.style.color = 'var(--a-danger)'; }
   btn.disabled = false; btn.textContent = 'Envoyer un test';
+}
+
+// ---- Connexion Google ----
+async function loadGoogleConfig() {
+  const st = document.getElementById('googleStatus');
+  try {
+    const r = await fetch('/api/admin/google', { headers: headers() });
+    if (!r.ok) { st.textContent = 'Erreur de chargement ('+r.status+').'; st.style.color = 'var(--a-danger)'; return; }
+    const d = await r.json();
+    document.getElementById('gClientId').value = d.clientId || '';
+    renderGoogleStatus(!!d.clientId);
+  } catch { st.textContent = 'Erreur réseau.'; st.style.color = 'var(--a-danger)'; }
+}
+function renderGoogleStatus(enabled) {
+  const st = document.getElementById('googleStatus');
+  st.textContent = enabled ? '✓ Connexion Google active — le bouton est visible sur la page d\'accueil' : '○ Non configuré — le bouton reste masqué';
+  st.style.color = enabled ? 'var(--a-ok)' : 'var(--a-muted)';
+}
+async function saveGoogleConfig() {
+  const clientId = document.getElementById('gClientId').value.trim();
+  const r = await fetch('/api/admin/google', { method:'POST', headers: headers(), body: JSON.stringify({ clientId }) });
+  const d = await r.json();
+  const s = document.getElementById('googleSaved');
+  if (r.ok) { renderGoogleStatus(!!d.clientId); s.textContent = ' ✓ enregistré'; setTimeout(()=>s.textContent='', 2000); }
+  else { s.textContent = ' ✗ '+(d.error||'Erreur'); s.style.color = 'var(--a-danger)'; }
+}
+function clearGoogleConfig() {
+  document.getElementById('gClientId').value = '';
+  saveGoogleConfig();
 }
 
 const EMAIL_TEMPLATES = {
