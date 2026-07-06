@@ -6,6 +6,33 @@
   <title>Administration — PartyPlay</title>
   <link rel="stylesheet" href="/static/admin.css">
   <script src="/static/version-badge.js" defer></script>
+  <style>
+    .ttcq-cat { border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.2); transition: box-shadow .25s; }
+    .ttcq-cat:hover { box-shadow: 0 4px 20px rgba(0,0,0,.35); }
+    .ttcq-cat-header { cursor:pointer; user-select:none; transition: background .15s; display:flex; align-items:center; justify-content:space-between; padding:14px 18px; }
+    .ttcq-cat-header:hover { background:rgba(255,255,255,.06) !important; }
+    .ttcq-cat-arrow { display:inline-block; transition: transform .25s; font-size:14px; }
+    .ttcq-cat-arrow.open { transform: rotate(90deg); }
+    .ttcq-body-wrap { overflow:hidden; transition: max-height .3s ease; max-height:0; }
+    .ttcq-body-wrap.open { max-height:6000px; }
+    .ttcq-theme { transition: background .15s, border-color .15s; }
+    .ttcq-theme:hover { background:rgba(255,255,255,.015); }
+    .ttcq-theme-header { cursor:pointer; user-select:none; display:flex; align-items:center; gap:10px; padding:8px 6px; border-radius:8px; transition:background .15s; }
+    .ttcq-theme-header:hover { background:rgba(255,255,255,.04); }
+    .ttcq-theme-arrow { display:inline-block; transition: transform .25s; font-size:12px; }
+    .ttcq-theme-arrow.open { transform: rotate(90deg); }
+    .ttcq-level { background:rgba(0,0,0,.15); border-radius:8px; padding:10px 12px; margin-bottom:8px; border:1px solid transparent; transition: border-color .2s, box-shadow .2s, background .2s; }
+    .ttcq-level:focus-within { border-color:var(--a-primary,#3b6ef5); box-shadow:0 0 0 2px rgba(59,110,245,.12); background:rgba(0,0,0,.25); }
+    .ttcq-dot { display:inline-block; width:10px; height:10px; border-radius:50%; transition: transform .2s, background .2s; }
+    .ttcq-dot.f { background:#4ade80; box-shadow:0 0 5px rgba(74,222,128,.5); }
+    .ttcq-dot.e { background:#334155; }
+    .ttcq-dot:hover { transform:scale(1.6); }
+    .ttcq-preview { font-size:11.5px; color:var(--a-muted,#888); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:300px; }
+    @keyframes ttcqFadeIn { from { opacity:0; transform:translateY(-6px); } to { opacity:1; transform:translateY(0); } }
+    .ttcq-theme-new { animation: ttcqFadeIn .3s ease; }
+    .ttcq-search { border:2px solid var(--a-border,#333); border-radius:10px; padding:8px 14px; font-size:14px; width:280px; background:rgba(255,255,255,.04); transition:border-color .2s, box-shadow .2s; }
+    .ttcq-search:focus { outline:none; border-color:var(--a-primary,#3b6ef5); box-shadow:0 0 0 3px rgba(59,110,245,.12); }
+  </style>
 </head>
 <body>
 
@@ -332,9 +359,10 @@
                   <option value="adulte">🔞 18+</option>
                 </select>
               </div>
+              <input id="ttcqSearch" class="ttcq-search" type="search" placeholder="🔍 Rechercher un thème…" oninput="renderTtcqAdmin()" style="margin-bottom:2px">
               <button class="btn" onclick="saveTtcqAdmin()">💾 Enregistrer</button>
-              <span id="ttcqSaved" class="muted"></span>
-              <span class="tag" id="ttcqCount">—</span>
+              <span id="ttcqSaved" class="muted" style="font-size:13px"></span>
+              <span class="tag" id="ttcqCount" style="font-size:12px">—</span>
               <span id="ttcqCatList" class="muted" style="font-size:12px"></span>
             </div>
           </div>
@@ -861,7 +889,7 @@ async function saveCartonAdmin() {
   const s = document.getElementById('ctSaved'); s.textContent = ' ✓ enregistré'; setTimeout(()=>s.textContent='', 1800);
 }
 
-// ---- TTCQ : édition des thèmes / questions (arborescence) ----
+// ---- TTCQ : édition moderne avec arborescence animée ----
 let _ttcqEditingCat = null;
 async function loadTtcqAdmin() {
   try {
@@ -871,50 +899,84 @@ async function loadTtcqAdmin() {
     renderTtcqAdmin();
   } catch { document.getElementById('ttcqCount').textContent = 'Erreur réseau'; }
 }
-function renderTtcqAdmin() {
+function ttcqUpdateMeta() {
   const level = document.getElementById('ttcqLevel').value;
   const filtered = TTCQ_DATA.filter(t => t.level === level);
+  document.getElementById('ttcqCount').textContent = filtered.length + ' thème' + (filtered.length > 1 ? 's' : '');
+  const cats = [...new Set(filtered.map(t => t.cat))].sort();
+  document.getElementById('ttcqCatList').textContent = cats.length ? '· ' + cats.join(', ') : '';
+}
+function renderTtcqAdmin() {
+  const level = document.getElementById('ttcqLevel').value;
+  const search = (document.getElementById('ttcqSearch')?.value || '').toLowerCase();
+  const filtered = TTCQ_DATA.filter(t => t.level === level && (!search || t.name.toLowerCase().includes(search) || t.cat.includes(search)));
   const cats = [...new Set(filtered.map(t => t.cat))].sort();
   const el = document.getElementById('ttcqList');
-  if (!filtered.length) { el.innerHTML = '<p class="muted" style="margin-top:20px">Aucun thème pour ce niveau.</p>'; }
-  else {
+  if (!cats.length) {
+    el.innerHTML = `<div class="center muted" style="padding:40px 0">${search ? 'Aucun thème ne correspond à la recherche.' : 'Aucun thème pour ce niveau.'}</div>`;
+  } else {
     el.innerHTML = cats.map(c => {
       const themes = filtered.filter(t => t.cat === c);
-      const expanded = _ttcqEditingCat === c ? 'style="display:block"' : 'style="display:none"';
-      return `<div class="card ttcq-cat" style="margin-top:16px;padding:0;overflow:hidden" data-cat="${esc(c)}">
-        <div class="ttcq-cat-header" onclick="ttcqToggleCat(this)" style="cursor:pointer;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;user-select:none;background:rgba(255,255,255,0.03)">
-          <span><span class="ttcq-cat-arrow">▶</span> <strong>${esc(c)}</strong> <span class="tag">${themes.length}</span></span>
-          <button class="btn secondary" style="width:auto;padding:2px 10px;font-size:13px" onclick="event.stopPropagation();ttcqAddTheme('${esc(c)}')">➕ Thème</button>
+      const open = _ttcqEditingCat === c;
+      return `<div class="card ttcq-cat" style="margin-top:16px;padding:0" data-cat="${esc(c)}">
+        <div class="ttcq-cat-header" onclick="ttcqToggleCat(this)" style="background:linear-gradient(135deg,rgba(255,255,255,.04),transparent)">
+          <span style="display:flex;align-items:center;gap:10px">
+            <span class="ttcq-cat-arrow ${open?'open':''}" style="font-size:10px;color:var(--a-muted)">▶</span>
+            <strong style="font-size:15px">${esc(c)}</strong>
+            <span class="tag" style="font-size:11px">${themes.length}</span>
+          </span>
+          <button class="btn secondary" style="width:auto;padding:4px 14px;font-size:12.5px" onclick="event.stopPropagation();ttcqAddTheme('${esc(c)}')">➕ Nouveau thème</button>
         </div>
-        <div class="ttcq-cat-body" ${expanded}>
-          ${themes.map((t, i) => ttcqThemeHtml(t, c, i)).join('')}
+        <div class="ttcq-body-wrap ${open?'open':''}">
+          <div style="padding:2px 0 8px">${themes.map(t => ttcqThemeHtml(t)).join('')}</div>
         </div>
       </div>`;
     }).join('');
   }
-  document.getElementById('ttcqCount').textContent = filtered.length + ' thèmes';
-  document.getElementById('ttcqCatList').textContent = cats.length ? '· ' + cats.join(', ') : '';
+  ttcqUpdateMeta();
 }
 function ttcqToggleCat(header) {
-  const body = header.nextElementSibling;
+  const wrap = header.nextElementSibling;
   const arrow = header.querySelector('.ttcq-cat-arrow');
-  if (body.style.display === 'none') { body.style.display = 'block'; arrow.textContent = '▼'; _ttcqEditingCat = header.closest('.ttcq-cat').dataset.cat; }
-  else { body.style.display = 'none'; arrow.textContent = '▶'; if (_ttcqEditingCat === header.closest('.ttcq-cat').dataset.cat) _ttcqEditingCat = null; }
+  if (wrap.classList.contains('open')) {
+    wrap.classList.remove('open');
+    arrow.classList.remove('open');
+  } else {
+    wrap.classList.add('open');
+    arrow.classList.add('open');
+    _ttcqEditingCat = header.closest('.ttcq-cat').dataset.cat;
+  }
 }
-function ttcqThemeHtml(t, cat, idx) {
-  const id = esc(t.id || '');
+function ttcqDot(l, i) {
+  const filled = l && l.q && l.q.trim();
+  return `<span class="ttcq-dot ${filled ? 'f' : 'e'}" title="Niveau ${i+1}${filled ? ': '+esc(l.q) : ' — vide'}" style="cursor:help"></span>`;
+}
+function ttcqThemeHtml(t) {
   const name = esc(t.name || '');
-  const levelsHtml = (t.levels || []).map((l, li) => ttcqLevelHtml(l, li)).join('');
-  return `<div class="ttcq-theme" style="border-top:1px solid var(--a-border);padding:10px 12px 10px 24px" data-idx="${idx}">
-    <div class="ttcq-theme-header" onclick="ttcqToggleTheme(this)" style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none;gap:8px">
-      <div style="display:flex;align-items:center;gap:8px;flex:1">
-        <span class="ttcq-theme-arrow">▶</span>
-        <input type="text" class="ttcq-name" value="${name}" placeholder="Nom du thème" onclick="event.stopPropagation()" style="flex:2;min-width:100px">
-        <input type="text" class="ttcq-id" value="${id}" placeholder="ID" onclick="event.stopPropagation()" style="flex:1;min-width:80px;font-size:12px">
+  const id = esc(t.id || '');
+  const levels = t.levels || [];
+  const dots = levels.map((l, i) => ttcqDot(l, i)).join('');
+  const filledCount = levels.filter(l => l && l.q && l.q.trim()).length;
+  const preview = levels[0] && levels[0].q ? esc(levels[0].q) : '8 questions à remplir';
+  const levelsHtml = levels.map((l, i) => ttcqLevelHtml(l, i)).join('');
+  return `<div class="ttcq-theme" style="border-bottom:1px solid rgba(255,255,255,.04);padding:4px 12px">
+    <div class="ttcq-theme-header" onclick="ttcqToggleTheme(this)">
+      <span class="ttcq-theme-arrow" style="font-size:9px;color:var(--a-muted)">▶</span>
+      <div style="flex:1;display:flex;align-items:center;gap:8px;min-width:0">
+        <input type="text" class="ttcq-name" value="${name}" placeholder="Nom du thème" onclick="event.stopPropagation()" style="flex:2;min-width:80px;font-size:13.5px;font-weight:600;background:transparent;border:none;padding:4px 6px;border-radius:4px;transition:background .15s" onfocus="this.style.background='rgba(255,255,255,.06)'" onblur="this.style.background='transparent'">
+        <span style="display:flex;align-items:center;gap:3px">${dots}</span>
+        <span class="ttcq-preview" style="display:${filledCount ? 'inline' : 'none'}">— ${preview}</span>
       </div>
-      <button class="btn danger" style="width:auto;padding:2px 8px;font-size:12px" onclick="event.stopPropagation();ttcqDeleteTheme(this)">✕</button>
+      <span style="font-size:11px;color:var(--a-muted);white-space:nowrap">${filledCount}/8</span>
+      <button class="btn danger" style="width:auto;padding:2px 10px;font-size:12px" onclick="event.stopPropagation();ttcqDeleteTheme(this)" title="Supprimer">✕</button>
     </div>
-    <div class="ttcq-theme-body" style="display:none;margin-top:10px;padding-left:16px;border-left:2px solid var(--a-border)">
+    <div class="ttcq-theme-body" style="display:none;padding:0 0 8px 18px;border-left:2px solid rgba(255,255,255,.06);margin-left:4px">
+      <div style="display:flex;gap:8px;margin-bottom:10px;align-items:center">
+        <span style="font-size:11px;color:var(--a-muted)">ID</span>
+        <input type="text" class="ttcq-id" value="${id}" placeholder="identifiant_unique" style="flex:1;font-size:12px;background:rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.06);border-radius:6px;padding:4px 8px">
+        <span style="font-size:11px;color:var(--a-muted)">Catégorie</span>
+        <input type="text" class="ttcq-cat" value="${esc(t.cat||'')}" placeholder="categorie" style="width:140px;font-size:12px;background:rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.06);border-radius:6px;padding:4px 8px">
+      </div>
       ${levelsHtml}
     </div>
   </div>`;
@@ -922,25 +984,48 @@ function ttcqThemeHtml(t, cat, idx) {
 function ttcqToggleTheme(header) {
   const body = header.nextElementSibling;
   const arrow = header.querySelector('.ttcq-theme-arrow');
-  if (body.style.display === 'none') { body.style.display = 'block'; arrow.textContent = '▼'; }
-  else { body.style.display = 'none'; arrow.textContent = '▶'; }
+  if (body.style.display === 'none') {
+    body.style.display = 'block';
+    arrow.classList.add('open');
+    // animate the body
+    body.style.overflow = 'hidden';
+    body.style.maxHeight = '0';
+    requestAnimationFrame(() => {
+      body.style.maxHeight = body.scrollHeight + 'px';
+    });
+    setTimeout(() => { body.style.maxHeight = 'none'; body.style.overflow = ''; }, 350);
+  } else {
+    body.style.maxHeight = body.scrollHeight + 'px';
+    requestAnimationFrame(() => {
+      body.style.maxHeight = '0';
+      body.style.overflow = 'hidden';
+    });
+    setTimeout(() => {
+      body.style.display = 'none';
+      body.style.maxHeight = 'none';
+      body.style.overflow = '';
+    }, 300);
+    arrow.classList.remove('open');
+  }
 }
-function ttcqLevelHtml(l, lIdx) {
+function ttcqLevelHtml(l, i) {
   const q = l ? esc(l.q || '') : '';
-  const c = l ? (l.c || ['','','','']) : ['','','',''];
+  const c = (l && l.c) || ['', '', '', ''];
   const a = l ? (l.a ?? 0) : 0;
   const choicesHtml = c.map((ch, ci) =>
-    `<div class="field" style="margin:0;flex:1"><label style="font-size:11px">${'ABCD'[ci]}</label><input type="text" class="ttcq-choice" data-ci="${ci}" value="${esc(ch||'')}" placeholder="Choix ${'ABCD'[ci]}" style="font-size:12px"></div>`
+    `<div class="field" style="margin:0;flex:1;min-width:60px"><label style="font-size:10px;color:var(--a-muted);font-weight:700">${'ABCD'[ci]}</label>
+      <input type="text" class="ttcq-choice" data-ci="${ci}" value="${esc(ch||'')}" placeholder="Choix ${'ABCD'[ci]}" style="font-size:12.5px;background:rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.06);border-radius:6px;padding:5px 7px;transition:border-color .2s"></div>`
   ).join('');
-  return `<div class="ttcq-level" style="margin-bottom:8px;padding:8px 10px;background:var(--a-bg);border-radius:6px">
-    <div class="inline" style="gap:6px;align-items:flex-start;flex-wrap:nowrap;margin-bottom:4px">
-      <span class="tag" style="white-space:nowrap;font-size:10px;margin-top:2px">N${lIdx+1}</span>
-      <div class="field" style="margin:0;flex:4"><label style="font-size:11px">Question</label><input type="text" class="ttcq-q" value="${q}" placeholder="Question niveau ${lIdx+1}" style="font-size:12px"></div>
+  return `<div class="ttcq-level">
+    <div style="display:flex;gap:8px;align-items:flex-start;margin-bottom:2px">
+      <span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.06);font-size:11px;font-weight:700;flex-shrink:0">${i+1}</span>
+      <div class="field" style="margin:0;flex:4"><label style="font-size:10.5px;color:var(--a-muted)">Question</label>
+        <input type="text" class="ttcq-q" value="${q}" placeholder="Question niveau ${i+1}" style="font-size:13px;background:rgba(0,0,0,.1);border:1px solid rgba(255,255,255,.06);border-radius:6px;padding:6px 8px;width:100%;transition:border-color .2s"></div>
     </div>
-    <div class="inline" style="gap:4px;align-items:flex-end;flex-wrap:wrap;margin-top:2px">
+    <div style="display:flex;gap:6px;align-items:flex-end;flex-wrap:wrap;margin-top:6px;padding-left:34px">
       ${choicesHtml}
-      <div class="field" style="margin:0;width:70px"><label style="font-size:11px">Rép.</label>
-        <select class="ttcq-a" style="font-size:12px">
+      <div class="field" style="margin:0;width:80px"><label style="font-size:10px;color:var(--a-muted);font-weight:700">Correcte</label>
+        <select class="ttcq-a" style="font-size:12px;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.06);border-radius:6px;padding:5px 6px">
           ${[0,1,2,3].map(ci => `<option value="${ci}"${ci===a?' selected':''}>${'ABCD'[ci]}</option>`).join('')}
         </select>
       </div>
@@ -950,10 +1035,10 @@ function ttcqLevelHtml(l, lIdx) {
 function ttcqCollect() {
   const level = document.getElementById('ttcqLevel').value;
   const themes = [];
-  document.querySelectorAll('.ttcq-theme').forEach(el => {
+  document.querySelectorAll('#ttcqList .ttcq-theme').forEach(el => {
     const name = el.querySelector('.ttcq-name').value.trim();
     const id = el.querySelector('.ttcq-id').value.trim();
-    const cat = el.closest('.ttcq-cat')?.dataset.cat || 'custom';
+    const cat = el.querySelector('.ttcq-cat').value.trim() || el.closest('.ttcq-cat')?.dataset.cat || 'custom';
     if (!name) return;
     const levels = [];
     el.querySelectorAll('.ttcq-level').forEach(lel => {
@@ -968,29 +1053,34 @@ function ttcqCollect() {
   return themes;
 }
 function ttcqAddTheme(cat) {
-  const body = document.querySelector(`[data-cat="${esc(cat)}"] .ttcq-cat-body`);
-  if (!body) return;
+  const wrap = document.querySelector(`[data-cat="${esc(cat)}"] .ttcq-body-wrap`);
+  if (!wrap) return;
   _ttcqEditingCat = cat;
-  if (body.style.display === 'none') body.style.display = 'block';
-  const arrow = body.closest('.ttcq-cat')?.querySelector('.ttcq-cat-arrow');
-  if (arrow) arrow.textContent = '▼';
+  wrap.classList.add('open');
+  const arrow = wrap.closest('.ttcq-cat')?.querySelector('.ttcq-cat-arrow');
+  if (arrow) arrow.classList.add('open');
+  const body = wrap.querySelector('div');
   const t = { id: '', name: '', cat, level: document.getElementById('ttcqLevel').value, levels: Array(8).fill(null) };
-  body.insertAdjacentHTML('beforeend', ttcqThemeHtml(t, cat, body.children.length));
-  // auto-expand the new theme
+  const html = `<div class="ttcq-theme ttcq-theme-new" style="border-bottom:1px solid rgba(255,255,255,.04);padding:4px 12px">${ttcqThemeHtml(t).replace(/^<div class="ttcq-theme"/, '').replace(/style="border-bottom[^"]*"/, '')}</div>`;
+  body.insertAdjacentHTML('beforeend', html);
   const newTheme = body.lastElementChild;
   const hdr = newTheme?.querySelector('.ttcq-theme-header');
   if (hdr) ttcqToggleTheme(hdr);
   newTheme?.querySelector('.ttcq-name')?.focus();
+  ttcqUpdateMeta();
 }
 function ttcqDeleteTheme(btn) {
   if (!confirm('Supprimer ce thème ?')) return;
   const theme = btn.closest('.ttcq-theme');
-  const catEl = theme.closest('.ttcq-cat');
-  theme.remove();
-  if (catEl && !catEl.querySelector('.ttcq-theme')) catEl.remove();
-  const level = document.getElementById('ttcqLevel').value;
-  const filtered = TTCQ_DATA.filter(t => t.level === level);
-  document.getElementById('ttcqCount').textContent = filtered.length + ' thèmes';
+  const cat = theme.closest('.ttcq-cat');
+  theme.style.transition = 'opacity .2s, transform .2s';
+  theme.style.opacity = '0';
+  theme.style.transform = 'translateX(-10px)';
+  setTimeout(() => {
+    theme.remove();
+    if (cat && !cat.querySelector('.ttcq-theme')) cat.remove();
+    ttcqUpdateMeta();
+  }, 200);
 }
 async function saveTtcqAdmin() {
   try {
@@ -1001,10 +1091,15 @@ async function saveTtcqAdmin() {
     const r = await fetch('/api/admin/ttcq', { method:'POST', headers: headers(), body: JSON.stringify({ themes: merged }) });
     const d = await r.json();
     if (d.themes) TTCQ_DATA = d.themes;
+    const s = document.getElementById('ttcqSaved');
+    s.textContent = ' ✓ ' + edited.length + ' thème' + (edited.length > 1 ? 's' : '') + ' enregistré' + (edited.length > 1 ? 's' : '');
+    s.style.color = 'var(--a-ok)';
+    setTimeout(() => { s.textContent = ''; s.style.color = ''; }, 2000);
     renderTtcqAdmin();
-    const s = document.getElementById('ttcqSaved'); s.textContent = ' ✓ ' + edited.length + ' thème(s) enregistré(s)'; setTimeout(() => s.textContent = '', 1800);
   } catch (e) {
-    document.getElementById('ttcqSaved').textContent = ' ✗ Erreur : ' + e.message;
+    const s = document.getElementById('ttcqSaved');
+    s.textContent = ' ✗ ' + e.message;
+    s.style.color = 'var(--a-danger)';
   }
 }
 
