@@ -574,6 +574,13 @@
           <div class="field"><label>Nom de la fête</label><input type="text" id="cName" placeholder="Anniversaire de Léa"></div>
           <div class="field"><label>Thème graphique</label><select id="cTheme"></select></div>
         </div>
+        <!-- Connexion Google (email vérifié automatiquement) — masqué si non configuré -->
+        <div class="field" id="googleAuthField" style="display:none">
+          <label>⚡ Connexion rapide <span class="muted" style="font-weight:400">— email vérifié automatiquement, aucune confirmation à cliquer</span></label>
+          <div id="gbtn"></div>
+          <div id="gStatus" style="margin-top:8px;font-size:14px"></div>
+          <div class="muted" style="text-align:center;margin:10px 0;font-size:13px">— ou saisis ton email manuellement —</div>
+        </div>
         <div class="field">
           <label>Email de contact <span class="muted" style="font-weight:400">(pour retrouver votre fête)</span></label>
           <input type="email" id="cEmail" placeholder="vous@exemple.com" autocomplete="email">
@@ -659,6 +666,48 @@ async function boot(){
     selectPlan('free');
   }
   renderCoffeeButton();
+  initGoogle();
+}
+
+// ---- Connexion Google (email auto-vérifié) ----
+let GOOGLE_CRED = null;
+async function initGoogle(){
+  let cfg;
+  try { cfg = await (await fetch('/api/auth/google/config')).json(); } catch { return; }
+  if (!cfg || !cfg.enabled || !cfg.clientId) return;
+  document.getElementById('googleAuthField').style.display = '';
+  const s = document.createElement('script');
+  s.src = 'https://accounts.google.com/gsi/client'; s.async = true; s.defer = true;
+  s.onload = () => {
+    try {
+      google.accounts.id.initialize({ client_id: cfg.clientId, callback: onGoogleCredential });
+      google.accounts.id.renderButton(document.getElementById('gbtn'),
+        { theme:'filled_blue', size:'large', text:'signin_with', shape:'pill', locale:'fr' });
+    } catch(_){}
+  };
+  document.head.appendChild(s);
+}
+function decodeJwtEmail(cred){
+  try { const p = JSON.parse(atob(cred.split('.')[1].replace(/-/g,'+').replace(/_/g,'/'))); return p.email || ''; }
+  catch { return ''; }
+}
+function onGoogleCredential(resp){
+  const cred = resp && resp.credential; if (!cred) return;
+  GOOGLE_CRED = cred;
+  const email = decodeJwtEmail(cred);
+  const cEmail = document.getElementById('cEmail');
+  cEmail.value = email; cEmail.readOnly = true; cEmail.style.opacity = '.6';
+  document.getElementById('gStatus').innerHTML =
+    '<span style="color:#4ade80;font-weight:600">✓ Connecté : '+esc(email)+' — email vérifié</span> · '
+    + '<a href="#" onclick="clearGoogle();return false" style="color:var(--muted)">changer</a>';
+  const errEl = document.getElementById('createErr'); if (errEl) errEl.textContent = '';
+}
+function clearGoogle(){
+  GOOGLE_CRED = null;
+  const cEmail = document.getElementById('cEmail');
+  cEmail.readOnly = false; cEmail.style.opacity = ''; cEmail.value = '';
+  document.getElementById('gStatus').innerHTML = '';
+  try { google.accounts.id.disableAutoSelect(); } catch(_){}
 }
 
 function renderFreeMode(){
@@ -719,8 +768,10 @@ async function createParty(){
   const name  = document.getElementById('cName').value.trim();
   const email = document.getElementById('cEmail').value.trim();
   if (!name)  { errEl.textContent = 'Donne un nom à ta fête.'; return; }
-  if (!email) { errEl.textContent = 'Saisis ton adresse email de contact.'; return; }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { errEl.textContent = 'Adresse email invalide.'; return; }
+  if (!GOOGLE_CRED) {
+    if (!email) { errEl.textContent = 'Saisis ton email, ou connecte-toi avec Google.'; return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { errEl.textContent = 'Adresse email invalide.'; return; }
+  }
 
   const body = {
     name, contactEmail: email,
@@ -729,6 +780,7 @@ async function createParty(){
     adminPassword: document.getElementById('cPwd').value.trim(),
     seed: 'default',
   };
+  if (GOOGLE_CRED) body.googleCredential = GOOGLE_CRED;
   let d;
   try {
     const r = await fetch('/api/parties', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) });
@@ -740,6 +792,7 @@ async function createParty(){
   document.getElementById('cName').value = '';
   document.getElementById('cEmail').value = '';
   document.getElementById('cPwd').value = '';
+  if (GOOGLE_CRED) clearGoogle();
 
   // Construit le contenu de la modale
   const plan  = PRICING.plans[d.event.plan] || {};
@@ -758,12 +811,15 @@ async function createParty(){
       : `<p class="muted" style="font-size:12.5px">Formule payante — le paiement sera proposé prochainement.</p>`;
   }
 
-  const verifyNotice = `
-    <div style="background:#fef3c7;border:1px solid #f59e0b;border-radius:9px;padding:12px 14px;margin-bottom:14px;font-size:13.5px;color:#78350f">
-      <strong>📧 Vérifiez votre email</strong><br>
-      Un lien de confirmation a été envoyé à <strong>${esc(email)}</strong>.<br>
-      <span style="color:#92400e">La fête sera activée dès que vous aurez cliqué sur ce lien.</span>
-    </div>`;
+  const verifyNotice = d.event.emailVerified
+    ? `<div style="background:rgba(74,222,128,.12);border:1px solid rgba(74,222,128,.5);border-radius:9px;padding:12px 14px;margin-bottom:14px;font-size:13.5px;color:#166534">
+        <strong>✅ Email vérifié</strong> — ta fête est <strong>active immédiatement</strong>, aucune confirmation à cliquer.
+      </div>`
+    : `<div style="background:#fef3c7;border:1px solid #f59e0b;border-radius:9px;padding:12px 14px;margin-bottom:14px;font-size:13.5px;color:#78350f">
+        <strong>📧 Vérifiez votre email</strong><br>
+        Un lien de confirmation a été envoyé à <strong>${esc(email)}</strong>.<br>
+        <span style="color:#92400e">La fête sera activée dès que vous aurez cliqué sur ce lien.</span>
+      </div>`;
 
   const modalHtml = `
     <div class="modal-icon">🎉</div>

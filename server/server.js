@@ -9,6 +9,7 @@
 
 import express from 'express';
 import path from 'path';
+import https from 'https';
 import { fileURLToPath } from 'url';
 import { mkdirSync, readdirSync, readFileSync } from 'fs';
 import multer from 'multer';
@@ -29,6 +30,7 @@ import { PRIVACY_QUESTIONS, PRIVACY_LEVELS } from './data/privacy.js';
 import { getBlindtests, saveBlindtests, defaultPlaylistsMap } from './store/blindtests.js';
 import { getCarton, saveCarton, CARTON_LEVELS } from './store/carton.js';
 import { getTtcq, saveTtcq } from './store/ttcq.js';
+import { getGoogleConfig, googleClientId, googleEnabled, saveGoogleConfig } from './store/google.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC = path.join(__dirname, 'public');
@@ -101,6 +103,51 @@ app.get('/api/pricing', (req, res) => {
 // configuré, le front sait qu'aucun moyen de paiement n'est encore actif.
 app.get('/api/payment/config', (req, res) => res.json(publicPaymentConfig()));
 
+// =====================================================================
+//  CONNEXION GOOGLE — email auto-vérifié à la création d'une fête
+// =====================================================================
+function httpsGetJson(url) {
+  return new Promise((resolve) => {
+    const r = https.get(url, (res) => {
+      if (res.statusCode !== 200) { res.resume(); return resolve(null); }
+      let data = '';
+      res.on('data', (c) => { data += c; });
+      res.on('end', () => { try { resolve(JSON.parse(data)); } catch { resolve(null); } });
+    });
+    r.on('error', () => resolve(null));
+    r.setTimeout(6000, () => { r.destroy(); resolve(null); });
+  });
+}
+
+// Vérifie un jeton d'identité Google (JWT) via l'endpoint public tokeninfo.
+// Renvoie { email, name } si le jeton est valide, émis pour NOTRE Client ID
+// et l'email confirmé par Google ; sinon null.
+async function verifyGoogleCredential(credential) {
+  const clientId = googleClientId();
+  if (!clientId || !credential) return null;
+  const info = await httpsGetJson('https://oauth2.googleapis.com/tokeninfo?id_token=' + encodeURIComponent(credential));
+  if (!info || !info.email) return null;
+  if (info.aud !== clientId) return null; // jeton émis pour une autre application
+  if (info.email_verified !== true && info.email_verified !== 'true') return null;
+  const iss = info.iss || '';
+  if (iss !== 'accounts.google.com' && iss !== 'https://accounts.google.com') return null;
+  return { email: String(info.email).toLowerCase(), name: info.name || '' };
+}
+
+// Le front sait si « Se connecter avec Google » est disponible (+ Client ID public).
+app.get('/api/auth/google/config', (req, res) => res.json({ enabled: googleEnabled(), clientId: googleClientId() }));
+
+// Vérifie un jeton Google et renvoie l'email vérifié (pré-remplissage du formulaire).
+app.post('/api/auth/google', async (req, res) => {
+  const info = await verifyGoogleCredential((req.body || {}).credential);
+  if (!info) return res.status(400).json({ error: 'Connexion Google invalide ou expirée.' });
+  res.json({ ok: true, email: info.email, name: info.name });
+});
+
+// Réglage du Client ID Google (super-admin).
+app.get('/api/admin/google', (req, res) => { if (!requireAdmin(req, res)) return; res.json(getGoogleConfig()); });
+app.post('/api/admin/google', (req, res) => { if (!requireAdmin(req, res)) return; res.json({ ok: true, ...saveGoogleConfig((req.body || {}).clientId) }); });
+
 // Création PUBLIQUE d'une fête (choix d'une formule). Le paiement viendra se
 // greffer ensuite (création libre, non bloquante). Renvoie l'id + le mot de passe.
 // Validation publique d'un code promo (avant création).
@@ -111,9 +158,19 @@ app.post('/api/promo/validate', (req, res) => {
   res.json({ ok: true, plan: result.plan, label: plan.label || result.plan, note: result.note });
 });
 
-app.post('/api/parties', (req, res) => {
-  const { name, theme, plan, adminPassword, publicUrl, seed, contactEmail, promoCode } = req.body || {};
+app.post('/api/parties', async (req, res) => {
+  const { name, theme, plan, adminPassword, publicUrl, seed, contactEmail, promoCode, googleCredential } = req.body || {};
   if (!name || !name.trim()) return res.status(400).json({ error: 'Nom de la fête requis.' });
+
+  // Connexion Google : si un jeton est fourni, on le vérifie côté serveur et on
+  // en tire un email DÉJÀ vérifié (pas d'email de confirmation à cliquer).
+  let googleEmail = null;
+  if (googleCredential) {
+    const g = await verifyGoogleCredential(googleCredential);
+    if (!g) return res.status(400).json({ error: 'Connexion Google invalide ou expirée.' });
+    googleEmail = g.email;
+  }
+  const finalEmail = googleEmail || contactEmail || '';
 
   // Code promo : valider avant tout
   const promo = promoCode ? validatePromoCode(promoCode) : null;
@@ -122,9 +179,11 @@ app.post('/api/parties', (req, res) => {
   const planName = promo ? promo.plan : (planExists(plan) ? plan : 'free');
   // Mot de passe console : fourni, sinon généré.
   const pwd = (adminPassword && adminPassword.trim()) || ('p' + Math.random().toString(36).slice(2, 8));
-  const cfg = createEvent({ name: name.trim(), theme, plan: planName, adminPassword: pwd, publicUrl, seed: seed || 'default', contactEmail: contactEmail || '' });
+  const cfg = createEvent({ name: name.trim(), theme, plan: planName, adminPassword: pwd, publicUrl, seed: seed || 'default', contactEmail: finalEmail });
   cfg.avatars = DEFAULT_AVATARS;
   cfg.creatorIp = clientIp(req) || 'unknown';
+  // Email vérifié par Google → fête activée immédiatement, aucun email envoyé.
+  if (googleEmail) { cfg.emailVerified = true; cfg.verificationToken = null; }
   if (promo) {
     cfg.paymentStatus = 'free';
     cfg.promoCode = promoCode.toUpperCase().trim();
@@ -148,7 +207,7 @@ app.post('/api/parties', (req, res) => {
       htmlContent: buildVerifyEmail(cfg, verifyUrl, consoleUrl, borneUrl, planInfo),
     }).catch(() => {});
   }
-  res.json({ ok: true, event: { id: cfg.id, name: cfg.name, theme: cfg.theme, plan: cfg.plan, paymentStatus: cfg.paymentStatus }, adminPassword: pwd });
+  res.json({ ok: true, event: { id: cfg.id, name: cfg.name, theme: cfg.theme, plan: cfg.plan, paymentStatus: cfg.paymentStatus, emailVerified: cfg.emailVerified !== false, contactEmail: cfg.contactEmail || '' }, adminPassword: pwd });
 });
 
 // Résout un token joueur → l'événement qui le contient (rejoindre par code).

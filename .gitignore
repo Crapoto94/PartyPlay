@@ -22,3 +22,6 @@ server/blindtests.json
 
 # Catalogue Bouche-Trou !? (runtime — édité dans l'admin générale ; défauts dans data/carton.js)
 server/carton.json
+
+# Config Client ID Google (runtime — public mais non versionne ; sinon env GOOGLE_CLIENT_ID)
+server/google.json
