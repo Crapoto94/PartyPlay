@@ -403,12 +403,10 @@ function controllerView(act) {
     </div>`;
   }
   if (act.type === 'anecdote') {
-    const an = act.anecdote || {};
     return `<div class="card center glow-box" style="border-color:var(--neon3)">
-      <div class="pill neon-yellow">📖 ANECDOTE</div>
-      <h2 class="neon-pink">${esc(an.titre||'')}</h2>
-      <p class="big">${esc(an.desc||'')}</p>
-      <p class="muted">Regarde la BORNE 📺 — c'est l'heure des histoires !</p>
+      <div class="pill neon-pink">🔴 BREAKING NEWS</div>
+      <h2 class="neon-yellow">${esc(act.titre||'')}</h2>
+      <p class="big">📺 Tous les yeux sur la BORNE !</p>
     </div>`;
   }
   // SANS FILTRE !? : réponse secrète OUI/NON, puis pari sur le nombre de OUI
@@ -418,6 +416,10 @@ function controllerView(act) {
   // BOUCHE-TROU !? : joue une carte de ta main ; l'arbitre élit la plus drôle
   if (act.type === 'carton') {
     return cartonController(act);
+  }
+  // TTCQ « TU TE METS COMBIEN ? » : choisis ton niveau, réponds, avance
+  if (act.type === 'ttcq') {
+    return ttcqController(act);
   }
   if (act.type === 'heroquiz') {
     return heroQuizController(act);
@@ -1659,6 +1661,127 @@ function cartonController(act){
     ${validate}
   </div>`;
 }
+// TTCQ « TU TE METS COMBIEN ? » — choisis ton niveau, réponds à la question
+function ttcqController(act){
+  const me = STATE.me || {};
+  const adulte = act.level==='adulte';
+  const pill = `<div class="pill ${adulte?'neon-pink':'neon-cyan'}">🎯 TTCQ · ${esc(act.levelLabel||'')} · manche ${act.round}/${act.totalRounds}</div>`;
+  const themeName = act.currentTheme ? esc(act.currentTheme.name) : '?';
+
+  // ---- FIN DE PARTIE ----
+  if (act.sub==='final'){
+    const board = act.finalBoard||[];
+    const myPos = board.findIndex(p=>p.id===me.id);
+    const myRow = myPos>=0 ? board[myPos] : null;
+    return `<div class="card center glow-box" style="border-color:var(--neon3)">
+      ${pill}
+      <h2 class="neon-yellow pixel">🏁 TERMINÉ !</h2>
+      ${myRow?`<p class="big">Tu finis <b>${myPos+1}${myPos===0?'er':'e'}</b> — case ${myRow.position} · 🪙${myRow.coins}</p>`:''}
+      <p class="muted">Classement complet sur la BORNE 📺</p>
+    </div>`;
+  }
+
+  // ---- CHOIX DU THÈME ----
+  if (act.sub==='theme_pick'){
+    const iAmPicker = act.themePickerId === me.id;
+    if (iAmPicker){
+      const cats = act.availableThemes||{};
+      const catKeys = Object.keys(cats);
+      return `<div class="card center glow-box">
+        ${pill}
+        <h2 class="neon-yellow">👑 Choisis le thème !</h2>
+        <p class="muted">Sélectionne une catégorie puis un thème</p>
+        <div style="max-height:60vh;overflow-y:auto">
+        ${catKeys.map(c=>`<div style="margin:8px 0">
+          <div class="pill neon-cyan" style="font-size:12px;margin-bottom:4px">${esc(c)}</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;justify-content:center">
+            ${(cats[c]||[]).map(t=>`<button class="btn" style="font-size:13px;padding:6px 10px" onclick="ttcqSelect('${t.id}')">${esc(t.name)}</button>`).join('')}
+          </div>
+        </div>`).join('')}
+        ${!catKeys.length?'<p class="neon-pink">⚠️ Plus de thèmes disponibles</p>':''}
+        </div>
+      </div>`;
+    }
+    return `<div class="card center glow-box">
+      ${pill}
+      <h2 class="neon-cyan">Attends le choix du thème…</h2>
+      <p class="big">👑 <b class="neon-yellow">${esc(act.themePickerName||'?')}</b> choisit</p>
+      <p class="muted">Regarde la BORNE 📺</p>
+    </div>`;
+  }
+
+  // ---- MISE (choix du niveau 1-8) ----
+  if (act.sub==='bet'){
+    const myBet = act.myBet;
+    return `<div class="card center glow-box">
+      ${pill}
+      <p class="big">📖 ${themeName}</p>
+      <p class="neon-cyan" style="margin:6px 0">Tu te mets combien ?</p>
+      <div class="row" style="justify-content:center;flex-wrap:wrap;gap:6px">
+        ${[1,2,3,4,5,6,7,8].map(n=>{
+          const sel = myBet === n;
+          const cls = ['','neon-green','neon-green','neon-cyan','neon-cyan','neon-yellow','neon-yellow','neon-pink','neon-pink'][n];
+          return `<button class="btn ${sel?'secondary':''}" style="min-width:48px;font-size:20px;font-weight:800" onclick="ttcqBet(${n})">
+            <span class="${sel?'':cls}">${n}</span>
+          </button>`;
+        }).join('')}
+      </div>
+      ${myBet?`<p class="neon-cyan mt">✅ Tu te mets <b>${myBet}/8</b> ${myBet<=2?'👍':myBet<=4?'💪':myBet<=6?'🤔':'😱'}</p>`:`<p class="muted mt">1 = facile · 8 = extrême</p>`}
+      <p class="muted">${act.betCount}/${act.playerCount} ont misé</p>
+    </div>`;
+  }
+
+  // ---- QUESTION + RÉPONSE ----
+  if (act.sub==='answer' || act.sub==='reveal'){
+    const q = act.myQuestion;
+    const bet = act.myBet||1;
+    if (act.sub==='answer' && q){
+      return `<div class="card center glow-box">
+        ${pill}
+        <div class="pill ${adulte?'neon-pink':'neon-cyan'}">Niveau ${bet}/8</div>
+        <p class="big" style="margin:12px 0">📖 ${themeName}</p>
+        <p style="font-size:18px;margin:10px 0"><i>${esc(q.question)}</i></p>
+        <div style="display:flex;flex-direction:column;gap:6px;margin-top:10px">
+          ${q.choices.map((c,i)=>{
+            const sel = act.myAnswer === i;
+            const letter = ['A','B','C','D'][i]||'?';
+            return `<button class="btn ${sel?'secondary':''}" style="text-align:left;padding:12px 16px" onclick="ttcqAnswer(${i})">
+              <b>${letter}.</b> ${esc(c)}
+            </button>`;
+          }).join('')}
+        </div>
+        ${act.myAnswer!=null?`<p class="neon-cyan mt">✅ Réponse enregistrée</p>`:''}
+        <p class="muted">${act.answerCount}/${act.playerCount} ont répondu</p>
+      </div>`;
+    }
+    // Révélation
+    if (act.sub==='reveal'){
+      const myRes = act.myResult;
+      const qq = q || {};
+      const ca = act.myCorrectAnswer;
+      const cc = act.myChoices||[];
+      return `<div class="card center glow-box" style="border-color:var(--neon3)">
+        ${pill}
+        <p class="big">📖 ${themeName}</p>
+        <p style="margin:8px 0"><i>${esc(qq.question||'')}</i></p>
+        ${cc.length?`<div style="display:flex;flex-direction:column;gap:2px;margin:6px 0">${cc.map((c,i)=>{
+          const isCa = i===ca;
+          const isMy = act.myAnswer===i;
+          return `<div style="padding:4px 8px;border-radius:4px;background:${isCa?'rgba(0,255,0,0.15)':isMy?'rgba(255,0,0,0.15)':'transparent'};border:1px solid ${isCa?'var(--neon3)':isMy?'var(--neon1)':'transparent'}">
+            ${['A','B','C','D'][i]||'?'}. ${esc(c)} ${isCa?'✅':''} ${isMy&&!isCa?'❌':''}
+          </div>`;
+        }).join('')}</div>`:''}
+        ${myRes?`<p class="big" style="margin:8px 0">${myRes.correct?'✅ Bon !':'❌ Faux !'} · misé ${myRes.bet} · avance <b class="neon-cyan">+${myRes.gained}</b></p>`:`<p class="muted">Pas de réponse</p>`}
+        <p class="muted">Prochaine manche dans <span id="privacyCountdown" class="neon-yellow">${act.autoNextSeconds||20}</span>s</p>
+      </div>`;
+    }
+  }
+
+  return `<div class="card center"><h2>🎯 TTCQ</h2><p>Regarde la BORNE 📺</p></div>`;
+}
+function ttcqSelect(themeId){ api('/api/ttcq/selectTheme', { themeId }); }
+function ttcqBet(level){ api('/api/ttcq/bet', { level }); }
+function ttcqAnswer(choice){ api('/api/ttcq/answer', { choice }); }
 function submitCode(){
   const v = document.getElementById('codeInput').value;
   api('/api/code', { code: v }).then(r=>{

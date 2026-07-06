@@ -266,19 +266,11 @@ function render(){
     renderRoueBorne(STATE.activity); return;
   }
   if (roueCountTimer){ clearInterval(roueCountTimer); roueCountTimer = null; }
-  // --- Anecdote (le Game Master lance un souvenir à raconter) ---
+  // --- Anecdote « BREAKING NEWS » : diffusion vidéo (YouTube ou upload) ---
   if (STATE.phase==='activity' && STATE.activity && STATE.activity.type==='anecdote'){
-    const an = STATE.activity.anecdote || {};
-    stage.innerHTML = `<div class="center">
-      <div class="card glow-box" style="display:inline-block;max-width:880px;border-color:var(--neon3)">
-        <div class="pill neon-yellow">📖 ANECDOTE</div>
-        <h1 class="big neon-pink">${esc(an.titre||'')}</h1>
-        <p class="big">${esc(an.desc||'')}</p>
-        <p class="big neon-cyan blink">À toi de raconter, Vincent ! 🎤</p>
-      </div></div>`;
-    tickerEl.textContent = 'ANECDOTE — Vincent raconte !';
-    return;
+    renderAnecdoteBorne(STATE.activity); return;
   }
+  if (anecKey){ anecKey = null; destroyAnec(); document.body.classList.add('scanlines'); }
   // --- Hero-quiz (Anecdote 3) : vidéo puis Vincent devine, puis BRAVO VINCENT ---
   if (STATE.phase==='activity' && STATE.activity && STATE.activity.type==='heroquiz'){
     renderHeroQuiz(STATE.activity); return;
@@ -450,6 +442,9 @@ function activityView(act){
   }
   if (act.type==='carton'){
     return cartonBorne(act);
+  }
+  if (act.type==='ttcq'){
+    return ttcqBorne(act);
   }
   if (act.type==='reaction_race'){
     const board = (act.buzzes||[]).slice().sort((a,b)=>a.t-b.t);
@@ -653,6 +648,92 @@ function cartonBorne(act){
   else body = pill;
 
   return `<div class="center">${body}${scores}</div>`;
+}
+
+// TTCQ « TU TE METS COMBIEN ? » — plateau de jeu, pari, questions
+function ttcqBorne(act){
+  const adulte = act.level==='adulte';
+  const pillCls = adulte?'neon-pink':'neon-cyan';
+  const pill = `<div class="pill ${pillCls}">🎯 TTCQ · ${esc(act.levelLabel||'')} · MANCHE ${act.round}/${act.totalRounds}</div>`;
+  tickerEl.textContent = `TTCQ (${act.levelLabel}) — manche ${act.round}/${act.totalRounds}`;
+  const scores = ttcqLeaderboardHtml(act.leaderboard);
+  // Plateau
+  const boardHtml = `<div class="ttcq-board" style="display:flex;flex-wrap:wrap;gap:2px;justify-content:center;max-width:900px;margin:10px auto;font-size:11px">
+    ${act.board.map((s,i)=>{
+      const onIt = Object.entries(act.positions||{}).filter(([,pos])=>pos===i).map(([id])=>(act.leaderboard||[]).find(p=>p.id===id)).filter(Boolean);
+      const markers = onIt.map(p=>`<span class="ttcq-pawn" style="color:${adulte?'var(--neon1)':'var(--neon3)'};font-weight:800;margin:0 1px">${esc(p.name||'').slice(0,4)}</span>`).join('');
+      const cls = s==='⭐ Compte double'?'neon-yellow':s==='💀 Défi'?'neon-pink':s==='🎲 Relance'?'neon-cyan':s==='🪙 Bonus'?'neon-green':'';
+      const spc = s==='🟦'||s==='🟦 Départ'||s==='🏁 Arrivée'?'':s;
+      return `<div class="ttcq-space" style="border:1px solid ${adulte?'var(--neon1)':'var(--neon3)'};border-radius:4px;padding:2px 4px;min-width:42px;text-align:center;background:rgba(0,0,0,0.3)">
+        <div style="font-size:9px;color:#888">${i}</div>
+        <div class="${cls}" style="font-size:10px">${spc||'&nbsp;'}</div>
+        <div style="font-size:10px;min-height:16px">${markers}</div>
+      </div>`;
+    }).join('')}
+  </div>`;
+
+  // Thème
+  const themeName = act.currentTheme ? esc(act.currentTheme.name) : '—';
+  const themeHtml = `<div class="card glow-box" style="display:inline-block;max-width:800px;margin:8px auto">
+    <h2 class="big neon-yellow" style="margin:4px 0">📖 ${themeName}</h2>
+  </div>`;
+
+  let body;
+  if (act.sub==='theme_pick'){
+    const cats = act.availableThemes ? Object.keys(act.availableThemes) : [];
+    const catHtml = cats.map(c=>{
+      const themes = (act.availableThemes[c]||[]).map(t=>esc(t.name)).join(', ');
+      return `<div style="margin:4px 0"><span class="pill neon-cyan">${esc(c)}</span> ${themes}</div>`;
+    }).join('');
+    body = `${pill}
+      <p class="big">👑 <b class="neon-yellow">${esc(act.themePickerName||'?')}</b> choisit le thème !</p>
+      ${catHtml ? `<div class="card" style="max-width:800px;margin:10px auto;text-align:left;font-size:14px">${catHtml}</div>` : '<p class="big neon-cyan blink">Sur ton téléphone 📱</p>'}`;
+  }
+  else if (act.sub==='bet'){
+    body = `${pill}${themeHtml}
+      <p class="big neon-cyan blink">Chaque joueur mise sur son téléphone 📱</p>
+      <div class="huge pixel" style="margin-top:8px">${act.betCount} / ${act.playerCount} ont misé</div>`;
+  }
+  else if (act.sub==='answer'){
+    body = `${pill}${themeHtml}
+      <p class="big neon-cyan blink">Questions en cours — répondez sur vos téléphones 📱</p>
+      <div class="huge pixel" style="margin-top:8px">${act.answerCount} / ${act.playerCount} ont répondu</div>`;
+  }
+  else if (act.sub==='reveal'){
+    const res = act.results||{};
+    const lines = Object.entries(res).map(([id,r])=>{
+      const p = (act.leaderboard||[]).find(x=>x.id===id);
+      const nm = esc(p?.name||'?');
+      const ic = r.correct ? '✅' : '❌';
+      const mv = r.gained > 0 ? `+${r.gained}` : '0';
+      return `<div style="margin:4px 0">${ic} <b>${nm}</b> — misé ${r.bet} · avance <b class="neon-cyan">${mv}</b> · case ${r.position}</div>`;
+    }).join('');
+    body = `${pill}${themeHtml}
+      <div class="card" style="max-width:700px;margin:10px auto;text-align:left">${lines}</div>
+      <p class="muted">Prochaine manche dans <span id="privacyCountdown" class="neon-yellow">${act.autoNextSeconds||20}</span>s</p>`;
+  }
+  else if (act.sub==='final'){
+    const board = act.finalBoard||[];
+    return `<div class="center">
+      ${pill}
+      <h1 class="huge neon-yellow pixel">🏁 TTCQ — TERMINÉ !</h1>
+      <div class="card leaderboard" style="max-width:640px;margin:14px auto;text-align:left">
+        ${board.map((p,i)=>`<div>${['🥇','🥈','🥉'][i]||(i+1+'.')} ${esc(p.name)} <span class="coins">case ${p.position} 🪙${p.coins}</span></div>`).join('')||'<div class="muted center">Pas de classement.</div>'}
+      </div>
+      ${board.length?`<p class="big neon-cyan">Bravo ${esc(board[0].name)} — le roi du TTCQ ! 🎯</p>`:''}
+    </div>`;
+  }
+  else body = pill;
+
+  return `<div class="center">${body}${boardHtml}${scores}</div>`;
+}
+function ttcqLeaderboardHtml(board){
+  const b = board||[];
+  if (!b.length) return '';
+  return `<div class="card leaderboard" style="max-width:720px;margin:16px auto 0;text-align:left">
+    <div class="pixel neon-yellow center" style="font-size:13px;margin-bottom:6px">CLASSEMENT</div>
+    ${b.map((p,i)=>`<div>${['🥇','🥈','🥉'][i]||(i+1+'.')} ${esc(p.name)} <span class="coins">case ${p.position} 🪙${p.coins}</span></div>`).join('')}
+  </div>`;
 }
 
 function quizBorne(act){
@@ -1011,6 +1092,53 @@ function renderVideoBorne(a){
   startShowPlayer(a.skipIntro ? null : (a.intro || SHOW_INTRO), a.video || '7kyY29BHTZs');
 }
 function destroyShowPlayer(){ try { if (ytShow) { ytShow.destroy(); ytShow = null; } } catch(_){ ytShow = null; } }
+
+// =================== ANECDOTE « BREAKING NEWS » ===================
+// Splash « 🔴 BREAKING NEWS » (~2,8 s) puis diffusion de la vidéo : YouTube
+// (via le lecteur YT) ou fichier uploadé (balise <video>).
+let anecKey = null, anecVid = null, anecTimer = null;
+function destroyAnec(){
+  if (anecTimer){ clearTimeout(anecTimer); anecTimer = null; }
+  try { if (anecVid){ anecVid.pause(); anecVid.removeAttribute('src'); anecVid.load(); anecVid = null; } } catch(_){ anecVid = null; }
+  destroyShowPlayer();
+}
+function renderAnecdoteBorne(a){
+  if (anecKey === a.startedAt) return; // ne construire qu'une fois (sinon la vidéo redémarre)
+  anecKey = a.startedAt;
+  destroyAnec();
+  document.body.classList.remove('scanlines');
+  try { if (ytAmb) ytAmb.pauseVideo(); if (ytBt) ytBt.mute(); if (ytPac) ytPac.pauseVideo(); } catch(_){}
+  const title = esc(a.titre || 'BREAKING NEWS');
+  const isYt = !!a.youtube;
+  const playerInner = isYt
+    ? `<div id="ytshow" style="width:100%;height:100%"></div>`
+    : `<video id="anecvid" playsinline style="width:100%;height:100%;object-fit:contain;background:#000"></video>`;
+  stage.innerHTML = `<div class="center">
+    <div id="anecSplash" style="position:fixed;inset:0;z-index:600;background:#0a0010;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">
+      <div style="background:#d40000;color:#fff;font-family:var(--pixel);font-size:36px;padding:16px 30px;border-radius:8px;animation:blink 1s steps(1) infinite">🔴 BREAKING NEWS</div>
+      <div class="big neon-yellow" style="margin-top:26px;max-width:82vw">${title}</div>
+    </div>
+    <div style="background:#d40000;color:#fff;font-family:var(--pixel);font-size:20px;padding:8px 14px;border-radius:6px;display:inline-block;animation:blink 1s steps(1) infinite">🔴 BREAKING NEWS</div>
+    <div style="position:relative;max-width:min(92vw,820px);margin:12px auto;border:4px solid #ff2e88;border-radius:12px;overflow:hidden;background:#000">
+      <div style="aspect-ratio:16/9">${playerInner}</div>
+      <div style="position:absolute;left:0;right:0;bottom:0;background:rgba(212,0,0,.92);color:#fff;font-family:var(--pixel);font-size:15px;line-height:1.5;padding:10px 12px;text-align:center">📰 ${title}</div>
+    </div>
+  </div>`;
+  tickerEl.textContent = 'BREAKING NEWS — ' + (a.titre || '');
+  // Lecture après le splash (~2,8 s).
+  anecTimer = setTimeout(() => {
+    anecTimer = null;
+    const sp = document.getElementById('anecSplash'); if (sp) sp.style.display = 'none';
+    if (isYt){ startShowPlayer(null, a.youtube); }
+    else if (a.videoUrl){
+      anecVid = document.getElementById('anecvid');
+      if (anecVid){
+        anecVid.src = a.videoUrl; anecVid.loop = true; anecVid.muted = false; anecVid.volume = 1;
+        anecVid.play().catch(() => { anecVid.muted = true; anecVid.play().catch(() => {}); });
+      }
+    }
+  }, 2800);
+}
 
 // =================== HERO-QUIZ (Anecdote 3 : Vincent devine) ===================
 let hqKey = null, ytHQ = null, _fxRaf = 0, _fxStop = false;

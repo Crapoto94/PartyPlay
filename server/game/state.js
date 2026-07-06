@@ -20,6 +20,7 @@ import { PRIVACY_QUESTIONS, PRIVACY_LEVELS } from '../data/privacy.js';
 import { CARTON_HAND_SIZE, CARTON_DEFAULT_ROUNDS } from '../data/carton.js';
 import { cartonPools, CARTON_LEVELS } from '../store/carton.js';
 import { defaultPlaylistsMap } from '../store/blindtests.js';
+import { TTCQ_THEMES } from '../data/ttcq.js';
 
 // Mélange (Fisher-Yates) — copie mélangée d'un tableau.
 function shuffled(arr) {
@@ -44,6 +45,17 @@ function deezerPlaylistId(url) {
   if (!/deezer/i.test(s)) return null;
   const m = s.match(/playlist\/(\d+)/);
   return m ? m[1] : null;
+}
+
+// Extrait l'identifiant vidéo (11 car.) d'une URL YouTube (watch, youtu.be,
+// embed, shorts) ou d'un id brut. Renvoie '' si rien de reconnaissable.
+function extractYouTubeId(url) {
+  const s = (url || '').toString().trim();
+  if (!s) return '';
+  const m = s.match(/(?:youtu\.be\/|[?&]v=|embed\/|shorts\/)([A-Za-z0-9_-]{11})/);
+  if (m) return m[1];
+  if (/^[A-Za-z0-9_-]{11}$/.test(s)) return s;
+  return '';
 }
 
 // Mosaïque : répartit L lettres en n parts entières aussi égales que possible.
@@ -130,6 +142,7 @@ export class GameState {
     if (this._enqueteDebriefTimer) { clearTimeout(this._enqueteDebriefTimer); this._enqueteDebriefTimer = null; }
     if (this._enqueteFinaleTimer) { clearTimeout(this._enqueteFinaleTimer); this._enqueteFinaleTimer = null; }
     if (this._hqTimer) { clearTimeout(this._hqTimer); this._hqTimer = null; }
+    if (this._ttcqTimer) { clearTimeout(this._ttcqTimer); this._ttcqTimer = null; }
     this.pacman = null; // partie Pac-Man en cours
     this.tetris = null; // partie Tetris en cours
     this.tron = null;   // partie Tron en cours
@@ -179,7 +192,7 @@ export class GameState {
     //  - pacman (partie en cours, recréée à chaque manche)
     const { listeners, cfg, savePath, eventId, pacmanTimer, pacman, tetrisTimer, tetris, tronTimer, tron,
       g2048Timer, g2048, pongTimer, pong,
-      _autoAdvanceTimer, _roueTimer, _briefTimer, _drawTimer, _celebrateTimer, _enqueteBriefTimer, _enqueteDebriefTimer, _enqueteFinaleTimer, _hqTimer, ...data } = this;
+      _autoAdvanceTimer, _roueTimer, _briefTimer, _drawTimer, _celebrateTimer, _enqueteBriefTimer, _enqueteDebriefTimer, _enqueteFinaleTimer, _hqTimer, _ttcqTimer, ...data } = this;
     try {
       if (savePath) fs.writeFileSync(savePath, JSON.stringify(data, null, 2));
     } catch (e) {
@@ -727,14 +740,56 @@ export class GameState {
       this.addLog(`🃏 BOUCHE-TROU !? (${this.activity.levelLabel}) — préparez vos meilleures cartes !`);
       this._cartonNewRound();
     }
-    // Anecdote : la borne affiche un prompt (souvenir / histoire) à raconter.
+    // TTCQ « TU TE METS COMBIEN ? » : chaque joueur choisit sa difficulté (1-8),
+    // reçoit une question à son niveau, avance sur un plateau avec cases spéciales.
+    if (type === 'ttcq') {
+      const totalRounds = Math.min(Math.max(parseInt(opts.rounds, 10) || 10, 3), 20);
+      const level = opts.level === 'adulte' ? 'adulte' : 'classique';
+      const disabledCats = Array.isArray(opts.disabledCats) ? opts.disabledCats : [];
+      const pool = TTCQ_THEMES.filter(t => t.level === level && !disabledCats.includes(t.cat));
+      const cats = [...new Set(pool.map(t => t.cat))].sort();
+      const a = this.activity;
+      a.level = level;
+      a.levelLabel = level === 'adulte' ? '18+' : 'Classique';
+      a.disabledCats = disabledCats;
+      a._pool = pool;
+      a.sub = 'theme_pick';
+      a.categories = cats;
+      a.categoriesUsed = [];
+      a.themePickerId = null;
+      a.currentTheme = null;
+      a.bets = {};
+      a.answers = {};
+      a.results = {};
+      a.round = 0;
+      a.totalRounds = totalRounds;
+      a.positions = {};
+      a.coins = {};
+      a.doubleNext = {};
+      a.board = this._ttcqBoard();
+      this.players.forEach(p => { a.positions[p.id] = 0; a.coins[p.id] = 0; a.doubleNext[p.id] = false; });
+      const catNames = cats.join(', ');
+      this.addLog(`🎯 TTCQ ! (${level === 'adulte' ? '🔞 18+' : '🎉 Classique'}) — ${totalRounds} manches, catégories : ${catNames}`);
+    }
+    // Anecdote « BREAKING NEWS » : la borne diffuse une vidéo (lien YouTube ou
+    // fichier uploadé par le maître de jeu), précédée d'un bandeau breaking news.
     if (type === 'anecdote') {
       const list = this._content.anecdotes || [];
-      const an = (opts.anecdote && opts.anecdote.titre)
+      let an = (opts.anecdote && (opts.anecdote.youtube || opts.anecdote.video || opts.anecdote.titre))
         ? opts.anecdote
-        : (list.length ? list[Math.floor(Math.random() * list.length)] : { titre: 'ANECDOTE', desc: 'Raconte une histoire !' });
-      this.activity.anecdote = an;
-      this.addLog(`📖 Anecdote lancée : « ${an.titre} ».`);
+        : (Number.isInteger(opts.idx) && list[opts.idx]) ? list[opts.idx]
+        : (list.length ? list[0] : null);
+      if (!an) {
+        this.addLog('📰 Aucune anecdote configurée — ajoutez-en une dans la console (onglet Contenu).');
+        this.activity = null; this.phase = 'activity'; this.touch();
+        return;
+      }
+      const ytId = extractYouTubeId(an.youtube || '');
+      this.activity.titre = an.titre || 'BREAKING NEWS';
+      this.activity.youtube = ytId;
+      this.activity.videoUrl = an.video || '';
+      this.activity.vignette = an.vignette || (ytId ? `https://img.youtube.com/vi/${ytId}/hqdefault.jpg` : '');
+      this.addLog(`📰 BREAKING NEWS : « ${this.activity.titre} » !`);
     }
     // Briefing : les slides défilent en boucle sur la borne et le briefing
     // RESTE affiché jusqu'à ce que le GM clique « ▶ DÉMARRER ». Pas d'auto-
@@ -900,6 +955,7 @@ export class GameState {
     if (a.type === 'draw') return this._drawPublic(forPlayerId);
     if (a.type === 'privacy') return this.privacyPublic(forPlayerId);
     if (a.type === 'carton') return this.cartonPublic(forPlayerId);
+    if (a.type === 'ttcq') return this.ttcqPublic(forPlayerId);
     if (a.type !== 'quiz' && a.type !== 'quiz_vincent' && a.type !== 'blindtest') return a;
     const q = this.quizQuestion();
     const list = a.dynamicBlindtest ? [] : (this.quizDeck(a.deck));
@@ -1387,6 +1443,219 @@ export class GameState {
     return base;
   }
 
+  // ---- TTCQ « TU TE METS COMBIEN ? » : plateau, thème, pari, question ----
+  _ttcqBoard() {
+    const spaces = ['🟦 Départ'];
+    for (let i = 1; i < 48; i++) {
+      if (i === 47) spaces.push('🏁 Arrivée');
+      else if (i % 12 === 6) spaces.push('⭐ Compte double');
+      else if (i % 15 === 0) spaces.push('💀 Défi');
+      else if (i % 20 === 0) spaces.push('🎲 Relance');
+      else if (i % 18 === 0) spaces.push('🪙 Bonus');
+      else spaces.push('🟦');
+    }
+    return spaces;
+  }
+  _ttcqRandomTheme(category) {
+    const a = this.activity;
+    const basePool = a._pool || TTCQ_THEMES;
+    const pool = category
+      ? basePool.filter(t => t.cat === category && !a._usedThemes?.includes(t.id))
+      : basePool.filter(t => !a._usedThemes?.includes(t.id));
+    if (!pool.length) {
+      a._usedThemes = [];
+      const fallback = category ? basePool.filter(t => t.cat === category) : basePool;
+      return fallback.length ? fallback[Math.floor(Math.random() * fallback.length)] : basePool[0];
+    }
+    return pool[Math.floor(Math.random() * pool.length)];
+  }
+  ttcqSelectTheme(playerId, themeId) {
+    const a = this.activity;
+    if (!a || a.type !== 'ttcq' || a.sub !== 'theme_pick') return { error: 'Pas le bon moment' };
+    const theme = TTCQ_THEMES.find(t => t.id === themeId);
+    if (!theme) return { error: 'Thème inconnu' };
+    a.currentTheme = theme;
+    a.themePickerId = playerId;
+    if (!a._usedThemes) a._usedThemes = [];
+    a._usedThemes.push(theme.id);
+    a.sub = 'bet';
+    a.bets = {};
+    a.answers = {};
+    a.results = {};
+    this.addLog(`📖 ${this.player(playerId)?.name || '?'} choisit le thème : ${theme.name}`);
+    this.touch();
+    return { ok: true };
+  }
+  ttcqBet(playerId, level) {
+    const a = this.activity;
+    if (!a || a.type !== 'ttcq' || a.sub !== 'bet') return { error: 'Pas le bon moment' };
+    const lvl = parseInt(level, 10);
+    if (lvl < 1 || lvl > 8) return { error: 'Niveau invalide (1-8)' };
+    a.bets[playerId] = lvl;
+    const all = this.players.filter(p => p.connected);
+    const allBet = all.every(p => a.bets[p.id] != null);
+    if (allBet && all.length >= 1) {
+      a.sub = 'answer';
+      this.addLog(`🎲 Tous les joueurs ont misé ! Passage aux questions.`);
+    }
+    this.touch();
+    return { ok: true };
+  }
+  ttcqAnswer(playerId, choice) {
+    const a = this.activity;
+    if (!a || a.type !== 'ttcq' || a.sub !== 'answer') return { error: 'Pas le bon moment' };
+    a.answers[playerId] = parseInt(choice, 10);
+    const all = this.players.filter(p => p.connected);
+    const allAns = all.every(p => a.answers[p.id] != null);
+    if (allAns && all.length >= 1) this.ttcqReveal();
+    else this.touch();
+    return { ok: true };
+  }
+  ttcqReveal() {
+    const a = this.activity;
+    if (!a || a.type !== 'ttcq' || a.sub !== 'answer') return;
+    a.sub = 'reveal';
+    const results = {};
+    const theme = a.currentTheme;
+    const connected = this.players.filter(p => p.connected);
+    connected.forEach(p => {
+      const bet = a.bets[p.id] || 1;
+      const lvlData = theme.levels[bet - 1];
+      const chosen = a.answers[p.id];
+      const correct = chosen != null && chosen === lvlData.a;
+      let gained = 0;
+      if (correct) {
+        gained = bet;
+        if (a.doubleNext[p.id]) { gained *= 2; a.doubleNext[p.id] = false; }
+        a.positions[p.id] = Math.min(47, (a.positions[p.id] || 0) + gained);
+        a.coins[p.id] = (a.coins[p.id] || 0) + 1;
+        const space = a.board[a.positions[p.id]];
+        if (space === '⭐ Compte double') a.doubleNext[p.id] = true;
+        else if (space === '🎲 Relance') {
+          const extra = Math.ceil(bet / 2);
+          a.positions[p.id] = Math.min(47, a.positions[p.id] + extra);
+        } else if (space === '🪙 Bonus') a.coins[p.id] = (a.coins[p.id] || 0) + 2;
+      }
+      results[p.id] = { bet, correct, gained, position: a.positions[p.id] || 0 };
+    });
+    a.results = results;
+    a.round++;
+    a.revealAt = Date.now();
+    a.autoNextSeconds = 20;
+    const winners = connected.filter(p => (a.positions[p.id] || 0) >= 47);
+    if (winners.length > 0 || a.round >= a.totalRounds) {
+      a.sub = 'final';
+      a.finalBoard = connected.map(p => ({
+        id: p.id, name: p.name, avatar: p.avatar,
+        position: a.positions[p.id] || 0, coins: a.coins[p.id] || 0,
+      })).sort((x, y) => y.position - x.position || (y.coins || 0) - (x.coins || 0));
+      this.addLog(`🏁 TTCQ terminé ! ${winners.length ? winners[0].name + ' gagne !' : ''}`);
+    }
+    if (this._ttcqTimer) clearTimeout(this._ttcqTimer);
+    this._ttcqTimer = setTimeout(() => { this._ttcqTimer = null; this.ttcqNext(); }, 20000);
+    this.touch();
+  }
+  ttcqNext() {
+    const a = this.activity;
+    if (!a || a.type !== 'ttcq') return;
+    if (this._ttcqTimer) { clearTimeout(this._ttcqTimer); this._ttcqTimer = null; }
+    if (a.sub === 'final') { this.stopActivity(); return; }
+    const connected = this.players.filter(p => p.connected);
+    const lastPickerIdx = connected.findIndex(p => p.id === a.themePickerId);
+    const nextPicker = connected[(lastPickerIdx + 1) % connected.length];
+    a.sub = 'theme_pick';
+    a.themePickerId = nextPicker?.id || connected[0]?.id;
+    a.currentTheme = null;
+    a.bets = {};
+    a.answers = {};
+    a.results = {};
+    a.revealAt = null;
+    a.autoNextSeconds = null;
+    this.addLog(`🔄 Nouvelle manche — ${nextPicker?.name || '?'} choisit le thème !`);
+    this.touch();
+  }
+  ttcqPublic(forPlayerId) {
+    const a = this.activity;
+    if (!a || a.type !== 'ttcq') return null;
+    const connected = this.players.filter(p => p.connected);
+    const theme = a.currentTheme;
+    const qForPlayer = (pid) => {
+      if (!theme || a.sub !== 'answer' && a.sub !== 'reveal') return null;
+      const bet = a.bets[pid] || 1;
+      const lvl = theme.levels[Math.min(bet - 1, 7)];
+      return lvl ? { question: lvl.q, choices: lvl.c, level: bet } : null;
+    };
+    const base = {
+      type: 'ttcq', sub: a.sub, round: a.round, totalRounds: a.totalRounds,
+      level: a.level, levelLabel: a.levelLabel,
+      categories: a.categories,
+      categoriesUsed: a._usedThemes || [],
+      themePickerId: a.themePickerId,
+      themePickerName: this.player(a.themePickerId)?.name || '?',
+      currentTheme: theme ? { id: theme.id, cat: theme.cat, name: theme.name } : null,
+      board: a.board,
+      positions: a.positions,
+      coins: a.coins,
+      doubleNext: a.doubleNext,
+      playerCount: connected.length,
+      betCount: Object.keys(a.bets).length,
+      answerCount: Object.keys(a.answers).length,
+      results: (a.sub === 'reveal' || a.sub === 'final') ? a.results : null,
+      revealAt: a.revealAt || null,
+      autoNextSeconds: a.autoNextSeconds || null,
+      finalBoard: a.sub === 'final' ? (a.finalBoard || []) : null,
+      leaderboard: connected.map(p => ({
+        id: p.id, name: p.name, avatar: p.avatar,
+        position: a.positions[p.id] || 0, coins: a.coins[p.id] || 0,
+      })).sort((x, y) => y.position - x.position || (y.coins || 0) - (x.coins || 0)),
+    };
+    if (forPlayerId != null) {
+      const me = this.player(forPlayerId);
+      if (me) {
+        base.myBet = a.bets[forPlayerId] || null;
+        base.myAnswer = a.answers[forPlayerId] || null;
+        base.myResult = (a.sub === 'reveal' || a.sub === 'final') ? (a.results[forPlayerId] || null) : null;
+        const q = qForPlayer(forPlayerId);
+        if (q) base.myQuestion = q;
+        if (a.sub === 'reveal' && theme) {
+          const bet = a.bets[forPlayerId] || 1;
+          const lvlData = theme.levels[bet - 1];
+          base.myCorrectAnswer = lvlData.a;
+          base.myChoices = lvlData.c;
+        }
+      }
+    }
+    // En phase theme_pick, envoyer les thèmes disponibles de la catégorie
+    if (a.sub === 'theme_pick' && forPlayerId != null) {
+      const used = a._usedThemes || [];
+      const pool = a._pool || TTCQ_THEMES;
+      const available = pool.filter(t => !used.includes(t.id));
+      const byCat = {};
+      available.forEach(t => { if (!byCat[t.cat]) byCat[t.cat] = []; byCat[t.cat].push({ id: t.id, name: t.name }); });
+      base.availableThemes = byCat;
+      base.totalThemeCount = available.length;
+    }
+    return base;
+  }
+  _ttcqSimTick() {
+    const a = this.activity;
+    if (!a || a.type !== 'ttcq') return;
+    const bots = this.players.filter(p => p.simBot && p.connected);
+    bots.forEach(b => {
+      if (a.sub === 'bet' && a.bets[b.id] == null) this.ttcqBet(b.id, Math.floor(Math.random() * 8) + 1);
+      if (a.sub === 'answer' && a.answers[b.id] == null) this.ttcqAnswer(b.id, Math.floor(Math.random() * 4));
+    });
+    if (a.sub === 'theme_pick' && a.themePickerId) {
+      const picker = this.player(a.themePickerId);
+      if (picker && picker.simBot && !a.currentTheme) {
+        const used = a._usedThemes || [];
+        const pool = a._pool || TTCQ_THEMES;
+        const avail = pool.filter(t => !used.includes(t.id));
+        if (avail.length) this.ttcqSelectTheme(a.themePickerId, avail[Math.floor(Math.random() * avail.length)].id);
+      }
+    }
+  }
+
   // ---- Simulation : 4 joueurs de test (1 pilotable + 3 bots) --------
   // Les joueurs « sim » sont ajoutés dans la config par la route GM ;
   // ici on les connecte et on fait jouer les bots automatiquement.
@@ -1442,6 +1711,15 @@ export class GameState {
         }
       } else if (a.type === 'reaction_race') {
         if (a.state === 'running' && !a.resolved && !(a.buzzes || []).find((x) => x.id === b.id)) this.buzz(b.id);
+      } else if (a.type === 'ttcq') {
+        if (a.sub === 'bet' && a.bets[b.id] == null) this.ttcqBet(b.id, rint(8) + 1);
+        if (a.sub === 'answer' && a.answers[b.id] == null) this.ttcqAnswer(b.id, rint(4));
+        if (a.sub === 'theme_pick' && a.themePickerId === b.id && !a.currentTheme) {
+          const used = a._usedThemes || [];
+          const pool = a._pool || TTCQ_THEMES;
+          const avail = pool.filter(t => !used.includes(t.id));
+          if (avail.length) this.ttcqSelectTheme(b.id, avail[rint(avail.length)].id);
+        }
       }
     }
   }
@@ -1471,6 +1749,7 @@ export class GameState {
     if (this._enqueteDebriefTimer) { clearTimeout(this._enqueteDebriefTimer); this._enqueteDebriefTimer = null; }
     if (this._enqueteFinaleTimer) { clearTimeout(this._enqueteFinaleTimer); this._enqueteFinaleTimer = null; }
     if (this._hqTimer) { clearTimeout(this._hqTimer); this._hqTimer = null; }
+    if (this._ttcqTimer) { clearTimeout(this._ttcqTimer); this._ttcqTimer = null; }
     this.pacman = null;
     this.tetris = null;
     this.tron = null;

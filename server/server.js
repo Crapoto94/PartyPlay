@@ -545,6 +545,24 @@ const avatarUpload = multer({
   fileFilter(req, file, cb) { cb(null, /^image\//.test(file.mimetype)); },
 });
 
+// Uploads de vidéos d'anecdotes « Breaking News » : sous-dossier anecdotes/.
+// Limite 200 Mo, fichiers vidéo uniquement.
+const anecUpload = multer({
+  storage: multer.diskStorage({
+    destination(req, file, cb) {
+      const d = path.join(uploadsDir(req.params.eventId), 'anecdotes');
+      mkdirSync(d, { recursive: true });
+      cb(null, d);
+    },
+    filename(req, file, cb) {
+      const ext = path.extname(file.originalname).toLowerCase() || '.mp4';
+      cb(null, `an_${Date.now()}_${Math.random().toString(36).slice(2, 6)}${ext}`);
+    },
+  }),
+  limits: { fileSize: 200 * 1024 * 1024 },
+  fileFilter(req, file, cb) { cb(null, /^video\//.test(file.mimetype)); },
+});
+
 // --- Pages de l'événement (avec injection thème) ---------------------
 ev.get('/', (req, res) => res.redirect(`/e/${req.eventId}/borne`));
 ev.get('/borne', (req, res) => res.send(renderPage('borne.html', req.cfg)));
@@ -676,6 +694,11 @@ ev.post('/api/privacy/guess', (req, res) => { const p = requirePlayer(req, res);
 ev.post('/api/carton/play', (req, res) => { const p = requirePlayer(req, res); if (!p) return; res.json(req.game.cartonPlay(p.id, req.body.cards)); });
 ev.post('/api/carton/pick', (req, res) => { const p = requirePlayer(req, res); if (!p) return; res.json(req.game.cartonPick(p.id, req.body.choice)); });
 
+// TTMC — le joueur choisit un thème, mise, puis répond.
+ev.post('/api/ttcq/selectTheme', (req, res) => { const p = requirePlayer(req, res); if (!p) return; res.json(req.game.ttcqSelectTheme(p.id, req.body.themeId)); });
+ev.post('/api/ttcq/bet', (req, res) => { const p = requirePlayer(req, res); if (!p) return; res.json(req.game.ttcqBet(p.id, req.body.level)); });
+ev.post('/api/ttcq/answer', (req, res) => { const p = requirePlayer(req, res); if (!p) return; res.json(req.game.ttcqAnswer(p.id, req.body.choice)); });
+
 // Mini-jeux & collaboratifs (manettes)
 ev.post('/api/pacman/dir', (req, res) => { const p = requirePlayer(req, res); if (!p) return; req.game.pacmanDir(p.id, req.body.dir); res.json({ ok: true }); });
 ev.post('/api/tetris/move', (req, res) => { const p = requirePlayer(req, res); if (!p) return; req.game.tetrisMove(p.id, req.body.dir); res.json({ ok: true }); });
@@ -760,6 +783,16 @@ ev.delete('/api/admin/avatars/:key', (req, res) => {
   saveConfig(cfg);
   reloadConfig(cfg.id);
   res.json({ ok: true });
+});
+
+// --- Upload d'une vidéo d'anecdote « Breaking News » (max 200 Mo) -----
+ev.post('/api/admin/anecdote-upload', (req, res, next) => anecUpload.single('video')(req, res, (err) => {
+  if (err) return res.status(400).json({ error: err.code === 'LIMIT_FILE_SIZE' ? 'Vidéo trop lourde (max 200 Mo).' : err.message });
+  next();
+}), (req, res) => {
+  if (!requireEventAdmin(req, res)) return;
+  if (!req.file) return res.status(400).json({ error: 'Aucune vidéo reçue (formats vidéo uniquement).' });
+  res.json({ ok: true, url: `/e/${req.eventId}/uploads/anecdotes/${req.file.filename}` });
 });
 
 // --- Invitations joueurs --------------------------------------------
@@ -912,6 +945,7 @@ ev.post('/api/admin/action', (req, res) => {
     case 'cartonClose': g.cartonClose(); break;
     case 'cartonNext': g.cartonNext(); break;
     case 'cartonSkip': g.cartonSkip(); break;
+    case 'ttcqNext': g.ttcqNext(); break;
     // Simulation : ajoute 4 joueurs de test (1 pilotable + 3 bots) dans la
     // config, puis active le pilote automatique des bots.
     case 'simStart': {

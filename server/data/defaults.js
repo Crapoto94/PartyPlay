@@ -8,7 +8,6 @@
 import { AVATARS } from './avatars.js';
 import { QUESTIONS } from './quiz.js';
 import { GAGES } from './gages.js';
-import { ANECDOTES } from './anecdotes.js';
 import { SPOTLIGHT_DEFIS } from './spotlight.js';
 import { DRAW_WORDS } from './draw_words.js';
 import { PHOTO_MISSIONS } from './photos.js';
@@ -32,7 +31,9 @@ export function defaultContent() {
   return JSON.parse(JSON.stringify({
     quiz: { decks: QUESTIONS },
     blindtest: { playlists: {} },
-    anecdotes: ANECDOTES,
+    // Anecdotes « Breaking News » : VIDE par défaut — le maître de jeu ajoute
+    // ses propres vidéos (lien YouTube ou upload) depuis sa console.
+    anecdotes: [],
     gages: GAGES,
     spotlightDefis: SPOTLIGHT_DEFIS,
     drawWords: DRAW_WORDS,

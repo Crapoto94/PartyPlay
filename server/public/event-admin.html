@@ -66,8 +66,10 @@
           <div class="field" data-cat="blindtest"><label>Blind-test — thème</label>
             <div class="inline"><select id="btTheme"></select><button class="btn" style="width:auto" onclick="launch('blindtest',{theme:val('btTheme')})">Lancer</button></div>
           </div>
+          <div class="field" data-cat="anecdotes"><label>📰 Anecdote — Breaking News vidéo</label>
+            <div class="inline"><select id="anecPick"></select><button class="btn" style="width:auto" onclick="launchAnecdote()">🔴 Lancer</button></div>
+          </div>
           <div class="row">
-            <button class="btn" data-cat="anecdotes" onclick="launch('anecdote',{})">📖 Anecdote</button>
             <button class="btn" data-cat="gages" onclick="launch('roue_des_gages',{})">🎰 Roue des gages</button>
             <button class="btn" data-cat="spotlight" onclick="launch('spotlight',{})">🔦 Spotlight</button>
             <button class="btn" data-cat="draw" onclick="launch('draw',{})">🎨 Dessine-moi</button>
@@ -95,6 +97,19 @@
                 <option value="16">16 manches</option>
               </select>
             </div>
+          </div>
+          <div class="field" data-cat="ttcq" style="margin-top:10px"><label>🎯 TTCQ — Tu Te Cotes Combien ? — plateau, pari, questions</label>
+            <div class="row" style="margin-bottom:6px">
+              <button class="btn" onclick="ttcqLaunch('classique')">🎉 Classique</button>
+              <button class="btn" onclick="ttcqLaunch('adulte')">🔞 18+</button>
+              <select id="ttcqRounds" style="width:auto">
+                <option value="5">5 manches</option>
+                <option value="8" selected>10 manches</option>
+                <option value="12">12 manches</option>
+                <option value="16">16 manches</option>
+              </select>
+            </div>
+            <div id="ttcqCatToggles" style="display:flex;flex-wrap:wrap;gap:4px;font-size:13px"></div>
           </div>
           <div class="row" data-cat="collab">
             <button class="btn" onclick="launch('mosaic',{})">🧩 Mosaïque</button>
@@ -204,6 +219,16 @@
           </div>
         </div>
         <div class="card">
+          <h3 class="neon-pink">📰 Anecdotes — Breaking News vidéo</h3>
+          <p class="muted">Chaque anecdote diffuse une vidéo sur la borne avec un bandeau « 🔴 Breaking News ». Donne un <b>nom</b>, puis colle un <b>lien YouTube</b> OU <b>uploade une vidéo</b> (max 200 Mo, ~1 min conseillé). Vide par défaut.</p>
+          <div id="anecList"></div>
+          <div class="row" style="margin-top:12px">
+            <button class="btn" onclick="addAnecRow()">＋ Ajouter une anecdote</button>
+            <button class="btn secondary" onclick="saveAnecdotes()">💾 Enregistrer</button>
+            <span class="muted" id="anec_saved"></span>
+          </div>
+        </div>
+        <div class="card">
           <h3 class="neon-yellow">🃏 Bouche-Trou !? — mes questions perso</h3>
           <p class="muted">Ajoute tes propres <b>questions à trou</b> et <b>cartes-réponses</b> : elles sont <b>prioritaires</b> (tirées en premier) et s'ajoutent au catalogue. Une par ligne. Utilise <code>___</code> pour marquer le trou (deux <code>___</code> = deux cartes à jouer).</p>
           <div class="field"><label>Questions perso <span class="muted">(une par ligne, ex. « Le pire cadeau, c'est ___. »)</span></label><textarea id="c_carton_p" rows="5" placeholder="Ma question avec un ___ à remplir."></textarea></div>
@@ -223,7 +248,6 @@
         </div>
         <div class="card">
           <div class="field"><label>Decks de quiz <span class="muted">{ deck: [ {prompt, choices[4], answer, points} ] }</span></label><textarea id="c_quiz" rows="8"></textarea></div>
-          <div class="field"><label>Anecdotes <span class="muted">[ {titre, desc} ]</span></label><textarea id="c_anec" rows="5"></textarea></div>
           <div class="field"><label>Gages <span class="muted">[ {id, titre, desc, alt, intensity, pool[]} ]</span></label><textarea id="c_gages" rows="6"></textarea></div>
           <div class="field"><label>Défis spotlight <span class="muted">[ "défi", … ]</span></label><textarea id="c_spot" rows="4"></textarea></div>
           <div class="field"><label>Mots Dessine-moi <span class="muted">[ {word, cat} ]</span></label><textarea id="c_draw" rows="4"></textarea></div>
@@ -307,6 +331,7 @@ async function loadConfig(){
     document.getElementById('verifyEmailAddr').textContent = META.contactEmail || '';
   }
   fillGeneral(); fillPlayers(); fillActivities(); fillContent(); fillLaunchers();
+  ttcqInitCats();
   applyActivityFilter();
   startGmStream();
   if (!CFG.onboarded) showOnboarding();
@@ -494,7 +519,7 @@ async function removeAvatar(key){
 }
 
 /* ---- Activités ---- */
-const ACT_LABELS={ quiz:'Quiz', blindtest:'Blind-test', anecdotes:'Anecdotes', gages:'Roue des gages', photo:'Défi photo', spotlight:'Spotlight', draw:'Dessine-moi', arcade:'Mini-jeux arcade', collab:'Collaboratifs (mosaïque/piano)', carton:'🃏 Bouche-Trou !? (cartes à trou)', privacy:'🤫 Sans Filtre !? (confessions, adultes)' };
+const ACT_LABELS={ quiz:'Quiz', blindtest:'Blind-test', anecdotes:'Anecdotes', gages:'Roue des gages', photo:'Défi photo', spotlight:'Spotlight', draw:'Dessine-moi', arcade:'Mini-jeux arcade', collab:'Collaboratifs (mosaïque/piano)', carton:'🃏 Bouche-Trou !? (cartes à trou)', privacy:'🤫 Sans Filtre !? (confessions, adultes)', ttcq:'🎯 TTCQ (Tu Te Cotes Combien)' };
 // Sans Filtre !? est un contenu adulte : activé seulement si explicitement
 // coché (contrairement aux autres activités, actives par défaut).
 function actDefaultOn(k, a){ return k==='privacy' ? (a[k]===true) : (a[k]!==false); }
@@ -630,11 +655,90 @@ async function saveBlindtestList(){
   fillContent(); fillLaunchers();
 }
 
+/* ---- Anecdotes (Breaking News vidéo) ---- */
+function ytIdFromUrl(u){
+  const s=(u||'').trim(); if(!s) return '';
+  const m=s.match(/(?:youtu\.be\/|[?&]v=|embed\/|shorts\/)([A-Za-z0-9_-]{11})/);
+  if(m) return m[1];
+  if(/^[A-Za-z0-9_-]{11}$/.test(s)) return s;
+  return '';
+}
+function anecVignetteHtml(row){
+  const yt=ytIdFromUrl(row.querySelector('.anec-yt').value);
+  const vid=row.dataset.video||'';
+  if(vid) return `<video src="${esc(vid)}" muted playsinline preload="metadata" style="width:120px;height:68px;object-fit:cover;border-radius:6px;background:#000"></video>`;
+  if(yt) return `<img src="https://img.youtube.com/vi/${yt}/mqdefault.jpg" style="width:120px;height:68px;object-fit:cover;border-radius:6px">`;
+  return `<div style="width:120px;height:68px;border-radius:6px;background:#1c1436;display:flex;align-items:center;justify-content:center;font-size:26px">🎬</div>`;
+}
+function refreshAnecVignette(el){ const row=el.closest('.anec-row'); row.querySelector('.anec-vig').innerHTML=anecVignetteHtml(row); }
+function anecRowHtml(item){
+  item=item||{};
+  return `<div class="anec-row" data-video="${esc(item.video||'')}" style="display:flex;gap:10px;align-items:flex-start;margin:10px 0;padding:10px;border:1px solid rgba(255,255,255,.12);border-radius:10px">
+    <div class="anec-vig" style="flex:0 0 auto"></div>
+    <div style="flex:1;display:flex;flex-direction:column;gap:6px;min-width:0">
+      <input type="text" class="anec-name" value="${esc(item.titre||'')}" placeholder="Nom de l'anecdote (ex. La chute de Vincent)">
+      <input type="text" class="anec-yt" value="${esc(item.youtube||'')}" placeholder="Lien YouTube (laisser vide si tu uploades)" oninput="onAnecYt(this)">
+      <div class="inline" style="gap:8px;flex-wrap:wrap">
+        <button class="btn secondary" style="width:auto" onclick="this.parentNode.querySelector('.anec-file').click()">📤 Uploader une vidéo</button>
+        <input type="file" class="anec-file" accept="video/*" style="display:none" onchange="uploadAnecVideo(this)">
+        <span class="anec-status muted"></span>
+      </div>
+    </div>
+    <button class="btn danger" style="width:auto" onclick="this.closest('.anec-row').remove()">✕</button>
+  </div>`;
+}
+function onAnecYt(input){ const row=input.closest('.anec-row'); if(input.value.trim()) row.dataset.video=''; refreshAnecVignette(input); }
+function fillAnecdotes(){
+  const box=document.getElementById('anecList'); if(!box) return;
+  const list=(CFG.content&&CFG.content.anecdotes)||[];
+  box.innerHTML = list.length ? list.map(anecRowHtml).join('') : '<p class="muted" id="anecEmpty">Aucune anecdote. Ajoutes-en une !</p>';
+  box.querySelectorAll('.anec-row').forEach(r=>{ r.querySelector('.anec-vig').innerHTML=anecVignetteHtml(r); });
+}
+function addAnecRow(){
+  const box=document.getElementById('anecList'); const e=document.getElementById('anecEmpty'); if(e)e.remove();
+  box.insertAdjacentHTML('beforeend',anecRowHtml({}));
+  const r=box.lastElementChild; r.querySelector('.anec-vig').innerHTML=anecVignetteHtml(r);
+}
+async function uploadAnecVideo(input){
+  const file=input.files&&input.files[0]; if(!file) return;
+  const row=input.closest('.anec-row'); const st=row.querySelector('.anec-status');
+  if(file.size>200*1024*1024){ st.textContent='✗ trop lourd (max 200 Mo)'; st.className='anec-status neon-pink'; input.value=''; return; }
+  st.textContent='Envoi… ⏳'; st.className='anec-status muted';
+  const fd=new FormData(); fd.append('video',file);
+  try{
+    const r=await fetch(API+'/api/admin/anecdote-upload',{method:'POST',headers:{'x-admin-password':PWD||''},body:fd});
+    const d=await r.json();
+    if(r.ok && d.url){ row.dataset.video=d.url; row.querySelector('.anec-yt').value=''; st.textContent='✓ vidéo prête'; st.className='anec-status ok'; refreshAnecVignette(row); }
+    else { st.textContent='✗ '+(d.error||'échec'); st.className='anec-status neon-pink'; }
+  }catch(_){ st.textContent='✗ erreur réseau'; st.className='anec-status neon-pink'; }
+  input.value='';
+}
+async function saveAnecdotes(){
+  const list=[];
+  document.querySelectorAll('#anecList .anec-row').forEach(row=>{
+    const titre=row.querySelector('.anec-name').value.trim();
+    const youtube=row.querySelector('.anec-yt').value.trim();
+    const video=row.dataset.video||'';
+    if(titre && (youtube||video)){
+      const yt=ytIdFromUrl(youtube);
+      list.push({ titre, youtube, video, vignette: video?'':(yt?`https://img.youtube.com/vi/${yt}/hqdefault.jpg`:'') });
+    }
+  });
+  const content={ ...(CFG.content||{}), anecdotes:list };
+  await push({content}); CFG.content=content;
+  const s=document.getElementById('anec_saved'); s.textContent=' ✓ '+list.length+' anecdote(s)'; setTimeout(()=>s.textContent='',2500);
+  fillLaunchers();
+}
+function launchAnecdote(){
+  const v=document.getElementById('anecPick').value;
+  if(v===''){ alert('Ajoute d\'abord une anecdote dans l\'onglet 📚 Contenu.'); return; }
+  launch('anecdote',{idx:parseInt(v,10)});
+}
+
 /* ---- Contenu ---- */
 function fillContent(){
   const ct=CFG.content||{};
   c_quiz.value=JSON.stringify(ct.quiz?ct.quiz.decks:{},null,1);
-  c_anec.value=JSON.stringify(ct.anecdotes||[],null,1);
   c_gages.value=JSON.stringify(ct.gages||[],null,1);
   c_spot.value=JSON.stringify(ct.spotlightDefis||[],null,1);
   c_draw.value=JSON.stringify(ct.drawWords||[],null,1);
@@ -644,6 +748,7 @@ function fillContent(){
   document.getElementById('c_carton_p').value=(cart.prompts||[]).join('\n');
   document.getElementById('c_carton_a').value=(cart.answers||[]).join('\n');
   fillBlindtests();
+  fillAnecdotes();
 }
 // Enregistre les questions/réponses perso « Bouche-Trou » (prioritaires).
 async function saveCartonCustom(){
@@ -657,7 +762,7 @@ async function saveContent(){
   try{
     const content={
       quiz:{ decks: JSON.parse(c_quiz.value||'{}') },
-      anecdotes: JSON.parse(c_anec.value||'[]'),
+      anecdotes: (CFG.content&&CFG.content.anecdotes)||[],
       gages: JSON.parse(c_gages.value||'[]'),
       spotlightDefis: JSON.parse(c_spot.value||'[]'),
       drawWords: JSON.parse(c_draw.value||'[]'),
@@ -686,6 +791,12 @@ function fillLaunchers(){
   document.getElementById('btTheme').innerHTML = keys.length
     ? keys.map(t=>`<option value="${t}">${esc(t)}</option>`).join('')
     : '<option value="">— aucun blind-test configuré —</option>';
+  // Anecdotes « Breaking News » configurées par le GM.
+  const anec=(CFG.content&&CFG.content.anecdotes)||[];
+  const ap=document.getElementById('anecPick');
+  if(ap) ap.innerHTML = anec.length
+    ? anec.map((a,i)=>`<option value="${i}">${esc(a.titre||('Anecdote '+(i+1)))}${a.video?' 📤':' ▶'}</option>`).join('')
+    : '<option value="">— aucune anecdote (onglet Contenu) —</option>';
 }
 
 /* ---- Pilotage live ---- */
@@ -693,6 +804,21 @@ function act(action,payload){ fetch(API+'/api/admin/action',{method:'POST',heade
 function launch(type,opts){ act('startActivity',{type,opts}); }
 function privacyCount(){ return parseInt(document.getElementById('privacyCount').value,10)||10; }
 function cartonRounds(){ return parseInt(document.getElementById('cartonRounds').value,10)||8; }
+function ttcqRounds(){ return parseInt(document.getElementById('ttcqRounds').value,10)||10; }
+function ttcqLaunch(level){
+  const cats = document.querySelectorAll('#ttcqCatToggles input[type=checkbox]');
+  const disabledCats = [];
+  cats.forEach(cb => { if (!cb.checked) disabledCats.push(cb.value); });
+  launch('ttcq',{ level, rounds: ttcqRounds(), disabledCats });
+}
+function ttcqInitCats(){
+  // Les catégories classique sont toujours disponibles
+  const allCats = ['culture','cinema','musique','sport','histoire','sciences','arts','cuisine','tech','auto','animaux','tv','insolite','societe','voyage','sexe','drogues','alcool'];
+  const container = document.getElementById('ttcqCatToggles');
+  container.innerHTML = allCats.map(c =>
+    `<label class="inline" style="margin:2px 4px;font-size:13px"><input type="checkbox" value="${c}" checked> ${c}</label>`
+  ).join('');
+}
 
 /* ---- Simulation : 4 joueurs de test + smartphone en overlay ---- */
 async function toggleSim(){
@@ -761,6 +887,11 @@ function liveControls(st){
     if(a.sub==='reveal') h+=btn('cartonNext','Manche suivante ▶');
     // Le GM peut TOUJOURS forcer la manche suivante (arbitre absent, blocage…).
     if(a.sub!=='final') h+=btn('cartonSkip', a.sub==='reveal'?'Passer ⏭':'Passer la manche ⏭');
+  }
+  if(a.type==='ttcq'){
+    h+='<span class="muted" style="align-self:center">Manche '+(a.round||0)+'/'+(a.totalRounds||'?')+' · '+esc(a.sub||'')+'</span>';
+    if(a.sub==='reveal') h+=btn('ttcqNext','Manche suivante ▶');
+    if(a.sub==='final') h+=btn('ttcqNext','Terminer ▶');
   }
   if(a.type==='draw'){ h+=btn('drawReveal','Révéler')+btn('drawNext','Suivant'); }
   if(a.type==='mosaic'){ h+=btn('mosaicReveal','Révéler la ligne'); }
