@@ -1718,7 +1718,7 @@ function ttcqController(act){
       <p class="big">📖 ${themeName}</p>
       <p class="neon-cyan" style="margin:6px 0">Tu te mets combien ?</p>
       <div class="row" style="justify-content:center;flex-wrap:wrap;gap:6px">
-        ${[1,2,3,4,5,6,7,8].map(n=>{
+        ${Array.from({length: act.betMax||8}, (_,i)=>i+1).map(n=>{
           const sel = myBet === n;
           const cls = ['','neon-green','neon-green','neon-cyan','neon-cyan','neon-yellow','neon-yellow','neon-pink','neon-pink'][n];
           return `<button class="btn ${sel?'secondary':''}" style="min-width:48px;font-size:20px;font-weight:800" onclick="ttcqBet(${n})">

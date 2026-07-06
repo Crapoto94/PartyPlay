@@ -1489,8 +1489,12 @@ export class GameState {
   ttcqBet(playerId, level) {
     const a = this.activity;
     if (!a || a.type !== 'ttcq' || a.sub !== 'bet') return { error: 'Pas le bon moment' };
-    const lvl = parseInt(level, 10);
-    if (lvl < 1 || lvl > 8) return { error: 'Niveau invalide (1-8)' };
+    let lvl = parseInt(level, 10);
+    if (!(lvl >= 1)) return { error: 'Niveau invalide (1-8)' };
+    // Clamp au nombre de questions réellement disponibles pour ce thème
+    // (certains thèmes ont moins de 8 questions → évite un crash à la révélation).
+    const maxLvl = Math.min(8, (a.currentTheme?.levels?.length) || 8);
+    lvl = Math.max(1, Math.min(lvl, maxLvl));
     a.bets[playerId] = lvl;
     const all = this.players.filter(p => p.connected);
     const allBet = all.every(p => a.bets[p.id] != null);
@@ -1520,7 +1524,7 @@ export class GameState {
     const connected = this.players.filter(p => p.connected);
     connected.forEach(p => {
       const bet = a.bets[p.id] || 1;
-      const lvlData = theme.levels[bet - 1];
+      const lvlData = theme.levels[Math.min(bet - 1, theme.levels.length - 1)];
       const chosen = a.answers[p.id];
       const correct = chosen != null && chosen === lvlData.a;
       let gained = 0;
@@ -1582,7 +1586,7 @@ export class GameState {
     const qForPlayer = (pid) => {
       if (!theme || a.sub !== 'answer' && a.sub !== 'reveal') return null;
       const bet = a.bets[pid] || 1;
-      const lvl = theme.levels[Math.min(bet - 1, 7)];
+      const lvl = theme.levels[Math.min(bet - 1, theme.levels.length - 1)];
       return lvl ? { question: lvl.q, choices: lvl.c, level: bet } : null;
     };
     const base = {
@@ -1593,6 +1597,7 @@ export class GameState {
       themePickerId: a.themePickerId,
       themePickerName: this.player(a.themePickerId)?.name || '?',
       currentTheme: theme ? { id: theme.id, cat: theme.cat, name: theme.name } : null,
+      betMax: theme ? Math.min(8, (theme.levels || []).length) : 8,
       board: a.board,
       positions: a.positions,
       coins: a.coins,
@@ -1619,7 +1624,7 @@ export class GameState {
         if (q) base.myQuestion = q;
         if (a.sub === 'reveal' && theme) {
           const bet = a.bets[forPlayerId] || 1;
-          const lvlData = theme.levels[bet - 1];
+          const lvlData = theme.levels[Math.min(bet - 1, theme.levels.length - 1)];
           base.myCorrectAnswer = lvlData.a;
           base.myChoices = lvlData.c;
         }

@@ -24062,5 +24062,55 @@ export const TTCQ_THEMES = [
     "a": 3
    }
   ]
- }
+ },
+ {"id":"insolite_101","cat":"insolite","name":"Le corps humain insolite","level":"classique","levels":[
+  {"q":"Combien d'os un adulte possède-t-il ?","c":["198","206","215","180"],"a":1},
+  {"q":"Quel est le plus grand organe du corps humain ?","c":["Le foie","Les poumons","La peau","L'intestin"],"a":2},
+  {"q":"Combien de litres de sang un adulte a-t-il en moyenne ?","c":["Environ 5 litres","Environ 2 litres","Environ 10 litres","Environ 8 litres"],"a":0},
+  {"q":"Le corps humain est composé d'environ quel pourcentage d'eau ?","c":["30 %","45 %","60 %","85 %"],"a":2},
+  {"q":"Combien de fois le cœur humain bat-il environ par jour ?","c":["10 000","100 000","1 million","50 000"],"a":1},
+  {"q":"Combien de cavités compte le cœur humain ?","c":["2","3","4","6"],"a":2},
+  {"q":"Quel organe humain peut se régénérer en grande partie ?","c":["Le foie","Le cœur","Les reins","Le cerveau"],"a":0},
+  {"q":"Quelle est la température interne normale du corps (°C) ?","c":["35","37","39","41"],"a":1}
+ ]},
+ {"id":"insolite_102","cat":"insolite","name":"Animaux étonnants","level":"classique","levels":[
+  {"q":"Combien de cœurs possède une pieuvre ?","c":["1","2","3","4"],"a":2},
+  {"q":"De quelle couleur est le sang d'une pieuvre ?","c":["Rouge","Bleu","Vert","Incolore"],"a":1},
+  {"q":"Quel est l'animal terrestre le plus rapide ?","c":["Le lion","Le guépard","L'antilope","Le cheval"],"a":1},
+  {"q":"Combien de compartiments l'estomac d'une vache possède-t-il ?","c":["1","2","4","6"],"a":2},
+  {"q":"Quel est le plus grand animal ayant jamais existé ?","c":["L'éléphant","Le diplodocus","La baleine bleue","Le requin-baleine"],"a":2},
+  {"q":"Quel animal est célèbre pour régénérer ses membres ?","c":["L'axolotl","Le lapin","Le chat","Le pigeon"],"a":0},
+  {"q":"Les empreintes digitales de quel animal ressemblent le plus aux nôtres ?","c":["Le chimpanzé","Le koala","Le gorille","Le raton laveur"],"a":1},
+  {"q":"Quel oiseau est capable de voler à reculons ?","c":["Le colibri","L'aigle","Le moineau","Le pingouin"],"a":0}
+ ]},
+ {"id":"insolite_103","cat":"insolite","name":"L'espace insolite","level":"classique","levels":[
+  {"q":"Quelle planète est la plus proche du Soleil ?","c":["Vénus","Mercure","Mars","La Terre"],"a":1},
+  {"q":"Sur quelle planète un jour dure-t-il plus longtemps qu'une année ?","c":["Mars","Jupiter","Vénus","Saturne"],"a":2},
+  {"q":"Quelle est la planète la plus chaude du système solaire ?","c":["Mercure","Vénus","Mars","Jupiter"],"a":1},
+  {"q":"Combien de temps met la lumière du Soleil pour atteindre la Terre ?","c":["8 secondes","8 minutes","8 heures","1 minute"],"a":1},
+  {"q":"Quelle est la plus grande planète du système solaire ?","c":["Saturne","Jupiter","Neptune","La Terre"],"a":1},
+  {"q":"Quel astre provoque principalement les marées sur Terre ?","c":["Le Soleil","La Lune","Mars","Vénus"],"a":1},
+  {"q":"De quelle couleur apparaît un coucher de soleil sur Mars ?","c":["Rouge","Vert","Bleu","Violet"],"a":2},
+  {"q":"Quelle planète possède le système d'anneaux le plus visible ?","c":["Jupiter","Uranus","Saturne","Neptune"],"a":2}
+ ]},
+ {"id":"insolite_104","cat":"insolite","name":"Gourmandises : vrai ou faux","level":"classique","levels":[
+  {"q":"Le miel peut-il se périmer ?","c":["Oui, en 1 an","Oui, en 5 ans","Non, jamais","Oui, en 6 mois"],"a":2},
+  {"q":"Botaniquement, la banane est…","c":["une baie","un légume","une racine","une noix"],"a":0},
+  {"q":"Botaniquement, la tomate est…","c":["un légume","un fruit","une graine","un tubercule"],"a":1},
+  {"q":"De quelle plante provient le chocolat ?","c":["Le caféier","Le cacaoyer","Le théier","La canne à sucre"],"a":1},
+  {"q":"Quelle épice est la plus chère au monde au poids ?","c":["La vanille","Le safran","Le poivre","La cannelle"],"a":1},
+  {"q":"La cacahuète est en réalité…","c":["une noix","une légumineuse","un fruit à coque","une céréale"],"a":1},
+  {"q":"Quel aliment est composé à environ 95 % d'eau ?","c":["Le concombre","La pomme","La carotte","Le pain"],"a":0},
+  {"q":"À quelle température l'eau bout-elle au niveau de la mer (°C) ?","c":["90","100","120","80"],"a":1}
+ ]},
+ {"id":"insolite_105","cat":"insolite","name":"Records de la planète","level":"classique","levels":[
+  {"q":"Quel est le plus haut sommet du monde ?","c":["Le Mont Blanc","L'Everest","Le K2","Le Kilimandjaro"],"a":1},
+  {"q":"Quel est le plus grand océan du monde ?","c":["L'Atlantique","Le Pacifique","L'Indien","L'Arctique"],"a":1},
+  {"q":"Quel est le plus grand désert chaud du monde ?","c":["Le Gobi","Le Sahara","L'Atacama","Le Kalahari"],"a":1},
+  {"q":"Quel est le plus grand pays du monde par superficie ?","c":["Le Canada","La Chine","La Russie","Les États-Unis"],"a":2},
+  {"q":"Quel est le plus petit État du monde ?","c":["Monaco","Le Vatican","Saint-Marin","Nauru"],"a":1},
+  {"q":"Quel animal atteint la plus grande vitesse en piqué ?","c":["L'aigle royal","Le faucon pèlerin","Le martinet","Le guépard"],"a":1},
+  {"q":"Quel métal est liquide à température ambiante ?","c":["Le plomb","Le mercure","L'étain","Le zinc"],"a":1},
+  {"q":"Quel est l'os le plus long du corps humain ?","c":["Le tibia","Le fémur","L'humérus","Le radius"],"a":1}
+ ]}
 ];
