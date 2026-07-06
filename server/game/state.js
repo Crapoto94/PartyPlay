@@ -619,9 +619,9 @@ export class GameState {
       this.activity.demo = null;
       this.activity.wrongAt = 0;
     }
-    // Quiz / blind-test / quiz_vincent : on initialise le déroulé QCM
-    if (type === 'quiz' || type === 'quiz_vincent' || type === 'blindtest') {
-      const deck = type === 'blindtest' ? 'blindtest' : type === 'quiz_vincent' ? 'vincent' : (opts.deck || 'videogame');
+    // Quiz / blind-test : on initialise le déroulé QCM
+    if (type === 'quiz' || type === 'blindtest') {
+      const deck = type === 'blindtest' ? 'blindtest' : (opts.deck || 'videogame');
       this.activity.deck = deck;
       this.activity.qIndex = 0;
       this.activity.sub = 'question'; // question | reveal
@@ -936,7 +936,7 @@ export class GameState {
   // ---- Quiz / blind-test : QCM affiché borne, réponse smartphone ----
   quizQuestion() {
     const a = this.activity;
-    if (!a || (a.type !== 'quiz' && a.type !== 'quiz_vincent' && a.type !== 'blindtest')) return null;
+    if (!a || (a.type !== 'quiz' && a.type !== 'blindtest')) return null;
     if (a.dynamicBlindtest) return a.generatedQuestion || null; // null = avant la 1ère chanson
     const list = this.quizDeck(a.deck);
     return list[a.qIndex] || null;
@@ -1023,7 +1023,7 @@ export class GameState {
     if (a.type === 'carton') return this.cartonPublic(forPlayerId);
     if (a.type === 'ttcq') return this.ttcqPublic(forPlayerId);
     if (a.type === 'justone') return this.justonePublic(forPlayerId);
-    if (a.type !== 'quiz' && a.type !== 'quiz_vincent' && a.type !== 'blindtest') return a;
+    if (a.type !== 'quiz' && a.type !== 'blindtest') return a;
     const q = this.quizQuestion();
     const list = a.dynamicBlindtest ? [] : (this.quizDeck(a.deck));
     const reveal = a.sub === 'reveal';
@@ -2000,7 +2000,7 @@ export class GameState {
           const n = (a.subOrder || []).length;
           if (n) this.cartonPick(b.id, rint(n));
         }
-      } else if (a.type === 'quiz' || a.type === 'quiz_vincent' || a.type === 'blindtest') {
+      } else if (a.type === 'quiz' || a.type === 'blindtest') {
         const q = this.quizQuestion();
         if (a.sub === 'question' && q && !a.answers[b.id]) this.quizAnswer(b.id, rint((q.choices || []).length || 1));
       } else if (a.type === 'spotlight') {

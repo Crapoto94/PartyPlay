@@ -272,13 +272,19 @@
 
         <!-- Quiz -->
         <div class="card">
-          <h3 class="neon-yellow">❓ Quiz — mes decks</h3>
-          <p class="muted">Ajoute/modifie les decks de questions de quiz.</p>
-          <div class="row" style="margin-bottom:10px">
-            <button class="btn" onclick="eqzAddDeck()">➕ Ajouter un deck</button>
+          <h3 class="neon-yellow">❓ Quiz — decks de questions</h3>
+          <p class="muted">Coche les decks par défaut à activer. Tu peux aussi ajouter tes propres decks personnalisés.</p>
+          <div style="margin-bottom:10px">
             <button class="btn secondary" onclick="saveQuizCustom()">💾 Enregistrer</button>
             <span class="muted" id="eqz_saved"></span>
             <span class="tag" id="eqzCount">—</span>
+          </div>
+          <h4 style="margin:0 0 6px;font-size:14px;font-weight:600">📦 Decks par défaut</h4>
+          <div id="eqzDefaults"></div>
+          <hr style="border-color:rgba(255,255,255,.06);margin:14px 0">
+          <h4 style="margin:0 0 6px;font-size:14px;font-weight:600">✏️ Decks personnalisés</h4>
+          <div style="margin-bottom:8px">
+            <button class="btn" onclick="eqzAddDeck()">➕ Ajouter un deck</button>
           </div>
           <div id="eqzList"></div>
         </div>
@@ -418,6 +424,7 @@ async function loadConfig(){
     document.getElementById('verifyBanner').style.display = 'block';
     document.getElementById('verifyEmailAddr').textContent = META.contactEmail || '';
   }
+  await loadEqzDefaults(); eqzDefLoaded=true;
   fillGeneral(); fillPlayers(); fillActivities(); fillContent(); fillLaunchers();
   ttcqInitCats();
   applyActivityFilter();
@@ -828,7 +835,8 @@ function launchAnecdote(){
 function fillContent(){
   const ct=CFG.content||{};
   // Quiz
-  eqzData=JSON.parse(JSON.stringify((ct.quiz&&ct.quiz.decks)||{}));
+  eqzSelected=(ct.quiz&&ct.quiz.selectedDecks)||Object.keys(eqzDefaultsCatalog);
+  eqzCustom=JSON.parse(JSON.stringify((ct.quiz&&ct.quiz.customDecks)||{}));
   renderEqz();
   // Gages
   eggData=JSON.parse(JSON.stringify(ct.gages||[]));
@@ -873,75 +881,156 @@ async function saveJustoneCustom(){
   const s=document.getElementById('jo_saved'); s.textContent=' ✓ enregistré ('+justone.words.length+' + '+justone.wordsAdult.length+' 18+)'; setTimeout(()=>s.textContent='',2500);
 }
 /* ---- Quiz (graphique) ---- */
-let eqzData={};
+let eqzDefaultsCatalog={}; // {deckName: [questions]} from /api/admin/quiz
+let eqzSelected=[];       // default deck names enabled
+let eqzCustom={};         // {deckName: [questions]} custom decks
+let eqzDefLoaded=false;
+
+async function loadEqzDefaults(){
+  try{
+    const r=await fetch('/api/admin/quiz',{headers:H()});
+    const d=await r.json();
+    eqzDefaultsCatalog=d.decks||{};
+  }catch(e){ eqzDefaultsCatalog={}; }
+}
+
 function eqzEsc(s){ return String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
 function renderEqz(){
-  const keys=Object.keys(eqzData);
-  document.getElementById('eqzCount').textContent=keys.length+' deck(s)';
-  const el=document.getElementById('eqzList');
-  if(!keys.length){ el.innerHTML='<p class="muted">Aucun deck personnalisé. Cliquez sur « Ajouter un deck ».</p>'; return; }
-  el.innerHTML=keys.map(k=>{
-    const qs=eqzData[k]||[];
-    return `<div class="card" style="margin-top:10px;padding:10px 14px">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
-        <input type="text" class="eqz-name" value="${eqzEsc(k)}" placeholder="Nom du deck" style="flex:1;font-size:14px;font-weight:600;background:transparent;border:1px solid #555;border-radius:6px;padding:4px 8px">
-        <span class="tag">${qs.length} question(s)</span>
-        <button class="btn secondary" style="width:auto;padding:3px 10px;font-size:11px" onclick="eqzAddQ(this)">➕ Question</button>
-        <button class="btn danger" style="width:auto;padding:3px 10px;font-size:11px" onclick="this.closest('.card').remove()">✕</button>
-      </div>
-      <div class="eqz-questions">${qs.map((q,i)=>eqzQHtml(q,i)).join('')}</div>
-    </div>`;
-  }).join('');
+  const defKeys=Object.keys(eqzDefaultsCatalog);
+  const custKeys=Object.keys(eqzCustom);
+  const selCount=eqzSelected.length;
+  document.getElementById('eqzCount').textContent=selCount+'/'+defKeys.length+' deck(s) par défaut sélectionné(s) · '+custKeys.length+' personnalisé(s)';
+
+  // Default decks — read-only with checkbox
+  const defEl=document.getElementById('eqzDefaults');
+  if(!defKeys.length){
+    defEl.innerHTML='<p class="muted">Aucun deck par défaut — ajoute des decks personnalisés ci-dessous.</p>';
+  }else{
+    defEl.innerHTML=defKeys.map(k=>{
+      const qs=eqzDefaultsCatalog[k]||[];
+      const checked=eqzSelected.includes(k);
+      const preview=qs.slice(0,3).map((q,i)=>`<span style="display:block;font-size:10.5px;color:var(--a-muted,#888);padding:1px 0">${i+1}. ${eqzEsc(q.prompt||'')}</span>`).join('');
+      const more=qs.length>3?`<span style="font-size:10px;color:var(--a-muted,#666)">…et ${qs.length-3} de plus</span>`:'';
+      return `<div class="card" style="margin-top:8px;padding:10px 14px;border-color:${checked?'rgba(74,222,128,.3)':'var(--a-border)'}">
+        <div style="display:flex;align-items:flex-start;gap:8px">
+          <input type="checkbox" ${checked?'checked':''} class="eqz-def-cb" value="${eqzEsc(k)}" onchange="eqzToggleDef(this)" style="width:18px;height:18px;margin-top:3px;cursor:pointer">
+          <div style="flex:1;min-width:0">
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+              <span style="font-weight:600;font-size:14px">${eqzEsc(k)}</span>
+              <span class="tag">${qs.length} question(s)</span>
+            </div>
+            <details style="margin-top:4px;font-size:13px">
+              <summary style="cursor:pointer;color:var(--a-muted,#888);font-size:11.5px">Aperçu des questions</summary>
+              <div style="margin-top:6px;border-left:2px solid rgba(255,255,255,.06);padding-left:10px">${preview}${more}</div>
+            </details>
+          </div>
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  // Custom decks — editable
+  const custEl=document.getElementById('eqzList');
+  if(!custKeys.length){
+    custEl.innerHTML='<p class="muted">Aucun deck personnalisé. Cliquez sur « Ajouter un deck ».</p>';
+  }else{
+    custEl.innerHTML=custKeys.map(k=>{
+      const qs=eqzCustom[k]||[];
+      return `<div class="card" style="margin-top:10px;padding:10px 14px;border-color:rgba(250,204,21,.2)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <input type="text" class="eqz-cust-name" value="${eqzEsc(k)}" placeholder="Nom du deck" style="flex:1;font-size:14px;font-weight:600;background:transparent;border:1px solid #555;border-radius:6px;padding:4px 8px">
+          <span class="tag">${qs.length} question(s)</span>
+          <button class="btn secondary" style="width:auto;padding:3px 10px;font-size:11px" onclick="eqzCustAddQ(this)">➕ Question</button>
+          <button class="btn danger" style="width:auto;padding:3px 10px;font-size:11px" onclick="eqzDeleteCustDeck(this)">✕</button>
+        </div>
+        <div class="eqz-cust-questions">${qs.map((q,i)=>eqzCustQHtml(q,i)).join('')}</div>
+      </div>`;
+    }).join('');
+  }
 }
-function eqzCols(inp){ return Array.from(inp).map(c=>({prompt:c.querySelector('.eqz-prompt').value.trim(),choices:Array.from(c.querySelectorAll('.eqz-choice')).reduce((a,el,i)=>{a[i]=el.value.trim();return a;},[]),answer:parseInt(c.querySelector('.eqz-answer').value,10)||0,points:parseInt(c.querySelector('.eqz-points').value,10)||50,media:null})); }
-function eqzCollect(){
-  const r={};
-  document.querySelectorAll('#eqzList .card').forEach(card=>{
-    const name=card.querySelector('.eqz-name').value.trim();
-    if(!name) return;
-    r[name]=eqzCols(card.querySelectorAll('.eqz-question'));
-  });
-  return r;
+
+function eqzToggleDef(cb){
+  const name=cb.value;
+  if(cb.checked){ if(!eqzSelected.includes(name)) eqzSelected.push(name); }
+  else{ eqzSelected=eqzSelected.filter(s=>s!==name); }
+  renderEqz();
 }
-function eqzSaveToCfg(decks){
-  const content={...(CFG.content||{}),quiz:{decks}};
-  CFG.content=content; return content;
-}
-function eqzQHtml(q,i){
+
+function eqzCustQHtml(q,i){
   const p=eqzEsc(q?q.prompt||'':'');
   const c=(q&&q.choices)||['','','',''];
   const a=q?(q.answer??0):0;
   const pts=q?(q.points||50):50;
-  const ch=c.map((ch,ci)=>`<div class="field" style="margin:0;flex:1;min-width:50px"><label style="font-size:9px;color:var(--a-muted, #aaa);font-weight:700">${'ABCD'[ci]}</label><input type="text" class="eqz-choice" data-ci="${ci}" value="${eqzEsc(ch||'')}" placeholder="${'ABCD'[ci]}" style="font-size:11px;background:rgba(0,0,0,.1);border:1px solid rgba(255,255,255,.06);border-radius:4px;padding:3px 5px"></div>`).join('');
-  return `<div class="eqz-question" style="background:rgba(0,0,0,.06);border-radius:6px;padding:6px 8px;margin-bottom:6px;border:1px solid rgba(255,255,255,.04)">
+  const ch=c.map((ch,ci)=>`<div class="field" style="margin:0;flex:1;min-width:50px"><label style="font-size:9px;color:var(--a-muted, #aaa);font-weight:700">${'ABCD'[ci]}</label><input type="text" class="eqz-cust-choice" data-ci="${ci}" value="${eqzEsc(ch||'')}" placeholder="${'ABCD'[ci]}" style="font-size:11px;background:rgba(0,0,0,.1);border:1px solid rgba(255,255,255,.06);border-radius:4px;padding:3px 5px"></div>`).join('');
+  return `<div class="eqz-cust-q" style="background:rgba(0,0,0,.06);border-radius:6px;padding:6px 8px;margin-bottom:6px;border:1px solid rgba(255,255,255,.04)">
     <div style="display:flex;gap:6px;align-items:flex-start;margin-bottom:2px">
       <span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.06);font-size:10px;font-weight:700;flex-shrink:0">${i+1}</span>
-      <div class="field" style="margin:0;flex:3"><label style="font-size:9px;color:var(--a-muted,#aaa)">Question</label><input type="text" class="eqz-prompt" value="${p}" placeholder="Question..." style="font-size:12px;background:rgba(0,0,0,.1);border:1px solid rgba(255,255,255,.06);border-radius:4px;padding:4px 6px;width:100%"></div>
-      <div class="field" style="margin:0;width:55px"><label style="font-size:9px;color:var(--a-muted,#aaa)">Pts</label><input type="number" class="eqz-points" value="${pts}" min="0" step="5" style="font-size:11px;background:rgba(0,0,0,.1);border:1px solid rgba(255,255,255,.06);border-radius:4px;padding:3px 4px;width:100%"></div>
-      <button class="btn danger" style="width:auto;padding:1px 6px;font-size:10px;margin-top:12px" onclick="this.closest('.eqz-question').remove()">✕</button>
+      <div class="field" style="margin:0;flex:3"><label style="font-size:9px;color:var(--a-muted,#aaa)">Question</label><input type="text" class="eqz-cust-prompt" value="${p}" placeholder="Question..." style="font-size:12px;background:rgba(0,0,0,.1);border:1px solid rgba(255,255,255,.06);border-radius:4px;padding:4px 6px;width:100%"></div>
+      <div class="field" style="margin:0;width:55px"><label style="font-size:9px;color:var(--a-muted,#aaa)">Pts</label><input type="number" class="eqz-cust-points" value="${pts}" min="0" step="5" style="font-size:11px;background:rgba(0,0,0,.1);border:1px solid rgba(255,255,255,.06);border-radius:4px;padding:3px 4px;width:100%"></div>
+      <button class="btn danger" style="width:auto;padding:1px 6px;font-size:10px;margin-top:12px" onclick="this.closest('.eqz-cust-q').remove()">✕</button>
     </div>
     <div style="display:flex;gap:4px;align-items:flex-end;flex-wrap:wrap;padding-left:26px">${ch}
-      <div class="field" style="margin:0;width:55px"><label style="font-size:9px;color:var(--a-muted,#aaa);font-weight:700">Rép.</label><select class="eqz-answer" style="font-size:11px;background:rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.06);border-radius:4px;padding:3px 4px">${[0,1,2,3].map(ci=>`<option value="${ci}"${ci===a?' selected':''}>${'ABCD'[ci]}</option>`).join('')}</select></div>
+      <div class="field" style="margin:0;width:55px"><label style="font-size:9px;color:var(--a-muted,#aaa);font-weight:700">Rép.</label><select class="eqz-cust-answer" style="font-size:11px;background:rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.06);border-radius:4px;padding:3px 4px">${[0,1,2,3].map(ci=>`<option value="${ci}"${ci===a?' selected':''}>${'ABCD'[ci]}</option>`).join('')}</select></div>
     </div>
   </div>`;
 }
+
+function eqzCustCollectQuestions(container){
+  return Array.from(container.querySelectorAll('.eqz-cust-q')).map(el=>({
+    prompt:el.querySelector('.eqz-cust-prompt').value.trim(),
+    choices:Array.from(el.querySelectorAll('.eqz-cust-choice')).reduce((a,el,i)=>{a[i]=el.value.trim();return a;},[]),
+    answer:parseInt(el.querySelector('.eqz-cust-answer').value,10)||0,
+    points:parseInt(el.querySelector('.eqz-cust-points').value,10)||50,
+    media:null
+  }));
+}
+
+function eqzCustCollect(){
+  const r={};
+  document.querySelectorAll('#eqzList .card').forEach(card=>{
+    const name=card.querySelector('.eqz-cust-name').value.trim();
+    if(!name) return;
+    r[name]=eqzCustCollectQuestions(card);
+  });
+  return r;
+}
+
 function eqzAddDeck(){
-  const name=prompt('Nom du nouveau deck :');
+  const name=prompt('Nom du nouveau deck personnalisé :');
   if(!name||!name.trim()) return;
-  eqzData[name.trim()]=[]; renderEqz();
+  if(eqzCustom[name.trim()]){ alert('Ce nom existe déjà.'); return; }
+  eqzCustom[name.trim()]=[]; renderEqz();
 }
-function eqzAddQ(btn){
+
+function eqzDeleteCustDeck(btn){
+  if(!confirm('Supprimer ce deck personnalisé ?')) return;
+  btn.closest('.card').remove();
+  eqzCustom=eqzCustCollect();
+  renderEqz();
+}
+
+function eqzCustAddQ(btn){
   const card=btn.closest('.card');
-  const name=card.querySelector('.eqz-name').value.trim();
+  const name=card.querySelector('.eqz-cust-name').value.trim();
   if(!name){ alert('Donnez d\'abord un nom au deck.'); return; }
-  if(!eqzData[name]) eqzData[name]=[];
-  eqzData[name].push({prompt:'',choices:['','','',''],answer:0,points:50,media:null});
-  const qs=card.querySelector('.eqz-questions');
-  qs.insertAdjacentHTML('beforeend',eqzQHtml({prompt:'',choices:['','','',''],answer:0,points:50},eqzData[name].length-1));
+  if(!eqzCustom[name]) eqzCustom[name]=[];
+  eqzCustom[name].push({prompt:'',choices:['','','',''],answer:0,points:50,media:null});
+  card.querySelector('.eqz-cust-questions').insertAdjacentHTML('beforeend',eqzCustQHtml({prompt:'',choices:['','','',''],answer:0,points:50},eqzCustom[name].length-1));
 }
+
 async function saveQuizCustom(){
-  const decks=eqzCollect();
-  await push({content:eqzSaveToCfg(decks)});
+  // Collect custom decks from DOM
+  eqzCustom=eqzCustCollect();
+  // Build merged decks: selected defaults + custom
+  const merged={};
+  eqzSelected.forEach(k=>{ if(eqzDefaultsCatalog[k]) merged[k]=eqzDefaultsCatalog[k]; });
+  Object.keys(eqzCustom).forEach(k=>{ if(eqzCustom[k]&&eqzCustom[k].length) merged[k]=eqzCustom[k]; });
+  const content={...(CFG.content||{}),quiz:{selectedDecks:eqzSelected,customDecks:eqzCustom,decks:merged}};
+  CFG.content=content;
+  await push({content});
+  renderEqz();
+  fillLaunchers();
   const s=document.getElementById('eqz_saved'); s.textContent=' ✓ enregistré'; setTimeout(()=>s.textContent='',2000);
 }
 
