@@ -2643,7 +2643,7 @@ export const TTCQ_THEMES = [
   "id": "cinema_001",
   "cat": "cinema",
   "name": "Films Jurassic Park",
-  "level": "adulte",
+  "level": "classique",
   "levels": [
    {
     "q": "Qui a réalisé Jurassic Park ?",
@@ -2731,7 +2731,7 @@ export const TTCQ_THEMES = [
   "id": "cinema_002",
   "cat": "cinema",
   "name": "Films Star Wars",
-  "level": "adulte",
+  "level": "classique",
   "levels": [
    {
     "q": "Qui a réalisé Star Wars ?",
@@ -2819,7 +2819,7 @@ export const TTCQ_THEMES = [
   "id": "cinema_003",
   "cat": "cinema",
   "name": "Films Harry Potter",
-  "level": "adulte",
+  "level": "classique",
   "levels": [
    {
     "q": "Qui a réalisé Harry Potter ?",
@@ -2907,7 +2907,7 @@ export const TTCQ_THEMES = [
   "id": "cinema_004",
   "cat": "cinema",
   "name": "Films Le Seigneur des Anneaux",
-  "level": "adulte",
+  "level": "classique",
   "levels": [
    {
     "q": "Qui a réalisé Le Seigneur des Anneaux ?",
