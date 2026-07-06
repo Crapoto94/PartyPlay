@@ -1680,7 +1680,8 @@ function cartonController(act){
 // UN SEUL MOT !? — manette du joueur : indiceur (mot secret + 1 indice) ou
 // devineur (ne voit jamais le mot, lit les indices survivants, propose sa réponse).
 function justoneController(act){
-  const head = `<div class="pill neon-cyan">🧠 UN SEUL MOT !? · manche ${act.round}/${act.totalRounds} · ${act.successCount||0} trouvé(s)</div>`;
+  const adulte = act.level==='adulte';
+  const head = `<div class="pill ${adulte?'neon-pink':'neon-cyan'}">🧠 UN SEUL MOT !? ${adulte?'· 🔞 18+':''} · manche ${act.round}/${act.totalRounds} · ${act.successCount||0} trouvé(s)</div>`;
 
   if (act.sub==='final'){
     return `<div class="card center glow-box" style="border-color:var(--neon3)">

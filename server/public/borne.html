@@ -657,8 +657,9 @@ function cartonBorne(act){
 // indices à TOUT LE MONDE SAUF le devineur (qui ne regarde pas l'écran) ;
 // en phase de révélation, tout s'affiche (indices annulés barrés).
 function justoneBorne(act){
-  const pill = `<div class="pill neon-cyan">🧠 UN SEUL MOT !? · MANCHE ${act.round}/${act.totalRounds} · ${act.successCount||0} trouvé(s)</div>`;
-  tickerEl.textContent = `UN SEUL MOT !? — manche ${act.round}/${act.totalRounds} — ${act.successCount||0} trouvé(s)`;
+  const adulte = act.level==='adulte';
+  const pill = `<div class="pill ${adulte?'neon-pink':'neon-cyan'}">🧠 UN SEUL MOT !? ${adulte?'· 🔞 18+':''} · MANCHE ${act.round}/${act.totalRounds} · ${act.successCount||0} trouvé(s)</div>`;
+  tickerEl.textContent = `UN SEUL MOT !? (${act.levelLabel||'Classique'}) — manche ${act.round}/${act.totalRounds} — ${act.successCount||0} trouvé(s)`;
 
   if (act.sub==='clue'){
     return `<div class="center">

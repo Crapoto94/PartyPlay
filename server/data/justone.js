@@ -9,6 +9,14 @@
 //
 //  Mots simples, communs, non ambigus — piochés au hasard à chaque
 //  manche (aucune répétition dans une même partie).
+//
+//  Deux niveaux, comme les autres jeux de la plateforme :
+//   - classique : tout public (liste ci-dessous).
+//   - adulte    : mots à deviner réservés aux adultes (sexe, alcool, excès,
+//     pratiques osées…). Réservé aux soirées entre adultes consentants ;
+//     aucun mot n'implique de mineurs ni d'actes non consentis.
+//  Les deux niveaux sont INDÉPENDANTS (pas de mélange) : en version 18+,
+//  tous les mots à deviner sont adultes, pour une soirée cohérente.
 // =====================================================================
 
 export const JUSTONE_WORDS = [
@@ -50,4 +58,26 @@ export const JUSTONE_WORDS = [
   'clown', 'magicien', 'acrobate', 'jongleur', 'trapèze', 'cirque', 'chapiteau', 'dompteur',
   'trésor', 'île au trésor', 'perroquet', 'carte au trésor', 'coffre', 'épée',
   'rêve', 'cauchemar', 'sommeil', 'oreiller', 'couverture', 'pyjama', 'doudou', 'berceuse',
+];
+
+// ================================================================
+//  NIVEAU ADULTE (18+) — mots à deviner réservés aux soirées entre adultes.
+// ================================================================
+export const JUSTONE_WORDS_ADULT = [
+  'préservatif', 'sextoy', 'menottes', 'lingerie', 'strip-tease', 'lap dance', 'orgie', 'gode',
+  'plan cul', 'plan à trois', 'sexfriend', 'fessée', 'kamasutra', 'bondage', 'masturbation', 'gang bang',
+  'nudiste', 'sperme', 'orgasme', 'préliminaires', 'fellation', 'cunnilingus', 'pénétration', 'missionnaire',
+  'levrette', 'soixante-neuf', 'french kiss', 'suçon', 'coup d\'un soir', 'infidélité', 'adultère', 'jalousie',
+  'viagra', 'aphrodisiaque', 'libido', 'érection', 'excitation', 'fantasme', 'voyeurisme', 'exhibitionnisme',
+  'god ceinture', 'huile de massage', 'chantilly', 'fouet', 'bandeau', 'string', 'porte-jarretelles', 'talons hauts',
+  'bar à hôtesses', 'boîte échangiste', 'club libertin', 'peep-show', 'strip-poker', 'jeu de la bouteille', 'action ou vérité', 'gage',
+  'ivresse', 'gueule de bois', 'cuite', 'coma éthylique', 'apéro', 'shot', 'binge drinking', 'happy hour',
+  'vodka', 'tequila', 'whisky', 'rhum', 'champagne', 'cocktail', 'sangria', 'absinthe',
+  'joint', 'cannabis', 'cocaïne', 'ecstasy', 'poppers', 'shisha', 'défonce', 'dealer',
+  'strip-club', 'stripteaseur', 'escort', 'bordel', 'maison close', 'proxénète', 'call-girl', 'sugar daddy',
+  'tinder', 'appli de rencontre', 'sexting', 'nude', 'onlyfans', 'webcam', 'sexcam', 'film pour adultes',
+  'vomi', 'gerbe', 'diarrhée', 'chiasse', 'caca', 'pipi', 'pet', 'rot',
+  'nudité', 'seins', 'fesses', 'entrejambe', 'pénis', 'vagin', 'poitrine', 'nombril',
+  'walk of shame', 'after', 'descente', 'bad trip', 'gueule cassée', 'strip', 'orgie romaine', 'décadence',
+  'vitesse excessive', 'rodéo urbain', 'conduite dangereuse', 'saut à l\'élastique', 'enterrement de vie de garçon', 'défi extrême', 'sport extrême', 'base jump',
 ];

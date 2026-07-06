@@ -21,7 +21,7 @@ import { CARTON_HAND_SIZE, CARTON_DEFAULT_ROUNDS } from '../data/carton.js';
 import { cartonPools, CARTON_LEVELS } from '../store/carton.js';
 import { defaultPlaylistsMap } from '../store/blindtests.js';
 import { getTtcq } from '../store/ttcq.js';
-import { JUSTONE_WORDS } from '../data/justone.js';
+import { JUSTONE_WORDS, JUSTONE_WORDS_ADULT } from '../data/justone.js';
 
 // Mélange (Fisher-Yates) — copie mélangée d'un tableau.
 function shuffled(arr) {
@@ -816,14 +816,18 @@ export class GameState {
     // montrés au devineur. Jeu coopératif : score d'équipe X/totalRounds.
     if (type === 'justone') {
       const a = this.activity;
+      const level = opts.level === 'adulte' ? 'adulte' : 'classique';
+      a.level = level;
+      a.levelLabel = level === 'adulte' ? '18+' : 'Classique';
+      a.wordPool = level === 'adulte' ? JUSTONE_WORDS_ADULT : JUSTONE_WORDS;
       a.totalRounds = Math.min(Math.max(parseInt(opts.rounds, 10) || 8, 3), 20);
       a.round = 0;
       a.guesserPtr = -1;
       a.order = this.players.filter(p => p.connected).map(p => p.id);
-      a.deck = shuffled(JUSTONE_WORDS);
+      a.deck = shuffled(a.wordPool);
       a.successCount = 0;
       a.history = []; // [{word, success}] — petit récap en fin de partie
-      this.addLog(`🧠 UN SEUL MOT !? — ${a.totalRounds} manches, en équipe !`);
+      this.addLog(`🧠 UN SEUL MOT !? (${level === 'adulte' ? '🔞 18+' : '🎉 Classique'}) — ${a.totalRounds} manches, en équipe !`);
       this._justoneNewRound();
       return; // _justoneNewRound() gère déjà phase/touch()
     }
@@ -1782,7 +1786,7 @@ export class GameState {
     a.round = (a.round || 0) + 1;
     a.guesserPtr = (a.guesserPtr ?? -1) + 1;
     a.guesserId = seats[a.guesserPtr % seats.length];
-    if (!a.deck || !a.deck.length) a.deck = shuffled(JUSTONE_WORDS);
+    if (!a.deck || !a.deck.length) a.deck = shuffled(a.wordPool || JUSTONE_WORDS);
     a.secretWord = a.deck.pop();
     a.clues = {};        // { playerId: texte tel que saisi }
     a.cancelled = {};    // { playerId: true } — indice annulé (doublon/invalide)
@@ -1916,6 +1920,7 @@ export class GameState {
     const submitters = connected.filter((p) => p.id !== a.guesserId);
     const base = {
       type: 'justone', state: a.state, sub: a.sub,
+      level: a.level || 'classique', levelLabel: a.levelLabel || 'Classique',
       round: a.round, totalRounds: a.totalRounds,
       guesserId: a.guesserId, guesserName: this.player(a.guesserId)?.name || '?',
       iAmGuesser,
@@ -2017,7 +2022,7 @@ export class GameState {
         }
       } else if (a.type === 'justone') {
         if (a.sub === 'clue' && b.id !== a.guesserId && !a.clues[b.id]) {
-          const pool = JUSTONE_WORDS.filter(w => w.split(' ').length === 1);
+          const pool = (a.wordPool || JUSTONE_WORDS).filter(w => w.split(' ').length === 1);
           this.justoneClue(b.id, pool[rint(pool.length)]);
         } else if (a.sub === 'guess' && b.id === a.guesserId) {
           this.justoneGuess(b.id, a.secretWord); // le bot devineur « triche » pour la démo

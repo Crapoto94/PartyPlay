@@ -114,7 +114,8 @@
           </div>
           <div class="field" data-cat="justone" style="margin-top:10px"><label>🧠 Un Seul Mot !? — un indice, un seul mot, en équipe</label>
             <div class="row">
-              <button class="btn" onclick="launch('justone',{rounds:justoneRounds()})">🧠 Lancer la partie</button>
+              <button class="btn" onclick="launch('justone',{level:'classique',rounds:justoneRounds()})">🎉 Classique</button>
+              <button class="btn" onclick="launch('justone',{level:'adulte',rounds:justoneRounds()})">🔞 Version 18+</button>
               <select id="justoneRounds" style="width:auto">
                 <option value="5">5 manches</option>
                 <option value="8" selected>8 manches</option>
