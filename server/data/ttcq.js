@@ -6480,86 +6480,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel groupe britannique a connu un succès planétaire dans les années 1970 ?",
+    "q": "Quel instrument à cordes électrique est emblématique du rock ? La ___ électrique ?",
     "c": [
-     "Queen",
-     "Pink Floyd",
-     "Led Zeppelin",
-     "The Beatles"
+     "guitare",
+     "harpe",
+     "flûte",
+     "trompette"
     ],
-    "a": 0
+    "a": "guitare"
    },
    {
-    "q": "Quel chanteur de rock était surnommé 'The King' ?",
+    "q": "Quel groupe britannique des années 60 comptait John, Paul, George et Ringo ? Les ___ ?",
     "c": [
-     "Little Richard",
-     "Chuck Berry",
-     "Buddy Holly",
-     "Elvis Presley"
+     "Beatles",
+     "Stones",
+     "Who",
+     "Kinks"
     ],
-    "a": 3
+    "a": "Beatles"
    },
    {
-    "q": "Quel groupe a sorti 'Bohemian Rhapsody' ?",
+    "q": "Quel chanteur américain déhanché est surnommé « le King » du rock ? Elvis ___ ?",
     "c": [
-     "Led Zeppelin",
-     "Pink Floyd",
-     "The Beatles",
-     "Queen"
+     "Presley",
+     "Cooper",
+     "Costello",
+     "Perkins"
     ],
-    "a": 3
+    "a": "Presley"
    },
    {
-    "q": "Qui est surnommé 'The King of Rock and Roll' ?",
+    "q": "Quel groupe australien au titre « Highway to Hell » écrit son nom AC/___ ?",
     "c": [
-     "Elvis Presley",
-     "Little Richard",
-     "Chuck Berry",
-     "Buddy Holly"
+     "DC",
+     "BC",
+     "TV",
+     "PC"
     ],
-    "a": 0
+    "a": "DC"
    },
    {
-    "q": "Quel guitariste est considéré comme l'un des meilleurs de l'histoire ?",
+    "q": "Quel guitariste virtuose a brûlé sa guitare sur scène ? Jimi ___ ?",
     "c": [
-     "Jimi Hendrix",
-     "Eddie Van Halen",
-     "Eric Clapton",
-     "Jimmy Page"
+     "Hendrix",
+     "Clapton",
+     "Page",
+     "Richards"
     ],
-    "a": 0
+    "a": "Hendrix"
    },
    {
-    "q": "Quel groupe britannique a sorti 'Stairway to Heaven' ?",
+    "q": "Quel groupe britannique mené par Mick Jagger est surnommé « les pierres qui roulent » ? Les Rolling ___ ?",
     "c": [
-     "The Who",
-     "Deep Purple",
-     "Led Zeppelin",
-     "Black Sabbath"
+     "Stones",
+     "Beatles",
+     "Who",
+     "Doors"
     ],
-    "a": 2
+    "a": "Stones"
    },
    {
-    "q": "En quelle année le rock 'n' roll a-t-il émergé ?",
+    "q": "Quel chanteur de Queen, à la voix puissante, a chanté Bohemian Rhapsody ? Freddie ___ ?",
     "c": [
-     "Années 1930",
-     "Années 1940",
-     "Années 1950",
-     "Années 1960"
+     "Mercury",
+     "Bowie",
+     "Plant",
+     "Daltrey"
     ],
-    "a": 2
+    "a": "Mercury"
    },
    {
-    "q": "Quel album des Pink Floyd est l'un des plus vendus au monde ?",
-    "c": [
-     "The Wall",
-     "Wish You Were Here",
-     "The Dark Side of the Moon",
-     "Animals"
-    ],
-    "a": 2
+    "q": "En quelle année, considérée comme la naissance du rock'n'roll, sort « Rock Around the Clock » ?",
+    "a": "1954"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "musique_002",
@@ -6568,86 +6563,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Dans quelle ville américaine le jazz est-il né ?",
+    "q": "Dans quelle ville américaine le jazz est-il né ? La Nouvelle-___ ?",
     "c": [
-     "La Nouvelle-Orléans",
-     "Chicago",
-     "New York",
-     "Nouvelle-Orléans"
+     "Orléans",
+     "York",
+     "Jersey",
+     "Guinée"
     ],
-    "a": 0
+    "a": "Orléans"
    },
    {
-    "q": "Quel trompettiste est une légende du jazz ?",
+    "q": "Quel instrument à vent doré est une star du jazz ? Le ___ ?",
     "c": [
-     "Dizzy Gillespie",
-     "Chet Baker",
-     "Louis Armstrong",
-     "Miles Davis"
+     "saxophone",
+     "violon",
+     "piano",
+     "accordéon"
     ],
-    "a": 2
+    "a": "saxophone"
    },
    {
-    "q": "Quel saxophoniste de jazz a enregistré 'Giant Steps' ?",
+    "q": "Quel trompettiste à la voix rauque a chanté « What a Wonderful World » ? Louis ___ ?",
     "c": [
-     "Dexter Gordon",
-     "John Coltrane",
-     "Charlie Parker",
-     "Sonny Rollins"
+     "Armstrong",
+     "Ellington",
+     "Davis",
+     "Gillespie"
     ],
-    "a": 1
+    "a": "Armstrong"
    },
    {
-    "q": "Quel style de jazz se caractérise par des tempos rapides ?",
+    "q": "Comment appelle-t-on l'art d'inventer la musique sur l'instant en jazz ? L'___ ?",
     "c": [
-     "Le swing",
-     "Le free jazz",
-     "Le bebop",
-     "Le cool jazz"
+     "improvisation",
+     "partition",
+     "répétition",
+     "notation"
     ],
-    "a": 2
+    "a": "improvisation"
    },
    {
-    "q": "Qui a composé 'Take Five' ?",
+    "q": "Quelle chanteuse noire à la voix douce est surnommée « Lady Day » ? Billie ___ ?",
     "c": [
-     "Dave Brubeck",
-     "Thelonious Monk",
-     "John Coltrane",
-     "Miles Davis"
+     "Holiday",
+     "Fitzgerald",
+     "Simone",
+     "Vaughan"
     ],
-    "a": 0
+    "a": "Holiday"
    },
    {
-    "q": "Quel pianiste de jazz a une technique unique et un style angulaire ?",
+    "q": "Quel trompettiste, pionnier du jazz modal, a enregistré « Kind of Blue » ? Miles ___ ?",
     "c": [
-     "Oscar Peterson",
-     "Bill Evans",
-     "Herbie Hancock",
-     "Thelonious Monk"
+     "Davis",
+     "Armstrong",
+     "Baker",
+     "Marsalis"
     ],
-    "a": 3
+    "a": "Davis"
    },
    {
-    "q": "Quelle chanteuse de jazz est surnommée 'Lady Day' ?",
+    "q": "Quel style de chant jazz utilise des onomatopées sans paroles ? Le chant ___ ?",
     "c": [
-     "Nina Simone",
-     "Ella Fitzgerald",
-     "Billie Holiday",
-     "Sarah Vaughan"
+     "scat",
+     "yodel",
+     "rap",
+     "slam"
     ],
-    "a": 2
+    "a": "scat"
    },
    {
-    "q": "Quel musicien de jazz a composé 'So What' ?",
-    "c": [
-     "Dizzy Gillespie",
-     "Thelonious Monk",
-     "Miles Davis",
-     "John Coltrane"
-    ],
-    "a": 2
+    "q": "En quelle année, environ, le jazz émerge-t-il à La Nouvelle-Orléans (tournant du siècle) ?",
+    "a": "1900"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "musique_003",
@@ -6656,86 +6646,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel groupe de rap français a sorti 'Ma Benz' ?",
+    "q": "Comment appelle-t-on le fait de parler en rythme sur une musique ? ___ ?",
     "c": [
-     "NTM",
-     "MC Solaar",
-     "Suprême NTM",
-     "IAM"
+     "rapper",
+     "chanter",
+     "siffler",
+     "crier"
     ],
-    "a": 3
+    "a": "rapper"
    },
    {
-    "q": "Quel artiste rap a sorti l'album 'The Chronic' ?",
+    "q": "Quel mouvement culturel des années 70, né dans le Bronx, englobe le rap ? Le ___ ?",
     "c": [
-     "Notorious BIG",
-     "Tupac",
-     "Snoop Dogg",
-     "Dr. Dre"
+     "hip-hop",
+     "disco",
+     "funk",
+     "techno"
     ],
-    "a": 3
+    "a": "hip-hop"
    },
    {
-    "q": "Quel groupe de rap new-yorkais a sorti 'Illmatic' ?",
+    "q": "Comment appelle-t-on le fait de faire crisser un disque vinyle à la main ? Le ___ ?",
     "c": [
-     "A Tribe Called Quest",
-     "Wu-Tang Clan",
-     "De La Soul",
+     "scratch",
+     "sample",
+     "beat",
+     "flow"
+    ],
+    "a": "scratch"
+   },
+   {
+    "q": "Comment appelle-t-on le débit et le style d'un rappeur ? Son ___ ?",
+    "c": [
+     "flow",
+     "beat",
+     "drop",
+     "hook"
+    ],
+    "a": "flow"
+   },
+   {
+    "q": "Quel rappeur américain de Detroit, blond et blanc, a rappé « Lose Yourself » ?",
+    "c": [
+     "Eminem",
+     "Drake",
+     "Jay-Z",
      "Nas"
     ],
-    "a": 3
+    "a": "Eminem"
    },
    {
-    "q": "Qui est considéré comme le père du rap français ?",
+    "q": "Dans quel arrondissement de New York le rap est-il né ? Le ___ ?",
     "c": [
-     "MC Solaar",
-     "Suprême NTM",
-     "IAM",
-     "NTM"
+     "Bronx",
+     "Queens",
+     "Brooklyn",
+     "Harlem"
     ],
-    "a": 2
+    "a": "Bronx"
    },
    {
-    "q": "En quelle année le rap a-t-il émergé dans le Bronx ?",
+    "q": "Comment appelle-t-on la boucle musicale sur laquelle rappe l'artiste ? L'___ ? (instrumental)",
     "c": [
-     "Années 1980",
-     "Années 1970",
-     "Années 1960",
-     "Années 1990"
+     "instru",
+     "refrain",
+     "couplet",
+     "pont"
     ],
-    "a": 1
+    "a": "instru"
    },
    {
-    "q": "Quel rappeur français a vendu le plus d'albums ?",
-    "c": [
-     "MC Solaar",
-     "NTM",
-     "IAM",
-     "Booba"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quel battle de rap est célèbre entre Tupac et Biggie ?",
-    "c": [
-     "La côte Est contre la côte Ouest",
-     "La guerre du rap",
-     "Le clash des rois",
-     "La battle du siècle"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quel album de Kendrick Lamar a gagné le Pulitzer ?",
-    "c": [
-     "DAMN.",
-     "Mr. Morale",
-     "To Pimp a Butterfly",
-     "good kid, mAAd city"
-    ],
-    "a": 0
+    "q": "En quelle année sort « Rapper's Delight », premier grand succès rap mondial ?",
+    "a": "1979"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "musique_004",
@@ -6744,86 +6729,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel chanteur pop est surnommé 'The King of Pop' ?",
+    "q": "Que signifie le mot « pop » en musique ? Musique ___ ?",
     "c": [
-     "Michael Jackson",
+     "populaire",
+     "puissante",
+     "poétique",
+     "parlée"
+    ],
+    "a": "populaire"
+   },
+   {
+    "q": "Quel chanteur américain était surnommé « le roi de la pop » ? Michael ___ ?",
+    "c": [
+     "Jackson",
+     "Bolton",
+     "Bublé",
+     "Stipe"
+    ],
+    "a": "Jackson"
+   },
+   {
+    "q": "Quelle chanteuse américaine, ex-country, est devenue une superstar pop ? Taylor ___ ?",
+    "c": [
+     "Swift",
+     "Grande",
+     "Perry",
+     "Gomez"
+    ],
+    "a": "Swift"
+   },
+   {
+    "q": "Quelle chanteuse blonde, « Queen of Pop », a chanté « Like a Virgin » ?",
+    "c": [
      "Madonna",
-     "Elvis Presley",
-     "Prince"
+     "Cher",
+     "Britney",
+     "Kylie"
     ],
-    "a": 0
+    "a": "Madonna"
    },
    {
-    "q": "Quelle chanteuse pop a sorti l'album '1989' ?",
+    "q": "Quel groupe suédois des années 70 a chanté « Dancing Queen » ?",
     "c": [
-     "Katy Perry",
-     "Taylor Swift",
-     "Lady Gaga",
-     "Rihanna"
+     "ABBA",
+     "Roxette",
+     "Ace of Base",
+     "A-ha"
     ],
-    "a": 1
+    "a": "ABBA"
    },
    {
-    "q": "Quel groupe pop britannique est le plus vendu de l'histoire ?",
+    "q": "Quelle danse-signature accompagne le tube « Thriller » de Michael Jackson ? Le ___ (moonwalk) ?",
     "c": [
-     "The Beatles",
-     "Spice Girls",
-     "Queen",
-     "ABBA"
+     "moonwalk",
+     "twist",
+     "floss",
+     "dab"
     ],
-    "a": 0
+    "a": "moonwalk"
    },
    {
-    "q": "Quel tube de 2015 de Mark Ronson met en vedette Bruno Mars ?",
+    "q": "Quelle chanteuse de la Barbade a chanté « Umbrella » ?",
     "c": [
-     "Shake It Off",
-     "Get Lucky",
-     "Uptown Funk",
-     "Happy"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Combien d'albums Michael Jackson a-t-il vendus ?",
-    "c": [
-     "Plus de 500 millions",
-     "Plus de 200 millions",
-     "Plus de 350 millions",
-     "Plus de 100 millions"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quelle chanteuse pop a remporté le plus de Grammy Awards ?",
-    "c": [
+     "Rihanna",
      "Beyoncé",
-     "Madonna",
-     "Taylor Swift",
-     "Lady Gaga"
+     "Adele",
+     "Sia"
     ],
-    "a": 0
+    "a": "Rihanna"
    },
    {
-    "q": "Quel album de 1982 de Michael Jackson est le plus vendu de tous les temps ?",
-    "c": [
-     "Dangerous",
-     "Bad",
-     "Off the Wall",
-     "Thriller"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quelle pop star américaine a commencé dans la série Hannah Montana ?",
-    "c": [
-     "Selena Gomez",
-     "Britney Spears",
-     "Demi Lovato",
-     "Miley Cyrus"
-    ],
-    "a": 3
+    "q": "En quelle année est sorti « Thriller », l'album le plus vendu de l'histoire ?",
+    "a": "1982"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "musique_005",
@@ -6832,86 +6812,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel compositeur allemand est devenu sourd mais a continué à composer ?",
+    "q": "Quel grand instrument à touches noires et blanches est courant en musique classique ? Le ___ ?",
+    "c": [
+     "piano",
+     "tambour",
+     "banjo",
+     "synthé"
+    ],
+    "a": "piano"
+   },
+   {
+    "q": "Quel compositeur autrichien génie précoce a écrit « La Flûte enchantée » ?",
     "c": [
      "Mozart",
-     "Brahms",
      "Beethoven",
-     "Bach"
+     "Bach",
+     "Haydn"
     ],
-    "a": 2
+    "a": "Mozart"
    },
    {
-    "q": "Quel compositeur autrichien est connu pour ses sonates et symphonies ?",
+    "q": "Comment appelle-t-on le groupe de nombreux musiciens jouant ensemble ? Un ___ ?",
     "c": [
-     "Haydn",
-     "Schubert",
-     "Bruckner",
-     "Mozart"
+     "orchestre",
+     "chœur",
+     "quatuor",
+     "duo"
     ],
-    "a": 3
+    "a": "orchestre"
    },
    {
-    "q": "Quel instrument est emblématique de la musique baroque ?",
+    "q": "Qui dirige l'orchestre avec une baguette ? Le ___ ?",
     "c": [
-     "Le clavecin",
-     "La flûte",
-     "L'orgue",
-     "Le violon"
+     "chef",
+     "premier",
+     "soliste",
+     "maître"
     ],
-    "a": 0
+    "a": "chef"
    },
    {
-    "q": "Quel compositeur russe a composé 'Casse-Noisette' ?",
+    "q": "Quel compositeur allemand sourd a écrit la célèbre 5e Symphonie « pom pom pom pom » ?",
     "c": [
-     "Prokofiev",
-     "Tchaïkovski",
-     "Stravinsky",
-     "Rachmaninov"
-    ],
-    "a": 1
-   },
-   {
-    "q": "En quelle période a vécu Beethoven ?",
-    "c": [
-     "Renaissance",
-     "Baroque",
-     "Médiévale",
-     "Classique et romantique"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel opéra de Mozart est l'un des plus joués ?",
-    "c": [
-     "Les Noces de Figaro",
-     "La Flûte enchantée",
-     "Così fan tutte",
-     "Don Giovanni"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quel compositeur allemand a écrit 'L'Art de la fugue' ?",
-    "c": [
-     "Claudio Monteverdi",
-     "Antonio Vivaldi",
-     "Jean-Sébastien Bach",
-     "Georg Friedrich Haendel"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quel compositeur a écrit la 'Neuvième Symphonie' avec le chœur final 'Ode à la joie' ?",
-    "c": [
+     "Beethoven",
      "Mozart",
-     "Schubert",
-     "Beethoven",
-     "Bruckner"
+     "Wagner",
+     "Brahms"
     ],
-    "a": 2
+    "a": "Beethoven"
+   },
+   {
+    "q": "Quel compositeur italien du baroque a écrit « Les Quatre Saisons » ?",
+    "c": [
+     "Vivaldi",
+     "Verdi",
+     "Puccini",
+     "Rossini"
+    ],
+    "a": "Vivaldi"
+   },
+   {
+    "q": "Comment appelle-t-on une œuvre pour un soliste accompagné de l'orchestre ? Un ___ ?",
+    "c": [
+     "concerto",
+     "opéra",
+     "requiem",
+     "prélude"
+    ],
+    "a": "concerto"
+   },
+   {
+    "q": "En quelle année Mozart est-il né, à Salzbourg ?",
+    "a": "1756"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "musique_006",
@@ -6920,86 +6895,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel chanteur de blues est surnommé 'King of the Blues' ?",
+    "q": "De quelle couleur, en anglais, est le nom de ce style né du chagrin ? Le ___ ?",
     "c": [
-     "Robert Johnson",
-     "B.B. King",
-     "Muddy Waters",
-     "John Lee Hooker"
+     "blue",
+     "red",
+     "black",
+     "green"
     ],
-    "a": 1
+    "a": "blue"
    },
    {
-    "q": "Quelle est la structure typique d'un blues en 12 mesures ?",
+    "q": "Sur quel continent, dans les champs de coton du Sud américain, le blues est-il né ? Ancêtres venus d'___ ?",
     "c": [
-     "12 mesures",
-     "24 mesures",
-     "8 mesures",
-     "16 mesures"
+     "Afrique",
+     "Europe",
+     "Asie",
+     "Amérique"
     ],
-    "a": 0
+    "a": "Afrique"
    },
    {
-    "q": "Quel bluesman a vendu son âme au diable selon la légende ?",
+    "q": "Quel instrument à cordes est central dans le blues ? La ___ ?",
     "c": [
-     "Son House",
-     "Charley Patton",
-     "Robert Johnson",
-     "Skip James"
+     "guitare",
+     "trompette",
+     "flûte",
+     "harpe"
     ],
-    "a": 2
+    "a": "guitare"
    },
    {
-    "q": "Quelle région des États-Unis est le berceau du blues ?",
+    "q": "Quel petit instrument à vent qu'on tient à la bouche est typique du blues ? L'___ ?",
     "c": [
-     "Le delta du Mississippi",
-     "Le Texas",
-     "Chicago",
-     "La Nouvelle-Orléans"
+     "harmonica",
+     "sifflet",
+     "kazoo",
+     "ocarina"
     ],
-    "a": 0
+    "a": "harmonica"
    },
    {
-    "q": "Quel chanteur de blues a enregistré 'I'm Your Hoochie Coochie Man' ?",
+    "q": "Quel légendaire guitariste de blues appelait sa guitare « Lucille » ? B.B. ___ ?",
     "c": [
-     "Howlin' Wolf",
-     "Muddy Waters",
-     "Albert King",
-     "Willie Dixon"
+     "King",
+     "Waters",
+     "Johnson",
+     "Guy"
     ],
-    "a": 1
+    "a": "King"
    },
    {
-    "q": "Quel guitariste français est un virtuose du blues ?",
+    "q": "Quel bluesman aurait vendu son âme au diable à un carrefour ? Robert ___ ?",
     "c": [
-     "Bill Deraime",
-     "Jean-Jacques Milteau",
-     "Mike Lécuyer",
-     "Paul Personne"
+     "Johnson",
+     "King",
+     "Waters",
+     "Hooker"
     ],
-    "a": 3
+    "a": "Johnson"
    },
    {
-    "q": "Quel blues a influencé directement le rock 'n' roll ?",
+    "q": "Le long de quel grand fleuve le blues s'est-il diffusé, du Sud vers Chicago ? Le ___ ?",
     "c": [
-     "Le blues rural",
-     "Le delta blues",
-     "Le rhythm and blues",
-     "Le blues électrique"
+     "Mississippi",
+     "Colorado",
+     "Hudson",
+     "Missouri"
     ],
-    "a": 2
+    "a": "Mississippi"
    },
    {
-    "q": "Quel bluesman a enregistré 'Cross Road Blues' ?",
-    "c": [
-     "Son House",
-     "Robert Johnson",
-     "Charley Patton",
-     "Muddy Waters"
-    ],
-    "a": 1
+    "q": "En quelle année, environ, le blues émerge-t-il dans le Delta du Mississippi (tournant du siècle) ?",
+    "a": "1900"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "musique_007",
@@ -7008,86 +6978,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "De quel pays vient le reggae ?",
+    "q": "De quelle île des Caraïbes le reggae est-il originaire ? La ___ ?",
     "c": [
+     "Jamaïque",
      "Cuba",
-     "Trinidad",
-     "Brésil",
-     "Jamaïque"
+     "Haïti",
+     "Barbade"
     ],
-    "a": 3
+    "a": "Jamaïque"
    },
    {
-    "q": "Quel artiste reggae est une icône mondiale ?",
+    "q": "Quel chanteur aux dreadlocks est la légende mondiale du reggae ? Bob ___ ?",
     "c": [
-     "Jimmy Cliff",
-     "Toots Hibbert",
-     "Bob Marley",
-     "Peter Tosh"
+     "Marley",
+     "Tosh",
+     "Cliff",
+     "Perry"
     ],
-    "a": 2
+    "a": "Marley"
    },
    {
-    "q": "Quel est le rythme caractéristique du reggae ?",
+    "q": "Quel mouvement spirituel et culturel est associé au reggae ? Le ___ ?",
     "c": [
-     "La syncope",
-     "Le contretemps",
-     "Le temps fort",
-     "Le shuffle"
+     "rastafari",
+     "vaudou",
+     "candomblé",
+     "santería"
     ],
-    "a": 1
+    "a": "rastafari"
    },
    {
-    "q": "Quel est le titre le plus connu de Bob Marley ?",
+    "q": "Quelles longues mèches de cheveux emmêlées portent souvent les rastas ? Des ___ ?",
     "c": [
-     "Buffalo Soldier",
-     "Redemption Song",
-     "One Love",
-     "No Woman No Cry"
+     "dreadlocks",
+     "tresses",
+     "chignons",
+     "nattes"
     ],
-    "a": 3
+    "a": "dreadlocks"
    },
    {
-    "q": "En quelle année Bob Marley est-il mort ?",
+    "q": "Quelles sont les trois couleurs emblématiques du reggae ? Vert, jaune et ___ ?",
     "c": [
-     "1981",
-     "1977",
-     "1985",
-     "1990"
+     "rouge",
+     "bleu",
+     "noir",
+     "blanc"
     ],
-    "a": 0
+    "a": "rouge"
    },
    {
-    "q": "Quel mouvement spirituel est associé au reggae jamaïcain ?",
+    "q": "Quel groupe accompagnait Bob Marley ? The ___ ?",
     "c": [
-     "Le vaudou",
-     "Le candomblé",
-     "Le rastafarisme",
-     "Le santeria"
+     "Wailers",
+     "Skatalites",
+     "Maytals",
+     "Heptones"
     ],
-    "a": 2
+    "a": "Wailers"
    },
    {
-    "q": "Quel album de Bob Marley est le plus vendu ?",
+    "q": "De quel style musical jamaïcain plus rapide le reggae est-il en partie issu ? Le ___ ?",
     "c": [
-     "Exodus",
-     "Rastaman Vibration",
-     "Catch a Fire",
-     "Legend"
+     "ska",
+     "calypso",
+     "salsa",
+     "mambo"
     ],
-    "a": 3
+    "a": "ska"
    },
    {
-    "q": "Quel chanteur reggae a écrit 'The Harder They Come' ?",
-    "c": [
-     "Burning Spear",
-     "Bob Marley",
-     "Jimmy Cliff",
-     "Peter Tosh"
-    ],
-    "a": 2
+    "q": "En quelle année Bob Marley est-il décédé, prématurément ?",
+    "a": "1981"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "musique_008",
@@ -7096,86 +7061,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle chanteuse soul est surnommée 'The Queen of Soul' ?",
+    "q": "Quel label de Detroit, écrit comme « Motor Town », a produit la soul des années 60 ?",
     "c": [
-     "Diana Ross",
-     "Aretha Franklin",
-     "Etta James",
-     "Tina Turner"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quel label discographique était le plus important pour la soul ?",
-    "c": [
-     "Atlantic Records",
-     "Chess Records",
      "Motown",
-     "Stax Records"
+     "Stax",
+     "Atlantic",
+     "Chess"
     ],
-    "a": 2
+    "a": "Motown"
    },
    {
-    "q": "Quel est le titre phare d'Aretha Franklin ?",
+    "q": "Quel chanteur américain est le « Godfather of Soul » ? James ___ ?",
     "c": [
-     "I Say a Little Prayer",
-     "Chain of Fools",
-     "Think",
-     "Respect"
+     "Brown",
+     "Redding",
+     "Gaye",
+     "Charles"
     ],
-    "a": 3
+    "a": "Brown"
    },
    {
-    "q": "Quel chanteur a enregistré '(Sittin' On) The Dock of the Bay' ?",
+    "q": "Quelle diva noire est surnommée « la Reine de la Soul » ? Aretha ___ ?",
     "c": [
-     "Otis Redding",
-     "Percy Sledge",
-     "Wilson Pickett",
-     "Sam Cooke"
+     "Franklin",
+     "Ross",
+     "Knight",
+     "Turner"
     ],
-    "a": 0
+    "a": "Franklin"
    },
    {
-    "q": "En quelle année le label Motown a-t-il été fondé ?",
+    "q": "Quel chanteur aveugle, pianiste de génie, a marqué la soul ? Ray ___ ?",
     "c": [
-     "1950",
-     "1963",
-     "1955",
-     "1959"
+     "Charles",
+     "Wonder",
+     "Gaye",
+     "Cooke"
     ],
-    "a": 3
+    "a": "Charles"
    },
    {
-    "q": "Quelle chanteuse soul a connu un succès avec 'Proud Mary' ?",
+    "q": "Quel chanteur de la Motown, aveugle depuis l'enfance, s'appelle Stevie ___ ?",
     "c": [
-     "Tina Turner",
-     "Aretha Franklin",
-     "Gladys Knight",
-     "Diana Ross"
+     "Wonder",
+     "Ross",
+     "Robinson",
+     "Gaye"
     ],
-    "a": 0
+    "a": "Wonder"
    },
    {
-    "q": "Quel chanteur soul est surnommé 'The Godfather of Soul' ?",
+    "q": "Quel tube d'Aretha Franklin épelle un mot signifiant « respect » ? R-E-S-P-E-C-___ ?",
     "c": [
-     "James Brown",
-     "Ray Charles",
-     "Otis Redding",
-     "Aretha Franklin"
+     "T",
+     "S",
+     "O",
+     "R"
     ],
-    "a": 0
+    "a": "T"
    },
    {
-    "q": "Quel chanteur a écrit 'A Change Is Gonna Come' ?",
+    "q": "De quel genre religieux chanté à l'église la soul est-elle en partie issue ? Le ___ ?",
     "c": [
-     "Sam Cooke",
-     "James Brown",
-     "Otis Redding",
-     "Ray Charles"
+     "gospel",
+     "blues",
+     "jazz",
+     "folk"
     ],
-    "a": 0
+    "a": "gospel"
+   },
+   {
+    "q": "En quelle année Berry Gordy a-t-il fondé le label Motown ?",
+    "a": "1959"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "musique_009",
@@ -7184,86 +7144,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel groupe est considéré comme le pionnier du heavy metal ?",
+    "q": "Comment joue-t-on principalement la guitare metal ? Fort et ___ (distordu) ?",
     "c": [
-     "Iron Maiden",
-     "Deep Purple",
-     "Black Sabbath",
-     "Led Zeppelin"
+     "saturé",
+     "doux",
+     "lent",
+     "muet"
     ],
-    "a": 2
+    "a": "saturé"
    },
    {
-    "q": "Quel guitariste de metal est surnommé 'Metal God' ?",
+    "q": "Quel groupe britannique de Birmingham, avec Ozzy Osbourne, a fondé le metal ? Black ___ ?",
     "c": [
-     "Jimi Hendrix",
-     "James Hetfield",
-     "Tony Iommi",
-     "Dave Mustaine"
+     "Sabbath",
+     "Star",
+     "Rose",
+     "Flag"
     ],
-    "a": 3
+    "a": "Sabbath"
    },
    {
-    "q": "Quel groupe est connu pour son masque et son show scénique ?",
+    "q": "Quel geste de la main, index et auriculaire levés, est le signe des metalleux ? Les ___ du diable ?",
     "c": [
-     "KISS",
-     "Marilyn Manson",
-     "Ghost",
-     "Slipknot"
+     "cornes",
+     "griffes",
+     "ailes",
+     "crocs"
     ],
-    "a": 0
+    "a": "cornes"
    },
    {
-    "q": "Quel genre de metal se caractérise par des voix gutturales ?",
-    "c": [
-     "Death metal",
-     "Speed metal",
-     "Power metal",
-     "Heavy metal"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quel festival allemand est le plus grand festival de metal au monde ?",
-    "c": [
-     "Hellfest",
-     "Bloodstock",
-     "Wacken Open Air",
-     "Download Festival"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quel groupe de metal a sorti l'album 'Master of Puppets' ?",
+    "q": "Quel groupe américain de thrash metal a écrit « Master of Puppets » ?",
     "c": [
      "Metallica",
-     "Megadeth",
      "Slayer",
+     "Megadeth",
      "Anthrax"
     ],
-    "a": 0
+    "a": "Metallica"
    },
    {
-    "q": "Quel est le sous-genre le plus rapide du metal ?",
+    "q": "Comment appelle-t-on la danse violente en cercle dans la fosse d'un concert metal ? Le ___ pit ?",
     "c": [
-     "Le death metal",
-     "Le power metal",
-     "Le thrash metal",
-     "Le black metal"
+     "mosh",
+     "slam",
+     "circle",
+     "wall"
     ],
-    "a": 2
+    "a": "mosh"
    },
    {
-    "q": "Quel groupe de metal allemand est le plus célèbre ?",
+    "q": "Quel chanteur d'Iron Maiden ou plutôt : quel groupe anglais a pour mascotte le squelette « Eddie » ?",
     "c": [
-     "Helloween",
-     "Scorpions",
-     "Rammstein",
-     "Accept"
+     "Iron Maiden",
+     "Judas Priest",
+     "Motörhead",
+     "Saxon"
     ],
-    "a": 2
+    "a": "Iron Maiden"
+   },
+   {
+    "q": "Comment appelle-t-on le fait de secouer la tête violemment en rythme ? Le ___ ?",
+    "c": [
+     "headbang",
+     "moonwalk",
+     "twist",
+     "pogo"
+    ],
+    "a": "headbang"
+   },
+   {
+    "q": "En quelle année sort « Black Sabbath », album fondateur du heavy metal ?",
+    "a": "1970"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "musique_010",
@@ -7272,86 +7227,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel groupe punk est le plus célèbre ?",
+    "q": "Quelle attitude le punk revendique-t-il face à l'ordre établi ? La ___ (No Future) ?",
     "c": [
-     "The Ramones",
-     "The Clash",
-     "Dead Kennedys",
-     "Sex Pistols"
+     "révolte",
+     "obéissance",
+     "prière",
+     "sagesse"
     ],
-    "a": 0
+    "a": "révolte"
    },
    {
-    "q": "En quelle année le punk a-t-il émergé ?",
+    "q": "Quel groupe britannique provocateur a chanté « Anarchy in the UK » ? Les Sex ___ ?",
     "c": [
-     "Milieu des années 1970",
-     "Années 1980",
-     "Années 1990",
-     "Début des années 1960"
+     "Pistols",
+     "Guns",
+     "Bullets",
+     "Knives"
     ],
-    "a": 0
+    "a": "Pistols"
    },
    {
-    "q": "Quel groupe punk britannique a sorti 'God Save the Queen' ?",
+    "q": "Quelle coiffure dressée en crête est typique des punks ? La ___ ?",
     "c": [
+     "crête",
+     "banane",
+     "boule",
+     "tresse"
+    ],
+    "a": "crête"
+   },
+   {
+    "q": "Quel slogan pessimiste résume l'esprit punk ? « No ___ » ?",
+    "c": [
+     "Future",
+     "Money",
+     "Rules",
+     "God"
+    ],
+    "a": "Future"
+   },
+   {
+    "q": "Quel groupe américain de New York en blousons de cuir criait « Hey Ho Let's Go » ? Les ___ ?",
+    "c": [
+     "Ramones",
+     "Clash",
      "Damned",
-     "Sex Pistols",
+     "Cramps"
+    ],
+    "a": "Ramones"
+   },
+   {
+    "q": "Quel groupe punk britannique engagé a chanté « London Calling » ? The ___ ?",
+    "c": [
+     "Clash",
+     "Jam",
      "Buzzcocks",
-     "The Clash"
+     "Slits"
     ],
-    "a": 1
+    "a": "Clash"
    },
    {
-    "q": "Quel est le style vestimentaire associé au punk ?",
+    "q": "Comment appelle-t-on la danse punk où l'on saute sur place ? Le ___ ?",
     "c": [
-     "Costumes cravates",
-     "Vêtements fluo",
-     "Chemises hawaïennes",
-     "Cuir et clous"
+     "pogo",
+     "moonwalk",
+     "twist",
+     "madison"
     ],
-    "a": 3
+    "a": "pogo"
    },
    {
-    "q": "Quel groupe punk français est le plus connu ?",
-    "c": [
-     "Les Wampas",
-     "La Souris Déglinguée",
-     "Bérurier Noir",
-     "Oberkampf"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quel album des Ramones est leur premier ?",
-    "c": [
-     "Rocket to Russia",
-     "Leave Home",
-     "Road to Ruin",
-     "Ramones"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel mouvement punk a influencé le grunge ?",
-    "c": [
-     "L'anarcho-punk",
-     "Le punk rock",
-     "Le pop punk",
-     "Le punk hardcore"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel chanteur punk français est connu pour ses paroles engagées ?",
-    "c": [
-     "Guido",
-     "François Hadji-Lazaro",
-     "Lorant",
-     "Didier Wampas"
-    ],
-    "a": 3
+    "q": "En quelle année explose le mouvement punk, avec les Sex Pistols ?",
+    "a": "1976"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "musique_011",
