@@ -19259,7 +19259,7 @@ export const TTCQ_THEMES = [
     "a": "Sodome"
    },
    {
-    "q": "Quel produit est vivement recommandé, cette zone ne lubrifiant pas naturellement ? Le ___ ?",
+    "q": "Quel produit réduit les frictions, cette zone n'étant pas humidifiée naturellement ? Le ___ ?",
     "c": [
      "lubrifiant",
      "vinaigre",
@@ -20016,7 +20016,7 @@ export const TTCQ_THEMES = [
     "a": "débattue"
    },
    {
-    "q": "Quel organe nasal détecte les phéromones chez de nombreux animaux ? L'organe ___ (voméronasal) ?",
+    "q": "Quel organe nasal détecte les phéromones chez de nombreux animaux ?",
     "c": [
      "voméronasal",
      "olfactif seul",
@@ -20089,7 +20089,7 @@ export const TTCQ_THEMES = [
     "a": "anorgasmie"
    },
    {
-    "q": "Les chercheurs Masters et ___ ont décrit les phases de la réponse sexuelle ? Johnson ou ___ ?",
+    "q": "Avec quelle chercheuse William Masters a-t-il étudié la réponse sexuelle humaine ? ___ ?",
     "c": [
      "Johnson",
      "Kinsey",
@@ -20767,7 +20767,7 @@ export const TTCQ_THEMES = [
     "a": "progestative"
    },
    {
-    "q": "Comment appelle-t-on l'oubli qui peut réduire l'efficacité de la pilule ? Un ___ de prise ?",
+    "q": "Comment appelle-t-on le fait de sauter une prise, ce qui réduit l'efficacité de la pilule ? Un ___ de prise ?",
     "c": [
      "oubli",
      "surdosage",
@@ -20810,7 +20810,7 @@ export const TTCQ_THEMES = [
     "a": "permanente"
    },
    {
-    "q": "Quel conduit est bloqué lors d'une vasectomie ? Le canal ___ (déférent) ?",
+    "q": "Quel conduit transportant les spermatozoïdes est sectionné lors d'une vasectomie ? Le canal ___ ?",
     "c": [
      "déférent",
      "auditif",
@@ -20820,7 +20820,7 @@ export const TTCQ_THEMES = [
     "a": "déférent"
    },
    {
-    "q": "Comment appelle-t-on la stérilisation féminine par blocage des trompes ? La ligature des ___ ?",
+    "q": "Comment appelle-t-on la stérilisation féminine bloquant les conduits reliant ovaires et utérus ? La ligature des ___ ?",
     "c": [
      "trompes",
      "veines",
@@ -20830,7 +20830,7 @@ export const TTCQ_THEMES = [
     "a": "trompes"
    },
    {
-    "q": "La vasectomie empêche-t-elle l'éjaculation, ou seulement la présence de spermatozoïdes ? Seulement les ___ ?",
+    "q": "La vasectomie empêche-t-elle l'éjaculation, ou seulement la présence de gamètes mâles ? Seulement les ___ ?",
     "c": [
      "spermatozoïdes",
      "hormones",
@@ -21324,7 +21324,7 @@ export const TTCQ_THEMES = [
     "a": "fièvre"
    },
    {
-    "q": "L'herpès se guérit-il définitivement, ou reste-t-il dans le corps ? Il ___ (dormant) ?",
+    "q": "Une fois contracté, le virus de l'herpès quitte-t-il le corps ou y demeure-t-il à vie ? Il ___ ?",
     "c": [
      "reste",
      "disparaît",
@@ -21447,7 +21447,7 @@ export const TTCQ_THEMES = [
     "a": "verrues"
    },
    {
-    "q": "En quelle année le vaccin contre le HPV a-t-il été introduit pour la première fois (2006) ?",
+    "q": "En quelle année le vaccin contre le papillomavirus (HPV) a-t-il été introduit pour la première fois ?",
     "a": "2006"
    }
   ],
@@ -21672,7 +21672,7 @@ export const TTCQ_THEMES = [
     "a": "Discipline"
    },
    {
-    "q": "Quel rôle est dit « dominant », l'autre étant « ___ » ? (soumis)",
+    "q": "Dans le BDSM, face au partenaire « dominant », comment nomme-t-on celui qui obéit ? Le ___ ?",
     "c": [
      "soumis",
      "neutre",
@@ -21741,7 +21741,7 @@ export const TTCQ_THEMES = [
     "a": "normal"
    },
    {
-    "q": "Quel fétichisme concerne l'attirance pour les pieds ? La ___ (podophilie) ?",
+    "q": "Quel type de fétichisme désigne l'attirance pour les pieds ?",
     "c": [
      "podophilie",
      "claustrophilie",
@@ -21781,7 +21781,7 @@ export const TTCQ_THEMES = [
     "a": "cuir"
    },
    {
-    "q": "À partir de quand un fétichisme devient-il un « trouble » en psychiatrie ? Quand il cause une ___ ? (souffrance)",
+    "q": "À partir de quand un fétichisme est-il considéré comme un « trouble » en psychiatrie ? Quand il cause une ___ ?",
     "c": [
      "souffrance",
      "joie",
@@ -22026,7 +22026,7 @@ export const TTCQ_THEMES = [
     "a": "pansexualité"
    },
    {
-    "q": "Quel mois de l'année est consacré aux fiertés (dont la bisexualité) ? Le mois des ___ ? (Pride)",
+    "q": "En juin a lieu la grande célébration LGBT ; comment appelle-t-on ce « mois des ___ » ?",
     "c": [
      "fiertés",
      "récoltes",
@@ -22036,7 +22036,7 @@ export const TTCQ_THEMES = [
     "a": "fiertés"
    },
    {
-    "q": "Quelle journée de septembre célèbre la visibilité bisexuelle ? La journée de la ___ bi ?",
+    "q": "Quelle journée de septembre attire l'attention sur les personnes bisexuelles, souvent invisibilisées ? La journée de la ___ bi ?",
     "c": [
      "visibilité",
      "mémoire",
@@ -22208,7 +22208,7 @@ export const TTCQ_THEMES = [
     "a": "orientation"
    },
    {
-    "q": "Quelle communauté en ligne a popularisé la visibilité asexuelle ? Le réseau ___ (AVEN) ?",
+    "q": "Quelle grande communauté en ligne a fait connaître l'asexualité ?",
     "c": [
      "AVEN",
      "NASA",
@@ -22271,7 +22271,7 @@ export const TTCQ_THEMES = [
     "a": "monogamie"
    },
    {
-    "q": "Quel sentiment de joie de voir son partenaire heureux avec un autre est valorisé ? La ___ ? (compersion)",
+    "q": "Quel sentiment, valorisé en polyamour, est la joie de voir son partenaire heureux avec quelqu'un d'autre ?",
     "c": [
      "compersion",
      "jalousie",
@@ -22340,7 +22340,7 @@ export const TTCQ_THEMES = [
     "a": "2013"
    },
    {
-    "q": "Quel premier pays au monde a légalisé le mariage homosexuel en 2001 ? Les ___ ?",
+    "q": "Quel État a été le tout premier au monde à légaliser le mariage entre personnes de même sexe, en 2001 ?",
     "c": [
      "Pays-Bas",
      "France",
@@ -22680,7 +22680,7 @@ export const TTCQ_THEMES = [
     "a": "Fallope"
    },
    {
-    "q": "Comment appelle-t-on la fécondation réalisée en laboratoire ? La ___ (FIV) ?",
+    "q": "Comment nomme-t-on la mise en présence de l'ovule et des spermatozoïdes en laboratoire (sigle FIV) ?",
     "c": [
      "fécondation in vitro",
      "photosynthèse",
@@ -23103,7 +23103,7 @@ export const TTCQ_THEMES = [
     "a": "oui"
    },
    {
-    "q": "Comment appelle-t-on une baisse durable et gênante du désir sexuel ? Un trouble du ___ ?",
+    "q": "Comment appelle-t-on une baisse durable et gênante de l'appétit sexuel ? Un trouble du ___ ?",
     "c": [
      "désir",
      "sommeil seul",
@@ -23113,7 +23113,7 @@ export const TTCQ_THEMES = [
     "a": "désir"
    },
    {
-    "q": "De quel mot latin signifiant « désir, envie » vient le mot « libido » ? ___ ?",
+    "q": "De quel mot latin signifiant « envie, convoitise » vient le nom de cette pulsion sexuelle ? ___ ?",
     "c": [
      "libido",
      "labor",
@@ -23714,7 +23714,7 @@ export const TTCQ_THEMES = [
     "a": "ergot"
    },
    {
-    "q": "Quel phénomène de « retour » d'hallucinations peut survenir longtemps après la prise ? Un ___ (flashback) ?",
+    "q": "Quel phénomène fait ressurgir des hallucinations longtemps après une prise de LSD ? Un ___ ?",
     "c": [
      "flashback",
      "blackout",
@@ -23876,7 +23876,7 @@ export const TTCQ_THEMES = [
     "a": "cœur"
    },
    {
-    "q": "Quel surnom d'argent, « ___ », désignait les amphétamines chez les étudiants et routiers ? Les speed ?",
+    "q": "Quel surnom d'argot anglais, évoquant la vitesse, désigne les amphétamines ?",
     "c": [
      "speed",
      "slow",
@@ -24111,7 +24111,7 @@ export const TTCQ_THEMES = [
     "a": "cancer"
    },
    {
-    "q": "Quel dispositif électronique est présenté comme alternative à la cigarette ? La ___ ?",
+    "q": "Quel appareil à vapeur, alternative au tabac, se surnomme « vapoteuse » ? La ___ ?",
     "c": [
      "cigarette électronique",
      "montre",
@@ -24224,7 +24224,7 @@ export const TTCQ_THEMES = [
     "a": "eau"
    },
    {
-    "q": "Pour quel trouble post-traumatique la MDMA est-elle étudiée en thérapie encadrée ? Le ___ ?",
+    "q": "Pour soigner quel trouble lié à un choc violent la MDMA est-elle étudiée en thérapie encadrée ? Le ___ ?",
     "c": [
      "stress post-traumatique",
      "diabète",
@@ -24449,7 +24449,7 @@ export const TTCQ_THEMES = [
     "a": "fume"
    },
    {
-    "q": "Quel bruit de craquement à la combustion a donné son nom au crack ? Le ___ ?",
+    "q": "Quel petit bruit sec, entendu à la combustion, a donné son nom au crack ? Le ___ ?",
     "c": [
      "craquement",
      "sifflement",
@@ -24746,7 +24746,7 @@ export const TTCQ_THEMES = [
     "a": "diazépam"
    },
    {
-    "q": "Comment doit-on arrêter les benzodiazépines pour éviter un sevrage brutal ? De façon ___ (progressive) ?",
+    "q": "Comment doit-on arrêter les benzodiazépines pour éviter un sevrage brutal ? De façon ___ ?",
     "c": [
      "progressive",
      "immédiate",
@@ -25388,7 +25388,7 @@ export const TTCQ_THEMES = [
     "a": "dépendant"
    },
    {
-    "q": "Dans quel dispositif électronique inhale-t-on de la nicotine sans combustion ? La ___ ?",
+    "q": "Quel appareil à vapeur, alternative sans fumée, délivre de la nicotine ? La ___ ?",
     "c": [
      "cigarette électronique",
      "montre",
@@ -25594,7 +25594,7 @@ export const TTCQ_THEMES = [
     "a": "sauternes"
    },
    {
-    "q": "Quel champignon « noble » concentre les sucres des raisins des grands liquoreux ? La pourriture ___ ?",
+    "q": "Quelle « pourriture » recherchée dessèche le raisin et concentre ses sucres pour les grands liquoreux ? La pourriture ___ ?",
     "c": [
      "noble",
      "grise",
@@ -25637,7 +25637,7 @@ export const TTCQ_THEMES = [
     "a": "orge"
    },
    {
-    "q": "Quelle mousse blanche couronne un verre de bière ? La ___ ?",
+    "q": "Quelle couche blanche et crémeuse couronne un verre de bière ? La ___ ?",
     "c": [
      "mousse",
      "crème",
@@ -26082,7 +26082,7 @@ export const TTCQ_THEMES = [
     "a": "margarita"
    },
    {
-    "q": "Quelle ville mexicaine donne son nom à la tequila ?",
+    "q": "De quelle petite ville mexicaine la boisson à base d'agave tire-t-elle son nom ?",
     "c": [
      "Tequila",
      "Cancún",
@@ -26424,7 +26424,7 @@ export const TTCQ_THEMES = [
     "a": "calvados"
    },
    {
-    "q": "De quel fruit fait-on le « poiré », cousin du cidre ? La ___ ?",
+    "q": "De quel fruit à pépins, cousin de la pomme, fait-on le « poiré » ?",
     "c": [
      "poire",
      "pêche",
@@ -26570,7 +26570,7 @@ export const TTCQ_THEMES = [
     "a": "ochoko"
    },
    {
-    "q": "Quel champignon (koji) est utilisé pour transformer l'amidon du riz en sucre ? Le ___ ?",
+    "q": "Quel champignon (moisissure) transforme l'amidon du riz en sucre pour le saké ? Le ___ ?",
     "c": [
      "koji",
      "shiitake",
@@ -26756,7 +26756,7 @@ export const TTCQ_THEMES = [
     "a": "sangre"
    },
    {
-    "q": "Quelle version pétillante de la sangria utilise du vin mousseux ou du cava ? La sangria de ___ ?",
+    "q": "Quelle version pétillante de la sangria utilise un vin mousseux espagnol ? La sangria de ___ ?",
     "c": [
      "cava",
      "sidra",
@@ -26902,7 +26902,7 @@ export const TTCQ_THEMES = [
     "a": "bol"
    },
    {
-    "q": "Le mot « punch » viendrait d'un mot hindi signifiant le chiffre ___ ? (cinq ingrédients)",
+    "q": "Le mot « punch » viendrait d'un mot hindi désignant le nombre d'ingrédients de base : lequel ?",
     "c": [
      "cinq",
      "trois",
@@ -26912,7 +26912,7 @@ export const TTCQ_THEMES = [
     "a": "cinq"
    },
    {
-    "q": "Quel punch antillais associe rhum, sirop de canne et citron vert ? Le ti'___ ?",
+    "q": "Comment nomme-t-on le petit cocktail antillais de rhum, sirop de canne et citron vert ? Le « ti' ___ » ?",
     "c": [
      "punch",
      "rhum",
@@ -27048,7 +27048,7 @@ export const TTCQ_THEMES = [
     "a": "moines"
    },
    {
-    "q": "Dans quel massif alpin français est produite la Chartreuse ? Le massif de la ___ ?",
+    "q": "Dans quel massif alpin, près de Grenoble, cette liqueur de moines est-elle produite ? Le massif de la ___ ?",
     "c": [
      "Chartreuse",
      "Vanoise",
@@ -27307,7 +27307,7 @@ export const TTCQ_THEMES = [
     "a": "Kentucky"
    },
    {
-    "q": "Dans quels fûts neufs et brûlés le bourbon doit-il vieillir ? Des fûts de chêne ___ ?",
+    "q": "L'intérieur des fûts de chêne neufs du bourbon subit quel traitement au feu ? Ils sont ___ ?",
     "c": [
      "brûlés",
      "usagés",
@@ -27493,7 +27493,7 @@ export const TTCQ_THEMES = [
     "a": "gueuze"
    },
    {
-    "q": "Quel fruit rouge ajoute-t-on pour faire un lambic à la cerise ? La ___ (kriek) ?",
+    "q": "Quel fruit rouge ajoute-t-on au lambic pour obtenir une bière « kriek » ? La ___ ?",
     "c": [
      "cerise",
      "framboise",
@@ -27990,7 +27990,7 @@ export const TTCQ_THEMES = [
     "a": "intermittent"
    },
    {
-    "q": "Quel inventeur américain a breveté l'essuie-glace en 1903 ? Mary ___ ? (Anderson)",
+    "q": "Quelle inventrice américaine a breveté l'essuie-glace en 1903 ? Mary ___ ?",
     "c": [
      "Anderson",
      "Ford",
@@ -28033,7 +28033,7 @@ export const TTCQ_THEMES = [
     "a": "française"
    },
    {
-    "q": "Quel tube de Goldman évoque « il changeait la vie » sur un artisan ? « Il ___ la vie » ?",
+    "q": "Dans quel tube Goldman chante-t-il un artisan dont le refrain dit « Il ___ la vie » ?",
     "c": [
      "changeait",
      "aimait",
@@ -28043,7 +28043,7 @@ export const TTCQ_THEMES = [
     "a": "changeait"
    },
    {
-    "q": "Quel trio Goldman a-t-il formé, avec Fredericks et Jones, dans les années 90 ?",
+    "q": "Comment s'appelait le célèbre trio musical formé par Goldman dans les années 90 ?",
     "c": [
      "Fredericks Goldman Jones",
      "Téléphone",
@@ -28389,7 +28389,7 @@ export const TTCQ_THEMES = [
     "a": "Mario"
    },
    {
-    "q": "Quel style de moustache est cirée et recourbée vers le haut aux extrémités ? La moustache à la ___ ? (Dalí)",
+    "q": "Quel style de moustache, cirée et recourbée vers le haut, porte le nom d'un peintre surréaliste espagnol ? La moustache à la ___ ?",
     "c": [
      "Dalí",
      "César",
@@ -28482,7 +28482,7 @@ export const TTCQ_THEMES = [
     "a": "déjeuner"
    },
    {
-    "q": "Quelle phase de sommeil profond faut-il éviter d'atteindre en sieste pour ne pas être groggy ? Le sommeil ___ ?",
+    "q": "Quelle phase de sommeil, la plus lourde à quitter, gâche une sieste si on l'atteint ? Le sommeil ___ ?",
     "c": [
      "profond",
      "léger",
@@ -28697,7 +28697,7 @@ export const TTCQ_THEMES = [
     "a": "terre"
    },
    {
-    "q": "Dans quel appareil fait-on fondre le fromage à raclette ? L'appareil à ___ ?",
+    "q": "Comment nomme-t-on le petit appareil de table qui fait fondre le fromage de ce plat ? L'appareil à ___ ?",
     "c": [
      "raclette",
      "fondue",
@@ -28727,7 +28727,7 @@ export const TTCQ_THEMES = [
     "a": "Valais"
    },
    {
-    "q": "Quelle charcuterie accompagne souvent la raclette ? La ___ ?",
+    "q": "Quel type d'aliments (jambon, saucisson…) accompagne traditionnellement la raclette ? La ___ ?",
     "c": [
      "charcuterie",
      "confiture",
@@ -28790,7 +28790,7 @@ export const TTCQ_THEMES = [
     "a": "laver"
    },
    {
-    "q": "Quelle faute de goût consiste à porter des chaussettes dans des sandales ? Chaussettes-___ ?",
+    "q": "Quelle faute de style consiste à porter des chaussettes dans des chaussures ouvertes d'été ? Chaussettes-___ ?",
     "c": [
      "sandales",
      "bottes",
@@ -28810,7 +28810,7 @@ export const TTCQ_THEMES = [
     "a": "laine"
    },
    {
-    "q": "Quelles chaussettes hautes, montant au-dessus du genou, sont dites « chaussettes ___ » ?",
+    "q": "Comment qualifie-t-on des chaussettes qui montent bien au-dessus du genou ? Des chaussettes ___ ?",
     "c": [
      "hautes",
      "basses",
@@ -28820,7 +28820,7 @@ export const TTCQ_THEMES = [
     "a": "hautes"
    },
    {
-    "q": "Quel objet, autrefois, glissait-on dans la chaussette pour la repriser ? Un œuf à ___ ?",
+    "q": "Quel accessoire en bois glissait-on dans une chaussette trouée pour la raccommoder ? Un œuf à ___ ?",
     "c": [
      "repriser",
      "cuire",
@@ -28883,7 +28883,7 @@ export const TTCQ_THEMES = [
     "a": "Japon"
    },
    {
-    "q": "Quel emoji, élu mot de l'année 2015 par Oxford, montre un visage riant aux larmes ? Le rire aux ___ ?",
+    "q": "Quel emoji, sacré « mot de l'année » 2015 par Oxford, montre un visage riant à en pleurer ? Le rire aux ___ ?",
     "c": [
      "larmes",
      "éclats",
@@ -28976,7 +28976,7 @@ export const TTCQ_THEMES = [
     "a": "antistress"
    },
    {
-    "q": "À l'origine, en 1957, pour quel usage inattendu le papier bulle avait-il été conçu ? Un ___ mural ?",
+    "q": "En 1957, pour quel usage décoratif mural le film à bulles avait-il d'abord été inventé ? Un ___ peint ?",
     "c": [
      "papier peint",
      "tapis",
@@ -29385,7 +29385,7 @@ export const TTCQ_THEMES = [
     "a": "papier"
    },
    {
-    "q": "Dans quelle activité artistique et de maquillage les cotons-tiges sont-ils aussi utilisés ? Le ___ ?",
+    "q": "Dans quelle activité de beauté, en plus de l'hygiène, les cotons-tiges servent-ils souvent ? Le ___ ?",
     "c": [
      "maquillage",
      "jardinage",
