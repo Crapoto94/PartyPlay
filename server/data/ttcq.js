@@ -4452,12 +4452,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Combien de joueurs compte une équipe de football sur le terrain ?",
-    "a": "11"
+    "q": "Le football, c'est : un sport, un fromage, une planète ou un meuble ?",
+    "c": [
+     "un sport",
+     "un fromage",
+     "une planète",
+     "un meuble"
+    ],
+    "a": "un sport"
    },
    {
-    "q": "Comment appelle-t-on le fait de marquer dans le but adverse ? Un ___ ?",
-    "a": "But"
+    "q": "Au football, on joue surtout avec : les pieds, le nez, les oreilles ou les coudes ?",
+    "c": [
+     "les pieds",
+     "le nez",
+     "les oreilles",
+     "les coudes"
+    ],
+    "a": "les pieds"
    },
    {
     "q": "De quelle couleur est le carton qui exclut un joueur ?",
@@ -4517,18 +4529,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Sur quel type de terrain se joue le tournoi de Roland-Garros ? La ___ battue ?",
+    "q": "Le tennis, c'est : un sport, un fromage, une planète ou un meuble ?",
     "c": [
-     "terre",
-     "herbe",
-     "dure",
-     "moquette"
+     "un sport",
+     "un fromage",
+     "une planète",
+     "un meuble"
     ],
-    "a": "terre"
+    "a": "un sport"
    },
    {
-    "q": "Combien de points valent le premier point marqué dans un jeu ? On dit ___ ?",
-    "a": "15"
+    "q": "Au tennis, on frappe la balle avec : une raquette, une louche, un balai ou une fourchette ?",
+    "c": [
+     "une raquette",
+     "une louche",
+     "un balai",
+     "une fourchette"
+    ],
+    "a": "une raquette"
    },
    {
     "q": "Comment dit-on qu'un joueur a zéro point au tennis ? On dit ___ ?",
@@ -4588,12 +4606,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Combien de points vaut un panier marqué juste sous le cercle (hors lancers) ?",
-    "a": "2"
+    "q": "Le basket-ball, c'est : un sport, un fromage, une planète ou un meuble ?",
+    "c": [
+     "un sport",
+     "un fromage",
+     "une planète",
+     "un meuble"
+    ],
+    "a": "un sport"
    },
    {
-    "q": "Combien de joueurs d'une même équipe sont sur le terrain au basket ?",
-    "a": "5"
+    "q": "Au basket, on met le ballon dans : un panier, un four, une valise ou un tiroir ?",
+    "c": [
+     "un panier",
+     "un four",
+     "une valise",
+     "un tiroir"
+    ],
+    "a": "un panier"
    },
    {
     "q": "Comment appelle-t-on l'action de faire rebondir le ballon en avançant ? Le ___ ?",
@@ -4653,18 +4683,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la forme du ballon de rugby ?",
+    "q": "Le rugby, c'est : un sport, un fromage, une planète ou un meuble ?",
     "c": [
-     "Ovale",
-     "Ronde",
-     "Carrée",
-     "Plate"
+     "un sport",
+     "un fromage",
+     "une planète",
+     "un meuble"
     ],
-    "a": "Ovale"
+    "a": "un sport"
    },
    {
-    "q": "Comment appelle-t-on le fait d'aplatir le ballon dans l'en-but ? Un ___ ?",
-    "a": "Essai"
+    "q": "Le ballon de rugby a une forme : ovale, carrée, en étoile ou en cœur ?",
+    "c": [
+     "ovale",
+     "carrée",
+     "en étoile",
+     "en cœur"
+    ],
+    "a": "ovale"
    },
    {
     "q": "Combien de points vaut un essai au rugby à XV ?",
@@ -4718,18 +4754,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle grande course cycliste française de trois semaines a lieu chaque été ? Le Tour de ___ ?",
-    "a": "France"
+    "q": "Le cyclisme, c'est : un sport, un fromage, une planète ou un meuble ?",
+    "c": [
+     "un sport",
+     "un fromage",
+     "une planète",
+     "un meuble"
+    ],
+    "a": "un sport"
    },
    {
-    "q": "De quelle couleur est le maillot du leader du Tour de France ? Le maillot ___ ?",
+    "q": "Le cyclisme se pratique à : vélo, cheval, dos de baleine ou en fusée ?",
     "c": [
-     "jaune",
-     "vert",
-     "rouge",
-     "blanc"
+     "vélo",
+     "cheval",
+     "dos de baleine",
+     "fusée"
     ],
-    "a": "jaune"
+    "a": "vélo"
    },
    {
     "q": "Combien de roues compte un vélo de course classique ?",
@@ -4789,24 +4831,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle nage se pratique sur le dos, dans l'eau ? La nage sur le ___ ?",
+    "q": "La natation, c'est : un sport, un fromage, une planète ou un meuble ?",
     "c": [
-     "dos",
-     "ventre",
-     "côté",
-     "flanc"
+     "un sport",
+     "un fromage",
+     "une planète",
+     "un meuble"
     ],
-    "a": "dos"
+    "a": "un sport"
    },
    {
-    "q": "Quelle nage imite le mouvement d'une grenouille ? La ___ ?",
+    "q": "La natation se pratique dans : l'eau, le sable, la neige ou les nuages ?",
     "c": [
-     "brasse",
-     "papillon",
-     "crawl",
-     "dos"
+     "l'eau",
+     "le sable",
+     "la neige",
+     "les nuages"
     ],
-    "a": "brasse"
+    "a": "l'eau"
    },
    {
     "q": "Quelle est la nage la plus rapide, sur le ventre, bras alternés ? Le ___ ?",
@@ -4866,18 +4908,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle épreuve reine consiste à courir 100 mètres le plus vite possible ? Le ___ mètres ?",
-    "a": "100"
+    "q": "L'athlétisme, c'est : un sport, un fromage, une planète ou un meuble ?",
+    "c": [
+     "un sport",
+     "un fromage",
+     "une planète",
+     "un meuble"
+    ],
+    "a": "un sport"
    },
    {
-    "q": "Quelle épreuve consiste à sauter le plus loin possible ? Le saut en ___ ?",
+    "q": "En athlétisme, l'épreuve reine consiste à : courir vite, dormir, manger ou chanter ?",
     "c": [
-     "longueur",
-     "hauteur",
-     "perche",
-     "triple"
+     "courir vite",
+     "dormir",
+     "manger",
+     "chanter"
     ],
-    "a": "longueur"
+    "a": "courir vite"
    },
    {
     "q": "Combien de mètres mesure la distance d'un marathon (arrondi) ?",
@@ -4943,24 +4991,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Sur quelle surface carrée entourée de cordes se déroule un combat de boxe ? Le ___ ?",
+    "q": "La boxe, c'est : un sport, un fromage, une planète ou un meuble ?",
     "c": [
-     "ring",
-     "tatami",
-     "court",
-     "octogone"
+     "un sport",
+     "un fromage",
+     "une planète",
+     "un meuble"
     ],
-    "a": "ring"
+    "a": "un sport"
    },
    {
-    "q": "Comment appelle-t-on la mise à terre décisive de l'adversaire ? Un K.-___ ?",
+    "q": "En boxe, on se bat avec : les poings, une épée, un arc ou une raquette ?",
     "c": [
-     "O",
-     "X",
-     "P",
-     "T"
+     "les poings",
+     "une épée",
+     "un arc",
+     "une raquette"
     ],
-    "a": "O"
+    "a": "les poings"
    },
    {
     "q": "Que portent les boxeurs aux mains pour se protéger ? Des ___ ?",
@@ -5020,12 +5068,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Sur quelle surface blanche et froide pratique-t-on le ski ? La ___ ?",
-    "a": "Neige"
+    "q": "Le ski, c'est : un sport, un fromage, une planète ou un meuble ?",
+    "c": [
+     "un sport",
+     "un fromage",
+     "une planète",
+     "un meuble"
+    ],
+    "a": "un sport"
    },
    {
-    "q": "Combien de skis chausse un skieur alpin classique ?",
-    "a": "2"
+    "q": "Le ski se pratique sur : la neige, le lac, le trottoir ou le toit ?",
+    "c": [
+     "la neige",
+     "le lac",
+     "le trottoir",
+     "le toit"
+    ],
+    "a": "la neige"
    },
    {
     "q": "Comment appelle-t-on les bâtons plantés à contourner dans une course de slalom ? Des ___ ?",
@@ -5091,18 +5151,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Combien de roues compte une monoplace de Formule 1 ?",
-    "a": "4"
+    "q": "La Formule 1, c'est : un sport, un fromage, une planète ou un meuble ?",
+    "c": [
+     "un sport",
+     "un fromage",
+     "une planète",
+     "un meuble"
+    ],
+    "a": "un sport"
    },
    {
-    "q": "Quel drapeau agité annonce la fin de la course ? Le drapeau à ___ ?",
+    "q": "La Formule 1, ce sont des courses de : voitures, escargots, montgolfières ou trottinettes ?",
     "c": [
-     "damier",
-     "pois",
-     "rayures",
-     "croix"
+     "voitures",
+     "escargots",
+     "montgolfières",
+     "trottinettes"
     ],
-    "a": "damier"
+    "a": "voitures"
    },
    {
     "q": "Quelle écurie italienne rouge, la plus mythique, court en F1 depuis les débuts ?",
@@ -5168,24 +5234,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "De quel pays est originaire le judo ?",
+    "q": "Le judo, c'est : un sport, un fromage, une planète ou un meuble ?",
     "c": [
-     "Japon",
-     "Chine",
-     "Corée",
-     "Thaïlande"
+     "un sport",
+     "un fromage",
+     "une planète",
+     "un meuble"
     ],
-    "a": "Japon"
+    "a": "un sport"
    },
    {
-    "q": "Comment appelle-t-on la tenue portée par les judokas ? Un ___ ?",
+    "q": "Le judo est un : art martial, plat japonais, jeu vidéo ou instrument ?",
     "c": [
-     "kimono",
-     "peignoir",
-     "maillot",
-     "short"
+     "art martial",
+     "plat japonais",
+     "jeu vidéo",
+     "instrument"
     ],
-    "a": "kimono"
+    "a": "art martial"
    },
    {
     "q": "De quelle couleur est la ceinture du débutant en judo ?",
@@ -5251,18 +5317,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Dans quoi le joueur de golf doit-il faire entrer la balle ? Un ___ ?",
+    "q": "Le golf, c'est : un sport, un fromage, une planète ou un meuble ?",
     "c": [
-     "trou",
-     "panier",
-     "filet",
-     "cercle"
+     "un sport",
+     "un fromage",
+     "une planète",
+     "un meuble"
     ],
-    "a": "trou"
+    "a": "un sport"
    },
    {
-    "q": "Combien de trous compte un parcours de golf classique ?",
-    "a": "18"
+    "q": "Au golf, on met une petite balle dans un : trou, filet, panier ou verre ?",
+    "c": [
+     "trou",
+     "filet",
+     "panier",
+     "verre"
+    ],
+    "a": "trou"
    },
    {
     "q": "Avec quel équipement frappe-t-on la balle de golf ? Un ___ ?",
@@ -5328,24 +5400,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Avec quel type d'arme longue et fine pratique-t-on l'escrime ? Une ___ ?",
+    "q": "L'escrime, c'est : un sport, un fromage, une planète ou un meuble ?",
     "c": [
-     "épée",
-     "hache",
-     "lance",
-     "masse"
+     "un sport",
+     "un fromage",
+     "une planète",
+     "un meuble"
     ],
-    "a": "épée"
+    "a": "un sport"
    },
    {
-    "q": "Que porte l'escrimeur sur le visage pour se protéger ? Un ___ ?",
+    "q": "L'escrime se pratique avec une : épée, cuillère, corde ou plume ?",
     "c": [
-     "masque",
-     "casque",
-     "voile",
-     "bandeau"
+     "épée",
+     "cuillère",
+     "corde",
+     "plume"
     ],
-    "a": "masque"
+    "a": "épée"
    },
    {
     "q": "Quelles sont les trois armes de l'escrime : le fleuret, l'épée et le ___ ?",
@@ -5411,18 +5483,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Avec quelle partie du corps joue-t-on principalement au handball ? Les ___ ?",
+    "q": "Le handball, c'est : un sport, un fromage, une planète ou un meuble ?",
+    "c": [
+     "un sport",
+     "un fromage",
+     "une planète",
+     "un meuble"
+    ],
+    "a": "un sport"
+   },
+   {
+    "q": "Le handball se joue surtout avec les : mains, pieds, genoux ou oreilles ?",
     "c": [
      "mains",
      "pieds",
      "genoux",
-     "coudes"
+     "oreilles"
     ],
     "a": "mains"
-   },
-   {
-    "q": "Combien de joueurs de champ, plus le gardien, une équipe a-t-elle sur le terrain ?",
-    "a": "7"
    },
    {
     "q": "Quelle nation, aux « Experts », a longtemps dominé le handball mondial ?",
@@ -5482,18 +5560,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qu'est-ce qui sépare les deux équipes au volley-ball ? Un ___ ?",
+    "q": "Le volley-ball, c'est : un sport, un fromage, une planète ou un meuble ?",
+    "c": [
+     "un sport",
+     "un fromage",
+     "une planète",
+     "un meuble"
+    ],
+    "a": "un sport"
+   },
+   {
+    "q": "Au volley, les deux équipes sont séparées par un : filet, mur, fossé ou rideau ?",
     "c": [
      "filet",
      "mur",
-     "trait",
-     "poteau"
+     "fossé",
+     "rideau"
     ],
     "a": "filet"
-   },
-   {
-    "q": "Combien de joueurs compose une équipe de volley sur le terrain ?",
-    "a": "6"
    },
    {
     "q": "Combien de touches de balle maximum une équipe a-t-elle avant de renvoyer ?",
@@ -5553,24 +5637,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Sur quel élément naturel le surfeur glisse-t-il ? Les ___ ?",
+    "q": "Le surf, c'est : un sport, un fromage, une planète ou un meuble ?",
+    "c": [
+     "un sport",
+     "un fromage",
+     "une planète",
+     "un meuble"
+    ],
+    "a": "un sport"
+   },
+   {
+    "q": "Le surf se pratique sur les : vagues, dunes, nuages ou rails ?",
     "c": [
      "vagues",
      "dunes",
      "nuages",
-     "rochers"
+     "rails"
     ],
     "a": "vagues"
-   },
-   {
-    "q": "Sur quel objet le surfeur se tient-il debout ? Une ___ ?",
-    "c": [
-     "planche",
-     "bouée",
-     "flotteur",
-     "barque"
-    ],
-    "a": "planche"
    },
    {
     "q": "Quel archipel américain du Pacifique est le berceau du surf moderne ?",
@@ -5636,24 +5720,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Sur quoi grimpe-t-on en escalade ? Une ___ ?",
+    "q": "L'escalade, c'est : un sport, un fromage, une planète ou un meuble ?",
     "c": [
-     "paroi",
-     "échelle",
-     "corde",
-     "pente"
+     "un sport",
+     "un fromage",
+     "une planète",
+     "un meuble"
     ],
-    "a": "paroi"
+    "a": "un sport"
    },
    {
-    "q": "Quel équipement de sécurité relie le grimpeur à la corde ? Un ___ ?",
+    "q": "En escalade, on : grimpe, nage, roule ou vole ?",
     "c": [
-     "baudrier",
-     "casque",
-     "gant",
-     "harnais"
+     "grimpe",
+     "nage",
+     "roule",
+     "vole"
     ],
-    "a": "baudrier"
+    "a": "grimpe"
    },
    {
     "q": "Comment appelle-t-on l'escalade de blocs bas sans corde, sur tapis ? Le ___ ?",
@@ -5719,24 +5803,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Que signifie le sigle MMA : Mixed ___ Arts ?",
+    "q": "Le MMA, c'est : un sport, un fromage, une planète ou un meuble ?",
     "c": [
-     "Martial",
-     "Master",
-     "Modern",
-     "Major"
+     "un sport",
+     "un fromage",
+     "une planète",
+     "un meuble"
     ],
-    "a": "Martial"
+    "a": "un sport"
    },
    {
-    "q": "Dans quelle enceinte grillagée à huit côtés se déroulent les combats de MMA ? L'___ ?",
+    "q": "Le MMA est un sport de : combat, danse, cartes ou peinture ?",
     "c": [
-     "octogone",
-     "hexagone",
-     "ring",
-     "cage"
+     "combat",
+     "danse",
+     "cartes",
+     "peinture"
     ],
-    "a": "octogone"
+    "a": "combat"
    },
    {
     "q": "Quelle est la plus grande organisation mondiale de MMA ?",
@@ -5802,7 +5886,17 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel projectile à plumes frappe-t-on au badminton ? Un ___ ?",
+    "q": "Le badminton, c'est : un sport, un fromage, une planète ou un meuble ?",
+    "c": [
+     "un sport",
+     "un fromage",
+     "une planète",
+     "un meuble"
+    ],
+    "a": "un sport"
+   },
+   {
+    "q": "Au badminton, on frappe un : volant, ballon, palet ou disque ?",
     "c": [
      "volant",
      "ballon",
@@ -5810,16 +5904,6 @@ export const TTCQ_THEMES = [
      "disque"
     ],
     "a": "volant"
-   },
-   {
-    "q": "Avec quel équipement frappe-t-on le volant ? Une ___ ?",
-    "c": [
-     "raquette",
-     "batte",
-     "crosse",
-     "planche"
-    ],
-    "a": "raquette"
    },
    {
     "q": "Qu'y a-t-il au milieu du terrain de badminton ? Un ___ ?",
@@ -5879,18 +5963,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Avec quel objet en bois frappe-t-on la balle au baseball ? Une ___ ?",
+    "q": "Le baseball, c'est : un sport, un fromage, une planète ou un meuble ?",
+    "c": [
+     "un sport",
+     "un fromage",
+     "une planète",
+     "un meuble"
+    ],
+    "a": "un sport"
+   },
+   {
+    "q": "Au baseball, on frappe la balle avec une : batte, raquette, crosse ou main nue ?",
     "c": [
      "batte",
      "raquette",
      "crosse",
-     "planche"
+     "main nue"
     ],
     "a": "batte"
-   },
-   {
-    "q": "Combien de bases doit parcourir un joueur pour marquer un point ?",
-    "a": "4"
    },
    {
     "q": "Dans quel pays le baseball est-il le sport national par excellence ?",
@@ -5956,24 +6046,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel cri pousse le chien ? Il ___ ?",
+    "q": "Le chien, c'est : un animal, un légume, une voiture ou un logiciel ?",
     "c": [
-     "aboie",
-     "miaule",
-     "hennit",
-     "meugle"
+     "un animal",
+     "un légume",
+     "une voiture",
+     "un logiciel"
     ],
-    "a": "aboie"
+    "a": "un animal"
    },
    {
-    "q": "Comment appelle-t-on un bébé chien ?",
+    "q": "Le chien fait : « ouaf », « miaou », « meuh » ou « cocorico » ?",
     "c": [
-     "chiot",
-     "chaton",
-     "poulain",
-     "veau"
+     "« ouaf »",
+     "« miaou »",
+     "« meuh »",
+     "« cocorico »"
     ],
-    "a": "chiot"
+    "a": "« ouaf »"
    },
    {
     "q": "Combien de pattes a un chien ?",
@@ -6033,24 +6123,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel cri pousse le chat ? Il ___ ?",
+    "q": "Le chat, c'est : un animal, un légume, une voiture ou un logiciel ?",
     "c": [
-     "miaule",
-     "aboie",
-     "hennit",
-     "coasse"
+     "un animal",
+     "un légume",
+     "une voiture",
+     "un logiciel"
     ],
-    "a": "miaule"
+    "a": "un animal"
    },
    {
-    "q": "Comment appelle-t-on un bébé chat ?",
+    "q": "Le chat fait : « miaou », « ouaf », « coin » ou « hi-han » ?",
     "c": [
-     "chaton",
-     "chiot",
-     "agneau",
-     "faon"
+     "« miaou »",
+     "« ouaf »",
+     "« coin »",
+     "« hi-han »"
     ],
-    "a": "chaton"
+    "a": "« miaou »"
    },
    {
     "q": "Quel bruit fait un chat content quand on le caresse ? Il ___ ?",
@@ -6116,24 +6206,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Grâce à quoi les oiseaux peuvent-ils voler ? Leurs ___ ?",
+    "q": "L'oiseau, c'est : un animal, un légume, une voiture ou un logiciel ?",
     "c": [
-     "ailes",
-     "pattes",
-     "becs",
-     "queues"
+     "un animal",
+     "un légume",
+     "une voiture",
+     "un logiciel"
     ],
-    "a": "ailes"
+    "a": "un animal"
    },
    {
-    "q": "Dans quoi les oiseaux pondent-ils leurs petits ? Des ___ ?",
+    "q": "L'oiseau se déplace surtout en : volant, nageant, rampant ou creusant ?",
     "c": [
-     "œufs",
-     "cocons",
-     "graines",
-     "nids"
+     "volant",
+     "nageant",
+     "rampant",
+     "creusant"
     ],
-    "a": "œufs"
+    "a": "volant"
    },
    {
     "q": "Quel grand oiseau coureur africain est le plus grand du monde et ne vole pas ?",
@@ -6199,24 +6289,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Grâce à quel organe les poissons respirent-ils sous l'eau ? Leurs ___ ?",
+    "q": "Le poisson, c'est : un animal, un légume, une voiture ou un logiciel ?",
     "c": [
-     "branchies",
-     "poumons",
-     "nageoires",
-     "écailles"
+     "un animal",
+     "un légume",
+     "une voiture",
+     "un logiciel"
     ],
-    "a": "branchies"
+    "a": "un animal"
    },
    {
-    "q": "Quel petit poisson orange est le héros du film « Le Monde de Nemo » ?",
+    "q": "Le poisson vit dans : l'eau, le désert, les arbres ou le feu ?",
     "c": [
-     "poisson-clown",
-     "requin",
-     "raie",
-     "thon"
+     "l'eau",
+     "le désert",
+     "les arbres",
+     "le feu"
     ],
-    "a": "poisson-clown"
+    "a": "l'eau"
    },
    {
     "q": "De quoi est recouvert le corps de la plupart des poissons ? D'___ ?",
@@ -6282,24 +6372,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel cri pousse le cheval ? Il ___ ?",
+    "q": "Le cheval, c'est : un animal, un légume, une voiture ou un logiciel ?",
     "c": [
-     "hennit",
-     "aboie",
-     "miaule",
-     "beugle"
+     "un animal",
+     "un légume",
+     "une voiture",
+     "un logiciel"
     ],
-    "a": "hennit"
+    "a": "un animal"
    },
    {
-    "q": "Comment appelle-t-on un bébé cheval ?",
+    "q": "Le cheval fait : « hiii » (il hennit), « miaou », « meuh » ou « couac » ?",
     "c": [
-     "poulain",
-     "veau",
-     "chiot",
-     "agneau"
+     "« hiii » (il hennit)",
+     "« miaou »",
+     "« meuh »",
+     "« couac »"
     ],
-    "a": "poulain"
+    "a": "« hiii » (il hennit)"
    },
    {
     "q": "Que met-on sur le dos du cheval pour le monter ? Une ___ ?",
@@ -6365,24 +6455,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Dans quel milieu vivent les dauphins ? La ___ ?",
+    "q": "Le dauphin, c'est : un animal, un légume, une voiture ou un logiciel ?",
     "c": [
-     "mer",
-     "montagne",
-     "forêt",
-     "désert"
+     "un animal",
+     "un légume",
+     "une voiture",
+     "un logiciel"
     ],
-    "a": "mer"
+    "a": "un animal"
    },
    {
-    "q": "Le dauphin est-il un poisson ou un mammifère ?",
+    "q": "Le dauphin vit dans : la mer, la montagne, le désert ou la forêt ?",
     "c": [
-     "mammifère",
-     "poisson",
-     "reptile",
-     "amphibien"
+     "la mer",
+     "la montagne",
+     "le désert",
+     "la forêt"
     ],
-    "a": "mammifère"
+    "a": "la mer"
    },
    {
     "q": "Par quel orifice sur le dessus de sa tête le dauphin respire-t-il ? L'___ ?",
@@ -6448,18 +6538,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Combien de pattes possède un insecte ?",
-    "a": "6"
+    "q": "L'insecte, c'est : un animal, un légume, une voiture ou un logiciel ?",
+    "c": [
+     "un animal",
+     "un légume",
+     "une voiture",
+     "un logiciel"
+    ],
+    "a": "un animal"
    },
    {
-    "q": "Quel insecte produit du miel ? L'___ ?",
+    "q": "La plupart des insectes ont : 6 pattes, 2 pattes, 100 pattes ou aucune patte ?",
     "c": [
-     "abeille",
-     "guêpe",
-     "mouche",
-     "fourmi"
+     "6 pattes",
+     "2 pattes",
+     "100 pattes",
+     "aucune patte"
     ],
-    "a": "abeille"
+    "a": "6 pattes"
    },
    {
     "q": "Quel insecte coloré aux grandes ailes naît d'une chenille ? Le ___ ?",
@@ -6519,18 +6615,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Combien de pattes possède un serpent ?",
-    "a": "0"
+    "q": "Le serpent, c'est : un animal, un légume, une voiture ou un logiciel ?",
+    "c": [
+     "un animal",
+     "un légume",
+     "une voiture",
+     "un logiciel"
+    ],
+    "a": "un animal"
    },
    {
-    "q": "Comment le serpent goûte-t-il l'air autour de lui ? Avec sa ___ ?",
+    "q": "Le serpent se déplace en : rampant, sautant, volant ou pédalant ?",
     "c": [
-     "langue",
-     "queue",
-     "peau",
-     "narine"
+     "rampant",
+     "sautant",
+     "volant",
+     "pédalant"
     ],
-    "a": "langue"
+    "a": "rampant"
    },
    {
     "q": "Comment appelle-t-on le venin injecté par certains serpents lors d'une morsure ? Du ___ ?",
@@ -6596,24 +6698,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel grand mammifère polaire est blanc et vit sur la banquise ? L'ours ___ ?",
+    "q": "L'ours, c'est : un animal, un légume, une voiture ou un logiciel ?",
     "c": [
-     "blanc",
-     "brun",
-     "noir",
-     "gris"
+     "un animal",
+     "un légume",
+     "une voiture",
+     "un logiciel"
     ],
-    "a": "blanc"
+    "a": "un animal"
    },
    {
-    "q": "Que font les ours pendant l'hiver, dans leur tanière ? Ils ___ ?",
+    "q": "L'ours passe souvent l'hiver à : hiberner, bronzer, nager ou skier ?",
     "c": [
-     "hibernent",
-     "migrent",
-     "chantent",
-     "nagent"
+     "hiberner",
+     "bronzer",
+     "nager",
+     "skier"
     ],
-    "a": "hibernent"
+    "a": "hiberner"
    },
    {
     "q": "Quel aliment sucré les ours adorent-ils dérober aux abeilles ? Le ___ ?",
@@ -6673,24 +6775,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Dans quel milieu vivent les requins ? La ___ ?",
+    "q": "Le requin, c'est : un animal, un légume, une voiture ou un logiciel ?",
     "c": [
-     "mer",
-     "montagne",
-     "forêt",
-     "rivière"
+     "un animal",
+     "un légume",
+     "une voiture",
+     "un logiciel"
     ],
-    "a": "mer"
+    "a": "un animal"
    },
    {
-    "q": "Qu'est-ce que les requins ont en grand nombre, en plusieurs rangées, dans la gueule ? Des ___ ?",
+    "q": "Le requin vit dans : la mer, un aquarium de poche, la forêt ou le désert ?",
     "c": [
-     "dents",
-     "poils",
-     "plumes",
-     "pattes"
+     "la mer",
+     "un aquarium de poche",
+     "la forêt",
+     "le désert"
     ],
-    "a": "dents"
+    "a": "la mer"
    },
    {
     "q": "Quel grand requin blanc est le plus célèbre et le plus redouté ? Le grand requin ___ ?",
