@@ -1,7 +1,7 @@
 // =====================================================================
 //  TTCQ — « Tu Te Cotes Combien ? » — banque de thèmes/questions.
-//  353 thèmes, 8 questions progressives par thème (niveaux 1 à 8).
-//  Réponse libre (saisie smartphone) OU QCM selon la question.
+//  343 thèmes, 8 questions progressives par thème (niveaux 1 à 8).
+//  Réponse libre (saisie smartphone) : un mot court ou un nombre.
 // =====================================================================
 
 export const TTCQ_THEMES = [
@@ -13096,86 +13096,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "De quel pays les pâtes sont-elles originaires ?",
+    "q": "De quel pays européen les pâtes sont-elles emblématiques ?",
     "c": [
-     "Chine",
-     "Grèce",
-     "Japon",
-     "Italie"
+     "Italie",
+     "France",
+     "Espagne",
+     "Grèce"
     ],
-    "a": 3
+    "a": "Italie"
    },
    {
-    "q": "Quel type de pâte est long et fin ?",
+    "q": "Quelles longues pâtes fines sont les plus célèbres au monde ? Les ___ ?",
     "c": [
-     "Les penne",
-     "Les fusilli",
-     "Les spaghetti",
-     "Les macaronis"
+     "spaghetti",
+     "ravioli",
+     "lasagnes",
+     "gnocchi"
     ],
-    "a": 2
+    "a": "spaghetti"
    },
    {
-    "q": "Quelle sauce accompagne traditionnellement les spaghetti ?",
+    "q": "Quelle sauce rouge à base de tomate accompagne souvent les pâtes ? La sauce ___ ?",
     "c": [
-     "Sauce carbonara",
-     "Sauce bolognaise",
-     "Sauce Alfredo",
-     "Sauce pesto"
+     "tomate",
+     "blanche",
+     "verte",
+     "brune"
     ],
-    "a": 1
+    "a": "tomate"
    },
    {
-    "q": "Quel ingrédient est à la base de la pâte à pâtes ?",
+    "q": "Comment dit-on qu'une pâte est cuite juste ce qu'il faut, encore ferme ? Al ___ ?",
     "c": [
-     "Farine de blé complet",
-     "Farine de maïs",
-     "Farine de blé tendre",
-     "Semoule de blé dur"
+     "dente",
+     "forno",
+     "pesto",
+     "ragù"
     ],
-    "a": 3
+    "a": "dente"
    },
    {
-    "q": "Comment s'appelle la pâte farcie italienne ?",
+    "q": "Quelles pâtes en forme de nœud papillon portent le nom italien de « papillons » ? Les ___ ?",
     "c": [
-     "Les lasagnes",
-     "Les gnocchis",
-     "Les tortellinis",
-     "Les raviolis"
+     "farfalle",
+     "penne",
+     "fusilli",
+     "rigatoni"
     ],
-    "a": 2
+    "a": "farfalle"
    },
    {
-    "q": "Qu'est-ce que la carbonara ?",
+    "q": "Quel plat de pâtes au four superpose couches de pâte, sauce et béchamel ? Les ___ ?",
     "c": [
-     "Sauce crème et champignons",
-     "Sauce tomate et viande",
-     "Sauce huile d'olive et ail",
-     "Sauce à l'œuf, fromage, lard"
+     "lasagnes",
+     "cannelloni",
+     "raviolis",
+     "tortellini"
     ],
-    "a": 3
+    "a": "lasagnes"
    },
    {
-    "q": "En quelle année les pâtes ont-elles été introduites en Italie ?",
+    "q": "Quelle sauce à base de basilic, pignons et parmesan est ligure ? Le ___ ?",
     "c": [
-     "XVIe siècle",
-     "XIIIe siècle",
-     "Antiquité",
-     "XVIIIe siècle"
+     "pesto",
+     "ragù",
+     "carbonara",
+     "arrabbiata"
     ],
-    "a": 1
+    "a": "pesto"
    },
    {
-    "q": "Quelle forme de pâte est en forme de coquillage ?",
-    "c": [
-     "Les coquillettes",
-     "Les farfalle",
-     "Les conchiglie",
-     "Les rotini"
-    ],
-    "a": 2
+    "q": "Combien de kilos de pâtes, environ, un Italien consomme-t-il par an ?",
+    "a": "23"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cuisine_010",
@@ -13184,86 +13179,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quels sont les quatre ingrédients de base de la bière ?",
+    "q": "Quelle céréale, maltée, est à la base de la bière ? L'___ ?",
     "c": [
-     "Eau, malt, sucre, levure",
-     "Eau, blé, houblon, levure",
-     "Eau, malt, houblon, levure",
-     "Eau, orge, houblon, sucre"
+     "orge",
+     "maïs",
+     "riz",
+     "avoine"
     ],
-    "a": 2
+    "a": "orge"
    },
    {
-    "q": "Quel pays est le plus grand producteur de bière au monde ?",
+    "q": "Quelle plante grimpante donne son amertume à la bière ? Le ___ ?",
     "c": [
-     "Belgique",
-     "Chine",
-     "États-Unis",
-     "Allemagne"
+     "houblon",
+     "lierre",
+     "chanvre",
+     "genêt"
     ],
-    "a": 1
+    "a": "houblon"
    },
    {
-    "q": "Quelle est la différence entre une ale et une lager ?",
+    "q": "Quelle mousse blanche se forme au sommet d'un verre de bière ? La ___ ?",
     "c": [
-     "Amertume",
-     "Taux d'alcool",
-     "Couleur",
-     "Type de fermentation (haute/basse)"
+     "mousse",
+     "crème",
+     "écume",
+     "buée"
     ],
-    "a": 3
+    "a": "mousse"
    },
    {
-    "q": "Quelle bière belge est brassée par des moines trappistes ?",
+    "q": "Quel type de bière est généralement plus foncé, aux arômes de café ? La ___ ?",
     "c": [
-     "Stella Artois",
-     "Jupiler",
-     "Chimay",
-     "Duvel"
+     "brune",
+     "blonde",
+     "blanche",
+     "ambrée"
     ],
-    "a": 2
+    "a": "brune"
    },
    {
-    "q": "Qu'est-ce qu'une bière artisanale ?",
+    "q": "Quelle fête bavaroise de la bière attire des millions de visiteurs à Munich ? L'___ ?",
     "c": [
-     "Bière bio",
-     "Bière locale",
-     "Bière produite par une brasserie indépendante",
-     "Bière non filtrée"
+     "Oktoberfest",
+     "Carnaval",
+     "Bierfest",
+     "Maifest"
     ],
-    "a": 2
+    "a": "Oktoberfest"
    },
    {
-    "q": "Comment s'appelle la mousse de la bière ?",
+    "q": "Quel micro-organisme transforme le sucre en alcool lors de la fermentation ? La ___ ?",
     "c": [
-     "Le collet",
-     "La couronne",
-     "La mousse",
-     "Le chapeau"
+     "levure",
+     "moisissure",
+     "algue",
+     "bactérie"
     ],
-    "a": 2
+    "a": "levure"
    },
    {
-    "q": "Quel pays organise l'Oktoberfest ?",
+    "q": "Quelle célèbre bière brune irlandaise à mousse crémeuse est mondialement connue ?",
     "c": [
-     "Suisse",
-     "Autriche",
-     "République tchèque",
-     "Allemagne"
+     "Guinness",
+     "Heineken",
+     "Corona",
+     "Leffe"
     ],
-    "a": 3
+    "a": "Guinness"
    },
    {
-    "q": "Quelle est la plus ancienne brasserie du monde encore en activité ?",
-    "c": [
-     "Pilsner Urquell (République tchèque)",
-     "Guinness (Irlande)",
-     "Brouwerij (Belgique)",
-     "Weihenstephan (Allemagne)"
-    ],
-    "a": 3
+    "q": "En quelle année, avant J.-C., remontent les plus anciennes traces de brassage de bière en Mésopotamie ? En -___ ?",
+    "a": "4000"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cuisine_011",
@@ -13272,86 +13262,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel est le plat le plus célèbre de la gastronomie française ?",
+    "q": "Quel guide rouge décerne des étoiles aux grands restaurants ? Le guide ___ ?",
     "c": [
-     "La bouillabaisse",
-     "Le bœuf bourguignon",
-     "Le cassoulet",
-     "Le coq au vin"
+     "Michelin",
+     "Gault",
+     "Rouge",
+     "Vert"
     ],
-    "a": 3
+    "a": "Michelin"
    },
    {
-    "q": "Qui a créé la classification des sauces mères ?",
+    "q": "Quel pain long et croustillant est le symbole de la France ? La ___ ?",
     "c": [
-     "Marie-Antoine Carême",
-     "Joël Robuchon",
-     "Paul Bocuse",
-     "Auguste Escoffier"
+     "baguette",
+     "brioche",
+     "fougasse",
+     "miche"
     ],
-    "a": 3
+    "a": "baguette"
    },
    {
-    "q": "Combien de sauces mères existe-t-il dans la cuisine classique ?",
+    "q": "Quels petits mollusques de Bourgogne se mangent au beurre persillé ? Les ___ ?",
     "c": [
-     "3",
-     "6",
-     "5",
-     "4"
+     "escargots",
+     "moules",
+     "huîtres",
+     "praires"
     ],
-    "a": 2
+    "a": "escargots"
    },
    {
-    "q": "Quel chef français est surnommé 'le pape de la gastronomie' ?",
+    "q": "Quel foie d'oie ou de canard engraissé est un mets de fête ? Le ___ gras ?",
     "c": [
-     "Alain Ducasse",
-     "Joël Robuchon",
-     "Paul Bocuse",
-     "Michel Guérard"
+     "foie",
+     "cœur",
+     "gésier",
+     "magret"
     ],
-    "a": 2
+    "a": "foie"
    },
    {
-    "q": "Qu'est-ce que le guide Michelin ?",
+    "q": "Combien de fromages différents la France compterait-elle, selon le mot de De Gaulle ? Plus de ___ ?",
     "c": [
-     "Guide des vins",
-     "Guide des fromages",
-     "Guide gastronomique avec des étoiles",
-     "Guide des hôtels"
+     "365",
+     "100",
+     "50",
+     "1000"
     ],
-    "a": 2
+    "a": "365"
    },
    {
-    "q": "Quelle soupe marseillaise est un plat traditionnel ?",
+    "q": "Quel plat mijoté bourguignon associe bœuf et vin rouge ? Le bœuf ___ ?",
     "c": [
-     "Le velouté",
-     "La soupe à l'oignon",
-     "Le pot-au-feu",
-     "La bouillabaisse"
+     "bourguignon",
+     "wellington",
+     "stroganoff",
+     "carpaccio"
     ],
-    "a": 3
+    "a": "bourguignon"
    },
    {
-    "q": "Quel chef a inventé la cuisine moléculaire ?",
+    "q": "Dans quelle liste de l'UNESCO le repas gastronomique des Français est-il inscrit depuis 2010 ? Le patrimoine de l'___ ?",
     "c": [
-     "Pierre Gagnaire",
-     "Joël Robuchon",
-     "Ferran Adrià",
-     "Hervé This"
+     "UNESCO",
+     "OMS",
+     "OTAN",
+     "OCDE"
     ],
-    "a": 3
+    "a": "UNESCO"
    },
    {
-    "q": "En quelle année la gastronomie française a-t-elle été inscrite à l'UNESCO ?",
-    "c": [
-     "2012",
-     "2005",
-     "2015",
-     "2010"
-    ],
-    "a": 3
+    "q": "Combien de restaurants, environ, ont obtenu 3 étoiles au guide Michelin en France (édition récente) ?",
+    "a": "30"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cuisine_012",
@@ -13360,86 +13345,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle épice est la plus chère du monde ?",
+    "q": "Quelle épice jaune-orange colore le curry et le riz ? Le ___ ?",
     "c": [
-     "Le safran",
-     "La vanille",
-     "Le poivre",
-     "La cardamome"
+     "curcuma",
+     "paprika",
+     "cumin",
+     "safran"
     ],
-    "a": 0
+    "a": "curcuma"
    },
    {
-    "q": "De quelle plante provient le poivre ?",
+    "q": "Quelle épice noire, en grains, se moud dans un moulin à table ? Le ___ ?",
     "c": [
-     "Capsicum",
-     "Vanillier",
-     "Piper nigrum",
-     "Poivrier"
+     "poivre",
+     "sel",
+     "sucre",
+     "clou"
     ],
-    "a": 2
+    "a": "poivre"
    },
    {
-    "q": "Quel pays est le plus grand producteur de vanille ?",
+    "q": "Quelle épice rouge et douce, souvent hongroise, colore les plats ? Le ___ ?",
     "c": [
-     "Madagascar",
-     "Mexique",
-     "Inde",
-     "Indonésie"
+     "paprika",
+     "curcuma",
+     "gingembre",
+     "carvi"
     ],
-    "a": 0
+    "a": "paprika"
    },
    {
-    "q": "Quelle épice donne sa couleur jaune au curry ?",
+    "q": "Quelle épice, la plus chère du monde, provient des pistils du crocus ? Le ___ ?",
     "c": [
-     "Le safran",
-     "Le curry",
-     "Le curcuma",
-     "Le paprika"
+     "safran",
+     "poivre",
+     "vanille",
+     "cannelle"
     ],
-    "a": 2
+    "a": "safran"
    },
    {
-    "q": "Quelles sont les épices du mélange 'quatre épices' ?",
+    "q": "Quelle écorce d'arbre parfumée, roulée en bâton, aromatise desserts et vin chaud ? La ___ ?",
     "c": [
-     "Poivre, girofle, muscade, gingembre",
-     "Cannelle, muscade, girofle, poivre",
-     "Poivre, curcuma, cumin, coriandre",
-     "Poivre, cannelle, clou de girofle, gingembre"
+     "cannelle",
+     "vanille",
+     "muscade",
+     "girofle"
     ],
-    "a": 1
+    "a": "cannelle"
    },
    {
-    "q": "Quelle épice est utilisée dans la cuisine indienne et a des propriétés digestives ?",
+    "q": "Quelle racine piquante est utilisée fraîche ou en poudre en cuisine asiatique ? Le ___ ?",
     "c": [
-     "Le cumin",
-     "La coriandre",
-     "Le fenouil",
-     "Le curcuma"
+     "gingembre",
+     "wasabi",
+     "raifort",
+     "galanga"
     ],
-    "a": 0
+    "a": "gingembre"
    },
    {
-    "q": "Quel explorateur a cherché la route des épices vers l'Inde ?",
+    "q": "Par quelle grande route commerciale antique les épices arrivaient-elles d'Orient ? La route des ___ ?",
     "c": [
-     "Vasco de Gama",
-     "Christophe Colomb",
-     "Magellan",
-     "Cook"
+     "épices",
+     "soies",
+     "sels",
+     "ors"
     ],
-    "a": 0
+    "a": "épices"
    },
    {
-    "q": "Quelle épice est obtenue à partir d'une orchidée ?",
-    "c": [
-     "La vanille",
-     "La cannelle",
-     "La cardamome",
-     "Le safran"
-    ],
-    "a": 0
+    "q": "En euros, combien coûte, environ, un gramme de safran au détail, l'épice la plus chère ?",
+    "a": "30"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cuisine_013",
@@ -13450,84 +13430,85 @@ export const TTCQ_THEMES = [
    {
     "q": "De quel pays les sushis sont-ils originaires ?",
     "c": [
-     "Vietnam",
-     "Corée",
+     "Japon",
      "Chine",
-     "Japon"
+     "Corée",
+     "Thaïlande"
     ],
-    "a": 3
+    "a": "Japon"
    },
    {
-    "q": "Quel ingrédient est essentiel pour faire des sushis ?",
+    "q": "Quelle céréale, vinaigrée, est la base du sushi ? Le ___ ?",
     "c": [
-     "Soja",
-     "Algues",
-     "Riz vinaigré",
-     "Poisson cru"
+     "riz",
+     "blé",
+     "orge",
+     "maïs"
     ],
-    "a": 2
+    "a": "riz"
    },
    {
-    "q": "Qu'est-ce que le nori ?",
+    "q": "Quel aliment cru, souvent du saumon ou du thon, garnit les sushis ? Le ___ cru ?",
     "c": [
-     "Sauce soja",
-     "Poisson cru",
-     "Riz",
-     "Algue séchée utilisée pour les maki"
+     "poisson",
+     "porc",
+     "poulet",
+     "bœuf"
     ],
-    "a": 3
+    "a": "poisson"
    },
    {
-    "q": "Quelle est la différence entre maki et nigiri ?",
+    "q": "Quelle feuille d'algue séchée enroule les makis ? La ___ ?",
     "c": [
-     "Maki est roulé, nigiri est une boule",
-     "Nigiri est roulé, maki est une boule",
-     "Nigiri a des légumes, maki non",
-     "Maki a du poisson, nigiri non"
+     "nori",
+     "wakamé",
+     "kombu",
+     "hijiki"
     ],
-    "a": 0
+    "a": "nori"
    },
    {
-    "q": "Quel poisson est le plus utilisé dans les sushis ?",
+    "q": "Quelle pâte verte très piquante accompagne les sushis ? Le ___ ?",
     "c": [
-     "La dorade",
-     "Le thon",
-     "Le maquereau",
-     "Le saumon"
+     "wasabi",
+     "gingembre",
+     "soja",
+     "miso"
     ],
-    "a": 3
+    "a": "wasabi"
    },
    {
-    "q": "Qu'est-ce que le wasabi ?",
+    "q": "Dans quelle sauce sombre et salée trempe-t-on les sushis ? La sauce ___ ?",
     "c": [
-     "Racine de raifort japonaise",
-     "Piment vert",
-     "Gingembre mariné",
-     "Pâte de soja"
+     "soja",
+     "huître",
+     "poisson",
+     "aigre"
     ],
-    "a": 0
+    "a": "soja"
    },
    {
-    "q": "Comment s'appelle le vinaigre de riz utilisé pour les sushis ?",
+    "q": "Comment appelle-t-on le sushi où le poisson est simplement posé sur une boulette de riz ? Le ___ ?",
     "c": [
-     "Vinaigre de saké",
-     "Vinaigre de riz",
-     "Vinaigre de sushi",
-     "Vinaigre de vin"
+     "nigiri",
+     "maki",
+     "temaki",
+     "sashimi"
     ],
-    "a": 1
+    "a": "nigiri"
    },
    {
-    "q": "En quelle année les sushis sont-ils devenus populaires en Occident ?",
+    "q": "En quel siècle la forme moderne du sushi (nigiri) est-elle apparue à Edo (Tokyo) ? Au ___e siècle ?",
     "c": [
-     "Années 2000",
-     "Années 1990",
-     "Années 1980",
-     "Années 1970"
+     "19",
+     "17",
+     "18",
+     "20"
     ],
-    "a": 2
+    "a": "19"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cuisine_014",
@@ -13536,86 +13517,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel pays est célèbre pour le barbecue coréen ?",
+    "q": "Quel combustible noir est classiquement utilisé pour un barbecue ? Le ___ de bois ?",
     "c": [
-     "Chine",
-     "Corée",
-     "Vietnam",
-     "Japon"
+     "charbon",
+     "gaz",
+     "pétrole",
+     "papier"
     ],
-    "a": 1
+    "a": "charbon"
    },
    {
-    "q": "Quel est le nom du barbecue argentin ?",
+    "q": "Sur quelle grille métallique pose-t-on les aliments au barbecue ? La ___ ?",
     "c": [
-     "L'asado",
-     "Le rodizio",
-     "La parrilla",
-     "Le churrasco"
+     "grille",
+     "poêle",
+     "planche",
+     "plaque"
     ],
-    "a": 0
+    "a": "grille"
    },
    {
-    "q": "Quelle technique de cuisson utilise une fumée aromatique ?",
+    "q": "Quelle viande grillée en forme de cylindre est un classique du barbecue ? La ___ ?",
     "c": [
-     "Le smoking",
-     "La plancha",
-     "Le gril",
-     "Le barbecue"
+     "saucisse",
+     "escalope",
+     "côte",
+     "brochette"
     ],
-    "a": 0
+    "a": "saucisse"
    },
    {
-    "q": "Quel bois est utilisé pour fumer la viande ?",
+    "q": "En quelle saison fait-on surtout des barbecues en extérieur ? L'___ ?",
     "c": [
-     "Bois de peuplier",
-     "Bois de tilleul",
-     "Bois de fruitier (pommier, cerisier)",
-     "Bois de pin"
+     "été",
+     "hiver",
+     "automne",
+     "carême"
     ],
-    "a": 2
+    "a": "été"
    },
    {
-    "q": "Quelle sauce est traditionnelle du barbecue américain ?",
+    "q": "Quelle méthode de cuisson lente et fumée est typique du barbecue américain ? Le ___ ?",
     "c": [
-     "Ketchup",
-     "Mayonnaise",
-     "Moutarde",
-     "Sauce barbecue"
+     "smoking",
+     "grilling",
+     "roasting",
+     "frying"
     ],
-    "a": 3
+    "a": "smoking"
    },
    {
-    "q": "Qu'est-ce qu'un gril ?",
+    "q": "Quelle sauce brune, sucrée et fumée nappe les grillades américaines ? La sauce ___ ?",
     "c": [
-     "Fumoir",
-     "Grille de cuisson au-dessus des braises",
-     "Four",
-     "Plancha"
+     "barbecue",
+     "tartare",
+     "béarnaise",
+     "aigre"
     ],
-    "a": 1
+    "a": "barbecue"
    },
    {
-    "q": "Quel pays a inventé le barbecue moderne ?",
+    "q": "Quel État américain est réputé pour son barbecue de bœuf (brisket) ? Le ___ ?",
     "c": [
-     "Argentine",
-     "États-Unis",
-     "Australie",
-     "Afrique du Sud"
+     "Texas",
+     "Alaska",
+     "Vermont",
+     "Ohio"
     ],
-    "a": 1
+    "a": "Texas"
    },
    {
-    "q": "Quelle viande est la plus cuite au barbecue ?",
-    "c": [
-     "L'agneau",
-     "Le bœuf",
-     "Le porc",
-     "Le poulet"
-    ],
-    "a": 1
+    "q": "À quelle température, en degrés, environ, cuit-on un brisket en barbecue « low and slow » ?",
+    "a": "110"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "tech_001",
@@ -13624,86 +13600,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel système d'exploitation équipe la majorité des smartphones ?",
+    "q": "Sur quel type d'écran tactile navigue-t-on avec un smartphone ? Un écran ___ ?",
     "c": [
-     "iOS",
-     "Android",
-     "HarmonyOS",
-     "Windows Mobile"
+     "tactile",
+     "cathodique",
+     "plasma",
+     "papier"
     ],
-    "a": 1
+    "a": "tactile"
    },
    {
-    "q": "Qui a inventé le premier smartphone ?",
+    "q": "Quelle marque à la pomme croquée fabrique l'iPhone ?",
     "c": [
-     "BlackBerry",
-     "Apple (iPhone)",
-     "Nokia",
-     "IBM (Simon)"
-    ],
-    "a": 3
-   },
-   {
-    "q": "En quelle année le premier iPhone est-il sorti ?",
-    "c": [
-     "2006",
-     "2007",
-     "2005",
-     "2008"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Qu'est-ce qu'une application mobile ?",
-    "c": [
-     "Site web mobile",
-     "Jeu",
-     "Navigateur",
-     "Logiciel pour smartphone"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quelle technologie permet de payer sans contact ?",
-    "c": [
-     "Wi-Fi",
-     "NFC",
-     "Bluetooth",
-     "5G"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quel fabricant coréen domine le marché des smartphones ?",
-    "c": [
-     "Huawei",
-     "LG",
+     "Apple",
      "Samsung",
-     "Xiaomi"
+     "Nokia",
+     "Sony"
     ],
-    "a": 2
+    "a": "Apple"
    },
    {
-    "q": "Qu'est-ce qu'un processeur mobile ?",
+    "q": "Comment appelle-t-on les petits logiciels que l'on installe sur un smartphone ? Des ___ ?",
     "c": [
-     "Puce qui exécute les calculs",
-     "Écran",
-     "Batterie",
-     "Appareil photo"
+     "applis",
+     "pilotes",
+     "cookies",
+     "widgets"
     ],
-    "a": 0
+    "a": "applis"
    },
    {
-    "q": "Combien de smartphones sont vendus chaque année dans le monde ?",
+    "q": "Quel système d'exploitation de Google équipe la majorité des smartphones ?",
     "c": [
-     "Environ 1,5 milliard",
-     "Environ 3 milliards",
-     "Environ 500 millions",
-     "Environ 800 millions"
+     "Android",
+     "iOS",
+     "Windows",
+     "Linux"
     ],
-    "a": 0
+    "a": "Android"
+   },
+   {
+    "q": "Quelle génération de réseau mobile, très rapide, a succédé à la 4G ?",
+    "c": [
+     "5G",
+     "6G",
+     "3G",
+     "2G"
+    ],
+    "a": "5G"
+   },
+   {
+    "q": "Comment appelle-t-on la petite carte qui identifie l'abonné dans le téléphone ? La carte ___ ?",
+    "c": [
+     "SIM",
+     "SD",
+     "PIN",
+     "USB"
+    ],
+    "a": "SIM"
+   },
+   {
+    "q": "Quel dirigeant d'Apple a présenté le premier iPhone en 2007 ? Steve ___ ?",
+    "c": [
+     "Jobs",
+     "Wozniak",
+     "Cook",
+     "Gates"
+    ],
+    "a": "Jobs"
+   },
+   {
+    "q": "En quelle année exacte le premier iPhone a-t-il été commercialisé ?",
+    "a": "2007"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "tech_002",
@@ -13712,86 +13683,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quand Internet a-t-il été créé ?",
+    "q": "Comment appelle-t-on le réseau mondial reliant les ordinateurs ? L'___ ?",
     "c": [
-     "Années 1980",
-     "Années 1960 (ARPANET)",
-     "Années 1990",
-     "Années 1970"
+     "Internet",
+     "Intranet",
+     "Ethernet",
+     "Extranet"
     ],
-    "a": 1
+    "a": "Internet"
    },
    {
-    "q": "Qui a inventé le World Wide Web ?",
+    "q": "Quel symbole sépare l'utilisateur du domaine dans une adresse e-mail ? L'___ (arobase) ?",
     "c": [
-     "Robert Cailliau",
-     "Tim Berners-Lee",
-     "Marc Andreessen",
-     "Vint Cerf"
+     "@",
+     "#",
+     "&",
+     "%"
     ],
-    "a": 1
+    "a": "@"
    },
    {
-    "q": "Que signifie l'acronyme WWW ?",
+    "q": "Comment appelle-t-on une page web que l'on consulte dans un navigateur ? Un ___ ?",
     "c": [
-     "World Wide Web",
-     "World Web Wide",
-     "Web Wide World",
-     "Wide World Web"
+     "site",
+     "câble",
+     "modem",
+     "octet"
     ],
-    "a": 0
+    "a": "site"
    },
    {
-    "q": "Quel protocole est utilisé pour les sites web ?",
+    "q": "Quel moteur de recherche est le plus utilisé au monde ?",
     "c": [
-     "SMTP",
-     "FTP",
-     "HTTP",
-     "TCP/IP"
+     "Google",
+     "Bing",
+     "Yahoo",
+     "Qwant"
     ],
-    "a": 2
+    "a": "Google"
    },
    {
-    "q": "En quelle année le premier site web a-t-il été mis en ligne ?",
+    "q": "Que signifient les trois lettres « www » au début d'une adresse ? World Wide ___ ?",
     "c": [
-     "1991",
-     "1990",
-     "1989",
-     "1993"
+     "Web",
+     "Wire",
+     "Wave",
+     "Work"
     ],
-    "a": 0
+    "a": "Web"
    },
    {
-    "q": "Qu'est-ce qu'un navigateur web ?",
+    "q": "Quel scientifique britannique a inventé le World Wide Web en 1989 ? Tim ___ ?",
     "c": [
-     "Réseau social",
-     "Application",
-     "Logiciel pour consulter des sites web",
-     "Moteur de recherche"
+     "Berners-Lee",
+     "Turing",
+     "Cerf",
+     "Gates"
     ],
-    "a": 2
+    "a": "Berners-Lee"
    },
    {
-    "q": "Combien d'internautes y a-t-il dans le monde ?",
+    "q": "Comment appelle-t-on l'adresse unique d'un site, commençant souvent par http ? L'___ ?",
     "c": [
-     "Environ 4 milliards",
-     "Environ 3 milliards",
-     "Environ 6 milliards",
-     "Environ 5,5 milliards"
+     "URL",
+     "IP",
+     "DNS",
+     "FTP"
     ],
-    "a": 3
+    "a": "URL"
    },
    {
-    "q": "Que signifie le 'S' dans HTTPS ?",
-    "c": [
-     "Safe",
-     "Secure",
-     "Socket",
-     "Server"
-    ],
-    "a": 1
+    "q": "En quelle année Tim Berners-Lee a-t-il inventé le World Wide Web au CERN ?",
+    "a": "1989"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "tech_003",
@@ -13800,86 +13766,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qu'est-ce que l'IA ?",
+    "q": "Que signifie le sigle IA ? Intelligence ___ ?",
     "c": [
-     "Simulation de l'intelligence humaine par des machines",
-     "Robotique",
-     "Intelligence humaine",
-     "Programmation"
+     "artificielle",
+     "avancée",
+     "automatique",
+     "analytique"
     ],
-    "a": 0
+    "a": "artificielle"
    },
    {
-    "q": "Qui a organisé la conférence de Dartmouth en 1956 qui a fondé l'IA ?",
+    "q": "Quel agent conversationnel d'OpenAI a rendu l'IA populaire fin 2022 ?",
     "c": [
-     "John McCarthy",
-     "Marvin Minsky",
-     "Alan Turing",
-     "Herbert Simon"
+     "ChatGPT",
+     "Siri",
+     "Alexa",
+     "Cortana"
     ],
-    "a": 0
+    "a": "ChatGPT"
    },
    {
-    "q": "Qu'est-ce que l'apprentissage automatique (machine learning) ?",
+    "q": "Comment appelle-t-on l'apprentissage d'une IA à partir de données ? Le ___ learning ?",
     "c": [
-     "Réseau de neurones",
-     "Raisonnement symbolique",
-     "Sous-domaine de l'IA qui apprend à partir de données",
-     "Programmation classique"
+     "machine",
+     "deep",
+     "quick",
+     "smart"
     ],
-    "a": 2
+    "a": "machine"
    },
    {
-    "q": "Quel jeu de plateau a été dominé par l'IA Deep Blue en 1997 ?",
+    "q": "Quel jeu de plateau asiatique a été maîtrisé par l'IA AlphaGo en 2016 ? Le ___ ?",
     "c": [
-     "Le go",
-     "Les dames",
-     "Le poker",
-     "Les échecs"
+     "go",
+     "échecs",
+     "dames",
+     "mahjong"
     ],
-    "a": 3
+    "a": "go"
    },
    {
-    "q": "Que teste le test de Turing ?",
+    "q": "Comment appelle-t-on les réseaux informatiques inspirés du cerveau ? Les réseaux de ___ ?",
     "c": [
-     "L'intelligence d'un robot",
-     "La vitesse d'un ordinateur",
-     "La mémoire d'une IA",
-     "La capacité d'une machine à imiter un humain"
+     "neurones",
+     "câbles",
+     "capteurs",
+     "serveurs"
     ],
-    "a": 3
+    "a": "neurones"
    },
    {
-    "q": "Quel réseau social utilise le plus d'IA pour ses recommandations ?",
+    "q": "Quel test évalue si une machine peut se faire passer pour un humain ? Le test de ___ ?",
     "c": [
-     "Twitter",
-     "Instagram",
-     "Facebook",
-     "TikTok"
+     "Turing",
+     "Newton",
+     "Einstein",
+     "Pascal"
     ],
-    "a": 3
+    "a": "Turing"
    },
    {
-    "q": "Qu'est-ce que ChatGPT ?",
+    "q": "Comment appelle-t-on une réponse fausse mais plausible inventée par une IA ? Une ___ ?",
     "c": [
-     "IA conversationnelle générative",
-     "Navigateur",
-     "Moteur de recherche",
-     "Réseau social"
+     "hallucination",
+     "erreur",
+     "panne",
+     "faute"
     ],
-    "a": 0
+    "a": "hallucination"
    },
    {
-    "q": "Qui a créé le terme 'intelligence artificielle' ?",
-    "c": [
-     "Alan Turing",
-     "Norbert Wiener",
-     "John McCarthy",
-     "Marvin Minsky"
-    ],
-    "a": 2
+    "q": "En quelle année le terme « intelligence artificielle » a-t-il été forgé, à la conférence de Dartmouth ?",
+    "a": "1956"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "tech_004",
@@ -13888,86 +13849,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel est le premier jeu vidéo de l'histoire ?",
+    "q": "Sur quel appareil de salon joue-t-on branché à la télé ? Une ___ ?",
+    "c": [
+     "console",
+     "cassette",
+     "radio",
+     "platine"
+    ],
+    "a": "console"
+   },
+   {
+    "q": "Quel plombier moustachu est la mascotte de Nintendo ?",
+    "c": [
+     "Mario",
+     "Sonic",
+     "Link",
+     "Kirby"
+    ],
+    "a": "Mario"
+   },
+   {
+    "q": "Quel jeu de blocs à construire est le plus vendu de l'histoire ?",
+    "c": [
+     "Minecraft",
+     "Tetris",
+     "Fortnite",
+     "Roblox"
+    ],
+    "a": "Minecraft"
+   },
+   {
+    "q": "Quel jeu russe consiste à emboîter des pièces qui tombent ?",
     "c": [
      "Tetris",
-     "Space Invaders",
-     "Pong",
-     "Pac-Man"
+     "Pac-Man",
+     "Snake",
+     "Pong"
     ],
-    "a": 2
+    "a": "Tetris"
    },
    {
-    "q": "En quelle année Pong est-il sorti ?",
-    "c": [
-     "1970",
-     "1975",
-     "1972",
-     "1978"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quelle console Nintendo a révolutionné le jeu vidéo en 1985 ?",
-    "c": [
-     "Nintendo 64",
-     "NES",
-     "Game Boy",
-     "SNES"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quel jeu est le plus vendu de tous les temps ?",
-    "c": [
-     "Wii Sports",
-     "Grand Theft Auto V",
-     "Minecraft",
-     "Tetris"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Qu'est-ce qu'un FPS ?",
-    "c": [
-     "Jeu de sport",
-     "Jeu de tir à la première personne",
-     "Jeu de rôle",
-     "Jeu de stratégie"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quelle société a créé la PlayStation ?",
+    "q": "Quelle entreprise japonaise fabrique la Switch et la Game Boy ?",
     "c": [
      "Nintendo",
      "Sony",
-     "Sega",
-     "Microsoft"
+     "Microsoft",
+     "Sega"
     ],
-    "a": 1
+    "a": "Nintendo"
    },
    {
-    "q": "Quel jeu de Battle Royale est le plus populaire ?",
+    "q": "Quel jeu de battle royale coloré d'Epic Games a explosé en 2018 ?",
     "c": [
      "Fortnite",
-     "Call of Duty Warzone",
      "PUBG",
-     "Apex Legends"
+     "Apex",
+     "Warzone"
     ],
-    "a": 0
+    "a": "Fortnite"
    },
    {
-    "q": "Combien de ventes totales pour la franchise Pokemon ?",
+    "q": "Comment appelle-t-on un joueur professionnel de compétition vidéo ? Un joueur ___ (esport) ?",
     "c": [
-     "Plus de 800 millions",
-     "Plus de 1 milliard",
-     "Plus de 300 millions",
-     "Plus de 500 millions"
+     "pro",
+     "noob",
+     "bot",
+     "fan"
     ],
-    "a": 3
+    "a": "pro"
+   },
+   {
+    "q": "En quelle année est sorti « Pong », l'un des tout premiers jeux vidéo commerciaux ?",
+    "a": "1972"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "tech_005",
