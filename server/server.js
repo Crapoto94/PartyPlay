@@ -189,7 +189,7 @@ app.post('/api/parties', async (req, res) => {
   cfg.creatorIp = clientIp(req) || 'unknown';
   // Email vérifié par Google → fête activée immédiatement, envoi d'un email de bienvenue.
   if (googleEmail) {
-    cfg.emailVerified = true; cfg.verificationToken = null;
+    cfg.emailVerified = true; cfg.verificationToken = null; cfg.authMethod = 'google';
     const proto = req.get('x-forwarded-proto') || req.protocol;
     const host = req.get('x-forwarded-host') || req.get('host');
     const baseUrl = process.env.PUBLIC_URL || `${proto}://${host}`;
@@ -281,7 +281,7 @@ app.get('/api/admin/events', (req, res) => {
       adminPassword: cfg.adminPassword || '',
       contactEmail: cfg.contactEmail || '',
       emailVerified: cfg.emailVerified !== false,
-      verificationMethod: cfg.emailVerified ? (cfg.verificationToken ? 'email' : 'google') : null,
+      verificationMethod: cfg.emailVerified ? (cfg.authMethod || (cfg.verificationToken ? 'email' : 'google')) : null,
       creatorIp: cfg.creatorIp || '',
       playerCount: (cfg.players || []).length,
     };
@@ -317,6 +317,7 @@ app.post('/api/admin/events/:id/force-verify', (req, res) => {
   if (!cfg) return res.status(404).json({ error: 'Événement inconnu.' });
   cfg.emailVerified = true;
   cfg.verificationToken = null;
+  if (!cfg.authMethod) cfg.authMethod = 'email';
   saveConfig(cfg);
   reloadConfig(cfg.id);
   res.json({ ok: true });
@@ -605,48 +606,6 @@ app.post('/api/admin/legal', (req, res) => {
 // =====================================================================
 //  VÉRIFICATION D'EMAIL
 // =====================================================================
-function buildVerifyEmail(cfg, verifyUrl, consoleUrl, borneUrl, planInfo) {
-  const row = (label, value) =>
-    `<tr><td style="padding:6px 12px 6px 0;color:#6b7280;white-space:nowrap;vertical-align:top;font-size:13.5px">${label}</td><td style="padding:6px 0;font-weight:600;color:#1f2430;word-break:break-all;font-size:13.5px">${value}</td></tr>`;
-
-  const paymentSection = (cfg.paymentStatus === 'pending' && planInfo && planInfo.payLink)
-    ? `<div style="background:#fef3c7;border:1px solid #f59e0b;border-radius:10px;padding:14px 16px;margin:20px 0">
-        <p style="margin:0 0 8px;font-weight:600;color:#92400e">💳 Paiement en attente — ${planInfo.label || cfg.plan}</p>
-        <p style="margin:0 0 12px;font-size:13.5px;color:#78350f">Finalisez le règlement pour activer votre formule :</p>
-        <a href="${planInfo.payLink}" style="display:inline-block;background:#f59e0b;color:#fff;padding:11px 24px;border-radius:8px;text-decoration:none;font-weight:700">Payer maintenant</a>
-      </div>` : '';
-
-  return `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:540px;margin:0 auto;color:#1f2430">
-  <div style="background:#3b6ef5;border-radius:12px 12px 0 0;padding:28px 28px 20px;text-align:center">
-    <p style="color:#c7d7ff;font-size:13px;margin:0 0 6px;text-transform:uppercase;letter-spacing:.05em">PartyPlay</p>
-    <h1 style="color:#fff;margin:0;font-size:22px;font-weight:800">🎉 Votre fête est créée !</h1>
-  </div>
-  <div style="background:#fff;border:1px solid #e2e5ea;border-top:none;border-radius:0 0 12px 12px;padding:28px">
-    <p style="margin:0 0 6px">Bonjour,</p>
-    <p style="margin:0 0 20px">La fête <strong>« ${cfg.name} »</strong> a bien été créée. Voici toutes vos informations :</p>
-    <table style="width:100%;border-collapse:collapse;background:#f8f9fb;border-radius:9px;padding:4px 4px 4px 12px;margin-bottom:20px">
-      <tbody>
-        ${row('Identifiant', `<code style="background:#e8ebf0;padding:2px 6px;border-radius:4px;font-size:13px">${cfg.id}</code>`)}
-        ${cfg.adminPassword ? row('Mot de passe console', `<code style="background:#e8ebf0;padding:2px 6px;border-radius:4px;font-size:13px">${cfg.adminPassword}</code>`) : ''}
-        ${row('Formule', planInfo && planInfo.label ? planInfo.label : cfg.plan)}
-        ${row('Console admin', `<a href="${consoleUrl}" style="color:#3b6ef5">${consoleUrl}</a>`)}
-        ${row('Borne joueurs', `<a href="${borneUrl}" style="color:#3b6ef5">${borneUrl}</a>`)}
-      </tbody>
-    </table>
-    ${paymentSection}
-    <p style="margin:0 0 8px;font-weight:600">📧 Confirmez votre email pour activer la fête</p>
-    <p style="margin:0 0 20px;font-size:13.5px;color:#555">Le démarrage est bloqué jusqu'à confirmation :</p>
-    <p style="text-align:center;margin:0 0 20px">
-      <a href="${verifyUrl}" style="display:inline-block;background:#3b6ef5;color:#fff;padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:700;font-size:16px">✅ Confirmer mon email</a>
-    </p>
-    <p style="font-size:12px;color:#9ca3af;margin:0 0 4px">Lien de confirmation :</p>
-    <p style="font-size:12px;margin:0 0 20px"><a href="${verifyUrl}" style="color:#3b6ef5;word-break:break-all">${verifyUrl}</a></p>
-    <hr style="border:none;border-top:1px solid #e2e5ea;margin:0 0 16px">
-    <p style="font-size:12px;color:#9ca3af;margin:0">Si vous n'avez pas créé cette fête, ignorez cet email.</p>
-  </div>
-</div>`;
-}
-
 app.get('/verify/:token', (req, res) => {
   const cfg = findEventByVerificationToken(req.params.token);
   if (!cfg) return res.status(410).send(`<!doctype html><html><head><meta charset="utf-8"><title>Lien invalide</title></head><body style="font-family:system-ui;text-align:center;padding:60px"><h1>🔗 Lien invalide ou déjà utilisé</h1><p><a href="/">Retour à l'accueil</a></p></body></html>`);

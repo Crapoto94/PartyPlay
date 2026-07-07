@@ -97,6 +97,7 @@ export function createEvent({ name, theme = 'retro', adminPassword = '', publicU
     contactEmail: contactEmail || '',
     publicUrl: publicUrl || '',
     emailVerified: !needsVerification,
+    authMethod: 'email',
     verificationToken: needsVerification ? randomBytes(32).toString('hex') : null,
     createdAt: Date.now(),
     partyDate: partyDate || '',
