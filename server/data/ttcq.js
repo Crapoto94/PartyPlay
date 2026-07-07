@@ -524,86 +524,63 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de Le Mexique ?",
+    "q": "Quelle est la capitale du Mexique ?",
     "c": [
-     "Vienne",
-     "Londres",
-     "Paris",
-     "Mexico"
+     "Mexico",
+     "Cancún",
+     "Guadalajara",
+     "Tijuana"
     ],
-    "a": 3
+    "a": "Mexico"
    },
    {
-    "q": "Quel est le plat typique de Le Mexique ?",
-    "c": [
-     "Churro",
-     "Tacos",
-     "Tamale",
-     "Chile relleno"
-    ],
-    "a": 1
+    "q": "Quelle galette de maïs sert de base aux tacos ?",
+    "a": "Tortilla"
    },
    {
-    "q": "Quelle civilisation ancienne a construit Teotihuacán au Mexique ?",
-    "c": [
-     "Les Olmèques",
-     "Les Toltèques",
-     "Les Mayas",
-     "Les Aztèques"
-    ],
-    "a": 3
+    "q": "Quel alcool mexicain est distillé à partir de l'agave ?",
+    "a": "Tequila"
    },
    {
-    "q": "Quel est le plat mexicain à base de tortilla roulée farcie ?",
+    "q": "Quel peuple précolombien a bâti la cité de Tenochtitlan ?",
     "c": [
-     "Le taco",
-     "Le burrito",
-     "L'enchilada",
-     "La quesadilla"
+     "Aztèques",
+     "Incas",
+     "Mayas",
+     "Olmèques"
     ],
-    "a": 2
+    "a": "Aztèques"
    },
    {
-    "q": "Quel peintre mexicain est connu pour ses autoportraits ?",
+    "q": "Quelle fête mexicaine des morts a inspiré le film Coco ? El Día de los ___ ?",
+    "a": "Muertos"
+   },
+   {
+    "q": "Quel piment très fort, séché, est un jalapeño fumé ?",
     "c": [
-     "Diego Rivera",
-     "José Clemente Orozco",
+     "Chipotle",
+     "Habanero",
+     "Poblano",
+     "Serrano"
+    ],
+    "a": "Chipotle"
+   },
+   {
+    "q": "Quelle artiste peintre mexicaine aux sourcils marqués a épousé Diego Rivera ?",
+    "c": [
      "Frida Kahlo",
-     "David Alfaro Siqueiros"
+     "Remedios Varo",
+     "Maria Izquierdo",
+     "Leonora Carrington"
     ],
-    "a": 2
+    "a": "Frida Kahlo"
    },
    {
-    "q": "En quelle année le Mexique a-t-il célébré le bicentenaire de son indépendance ?",
-    "c": [
-     "1990",
-     "2010",
-     "2020",
-     "2000"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quelle boisson alcoolisée mexicaine est fabriquée à partir d'agave ?",
-    "c": [
-     "La raicilla",
-     "Le mezcal",
-     "La tequila",
-     "Le pulque"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quelle est la plus grande pyramide du monde située au Mexique ?",
-    "c": [
-     "La Pyramide de Kukulcán",
-     "La Grande Pyramide de Cholula",
-     "La Pyramide du Soleil",
-     "La Pyramide de la Lune"
-    ],
-    "a": 1
+    "q": "En quelle année exacte les Espagnols de Cortés ont-ils pris Tenochtitlan ?",
+    "a": "1521"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "culture_012",
@@ -612,86 +589,57 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de L'Égypte ?",
-    "c": [
-     "Londres",
-     "Vienne",
-     "Paris",
-     "Le Caire"
-    ],
-    "a": 3
+    "q": "Quelle est la capitale de l'Égypte ?",
+    "a": "Le Caire"
    },
    {
-    "q": "Quel est le plat typique de L'Égypte ?",
-    "c": [
-     "Couscous",
-     "Mouloukhiya",
-     "Falafel",
-     "Kochari"
-    ],
-    "a": 3
+    "q": "Quel long fleuve traverse l'Égypte du sud au nord ?",
+    "a": "Nil"
    },
    {
-    "q": "Quel fleuve traverse l'Égypte ?",
-    "c": [
-     "Le Jourdain",
-     "Le Nil",
-     "L'Euphrate",
-     "Le Tigre"
-    ],
-    "a": 1
+    "q": "Comment nomme-t-on les tombeaux géants en pierre des pharaons ?",
+    "a": "Pyramide"
    },
    {
-    "q": "Quel pharaon a fait construire la plus grande pyramide de Gizeh ?",
+    "q": "Quelle statue à corps de lion et tête humaine garde le plateau de Gizeh ?",
+    "a": "Sphinx"
+   },
+   {
+    "q": "Quelle jeune reine d'Égypte a séduit César puis Marc Antoine ?",
     "c": [
+     "Cléopâtre",
+     "Néfertiti",
+     "Hatchepsout",
+     "Néfertari"
+    ],
+    "a": "Cléopâtre"
+   },
+   {
+    "q": "Quelle écriture égyptienne utilise des dessins et symboles ?",
+    "c": [
+     "Hiéroglyphes",
+     "Cunéiforme",
+     "Démotique",
+     "Alphabet"
+    ],
+    "a": "Hiéroglyphes"
+   },
+   {
+    "q": "Quel jeune pharaon a été retrouvé intact dans son tombeau en 1922 ?",
+    "c": [
+     "Toutânkhamon",
      "Ramsès II",
      "Khéops",
-     "Mykérinos",
-     "Khéphren"
+     "Akhenaton"
     ],
-    "a": 1
+    "a": "Toutânkhamon"
    },
    {
-    "q": "Quelle est la capitale de l'Égypte ?",
-    "c": [
-     "Assouan",
-     "Alexandrie",
-     "Louxor",
-     "Le Caire"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Comment s'appelle l'écriture égyptienne antique ?",
-    "c": [
-     "Le démotique",
-     "Le cunéiforme",
-     "Le linéaire B",
-     "Les hiéroglyphes"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Qui a découvert le tombeau de Toutankhamon en 1922 ?",
-    "c": [
-     "Jean-François Champollion",
-     "Howard Carter",
-     "Gaston Maspero",
-     "Flinders Petrie"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quel dieu égyptien avait une tête de chacal ?",
-    "c": [
-     "Anubis",
-     "Horus",
-     "Osiris",
-     "Thot"
-    ],
-    "a": 0
+    "q": "De combien de blocs de pierre, environ, est faite la pyramide de Khéops ?",
+    "a": "2300000"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "culture_013",
@@ -700,86 +648,51 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de La Grèce ?",
-    "c": [
-     "Athènes",
-     "Paris",
-     "Londres",
-     "Vienne"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quel est le plat typique de La Grèce ?",
-    "c": [
-     "Moussaka",
-     "Souvlaki",
-     "Pita",
-     "Baklava"
-    ],
-    "a": 0
-   },
-   {
     "q": "Quelle est la capitale de la Grèce ?",
-    "c": [
-     "Le Pirée",
-     "Thessalonique",
-     "Héraklion",
-     "Athènes"
-    ],
-    "a": 3
+    "a": "Athenes"
    },
    {
-    "q": "Quel est le dieu suprême de la mythologie grecque ?",
+    "q": "Quel temple antique domine l'Acropole d'Athènes ?",
     "c": [
-     "Zeus",
-     "Poséidon",
-     "Hadès",
-     "Apollon"
+     "Parthénon",
+     "Panthéon",
+     "Colisée",
+     "Érechthéion"
     ],
-    "a": 0
+    "a": "Parthénon"
    },
    {
-    "q": "Quel philosophe grec a été le précepteur d'Alexandre le Grand ?",
+    "q": "Sur quel mont vivaient les dieux de la mythologie grecque ?",
+    "a": "Olympe"
+   },
+   {
+    "q": "Quel héros grec avait pour seul point faible son talon ?",
+    "a": "Achille"
+   },
+   {
+    "q": "Quel fromage blanc grec est fait de lait de brebis, en salade ?",
+    "a": "Feta"
+   },
+   {
+    "q": "Quel philosophe grec fut le maître de Platon ?",
     "c": [
-     "Pythagore",
      "Socrate",
      "Aristote",
-     "Platon"
+     "Pythagore",
+     "Épicure"
     ],
-    "a": 2
+    "a": "Socrate"
    },
    {
-    "q": "En quelle année les premiers Jeux olympiques antiques ont-ils eu lieu ?",
-    "c": [
-     "336 av. J.-C.",
-     "490 av. J.-C.",
-     "1000 av. J.-C.",
-     "776 av. J.-C."
-    ],
-    "a": 3
+    "q": "Dans quelle cité antique se déroulaient les Jeux olympiques originels ?",
+    "a": "Olympie"
    },
    {
-    "q": "Quel site archéologique grec est célèbre pour son oracle ?",
-    "c": [
-     "Olympie",
-     "Delphes",
-     "Épidaure",
-     "Corinthe"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Qui a écrit 'L'Iliade' et 'L'Odyssée' ?",
-    "c": [
-     "Euripide",
-     "Sophocle",
-     "Homère",
-     "Hésiode"
-    ],
-    "a": 2
+    "q": "En quelle année, avant J.-C., eurent lieu les premiers Jeux olympiques antiques ?",
+    "a": "776"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "culture_014",
@@ -788,86 +701,69 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de La Turquie ?",
+    "q": "Quelle est la plus grande ville de Turquie, à cheval sur deux continents ?",
     "c": [
-     "Vienne",
-     "Londres",
-     "Paris",
-     "Ankara"
+     "Istanbul",
+     "Ankara",
+     "Izmir",
+     "Antalya"
     ],
-    "a": 3
+    "a": "Istanbul"
    },
    {
-    "q": "Quel est le plat typique de La Turquie ?",
-    "c": [
-     "Döner",
-     "Kebab",
-     "Baklava",
-     "Lahmacun"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quelle est la capitale de la Turquie ?",
+    "q": "Quelle est la capitale officielle de la Turquie (pas Istanbul) ?",
     "c": [
      "Ankara",
-     "Antalya",
      "Istanbul",
-     "Izmir"
+     "Bursa",
+     "Konya"
     ],
-    "a": 0
+    "a": "Ankara"
    },
    {
-    "q": "Quel détroit sépare l'Europe de l'Asie à Istanbul ?",
-    "c": [
-     "Le Bosphore et les Dardanelles",
-     "Le Bosphore",
-     "Le détroit d'Istanbul",
-     "Les Dardanelles"
-    ],
-    "a": 1
+    "q": "Quel détroit sépare la partie européenne de la partie asiatique d'Istanbul ?",
+    "a": "Bosphore"
    },
    {
-    "q": "Quel est le nom de l'immense palais ottoman à Istanbul ?",
-    "c": [
-     "Sultanahmet",
-     "Topkapi",
-     "Dolmabahçe",
-     "Süleymaniye"
-    ],
-    "a": 1
+    "q": "Quel ex-basilique devenue mosquée est un joyau d'Istanbul ? Sainte-___ ?",
+    "a": "Sophie"
    },
    {
-    "q": "Qui a fondé la République turque en 1923 ?",
+    "q": "Quelle friandise turque gélifiée et sucrée se déguste au thé ? Le loukoum aussi appelé Turkish ___ ?",
     "c": [
-     "Mehmed VI",
-     "Enver Pacha",
-     "Ismet Inönü",
-     "Mustafa Kemal Atatürk"
+     "Delight",
+     "Candy",
+     "Sweet",
+     "Jelly"
     ],
-    "a": 3
+    "a": "Delight"
    },
    {
-    "q": "Quelle célèbre église byzantine transformée en mosquée se trouve à Istanbul ?",
+    "q": "Quel fondateur a proclamé la République turque en 1923 ?",
     "c": [
-     "La Mosquée Süleymaniye",
-     "La Mosquée Bleue",
-     "L'Église Saint-Sauveur-in-Chora",
-     "Sainte-Sophie"
+     "Atatürk",
+     "Erdoğan",
+     "Soliman",
+     "Menderes"
     ],
-    "a": 3
+    "a": "Atatürk"
    },
    {
-    "q": "Quel est le plus grand lac de Turquie ?",
+    "q": "Quelle région de Turquie est célèbre pour ses cheminées de fée et ses montgolfières ?",
     "c": [
-     "Le lac Beyşehir",
-     "Le lac Tuz",
-     "Le lac Eğirdir",
-     "Le lac Van"
+     "Cappadoce",
+     "Anatolie",
+     "Thrace",
+     "Lycie"
     ],
-    "a": 3
+    "a": "Cappadoce"
+   },
+   {
+    "q": "En quelle année Constantinople est-elle tombée aux mains des Ottomans ?",
+    "a": "1453"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "culture_015",
@@ -876,86 +772,63 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de La Suisse ?",
+    "q": "Quelle est la capitale de la Suisse ?",
     "c": [
      "Berne",
-     "Paris",
-     "Vienne",
-     "Londres"
+     "Genève",
+     "Zurich",
+     "Bâle"
     ],
-    "a": 0
+    "a": "Berne"
    },
    {
-    "q": "Quel est le plat typique de La Suisse ?",
-    "c": [
-     "Nusstorte",
-     "Raclette",
-     "Fondue",
-     "Rösti"
-    ],
-    "a": 2
+    "q": "Quelle spécialité suisse consiste à tremper du pain dans du fromage fondu ?",
+    "a": "Fondue"
    },
    {
-    "q": "Combien de langues officielles compte la Suisse ?",
-    "c": [
-     "2",
-     "5",
-     "4",
-     "3"
-    ],
-    "a": 2
+    "q": "Combien la Suisse compte-t-elle de cantons ?",
+    "a": "26"
    },
    {
-    "q": "Quel est le plus haut sommet de Suisse ?",
-    "c": [
-     "Le Cervin",
-     "La Jungfrau",
-     "L'Eiger",
-     "Le mont Rose"
-    ],
-    "a": 3
+    "q": "Quel massif montagneux couvre une grande partie de la Suisse ?",
+    "a": "Alpes"
    },
    {
-    "q": "Quelle organisation internationale a son siège à Genève ?",
+    "q": "Quelle organisation humanitaire fondée à Genève a une croix rouge pour emblème ?",
     "c": [
-     "L'UNESCO",
-     "L'ONU",
-     "La Banque mondiale",
-     "L'OTAN"
+     "Croix-Rouge",
+     "MSF",
+     "Caritas",
+     "Oxfam"
     ],
-    "a": 1
+    "a": "Croix-Rouge"
    },
    {
-    "q": "En quelle année les femmes ont-elles obtenu le droit de vote au niveau fédéral en Suisse ?",
+    "q": "Quel héros légendaire suisse a transpercé une pomme d'une flèche ?",
     "c": [
-     "1959",
-     "1965",
-     "1971",
-     "1981"
+     "Guillaume Tell",
+     "Winkelried",
+     "Davel",
+     "Escher"
     ],
-    "a": 2
+    "a": "Guillaume Tell"
    },
    {
-    "q": "Quel fromage suisse est célèbre pour ses trous ?",
+    "q": "Quel sommet suisse en forme de pyramide est l'un des plus célèbres des Alpes ?",
     "c": [
-     "Le vacherin",
-     "Le raclette",
-     "Le gruyère",
-     "L'emmental"
+     "Cervin",
+     "Mont Blanc",
+     "Eiger",
+     "Jungfrau"
     ],
-    "a": 3
+    "a": "Cervin"
    },
    {
-    "q": "Qui a fondé la Croix-Rouge suisse ?",
-    "c": [
-     "Théodore Maunoir",
-     "Guillaume-Henri Dufour",
-     "Henry Dunant",
-     "Louis Appia"
-    ],
-    "a": 2
+    "q": "Quelle est la longueur, en km, du tunnel ferroviaire du Saint-Gothard, le plus long du monde ?",
+    "a": "57"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "culture_016",
@@ -964,86 +837,57 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de La Belgique ?",
-    "c": [
-     "Bruxelles",
-     "Vienne",
-     "Londres",
-     "Paris"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quel est le plat typique de La Belgique ?",
-    "c": [
-     "Gaufres",
-     "Moules-frites",
-     "Carbonade",
-     "Waterzooi"
-    ],
-    "a": 1
-   },
-   {
     "q": "Quelle est la capitale de la Belgique ?",
     "c": [
      "Bruxelles",
+     "Anvers",
      "Liège",
-     "Gand",
-     "Anvers"
+     "Gand"
     ],
-    "a": 0
+    "a": "Bruxelles"
    },
    {
-    "q": "Combien de communautés linguistiques principales compte la Belgique ?",
-    "c": [
-     "4",
-     "3",
-     "2",
-     "1"
-    ],
-    "a": 1
+    "q": "Quelle petite statue de garçon qui urine est l'emblème de Bruxelles ? Le ___ Pis ?",
+    "a": "Manneken"
    },
    {
-    "q": "Quel plat de moules-frites est associé à la Belgique ?",
-    "c": [
-     "Le stoemp",
-     "Les moules-frites",
-     "Les gaufres",
-     "Le waterzooï"
-    ],
-    "a": 1
+    "q": "Quel aliment belge frit accompagne moules et mayonnaise ?",
+    "a": "Frites"
    },
    {
-    "q": "Quel peintre belge a peint 'La Trahison des images' (Ceci n'est pas une pipe) ?",
-    "c": [
-     "Paul Delvaux",
-     "Pieter Brueghel",
-     "René Magritte",
-     "James Ensor"
-    ],
-    "a": 2
+    "q": "Quelles pâtisseries belges à trous carrés se mangent au petit-déjeuner ?",
+    "a": "Gaufres"
    },
    {
-    "q": "En quelle année la Belgique a-t-elle obtenu son indépendance ?",
+    "q": "Quelles sont les deux principales langues de Belgique ? Le français et le ___ ?",
     "c": [
-     "1848",
-     "1815",
-     "1830",
-     "1867"
+     "néerlandais",
+     "allemand",
+     "flamand",
+     "wallon"
     ],
-    "a": 2
+    "a": "néerlandais"
    },
    {
-    "q": "Quel était le nom du roi des Belges qui a colonisé le Congo ?",
+    "q": "Quel détective à moustaches, créé par Agatha Christie, est belge ?",
     "c": [
-     "Léopold II",
-     "Albert Ier",
-     "Léopold III",
-     "Baudouin"
+     "Poirot",
+     "Marple",
+     "Maigret",
+     "Holmes"
     ],
-    "a": 0
+    "a": "Poirot"
+   },
+   {
+    "q": "Quel reporter à la houppette, héros de bande dessinée, a été créé par Hergé ?",
+    "a": "Tintin"
+   },
+   {
+    "q": "En quelle année la Belgique a-t-elle obtenu son indépendance des Pays-Bas ?",
+    "a": "1830"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "culture_017",
@@ -1052,86 +896,63 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de Les Pays-Bas ?",
-    "c": [
-     "Amsterdam",
-     "Londres",
-     "Vienne",
-     "Paris"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quel est le plat typique de Les Pays-Bas ?",
-    "c": [
-     "Poffertjes",
-     "Drop",
-     "Haring",
-     "Stamppot"
-    ],
-    "a": 3
-   },
-   {
     "q": "Quelle est la capitale des Pays-Bas ?",
     "c": [
-     "La Haye",
      "Amsterdam",
-     "Utrecht",
-     "Rotterdam"
+     "Rotterdam",
+     "La Haye",
+     "Utrecht"
     ],
-    "a": 1
+    "a": "Amsterdam"
    },
    {
-    "q": "Quel est le nom du système de digues et barrages néerlandais ?",
-    "c": [
-     "Le Delta Works",
-     "La Ligne d'eau",
-     "Le polder",
-     "L'Afsluitdijk"
-    ],
-    "a": 0
+    "q": "Quelle fleur colorée est le symbole des Pays-Bas ?",
+    "a": "Tulipe"
    },
    {
-    "q": "Quel peintre néerlandais a coupé son oreille ?",
+    "q": "Quel bâtiment traditionnel néerlandais à ailes servait à moudre le grain ?",
+    "a": "Moulin"
+   },
+   {
+    "q": "Quel moyen de transport à deux roues est roi aux Pays-Bas ?",
+    "a": "Velo"
+   },
+   {
+    "q": "Quel peintre néerlandais à l'oreille coupée a peint Les Tournesols ?",
     "c": [
+     "Van Gogh",
      "Rembrandt",
-     "Vincent van Gogh",
-     "Frans Hals",
-     "Johannes Vermeer"
+     "Vermeer",
+     "Mondrian"
     ],
-    "a": 1
+    "a": "Van Gogh"
    },
    {
-    "q": "Quelle est la plus grande exportation florale des Pays-Bas ?",
+    "q": "Quel fromage rond à croûte rouge tient son nom d'une ville néerlandaise ?",
     "c": [
-     "Les lys",
-     "Les tulipes",
-     "Les jacinthes",
-     "Les roses"
+     "Edam",
+     "Gouda",
+     "Brie",
+     "Cheddar"
     ],
-    "a": 1
+    "a": "Edam"
    },
    {
-    "q": "En quelle année le siècle d'or néerlandais a-t-il culminé ?",
+    "q": "Comment appelle-t-on les digues et polders qui protègent le pays de la mer ?",
     "c": [
-     "XVIe siècle",
-     "XVIIe siècle",
-     "XVIIIe siècle",
-     "XVe siècle"
+     "Polders",
+     "Fjords",
+     "Lagunes",
+     "Estuaires"
     ],
-    "a": 1
+    "a": "Polders"
    },
    {
-    "q": "Quelle est la plus haute tour des Pays-Bas ?",
-    "c": [
-     "La tour Euromast",
-     "La tour Zalmhaven",
-     "La tour Delftse Poort",
-     "La tour Rotterdam"
-    ],
-    "a": 0
+    "q": "Quel pourcentage du territoire néerlandais se situe sous le niveau de la mer ?",
+    "a": "26"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "culture_018",
@@ -1140,86 +961,57 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de La Suède ?",
-    "c": [
-     "Stockholm",
-     "Paris",
-     "Vienne",
-     "Londres"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quel est le plat typique de La Suède ?",
-    "c": [
-     "Kanelbulle",
-     "Gravlax",
-     "Smörgåstårta",
-     "Boulettes"
-    ],
-    "a": 3
-   },
-   {
     "q": "Quelle est la capitale de la Suède ?",
     "c": [
-     "Malmö",
      "Stockholm",
      "Göteborg",
+     "Malmö",
      "Uppsala"
     ],
-    "a": 1
+    "a": "Stockholm"
    },
    {
-    "q": "Quel groupe de musique suédois a gagné l'Eurovision en 1974 ?",
-    "c": [
-     "Ace of Base",
-     "The Cardigans",
-     "ABBA",
-     "Roxette"
-    ],
-    "a": 2
+    "q": "Quelle enseigne suédoise de meubles en kit est mondialement connue ?",
+    "a": "Ikea"
    },
    {
-    "q": "Quel est le nom du prix le plus prestigieux décerné en Suède ?",
-    "c": [
-     "Le prix August",
-     "Le prix Selma Lagerlöf",
-     "Le prix Polar Music",
-     "Le prix Nobel"
-    ],
-    "a": 3
+    "q": "Quel prix mondial, remis à Stockholm, récompense la paix et les sciences ?",
+    "a": "Nobel"
    },
    {
-    "q": "En quelle année la Suède a-t-elle adopté le suffrage universel masculin ?",
-    "c": [
-     "1921",
-     "1898",
-     "1866",
-     "1909"
-    ],
-    "a": 3
+    "q": "Quel groupe pop suédois des années 70 a chanté Waterloo et Dancing Queen ?",
+    "a": "Abba"
    },
    {
-    "q": "Quel explorateur suédois a découvert le passage du Nord-Est ?",
+    "q": "Quelles boulettes de viande suédoises sont servies chez Ikea ?",
     "c": [
-     "Sven Hedin",
-     "Eric Wickberg",
-     "Adolf Erik Nordenskiöld",
-     "Anders Andrée"
+     "Köttbullar",
+     "Falafels",
+     "Kebab",
+     "Boulettes"
     ],
-    "a": 2
+    "a": "Köttbullar"
    },
    {
-    "q": "Quel est le plus grand lac de Suède ?",
+    "q": "Quel peuple de guerriers navigateurs scandinaves a sillonné les mers au Moyen Âge ?",
+    "a": "Vikings"
+   },
+   {
+    "q": "Quelle militante suédoise pour le climat a lancé les grèves scolaires du vendredi ?",
     "c": [
-     "Le lac Hjälmaren",
-     "Le lac Mälaren",
-     "Le lac Vättern",
-     "Le lac Vänern"
+     "Greta Thunberg",
+     "Malala",
+     "Vanessa Nakate",
+     "Luisa Neubauer"
     ],
-    "a": 3
+    "a": "Greta Thunberg"
+   },
+   {
+    "q": "Combien de lettres compte l'alphabet suédois ?",
+    "a": "29"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "culture_019",
@@ -1228,86 +1020,63 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de La Norvège ?",
-    "c": [
-     "Londres",
-     "Paris",
-     "Vienne",
-     "Oslo"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel est le plat typique de La Norvège ?",
-    "c": [
-     "Kjøttkaker",
-     "Fårikål",
-     "Lutefisk",
-     "Vafler"
-    ],
-    "a": 1
-   },
-   {
     "q": "Quelle est la capitale de la Norvège ?",
     "c": [
-     "Trondheim",
+     "Oslo",
      "Bergen",
-     "Stavanger",
-     "Oslo"
+     "Trondheim",
+     "Stavanger"
     ],
-    "a": 3
+    "a": "Oslo"
    },
    {
-    "q": "Quel phénomène naturel est visible en Norvège l'hiver ?",
-    "c": [
-     "Les nuages nacrés",
-     "Les arcs-en-ciel polaires",
-     "Les aurores boréales",
-     "Le soleil de minuit"
-    ],
-    "a": 2
+    "q": "Quels profonds bras de mer entre montagnes découpent la côte norvégienne ?",
+    "a": "Fjords"
    },
    {
-    "q": "Quel explorateur norvégien a atteint le pôle Sud en premier ?",
+    "q": "Quel phénomène lumineux du ciel nocturne peut s'observer en Norvège ? L'aurore ___ ?",
     "c": [
-     "Leif Erikson",
-     "Roald Amundsen",
-     "Thor Heyerdahl",
-     "Fridtjof Nansen"
+     "boréale",
+     "australe",
+     "polaire",
+     "solaire"
     ],
-    "a": 1
+    "a": "boréale"
    },
    {
-    "q": "Quel compositeur norvégien a écrit 'Peer Gynt' ?",
-    "c": [
-     "Carl Nielsen",
-     "Jean Sibelius",
-     "Edvard Grieg",
-     "Johan Svendsen"
-    ],
-    "a": 2
+    "q": "Quel poisson orange gras est un grand produit d'exportation norvégien ?",
+    "a": "Saumon"
    },
    {
-    "q": "En quelle année la Norvège a-t-elle obtenu son indépendance de la Suède ?",
+    "q": "Quel peintre norvégien a réalisé Le Cri ?",
     "c": [
-     "1914",
-     "1814",
-     "1905",
-     "1898"
+     "Munch",
+     "Dalí",
+     "Klimt",
+     "Bacon"
     ],
-    "a": 2
+    "a": "Munch"
    },
    {
-    "q": "Quel fromage norvégien brun est fabriqué à partir de lactosérum ?",
+    "q": "Quel explorateur norvégien a atteint le pôle Sud le premier, en 1911 ?",
     "c": [
-     "Le gamalost",
-     "Le jarlsberg",
-     "Le brunost",
-     "Le nøkkelost"
+     "Amundsen",
+     "Nansen",
+     "Scott",
+     "Heyerdahl"
     ],
-    "a": 2
+    "a": "Amundsen"
+   },
+   {
+    "q": "Comment appelle-t-on le phénomène d'été où le soleil ne se couche pas ? Le soleil de ___ ?",
+    "a": "Minuit"
+   },
+   {
+    "q": "Quelle est la profondeur maximale, en mètres, du Sognefjord, le plus profond de Norvège ?",
+    "a": "1308"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "culture_020",
@@ -1316,86 +1085,63 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de Le Portugal ?",
-    "c": [
-     "Londres",
-     "Paris",
-     "Lisbonne",
-     "Vienne"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quel est le plat typique de Le Portugal ?",
-    "c": [
-     "Bacalhau",
-     "Caldo verde",
-     "Francesinha",
-     "Pastéis"
-    ],
-    "a": 3
-   },
-   {
     "q": "Quelle est la capitale du Portugal ?",
     "c": [
      "Lisbonne",
      "Porto",
-     "Coimbra",
+     "Braga",
      "Faro"
     ],
-    "a": 0
+    "a": "Lisbonne"
    },
    {
-    "q": "Quel explorateur portugais a découvert la route maritime vers l'Inde ?",
-    "c": [
-     "Henri le Navigateur",
-     "Ferdinand Magellan",
-     "Bartolomeu Dias",
-     "Vasco de Gama"
-    ],
-    "a": 3
+    "q": "Quel chant traditionnel portugais mélancolique est classé à l'UNESCO ?",
+    "a": "Fado"
    },
    {
-    "q": "Quelle pâtisserie portugaise est célèbre ?",
-    "c": [
-     "Le queijada",
-     "Le pão de ló",
-     "Le pastel de nata",
-     "Le bolo de arroz"
-    ],
-    "a": 2
+    "q": "Quelle petite tarte à la crème est la pâtisserie phare de Lisbonne ? Pastel de ___ ?",
+    "a": "Nata"
    },
    {
-    "q": "Quel est le plus long pont d'Europe situé à Lisbonne ?",
+    "q": "Quel vin rouge doux et fortifié tient son nom d'une ville portugaise ?",
     "c": [
-     "Le pont 25 de Abril",
-     "Le pont de l'Europe",
-     "Le pont Vasco de Gama",
-     "Le pont Dom Luís I"
-    ],
-    "a": 2
-   },
-   {
-    "q": "En quelle année le tremblement de terre a-t-il détruit Lisbonne ?",
-    "c": [
-     "1755",
-     "1800",
-     "1777",
-     "1720"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quel est le plus grand archipel portugais dans l'Atlantique ?",
-    "c": [
-     "Les Berlengas",
+     "Porto",
      "Madère",
-     "Les Açores",
-     "Les îles Selvagens"
+     "Sherry",
+     "Marsala"
     ],
-    "a": 2
+    "a": "Porto"
+   },
+   {
+    "q": "Quel footballeur portugais surnommé CR7 est une superstar mondiale ?",
+    "c": [
+     "Ronaldo",
+     "Figo",
+     "Eusébio",
+     "Deco"
+    ],
+    "a": "Ronaldo"
+   },
+   {
+    "q": "Quel navigateur portugais a ouvert la route maritime des Indes en 1498 ?",
+    "c": [
+     "Vasco de Gama",
+     "Magellan",
+     "Dias",
+     "Cabral"
+    ],
+    "a": "Vasco de Gama"
+   },
+   {
+    "q": "Quel tremblement de terre a dévasté Lisbonne le 1er novembre 1755 ? On retient l'année : ?",
+    "a": "1755"
+   },
+   {
+    "q": "En quelle année précise le Portugal a-t-il rétrocédé Macao à la Chine ?",
+    "a": "1999"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "culture_021",
