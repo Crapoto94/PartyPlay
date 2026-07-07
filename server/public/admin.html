@@ -203,6 +203,10 @@
               <div class="field" style="max-width:120px"><label>Devise</label><input type="text" id="pCurrency" maxlength="4" placeholder="EUR"></div>
               <div class="field" style="flex:2"><label>PayPal — Client ID du SDK (boutons hébergés, public)</label><input type="text" id="pPaypalClient" placeholder="BAA_…"></div>
             </div>
+            <div class="row" style="margin-top:10px">
+              <div class="field"><label>🔞 Lien SumUp 1€ (validation 18+)</label><input type="text" id="pAdultSumup" placeholder="https://pay.sumup.com/b2c/..."></div>
+              <div class="field"><label>🔞 PayPal Button ID (validation 18+)</label><input type="text" id="pAdultPaypal" placeholder="BCJYT88CQHEX8"></div>
+            </div>
             <div id="pricingEditor"></div>
             <div class="inline mt">
               <button class="btn" onclick="savePricing()">💾 Enregistrer les tarifs</button>
@@ -869,6 +873,8 @@ function renderPricing() {
   document.getElementById('pCoffeeLink').value = PRICING.coffeeLink || '';
   document.getElementById('pCurrency').value = PRICING.currency || 'EUR';
   document.getElementById('pPaypalClient').value = PRICING.paypalClientId || '';
+  document.getElementById('pAdultSumup').value = PRICING.adultPayLink || '';
+  document.getElementById('pAdultPaypal').value = PRICING.adultPaypalButtonId || '';
   const ed = document.getElementById('pricingEditor');
   ed.innerHTML = PLAN_ORDER.filter(k => PRICING.plans[k]).map(k => {
     const p = PRICING.plans[k], lim = p.limits || {};
@@ -921,7 +927,7 @@ async function saveCoffeeLink() {
 }
 
 async function savePricing() {
-  const pricing = { currency: document.getElementById('pCurrency').value.trim()||'EUR', paypalClientId: document.getElementById('pPaypalClient').value.trim(), freeMode: !!PRICING.freeMode, coffeeLink: PRICING.coffeeLink||'', plans: {} };
+  const pricing = { currency: document.getElementById('pCurrency').value.trim()||'EUR', paypalClientId: document.getElementById('pPaypalClient').value.trim(), freeMode: !!PRICING.freeMode, coffeeLink: PRICING.coffeeLink||'', adultPayLink: document.getElementById('pAdultSumup').value.trim(), adultPaypalButtonId: document.getElementById('pAdultPaypal').value.trim(), plans: {} };
   const v = (sel, k) => document.querySelector(`.${sel}[data-plan="${k}"]`);
   PLAN_ORDER.filter(k => PRICING.plans[k]).forEach(k => {
     const themes = [...document.querySelectorAll(`.pp_theme[data-plan="${k}"]:checked`)].map(c => c.value);
