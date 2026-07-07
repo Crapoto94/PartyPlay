@@ -16996,24 +16996,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Que cherche à provoquer une sitcom chez le spectateur ? Le ___ ?",
+    "q": "Une sitcom, c'est : une comédie télévisée, un fromage, une planète ou un légume ?",
     "c": [
-     "rire",
-     "sommeil",
-     "pleur",
-     "silence"
+     "une comédie télévisée",
+     "un fromage",
+     "une planète",
+     "un légume"
     ],
-    "a": "rire"
+    "a": "une comédie télévisée"
    },
    {
-    "q": "Que signifie « sitcom » : comédie de ___ ? (situation comedy)",
+    "q": "Une sitcom cherche surtout à faire : rire, pleurer, dormir ou courir ?",
     "c": [
-     "situation",
-     "salon",
-     "science",
-     "société"
+     "rire",
+     "pleurer",
+     "dormir",
+     "courir"
     ],
-    "a": "situation"
+    "a": "rire"
    },
    {
     "q": "Quelle sitcom américaine culte suit 6 amis dans un café à New York ?",
@@ -17079,24 +17079,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Comment appelle-t-on une tempête tournante en entonnoir qui touche le sol ? Une ___ ?",
+    "q": "Les extrêmes météo, c'est : des phénomènes du climat, des fromages, des planètes ou des jouets ?",
     "c": [
-     "tornade",
-     "brise",
-     "rosée",
-     "éclaircie"
+     "des phénomènes du climat",
+     "des fromages",
+     "des planètes",
+     "des jouets"
     ],
-    "a": "tornade"
+    "a": "des phénomènes du climat"
    },
    {
-    "q": "Quel phénomène électrique frappe le sol pendant un orage ? La ___ ?",
+    "q": "Une tornade est un phénomène : de vent violent, de cuisine, de musique ou de sport ?",
     "c": [
-     "foudre",
-     "pluie",
-     "neige",
-     "brume"
+     "de vent violent",
+     "de cuisine",
+     "de musique",
+     "de sport"
     ],
-    "a": "foudre"
+    "a": "de vent violent"
    },
    {
     "q": "Comment appelle-t-on un violent cyclone tropical de l'Atlantique ? Un ___ ?",
@@ -17162,24 +17162,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Une coïncidence est un hasard qui semble avoir un ___ ? (mais n'en a pas)",
+    "q": "Une coïncidence, c'est : un hasard troublant, un fromage, une planète ou un outil ?",
     "c": [
-     "sens",
-     "prix",
-     "poids",
-     "goût"
+     "un hasard troublant",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "sens"
+    "a": "un hasard troublant"
    },
    {
-    "q": "Quelle explication rationnelle rend compte des coïncidences ? Le ___ ?",
+    "q": "Une coïncidence, c'est le fruit : du hasard, d'une recette, d'un entraînement ou d'un abonnement ?",
     "c": [
-     "hasard",
-     "destin",
-     "complot",
-     "miracle"
+     "du hasard",
+     "d'une recette",
+     "d'un entraînement",
+     "d'un abonnement"
     ],
-    "a": "hasard"
+    "a": "du hasard"
    },
    {
     "q": "Combien de personnes suffisent, dans une pièce, pour avoir 50 % de chances que deux aient le même anniversaire ? Le paradoxe des ___ ?",
@@ -17239,24 +17239,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel chiffre porte malheur dans beaucoup de cultures occidentales ?",
+    "q": "Les superstitions, c'est : des croyances populaires, des fromages, des planètes ou des légumes ?",
     "c": [
-     "13",
-     "7",
-     "3",
-     "9"
+     "des croyances populaires",
+     "des fromages",
+     "des planètes",
+     "des légumes"
     ],
-    "a": "13"
+    "a": "des croyances populaires"
    },
    {
-    "q": "Quel animal noir traversant la route porte malheur, dit-on ? Le ___ noir ?",
+    "q": "Quel chiffre est réputé porter malheur ? Le : 13, 2, 5 ou 8 ?",
     "c": [
-     "chat",
-     "chien",
-     "cheval",
-     "corbeau"
+     "13",
+     "2",
+     "5",
+     "8"
     ],
-    "a": "chat"
+    "a": "13"
    },
    {
     "q": "Sous quel objet passer porterait malheur, selon la superstition ? Une ___ ?",
@@ -17328,24 +17328,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel célèbre livre recense les records du monde ? Le livre ___ des records ?",
+    "q": "Les records insolites, c'est : des exploits étonnants, des fromages, des planètes ou des outils ?",
+    "c": [
+     "des exploits étonnants",
+     "des fromages",
+     "des planètes",
+     "des outils"
+    ],
+    "a": "des exploits étonnants"
+   },
+   {
+    "q": "Le grand livre des records s'appelle le livre : Guinness, Michelin, de la jungle ou de recettes ?",
     "c": [
      "Guinness",
      "Michelin",
-     "Rouge",
-     "Vert"
+     "de la jungle",
+     "de recettes"
     ],
     "a": "Guinness"
-   },
-   {
-    "q": "Quel record cherche-t-on quand on veut être le plus ___ du monde ?",
-    "c": [
-     "grand",
-     "moyen",
-     "banal",
-     "normal"
-    ],
-    "a": "grand"
    },
    {
     "q": "Quelle partie du corps l'homme aux ongles les plus longs n'a-t-il jamais coupée ? Les ___ ?",
@@ -17405,24 +17405,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle zone de l'Atlantique est réputée pour d'étranges disparitions ? Le triangle des ___ ?",
+    "q": "Les mystères, c'est : des choses inexpliquées, des fromages, des planètes ou des sports ?",
     "c": [
-     "Bermudes",
-     "Açores",
-     "Canaries",
-     "Baléares"
+     "des choses inexpliquées",
+     "des fromages",
+     "des planètes",
+     "des sports"
     ],
-    "a": "Bermudes"
+    "a": "des choses inexpliquées"
    },
    {
-    "q": "Quelles immenses lignes tracées au sol, au Pérou, restent mystérieuses ? Les lignes de ___ ?",
+    "q": "Le triangle des Bermudes est réputé pour d'étranges : disparitions, recettes, chansons ou soldes ?",
     "c": [
-     "Nazca",
-     "Cuzco",
-     "Lima",
-     "Ica"
+     "disparitions",
+     "recettes",
+     "chansons",
+     "soldes"
     ],
-    "a": "Nazca"
+    "a": "disparitions"
    },
    {
     "q": "Quel monument préhistorique de pierres dressées, en Angleterre, intrigue toujours ?",
@@ -17488,24 +17488,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Dans quelle fête espagnole se lance-t-on des tomates à Buñol ? La ___ ?",
+    "q": "Les fêtes insolites, c'est : des célébrations originales, des fromages, des planètes ou des outils ?",
     "c": [
-     "Tomatina",
-     "Fallas",
-     "Feria",
-     "Sanfermines"
+     "des célébrations originales",
+     "des fromages",
+     "des planètes",
+     "des outils"
     ],
-    "a": "Tomatina"
+    "a": "des célébrations originales"
    },
    {
-    "q": "Quel légume-projectile est lancé pendant la Tomatina ? La ___ ?",
+    "q": "À la Tomatina, en Espagne, on se lance des : tomates, cailloux, chaussures ou livres ?",
     "c": [
-     "tomate",
-     "patate",
-     "courge",
-     "carotte"
+     "tomates",
+     "cailloux",
+     "chaussures",
+     "livres"
     ],
-    "a": "tomate"
+    "a": "tomates"
    },
    {
     "q": "Dans quelle ville espagnole lâche-t-on des taureaux dans les rues ? À ___ (San Fermín) ?",
@@ -17571,24 +17571,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Que trouve-t-on principalement dans un musée ? Des ___ ?",
+    "q": "Les musées étranges, c'est : des musées originaux, des fromages, des planètes ou des légumes ?",
     "c": [
-     "objets",
-     "voitures",
-     "clients",
-     "élèves"
+     "des musées originaux",
+     "des fromages",
+     "des planètes",
+     "des légumes"
     ],
-    "a": "objets"
+    "a": "des musées originaux"
    },
    {
-    "q": "Quel musée parisien de cire présente des célébrités en statues ? Le musée ___ ?",
+    "q": "Dans un musée, on trouve surtout des : objets exposés, clients affamés, élèves ou nuages ?",
     "c": [
-     "Grévin",
-     "Rodin",
-     "Orsay",
-     "Cluny"
+     "objets exposés",
+     "clients affamés",
+     "élèves",
+     "nuages"
     ],
-    "a": "Grévin"
+    "a": "objets exposés"
    },
    {
     "q": "De quelle matière sont faites les statues du musée Grévin et de Madame Tussauds ? La ___ ?",
@@ -17654,24 +17654,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Dans quel pays lance-t-on des bébés depuis un balcon sur un matelas (tradition religieuse) ? L'___ ?",
+    "q": "Les traditions bizarres, c'est : des coutumes étonnantes, des fromages, des planètes ou des outils ?",
     "c": [
-     "Inde",
-     "France",
-     "Japon",
-     "Canada"
+     "des coutumes étonnantes",
+     "des fromages",
+     "des planètes",
+     "des outils"
     ],
-    "a": "Inde"
+    "a": "des coutumes étonnantes"
    },
    {
-    "q": "Quel fromage sarde interdit contient des ___ vivantes ? (casu marzu)",
+    "q": "Le fromage sarde interdit « casu marzu » contient des : larves vivantes, paillettes, bonbons ou clous ?",
     "c": [
-     "larves",
-     "olives",
-     "herbes",
-     "épices"
+     "larves vivantes",
+     "paillettes",
+     "bonbons",
+     "clous"
     ],
-    "a": "larves"
+    "a": "larves vivantes"
    },
    {
     "q": "En Finlande, quelle discipline sportive fait porter sa compagne sur le dos ? Le porter d'___ ?",
@@ -17737,24 +17737,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Comment appelle-t-on l'esprit d'un mort qui hanterait un lieu ? Un ___ ?",
+    "q": "Les phénomènes paranormaux, c'est : des phénomènes mystérieux, des fromages, des planètes ou des légumes ?",
     "c": [
-     "fantôme",
-     "robot",
-     "clown",
-     "voisin"
+     "des phénomènes mystérieux",
+     "des fromages",
+     "des planètes",
+     "des légumes"
     ],
-    "a": "fantôme"
+    "a": "des phénomènes mystérieux"
    },
    {
-    "q": "Quel pouvoir supposé permettrait de deviner les pensées d'autrui ? La ___ ?",
+    "q": "Un fantôme serait l'esprit d'un : mort, boulanger vivant, robot ou légume ?",
     "c": [
-     "télépathie",
-     "gravité",
-     "photosynthèse",
-     "digestion"
+     "mort",
+     "boulanger vivant",
+     "robot",
+     "légume"
     ],
-    "a": "télépathie"
+    "a": "mort"
    },
    {
     "q": "Quel pouvoir supposé permettrait de déplacer des objets par la pensée ? La ___ ?",
@@ -17820,24 +17820,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Comment appelle-t-on une règle votée que tous doivent respecter ? Une ___ ?",
+    "q": "Les lois, c'est : des règles votées à respecter, des fromages, des planètes ou des danses ?",
     "c": [
-     "loi",
-     "chanson",
-     "recette",
-     "rumeur"
+     "des règles votées à respecter",
+     "des fromages",
+     "des planètes",
+     "des danses"
     ],
-    "a": "loi"
+    "a": "des règles votées à respecter"
    },
    {
-    "q": "Dans quel pays est-il interdit (loi ancienne) de mourir au Parlement, dit-on ? Le ___-Uni ?",
+    "q": "Une loi est votée pour être : respectée par tous, mangée, plantée ou repassée ?",
     "c": [
-     "Royaume",
-     "États",
-     "Pays",
-     "Emirats"
+     "respectée par tous",
+     "mangée",
+     "plantée",
+     "repassée"
     ],
-    "a": "Royaume"
+    "a": "respectée par tous"
    },
    {
     "q": "Quel animal aurait été « élu » maire dans certaines villes américaines pour l'insolite ? Un ___ ?",
@@ -17903,22 +17903,22 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Que signifie « démocratie » : le pouvoir du ___ ?",
+    "q": "La démocratie, c'est : un système politique, un fromage, une planète ou un légume ?",
     "c": [
-     "peuple",
-     "roi",
-     "prêtre",
-     "juge"
+     "un système politique",
+     "un fromage",
+     "une planète",
+     "un légume"
     ],
-    "a": "peuple"
+    "a": "un système politique"
    },
    {
-    "q": "Comment les citoyens choisissent-ils leurs dirigeants en démocratie ? Par le ___ ?",
+    "q": "En démocratie, le peuple choisit ses dirigeants par le : vote, tirage au dé, combat ou concours de danse ?",
     "c": [
      "vote",
-     "hasard",
+     "tirage au dé",
      "combat",
-     "silence"
+     "concours de danse"
     ],
     "a": "vote"
    },
@@ -17986,22 +17986,22 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle couleur symbolise l'écologie et la nature ?",
+    "q": "L'écologie, c'est : la protection de la nature, un fromage, une planète lointaine ou un sport ?",
     "c": [
-     "vert",
-     "rouge",
-     "noir",
-     "gris"
+     "la protection de la nature",
+     "un fromage",
+     "une planète lointaine",
+     "un sport"
     ],
-    "a": "vert"
+    "a": "la protection de la nature"
    },
    {
-    "q": "Quel geste consiste à trier ses déchets pour les réutiliser ? Le ___ ?",
+    "q": "Quel geste écologique consiste à trier ses déchets ? Le : recyclage, gaspillage, jardinage forcé ou repassage ?",
     "c": [
      "recyclage",
      "gaspillage",
-     "brûlage",
-     "enfouissement"
+     "jardinage forcé",
+     "repassage"
     ],
     "a": "recyclage"
    },
@@ -18069,24 +18069,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Avec quel objet paie-t-on couramment ses achats ? L'___ ?",
+    "q": "L'économie, c'est : l'étude de l'argent et des échanges, un fromage, une planète ou une danse ?",
     "c": [
-     "argent",
-     "eau",
-     "air",
-     "sable"
+     "l'étude de l'argent et des échanges",
+     "un fromage",
+     "une planète",
+     "une danse"
     ],
-    "a": "argent"
+    "a": "l'étude de l'argent et des échanges"
    },
    {
-    "q": "Quelle est la monnaie unique de nombreux pays européens ?",
+    "q": "La monnaie de nombreux pays européens est : l'euro, le chocolat, le caillou ou le coquillage ?",
     "c": [
-     "euro",
-     "dollar",
-     "yen",
-     "livre"
+     "l'euro",
+     "le chocolat",
+     "le caillou",
+     "le coquillage"
     ],
-    "a": "euro"
+    "a": "l'euro"
    },
    {
     "q": "Comment appelle-t-on la hausse générale des prix ? L'___ ?",
@@ -18152,24 +18152,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Les droits humains sont les droits de tout être ___ ?",
+    "q": "Les droits humains, c'est : les droits de tout être humain, des fromages, des planètes ou des outils ?",
     "c": [
-     "humain",
-     "vivant",
-     "riche",
-     "adulte"
+     "les droits de tout être humain",
+     "des fromages",
+     "des planètes",
+     "des outils"
     ],
-    "a": "humain"
+    "a": "les droits de tout être humain"
    },
    {
-    "q": "Quel texte de 1789 déclare les droits de l'Homme et du citoyen ? La ___ ?",
+    "q": "Les droits humains protègent : les personnes, les cailloux, les voitures ou les nuages ?",
     "c": [
-     "Déclaration",
-     "Constitution",
-     "Loi",
-     "Charte"
+     "les personnes",
+     "les cailloux",
+     "les voitures",
+     "les nuages"
     ],
-    "a": "Déclaration"
+    "a": "les personnes"
    },
    {
     "q": "Quelle organisation mondiale veille aux droits humains, créée en 1945 ? L'___ (ONU) ?",
@@ -18235,24 +18235,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "La mondialisation relie les pays du ___ entier ?",
+    "q": "La mondialisation, c'est : l'échange entre pays du monde entier, un fromage, une planète ou un sport ?",
     "c": [
-     "monde",
-     "quartier",
-     "village",
-     "jardin"
+     "l'échange entre pays du monde entier",
+     "un fromage",
+     "une planète",
+     "un sport"
     ],
-    "a": "monde"
+    "a": "l'échange entre pays du monde entier"
    },
    {
-    "q": "Quel réseau mondial a accéléré la mondialisation des échanges d'informations ? L'___ ?",
+    "q": "La mondialisation relie surtout : les pays entre eux, les nuages, les volcans ou les étoiles ?",
     "c": [
-     "Internet",
-     "métro",
-     "canal",
-     "sentier"
+     "les pays entre eux",
+     "les nuages",
+     "les volcans",
+     "les étoiles"
     ],
-    "a": "Internet"
+    "a": "les pays entre eux"
    },
    {
     "q": "Comment appelle-t-on une entreprise présente dans de nombreux pays ? Une ___ ?",
@@ -18318,24 +18318,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Comment appelle-t-on une personne qui quitte son pays pour s'installer ailleurs ? Un ___ ?",
+    "q": "Les migrations, c'est : les déplacements de populations, des fromages, des planètes ou des danses ?",
     "c": [
-     "migrant",
-     "touriste",
-     "voisin",
-     "client"
+     "les déplacements de populations",
+     "des fromages",
+     "des planètes",
+     "des danses"
     ],
-    "a": "migrant"
+    "a": "les déplacements de populations"
    },
    {
-    "q": "Comment appelle-t-on quelqu'un qui fuit la guerre ou les persécutions ? Un ___ ?",
+    "q": "Un migrant est une personne qui : change de pays, change de coiffure, change de chaussures ou change de chaîne télé ?",
     "c": [
-     "réfugié",
-     "vacancier",
-     "champion",
-     "artiste"
+     "change de pays",
+     "change de coiffure",
+     "change de chaussures",
+     "change de chaîne télé"
     ],
-    "a": "réfugié"
+    "a": "change de pays"
    },
    {
     "q": "Quel oiseau, comme les humains, migre chaque année vers le sud ? L'___ ?",
@@ -18401,24 +18401,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Une inégalité, c'est quand les gens ne sont pas traités de façon ___ ?",
+    "q": "Les inégalités, c'est : les différences de traitement entre les gens, des fromages, des planètes ou des outils ?",
     "c": [
-     "égale",
-     "rapide",
-     "sonore",
-     "colorée"
+     "les différences de traitement entre les gens",
+     "des fromages",
+     "des planètes",
+     "des outils"
     ],
-    "a": "égale"
+    "a": "les différences de traitement entre les gens"
    },
    {
-    "q": "Quelle inégalité concerne l'écart de salaire entre hommes et femmes ? L'inégalité de ___ ?",
+    "q": "Une inégalité, c'est quand les gens ne sont pas traités de façon : égale, colorée, sonore ou rapide ?",
     "c": [
-     "genre",
-     "taille",
-     "âge",
-     "poids"
+     "égale",
+     "colorée",
+     "sonore",
+     "rapide"
     ],
-    "a": "genre"
+    "a": "égale"
    },
    {
     "q": "Comment appelle-t-on l'écart entre les très riches et les très pauvres ? Les inégalités de ___ ?",
@@ -18484,24 +18484,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "La laïcité sépare l'État et la ___ ?",
+    "q": "La laïcité, c'est : un principe de société, un fromage, une planète ou un sport ?",
     "c": [
-     "religion",
-     "musique",
-     "cuisine",
-     "météo"
+     "un principe de société",
+     "un fromage",
+     "une planète",
+     "un sport"
     ],
-    "a": "religion"
+    "a": "un principe de société"
    },
    {
-    "q": "En France, quelle loi de 1905 fonde la laïcité ? La séparation des Églises et de l'___ ?",
+    "q": "La laïcité sépare l'État et la : religion, cuisine, météo ou musique ?",
     "c": [
-     "État",
-     "école",
-     "armée",
-     "usine"
+     "religion",
+     "cuisine",
+     "météo",
+     "musique"
     ],
-    "a": "État"
+    "a": "religion"
    },
    {
     "q": "La laïcité garantit à chacun la liberté de ___ (croire ou non) ?",
@@ -18567,24 +18567,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle monnaie unique partagent de nombreux pays européens ?",
+    "q": "L'Europe, c'est : un continent, un fromage, une planète ou un logiciel ?",
     "c": [
-     "euro",
-     "dollar",
-     "franc",
-     "livre"
+     "un continent",
+     "un fromage",
+     "une planète",
+     "un logiciel"
     ],
-    "a": "euro"
+    "a": "un continent"
    },
    {
-    "q": "Dans quelle ville belge siègent de nombreuses institutions européennes ?",
+    "q": "Quel pays se trouve en Europe ? La : France, Chine, Australie ou Brésil ?",
     "c": [
-     "Bruxelles",
-     "Paris",
-     "Berlin",
-     "Rome"
+     "France",
+     "Chine",
+     "Australie",
+     "Brésil"
     ],
-    "a": "Bruxelles"
+    "a": "France"
    },
    {
     "q": "Quel massif montagneux sépare la France de l'Italie et de la Suisse ? Les ___ ?",
@@ -18644,24 +18644,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel est le continent le plus vaste et le plus peuplé du monde ?",
+    "q": "L'Asie, c'est : un continent, un fromage, une planète ou un logiciel ?",
     "c": [
-     "Asie",
-     "Afrique",
-     "Europe",
-     "Océanie"
+     "un continent",
+     "un fromage",
+     "une planète",
+     "un logiciel"
     ],
-    "a": "Asie"
+    "a": "un continent"
    },
    {
-    "q": "Quel pays asiatique est le plus peuplé du monde (récemment devant la Chine) ?",
+    "q": "Quel pays se trouve en Asie ? La : Chine, France, Espagne ou Canada ?",
     "c": [
-     "Inde",
-     "Japon",
-     "Vietnam",
-     "Corée"
+     "Chine",
+     "France",
+     "Espagne",
+     "Canada"
     ],
-    "a": "Inde"
+    "a": "Chine"
    },
    {
     "q": "Quelle plus haute montagne du monde se dresse entre le Népal et la Chine ? L'___ ?",
@@ -18721,24 +18721,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel plus grand désert chaud couvre le nord de l'Afrique ? Le ___ ?",
+    "q": "L'Afrique, c'est : un continent, un fromage, une planète ou un logiciel ?",
     "c": [
-     "Sahara",
-     "Gobi",
-     "Kalahari",
-     "Atacama"
+     "un continent",
+     "un fromage",
+     "une planète",
+     "un logiciel"
     ],
-    "a": "Sahara"
+    "a": "un continent"
    },
    {
-    "q": "Quel long fleuve d'Afrique traverse l'Égypte ? Le ___ ?",
+    "q": "Quel désert se trouve en Afrique ? Le : Sahara, ton salon, la Lune ou un aquarium ?",
     "c": [
-     "Nil",
-     "Congo",
-     "Niger",
-     "Zambèze"
+     "Sahara",
+     "ton salon",
+     "la Lune",
+     "un aquarium"
     ],
-    "a": "Nil"
+    "a": "Sahara"
    },
    {
     "q": "Quel grand animal à long cou brun et jaune vit dans la savane africaine ? La ___ ?",
@@ -18804,24 +18804,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle langue, avec le portugais, domine en Amérique latine ?",
+    "q": "L'Amérique latine, c'est : un continent, un fromage, une planète ou un logiciel ?",
     "c": [
-     "espagnol",
-     "anglais",
-     "français",
-     "allemand"
+     "un continent",
+     "un fromage",
+     "une planète",
+     "un logiciel"
     ],
-    "a": "espagnol"
+    "a": "un continent"
    },
    {
-    "q": "Quelle célèbre cité inca perchée se visite au Pérou ? Le Machu ___ ?",
+    "q": "Quelle langue parle-t-on beaucoup en Amérique latine ? L': espagnol, japonais, suédois ou islandais ?",
     "c": [
-     "Picchu",
-     "Pacha",
-     "Pichu",
-     "Pisco"
+     "espagnol",
+     "japonais",
+     "suédois",
+     "islandais"
     ],
-    "a": "Picchu"
+    "a": "espagnol"
    },
    {
     "q": "Quel plus grand fleuve du monde traverse l'Amérique du Sud ? L'___ ?",
@@ -18887,24 +18887,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel plus grand pays d'Océanie est aussi un continent ? L'___ ?",
+    "q": "L'Océanie, c'est : un continent, un fromage, une planète ou un logiciel ?",
     "c": [
-     "Australie",
-     "Fidji",
-     "Samoa",
-     "Tonga"
+     "un continent",
+     "un fromage",
+     "une planète",
+     "un logiciel"
     ],
-    "a": "Australie"
+    "a": "un continent"
    },
    {
-    "q": "Quel animal sauteur à poche est emblématique de l'Australie ? Le ___ ?",
+    "q": "Quel pays est en Océanie ? L': Australie, France, Égypte ou Canada ?",
     "c": [
-     "kangourou",
-     "lama",
-     "renne",
-     "bison"
+     "Australie",
+     "France",
+     "Égypte",
+     "Canada"
     ],
-    "a": "kangourou"
+    "a": "Australie"
    },
    {
     "q": "Quel grand récif corallien borde la côte australienne ? La Grande ___ de corail ?",
@@ -18970,24 +18970,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle ressource souterraine précieuse est abondante au Moyen-Orient ? Le ___ ?",
+    "q": "Le Moyen-Orient, c'est : une région du monde, un fromage, une planète ou un logiciel ?",
     "c": [
-     "pétrole",
-     "charbon",
-     "or",
-     "diamant"
+     "une région du monde",
+     "un fromage",
+     "une planète",
+     "un logiciel"
     ],
-    "a": "pétrole"
+    "a": "une région du monde"
    },
    {
-    "q": "Quel désert de sable couvre une grande partie de la péninsule arabique ? Le désert d'___ ?",
+    "q": "Le Moyen-Orient est célèbre pour son : pétrole, chocolat, ski ou fromage à raclette ?",
     "c": [
-     "Arabie",
-     "Gobi",
-     "Kalahari",
-     "Atacama"
+     "pétrole",
+     "chocolat",
+     "ski",
+     "fromage à raclette"
     ],
-    "a": "Arabie"
+    "a": "pétrole"
    },
    {
     "q": "Quelle ville sainte est vénérée par juifs, chrétiens et musulmans ?",
@@ -19053,24 +19053,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Dans quelle mer chaude se trouvent les îles des Caraïbes ? La mer des ___ ?",
+    "q": "Les Caraïbes, c'est : une région d'îles tropicales, un fromage, une planète ou un outil ?",
     "c": [
-     "Caraïbes",
-     "Baltique",
-     "Noire",
-     "Rouge"
+     "une région d'îles tropicales",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "Caraïbes"
+    "a": "une région d'îles tropicales"
    },
    {
-    "q": "Quel alcool de canne à sucre est typique des Caraïbes ? Le ___ ?",
+    "q": "Les Caraïbes sont réputées pour leurs plages et la mer : chaude, gelée, en chocolat ou en sable mouvant ?",
     "c": [
-     "rhum",
-     "whisky",
-     "vodka",
-     "saké"
+     "chaude",
+     "gelée",
+     "en chocolat",
+     "en sable mouvant"
     ],
-    "a": "rhum"
+    "a": "chaude"
    },
    {
     "q": "Quelle grande île des Caraïbes a La Havane pour capitale ?",
@@ -27532,18 +27532,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Combien d'os possède un squelette humain adulte ?",
-    "a": "206"
+    "q": "Le corps humain, c'est : l'ensemble de notre organisme, un fromage, une planète ou un logiciel ?",
+    "c": [
+     "l'ensemble de notre organisme",
+     "un fromage",
+     "une planète",
+     "un logiciel"
+    ],
+    "a": "l'ensemble de notre organisme"
    },
    {
-    "q": "Quel est le muscle le plus puissant du corps, proportionnellement, dans la mâchoire ? Le ___ ?",
+    "q": "Le squelette humain est fait d': os, chocolat, plastique ou bois ?",
     "c": [
-     "masséter",
-     "biceps",
-     "mollet",
-     "fessier"
+     "os",
+     "chocolat",
+     "plastique",
+     "bois"
     ],
-    "a": "masséter"
+    "a": "os"
    },
    {
     "q": "Quel organe du corps humain est le plus grand ? La ___ ?",
@@ -27603,18 +27609,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Combien de cœurs possède une pieuvre ?",
-    "a": "3"
+    "q": "Les animaux étonnants, c'est : des animaux aux capacités surprenantes, des fromages, des planètes ou des outils ?",
+    "c": [
+     "des animaux aux capacités surprenantes",
+     "des fromages",
+     "des planètes",
+     "des outils"
+    ],
+    "a": "des animaux aux capacités surprenantes"
    },
    {
-    "q": "De quelle couleur est le sang de la pieuvre ?",
+    "q": "La pieuvre possède un nombre surprenant de : cœurs, chapeaux, roues ou parapluies ?",
     "c": [
-     "bleu",
-     "rouge",
-     "vert",
-     "jaune"
+     "cœurs",
+     "chapeaux",
+     "roues",
+     "parapluies"
     ],
-    "a": "bleu"
+    "a": "cœurs"
    },
    {
     "q": "Quel animal terrestre est le plus rapide du monde, à la course ? Le ___ ?",
@@ -27680,24 +27692,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle planète est la plus proche du Soleil ?",
+    "q": "L'espace, c'est : l'univers au-delà de la Terre, un fromage, un légume ou une danse ?",
     "c": [
-     "Mercure",
-     "Vénus",
-     "Mars",
-     "Terre"
+     "l'univers au-delà de la Terre",
+     "un fromage",
+     "un légume",
+     "une danse"
     ],
-    "a": "Mercure"
+    "a": "l'univers au-delà de la Terre"
    },
    {
-    "q": "Quelle planète est surnommée la « planète rouge » ?",
+    "q": "Dans l'espace, on trouve surtout des : planètes et étoiles, boulangeries, piscines ou supermarchés ?",
     "c": [
-     "Mars",
-     "Vénus",
-     "Jupiter",
-     "Saturne"
+     "planètes et étoiles",
+     "boulangeries",
+     "piscines",
+     "supermarchés"
     ],
-    "a": "Mars"
+    "a": "planètes et étoiles"
    },
    {
     "q": "Quelle planète possède de spectaculaires anneaux ?",
@@ -27763,24 +27775,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Le miel peut-il se conserver des milliers d'années sans se périmer ?",
+    "q": "Les gourmandises, c'est : des aliments sucrés et bons, des planètes, des outils ou des voitures ?",
     "c": [
-     "oui",
-     "non",
-     "seulement au froid",
-     "seulement un an"
+     "des aliments sucrés et bons",
+     "des planètes",
+     "des outils",
+     "des voitures"
     ],
-    "a": "oui"
+    "a": "des aliments sucrés et bons"
    },
    {
-    "q": "De quelle plante provient le chocolat ? Le ___ (cacaoyer) ?",
+    "q": "Le miel est fabriqué par les : abeilles, vaches, poules ou poissons ?",
     "c": [
-     "cacao",
-     "café",
-     "canne",
-     "coco"
+     "abeilles",
+     "vaches",
+     "poules",
+     "poissons"
     ],
-    "a": "cacao"
+    "a": "abeilles"
    },
    {
     "q": "La carotte a-t-elle toujours été orange, ou était-elle violette à l'origine ?",
@@ -27846,24 +27858,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel est le plus haut sommet du monde ?",
+    "q": "Les records de la planète, c'est : les extrêmes de la Terre, des fromages, des planètes voisines ou des jouets ?",
     "c": [
-     "Everest",
-     "Mont Blanc",
-     "Kilimandjaro",
-     "K2"
+     "les extrêmes de la Terre",
+     "des fromages",
+     "des planètes voisines",
+     "des jouets"
     ],
-    "a": "Everest"
+    "a": "les extrêmes de la Terre"
    },
    {
-    "q": "Quel est le plus long fleuve du monde (selon la mesure classique) ? Le ___ ?",
+    "q": "Le plus haut sommet du monde est : l'Everest, la tour Eiffel, ton canapé ou un lampadaire ?",
     "c": [
-     "Nil",
-     "Amazone",
-     "Yangtsé",
-     "Mississippi"
+     "l'Everest",
+     "la tour Eiffel",
+     "ton canapé",
+     "un lampadaire"
     ],
-    "a": "Nil"
+    "a": "l'Everest"
    },
    {
     "q": "Quel est le plus grand océan de la planète ? L'océan ___ ?",
