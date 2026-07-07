@@ -10190,24 +10190,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Dans quelle unité mesure-t-on la tension électrique ? Le ___ ?",
+    "q": "L'électricité, c'est : une forme d'énergie, un fromage, une danse ou un fruit ?",
     "c": [
-     "volt",
-     "watt",
-     "gramme",
-     "mètre"
+     "une forme d'énergie",
+     "un fromage",
+     "une danse",
+     "un fruit"
     ],
-    "a": "volt"
+    "a": "une forme d'énergie"
    },
    {
-    "q": "Quel phénomène électrique naturel zèbre le ciel pendant l'orage ? La ___ ?",
+    "q": "L'électricité fait fonctionner : une ampoule, une salade, un nuage ou un caillou ?",
     "c": [
-     "foudre",
-     "pluie",
-     "grêle",
-     "brume"
+     "une ampoule",
+     "une salade",
+     "un nuage",
+     "un caillou"
     ],
-    "a": "foudre"
+    "a": "une ampoule"
    },
    {
     "q": "Quel savant américain a fait voler un cerf-volant sous l'orage ? Benjamin ___ ?",
@@ -10273,24 +10273,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle force fait tomber les objets vers le sol ? La ___ ?",
+    "q": "La gravité, c'est : une force de la nature, un gâteau, une planète ou un outil ?",
     "c": [
-     "gravité",
-     "lumière",
-     "chaleur",
-     "friction"
+     "une force de la nature",
+     "un gâteau",
+     "une planète",
+     "un outil"
     ],
-    "a": "gravité"
+    "a": "une force de la nature"
    },
    {
-    "q": "Quel fruit serait tombé sur la tête de Newton selon la légende ? Une ___ ?",
+    "q": "La gravité fait : tomber les objets vers le sol, voler les vaches, parler les pierres ou chanter l'eau ?",
     "c": [
-     "pomme",
-     "poire",
-     "cerise",
-     "orange"
+     "tomber les objets vers le sol",
+     "voler les vaches",
+     "parler les pierres",
+     "chanter l'eau"
     ],
-    "a": "pomme"
+    "a": "tomber les objets vers le sol"
    },
    {
     "q": "Quel savant anglais a formulé la loi de la gravitation universelle ? Isaac ___ ?",
@@ -10356,24 +10356,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel naturaliste anglais a formulé la théorie de l'évolution ? Charles ___ ?",
+    "q": "La théorie de l'évolution, c'est : une théorie scientifique, un plat, une danse ou un jeu ?",
     "c": [
-     "Darwin",
-     "Newton",
-     "Mendel",
-     "Lamarck"
+     "une théorie scientifique",
+     "un plat",
+     "une danse",
+     "un jeu"
     ],
-    "a": "Darwin"
+    "a": "une théorie scientifique"
    },
    {
-    "q": "Selon Darwin, de quel animal l'homme est-il un lointain cousin ? Le ___ ?",
+    "q": "L'évolution explique comment les êtres vivants : se transforment sur des millions d'années, poussent en une nuit, apparaissent par magie ou tombent du ciel ?",
     "c": [
-     "singe",
-     "chien",
-     "cheval",
-     "loup"
+     "se transforment sur des millions d'années",
+     "poussent en une nuit",
+     "apparaissent par magie",
+     "tombent du ciel"
     ],
-    "a": "singe"
+    "a": "se transforment sur des millions d'années"
    },
    {
     "q": "Comment appelle-t-on la survie des mieux adaptés ? La ___ naturelle ?",
@@ -10439,18 +10439,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle célèbre scientifique franco-polonaise a étudié la radioactivité ? Marie ___ ?",
+    "q": "La radioactivité, c'est : un phénomène physique, un fromage, une danse ou un légume ?",
     "c": [
-     "Curie",
-     "Lavoisier",
-     "Meitner",
-     "Joliot"
+     "un phénomène physique",
+     "un fromage",
+     "une danse",
+     "un légume"
     ],
-    "a": "Curie"
+    "a": "un phénomène physique"
    },
    {
-    "q": "Combien de prix Nobel Marie Curie a-t-elle remportés ?",
-    "a": "2"
+    "q": "La radioactivité est étudiée par des : scientifiques, boulangers, jardiniers ou coiffeurs ?",
+    "c": [
+     "scientifiques",
+     "boulangers",
+     "jardiniers",
+     "coiffeurs"
+    ],
+    "a": "scientifiques"
    },
    {
     "q": "Quel élément radioactif, découvert par Marie Curie, porte le nom de son pays natal ?",
@@ -10516,24 +10522,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "De quelle couleur, par définition, apparaît un trou noir ?",
+    "q": "Un trou noir, c'est : un objet de l'espace, un fromage troué, une danse ou un outil ?",
     "c": [
-     "noir",
-     "blanc",
-     "rouge",
-     "bleu"
+     "un objet de l'espace",
+     "un fromage troué",
+     "une danse",
+     "un outil"
     ],
-    "a": "noir"
+    "a": "un objet de l'espace"
    },
    {
-    "q": "Qu'est-ce qu'un trou noir absorbe et dont rien ne s'échappe, même la ___ ?",
+    "q": "Un trou noir se trouve : dans l'espace, dans un tiroir, dans une chaussette ou dans un frigo ?",
     "c": [
-     "lumière",
-     "chaleur",
-     "gravité",
-     "matière"
+     "dans l'espace",
+     "dans un tiroir",
+     "dans une chaussette",
+     "dans un frigo"
     ],
-    "a": "lumière"
+    "a": "dans l'espace"
    },
    {
     "q": "Quel physicien britannique en fauteuil a théorisé le rayonnement des trous noirs ? Stephen ___ ?",
@@ -10599,24 +10605,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quels êtres vivants pratiquent la photosynthèse ? Les ___ ?",
+    "q": "La photosynthèse, c'est : un phénomène de la nature, un dessert, une planète ou une appli ?",
     "c": [
-     "plantes",
-     "animaux",
-     "champignons",
-     "virus"
+     "un phénomène de la nature",
+     "un dessert",
+     "une planète",
+     "une appli"
     ],
-    "a": "plantes"
+    "a": "un phénomène de la nature"
    },
    {
-    "q": "Quel astre fournit l'énergie nécessaire à la photosynthèse ? Le ___ ?",
+    "q": "La photosynthèse est utilisée par les : plantes, voitures, cailloux ou télévisions ?",
     "c": [
-     "Soleil",
-     "Lune",
-     "Mars",
-     "Vénus"
+     "plantes",
+     "voitures",
+     "cailloux",
+     "télévisions"
     ],
-    "a": "Soleil"
+    "a": "plantes"
    },
    {
     "q": "Quel gaz les plantes rejettent-elles grâce à la photosynthèse ? L'___ ?",
@@ -10682,24 +10688,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel physicien génial à la coiffure ébouriffée a créé la relativité ? Albert ___ ?",
+    "q": "La relativité, c'est : une théorie de la physique, un fromage, une danse ou un fruit ?",
     "c": [
-     "Einstein",
-     "Newton",
-     "Bohr",
-     "Planck"
+     "une théorie de la physique",
+     "un fromage",
+     "une danse",
+     "un fruit"
     ],
-    "a": "Einstein"
+    "a": "une théorie de la physique"
    },
    {
-    "q": "Quelle célèbre équation d'Einstein relie énergie et masse ? E = m___ ? (c au carré)",
+    "q": "La théorie de la relativité a été imaginée par : Einstein, un boulanger, un plombier ou un facteur ?",
     "c": [
-     "c²",
-     "g²",
-     "v²",
-     "t²"
+     "Einstein",
+     "un boulanger",
+     "un plombier",
+     "un facteur"
     ],
-    "a": "c²"
+    "a": "Einstein"
    },
    {
     "q": "Que représente le « c » dans la formule E=mc² ? La vitesse de la ___ ?",
@@ -10765,24 +10771,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle forme géométrique célèbre a la molécule d'ADN ? La double ___ ?",
+    "q": "L'ADN, c'est : la molécule du vivant, un fromage, une planète ou un outil ?",
     "c": [
-     "hélice",
-     "spirale",
-     "boucle",
-     "vague"
+     "la molécule du vivant",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "hélice"
+    "a": "la molécule du vivant"
    },
    {
-    "q": "Que porte l'ADN, transmis des parents aux enfants ? Les ___ (informations) ?",
+    "q": "L'ADN est présent dans : nos cellules, nos chaussures, nos voitures ou nos téléphones ?",
     "c": [
-     "gènes",
-     "cellules",
-     "organes",
-     "muscles"
+     "nos cellules",
+     "nos chaussures",
+     "nos voitures",
+     "nos téléphones"
     ],
-    "a": "gènes"
+    "a": "nos cellules"
    },
    {
     "q": "Dans quelle partie de la cellule l'ADN est-il rangé ? Le ___ ?",
@@ -10848,24 +10854,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle matière brûlante et liquide sort d'un volcan en éruption ? La ___ ?",
+    "q": "Un volcan, c'est : une montagne qui crache de la lave, un fromage, un légume ou un appareil ?",
     "c": [
-     "lave",
-     "boue",
-     "neige",
-     "sève"
+     "une montagne qui crache de la lave",
+     "un fromage",
+     "un légume",
+     "un appareil"
     ],
-    "a": "lave"
+    "a": "une montagne qui crache de la lave"
    },
    {
-    "q": "Comment appelle-t-on le trou au sommet d'un volcan ? Le ___ ?",
+    "q": "Un volcan crache de la : lave, confiture, neige ou limonade ?",
     "c": [
-     "cratère",
-     "tunnel",
-     "puits",
-     "gouffre"
+     "lave",
+     "confiture",
+     "neige",
+     "limonade"
     ],
-    "a": "cratère"
+    "a": "lave"
    },
    {
     "q": "Quelle poussière volcanique retombe du ciel après une éruption ? Les ___ ?",
@@ -10931,24 +10937,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "La mécanique quantique décrit le monde de l'infiniment ___ ?",
+    "q": "La mécanique quantique, c'est : une branche de la physique, un plat, une danse ou un jeu ?",
+    "c": [
+     "une branche de la physique",
+     "un plat",
+     "une danse",
+     "un jeu"
+    ],
+    "a": "une branche de la physique"
+   },
+   {
+    "q": "La mécanique quantique étudie l'infiniment : petit, grand, sucré ou bruyant ?",
     "c": [
      "petit",
      "grand",
-     "chaud",
-     "vieux"
+     "sucré",
+     "bruyant"
     ],
     "a": "petit"
-   },
-   {
-    "q": "Quelle particule de lumière est étudiée en physique quantique ? Le ___ ?",
-    "c": [
-     "photon",
-     "neutron",
-     "boson",
-     "gluon"
-    ],
-    "a": "photon"
    },
    {
     "q": "Quel célèbre chat de pensée est à la fois mort et vivant ? Le chat de ___ ?",
@@ -11014,18 +11020,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel astre est au centre du système solaire ? Le ___ ?",
+    "q": "Le système solaire, c'est : un ensemble de planètes, un fromage, une recette ou un outil ?",
     "c": [
-     "Soleil",
-     "Terre",
-     "Lune",
-     "Jupiter"
+     "un ensemble de planètes",
+     "un fromage",
+     "une recette",
+     "un outil"
     ],
-    "a": "Soleil"
+    "a": "un ensemble de planètes"
    },
    {
-    "q": "Combien de planètes compte le système solaire depuis 2006 ?",
-    "a": "8"
+    "q": "Au centre du système solaire, il y a : le Soleil, la Terre, la Lune ou une pizza ?",
+    "c": [
+     "le Soleil",
+     "la Terre",
+     "la Lune",
+     "une pizza"
+    ],
+    "a": "le Soleil"
    },
    {
     "q": "Quelle est la planète rouge, voisine de la Terre ?",
@@ -11091,18 +11103,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel métal courant est attiré par un aimant ? Le ___ ?",
+    "q": "Un aimant, c'est : un objet qui attire le métal, un fromage, un fruit ou une danse ?",
     "c": [
-     "fer",
-     "bois",
-     "verre",
-     "plastique"
+     "un objet qui attire le métal",
+     "un fromage",
+     "un fruit",
+     "une danse"
     ],
-    "a": "fer"
+    "a": "un objet qui attire le métal"
    },
    {
-    "q": "Combien de pôles possède un aimant ?",
-    "a": "2"
+    "q": "Un aimant attire surtout : le fer, le bois, l'eau ou le papier ?",
+    "c": [
+     "le fer",
+     "le bois",
+     "l'eau",
+     "le papier"
+    ],
+    "a": "le fer"
    },
    {
     "q": "Quels sont les deux pôles d'un aimant : le nord et le ___ ?",
@@ -11168,24 +11186,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle grandeur, liée au chaud et au froid, la thermodynamique étudie-t-elle ? La ___ ?",
+    "q": "La thermodynamique, c'est : l'étude de la chaleur et de l'énergie, un plat, une planète ou une appli ?",
     "c": [
-     "chaleur",
-     "lumière",
-     "masse",
-     "vitesse"
+     "l'étude de la chaleur et de l'énergie",
+     "un plat",
+     "une planète",
+     "une appli"
     ],
-    "a": "chaleur"
+    "a": "l'étude de la chaleur et de l'énergie"
    },
    {
-    "q": "Dans quelle unité mesure-t-on couramment la température en France ? Le degré ___ ?",
+    "q": "La thermodynamique s'intéresse surtout à la : chaleur, couleur des yeux, musique ou mode ?",
     "c": [
-     "Celsius",
-     "Fahrenheit",
-     "Newton",
-     "Pascal"
+     "chaleur",
+     "couleur des yeux",
+     "musique",
+     "mode"
     ],
-    "a": "Celsius"
+    "a": "chaleur"
    },
    {
     "q": "À quelle température, en °C, l'eau gèle-t-elle ?",
@@ -11239,24 +11257,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "De quoi tous les objets et êtres vivants sont-ils faits ? D'___ ?",
+    "q": "Un atome, c'est : le plus petit composant de la matière, un fromage, une danse ou un outil ?",
     "c": [
-     "atomes",
-     "cellules",
-     "molécules",
-     "pixels"
+     "le plus petit composant de la matière",
+     "un fromage",
+     "une danse",
+     "un outil"
     ],
-    "a": "atomes"
+    "a": "le plus petit composant de la matière"
    },
    {
-    "q": "Comment appelle-t-on le centre d'un atome ? Le ___ ?",
+    "q": "Tout ce qui nous entoure est fait d': atomes, guimauve, nuages ou musique ?",
     "c": [
-     "noyau",
-     "cœur",
-     "point",
-     "pôle"
+     "atomes",
+     "guimauve",
+     "nuages",
+     "musique"
     ],
-    "a": "noyau"
+    "a": "atomes"
    },
    {
     "q": "Quelle particule chargée négativement tourne autour du noyau ? L'___ ?",
@@ -11322,24 +11340,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Un virus est-il plus petit ou plus grand qu'une bactérie ?",
+    "q": "Un virus, c'est : un microbe minuscule, un fromage, un légume ou un meuble ?",
     "c": [
-     "plus petit",
-     "plus grand",
-     "identique",
-     "égal"
+     "un microbe minuscule",
+     "un fromage",
+     "un légume",
+     "un meuble"
     ],
-    "a": "plus petit"
+    "a": "un microbe minuscule"
    },
    {
-    "q": "Quel virus a provoqué la pandémie mondiale de 2020 ? La ___ (Covid) ?",
+    "q": "Un virus peut provoquer une : maladie, coupe de cheveux, marée ou éclipse ?",
     "c": [
-     "Covid",
-     "grippe",
-     "peste",
-     "rage"
+     "maladie",
+     "coupe de cheveux",
+     "marée",
+     "éclipse"
     ],
-    "a": "Covid"
+    "a": "maladie"
    },
    {
     "q": "Comment appelle-t-on une injection qui protège contre un virus ? Un ___ ?",
@@ -11405,17 +11423,23 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Un nombre premier n'est divisible que par 1 et par ___ ?",
+    "q": "Un nombre premier, c'est : un nombre spécial en maths, un fromage, une danse ou une planète ?",
     "c": [
-     "lui-même",
-     "zéro",
-     "deux",
-     "dix"
+     "un nombre spécial en maths",
+     "un fromage",
+     "une danse",
+     "une planète"
     ],
-    "a": "lui-même"
+    "a": "un nombre spécial en maths"
    },
    {
-    "q": "Quel est le plus petit nombre premier ?",
+    "q": "Le plus petit nombre premier est : 2, 100, 1000 ou un million ?",
+    "c": [
+     "2",
+     "100",
+     "1000",
+     "un million"
+    ],
     "a": "2"
    },
    {
@@ -11470,24 +11494,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Que fait-on subir au noyau d'un atome lors de la fission ? On le ___ (casse) ?",
+    "q": "La fission nucléaire, c'est : une réaction de physique, un plat, une danse ou un jeu ?",
     "c": [
-     "casse",
-     "colle",
-     "chauffe",
-     "peint"
+     "une réaction de physique",
+     "un plat",
+     "une danse",
+     "un jeu"
     ],
-    "a": "casse"
+    "a": "une réaction de physique"
    },
    {
-    "q": "Quel type de centrale produit de l'électricité grâce à la fission ? Une centrale ___ ?",
+    "q": "La fission nucléaire consiste à : casser des noyaux d'atomes, casser des œufs, casser des noix ou casser des cailloux ?",
     "c": [
-     "nucléaire",
-     "solaire",
-     "éolienne",
-     "à charbon"
+     "casser des noyaux d'atomes",
+     "casser des œufs",
+     "casser des noix",
+     "casser des cailloux"
     ],
-    "a": "nucléaire"
+    "a": "casser des noyaux d'atomes"
    },
    {
     "q": "Quel élément lourd est le combustible classique de la fission ? L'___ ?",
@@ -11553,24 +11577,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel cristal transparent et dur est le plus précieux ? Le ___ ?",
+    "q": "Un cristal, c'est : un solide aux formes régulières, un fromage, une danse ou un outil ?",
     "c": [
-     "diamant",
-     "charbon",
-     "verre",
-     "sel"
+     "un solide aux formes régulières",
+     "un fromage",
+     "une danse",
+     "un outil"
     ],
-    "a": "diamant"
+    "a": "un solide aux formes régulières"
    },
    {
-    "q": "De quoi le diamant est-il fait, comme le charbon ? De ___ ?",
+    "q": "Un diamant est un : cristal, animal, légume ou nuage ?",
     "c": [
-     "carbone",
-     "silicium",
-     "fer",
-     "or"
+     "cristal",
+     "animal",
+     "légume",
+     "nuage"
     ],
-    "a": "carbone"
+    "a": "cristal"
    },
    {
     "q": "Quel cristal blanc, comestible, sale nos plats ? Le ___ ?",
@@ -11636,24 +11660,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Avec quel outil à poils applique-t-on la peinture sur la toile ? Un ___ ?",
+    "q": "La peinture, c'est : un art, un fromage, une planète ou un sport ?",
+    "c": [
+     "un art",
+     "un fromage",
+     "une planète",
+     "un sport"
+    ],
+    "a": "un art"
+   },
+   {
+    "q": "Pour peindre, on utilise un : pinceau, marteau, tournevis ou aspirateur ?",
     "c": [
      "pinceau",
      "marteau",
-     "ciseau",
-     "crayon"
+     "tournevis",
+     "aspirateur"
     ],
     "a": "pinceau"
-   },
-   {
-    "q": "Quel tableau de Léonard de Vinci, au sourire mystérieux, est le plus célèbre ? La ___ ?",
-    "c": [
-     "Joconde",
-     "Cène",
-     "Vénus",
-     "Ronde"
-    ],
-    "a": "Joconde"
    },
    {
     "q": "Dans quel musée parisien la Joconde est-elle exposée ? Le ___ ?",
@@ -11725,24 +11749,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Dans quelle matière blanche et noble sculpte-t-on souvent des statues ? Le ___ ?",
+    "q": "La sculpture, c'est : un art, un plat, une danse ou un logiciel ?",
     "c": [
-     "marbre",
-     "carton",
-     "tissu",
-     "verre"
+     "un art",
+     "un plat",
+     "une danse",
+     "un logiciel"
     ],
-    "a": "marbre"
+    "a": "un art"
    },
    {
-    "q": "Quelle célèbre statue nue de David a été sculptée par Michel-Ange ? Le ___ ?",
+    "q": "Une sculpture peut être faite en : marbre, fumée, eau liquide ou lumière ?",
     "c": [
-     "David",
-     "Moïse",
-     "Apollon",
-     "Hercule"
+     "marbre",
+     "fumée",
+     "eau liquide",
+     "lumière"
     ],
-    "a": "David"
+    "a": "marbre"
    },
    {
     "q": "Quel sculpteur français a créé « Le Penseur » ? Auguste ___ ?",
@@ -11808,24 +11832,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Comment appelle-t-on les lignes qui composent un poème ? Des ___ ?",
+    "q": "La poésie, c'est : un art des mots, un fromage, un sport ou un outil ?",
     "c": [
-     "vers",
-     "notes",
-     "cases",
-     "pages"
+     "un art des mots",
+     "un fromage",
+     "un sport",
+     "un outil"
     ],
-    "a": "vers"
+    "a": "un art des mots"
    },
    {
-    "q": "Comment appelle-t-on la répétition de sons à la fin des vers ? La ___ ?",
+    "q": "Un poème est fait de : mots, cailloux, légumes ou vis ?",
     "c": [
-     "rime",
-     "note",
-     "clé",
-     "voix"
+     "mots",
+     "cailloux",
+     "légumes",
+     "vis"
     ],
-    "a": "rime"
+    "a": "mots"
    },
    {
     "q": "Quel poème court japonais compte trois vers et 17 syllabes ? Le ___ ?",
@@ -11891,24 +11915,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Avec quel appareil prend-on des photos ? Un appareil ___ ?",
+    "q": "La photographie, c'est : un art de l'image, un dessert, une danse ou un fruit ?",
     "c": [
-     "photo",
-     "radio",
-     "vidéo",
-     "audio"
+     "un art de l'image",
+     "un dessert",
+     "une danse",
+     "un fruit"
     ],
-    "a": "photo"
+    "a": "un art de l'image"
    },
    {
-    "q": "Comment appelle-t-on la partie de l'appareil qui laisse entrer la lumière ? L'___ ?",
+    "q": "Pour faire une photo, on utilise un : appareil photo, marteau, arrosoir ou grille-pain ?",
     "c": [
-     "objectif",
-     "écran",
-     "bouton",
-     "flash"
+     "appareil photo",
+     "marteau",
+     "arrosoir",
+     "grille-pain"
     ],
-    "a": "objectif"
+    "a": "appareil photo"
    },
    {
     "q": "Quel dispositif éclaire une scène sombre lors d'une photo ? Le ___ ?",
@@ -11974,24 +11998,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Sur quoi les acteurs jouent-ils au théâtre ? La ___ ?",
+    "q": "Le théâtre, c'est : un art du spectacle, un fromage, une planète ou un outil ?",
     "c": [
-     "scène",
-     "toile",
-     "piste",
-     "arène"
+     "un art du spectacle",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "scène"
+    "a": "un art du spectacle"
    },
    {
-    "q": "Comment appelle-t-on le texte qu'un acteur doit apprendre ? Son ___ ?",
+    "q": "Au théâtre, des : comédiens jouent une pièce, cuisiniers font une soupe, pilotes conduisent ou plombiers réparent ?",
     "c": [
-     "rôle",
-     "chant",
-     "pas",
-     "trait"
+     "comédiens jouent une pièce",
+     "cuisiniers font une soupe",
+     "pilotes conduisent",
+     "plombiers réparent"
     ],
-    "a": "rôle"
+    "a": "comédiens jouent une pièce"
    },
    {
     "q": "Quel grand auteur de théâtre français a écrit « Le Malade imaginaire » ?",
@@ -12057,24 +12081,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel professionnel conçoit les plans des bâtiments ? L'___ ?",
+    "q": "L'architecture, c'est : l'art de concevoir des bâtiments, un plat, une danse ou un jeu ?",
     "c": [
-     "architecte",
-     "maçon",
-     "peintre",
-     "notaire"
+     "l'art de concevoir des bâtiments",
+     "un plat",
+     "une danse",
+     "un jeu"
     ],
-    "a": "architecte"
+    "a": "l'art de concevoir des bâtiments"
    },
    {
-    "q": "Quel style médiéval présente de hautes voûtes et vitraux, comme Notre-Dame ? Le ___ ?",
+    "q": "Un architecte dessine des : bâtiments, gâteaux, chansons ou coiffures ?",
     "c": [
-     "gothique",
-     "roman",
-     "baroque",
-     "moderne"
+     "bâtiments",
+     "gâteaux",
+     "chansons",
+     "coiffures"
     ],
-    "a": "gothique"
+    "a": "bâtiments"
    },
    {
     "q": "Quelle célèbre tour de fer domine Paris ? La tour ___ ?",
@@ -12140,24 +12164,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Comment appelle-t-on chaque petite image d'une BD ? Une ___ ?",
+    "q": "La bande dessinée, c'est : un art qui raconte en dessins, un fromage, un sport ou un légume ?",
     "c": [
-     "case",
-     "page",
-     "ligne",
-     "boîte"
+     "un art qui raconte en dessins",
+     "un fromage",
+     "un sport",
+     "un légume"
     ],
-    "a": "case"
+    "a": "un art qui raconte en dessins"
    },
    {
-    "q": "Dans quoi sont écrites les paroles des personnages de BD ? Une ___ ?",
+    "q": "Dans une BD, les personnages parlent dans des : bulles, casseroles, valises ou chaussettes ?",
     "c": [
-     "bulle",
-     "flèche",
-     "étoile",
-     "note"
+     "bulles",
+     "casseroles",
+     "valises",
+     "chaussettes"
     ],
-    "a": "bulle"
+    "a": "bulles"
    },
    {
     "q": "Quel reporter belge à la houppette, créé par Hergé, voyage avec son chien ?",
@@ -12223,24 +12247,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "La calligraphie est l'art de la belle ___ ?",
+    "q": "La calligraphie, c'est : l'art de la belle écriture, un plat, une danse ou un outil ?",
     "c": [
-     "écriture",
-     "peinture",
-     "musique",
-     "danse"
+     "l'art de la belle écriture",
+     "un plat",
+     "une danse",
+     "un outil"
     ],
-    "a": "écriture"
+    "a": "l'art de la belle écriture"
    },
    {
-    "q": "Avec quel outil traditionnel, trempé dans l'encre, calligraphie-t-on ? Une ___ ?",
+    "q": "La calligraphie, c'est écrire de façon : très belle, très rapide, invisible ou en criant ?",
     "c": [
-     "plume",
-     "brosse",
-     "craie",
-     "gomme"
+     "très belle",
+     "très rapide",
+     "invisible",
+     "en criant"
     ],
-    "a": "plume"
+    "a": "très belle"
    },
    {
     "q": "Quel liquide noir sert à écrire en calligraphie ? L'___ ?",
@@ -12312,24 +12336,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Sur quoi danse-t-on généralement ? La ___ ?",
+    "q": "La danse, c'est : un art du mouvement, un fromage, une planète ou un logiciel ?",
     "c": [
-     "musique",
-     "peinture",
-     "sculpture",
-     "photo"
+     "un art du mouvement",
+     "un fromage",
+     "une planète",
+     "un logiciel"
     ],
-    "a": "musique"
+    "a": "un art du mouvement"
    },
    {
-    "q": "Quelle danse classique se pratique sur les pointes en tutu ? Le ___ ?",
+    "q": "Pour danser, on bouge son : corps, réfrigérateur, portail ou parapluie ?",
     "c": [
-     "ballet",
-     "hip-hop",
-     "tango",
-     "flamenco"
+     "corps",
+     "réfrigérateur",
+     "portail",
+     "parapluie"
     ],
-    "a": "ballet"
+    "a": "corps"
    },
    {
     "q": "Quelles chaussures à bout rigide portent les danseuses classiques ? Des ___ ?",
@@ -12401,24 +12425,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "À l'opéra, les artistes racontent l'histoire en ___ (plutôt qu'en parlant) ?",
+    "q": "L'opéra, c'est : un spectacle chanté, un plat, un sport ou un outil ?",
     "c": [
-     "chantant",
-     "dansant",
-     "peignant",
-     "sifflant"
+     "un spectacle chanté",
+     "un plat",
+     "un sport",
+     "un outil"
     ],
-    "a": "chantant"
+    "a": "un spectacle chanté"
    },
    {
-    "q": "Quelle est la voix féminine la plus aiguë à l'opéra ? La ___ ?",
+    "q": "À l'opéra, les artistes surtout : chantent, dorment, cuisinent ou bricolent ?",
     "c": [
-     "soprano",
-     "basse",
-     "ténor",
-     "alto"
+     "chantent",
+     "dorment",
+     "cuisinent",
+     "bricolent"
     ],
-    "a": "soprano"
+    "a": "chantent"
    },
    {
     "q": "Quelle est la voix masculine la plus haute à l'opéra ? Le ___ ?",
@@ -12490,24 +12514,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Que manquait-il aux films de cinéma muet ? Le ___ ?",
+    "q": "Le cinéma muet, c'est : un type de films anciens, un fromage, une danse ou un fruit ?",
     "c": [
-     "son",
-     "couleur",
-     "écran",
-     "public"
+     "un type de films anciens",
+     "un fromage",
+     "une danse",
+     "un fruit"
     ],
-    "a": "son"
+    "a": "un type de films anciens"
    },
    {
-    "q": "Quel acteur à moustache et canne, « Charlot », est la star du muet ? Charlie ___ ?",
+    "q": "Dans le cinéma muet, les acteurs : ne parlaient pas à l'écran, criaient sans arrêt, chantaient l'opéra ou aboyaient ?",
     "c": [
-     "Chaplin",
-     "Keaton",
-     "Laurel",
-     "Lloyd"
+     "ne parlaient pas à l'écran",
+     "criaient sans arrêt",
+     "chantaient l'opéra",
+     "aboyaient"
     ],
-    "a": "Chaplin"
+    "a": "ne parlaient pas à l'écran"
    },
    {
     "q": "De quelle couleur générale étaient les films muets ? En noir et ___ ?",
@@ -12573,24 +12597,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle matière modelée puis cuite sert à faire des poteries ? La ___ ?",
+    "q": "La céramique, c'est : un art de la terre cuite, un plat cuisiné, une danse ou un jeu vidéo ?",
     "c": [
-     "argile",
-     "laine",
-     "cire",
-     "paille"
+     "un art de la terre cuite",
+     "un plat cuisiné",
+     "une danse",
+     "un jeu vidéo"
     ],
-    "a": "argile"
+    "a": "un art de la terre cuite"
    },
    {
-    "q": "Sur quel outil rotatif le potier façonne-t-il ses pots ? Le tour de ___ ?",
+    "q": "La céramique est faite à partir d': argile, chocolat, papier ou nuages ?",
     "c": [
-     "potier",
-     "force",
-     "France",
-     "magie"
+     "argile",
+     "chocolat",
+     "papier",
+     "nuages"
     ],
-    "a": "potier"
+    "a": "argile"
    },
    {
     "q": "Dans quel four très chaud cuit-on la céramique ? Un ___ ?",
@@ -12656,24 +12680,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Avec quoi assemble-t-on une mosaïque ? De petits ___ ?",
+    "q": "La mosaïque, c'est : un art fait de petits morceaux, un fromage, un sport ou un outil ?",
     "c": [
-     "carreaux",
-     "clous",
-     "fils",
-     "grains"
+     "un art fait de petits morceaux",
+     "un fromage",
+     "un sport",
+     "un outil"
     ],
-    "a": "carreaux"
+    "a": "un art fait de petits morceaux"
    },
    {
-    "q": "Comment appelle-t-on chaque petit morceau coloré d'une mosaïque ? Une ___ ?",
+    "q": "Une mosaïque est composée de nombreux petits : morceaux colorés, spaghettis, cailloux vivants ou nuages ?",
     "c": [
-     "tesselle",
-     "brique",
-     "perle",
-     "bille"
+     "morceaux colorés",
+     "spaghettis",
+     "cailloux vivants",
+     "nuages"
     ],
-    "a": "tesselle"
+    "a": "morceaux colorés"
    },
    {
     "q": "Quelle civilisation antique excellait dans les mosaïques de sol ? Les ___ ?",
@@ -12745,24 +12769,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Où le street art s'expose-t-il, par définition ? Dans la ___ ?",
+    "q": "Le street art, c'est : un art de la rue, un plat, une planète ou un logiciel ?",
     "c": [
-     "rue",
-     "galerie",
-     "maison",
-     "église"
+     "un art de la rue",
+     "un plat",
+     "une planète",
+     "un logiciel"
     ],
-    "a": "rue"
+    "a": "un art de la rue"
    },
    {
-    "q": "Avec quelle bombe colorée les graffeurs peignent-ils les murs ? La bombe de ___ ?",
+    "q": "Le street art se fait souvent sur les : murs, assiettes, nuages ou glaçons ?",
     "c": [
-     "peinture",
-     "gaz",
-     "crème",
-     "mousse"
+     "murs",
+     "assiettes",
+     "nuages",
+     "glaçons"
     ],
-    "a": "peinture"
+    "a": "murs"
    },
    {
     "q": "Quel artiste britannique anonyme est la star mondiale du street art ?",
@@ -12834,24 +12858,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "De quel pays la pizza est-elle originaire ?",
+    "q": "La pizza, c'est : un plat, une planète, un outil ou une danse ?",
     "c": [
-     "Italie",
-     "France",
-     "Grèce",
-     "Espagne"
+     "un plat",
+     "une planète",
+     "un outil",
+     "une danse"
     ],
-    "a": "Italie"
+    "a": "un plat"
    },
    {
-    "q": "Quelle sauce rouge nappe la base d'une pizza classique ? La sauce ___ ?",
+    "q": "La pizza vient : d'Italie, du pôle Nord, de la Lune ou du fond des mers ?",
     "c": [
-     "tomate",
-     "blanche",
-     "soja",
-     "piment"
+     "d'Italie",
+     "du pôle Nord",
+     "de la Lune",
+     "du fond des mers"
     ],
-    "a": "tomate"
+    "a": "d'Italie"
    },
    {
     "q": "Quel fromage fondant recouvre traditionnellement la pizza ? La ___ ?",
@@ -12917,24 +12941,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "De quelle fève le chocolat est-il fabriqué ? La fève de ___ ?",
+    "q": "Le chocolat, c'est : un aliment, une planète, un outil ou une danse ?",
     "c": [
-     "cacao",
-     "café",
-     "vanille",
-     "soja"
+     "un aliment",
+     "une planète",
+     "un outil",
+     "une danse"
     ],
-    "a": "cacao"
+    "a": "un aliment"
    },
    {
-    "q": "De quelle couleur est le chocolat « noir » ?",
+    "q": "Le chocolat est fait à partir de : cacao, cailloux, plastique ou sable ?",
     "c": [
-     "noir",
-     "blanc",
-     "rouge",
-     "vert"
+     "cacao",
+     "cailloux",
+     "plastique",
+     "sable"
     ],
-    "a": "noir"
+    "a": "cacao"
    },
    {
     "q": "Quel chocolat, sans cacao solide, est très clair et sucré ? Le chocolat ___ ?",
@@ -13000,24 +13024,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "À partir de quel liquide fabrique-t-on le fromage ? Le ___ ?",
+    "q": "Le fromage, c'est : un aliment, une planète, un logiciel ou un sport ?",
     "c": [
-     "lait",
-     "vin",
-     "jus",
-     "sirop"
+     "un aliment",
+     "une planète",
+     "un logiciel",
+     "un sport"
     ],
-    "a": "lait"
+    "a": "un aliment"
    },
    {
-    "q": "Quel pays est mondialement réputé pour ses centaines de fromages ? La ___ ?",
+    "q": "Le fromage est fabriqué à partir de : lait, essence, ciment ou peinture ?",
     "c": [
-     "France",
-     "Suède",
-     "Japon",
-     "Brésil"
+     "lait",
+     "essence",
+     "ciment",
+     "peinture"
     ],
-    "a": "France"
+    "a": "lait"
    },
    {
     "q": "Quel fromage à trous vient de Suisse ? L'___ ?",
@@ -13083,24 +13107,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "À partir de quel fruit fabrique-t-on le vin ? Le ___ ?",
+    "q": "Le vin, c'est : une boisson, un fromage, une planète ou un outil ?",
     "c": [
-     "raisin",
-     "pomme",
-     "prune",
-     "cerise"
+     "une boisson",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "raisin"
+    "a": "une boisson"
    },
    {
-    "q": "Quelles sont les deux couleurs principales de vin : rouge et ___ ?",
+    "q": "Le vin est fait à partir de : raisin, cailloux, plastique ou sable ?",
     "c": [
-     "blanc",
-     "vert",
-     "noir",
-     "bleu"
+     "raisin",
+     "cailloux",
+     "plastique",
+     "sable"
     ],
-    "a": "blanc"
+    "a": "raisin"
    },
    {
     "q": "Quel vin pétillant de fête vient d'une région française éponyme ? Le ___ ?",
@@ -13166,24 +13190,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel ingrédient blanc sucré est essentiel en pâtisserie ? Le ___ ?",
+    "q": "La pâtisserie, c'est : l'art des gâteaux, un sport, une planète ou un logiciel ?",
     "c": [
-     "sucre",
-     "sel",
-     "poivre",
-     "vinaigre"
+     "l'art des gâteaux",
+     "un sport",
+     "une planète",
+     "un logiciel"
     ],
-    "a": "sucre"
+    "a": "l'art des gâteaux"
    },
    {
-    "q": "Quelle viennoiserie française en forme de croissant est mondialement connue ? Le ___ ?",
+    "q": "En pâtisserie, on prépare surtout des : gâteaux, pneus, chaussures ou meubles ?",
     "c": [
-     "croissant",
-     "bagel",
-     "muffin",
-     "donut"
+     "gâteaux",
+     "pneus",
+     "chaussures",
+     "meubles"
     ],
-    "a": "croissant"
+    "a": "gâteaux"
    },
    {
     "q": "Quel petit gâteau rond et coloré, à la coque craquante, est un délice parisien ? Le ___ ?",
@@ -13249,24 +13273,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle farine sert principalement à faire le pain ? La farine de ___ ?",
+    "q": "Le pain, c'est : un aliment, une planète, un outil ou une danse ?",
     "c": [
-     "blé",
-     "riz",
-     "maïs",
-     "soja"
+     "un aliment",
+     "une planète",
+     "un outil",
+     "une danse"
     ],
-    "a": "blé"
+    "a": "un aliment"
    },
    {
-    "q": "Quel long pain français est un symbole national ? La ___ ?",
+    "q": "Le pain est fait surtout à partir de : farine, sable, plastique ou métal ?",
     "c": [
-     "baguette",
-     "brioche",
-     "fougasse",
-     "miche"
+     "farine",
+     "sable",
+     "plastique",
+     "métal"
     ],
-    "a": "baguette"
+    "a": "farine"
    },
    {
     "q": "Quel ingrédient vivant fait lever la pâte à pain ? La ___ ?",
@@ -13332,24 +13356,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Avec quels ustensiles mange-t-on souvent en Asie ? Des ___ ?",
+    "q": "La cuisine asiatique, c'est : un type de cuisine, une planète, un sport ou un logiciel ?",
     "c": [
-     "baguettes",
-     "fourchettes",
-     "cuillères",
-     "couteaux"
+     "un type de cuisine",
+     "une planète",
+     "un sport",
+     "un logiciel"
     ],
-    "a": "baguettes"
+    "a": "un type de cuisine"
    },
    {
-    "q": "Quelle céréale blanche est la base de la cuisine asiatique ? Le ___ ?",
+    "q": "En Asie, on mange souvent avec des : baguettes, fourchettes géantes, pelles ou pinces à linge ?",
     "c": [
-     "riz",
-     "blé",
-     "orge",
-     "seigle"
+     "baguettes",
+     "fourchettes géantes",
+     "pelles",
+     "pinces à linge"
     ],
-    "a": "riz"
+    "a": "baguettes"
    },
    {
     "q": "Quelle bouchée japonaise de riz et poisson cru est mondialement connue ? Le ___ ?",
@@ -13415,24 +13439,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "De quelle couleur est un café noir classique ?",
+    "q": "Le café, c'est : une boisson, une planète, un outil ou une danse ?",
     "c": [
-     "noir",
-     "blanc",
-     "rouge",
-     "vert"
+     "une boisson",
+     "une planète",
+     "un outil",
+     "une danse"
     ],
-    "a": "noir"
+    "a": "une boisson"
    },
    {
-    "q": "De quel grain torréfié fait-on le café ? Le grain de ___ ?",
+    "q": "Le café est une boisson plutôt : qui réveille, qui endort profondément, sucrée comme un bonbon ou glacée en bloc ?",
     "c": [
-     "café",
-     "cacao",
-     "blé",
-     "poivre"
+     "qui réveille",
+     "qui endort profondément",
+     "sucrée comme un bonbon",
+     "glacée en bloc"
     ],
-    "a": "café"
+    "a": "qui réveille"
    },
    {
     "q": "Quel café italien court et serré est très fort ? L'___ ?",
@@ -13498,24 +13522,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "De quel pays européen les pâtes sont-elles emblématiques ?",
+    "q": "Les pâtes, c'est : un aliment, une planète, un outil ou un sport ?",
     "c": [
-     "Italie",
-     "France",
-     "Espagne",
-     "Grèce"
+     "un aliment",
+     "une planète",
+     "un outil",
+     "un sport"
     ],
-    "a": "Italie"
+    "a": "un aliment"
    },
    {
-    "q": "Quelles longues pâtes fines sont les plus célèbres au monde ? Les ___ ?",
+    "q": "Les pâtes sont un plat emblématique : d'Italie, du pôle Sud, de la Lune ou des grottes ?",
     "c": [
-     "spaghetti",
-     "ravioli",
-     "lasagnes",
-     "gnocchi"
+     "d'Italie",
+     "du pôle Sud",
+     "de la Lune",
+     "des grottes"
     ],
-    "a": "spaghetti"
+    "a": "d'Italie"
    },
    {
     "q": "Quelle sauce rouge à base de tomate accompagne souvent les pâtes ? La sauce ___ ?",
@@ -13581,24 +13605,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle céréale, maltée, est à la base de la bière ? L'___ ?",
+    "q": "La bière, c'est : une boisson, un matériau de construction, le nom d'une forêt ou un appareil de musculation ?",
     "c": [
-     "orge",
-     "maïs",
-     "riz",
-     "avoine"
+     "une boisson",
+     "un matériau de construction",
+     "le nom d'une forêt",
+     "un appareil de musculation"
     ],
-    "a": "orge"
+    "a": "une boisson"
    },
    {
-    "q": "Quelle plante grimpante donne son amertume à la bière ? Le ___ ?",
+    "q": "La bière est fabriquée à base d': orge, de sucre d'orge, de sirop d'orgeat ou d'ordre ?",
     "c": [
-     "houblon",
-     "lierre",
-     "chanvre",
-     "genêt"
+     "orge",
+     "sucre d'orge",
+     "sirop d'orgeat",
+     "ordre"
     ],
-    "a": "houblon"
+    "a": "orge"
    },
    {
     "q": "Quelle mousse blanche se forme au sommet d'un verre de bière ? La ___ ?",
@@ -13664,24 +13688,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel guide rouge décerne des étoiles aux grands restaurants ? Le guide ___ ?",
+    "q": "La gastronomie française, c'est : l'art de la bonne cuisine, une planète, un sport ou un logiciel ?",
     "c": [
-     "Michelin",
-     "Gault",
-     "Rouge",
-     "Vert"
+     "l'art de la bonne cuisine",
+     "une planète",
+     "un sport",
+     "un logiciel"
     ],
-    "a": "Michelin"
+    "a": "l'art de la bonne cuisine"
    },
    {
-    "q": "Quel pain long et croustillant est le symbole de la France ? La ___ ?",
+    "q": "La France est célèbre pour ses nombreux : fromages, cailloux, nuages ou glaçons ?",
     "c": [
-     "baguette",
-     "brioche",
-     "fougasse",
-     "miche"
+     "fromages",
+     "cailloux",
+     "nuages",
+     "glaçons"
     ],
-    "a": "baguette"
+    "a": "fromages"
    },
    {
     "q": "Quels petits mollusques de Bourgogne se mangent au beurre persillé ? Les ___ ?",
@@ -13747,24 +13771,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle épice jaune-orange colore le curry et le riz ? Le ___ ?",
+    "q": "Les épices, c'est : des ingrédients qui parfument les plats, des planètes, des outils ou des meubles ?",
     "c": [
-     "curcuma",
-     "paprika",
-     "cumin",
-     "safran"
+     "des ingrédients qui parfument les plats",
+     "des planètes",
+     "des outils",
+     "des meubles"
     ],
-    "a": "curcuma"
+    "a": "des ingrédients qui parfument les plats"
    },
    {
-    "q": "Quelle épice noire, en grains, se moud dans un moulin à table ? Le ___ ?",
+    "q": "Le poivre et le sel sont des : épices/condiments, animaux, véhicules ou vêtements ?",
     "c": [
-     "poivre",
-     "sel",
-     "sucre",
-     "clou"
+     "épices/condiments",
+     "animaux",
+     "véhicules",
+     "vêtements"
     ],
-    "a": "poivre"
+    "a": "épices/condiments"
    },
    {
     "q": "Quelle épice rouge et douce, souvent hongroise, colore les plats ? Le ___ ?",
@@ -13830,24 +13854,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "De quel pays les sushis sont-ils originaires ?",
+    "q": "Les sushis, c'est : un plat, une planète, un outil ou une danse ?",
     "c": [
-     "Japon",
-     "Chine",
-     "Corée",
-     "Thaïlande"
+     "un plat",
+     "une planète",
+     "un outil",
+     "une danse"
     ],
-    "a": "Japon"
+    "a": "un plat"
    },
    {
-    "q": "Quelle céréale, vinaigrée, est la base du sushi ? Le ___ ?",
+    "q": "Les sushis viennent : du Japon, du pôle Nord, de la Lune ou du désert ?",
     "c": [
-     "riz",
-     "blé",
-     "orge",
-     "maïs"
+     "du Japon",
+     "du pôle Nord",
+     "de la Lune",
+     "du désert"
     ],
-    "a": "riz"
+    "a": "du Japon"
    },
    {
     "q": "Quel aliment cru, souvent du saumon ou du thon, garnit les sushis ? Le ___ cru ?",
@@ -13919,24 +13943,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel combustible noir est classiquement utilisé pour un barbecue ? Le ___ de bois ?",
+    "q": "Le barbecue, c'est : une façon de cuire les aliments, une planète, un logiciel ou une danse ?",
     "c": [
-     "charbon",
-     "gaz",
-     "pétrole",
-     "papier"
+     "une façon de cuire les aliments",
+     "une planète",
+     "un logiciel",
+     "une danse"
     ],
-    "a": "charbon"
+    "a": "une façon de cuire les aliments"
    },
    {
-    "q": "Sur quelle grille métallique pose-t-on les aliments au barbecue ? La ___ ?",
+    "q": "Un barbecue sert à : griller des aliments, laver le linge, écouter la radio ou coudre ?",
     "c": [
-     "grille",
-     "poêle",
-     "planche",
-     "plaque"
+     "griller des aliments",
+     "laver le linge",
+     "écouter la radio",
+     "coudre"
     ],
-    "a": "grille"
+    "a": "griller des aliments"
    },
    {
     "q": "Quelle viande grillée en forme de cylindre est un classique du barbecue ? La ___ ?",
