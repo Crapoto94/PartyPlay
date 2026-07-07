@@ -6858,24 +6858,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel instrument à cordes électrique est emblématique du rock ? La ___ électrique ?",
+    "q": "Le rock, c'est : un style de musique, un fromage, une planète ou un outil ?",
     "c": [
-     "guitare",
-     "harpe",
-     "flûte",
-     "trompette"
+     "un style de musique",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "guitare"
+    "a": "un style de musique"
    },
    {
-    "q": "Quel groupe britannique des années 60 comptait John, Paul, George et Ringo ? Les ___ ?",
+    "q": "Le rock met souvent en avant la : guitare électrique, harpe celtique, cornemuse ou flûte à bec ?",
     "c": [
-     "Beatles",
-     "Stones",
-     "Who",
-     "Kinks"
+     "guitare électrique",
+     "harpe celtique",
+     "cornemuse",
+     "flûte à bec"
     ],
-    "a": "Beatles"
+    "a": "guitare électrique"
    },
    {
     "q": "Quel chanteur américain déhanché est surnommé « le King » du rock ? Elvis ___ ?",
@@ -6941,24 +6941,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Dans quelle ville américaine le jazz est-il né ? La Nouvelle-___ ?",
+    "q": "Le jazz, c'est : un style de musique, un fromage, une planète ou un outil ?",
     "c": [
-     "Orléans",
-     "York",
-     "Jersey",
-     "Guinée"
+     "un style de musique",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "Orléans"
+    "a": "un style de musique"
    },
    {
-    "q": "Quel instrument à vent doré est une star du jazz ? Le ___ ?",
+    "q": "Le jazz est né aux : États-Unis, en Laponie, sur la Lune ou au pôle Nord ?",
     "c": [
-     "saxophone",
-     "violon",
-     "piano",
-     "accordéon"
+     "États-Unis",
+     "en Laponie",
+     "sur la Lune",
+     "au pôle Nord"
     ],
-    "a": "saxophone"
+    "a": "États-Unis"
    },
    {
     "q": "Quel trompettiste à la voix rauque a chanté « What a Wonderful World » ? Louis ___ ?",
@@ -7024,24 +7024,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Comment appelle-t-on le fait de parler en rythme sur une musique ? ___ ?",
+    "q": "Le rap, c'est : un style de musique, un fromage, une planète ou un outil ?",
     "c": [
-     "rapper",
-     "chanter",
-     "siffler",
-     "crier"
+     "un style de musique",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "rapper"
+    "a": "un style de musique"
    },
    {
-    "q": "Quel mouvement culturel des années 70, né dans le Bronx, englobe le rap ? Le ___ ?",
+    "q": "Dans le rap, l'artiste surtout : parle en rythme, fait du yoga, joue du violon ou dort ?",
     "c": [
-     "hip-hop",
-     "disco",
-     "funk",
-     "techno"
+     "parle en rythme",
+     "fait du yoga",
+     "joue du violon",
+     "dort"
     ],
-    "a": "hip-hop"
+    "a": "parle en rythme"
    },
    {
     "q": "Comment appelle-t-on le fait de faire crisser un disque vinyle à la main ? Le ___ ?",
@@ -7107,24 +7107,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Que signifie le mot « pop » en musique ? Musique ___ ?",
+    "q": "La pop, c'est : un style de musique, un fromage, une planète ou un outil ?",
     "c": [
-     "populaire",
-     "puissante",
-     "poétique",
-     "parlée"
+     "un style de musique",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "populaire"
+    "a": "un style de musique"
    },
    {
-    "q": "Quel chanteur américain était surnommé « le roi de la pop » ? Michael ___ ?",
+    "q": "« Pop » veut dire musique : populaire, poilue, pointue ou polaire ?",
     "c": [
-     "Jackson",
-     "Bolton",
-     "Bublé",
-     "Stipe"
+     "populaire",
+     "poilue",
+     "pointue",
+     "polaire"
     ],
-    "a": "Jackson"
+    "a": "populaire"
    },
    {
     "q": "Quelle chanteuse américaine, ex-country, est devenue une superstar pop ? Taylor ___ ?",
@@ -7190,24 +7190,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel grand instrument à touches noires et blanches est courant en musique classique ? Le ___ ?",
+    "q": "La musique classique, c'est : un style de musique, un fromage, une planète ou un outil ?",
     "c": [
-     "piano",
-     "tambour",
-     "banjo",
-     "synthé"
+     "un style de musique",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "piano"
+    "a": "un style de musique"
    },
    {
-    "q": "Quel compositeur autrichien génie précoce a écrit « La Flûte enchantée » ?",
+    "q": "La musique classique se joue souvent avec un grand : orchestre, camion, aquarium ou congélateur ?",
     "c": [
-     "Mozart",
-     "Beethoven",
-     "Bach",
-     "Haydn"
+     "orchestre",
+     "camion",
+     "aquarium",
+     "congélateur"
     ],
-    "a": "Mozart"
+    "a": "orchestre"
    },
    {
     "q": "Comment appelle-t-on le groupe de nombreux musiciens jouant ensemble ? Un ___ ?",
@@ -7273,24 +7273,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "De quelle couleur, en anglais, est le nom de ce style né du chagrin ? Le ___ ?",
+    "q": "Le blues, c'est : un style de musique, un fromage, une planète ou un outil ?",
     "c": [
-     "blue",
-     "red",
-     "black",
-     "green"
+     "un style de musique",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "blue"
+    "a": "un style de musique"
    },
    {
-    "q": "Sur quel continent, dans les champs de coton du Sud américain, le blues est-il né ? Ancêtres venus d'___ ?",
+    "q": "Le blues est une musique plutôt : mélancolique, militaire, enfantine ou muette ?",
     "c": [
-     "Afrique",
-     "Europe",
-     "Asie",
-     "Amérique"
+     "mélancolique",
+     "militaire",
+     "enfantine",
+     "muette"
     ],
-    "a": "Afrique"
+    "a": "mélancolique"
    },
    {
     "q": "Quel instrument à cordes est central dans le blues ? La ___ ?",
@@ -7356,24 +7356,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "De quelle île des Caraïbes le reggae est-il originaire ? La ___ ?",
+    "q": "Le reggae, c'est : un style de musique, un fromage, une planète ou un outil ?",
     "c": [
-     "Jamaïque",
-     "Cuba",
-     "Haïti",
-     "Barbade"
+     "un style de musique",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "Jamaïque"
+    "a": "un style de musique"
    },
    {
-    "q": "Quel chanteur aux dreadlocks est la légende mondiale du reggae ? Bob ___ ?",
+    "q": "Le reggae vient de : la Jamaïque, la Sibérie, la Lune ou l'Antarctique ?",
     "c": [
-     "Marley",
-     "Tosh",
-     "Cliff",
-     "Perry"
+     "la Jamaïque",
+     "la Sibérie",
+     "la Lune",
+     "l'Antarctique"
     ],
-    "a": "Marley"
+    "a": "la Jamaïque"
    },
    {
     "q": "Quel mouvement spirituel et culturel est associé au reggae ? Le ___ ?",
@@ -7439,24 +7439,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel label de Detroit, écrit comme « Motor Town », a produit la soul des années 60 ?",
+    "q": "La soul, c'est : un style de musique, un fromage, une planète ou un outil ?",
     "c": [
-     "Motown",
-     "Stax",
-     "Atlantic",
-     "Chess"
+     "un style de musique",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "Motown"
+    "a": "un style de musique"
    },
    {
-    "q": "Quel chanteur américain est le « Godfather of Soul » ? James ___ ?",
+    "q": "La soul est une musique surtout : chantée avec émotion, sifflée en silence, aboyée ou tapée à la machine ?",
     "c": [
-     "Brown",
-     "Redding",
-     "Gaye",
-     "Charles"
+     "chantée avec émotion",
+     "sifflée en silence",
+     "aboyée",
+     "tapée à la machine"
     ],
-    "a": "Brown"
+    "a": "chantée avec émotion"
    },
    {
     "q": "Quelle diva noire est surnommée « la Reine de la Soul » ? Aretha ___ ?",
@@ -7522,24 +7522,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Comment joue-t-on principalement la guitare metal ? Fort et ___ (distordu) ?",
+    "q": "Le metal, c'est : un style de musique, un fromage, une planète ou un outil ?",
     "c": [
-     "saturé",
-     "doux",
-     "lent",
-     "muet"
+     "un style de musique",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "saturé"
+    "a": "un style de musique"
    },
    {
-    "q": "Quel groupe britannique de Birmingham, avec Ozzy Osbourne, a fondé le metal ? Black ___ ?",
+    "q": "Le metal est une musique plutôt : forte et énergique, très douce pour dormir, muette ou pour bébés ?",
     "c": [
-     "Sabbath",
-     "Star",
-     "Rose",
-     "Flag"
+     "forte et énergique",
+     "très douce pour dormir",
+     "muette",
+     "pour bébés"
     ],
-    "a": "Sabbath"
+    "a": "forte et énergique"
    },
    {
     "q": "Quel geste de la main, index et auriculaire levés, est le signe des metalleux ? Les ___ du diable ?",
@@ -7605,24 +7605,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle attitude le punk revendique-t-il face à l'ordre établi ? La ___ (No Future) ?",
+    "q": "Le punk, c'est : un style de musique, un fromage, une planète ou un outil ?",
     "c": [
-     "révolte",
-     "obéissance",
-     "prière",
-     "sagesse"
+     "un style de musique",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "révolte"
+    "a": "un style de musique"
    },
    {
-    "q": "Quel groupe britannique provocateur a chanté « Anarchy in the UK » ? Les Sex ___ ?",
+    "q": "Le punk est une musique : rebelle et rapide, très lente et calme, religieuse ou classique ?",
     "c": [
-     "Pistols",
-     "Guns",
-     "Bullets",
-     "Knives"
+     "rebelle et rapide",
+     "très lente et calme",
+     "religieuse",
+     "classique"
     ],
-    "a": "Pistols"
+    "a": "rebelle et rapide"
    },
    {
     "q": "Quelle coiffure dressée en crête est typique des punks ? La ___ ?",
@@ -7688,24 +7688,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "De quel type d'instrument acoustique à cordes le folk fait-il grand usage ? La ___ ?",
+    "q": "Le folk, c'est : un style de musique, un fromage, une planète ou un outil ?",
     "c": [
-     "guitare",
-     "batterie",
-     "trompette",
-     "synthé"
+     "un style de musique",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "guitare"
+    "a": "un style de musique"
    },
    {
-    "q": "Quel chanteur folk américain à l'harmonica, prix Nobel de littérature, a écrit « Blowin' in the Wind » ? Bob ___ ?",
+    "q": "Le folk utilise beaucoup la : guitare acoustique, batterie électronique, sirène ou trompette de foire ?",
     "c": [
-     "Dylan",
-     "Young",
-     "Guthrie",
-     "Baez"
+     "guitare acoustique",
+     "batterie électronique",
+     "sirène",
+     "trompette de foire"
     ],
-    "a": "Dylan"
+    "a": "guitare acoustique"
    },
    {
     "q": "Le folk s'inspire des musiques ___ transmises de génération en génération ?",
@@ -7771,24 +7771,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Avec quel type d'instrument principal fait-on de la musique électro ? Des instruments ___ ?",
+    "q": "L'électro, c'est : un style de musique, un fromage, une planète ou un outil ?",
     "c": [
-     "électroniques",
-     "acoustiques",
-     "à cordes",
-     "à vent"
+     "un style de musique",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "électroniques"
+    "a": "un style de musique"
    },
    {
-    "q": "Quel duo français masqué en casques de robots a fait danser le monde ? Daft ___ ?",
+    "q": "L'électro est faite surtout avec des machines : électroniques, à laver, à café ou à coudre ?",
     "c": [
-     "Punk",
-     "Rock",
-     "Beat",
-     "House"
+     "électroniques",
+     "à laver",
+     "à café",
+     "à coudre"
     ],
-    "a": "Punk"
+    "a": "électroniques"
    },
    {
     "q": "Comment appelle-t-on les grandes fêtes dansantes électro, souvent clandestines ? Des ___ ?",
@@ -7854,24 +7854,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Que signifie le sigle R&B ? Rhythm and ___ ?",
+    "q": "Le R&B, c'est : un style de musique, un fromage, une planète ou un outil ?",
     "c": [
-     "Blues",
-     "Beat",
-     "Bass",
-     "Ballad"
+     "un style de musique",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "Blues"
+    "a": "un style de musique"
    },
    {
-    "q": "Quelle chanteuse américaine, ex-Destiny's Child, est une reine du R&B ? ___ ?",
+    "q": "Le R&B est un style : de musique chantée, de danse bretonne, de cuisine ou de sport ?",
     "c": [
-     "Beyoncé",
-     "Rihanna",
-     "Alicia",
-     "Ciara"
+     "de musique chantée",
+     "de danse bretonne",
+     "de cuisine",
+     "de sport"
     ],
-    "a": "Beyoncé"
+    "a": "de musique chantée"
    },
    {
     "q": "Quel chanteur canadien de R&B masqué au début a chanté « Blinding Lights » ? The ___ ?",
@@ -7937,24 +7937,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Dans quelle grande nation la musique country est-elle née et reine ? Les ___-Unis ?",
+    "q": "La country, c'est : un style de musique, un fromage, une planète ou un outil ?",
     "c": [
-     "États",
-     "Émirats",
-     "Provinces",
-     "Cantons"
+     "un style de musique",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "États"
+    "a": "un style de musique"
    },
    {
-    "q": "Quel couvre-chef à larges bords est associé aux chanteurs country ? Le chapeau de ___ ?",
+    "q": "La country vient surtout des : États-Unis, de la banquise, du fond des océans ou de la Lune ?",
     "c": [
-     "cowboy",
-     "paille",
-     "feutre",
-     "soleil"
+     "États-Unis",
+     "de la banquise",
+     "du fond des océans",
+     "de la Lune"
     ],
-    "a": "cowboy"
+    "a": "États-Unis"
    },
    {
     "q": "Quel instrument à cordes rapide anime les morceaux country ? Le ___ ?",
@@ -8020,24 +8020,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle qualité rythmique, très dansante, définit le funk ? Le ___ (groove) ?",
+    "q": "Le funk, c'est : un style de musique, un fromage, une planète ou un outil ?",
     "c": [
-     "groove",
-     "silence",
-     "calme",
-     "lent"
+     "un style de musique",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "groove"
+    "a": "un style de musique"
    },
    {
-    "q": "Quel instrument à cordes graves porte le rythme du funk ? La ___ ?",
+    "q": "Le funk est une musique qui donne surtout envie de : danser, dormir, pleurer ou bâiller ?",
     "c": [
-     "basse",
-     "flûte",
-     "harpe",
-     "trompette"
+     "danser",
+     "dormir",
+     "pleurer",
+     "bâiller"
     ],
-    "a": "basse"
+    "a": "danser"
    },
    {
     "q": "Quel « Godfather of Soul » est aussi pionnier du funk ? James ___ ?",
@@ -8103,24 +8103,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Dans quel lieu de fête, avec boule à facettes, danse-t-on sur le disco ? La ___ ?",
+    "q": "Le disco, c'est : un style de musique, un fromage, une planète ou un outil ?",
+    "c": [
+     "un style de musique",
+     "un fromage",
+     "une planète",
+     "un outil"
+    ],
+    "a": "un style de musique"
+   },
+   {
+    "q": "Le disco se danse dans une : discothèque, bibliothèque, pharmacie ou station-service ?",
     "c": [
      "discothèque",
      "bibliothèque",
-     "cafétéria",
-     "galerie"
+     "pharmacie",
+     "station-service"
     ],
     "a": "discothèque"
-   },
-   {
-    "q": "Quel objet à facettes brillantes tourne au plafond des clubs disco ? La boule à ___ ?",
-    "c": [
-     "facettes",
-     "neige",
-     "cristal",
-     "lumière"
-    ],
-    "a": "facettes"
    },
    {
     "q": "Quel film de 1977 avec John Travolta a popularisé le disco ? La ___ du samedi soir ?",
@@ -8186,24 +8186,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Dans quel lieu de culte le gospel est-il chanté à l'origine ? L'___ ?",
+    "q": "Le gospel, c'est : un style de musique, un fromage, une planète ou un outil ?",
     "c": [
-     "église",
-     "stade",
-     "théâtre",
-     "cinéma"
+     "un style de musique",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "église"
+    "a": "un style de musique"
    },
    {
-    "q": "Quel thème central les chants gospel célèbrent-ils ? La foi en ___ ?",
+    "q": "Le gospel se chante souvent à : l'église, la piscine, la gare ou l'usine ?",
     "c": [
-     "Dieu",
-     "l'argent",
-     "l'amour",
-     "la fête"
+     "l'église",
+     "la piscine",
+     "la gare",
+     "l'usine"
     ],
-    "a": "Dieu"
+    "a": "l'église"
    },
    {
     "q": "Comment appelle-t-on le groupe de chanteurs qui interprète le gospel ? La ___ (chorale) ?",
@@ -8275,24 +8275,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "De quel pays le flamenco est-il originaire ?",
+    "q": "Le flamenco, c'est : un style de musique, un fromage, une planète ou un outil ?",
     "c": [
-     "Espagne",
-     "Portugal",
-     "Italie",
-     "Mexique"
+     "un style de musique",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "Espagne"
+    "a": "un style de musique"
    },
    {
-    "q": "De quelle région du sud de l'Espagne le flamenco est-il le cœur ? L'___ ?",
+    "q": "Le flamenco vient : d'Espagne, d'Islande, de la Lune ou du pôle Sud ?",
     "c": [
-     "Andalousie",
-     "Catalogne",
-     "Galice",
-     "Aragon"
+     "d'Espagne",
+     "d'Islande",
+     "de la Lune",
+     "du pôle Sud"
     ],
-    "a": "Andalousie"
+    "a": "d'Espagne"
    },
    {
     "q": "Quel instrument à cordes accompagne le flamenco ? La ___ ?",
@@ -8358,22 +8358,22 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Sur quel continent, dans les Caraïbes latines, la salsa a-t-elle pris son essor ? L'Amérique ___ ?",
+    "q": "La salsa, c'est : un style de musique, un fromage, une planète ou un outil ?",
     "c": [
-     "latine",
-     "du Nord",
-     "asiatique",
-     "africaine"
+     "un style de musique",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "latine"
+    "a": "un style de musique"
    },
    {
-    "q": "La salsa est avant tout une musique faite pour ___ ?",
+    "q": "La salsa est surtout une musique pour : danser, dormir, réviser ou repasser ?",
     "c": [
      "danser",
      "dormir",
-     "prier",
-     "pleurer"
+     "réviser",
+     "repasser"
     ],
     "a": "danser"
    },
@@ -8441,24 +8441,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "De quelle île des Caraïbes le calypso est-il originaire ? ___-et-Tobago ?",
+    "q": "Le calypso, c'est : un style de musique, un fromage, une planète ou un outil ?",
     "c": [
-     "Trinité",
-     "Cuba",
-     "Jamaïque",
-     "Haïti"
+     "un style de musique",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "Trinité"
+    "a": "un style de musique"
    },
    {
-    "q": "Quel instrument fait de bidons de métal accordés accompagne le calypso ? Le steel ___ ?",
+    "q": "Le calypso vient des : Caraïbes, glaciers, déserts de sable ou grottes ?",
     "c": [
-     "drum",
-     "guitar",
-     "piano",
-     "horn"
+     "Caraïbes",
+     "glaciers",
+     "déserts de sable",
+     "grottes"
     ],
-    "a": "drum"
+    "a": "Caraïbes"
    },
    {
     "q": "Pendant quelle grande fête populaire le calypso résonne-t-il ? Le ___ ?",
@@ -8530,24 +8530,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "De quelle région d'Asie du Sud le bhangra est-il originaire ? Le ___ (nord de l'Inde/Pakistan) ?",
+    "q": "Le bhangra, c'est : un style de musique, un fromage, une planète ou un outil ?",
     "c": [
-     "Pendjab",
-     "Bengale",
-     "Kerala",
-     "Tibet"
+     "un style de musique",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "Pendjab"
+    "a": "un style de musique"
    },
    {
-    "q": "Le bhangra est avant tout une musique de fête et de ___ ?",
+    "q": "Le bhangra est une musique festive venue : d'Inde, d'Islande, du pôle Nord ou de la Lune ?",
     "c": [
-     "danse",
-     "prière",
-     "deuil",
-     "sieste"
+     "d'Inde",
+     "d'Islande",
+     "du pôle Nord",
+     "de la Lune"
     ],
-    "a": "danse"
+    "a": "d'Inde"
    },
    {
     "q": "Quel grand tambour à deux faces, joué avec des baguettes, rythme le bhangra ? Le ___ ?",
@@ -8619,24 +8619,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "De quel pays le fado est-il l'âme musicale ?",
+    "q": "Le fado, c'est : un style de musique, un fromage, une planète ou un outil ?",
     "c": [
-     "Portugal",
-     "Espagne",
-     "Brésil",
-     "Italie"
+     "un style de musique",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "Portugal"
+    "a": "un style de musique"
    },
    {
-    "q": "Dans quelle capitale, ses quartiers d'Alfama, le fado résonne-t-il surtout ?",
+    "q": "Le fado est un chant venu : du Portugal, d'Alaska, du fond des mers ou de Mars ?",
     "c": [
-     "Lisbonne",
-     "Porto",
-     "Madrid",
-     "Rome"
+     "du Portugal",
+     "d'Alaska",
+     "du fond des mers",
+     "de Mars"
     ],
-    "a": "Lisbonne"
+    "a": "du Portugal"
    },
    {
     "q": "Quel sentiment de mélancolie et de nostalgie exprime le fado ? La ___ ?",
@@ -8702,18 +8702,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "En quelle année a commencé la Révolution française ?",
-    "a": "1789"
+    "q": "La Révolution française, c'est : un événement de l'Histoire, une recette de cuisine, une danse ou un jeu vidéo ?",
+    "c": [
+     "un événement de l'Histoire",
+     "une recette de cuisine",
+     "une danse",
+     "un jeu vidéo"
+    ],
+    "a": "un événement de l'Histoire"
    },
    {
-    "q": "Quelle forteresse-prison parisienne a été prise le 14 juillet 1789 ? La ___ ?",
+    "q": "La Révolution française a commencé en : 1789, l'an dernier, l'an 3000 ou hier ?",
     "c": [
-     "Bastille",
-     "Conciergerie",
-     "Sorbonne",
-     "Sainte-Chapelle"
+     "1789",
+     "l'an dernier",
+     "l'an 3000",
+     "hier"
     ],
-    "a": "Bastille"
+    "a": "1789"
    },
    {
     "q": "Quelle machine à décapiter a été le symbole de la Terreur ? La ___ ?",
@@ -8779,18 +8785,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle ville était la capitale de l'Empire romain ?",
-    "a": "Rome"
+    "q": "La Rome antique, c'est : une période / civilisation de l'Histoire, un plat, une planète ou une appli ?",
+    "c": [
+     "une période / civilisation de l'Histoire",
+     "un plat",
+     "une planète",
+     "une appli"
+    ],
+    "a": "une période / civilisation de l'Histoire"
    },
    {
-    "q": "Comment appelait-on le chef suprême de l'Empire romain ? Un ___ ?",
+    "q": "La Rome antique était dirigée par des : empereurs, présidents élus, robots ou extraterrestres ?",
     "c": [
-     "empereur",
-     "roi",
-     "pharaon",
-     "sultan"
+     "empereurs",
+     "présidents élus",
+     "robots",
+     "extraterrestres"
     ],
-    "a": "empereur"
+    "a": "empereurs"
    },
    {
     "q": "Dans quel grand amphithéâtre romain combattaient les gladiateurs ? Le ___ ?",
@@ -8856,24 +8868,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Comment appelait-on les rois de l'Égypte ancienne ? Des ___ ?",
+    "q": "L'Égypte ancienne, c'est : une période / civilisation de l'Histoire, un plat, une planète ou une appli ?",
     "c": [
-     "pharaons",
-     "empereurs",
-     "califes",
-     "sultans"
+     "une période / civilisation de l'Histoire",
+     "un plat",
+     "une planète",
+     "une appli"
     ],
-    "a": "pharaons"
+    "a": "une période / civilisation de l'Histoire"
    },
    {
-    "q": "Quels immenses tombeaux de pierre les pharaons ont-ils fait construire ? Des ___ ?",
+    "q": "L'Égypte ancienne était dirigée par des : pharaons, maires, PDG ou youtubeurs ?",
     "c": [
-     "pyramides",
-     "temples",
-     "châteaux",
-     "tours"
+     "pharaons",
+     "maires",
+     "PDG",
+     "youtubeurs"
     ],
-    "a": "pyramides"
+    "a": "pharaons"
    },
    {
     "q": "Comment appelle-t-on un corps embaumé et enveloppé de bandelettes ? Une ___ ?",
@@ -8939,24 +8951,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelles deux superpuissances s'opposaient pendant la Guerre froide ? Les USA et l'___ ?",
+    "q": "La Guerre froide, c'est : un événement de l'Histoire, une recette de cuisine, une danse ou un jeu vidéo ?",
     "c": [
-     "URSS",
-     "Chine",
-     "Inde",
-     "Cuba"
+     "un événement de l'Histoire",
+     "une recette de cuisine",
+     "une danse",
+     "un jeu vidéo"
     ],
-    "a": "URSS"
+    "a": "un événement de l'Histoire"
    },
    {
-    "q": "Quel mur, tombé en 1989, symbolisait la division Est-Ouest ? Le mur de ___ ?",
+    "q": "La Guerre froide opposait surtout les USA et : l'URSS, la Belgique, la Lune ou les pingouins ?",
     "c": [
-     "Berlin",
-     "Chine",
-     "Prague",
-     "Varsovie"
+     "l'URSS",
+     "la Belgique",
+     "la Lune",
+     "les pingouins"
     ],
-    "a": "Berlin"
+    "a": "l'URSS"
    },
    {
     "q": "De quelle « couleur » qualifie-t-on cette guerre sans combat direct entre grandes puissances ? La guerre ___ ?",
@@ -9022,24 +9034,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Dans quel pays européen la Renaissance est-elle née ? L'___ ?",
+    "q": "La Renaissance, c'est : une période / civilisation de l'Histoire, un plat, une planète ou une appli ?",
     "c": [
-     "Italie",
-     "France",
-     "Espagne",
-     "Angleterre"
+     "une période / civilisation de l'Histoire",
+     "un plat",
+     "une planète",
+     "une appli"
     ],
-    "a": "Italie"
+    "a": "une période / civilisation de l'Histoire"
    },
    {
-    "q": "Quel génie italien a peint « La Joconde » ? Léonard de ___ ?",
+    "q": "La Renaissance est née en : Italie, Antarctique, sur la Lune ou au fond de la mer ?",
     "c": [
-     "Vinci",
-     "Milan",
-     "Rome",
-     "Florence"
+     "Italie",
+     "Antarctique",
+     "sur la Lune",
+     "au fond de la mer"
     ],
-    "a": "Vinci"
+    "a": "Italie"
    },
    {
     "q": "Quelle ville italienne, berceau de la Renaissance, était dominée par les Médicis ?",
@@ -9105,24 +9117,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "De quelle région d'Europe les Vikings étaient-ils originaires ? La ___ ?",
+    "q": "Les Vikings, c'est : une période / civilisation de l'Histoire, un plat, une planète ou une appli ?",
     "c": [
-     "Scandinavie",
-     "Méditerranée",
-     "Balkans",
-     "Ibérie"
+     "une période / civilisation de l'Histoire",
+     "un plat",
+     "une planète",
+     "une appli"
     ],
-    "a": "Scandinavie"
+    "a": "une période / civilisation de l'Histoire"
    },
    {
-    "q": "Sur quel type de bateau long et effilé naviguaient les Vikings ? Un ___ (drakkar) ?",
+    "q": "Les Vikings étaient de grands : navigateurs, boulangers, informaticiens ou pâtissiers ?",
     "c": [
-     "drakkar",
-     "galion",
-     "radeau",
-     "sous-marin"
+     "navigateurs",
+     "boulangers",
+     "informaticiens",
+     "pâtissiers"
     ],
-    "a": "drakkar"
+    "a": "navigateurs"
    },
    {
     "q": "Quel casque, à tort, imagine-t-on souvent sur la tête des Vikings ? Un casque à ___ ?",
@@ -9188,24 +9200,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel long ouvrage défensif la Chine ancienne a-t-elle construit contre les invasions ? La Grande ___ ?",
+    "q": "La Chine ancienne, c'est : une période / civilisation de l'Histoire, un plat, une planète ou une appli ?",
     "c": [
-     "Muraille",
-     "Digue",
-     "Route",
-     "Tour"
+     "une période / civilisation de l'Histoire",
+     "un plat",
+     "une planète",
+     "une appli"
     ],
-    "a": "Muraille"
+    "a": "une période / civilisation de l'Histoire"
    },
    {
-    "q": "Quelle armée de statues garde le tombeau du premier empereur ? L'armée en terre ___ ?",
+    "q": "La Chine ancienne a construit une immense : muraille, piscine, autoroute ou gare ?",
     "c": [
-     "cuite",
-     "or",
-     "pierre",
-     "bronze"
+     "muraille",
+     "piscine",
+     "autoroute",
+     "gare"
     ],
-    "a": "cuite"
+    "a": "muraille"
    },
    {
     "q": "Comment appelait-on les familles qui régnaient sur la Chine pendant des siècles ? Des ___ ?",
@@ -9271,18 +9283,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "En quelle année a commencé la Seconde Guerre mondiale ?",
-    "a": "1939"
+    "q": "La Seconde Guerre mondiale, c'est : un événement de l'Histoire, une recette de cuisine, une danse ou un jeu vidéo ?",
+    "c": [
+     "un événement de l'Histoire",
+     "une recette de cuisine",
+     "une danse",
+     "un jeu vidéo"
+    ],
+    "a": "un événement de l'Histoire"
    },
    {
-    "q": "Quel dictateur allemand a déclenché la Seconde Guerre mondiale ? Adolf ___ ?",
+    "q": "La Seconde Guerre mondiale a eu lieu au : XXe siècle, Moyen Âge, an 3000 ou hier ?",
     "c": [
-     "Hitler",
-     "Mussolini",
-     "Staline",
-     "Franco"
+     "XXe siècle",
+     "Moyen Âge",
+     "an 3000",
+     "hier"
     ],
-    "a": "Hitler"
+    "a": "XXe siècle"
    },
    {
     "q": "Quel jour de 1944 les Alliés ont-ils débarqué en Normandie ? Le jour ___ (D-Day) ?",
@@ -9348,24 +9366,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle cité grecque, célèbre pour sa démocratie, était rivale de Sparte ?",
+    "q": "La Grèce antique, c'est : une période / civilisation de l'Histoire, un plat, une planète ou une appli ?",
     "c": [
-     "Athènes",
-     "Thèbes",
-     "Corinthe",
-     "Argos"
+     "une période / civilisation de l'Histoire",
+     "un plat",
+     "une planète",
+     "une appli"
     ],
-    "a": "Athènes"
+    "a": "une période / civilisation de l'Histoire"
    },
    {
-    "q": "Quelle cité grecque était réputée pour ses guerriers redoutables ?",
+    "q": "La Grèce antique a inventé la : démocratie, télévision, voiture ou trottinette ?",
     "c": [
-     "Sparte",
-     "Athènes",
-     "Delphes",
-     "Milet"
+     "démocratie",
+     "télévision",
+     "voiture",
+     "trottinette"
     ],
-    "a": "Sparte"
+    "a": "démocratie"
    },
    {
     "q": "Quel régime politique, « pouvoir du peuple », est né à Athènes ? La ___ ?",
@@ -9431,24 +9449,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle ville était la capitale de l'Empire byzantin ?",
+    "q": "L'Empire byzantin, c'est : une période / civilisation de l'Histoire, un plat, une planète ou une appli ?",
     "c": [
-     "Constantinople",
-     "Rome",
-     "Athènes",
-     "Antioche"
+     "une période / civilisation de l'Histoire",
+     "un plat",
+     "une planète",
+     "une appli"
     ],
-    "a": "Constantinople"
+    "a": "une période / civilisation de l'Histoire"
    },
    {
-    "q": "De quel empire l'Empire byzantin est-il l'héritier oriental ? L'Empire ___ ?",
+    "q": "L'Empire byzantin avait pour capitale : Constantinople, Paris, Tokyo ou New York ?",
     "c": [
-     "romain",
-     "grec",
-     "perse",
-     "ottoman"
+     "Constantinople",
+     "Paris",
+     "Tokyo",
+     "New York"
     ],
-    "a": "romain"
+    "a": "Constantinople"
    },
    {
     "q": "Quelle immense église-basilique était le joyau de Constantinople ? Sainte-___ ?",
@@ -9514,24 +9532,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Dans quel pays d'Asie du Sud-Est s'est déroulée cette guerre ?",
+    "q": "La Guerre du Vietnam, c'est : un événement de l'Histoire, une recette de cuisine, une danse ou un jeu vidéo ?",
     "c": [
-     "Vietnam",
-     "Corée",
-     "Laos",
-     "Cambodge"
+     "un événement de l'Histoire",
+     "une recette de cuisine",
+     "une danse",
+     "un jeu vidéo"
     ],
-    "a": "Vietnam"
+    "a": "un événement de l'Histoire"
    },
    {
-    "q": "Quelle grande puissance occidentale s'est enlisée dans la guerre du Vietnam ? Les ___-Unis ?",
+    "q": "La Guerre du Vietnam s'est déroulée en : Asie, Antarctique, sur la Lune ou dans un aquarium ?",
     "c": [
-     "États",
-     "Émirats",
-     "Provinces",
-     "Pays"
+     "Asie",
+     "Antarctique",
+     "sur la Lune",
+     "dans un aquarium"
     ],
-    "a": "États"
+    "a": "Asie"
    },
    {
     "q": "En deux camps, le Nord communiste affrontait le ___ soutenu par les USA ?",
@@ -9597,24 +9615,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Dans quel pays européen la Révolution industrielle a-t-elle commencé ? Le ___-Uni ?",
+    "q": "La Révolution industrielle, c'est : une période / civilisation de l'Histoire, un plat, une planète ou une appli ?",
     "c": [
-     "Royaume",
-     "États",
-     "Pays",
-     "Émirats"
+     "une période / civilisation de l'Histoire",
+     "un plat",
+     "une planète",
+     "une appli"
     ],
-    "a": "Royaume"
+    "a": "une période / civilisation de l'Histoire"
    },
    {
-    "q": "Quelle machine, alimentée au charbon, a été le moteur de cette révolution ? La machine à ___ ?",
+    "q": "La Révolution industrielle a vu apparaître les : usines et machines, licornes, dinosaures ou robots parlants ?",
     "c": [
-     "vapeur",
-     "eau",
-     "vent",
-     "air"
+     "usines et machines",
+     "licornes",
+     "dinosaures",
+     "robots parlants"
     ],
-    "a": "vapeur"
+    "a": "usines et machines"
    },
    {
     "q": "Quel combustible noir extrait des mines a alimenté l'industrie ? Le ___ ?",
@@ -9680,24 +9698,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Vers quelle ville sainte les croisés cherchaient-ils à marcher ?",
+    "q": "Les Croisades, c'est : une période / civilisation de l'Histoire, un plat, une planète ou une appli ?",
     "c": [
-     "Jérusalem",
-     "Rome",
-     "La Mecque",
-     "Constantinople"
+     "une période / civilisation de l'Histoire",
+     "un plat",
+     "une planète",
+     "une appli"
     ],
-    "a": "Jérusalem"
+    "a": "une période / civilisation de l'Histoire"
    },
    {
-    "q": "Quel symbole religieux les croisés portaient-ils sur leurs vêtements ? Une ___ ?",
+    "q": "Les Croisades étaient des : expéditions guerrières et religieuses, colonies de vacances, concerts ou marchés ?",
     "c": [
-     "croix",
-     "étoile",
-     "lune",
-     "colombe"
+     "expéditions guerrières et religieuses",
+     "colonies de vacances",
+     "concerts",
+     "marchés"
     ],
-    "a": "croix"
+    "a": "expéditions guerrières et religieuses"
    },
    {
     "q": "Quelle autorité religieuse a lancé la première croisade en 1095 ? Le ___ ?",
@@ -9757,24 +9775,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quels deux royaumes s'affrontaient pendant la guerre de Cent Ans ? La France et l'___ ?",
+    "q": "La Guerre de Cent Ans, c'est : un événement de l'Histoire, une recette de cuisine, une danse ou un jeu vidéo ?",
     "c": [
-     "Angleterre",
-     "Espagne",
-     "Écosse",
-     "Bourgogne"
+     "un événement de l'Histoire",
+     "une recette de cuisine",
+     "une danse",
+     "un jeu vidéo"
     ],
-    "a": "Angleterre"
+    "a": "un événement de l'Histoire"
    },
    {
-    "q": "Environ combien d'années a réellement duré ce long conflit ?",
+    "q": "La Guerre de Cent Ans opposait la France et : l'Angleterre, la Lune, les pingouins ou les Martiens ?",
     "c": [
-     "116",
-     "100",
-     "50",
-     "200"
+     "l'Angleterre",
+     "la Lune",
+     "les pingouins",
+     "les Martiens"
     ],
-    "a": "116"
+    "a": "l'Angleterre"
    },
    {
     "q": "Quelle jeune héroïne française a bouté les Anglais hors d'Orléans ? Jeanne d'___ ?",
@@ -9840,17 +9858,23 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel mur séparait Berlin en deux jusqu'en 1989 ? Le mur de ___ ?",
+    "q": "La Chute du mur de Berlin, c'est : un événement de l'Histoire, une recette de cuisine, une danse ou un jeu vidéo ?",
     "c": [
-     "Berlin",
-     "Prague",
-     "Fer",
-     "Chine"
+     "un événement de l'Histoire",
+     "une recette de cuisine",
+     "une danse",
+     "un jeu vidéo"
     ],
-    "a": "Berlin"
+    "a": "un événement de l'Histoire"
    },
    {
-    "q": "En quelle année le mur de Berlin est-il tombé ?",
+    "q": "Le mur de Berlin est tombé en : 1989, l'an 10, l'an 3000 ou hier ?",
+    "c": [
+     "1989",
+     "l'an 10",
+     "l'an 3000",
+     "hier"
+    ],
     "a": "1989"
    },
    {
@@ -9917,24 +9941,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel est le premier astre visité par l'homme, en 1969 ? La ___ ?",
+    "q": "La Conquête spatiale, c'est : une période / civilisation de l'Histoire, un plat, une planète ou une appli ?",
     "c": [
-     "Lune",
-     "Mars",
-     "Vénus",
-     "Terre"
+     "une période / civilisation de l'Histoire",
+     "un plat",
+     "une planète",
+     "une appli"
     ],
-    "a": "Lune"
+    "a": "une période / civilisation de l'Histoire"
    },
    {
-    "q": "Quel astronaute américain a marché le premier sur la Lune ? Neil ___ ?",
+    "q": "La conquête spatiale a mené l'homme sur : la Lune, le Soleil, le fond des océans ou un volcan ?",
     "c": [
-     "Armstrong",
-     "Aldrin",
-     "Glenn",
-     "Collins"
+     "la Lune",
+     "le Soleil",
+     "le fond des océans",
+     "un volcan"
     ],
-    "a": "Armstrong"
+    "a": "la Lune"
    },
    {
     "q": "Quel premier satellite artificiel, soviétique, a été lancé en 1957 ?",
@@ -10000,24 +10024,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Sur le territoire de quel pays actuel se trouvait l'Empire aztèque ?",
+    "q": "L'Empire aztèque, c'est : une période / civilisation de l'Histoire, un plat, une planète ou une appli ?",
     "c": [
-     "Mexique",
-     "Pérou",
-     "Chili",
-     "Brésil"
+     "une période / civilisation de l'Histoire",
+     "un plat",
+     "une planète",
+     "une appli"
     ],
-    "a": "Mexique"
+    "a": "une période / civilisation de l'Histoire"
    },
    {
-    "q": "Comment s'appelait la capitale aztèque, bâtie sur un lac ?",
+    "q": "L'Empire aztèque se trouvait sur l'actuel : Mexique, Canada, Japon ou Groenland ?",
     "c": [
-     "Tenochtitlan",
-     "Cuzco",
-     "Tikal",
-     "Chichén"
+     "Mexique",
+     "Canada",
+     "Japon",
+     "Groenland"
     ],
-    "a": "Tenochtitlan"
+    "a": "Mexique"
    },
    {
     "q": "Quel conquistador espagnol a détruit l'Empire aztèque ? Hernán ___ ?",
@@ -10083,24 +10107,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Dans quel pays s'est déroulée la révolution de 1917 ?",
+    "q": "La Révolution russe, c'est : un événement de l'Histoire, une recette de cuisine, une danse ou un jeu vidéo ?",
     "c": [
-     "Russie",
-     "Chine",
-     "Allemagne",
-     "Pologne"
+     "un événement de l'Histoire",
+     "une recette de cuisine",
+     "une danse",
+     "un jeu vidéo"
     ],
-    "a": "Russie"
+    "a": "un événement de l'Histoire"
    },
    {
-    "q": "Quel parti révolutionnaire, mené par Lénine, a pris le pouvoir ? Les ___ ?",
+    "q": "La Révolution russe a eu lieu en : 1917, l'an 500, l'an 3000 ou la semaine dernière ?",
     "c": [
-     "bolcheviks",
-     "girondins",
-     "jacobins",
-     "mencheviks"
+     "1917",
+     "l'an 500",
+     "l'an 3000",
+     "la semaine dernière"
     ],
-    "a": "bolcheviks"
+    "a": "1917"
    },
    {
     "q": "Quelle couleur symbolisait les révolutionnaires communistes ? Le ___ ?",
