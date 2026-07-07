@@ -496,8 +496,7 @@ function gateAdultContent(){
   const verified = META.adultParty && META.adultVerified;
   adultBtns.forEach(btn => {
     btn.disabled = !verified;
-    btn.style.opacity = verified ? '1' : '.4';
-    btn.title = verified ? '' : '🔞 Paiement 18+ requis (0,99 €) — voir bandeau ci-dessus';
+    btn.title = verified ? '' : '🔞 Paiement 18+ requis (0,99 €)';
   });
   const banner = document.getElementById('adultBanner');
   if (META.adultParty && !META.adultVerified) {
@@ -511,10 +510,19 @@ function gateAdultContent(){
       html += `<div id="${ppId}" style="display:inline-block;max-width:200px;vertical-align:middle;margin-left:6px"></div>`;
       setTimeout(() => renderHostedButton('#'+ppId, META.adultPaypalButtonId, META.paypalClientId, META.currency), 100);
     }
+    if (!META.adultPayLink && !(META.adultPaypalButtonId && META.paypalClientId)) {
+      html += `<button class="btn secondary" style="display:inline-block;width:auto;padding:4px 12px;font-size:12px;margin-left:8px" onclick="markAdultPaid(this)">✅ Simuler le paiement 0,99 €</button>`;
+    }
     btnsEl.innerHTML = html;
   } else {
     banner.style.display = 'none';
   }
+}
+async function markAdultPaid(btn){
+  if (!confirm('Confirmer le paiement 0,99 € pour valider les contenus 18+ ?')) return;
+  btn.disabled = true; btn.textContent = 'Validation…';
+  await fetch(API+'/api/admin/adult-payment', { method:'POST', headers:H() });
+  location.reload();
 }
 
 async function saveGeneral(){

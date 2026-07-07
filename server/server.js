@@ -1001,6 +1001,17 @@ ev.post('/api/admin/seed', (req, res) => {
   res.json({ ok: true, content: cfg.content });
 });
 
+// Validation 18+ (protégée par le mot de passe console de l'événement).
+ev.post('/api/admin/adult-payment', (req, res) => {
+  if (!requireEventAdmin(req, res)) return;
+  const cfg = getConfig(req.eventId);
+  cfg.adultPaymentStatus = 'paid';
+  cfg.adultVerified = true;
+  saveConfig(cfg);
+  reloadConfig(cfg.id);
+  res.json({ ok: true, adultVerified: true });
+});
+
 // --- Avatars personnalisés ------------------------------------------
 ev.post('/api/admin/avatars', avatarUpload.single('image'), (req, res) => {
   if (!requireEventAdmin(req, res)) return;
