@@ -26428,84 +26428,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Quelles sont les étapes de la dégustation du vin ?",
+    "q": "De quelle céréale, fermentée, est fait le saké ? Le ___ ?",
     "c": [
-     "Regarder et boire",
-     "Boire et apprécier",
-     "Sentir et boire",
-     "Examen visuel, olfactif, gustatif"
+     "riz",
+     "blé",
+     "orge",
+     "maïs"
     ],
-    "a": "Examen visuel, olfactif, gustatif"
+    "a": "riz"
    },
    {
-    "q": "Qu'est-ce que le 'nez' d'un vin ?",
+    "q": "De quel pays le saké est-il la boisson traditionnelle ?",
     "c": [
-     "La texture",
-     "Le goût",
-     "La couleur",
-     "L'odeur et les arômes du vin"
+     "Japon",
+     "Chine",
+     "Corée",
+     "Thaïlande"
     ],
-    "a": "L'odeur et les arômes du vin"
+    "a": "Japon"
    },
    {
-    "q": "Qu'est-ce que la robe d'un vin ?",
+    "q": "À quelle température peut-on servir le saké, contrairement au vin ? ___ ou froid ?",
     "c": [
-     "La bouteille",
-     "La texture",
-     "L'étiquette",
-     "L'apparence visuelle et la couleur du vin"
+     "chaud",
+     "gelé",
+     "brûlé",
+     "fumé"
     ],
-    "a": "L'apparence visuelle et la couleur du vin"
+    "a": "chaud"
    },
    {
-    "q": "Quels sont les arômes primaires du vin ?",
+    "q": "Dans quelle petite coupe traditionnelle boit-on le saké ? La ___ ?",
     "c": [
-     "Arômes du bois",
-     "Arômes de vieillissement",
-     "Arômes ajoutés",
-     "Arômes du raisin (fruits, fleurs)"
+     "ochoko",
+     "flûte",
+     "chope",
+     "timbale"
     ],
-    "a": "Arômes du raisin (fruits, fleurs)"
+    "a": "ochoko"
    },
    {
-    "q": "Qu'est-ce que la longueur en bouche ?",
+    "q": "Quel champignon (koji) est utilisé pour transformer l'amidon du riz en sucre ? Le ___ ?",
     "c": [
-     "Quantité bue",
-     "Durée de dégustation",
-     "Ampleur du goût",
-     "Persistance des saveurs après avoir avalé"
+     "koji",
+     "shiitake",
+     "enoki",
+     "maitaké"
     ],
-    "a": "Persistance des saveurs après avoir avalé"
+    "a": "koji"
    },
    {
-    "q": "Qu'est-ce qu'une dégustation à l'aveugle ?",
+    "q": "Comment le saké est-il classé selon le polissage du riz ? Le ___ (junmai, ginjo…) ?",
     "c": [
-     "Dégustation sans connaître l'identité du vin",
-     "Dégustation les yeux fermés",
-     "Dégustation sans parler",
-     "Dégustation debout"
+     "type",
+     "millésime",
+     "cru",
+     "terroir"
     ],
-    "a": "Dégustation sans connaître l'identité du vin"
+    "a": "type"
    },
    {
-    "q": "Quelle température pour déguster un vin rouge ?",
+    "q": "Le saké est-il techniquement plus proche d'un vin ou d'une bière (par la fermentation de céréale) ? Une ___ ?",
     "c": [
-     "16-18°C",
-     "20-22°C",
-     "8-10°C",
-     "12-14°C"
+     "bière",
+     "eau-de-vie",
+     "liqueur",
+     "soda"
     ],
-    "a": "16-18°C"
+    "a": "bière"
    },
    {
-    "q": "Quelle température pour déguster un vin blanc ?",
-    "c": [
-     "4-6°C",
-     "8-12°C",
-     "16-18°C",
-     "14-16°C"
-    ],
-    "a": "8-12°C"
+    "q": "Quel degré d'alcool, en pourcentage, titre en général un saké ?",
+    "a": "15"
    }
   ],
   "rw": true
@@ -26517,84 +26511,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Quel pays consomme le plus d'alcool par habitant ?",
+    "q": "De quel pays le porto est-il originaire ?",
     "c": [
-     "Biélorussie",
-     "États-Unis",
-     "Japon",
-     "France"
-    ],
-    "a": "Biélorussie"
-   },
-   {
-    "q": "Quelle est la boisson alcoolisée la plus consommée dans le monde ?",
-    "c": [
-     "Le vin",
-     "Le saké",
-     "Les spiritueux",
-     "La bière"
-    ],
-    "a": "La bière"
-   },
-   {
-    "q": "Qu'est-ce que le saké ?",
-    "c": [
-     "Boisson alcoolisée japonaise à base de riz fermenté",
-     "Alcool distillé",
-     "Vin de riz",
-     "Bière japonaise"
-    ],
-    "a": "Boisson alcoolisée japonaise à base de riz fermenté"
-   },
-   {
-    "q": "Qu'est-ce que la chicha ?",
-    "c": [
-     "Alcool de maïs traditionnel d'Amérique latine",
-     "Spiritueux mexicain",
-     "Bière andine",
-     "Vin argentin"
-    ],
-    "a": "Alcool de maïs traditionnel d'Amérique latine"
-   },
-   {
-    "q": "Qu'est-ce que le vin de palme ?",
-    "c": [
-     "Bière africaine",
-     "Boisson alcoolisée africaine issue de la sève de palmier",
-     "Spiritueux",
-     "Vin fruité"
-    ],
-    "a": "Boisson alcoolisée africaine issue de la sève de palmier"
-   },
-   {
-    "q": "Dans quels pays la consommation d'alcool est-elle interdite ?",
-    "c": [
-     "Brésil, Argentine",
-     "Russie, Japon",
-     "Chine, Inde",
-     "Arabie saoudite, Koweït, Iran, Libye"
-    ],
-    "a": "Arabie saoudite, Koweït, Iran, Libye"
-   },
-   {
-    "q": "Quel pays est le plus grand exportateur de vin ?",
-    "c": [
-     "Espagne (en volume)",
+     "Portugal",
+     "Espagne",
      "Italie",
-     "Chili",
-     "France"
+     "Grèce"
     ],
-    "a": "Espagne (en volume)"
+    "a": "Portugal"
    },
    {
-    "q": "Qu'est-ce que le whisky irlandais ?",
+    "q": "De quelle ville portugaise le porto tient-il son nom ?",
     "c": [
-     "Whisky de luxe",
-     "Whisky parfumé",
-     "Whisky distillé trois fois, plus doux que le Scotch",
-     "Whisky sucré"
+     "Porto",
+     "Lisbonne",
+     "Braga",
+     "Faro"
     ],
-    "a": "Whisky distillé trois fois, plus doux que le Scotch"
+    "a": "Porto"
+   },
+   {
+    "q": "Le porto est un vin muté, c'est-à-dire enrichi en ___ ? (alcool ajouté)",
+    "c": [
+     "alcool",
+     "sucre",
+     "eau",
+     "gaz"
+    ],
+    "a": "alcool"
+   },
+   {
+    "q": "Le porto est-il plutôt un vin sec ou un vin doux ?",
+    "c": [
+     "doux",
+     "sec",
+     "amer",
+     "salé"
+    ],
+    "a": "doux"
+   },
+   {
+    "q": "Le long de quel fleuve poussent les vignes du porto ? Le ___ ?",
+    "c": [
+     "Douro",
+     "Tage",
+     "Guadiana",
+     "Èbre"
+    ],
+    "a": "Douro"
+   },
+   {
+    "q": "Comment appelle-t-on le porto rouge vieilli longuement en fût, aux arômes de fruits secs ? Le ___ ?",
+    "c": [
+     "tawny",
+     "ruby",
+     "blanc",
+     "rosé"
+    ],
+    "a": "tawny"
+   },
+   {
+    "q": "Quel porto rare porte le millésime d'une seule grande année ? Le porto ___ ?",
+    "c": [
+     "vintage",
+     "tawny",
+     "ruby",
+     "colheita"
+    ],
+    "a": "vintage"
+   },
+   {
+    "q": "Quel degré d'alcool, en pourcentage, titre en général un porto ?",
+    "a": "20"
    }
   ],
   "rw": true
@@ -26606,84 +26594,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Quel est le niveau de consommation d'alcool en France ?",
+    "q": "Quel alcool est la base de la sangria ? Le ___ ?",
     "c": [
-     "Très faible",
-     "Parmi les plus élevés d'Europe",
-     "Moyen",
-     "Faible"
+     "vin",
+     "whisky",
+     "vodka",
+     "gin"
     ],
-    "a": "Parmi les plus élevés d'Europe"
+    "a": "vin"
    },
    {
-    "q": "Quelle boisson alcoolisée est la plus associée à la France ?",
+    "q": "De quel pays la sangria est-elle une boisson emblématique ?",
     "c": [
-     "Le vin",
-     "Le cognac",
-     "Le champagne",
-     "La bière"
+     "Espagne",
+     "Suède",
+     "Russie",
+     "Irlande"
     ],
-    "a": "Le vin"
+    "a": "Espagne"
    },
    {
-    "q": "Qu'est-ce que l'apéritif (apéro) dans la culture française ?",
+    "q": "Que met-on en morceaux dans la sangria en plus du vin ? Des ___ ?",
     "c": [
-     "Moment de convivialité avant le repas avec des boissons",
-     "Digestif",
-     "Cocktail",
-     "Vin"
+     "fruits",
+     "cailloux",
+     "bonbons",
+     "biscuits"
     ],
-    "a": "Moment de convivialité avant le repas avec des boissons"
+    "a": "fruits"
    },
    {
-    "q": "Quels sont les principaux vignobles français ?",
+    "q": "À quelle température, rafraîchissante, sert-on la sangria ? ___ ?",
     "c": [
-     "Paris, Lyon, Marseille",
-     "Nord, Est, Ouest",
-     "Cognac, Armagnac, Calvados",
-     "Bordeaux, Bourgogne, Vallée du Rhône, Alsace, Loire"
+     "fraîche",
+     "brûlante",
+     "tiède",
+     "bouillante"
     ],
-    "a": "Bordeaux, Bourgogne, Vallée du Rhône, Alsace, Loire"
+    "a": "fraîche"
    },
    {
-    "q": "Qu'est-ce qu'un digestif en France ?",
+    "q": "De quelle couleur est la sangria la plus classique ?",
     "c": [
-     "Liqueur",
-     "Boisson alcoolisée prise après le repas",
-     "Vin",
-     "Apéritif"
+     "rouge",
+     "bleue",
+     "noire",
+     "dorée"
     ],
-    "a": "Boisson alcoolisée prise après le repas"
+    "a": "rouge"
    },
    {
-    "q": "Combien de litres d'alcool pur un Français consomme-t-il par an en moyenne ?",
+    "q": "De quel mot espagnol signifiant « sang » vient le nom « sangria » ? ___ ?",
     "c": [
-     "Environ 20 litres",
-     "Environ 15 litres",
-     "Environ 10-12 litres",
-     "Environ 5 litres"
+     "sangre",
+     "sabor",
+     "sol",
+     "sopa"
     ],
-    "a": "Environ 10-12 litres"
+    "a": "sangre"
    },
    {
-    "q": "Qu'est-ce qu'une cave à vin en France ?",
+    "q": "Quelle version pétillante de la sangria utilise du vin mousseux ou du cava ? La sangria de ___ ?",
     "c": [
-     "Lieu de stockage et de vieillissement du vin",
-     "Magasin de vin",
-     "Bar à vin",
-     "Caveau"
+     "cava",
+     "sidra",
+     "agua",
+     "leche"
     ],
-    "a": "Lieu de stockage et de vieillissement du vin"
+    "a": "cava"
    },
    {
-    "q": "Quelle loi française réglemente l'IVresse publique ?",
-    "c": [
-     "Arrêté préfectoral",
-     "Loi sur l'alcool",
-     "Loi de 1905",
-     "Ivresse publique et manifeste est une contravention"
-    ],
-    "a": "Ivresse publique et manifeste est une contravention"
+    "q": "Dans combien de pays de l'UE la « sangria » est-elle une appellation protégée (Espagne et Portugal) ?",
+    "a": "2"
    }
   ],
   "rw": true
@@ -26695,84 +26677,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Comment l'alcool agit-il sur le cerveau ?",
+    "q": "Le cocktail Martini est un mélange de gin et de ___ ?",
     "c": [
-     "En déprimant le système nerveux central",
-     "En le régulant",
-     "En l'activant",
-     "En le stimulant"
+     "vermouth",
+     "cola",
+     "jus d'orange",
+     "lait"
     ],
-    "a": "En déprimant le système nerveux central"
+    "a": "vermouth"
    },
    {
-    "q": "Quels sont les effets à court terme de l'alcool ?",
+    "q": "Quel fruit vert garnit souvent un Martini ? Une ___ ?",
     "c": [
-     "Mémoire améliorée",
-     "Vigilance",
-     "Concentration",
-     "Désinhibition, euphorie, baisse des réflexes"
+     "olive",
+     "cerise",
+     "fraise",
+     "banane"
     ],
-    "a": "Désinhibition, euphorie, baisse des réflexes"
+    "a": "olive"
    },
    {
-    "q": "Qu'est-ce que l'ivresse ?",
+    "q": "Dans quel verre à pied conique sert-on le Martini ? Le verre à ___ ?",
     "c": [
-     "Allergie",
-     "État de perturbation dû à l'alcool",
-     "Intoxication",
-     "Maladie"
+     "cocktail",
+     "shot",
+     "bière",
+     "vin"
     ],
-    "a": "État de perturbation dû à l'alcool"
+    "a": "cocktail"
    },
    {
-    "q": "Quels sont les stades de l'ivresse ?",
+    "q": "Quel espion célèbre commande son Martini « au shaker, pas à la cuillère » ? James ___ ?",
     "c": [
-     "Débutant, confirmé, avancé",
-     "Simple, double, triple",
-     "Excitation, désinhibition, confusion, stupeur, coma",
-     "Léger, moyen, fort"
+     "Bond",
+     "Bourne",
+     "Hunt",
+     "Smiley"
     ],
-    "a": "Excitation, désinhibition, confusion, stupeur, coma"
+    "a": "Bond"
    },
    {
-    "q": "Qu'est-ce que le coma éthylique ?",
+    "q": "Comment dit-on qu'un Martini est très peu dosé en vermouth ? Un Martini ___ ?",
     "c": [
-     "Ivresse",
-     "Perte de conscience due à une intoxication alcoolique aiguë",
-     "Gueule de bois",
-     "Sommeil profond"
+     "dry",
+     "sweet",
+     "wet",
+     "dirty"
     ],
-    "a": "Perte de conscience due à une intoxication alcoolique aiguë"
+    "a": "dry"
    },
    {
-    "q": "Quels sont les effets de l'alcool sur le sommeil ?",
+    "q": "Quand on ajoute un peu de saumure d'olive, le Martini devient ___ ? (sale)",
     "c": [
-     "Il perturbe le sommeil profond et la qualité du repos",
-     "Il n'a pas d'effet",
-     "Il augmente la durée du sommeil",
-     "Il améliore le sommeil"
+     "dirty",
+     "dry",
+     "royal",
+     "gold"
     ],
-    "a": "Il perturbe le sommeil profond et la qualité du repos"
+    "a": "dirty"
    },
    {
-    "q": "L'alcool peut-il causer des trous noirs (blackouts) ?",
+    "q": "Quel zeste d'agrume peut remplacer l'olive dans un Martini ? Le ___ ?",
     "c": [
-     "Oui, à forte dose, il peut empêcher la formation de souvenirs",
-     "Non, c'est un mythe",
-     "Non, seulement chez les alcooliques",
-     "Oui, chez tout le monde"
+     "citron",
+     "pamplemousse",
+     "orange sanguine",
+     "cédrat"
     ],
-    "a": "Oui, à forte dose, il peut empêcher la formation de souvenirs"
+    "a": "citron"
    },
    {
-    "q": "Qu'est-ce que l'intoxication alcoolique aiguë ?",
-    "c": [
-     "Ivresse",
-     "Gueule de bois",
-     "Consommation modérée",
-     "Surconsommation rapide d'alcool pouvant mettre la vie en danger"
-    ],
-    "a": "Surconsommation rapide d'alcool pouvant mettre la vie en danger"
+    "q": "Combien de millilitres de gin, environ, contient un Martini classique ?",
+    "a": "60"
    }
   ],
   "rw": true
@@ -26784,84 +26760,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Quels sont les risques de l'alcool sur le foie ?",
+    "q": "Le punch est une boisson servie en grande quantité pour les ___ ? (soirées)",
     "c": [
-     "Aucun",
-     "Stéatose, hépatite alcoolique, cirrhose",
-     "Calculs biliaires",
-     "Cancer uniquement"
+     "fêtes",
+     "enterrements",
+     "examens",
+     "réunions"
     ],
-    "a": "Stéatose, hépatite alcoolique, cirrhose"
+    "a": "fêtes"
    },
    {
-    "q": "L'alcool est-il classé comme cancérogène ?",
+    "q": "Quel alcool est souvent la base d'un punch antillais ? Le ___ ?",
     "c": [
-     "Non",
-     "Oui, mais faiblement",
-     "Uniquement pour le cancer du foie",
-     "Oui, par l'OMS (groupe 1)"
+     "rhum",
+     "whisky",
+     "vodka",
+     "gin"
     ],
-    "a": "Oui, par l'OMS (groupe 1)"
+    "a": "rhum"
    },
    {
-    "q": "À quels cancers l'alcool est-il lié ?",
+    "q": "Quels ingrédients colorés donnent son goût au punch ? Des jus de ___ ?",
     "c": [
-     "Cancers de la bouche, gorge, foie, sein, côlon",
-     "Aucun",
-     "Uniquement au cancer de l'estomac",
-     "Uniquement au cancer du foie"
+     "fruits",
+     "légumes",
+     "viande",
+     "poisson"
     ],
-    "a": "Cancers de la bouche, gorge, foie, sein, côlon"
+    "a": "fruits"
    },
    {
-    "q": "Qu'est-ce que le syndrome d'alcoolisation fœtale (SAF) ?",
+    "q": "Dans quel grand récipient sert-on le punch à la louche ? Le ___ ?",
     "c": [
-     "Maladie génétique",
-     "Allergie",
-     "Trouble alimentaire",
-     "Ensemble de malformations chez l'enfant dues à l'alcool pendant la grossesse"
+     "bol",
+     "dé à coudre",
+     "flacon",
+     "tube"
     ],
-    "a": "Ensemble de malformations chez l'enfant dues à l'alcool pendant la grossesse"
+    "a": "bol"
    },
    {
-    "q": "L'alcool est-il bon pour le cœur à petite dose ?",
+    "q": "Le mot « punch » viendrait d'un mot hindi signifiant le chiffre ___ ? (cinq ingrédients)",
     "c": [
-     "Non, toxique même à petite dose",
-     "Le débat est controversé, les risques l'emportent",
-     "Oui, recommandé",
-     "Oui, très bon"
+     "cinq",
+     "trois",
+     "dix",
+     "sept"
     ],
-    "a": "Le débat est controversé, les risques l'emportent"
+    "a": "cinq"
    },
    {
-    "q": "Qu'est-ce que la cardiomyopathie alcoolique ?",
+    "q": "Quel punch antillais associe rhum, sirop de canne et citron vert ? Le ti'___ ?",
     "c": [
-     "Maladie du muscle cardiaque due à l'alcool",
-     "AVC",
-     "Infarctus",
-     "Trouble du rythme"
+     "punch",
+     "rhum",
+     "sec",
+     "sour"
     ],
-    "a": "Maladie du muscle cardiaque due à l'alcool"
+    "a": "punch"
    },
    {
-    "q": "Combien de maladies sont liées à l'alcool ?",
+    "q": "Quel épice râpée parfume souvent le punch de Noël ? La ___ ?",
     "c": [
-     "Plus de 200 maladies et troubles",
-     "Moins de 10",
-     "Environ 50",
-     "Environ 20"
+     "cannelle",
+     "moutarde",
+     "cumin",
+     "curry"
     ],
-    "a": "Plus de 200 maladies et troubles"
+    "a": "cannelle"
    },
    {
-    "q": "Qu'est-ce que la pancréatite alcoolique ?",
-    "c": [
-     "Diabète",
-     "Cancer du pancréas",
-     "Inflammation du pancréas due à la consommation d'alcool",
-     "Calculs"
-    ],
-    "a": "Inflammation du pancréas due à la consommation d'alcool"
+    "q": "Combien d'ingrédients de base, selon l'étymologie hindi, composent traditionnellement le punch ?",
+    "a": "5"
    }
   ],
   "rw": true
@@ -26873,84 +26843,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Combien de personnes meurent chaque année en France dans des accidents liés à l'alcool ?",
+    "q": "De quelle couleur est l'absinthe traditionnelle ? La « fée ___ » ?",
     "c": [
-     "Plus de 2 000",
-     "Plus de 3 000",
-     "Plus de 500",
-     "Plus de 1 000"
+     "verte",
+     "rouge",
+     "bleue",
+     "noire"
     ],
-    "a": "Plus de 1 000"
+    "a": "verte"
    },
    {
-    "q": "Quel est le risque d'accident avec 0,5 g/L d'alcoolémie ?",
+    "q": "Quelle plante amère donne son nom et son goût à l'absinthe ? La grande ___ ?",
     "c": [
-     "Risque multiplié par 5",
-     "Pas de risque",
-     "Risque multiplié par 1,5",
-     "Risque multiplié par 2"
+     "absinthe",
+     "menthe",
+     "sauge",
+     "ortie"
     ],
-    "a": "Risque multiplié par 2"
+    "a": "absinthe"
    },
    {
-    "q": "À partir de combien de verres le taux d'alcoolémie dépasse-t-il 0,5 g/L ?",
+    "q": "Quel objet troué pose-t-on sur le verre pour faire fondre le sucre ? La ___ ?",
     "c": [
-     "2 verres pour une femme, 3 pour un homme",
-     "4 verres",
-     "1 verre",
-     "3 verres pour une femme, 4 pour un homme"
+     "cuillère",
+     "fourchette",
+     "louche",
+     "pince"
     ],
-    "a": "2 verres pour une femme, 3 pour un homme"
+    "a": "cuillère"
    },
    {
-    "q": "Quelles sont les sanctions pour alcoolémie entre 0,5 et 0,8 g/L ?",
+    "q": "Que verse-t-on goutte à goutte sur le sucre pour préparer l'absinthe ? De l'___ glacée ?",
     "c": [
-     "Suspension à vie",
-     "Avertissement",
-     "Prison",
-     "Amende forfaitaire et retrait de 6 points"
+     "eau",
+     "huile",
+     "lait",
+     "sirop"
     ],
-    "a": "Amende forfaitaire et retrait de 6 points"
+    "a": "eau"
    },
    {
-    "q": "Qu'est-ce qu'un éthylotest anti-démarrage (EAD) ?",
+    "q": "Quels peintres et poètes du XIXe s. étaient friands d'absinthe, dont Van Gogh et ___ ?",
     "c": [
-     "Dispositif qui empêche le démarrage si l'alcoolémie est positive",
-     "Alcoomètre",
-     "Test salivaire",
-     "Verrouillage automatique"
+     "Verlaine",
+     "Molière",
+     "Hugo réticent",
+     "Racine"
     ],
-    "a": "Dispositif qui empêche le démarrage si l'alcoolémie est positive"
+    "a": "Verlaine"
    },
    {
-    "q": "Quel pourcentage des accidents mortels impliquent l'alcool en France ?",
+    "q": "Quelle molécule de l'absinthe, longtemps accusée de rendre fou, provient de la plante ? La ___ ?",
     "c": [
-     "Environ 30%",
-     "Environ 50%",
-     "Environ 20%",
-     "Environ 10%"
+     "thuyone",
+     "caféine",
+     "nicotine",
+     "quinine"
     ],
-    "a": "Environ 30%"
+    "a": "thuyone"
    },
    {
-    "q": "Que risque-t-on pour un refus de se soumettre à un dépistage d'alcoolémie ?",
+    "q": "En quel début de siècle l'absinthe a-t-elle été interdite en France (avant réhabilitation) ? Au XX___ ?",
     "c": [
-     "Rien",
-     "Retrait de permis",
-     "Les mêmes peines que pour conduite en état d'ivresse",
-     "Amende"
+     "e",
+     "Ier",
+     "IIe",
+     "IIIe"
     ],
-    "a": "Les mêmes peines que pour conduite en état d'ivresse"
+    "a": "e"
    },
    {
-    "q": "Quel est le taux d'alcoolémie considéré comme un délit en France ?",
-    "c": [
-     "Au-dessus de 0,5 g/L",
-     "Au-dessus de 0,3 g/L",
-     "Au-dessus de 0,8 g/L",
-     "Au-dessus de 1,0 g/L"
-    ],
-    "a": "Au-dessus de 0,8 g/L"
+    "q": "En quelle année l'absinthe a-t-elle été interdite en France (interdiction levée en 2011) ?",
+    "a": "1915"
    }
   ],
   "rw": true
@@ -26962,84 +26926,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que la vinification ?",
+    "q": "Quels religieux fabriquent la liqueur Chartreuse ? Des ___ ?",
     "c": [
-     "Processus de transformation du raisin en vin",
-     "Mise en bouteille",
-     "Dégustation",
-     "Culture de la vigne"
+     "moines",
+     "soldats",
+     "marins",
+     "boulangers"
     ],
-    "a": "Processus de transformation du raisin en vin"
+    "a": "moines"
    },
    {
-    "q": "Quelles sont les étapes de la vinification en rouge ?",
+    "q": "De quelle couleur vive est la Chartreuse la plus connue ?",
     "c": [
-     "Foulage, fermentation, macération, élevage",
-     "Fermentation, distillation, vieillissement",
-     "Pressurage, fermentation, élevage",
-     "Récolte, pressurage, filtration"
+     "verte",
+     "rouge",
+     "bleue",
+     "noire"
     ],
-    "a": "Foulage, fermentation, macération, élevage"
+    "a": "verte"
    },
    {
-    "q": "Qu'est-ce que la fermentation alcoolique ?",
+    "q": "Dans quel massif alpin français est produite la Chartreuse ? Le massif de la ___ ?",
     "c": [
-     "Ajout d'alcool",
-     "Distillation",
-     "Macération",
-     "Transformation du sucre en alcool par les levures"
+     "Chartreuse",
+     "Vanoise",
+     "Belledonne",
+     "Vercors"
     ],
-    "a": "Transformation du sucre en alcool par les levures"
+    "a": "Chartreuse"
    },
    {
-    "q": "Qu'est-ce que la macération en vinification ?",
+    "q": "À base de quoi la Chartreuse est-elle élaborée ? De nombreuses ___ ?",
     "c": [
-     "Fermentation",
-     "Filtration",
-     "Contact du jus avec les peaux pour extraire couleur et tanins",
-     "Pressurage"
+     "plantes",
+     "viandes",
+     "épices seules",
+     "fleurs uniquement"
     ],
-    "a": "Contact du jus avec les peaux pour extraire couleur et tanins"
+    "a": "plantes"
    },
    {
-    "q": "Qu'est-ce que l'élevage du vin ?",
+    "q": "Combien de plantes, environ, entrent dans la recette secrète de la Chartreuse ?",
     "c": [
-     "Culture de la vigne",
-     "Récolte",
-     "Vieillissement en cuve ou en fût avant la mise en bouteille",
-     "Vinification"
+     "130",
+     "12",
+     "50",
+     "300"
     ],
-    "a": "Vieillissement en cuve ou en fût avant la mise en bouteille"
+    "a": "130"
    },
    {
-    "q": "Qu'est-ce qu'une cave de vinification ?",
+    "q": "Une couleur a même été nommée d'après cette liqueur : le ___ ?",
     "c": [
-     "Entrepôt",
-     "Chai",
-     "Cave à vin",
-     "Lieu où le vin est élaboré et élevé"
+     "chartreuse",
+     "bordeaux",
+     "indigo",
+     "carmin"
     ],
-    "a": "Lieu où le vin est élaboré et élevé"
+    "a": "chartreuse"
    },
    {
-    "q": "Qu'est-ce que les tanins dans le vin ?",
+    "q": "Quel ordre monastique fondé par saint Bruno produit la Chartreuse ? Les ___ ?",
     "c": [
-     "Composés naturels qui donnent de la structure et de l'astringence",
-     "Arômes",
-     "Couleur",
-     "Sucre"
+     "Chartreux",
+     "Bénédictins",
+     "Trappistes",
+     "Franciscains"
     ],
-    "a": "Composés naturels qui donnent de la structure et de l'astringence"
+    "a": "Chartreux"
    },
    {
-    "q": "Qu'est-ce qu'un vin nature (sans sulfites ajoutés) ?",
-    "c": [
-     "Vin produit sans additifs chimiques, notamment sans soufre ajouté",
-     "Vin bio",
-     "Vin artisanal",
-     "Vin non alcoolisé"
-    ],
-    "a": "Vin produit sans additifs chimiques, notamment sans soufre ajouté"
+    "q": "Quel degré d'alcool, en pourcentage, titre la Chartreuse verte, particulièrement forte ?",
+    "a": "55"
    }
   ],
   "rw": true
@@ -27051,84 +27009,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que le brassage de la bière ?",
+    "q": "De quel fruit le calvados est-il distillé ? La ___ ?",
     "c": [
-     "Mise en bouteille",
-     "Filtration",
-     "Processus de fabrication de la bière",
-     "Fabrication du malt"
+     "pomme",
+     "poire",
+     "raisin",
+     "prune"
     ],
-    "a": "Processus de fabrication de la bière"
+    "a": "pomme"
    },
    {
-    "q": "Quelles sont les étapes du brassage ?",
+    "q": "De quelle région française le calvados est-il originaire ? La ___ ?",
     "c": [
-     "Distillation, vieillissement",
-     "Empâtage, filtration, ébullition, fermentation, garde",
-     "Macération, pressurage, élevage",
-     "Récolte, séchage, broyage"
+     "Normandie",
+     "Provence",
+     "Alsace",
+     "Corse"
     ],
-    "a": "Empâtage, filtration, ébullition, fermentation, garde"
+    "a": "Normandie"
    },
    {
-    "q": "Qu'est-ce que l'empâtage ?",
+    "q": "De quelle boisson fermentée le calvados est-il distillé ? Le ___ ?",
     "c": [
-     "Mélange du malt concassé avec de l'eau chaude pour extraire les sucres",
-     "Ajout de houblon",
-     "Fermentation",
-     "Filtration"
+     "cidre",
+     "vin",
+     "bière",
+     "hydromel"
     ],
-    "a": "Mélange du malt concassé avec de l'eau chaude pour extraire les sucres"
+    "a": "cidre"
    },
    {
-    "q": "Qu'est-ce que le malt ?",
+    "q": "Quelle catégorie d'alcool est le calvados ? Une eau-de-___ ?",
     "c": [
-     "Céréale",
-     "Houblon",
-     "Orge germée puis séchée pour le brassage",
-     "Levure"
+     "vie",
+     "rose",
+     "source",
+     "cologne"
     ],
-    "a": "Orge germée puis séchée pour le brassage"
+    "a": "vie"
    },
    {
-    "q": "Qu'est-ce que le moût de bière ?",
+    "q": "Comment appelle-t-on la tradition d'un verre de calvados au milieu d'un repas ? Le trou ___ ?",
     "c": [
-     "Liquide sucré extrait du malt avant fermentation",
-     "Bière finie",
-     "Résidu de brassage",
-     "Bière non filtrée"
+     "normand",
+     "breton",
+     "gascon",
+     "picard"
     ],
-    "a": "Liquide sucré extrait du malt avant fermentation"
+    "a": "normand"
    },
    {
-    "q": "À quoi sert l'ébullition du moût ?",
+    "q": "Dans quel type de fût le calvados vieillit-il pour se colorer ? Le fût de ___ ?",
     "c": [
-     "Refroidissement",
-     "Filtration",
-     "Fermentation",
-     "Stérilisation et extraction des saveurs du houblon"
+     "chêne",
+     "hêtre",
+     "châtaignier seul",
+     "acacia"
     ],
-    "a": "Stérilisation et extraction des saveurs du houblon"
+    "a": "chêne"
    },
    {
-    "q": "Qu'est-ce que la garde de la bière ?",
+    "q": "Quelle mention indique un calvados vieilli au moins 6 ans ? ___ ?",
     "c": [
-     "Mise en bouteille",
-     "Stockage",
-     "Filtration",
-     "Période de maturation après fermentation"
+     "Hors d'âge",
+     "VS",
+     "Fine",
+     "Réserve"
     ],
-    "a": "Période de maturation après fermentation"
+    "a": "Hors d'âge"
    },
    {
-    "q": "Qu'est-ce qu'une microbrasserie ?",
-    "c": [
-     "Petite brasserie artisanale produisant des volumes limités",
-     "Brasserie industrielle",
-     "Bar à bière",
-     "Grande brasserie"
-    ],
-    "a": "Petite brasserie artisanale produisant des volumes limités"
+    "q": "Quel degré d'alcool minimum, en pourcentage, titre un calvados ?",
+    "a": "40"
    }
   ],
   "rw": true
@@ -27140,84 +27092,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que la distillation ?",
+    "q": "De quel fruit distillé l'armagnac est-il fait ? Le ___ (vin) ?",
     "c": [
-     "Procédé de séparation de l'alcool par chauffage et condensation",
-     "Fermentation",
-     "Filtration",
-     "Macération"
+     "raisin",
+     "pomme",
+     "poire",
+     "figue"
     ],
-    "a": "Procédé de séparation de l'alcool par chauffage et condensation"
+    "a": "raisin"
    },
    {
-    "q": "Qui a inventé l'alambic ?",
+    "q": "De quelle région du sud-ouest de la France l'armagnac est-il originaire ? La ___ ?",
     "c": [
-     "Les Chinois",
-     "Les Grecs antiques",
-     "Les Romains",
-     "Les Arabes au Moyen Âge"
+     "Gascogne",
+     "Bretagne",
+     "Alsace",
+     "Savoie"
     ],
-    "a": "Les Arabes au Moyen Âge"
+    "a": "Gascogne"
    },
    {
-    "q": "Qu'est-ce qu'un alambic ?",
+    "q": "Quelle catégorie d'alcool est l'armagnac ? Une eau-de-___ ?",
     "c": [
-     "Cuve",
-     "Fût",
-     "Fermenteur",
-     "Appareil de distillation composé d'un bouilleur et d'un réfrigérant"
+     "vie",
+     "rose",
+     "mer",
+     "source"
     ],
-    "a": "Appareil de distillation composé d'un bouilleur et d'un réfrigérant"
+    "a": "vie"
    },
    {
-    "q": "Qu'est-ce que la double distillation ?",
+    "q": "L'armagnac est réputé être le plus ___ des alcools français (antérieur au cognac) ?",
     "c": [
-     "Distillation lente",
-     "Distillation longue",
-     "Deux alambics",
-     "Distillation effectuée deux fois pour obtenir un alcool plus pur"
+     "ancien",
+     "récent",
+     "sucré",
+     "léger"
     ],
-    "a": "Distillation effectuée deux fois pour obtenir un alcool plus pur"
+    "a": "ancien"
    },
    {
-    "q": "Quels spiritueux sont doublement distillés ?",
+    "q": "Quel type d'alambic, à colonne, l'armagnac utilise-t-il traditionnellement ? L'alambic ___ ?",
     "c": [
-     "Rhum, tequila",
-     "Cognac, whisky écossais, armagnac",
-     "Vodka, gin",
-     "Bière, vin"
+     "armagnacais",
+     "charentais",
+     "à repasse",
+     "à bain-marie"
     ],
-    "a": "Cognac, whisky écossais, armagnac"
+    "a": "armagnacais"
    },
    {
-    "q": "Qu'est-ce que le degré d'alcool (% vol) ?",
+    "q": "Dans quel type de fût l'armagnac vieillit-il ? Le fût de ___ ?",
     "c": [
-     "Densité",
-     "Quantité d'alcool",
-     "Pourcentage d'alcool pur dans un volume de boisson",
-     "Force de l'alcool"
+     "chêne",
+     "pin",
+     "olivier",
+     "cerisier"
     ],
-    "a": "Pourcentage d'alcool pur dans un volume de boisson"
+    "a": "chêne"
    },
    {
-    "q": "Qu'est-ce que la tête, le cœur et la queue en distillation ?",
+    "q": "Quelle mention désigne un armagnac d'une seule année de récolte ? Le ___ ?",
     "c": [
-     "Fractions du distillat recueillies à différents moments",
-     "Étapes de distillation",
-     "Qualités de l'alcool",
-     "Parties de l'alambic"
+     "millésime",
+     "assemblage",
+     "blend",
+     "solera"
     ],
-    "a": "Fractions du distillat recueillies à différents moments"
+    "a": "millésime"
    },
    {
-    "q": "Qu'est-ce que le calvados ?",
-    "c": [
-     "Alcool de fruits",
-     "Liqueur",
-     "Alcool de vin",
-     "Eau-de-vie de cidre produite en Normandie"
-    ],
-    "a": "Eau-de-vie de cidre produite en Normandie"
+    "q": "Quel degré d'alcool minimum, en pourcentage, titre en général un armagnac ?",
+    "a": "40"
    }
   ],
   "rw": true
@@ -27229,84 +27175,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Quelle est la position de l'islam sur l'alcool ?",
+    "q": "De quelle céréale majoritaire le bourbon est-il distillé ? Le ___ ?",
     "c": [
-     "Interdit (haram)",
-     "Autorisé",
-     "Uniquement le vin interdit",
-     "Autorisé avec modération"
+     "maïs",
+     "orge",
+     "seigle",
+     "blé"
     ],
-    "a": "Interdit (haram)"
+    "a": "maïs"
    },
    {
-    "q": "Quelle est la position du christianisme sur l'alcool ?",
+    "q": "De quel pays le bourbon est-il le whiskey emblématique ? Les ___-Unis ?",
     "c": [
-     "Généralement autorisé avec modération",
-     "Interdit",
-     "Uniquement le vin autorisé",
-     "Autorisé sans limite"
+     "États",
+     "Émirats",
+     "Pays",
+     "Provinces"
     ],
-    "a": "Généralement autorisé avec modération"
+    "a": "États"
    },
    {
-    "q": "Quelle est la position du judaïsme sur l'alcool ?",
+    "q": "Quel État américain est le berceau du bourbon ? Le ___ ?",
     "c": [
-     "Autorisé sans restriction",
-     "Autorisé avec modération, le vin a un rôle rituel",
-     "Uniquement la bière autorisée",
-     "Interdit"
+     "Kentucky",
+     "Texas",
+     "Alaska",
+     "Ohio"
     ],
-    "a": "Autorisé avec modération, le vin a un rôle rituel"
+    "a": "Kentucky"
    },
    {
-    "q": "Qu'est-ce que le vin de messe ?",
+    "q": "Dans quels fûts neufs et brûlés le bourbon doit-il vieillir ? Des fûts de chêne ___ ?",
     "c": [
-     "Vin bénit",
-     "Vin utilisé dans la liturgie chrétienne",
-     "Vin sucré",
-     "Vin sans alcool"
+     "brûlés",
+     "usagés",
+     "peints",
+     "vernis"
     ],
-    "a": "Vin utilisé dans la liturgie chrétienne"
+    "a": "brûlés"
    },
    {
-    "q": "Qu'est-ce que le Kiddouch dans le judaïsme ?",
+    "q": "Quel pourcentage minimum de maïs le bourbon doit-il contenir dans sa recette ?",
     "c": [
-     "Bénédiction sur le vin lors du Shabbat et des fêtes",
-     "Prière",
-     "Rituel juif",
-     "Chant"
+     "51",
+     "10",
+     "80",
+     "100"
     ],
-    "a": "Bénédiction sur le vin lors du Shabbat et des fêtes"
+    "a": "51"
    },
    {
-    "q": "Dans quelle religion l'alcool est-il totalement prohibé ?",
+    "q": "Quelle marque au chapeau noir « Old No. 7 » est un whiskey du Tennessee proche du bourbon ? Jack ___ ?",
     "c": [
-     "Hindouisme",
-     "Christianisme",
-     "Judaïsme",
-     "Islam"
+     "Daniel's",
+     "Beam",
+     "Walker",
+     "Turkey"
     ],
-    "a": "Islam"
+    "a": "Daniel's"
    },
    {
-    "q": "Qu'est-ce que la bière sans alcool ?",
+    "q": "Comment appelle-t-on la carbonisation intérieure des fûts qui donne sa couleur au bourbon ? Le ___ (char) ?",
     "c": [
-     "Bière dont l'alcool a été retiré après fermentation",
-     "Soda",
-     "Boisson gazeuse",
-     "Jus de malt"
+     "brûlage",
+     "collage",
+     "soutirage",
+     "ouillage"
     ],
-    "a": "Bière dont l'alcool a été retiré après fermentation"
+    "a": "brûlage"
    },
    {
-    "q": "Quels pays musulmans autorisent la production d'alcool ?",
-    "c": [
-     "Maroc, Tunisie, Liban, Turquie",
-     "Soudan, Libye",
-     "Arabie saoudite, Koweït",
-     "Iran, Yémen"
-    ],
-    "a": "Maroc, Tunisie, Liban, Turquie"
+    "q": "Quel degré d'alcool minimum, en pourcentage, un bourbon doit-il titrer à la mise en bouteille ?",
+    "a": "40"
    }
   ],
   "rw": true
@@ -27318,84 +27258,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que la prohibition ?",
+    "q": "De quelle couleur est une bière stout ?",
     "c": [
-     "Limitation de l'alcool",
-     "Taxe sur l'alcool",
-     "Régulation de l'alcool",
-     "Interdiction légale de la production et vente d'alcool"
+     "noire",
+     "blonde",
+     "rousse",
+     "blanche"
     ],
-    "a": "Interdiction légale de la production et vente d'alcool"
+    "a": "noire"
    },
    {
-    "q": "Quand la prohibition a-t-elle eu lieu aux États-Unis ?",
+    "q": "Quelle stout irlandaise à mousse crémeuse est mondialement connue ?",
     "c": [
-     "1930-1940",
-     "1920-1933",
-     "1910-1920",
-     "1900-1910"
+     "Guinness",
+     "Heineken",
+     "Corona",
+     "Leffe"
     ],
-    "a": "1920-1933"
+    "a": "Guinness"
    },
    {
-    "q": "Qu'est-ce que le 18e amendement américain ?",
+    "q": "Quel ingrédient torréfié donne à la stout sa couleur noire et son goût ? L'orge ___ ?",
     "c": [
-     "Droit de vote",
-     "Loi qui a instauré la prohibition aux États-Unis",
-     "Fin de la prohibition",
-     "Liberté d'expression"
+     "torréfiée",
+     "gelée",
+     "germée seule",
+     "crue"
     ],
-    "a": "Loi qui a instauré la prohibition aux États-Unis"
+    "a": "torréfiée"
    },
    {
-    "q": "Qui a aboli la prohibition aux USA ?",
+    "q": "Quels arômes grillés évoquent souvent la stout ? Le café et le ___ ?",
     "c": [
-     "Le Congrès",
-     "Le 21e amendement (1933)",
-     "La Cour suprême",
-     "Le président Hoover"
+     "chocolat",
+     "citron",
+     "melon",
+     "romarin"
     ],
-    "a": "Le 21e amendement (1933)"
+    "a": "chocolat"
    },
    {
-    "q": "Quelles ont été les conséquences de la prohibition ?",
+    "q": "De quel pays la stout est-elle emblématique ? L'___ ?",
     "c": [
-     "Paix sociale",
-     "Diminution de la consommation",
-     "Marché noir, contrebande, mafia, alambics clandestins",
-     "Santé publique améliorée"
+     "Irlande",
+     "Espagne",
+     "Grèce",
+     "Portugal"
     ],
-    "a": "Marché noir, contrebande, mafia, alambics clandestins"
+    "a": "Irlande"
    },
    {
-    "q": "Qui était Al Capone ?",
+    "q": "Quel gaz, en plus du CO2, donne à la Guinness pression sa mousse onctueuse ? L'___ ?",
     "c": [
-     "Agent du FBI",
-     "Chef de la police",
-     "Célèbre gangster ayant profité du marché noir de l'alcool",
-     "Homme politique"
+     "azote",
+     "hélium",
+     "oxygène",
+     "argon"
     ],
-    "a": "Célèbre gangster ayant profité du marché noir de l'alcool"
+    "a": "azote"
    },
    {
-    "q": "Qu'est-ce qu'un speakeasy ?",
+    "q": "Comment appelle-t-on la version plus forte, historiquement exportée en Russie ? L'Imperial ___ ?",
     "c": [
-     "Bar légal",
-     "Restaurant",
-     "Disco",
-     "Bar clandestin pendant la prohibition américaine"
+     "Stout",
+     "Ale",
+     "Lager",
+     "Porter"
     ],
-    "a": "Bar clandestin pendant la prohibition américaine"
+    "a": "Stout"
    },
    {
-    "q": "Quels pays ont eu une période de prohibition ?",
-    "c": [
-     "Allemagne, Autriche",
-     "USA, Finlande, Norvège, Islande, Canada (certaines provinces)",
-     "Japon, Chine",
-     "France, Italie, Espagne"
-    ],
-    "a": "USA, Finlande, Norvège, Islande, Canada (certaines provinces)"
+    "q": "Quel degré d'alcool, en pourcentage, titre en général une Guinness Draught ?",
+    "a": "4"
    }
   ],
   "rw": true
@@ -27407,84 +27341,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que la consommation modérée d'alcool ?",
+    "q": "Le lambic est un type de quelle boisson ? Une ___ belge ?",
     "c": [
-     "Pas plus de 5 verres par jour",
-     "Pas de limite",
-     "Pas plus d'un verre par semaine",
-     "Pas plus de 2 verres par jour et pas tous les jours"
+     "bière",
+     "vin",
+     "cidre",
+     "liqueur"
     ],
-    "a": "Pas plus de 2 verres par jour et pas tous les jours"
+    "a": "bière"
    },
    {
-    "q": "Quelles sont les recommandations françaises pour la consommation d'alcool ?",
+    "q": "De quel pays le lambic est-il une spécialité ? La ___ ?",
     "c": [
-     "Maximum 3 verres par jour",
-     "Maximum 10 verres par semaine, 2 verres par jour",
-     "Pas de limite",
-     "1 verre par jour"
+     "Belgique",
+     "France",
+     "Allemagne",
+     "Irlande"
     ],
-    "a": "Maximum 10 verres par semaine, 2 verres par jour"
+    "a": "Belgique"
    },
    {
-    "q": "Qu'est-ce qu'un verre standard d'alcool ?",
+    "q": "Quel mode de fermentation, sans levure ajoutée, caractérise le lambic ? La fermentation ___ ?",
     "c": [
-     "20 grammes",
-     "10 grammes d'alcool pur",
-     "15 grammes",
-     "5 grammes"
+     "spontanée",
+     "haute",
+     "basse",
+     "forcée"
     ],
-    "a": "10 grammes d'alcool pur"
+    "a": "spontanée"
    },
    {
-    "q": "Qu'est-ce qu'une unité d'alcool ?",
+    "q": "Quel goût surprenant, acidulé, caractérise le lambic ? Un goût ___ ?",
     "c": [
-     "Litre",
-     "Pourcentage",
-     "Mesure standard correspondant à un verre",
-     "Degré"
+     "acide",
+     "sucré",
+     "salé",
+     "amer intense"
     ],
-    "a": "Mesure standard correspondant à un verre"
+    "a": "acide"
    },
    {
-    "q": "Quels sont les bienfaits possibles d'une consommation modérée ?",
+    "q": "Comment appelle-t-on l'assemblage de lambics jeunes et vieux, refermenté ? La ___ ?",
     "c": [
-     "Longévité",
-     "Prévention du cancer",
-     "Protection cardiaque",
-     "Controversés, les risques l'emportent sur les bénéfices"
+     "gueuze",
+     "trappiste",
+     "saison",
+     "triple"
     ],
-    "a": "Controversés, les risques l'emportent sur les bénéfices"
+    "a": "gueuze"
    },
    {
-    "q": "Qu'est-ce qu'un jour sans alcool ?",
+    "q": "Quel fruit rouge ajoute-t-on pour faire un lambic à la cerise ? La ___ (kriek) ?",
     "c": [
-     "Journée sans consommation d'alcool recommandée régulièrement",
-     "Jour d'abstinence",
-     "Régime",
-     "Jeûne"
+     "cerise",
+     "framboise",
+     "fraise",
+     "mûre"
     ],
-    "a": "Journée sans consommation d'alcool recommandée régulièrement"
+    "a": "cerise"
    },
    {
-    "q": "Les Français suivent-ils les recommandations de modération ?",
+    "q": "Autour de quelle ville belge la vallée de la Senne est-elle le berceau du lambic ? ___ ?",
     "c": [
-     "Non, personne",
-     "Oui, majoritairement",
-     "Oui, à 80%",
-     "Non, une partie importante dépasse les recommandations"
+     "Bruxelles",
+     "Anvers",
+     "Gand",
+     "Liège"
     ],
-    "a": "Non, une partie importante dépasse les recommandations"
+    "a": "Bruxelles"
    },
    {
-    "q": "Qu'est-ce que le Dry January (Mois sans alcool) ?",
-    "c": [
-     "Défi d'abstinence d'alcool pendant le mois de janvier",
-     "Nouvelle année sans alcool",
-     "Mois de la modération",
-     "Régime"
-    ],
-    "a": "Défi d'abstinence d'alcool pendant le mois de janvier"
+    "q": "Combien d'années, au maximum, un vieux lambic peut-il vieillir en fût avant assemblage ?",
+    "a": "3"
    }
   ],
   "rw": true
