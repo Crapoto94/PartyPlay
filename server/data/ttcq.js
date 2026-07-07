@@ -10612,86 +10612,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Combien de planètes y a-t-il dans notre système solaire ?",
+    "q": "Quel astre est au centre du système solaire ? Le ___ ?",
     "c": [
-     "7",
-     "8",
-     "10",
-     "9"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quelle est la plus grande planète du système solaire ?",
-    "c": [
-     "Neptune",
-     "Jupiter",
-     "Saturne",
-     "Uranus"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quelle planète est la plus proche du Soleil ?",
-    "c": [
-     "Vénus",
-     "Mercure",
+     "Soleil",
      "Terre",
-     "Mars"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quelle est la planète la plus éloignée du Soleil ?",
-    "c": [
-     "Neptune",
-     "Uranus",
-     "Saturne",
-     "Pluton"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quelle planète est connue pour ses anneaux spectaculaires ?",
-    "c": [
-     "Jupiter",
-     "Neptune",
-     "Saturne",
-     "Uranus"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quel est le plus grand volcan du système solaire ?",
-    "c": [
-     "Montagne de Vénus",
-     "Mont Everest",
-     "Olympus Mons (Mars)",
-     "Mauna Loa (Terre)"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Combien de temps met la Terre pour orbiter autour du Soleil ?",
-    "c": [
-     "366 jours",
-     "365 jours",
-     "365,25 jours",
-     "364 jours"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quelle est la planète la plus chaude du système solaire ?",
-    "c": [
-     "Vénus",
-     "Mars",
-     "Mercure",
+     "Lune",
      "Jupiter"
     ],
-    "a": 0
+    "a": "Soleil"
+   },
+   {
+    "q": "Combien de planètes compte le système solaire depuis 2006 ?",
+    "a": "8"
+   },
+   {
+    "q": "Quelle est la planète rouge, voisine de la Terre ?",
+    "c": [
+     "Mars",
+     "Vénus",
+     "Jupiter",
+     "Saturne"
+    ],
+    "a": "Mars"
+   },
+   {
+    "q": "Quelle planète géante est entourée d'anneaux célèbres ?",
+    "c": [
+     "Saturne",
+     "Jupiter",
+     "Uranus",
+     "Neptune"
+    ],
+    "a": "Saturne"
+   },
+   {
+    "q": "Quelle est la plus grosse planète du système solaire ?",
+    "c": [
+     "Jupiter",
+     "Saturne",
+     "Terre",
+     "Neptune"
+    ],
+    "a": "Jupiter"
+   },
+   {
+    "q": "Quel astre, autrefois 9e planète, a été rétrogradé en planète naine ?",
+    "c": [
+     "Pluton",
+     "Cérès",
+     "Éris",
+     "Charon"
+    ],
+    "a": "Pluton"
+   },
+   {
+    "q": "Quelle planète, la plus proche du Soleil, est aussi la plus petite ?",
+    "c": [
+     "Mercure",
+     "Vénus",
+     "Mars",
+     "Terre"
+    ],
+    "a": "Mercure"
+   },
+   {
+    "q": "Combien de minutes met, environ, la lumière du Soleil pour atteindre la Terre ?",
+    "a": "8"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sciences_012",
@@ -10700,86 +10689,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel métal est attiré par un aimant ?",
+    "q": "Quel métal courant est attiré par un aimant ? Le ___ ?",
     "c": [
-     "Le fer",
-     "Le plomb",
-     "Le cuivre",
-     "L'aluminium"
+     "fer",
+     "bois",
+     "verre",
+     "plastique"
     ],
-    "a": 0
+    "a": "fer"
    },
    {
-    "q": "Quels sont les deux pôles d'un aimant ?",
-    "c": [
-     "Plus et moins",
-     "Est et Ouest",
-     "Positif et négatif",
-     "Nord et Sud"
-    ],
-    "a": 3
+    "q": "Combien de pôles possède un aimant ?",
+    "a": "2"
    },
    {
-    "q": "Que se passe-t-il quand on approche deux pôles identiques ?",
+    "q": "Quels sont les deux pôles d'un aimant : le nord et le ___ ?",
     "c": [
-     "Ils s'attirent",
-     "Ils s'annulent",
-     "Rien",
-     "Ils se repoussent"
+     "sud",
+     "est",
+     "ouest",
+     "centre"
     ],
-    "a": 3
+    "a": "sud"
    },
    {
-    "q": "Quelle planète possède le champ magnétique le plus puissant ?",
+    "q": "Deux pôles identiques d'aimants se repoussent, deux pôles opposés s'___ ?",
     "c": [
-     "Jupiter",
+     "attirent",
+     "ignorent",
+     "cassent",
+     "fondent"
+    ],
+    "a": "attirent"
+   },
+   {
+    "q": "Quel instrument à aiguille aimantée indique le nord ? La ___ ?",
+    "c": [
+     "boussole",
+     "horloge",
+     "règle",
+     "loupe"
+    ],
+    "a": "boussole"
+   },
+   {
+    "q": "Quelle planète se comporte comme un gigantesque aimant avec ses pôles ? La ___ ?",
+    "c": [
      "Terre",
-     "Neptune",
-     "Saturne"
+     "Lune",
+     "Mars",
+     "Vénus"
     ],
-    "a": 0
+    "a": "Terre"
    },
    {
-    "q": "Qu'est-ce qu'un électroaimant ?",
+    "q": "Comment appelle-t-on la zone d'influence invisible autour d'un aimant ? Le ___ magnétique ?",
     "c": [
-     "Une bobine",
-     "Un aimant créé par un courant électrique",
-     "Un aimant permanent",
-     "Un aimant naturel"
+     "champ",
+     "trou",
+     "flux",
+     "pôle"
     ],
-    "a": 1
+    "a": "champ"
    },
    {
-    "q": "Qui a découvert le magnétisme terrestre ?",
-    "c": [
-     "Michael Faraday",
-     "Hans Christian Oersted",
-     "William Gilbert",
-     "André-Marie Ampère"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Comment s'appelle la boussole ?",
-    "c": [
-     "Aiguille magnétique",
-     "Compas",
-     "Boussole",
-     "Gyroscope"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quelle roche est naturellement magnétique ?",
-    "c": [
-     "Le calcaire",
-     "Le basalte",
-     "La magnétite",
-     "Le granit"
-    ],
-    "a": 2
+    "q": "Combien de gauss, environ, vaut le champ magnétique moyen à la surface de la Terre ? (0,5)",
+    "a": "0.5"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sciences_013",
@@ -10788,86 +10766,69 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qu'est-ce que la température mesure ?",
+    "q": "Quelle grandeur, liée au chaud et au froid, la thermodynamique étudie-t-elle ? La ___ ?",
     "c": [
-     "L'énergie",
-     "La chaleur",
-     "La vitesse",
-     "L'énergie cinétique moyenne des molécules"
+     "chaleur",
+     "lumière",
+     "masse",
+     "vitesse"
     ],
-    "a": 3
+    "a": "chaleur"
    },
    {
-    "q": "Qui a formulé la première loi de la thermodynamique ?",
+    "q": "Dans quelle unité mesure-t-on couramment la température en France ? Le degré ___ ?",
     "c": [
-     "Julius von Mayer",
-     "Hermann von Helmholtz",
-     "Sadi Carnot",
-     "James Joule"
+     "Celsius",
+     "Fahrenheit",
+     "Newton",
+     "Pascal"
     ],
-    "a": 0
+    "a": "Celsius"
    },
    {
-    "q": "Quels sont les trois modes de transfert de chaleur ?",
-    "c": [
-     "Rayonnement, fusion, évaporation",
-     "Conduction, évaporation, radiation",
-     "Conduction, convection, rayonnement",
-     "Conduction, convection, fusion"
-    ],
-    "a": 2
+    "q": "À quelle température, en °C, l'eau gèle-t-elle ?",
+    "a": "0"
    },
    {
-    "q": "Quel zéro absolu en degrés Celsius ?",
-    "c": [
-     "-250 °C",
-     "-273,15 °C",
-     "-200 °C",
-     "-300 °C"
-    ],
-    "a": 1
+    "q": "À quelle température, en °C, l'eau bout-elle au niveau de la mer ?",
+    "a": "100"
    },
    {
-    "q": "Qui a inventé le moteur à vapeur ?",
+    "q": "Comment appelle-t-on la température la plus basse possible ? Le zéro ___ ?",
     "c": [
-     "Denis Papin",
-     "George Stephenson",
-     "James Watt",
-     "Thomas Newcomen"
+     "absolu",
+     "relatif",
+     "glacial",
+     "polaire"
     ],
-    "a": 2
+    "a": "absolu"
    },
    {
-    "q": "Qu'est-ce que l'entropie ?",
+    "q": "Quelle grandeur mesure le désordre d'un système en thermodynamique ? L'___ ?",
     "c": [
-     "Mesure du désordre d'un système",
-     "Mesure de l'énergie",
-     "Mesure de la température",
-     "Mesure de la chaleur"
+     "entropie",
+     "énergie",
+     "enthalpie",
+     "pression"
     ],
-    "a": 0
+    "a": "entropie"
    },
    {
-    "q": "Qui a inventé le réfrigérateur ?",
+    "q": "Vers quel objet la chaleur se déplace-t-elle spontanément : du chaud vers le ___ ?",
     "c": [
-     "Albert Einstein",
-     "Jacob Perkins",
-     "Carl von Linde",
-     "John Gorrie"
+     "froid",
+     "chaud",
+     "vide",
+     "haut"
     ],
-    "a": 1
+    "a": "froid"
    },
    {
-    "q": "Quelle loi relie pression, volume et température d'un gaz ?",
-    "c": [
-     "V = IR",
-     "PV = nRT",
-     "E = mc²",
-     "F = ma"
-    ],
-    "a": 1
+    "q": "Quelle est la valeur du zéro absolu, en degrés Celsius (arrondi) ?",
+    "a": "-273"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sciences_014",
@@ -10876,86 +10837,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a proposé le modèle atomique avec un noyau ?",
+    "q": "De quoi tous les objets et êtres vivants sont-ils faits ? D'___ ?",
     "c": [
-     "Ernest Rutherford",
-     "J.J. Thomson",
-     "John Dalton",
-     "Niels Bohr"
+     "atomes",
+     "cellules",
+     "molécules",
+     "pixels"
     ],
-    "a": 0
+    "a": "atomes"
    },
    {
-    "q": "Combien de protons un atome de carbone a-t-il ?",
+    "q": "Comment appelle-t-on le centre d'un atome ? Le ___ ?",
     "c": [
-     "6",
-     "4",
-     "8",
-     "12"
+     "noyau",
+     "cœur",
+     "point",
+     "pôle"
     ],
-    "a": 0
+    "a": "noyau"
    },
    {
-    "q": "Quelles sont les trois particules principales d'un atome ?",
+    "q": "Quelle particule chargée négativement tourne autour du noyau ? L'___ ?",
     "c": [
-     "Électrons, neutrons, muons",
-     "Neutrons, protons, photons",
-     "Protons, neutrons, électrons",
-     "Protons, électrons, positrons"
+     "électron",
+     "proton",
+     "neutron",
+     "photon"
     ],
-    "a": 2
+    "a": "électron"
    },
    {
-    "q": "Qui a proposé le premier modèle atomique moderne ?",
+    "q": "Quelle particule du noyau porte une charge positive ? Le ___ ?",
     "c": [
-     "Leucippe",
-     "John Dalton",
-     "Démocrite",
-     "Aristote"
+     "proton",
+     "électron",
+     "neutron",
+     "boson"
     ],
-    "a": 1
+    "a": "proton"
    },
    {
-    "q": "Quelle est la charge d'un électron ?",
+    "q": "Quel élément chimique, le plus simple et le plus léger, n'a qu'un proton ? L'___ ?",
     "c": [
-     "Variable",
-     "Neutre",
-     "Négative",
-     "Positive"
+     "hydrogène",
+     "hélium",
+     "oxygène",
+     "carbone"
     ],
-    "a": 2
+    "a": "hydrogène"
    },
    {
-    "q": "Qui a découvert l'électron ?",
+    "q": "Quel tableau classe tous les éléments chimiques ? Le tableau ___ (de Mendeleïev) ?",
     "c": [
-     "James Chadwick",
-     "Robert Millikan",
-     "J.J. Thomson",
-     "Ernest Rutherford"
+     "périodique",
+     "logique",
+     "numérique",
+     "carré"
     ],
-    "a": 2
+    "a": "périodique"
    },
    {
-    "q": "Qui a découvert le neutron ?",
+    "q": "Comment appelle-t-on la particule neutre du noyau ? Le ___ ?",
     "c": [
-     "Niels Bohr",
-     "James Chadwick",
-     "J.J. Thomson",
-     "Ernest Rutherford"
+     "neutron",
+     "proton",
+     "électron",
+     "gluon"
     ],
-    "a": 1
+    "a": "neutron"
    },
    {
-    "q": "Quelle est la taille approximative d'un atome ?",
-    "c": [
-     "0,1 nanomètre",
-     "1 millimètre",
-     "1 micromètre",
-     "1 picomètre"
-    ],
-    "a": 0
+    "q": "Combien d'éléments chimiques, environ, le tableau périodique compte-t-il aujourd'hui ?",
+    "a": "118"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sciences_015",
@@ -10964,86 +10920,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Un virus est-il considéré comme vivant ?",
+    "q": "Un virus est-il plus petit ou plus grand qu'une bactérie ?",
     "c": [
-     "Seulement dans certaines conditions",
-     "Oui",
-     "C'est une bactérie",
-     "Non, il a besoin d'un hôte"
+     "plus petit",
+     "plus grand",
+     "identique",
+     "égal"
     ],
-    "a": 3
+    "a": "plus petit"
    },
    {
-    "q": "Quelle est la taille d'un virus par rapport à une bactérie ?",
+    "q": "Quel virus a provoqué la pandémie mondiale de 2020 ? La ___ (Covid) ?",
     "c": [
-     "Beaucoup plus petit",
-     "Variable",
-     "À peu près égal",
-     "Beaucoup plus grand"
+     "Covid",
+     "grippe",
+     "peste",
+     "rage"
     ],
-    "a": 0
+    "a": "Covid"
    },
    {
-    "q": "Qu'est-ce qu'un virus ?",
+    "q": "Comment appelle-t-on une injection qui protège contre un virus ? Un ___ ?",
     "c": [
-     "Parasite",
-     "Bactérie",
-     "Entité infectieuse qui se reproduit dans des cellules",
-     "Micro-organisme"
+     "vaccin",
+     "sérum",
+     "remède",
+     "antibiotique"
     ],
-    "a": 2
+    "a": "vaccin"
    },
    {
-    "q": "Quels sont les principaux composants d'un virus ?",
+    "q": "Quel savant français a mis au point le vaccin contre la rage ? Louis ___ ?",
     "c": [
-     "ADN et ARN",
-     "Protéines et lipides",
-     "Noyau et membrane",
-     "Acide nucléique et capside"
+     "Pasteur",
+     "Curie",
+     "Lavoisier",
+     "Ampère"
     ],
-    "a": 3
+    "a": "Pasteur"
    },
    {
-    "q": "Comment s'appelle la protéine qui entoure le matériel génétique d'un virus ?",
+    "q": "Quel virus, transmis sexuellement, cause le sida ? Le ___ ?",
     "c": [
-     "La paroi",
-     "La membrane",
-     "L'enveloppe",
-     "La capside"
+     "VIH",
+     "VHB",
+     "HPV",
+     "EBV"
     ],
-    "a": 3
+    "a": "VIH"
    },
    {
-    "q": "Qui a découvert le premier virus ?",
+    "q": "Un virus a-t-il besoin d'une cellule hôte pour se multiplier ? Oui ou non ?",
     "c": [
-     "Robert Koch",
-     "Martinus Beijerinck",
-     "Louis Pasteur",
-     "Dmitri Ivanovsky"
+     "oui",
+     "non",
+     "parfois",
+     "jamais"
     ],
-    "a": 3
+    "a": "oui"
    },
    {
-    "q": "Quel virus est responsable de la variole ?",
+    "q": "Quelle maladie virale, éradiquée en 1980 grâce au vaccin, faisait des ravages ? La ___ ?",
     "c": [
-     "Virus de la varicelle",
-     "Virus Ebola",
-     "Variole virus",
-     "Virus de la vaccine"
+     "variole",
+     "rougeole",
+     "grippe",
+     "polio"
     ],
-    "a": 2
+    "a": "variole"
    },
    {
-    "q": "Comment les virus se reproduisent-ils ?",
-    "c": [
-     "Par sporulation",
-     "Par division",
-     "En détournant la machinerie cellulaire de l'hôte",
-     "Par mitose"
-    ],
-    "a": 2
+    "q": "Quelle taille, en nanomètres, environ, mesure un virus typique comme la grippe ?",
+    "a": "100"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sciences_016",
@@ -11052,86 +11003,63 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qu'est-ce qu'un nombre premier ?",
+    "q": "Un nombre premier n'est divisible que par 1 et par ___ ?",
     "c": [
-     "Divisible par 2",
-     "Nombre entier",
-     "Divisible seulement par 1 et lui-même",
-     "Impair"
+     "lui-même",
+     "zéro",
+     "deux",
+     "dix"
     ],
-    "a": 2
+    "a": "lui-même"
    },
    {
-    "q": "Quel est le seul nombre premier pair ?",
-    "c": [
-     "3",
-     "1",
-     "2",
-     "5"
-    ],
-    "a": 2
+    "q": "Quel est le plus petit nombre premier ?",
+    "a": "2"
    },
    {
-    "q": "Combien de nombres premiers existe-t-il ?",
-    "c": [
-     "100",
-     "Une infinité",
-     "1 000",
-     "10 000"
-    ],
-    "a": 1
+    "q": "Quel est le seul nombre premier qui soit pair ?",
+    "a": "2"
    },
    {
-    "q": "Qui a démontré l'infinité des nombres premiers ?",
+    "q": "Le nombre 9 est-il premier ? (répondez oui ou non)",
     "c": [
-     "Pythagore",
-     "Eratosthène",
+     "non",
+     "oui",
+     "parfois",
+     "jamais"
+    ],
+    "a": "non"
+   },
+   {
+    "q": "Quel mathématicien grec a prouvé qu'il existe une infinité de nombres premiers ?",
+    "c": [
      "Euclide",
+     "Pythagore",
+     "Thalès",
      "Archimède"
     ],
-    "a": 2
+    "a": "Euclide"
    },
    {
-    "q": "Comment s'appelle la méthode pour trouver des nombres premiers ?",
-    "c": [
-     "Le crible d'Ératosthène",
-     "La conjecture de Goldbach",
-     "L'algorithme d'Euclide",
-     "Le théorème de Pythagore"
-    ],
-    "a": 0
+    "q": "Quel est le nombre premier juste après 7 ?",
+    "a": "11"
    },
    {
-    "q": "Quelle conjecture affirme que tout nombre pair est somme de deux nombres premiers ?",
+    "q": "Comment appelle-t-on deux premiers qui se suivent à 2 d'écart, comme 11 et 13 ? Des premiers ___ ?",
     "c": [
-     "La conjecture de Goldbach",
-     "L'hypothèse de Riemann",
-     "Le dernier théorème de Fermat",
-     "Le théorème des nombres premiers"
+     "jumeaux",
+     "voisins",
+     "frères",
+     "amis"
     ],
-    "a": 0
+    "a": "jumeaux"
    },
    {
-    "q": "Quel est le plus grand nombre premier connu (2024) ?",
-    "c": [
-     "2^74207281 - 1",
-     "2^57885161 - 1",
-     "2^1000000 - 1",
-     "2^82589933 - 1"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel mathématicien a travaillé sur la répartition des nombres premiers ?",
-    "c": [
-     "Bernhard Riemann",
-     "Pierre de Fermat",
-     "Leonhard Euler",
-     "Carl Friedrich Gauss"
-    ],
-    "a": 0
+    "q": "Combien de chiffres compte le plus grand nombre premier connu (découvert en 2018, en millions arrondi) ?",
+    "a": "24000000"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sciences_017",
@@ -11140,86 +11068,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qu'est-ce que la fission nucléaire ?",
+    "q": "Que fait-on subir au noyau d'un atome lors de la fission ? On le ___ (casse) ?",
     "c": [
-     "Division du noyau d'un atome lourd",
-     "Fusion de noyaux légers",
-     "Réaction chimique",
-     "Désintégration radioactive"
+     "casse",
+     "colle",
+     "chauffe",
+     "peint"
     ],
-    "a": 0
+    "a": "casse"
    },
    {
-    "q": "Qui a découvert la fission nucléaire ?",
+    "q": "Quel type de centrale produit de l'électricité grâce à la fission ? Une centrale ___ ?",
     "c": [
-     "Lise Meitner",
-     "Marie Curie",
-     "Enrico Fermi",
-     "Otto Hahn et Fritz Strassmann"
+     "nucléaire",
+     "solaire",
+     "éolienne",
+     "à charbon"
     ],
-    "a": 3
+    "a": "nucléaire"
    },
    {
-    "q": "En quelle année la fission a-t-elle été découverte ?",
+    "q": "Quel élément lourd est le combustible classique de la fission ? L'___ ?",
     "c": [
-     "1942",
-     "1938",
-     "1945",
-     "1935"
+     "uranium",
+     "carbone",
+     "hélium",
+     "fer"
     ],
-    "a": 1
+    "a": "uranium"
    },
    {
-    "q": "Quel élément est le plus utilisé dans la fission ?",
+    "q": "Comment appelle-t-on l'enchaînement de fissions successives ? La réaction en ___ ?",
     "c": [
-     "Le plutonium 239",
-     "Le thorium",
-     "L'uranium 238",
-     "L'uranium 235"
+     "chaîne",
+     "boucle",
+     "série",
+     "cercle"
     ],
-    "a": 3
+    "a": "chaîne"
    },
    {
-    "q": "Comment s'appelle la réaction en chaîne de la fission ?",
+    "q": "Quelle arme dévastatrice repose sur la fission nucléaire ? La bombe ___ ?",
     "c": [
-     "Fission multiple",
-     "Réaction en chaîne",
-     "Réaction atomique",
-     "Réaction nucléaire"
+     "atomique",
+     "chimique",
+     "sonique",
+     "solaire"
     ],
-    "a": 1
+    "a": "atomique"
    },
    {
-    "q": "Quel projet a construit la première bombe atomique ?",
+    "q": "Dans quelle ville d'Ukraine a eu lieu la catastrophe nucléaire de 1986 ?",
     "c": [
-     "Projet Manhattan",
-     "Projet Alsos",
-     "Projet Y",
-     "Projet Tube Alloys"
+     "Tchernobyl",
+     "Kiev",
+     "Fukushima",
+     "Odessa"
     ],
-    "a": 0
+    "a": "Tchernobyl"
    },
    {
-    "q": "Qui a construit le premier réacteur nucléaire ?",
+    "q": "Quelle physicienne a coexpliqué la fission nucléaire, mais fut oubliée du Nobel ? Lise ___ ?",
     "c": [
-     "Niels Bohr",
-     "Otto Hahn",
-     "Enrico Fermi",
-     "Robert Oppenheimer"
+     "Meitner",
+     "Curie",
+     "Franklin",
+     "Noether"
     ],
-    "a": 2
+    "a": "Meitner"
    },
    {
-    "q": "Quelle ville a été détruite par la première bombe atomique ?",
-    "c": [
-     "Hiroshima",
-     "Osaka",
-     "Nagasaki",
-     "Tokyo"
-    ],
-    "a": 0
+    "q": "En quelle année la fission nucléaire a-t-elle été découverte par Hahn et Meitner ?",
+    "a": "1938"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sciences_018",
@@ -11228,86 +11151,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qu'est-ce qu'un cristal ?",
+    "q": "Quel cristal transparent et dur est le plus précieux ? Le ___ ?",
     "c": [
-     "Diamant",
-     "Verre",
-     "Roche transparente",
-     "Solide dont les atomes sont arrangés de manière ordonnée"
+     "diamant",
+     "charbon",
+     "verre",
+     "sel"
     ],
-    "a": 3
+    "a": "diamant"
    },
    {
-    "q": "Quel est le minéral le plus dur ?",
+    "q": "De quoi le diamant est-il fait, comme le charbon ? De ___ ?",
     "c": [
-     "Le corindon",
-     "Le quartz",
-     "Le diamant",
-     "Le grenat"
+     "carbone",
+     "silicium",
+     "fer",
+     "or"
     ],
-    "a": 2
+    "a": "carbone"
    },
    {
-    "q": "Quelle est la forme d'un cristal de sel ?",
+    "q": "Quel cristal blanc, comestible, sale nos plats ? Le ___ ?",
     "c": [
-     "Rectangulaire",
-     "Sphérique",
-     "Hexagonal",
-     "Cubique"
+     "sel",
+     "sucre",
+     "sable",
+     "craie"
     ],
-    "a": 3
+    "a": "sel"
    },
    {
-    "q": "Qui a reçu le prix Nobel pour la diffraction des rayons X par les cristaux ?",
+    "q": "Comment appelle-t-on la forme régulière et géométrique d'un cristal ? Sa ___ ?",
     "c": [
-     "Les deux Bragg",
-     "William Henry Bragg",
-     "William Lawrence Bragg",
-     "Max von Laue"
+     "structure",
+     "couleur",
+     "odeur",
+     "masse"
     ],
-    "a": 0
+    "a": "structure"
    },
    {
-    "q": "Combien de systèmes cristallins existe-t-il ?",
+    "q": "Quel cristal violet est une pierre semi-précieuse très prisée ? L'___ ?",
     "c": [
-     "6",
-     "8",
-     "7",
-     "5"
+     "améthyste",
+     "émeraude",
+     "rubis",
+     "saphir"
     ],
-    "a": 2
+    "a": "améthyste"
    },
    {
-    "q": "Quel cristal est utilisé en électronique pour l'oscillation ?",
+    "q": "Quel cristal de glace tombe du ciel en hiver, toujours unique ? Le ___ de neige ?",
     "c": [
-     "Le rubis",
-     "Le quartz",
-     "Le diamant",
-     "Le saphir"
+     "flocon",
+     "grêlon",
+     "givre",
+     "cristal"
     ],
-    "a": 1
+    "a": "flocon"
    },
    {
-    "q": "Quel scientifique a découvert la diffraction des rayons X par les cristaux ?",
+    "q": "Quelle science étudie la structure des cristaux ? La ___ ?",
     "c": [
-     "Röntgen",
-     "Max von Laue",
-     "Lawrence Bragg",
-     "William Bragg"
+     "cristallographie",
+     "minéralogie",
+     "géologie",
+     "chimie"
     ],
-    "a": 1
+    "a": "cristallographie"
    },
    {
-    "q": "Comment s'appelle la science qui étudie les cristaux ?",
-    "c": [
-     "La lithologie",
-     "La géologie",
-     "La cristallographie",
-     "La minéralogie"
-    ],
-    "a": 2
+    "q": "Combien de systèmes cristallins fondamentaux les scientifiques distinguent-ils ?",
+    "a": "7"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "arts_001",
@@ -11316,86 +11234,87 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a peint la Joconde ?",
+    "q": "Avec quel outil à poils applique-t-on la peinture sur la toile ? Un ___ ?",
     "c": [
-     "Léonard de Vinci",
-     "Raphaël",
-     "Botticelli",
-     "Michel-Ange"
+     "pinceau",
+     "marteau",
+     "ciseau",
+     "crayon"
     ],
-    "a": 0
+    "a": "pinceau"
    },
    {
-    "q": "Quel tableau de Van Gogh est le plus célèbre ?",
+    "q": "Quel tableau de Léonard de Vinci, au sourire mystérieux, est le plus célèbre ? La ___ ?",
     "c": [
-     "La Chambre",
-     "La Nuit étoilée",
-     "Les Tournesols",
-     "Les Iris"
+     "Joconde",
+     "Cène",
+     "Vénus",
+     "Ronde"
     ],
-    "a": 1
+    "a": "Joconde"
    },
    {
-    "q": "Qui est le fondateur de l'impressionnisme ?",
+    "q": "Dans quel musée parisien la Joconde est-elle exposée ? Le ___ ?",
     "c": [
-     "Claude Monet",
-     "Édouard Manet",
-     "Auguste Renoir",
-     "Edgar Degas"
+     "Louvre",
+     "Orsay",
+     "Pompidou",
+     "Rodin"
     ],
-    "a": 0
+    "a": "Louvre"
    },
    {
-    "q": "Quel peintre espagnol a peint 'Guernica' ?",
+    "q": "Quel peintre néerlandais s'est coupé l'oreille ? Vincent van ___ ?",
     "c": [
-     "Francisco de Goya",
-     "Salvador Dalí",
-     "Joan Miró",
-     "Pablo Picasso"
+     "Gogh",
+     "Rijn",
+     "Dyck",
+     "Eyck"
     ],
-    "a": 3
+    "a": "Gogh"
    },
    {
-    "q": "Quel mouvement artistique a précédé la Renaissance ?",
+    "q": "Quel mouvement de Monet peint la lumière et les impressions ? L'___ ?",
     "c": [
-     "Le rococo",
-     "Le baroque",
-     "Le roman",
-     "Le gothique"
+     "impressionnisme",
+     "cubisme",
+     "réalisme",
+     "baroque"
     ],
-    "a": 3
+    "a": "impressionnisme"
    },
    {
-    "q": "Qui a peint 'Le Cri' ?",
+    "q": "Quel peintre espagnol a cofondé le cubisme ?",
     "c": [
-     "Vincent van Gogh",
-     "Edvard Munch",
-     "James Ensor",
-     "Gustav Klimt"
+     "Picasso",
+     "Dalí",
+     "Miró",
+     "Vélasquez"
     ],
-    "a": 1
+    "a": "Picasso"
    },
    {
-    "q": "Quel tableau de Vermeer est surnommé 'La Joconde du Nord' ?",
+    "q": "Quelle peinture murale sur enduit frais, comme à la Sixtine, porte un nom italien ? La ___ ?",
     "c": [
-     "La Jeune Fille à la perle",
-     "La Vue de Delft",
-     "La Dentellière",
-     "La Laitière"
+     "fresque",
+     "aquarelle",
+     "gouache",
+     "esquisse"
     ],
-    "a": 0
+    "a": "fresque"
    },
    {
-    "q": "Quel mouvement pictural est caractérisé par des points de couleur ?",
+    "q": "Sur quel support la Joconde a-t-elle été peinte : quel bois ? Le ___ ?",
     "c": [
-     "Le cubisme",
-     "Le pointillisme",
-     "Le fauvisme",
-     "Le surréalisme"
+     "peuplier",
+     "chêne",
+     "noyer",
+     "pin"
     ],
-    "a": 1
+    "a": "peuplier"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "arts_002",
@@ -11404,86 +11323,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a sculpté le David de Florence ?",
+    "q": "Dans quelle matière blanche et noble sculpte-t-on souvent des statues ? Le ___ ?",
     "c": [
-     "Verrocchio",
-     "Donatello",
-     "Le Bernin",
-     "Michel-Ange"
+     "marbre",
+     "carton",
+     "tissu",
+     "verre"
     ],
-    "a": 3
+    "a": "marbre"
    },
    {
-    "q": "Quelle sculpture grecque antique est l'une des plus célèbres ?",
+    "q": "Quelle célèbre statue nue de David a été sculptée par Michel-Ange ? Le ___ ?",
     "c": [
-     "La Vénus de Milo",
-     "La Victoire de Samothrace",
-     "Le Laocoon",
-     "Le Discobole"
+     "David",
+     "Moïse",
+     "Apollon",
+     "Hercule"
     ],
-    "a": 0
+    "a": "David"
    },
    {
-    "q": "Qui a créé 'Le Penseur' ?",
+    "q": "Quel sculpteur français a créé « Le Penseur » ? Auguste ___ ?",
     "c": [
-     "Antoine Bourdelle",
-     "Auguste Rodin",
-     "Aristide Maillol",
-     "Camille Claudel"
+     "Rodin",
+     "Camille",
+     "Bourdelle",
+     "Maillol"
     ],
-    "a": 1
+    "a": "Rodin"
    },
    {
-    "q": "Quel sculpteur français a créé 'Le Baiser' ?",
+    "q": "Quel outil, frappé au marteau, sert à tailler la pierre ? Le ___ ?",
     "c": [
-     "Camille Claudel",
-     "Auguste Rodin",
-     "Jean-Baptiste Carpeaux",
-     "François Rude"
+     "ciseau",
+     "pinceau",
+     "crayon",
+     "rabot"
     ],
-    "a": 1
+    "a": "ciseau"
    },
    {
-    "q": "Quel matériau est le plus utilisé en sculpture classique ?",
+    "q": "De quel métal, coulé dans un moule, fait-on de nombreuses statues ? Le ___ ?",
     "c": [
-     "L'argile",
-     "Le marbre",
-     "Le bois",
-     "Le bronze"
+     "bronze",
+     "papier",
+     "cuir",
+     "sucre"
     ],
-    "a": 1
+    "a": "bronze"
    },
    {
-    "q": "Qui a sculpté 'La Pietà' au Vatican ?",
+    "q": "Quelle statue grecque des bras manquants représente une déesse ? La Vénus de ___ ?",
     "c": [
-     "Raphaël",
-     "Le Bernin",
-     "Michel-Ange",
-     "Donatello"
+     "Milo",
+     "Samos",
+     "Délos",
+     "Naxos"
     ],
-    "a": 2
+    "a": "Milo"
    },
    {
-    "q": "Quel mouvement artistique du XXe siècle a révolutionné la sculpture ?",
+    "q": "Comment appelle-t-on une sculpture qui ne se détache que partiellement du fond ? Un bas-___ ?",
     "c": [
-     "Le constructivisme",
-     "Le cubisme",
-     "Le surréalisme",
-     "Le dadaïsme"
+     "relief",
+     "socle",
+     "buste",
+     "torse"
     ],
-    "a": 1
+    "a": "relief"
    },
    {
-    "q": "Qui a créé la sculpture 'L'Homme qui marche' ?",
-    "c": [
-     "Henry Moore",
-     "Alberto Giacometti",
-     "Constantin Brâncuși",
-     "Jean Arp"
-    ],
-    "a": 1
+    "q": "En quelle année, avant J.-C., environ, a été sculptée la Vénus de Milo ? En -___ ?",
+    "a": "130"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "arts_003",
