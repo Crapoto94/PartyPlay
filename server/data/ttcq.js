@@ -3358,86 +3358,87 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a réalisé Interstellar ?",
+    "q": "À travers quel objet cosmique les héros voyagent-ils vers d'autres galaxies ? Un trou ___ ?",
     "c": [
-     "Soderbergh",
+     "ver",
+     "noir",
+     "blanc",
+     "bleu"
+    ],
+    "a": "ver"
+   },
+   {
+    "q": "Quel réalisateur d'Inception a réalisé Interstellar ? Christopher ___ ?",
+    "c": [
      "Nolan",
-     "Zemeckis",
-     "Spielberg"
+     "Villeneuve",
+     "Scott",
+     "Cuarón"
     ],
-    "a": 1
+    "a": "Nolan"
    },
    {
-    "q": "Le physicien qui a conseillé la production d'Interstellar sur la représentation scientifique du trou noir est :",
+    "q": "Quel acteur incarne l'astronaute Cooper ? Matthew ___ ?",
     "c": [
-     "Kip Thorne",
-     "Stephen Hawking en personne à l'écran",
-     "Albert Einstein",
-     "Neil deGrasse Tyson"
+     "McConaughey",
+     "Damon",
+     "Affleck",
+     "Cooper"
     ],
-    "a": 0
+    "a": "McConaughey"
    },
    {
-    "q": "Quel acteur joue Cooper ?",
+    "q": "Quel phénomène déforme le temps près d'une planète, une heure y valant 7 ans ?",
     "c": [
-     "Anne Hathaway",
-     "Michael Caine",
-     "John Lithgow",
-     "Matthew McConaughey"
+     "Gravité",
+     "Vent",
+     "Froid",
+     "Lumière"
     ],
-    "a": 3
+    "a": "Gravité"
    },
    {
-    "q": "En quelle année Interstellar est-il sorti ?",
+    "q": "Quel robot rectangulaire et spirituel accompagne l'équipage ?",
     "c": [
-     "2014",
-     "2016",
-     "2015",
-     "2013"
+     "TARS",
+     "HAL",
+     "R2D2",
+     "Wall-E"
     ],
-    "a": 0
+    "a": "TARS"
    },
    {
-    "q": "Quel trou noir est exploré dans le film ?",
+    "q": "Quel astre supermassif, nommé Gargantua, domine le film ? Un trou ___ ?",
     "c": [
-     "Cygnus X-1",
-     "Gargantua",
-     "Sagittarius A*",
-     "M87"
+     "noir",
+     "ver",
+     "blanc",
+     "bleu"
     ],
-    "a": 1
+    "a": "noir"
    },
    {
-    "q": "Quelle planète visitée a un temps fortement dilaté ?",
+    "q": "Quel lien unit Cooper à Murph, qu'il tente de retrouver ? Il est son ___ ?",
     "c": [
-     "Wolf",
-     "Miller",
-     "Mann",
-     "Edmunds"
+     "père",
+     "frère",
+     "oncle",
+     "ami"
     ],
-    "a": 1
+    "a": "père"
    },
    {
-    "q": "Qui a composé la musique du film ?",
+    "q": "Quel physicien Nobel a été consultant scientifique du film ? Kip ___ ?",
     "c": [
-     "Alexandre Desplat",
-     "John Williams",
-     "Hans Zimmer",
-     "James Newton Howard"
+     "Thorne",
+     "Hawking",
+     "Feynman",
+     "Penrose"
     ],
-    "a": 2
-   },
-   {
-    "q": "Que découvre Cooper à l'intérieur du trou noir ?",
-    "c": [
-     "Un univers parallèle",
-     "Le Big Bang",
-     "La bibliothèque dimensionnelle",
-     "Une civilisation extraterrestre"
-    ],
-    "a": 2
+    "a": "Thorne"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cinema_022",
@@ -3446,86 +3447,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a réalisé Casablanca ?",
-    "c": [
-     "Welles",
-     "Curtiz",
-     "Nolan",
-     "Van Dyke"
-    ],
-    "a": 1
+    "q": "Dans quelle ville du Maroc se déroule ce film culte de 1942 ?",
+    "a": "Casablanca"
    },
    {
-    "q": "Casablanca est adapté d'une pièce de théâtre non jouée intitulée :",
+    "q": "Quel acteur légendaire incarne Rick, le tenancier du café ? Humphrey ___ ?",
     "c": [
-     "Everybody Comes to Rick's",
-     "Casablanca, mon amour",
-     "La Valse de Rick",
-     "Le Piano de Sam"
+     "Bogart",
+     "Grant",
+     "Gable",
+     "Cooper"
     ],
-    "a": 0
+    "a": "Bogart"
    },
    {
-    "q": "Quel acteur joue Rick Blaine ?",
+    "q": "Comment s'appelle le bar tenu par Rick ? Le ___'s Café Américain ?",
     "c": [
-     "Ingrid Bergman",
-     "Claude Rains",
-     "Humphrey Bogart",
-     "Peter Lorre"
-    ],
-    "a": 2
-   },
-   {
-    "q": "En quelle année Casablanca est-il sorti ?",
-    "c": [
-     "1944",
-     "1945",
-     "1940",
-     "1942"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quelle est la célèbre réplique de Rick ?",
-    "c": [
-     "Nous aurons toujours Paris",
-     "Louis, je pense que c'est le début d'une belle amitié",
-     "De tous les bars du monde",
-     "Joue-le, Sam"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Combien d'Oscars Casablanca a-t-il remportés ?",
-    "c": [
-     "5",
-     "2",
-     "3",
-     "1"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quel personnage dit 'Du piano, Sam' ?",
-    "c": [
-     "Louis",
-     "Ugarte",
      "Rick",
-     "Ilsa"
+     "Sam",
+     "Louis",
+     "Victor"
     ],
-    "a": 3
+    "a": "Rick"
    },
    {
-    "q": "Quelle chanson est emblématique du film ?",
+    "q": "Quelle réplique culte Rick adresse-t-il à Ilsa ? « Joue-le encore, ___ » ?",
     "c": [
-     "As Time Goes By",
-     "La Marseillaise",
-     "It Had to Be You",
-     "I'm in the Mood for Love"
+     "Sam",
+     "Louis",
+     "Rick",
+     "Victor"
     ],
-    "a": 0
+    "a": "Sam"
+   },
+   {
+    "q": "Quelle actrice suédoise incarne Ilsa, l'amour perdu de Rick ? Ingrid ___ ?",
+    "c": [
+     "Bergman",
+     "Garbo",
+     "Kelly",
+     "Hepburn"
+    ],
+    "a": "Bergman"
+   },
+   {
+    "q": "Vers quel pays les réfugiés cherchent-ils à fuir depuis Casablanca via Lisbonne ?",
+    "c": [
+     "Amérique",
+     "Angleterre",
+     "Suisse",
+     "Suède"
+    ],
+    "a": "Amérique"
+   },
+   {
+    "q": "De quel instrument joue Sam en chantant « As Time Goes By » ?",
+    "c": [
+     "Piano",
+     "Guitare",
+     "Violon",
+     "Trompette"
+    ],
+    "a": "Piano"
+   },
+   {
+    "q": "Combien d'Oscars le film Casablanca a-t-il remportés en 1944 ?",
+    "a": "3"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cinema_023",
@@ -3534,86 +3524,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a réalisé Psychose ?",
+    "q": "Dans quelle pièce d'eau a lieu le meurtre le plus célèbre du film ? La ___ ?",
+    "c": [
+     "douche",
+     "baignoire",
+     "piscine",
+     "cuisine"
+    ],
+    "a": "douche"
+   },
+   {
+    "q": "Quel maître du suspense britannique a réalisé Psychose ? Alfred ___ ?",
     "c": [
      "Hitchcock",
-     "Peckinpah",
-     "Argento",
-     "De Palma"
+     "Kubrick",
+     "Welles",
+     "Lang"
     ],
-    "a": 0
+    "a": "Hitchcock"
    },
    {
-    "q": "Pour préserver le twist du film, Hitchcock avait imposé une règle inédite dans les cinémas :",
+    "q": "Quel type d'établissement tient le personnage de Norman Bates ? Un ___ ?",
     "c": [
-     "Interdiction de laisser entrer les retardataires après le début de la séance",
-     "Interdiction de vendre du pop-corn",
-     "Obligation de porter des lunettes 3D",
-     "Interdiction de projeter le film plus d'une fois par jour"
+     "motel",
+     "hôtel",
+     "bar",
+     "cinéma"
     ],
-    "a": 0
+    "a": "motel"
    },
    {
-    "q": "Quelle actrice joue Marion Crane ?",
+    "q": "Quel prénom porte le personnage inquiétant tenant le motel ? ___ Bates ?",
     "c": [
-     "Janet Leigh",
-     "Vera Miles",
-     "Tippi Hedren",
-     "Kim Novak"
+     "Norman",
+     "Marion",
+     "Sam",
+     "Arbogast"
     ],
-    "a": 0
+    "a": "Norman"
    },
    {
-    "q": "En quelle année Psychose est-il sorti ?",
+    "q": "Quel instrument à cordes stridentes accompagne la scène de la douche ?",
     "c": [
-     "1962",
-     "1958",
-     "1956",
-     "1960"
+     "Violons",
+     "Piano",
+     "Guitare",
+     "Flûte"
     ],
-    "a": 3
+    "a": "Violons"
    },
    {
-    "q": "Quelle est la célèbre scène de douche ?",
+    "q": "Quel membre de sa famille Norman a-t-il naturalisé et fait « vivre » ? Sa ___ ?",
     "c": [
-     "Le meurtre à la douche",
-     "La fuite sous la douche",
-     "La douche glacée",
-     "La panne d'eau"
+     "mère",
+     "sœur",
+     "femme",
+     "fille"
     ],
-    "a": 0
+    "a": "mère"
    },
    {
-    "q": "Quel acteur joue Norman Bates ?",
+    "q": "De quelle couleur est le film Psychose, choix audacieux pour 1960 ?",
     "c": [
-     "George Tomasini",
-     "John Gavin",
-     "Anthony Perkins",
-     "Martin Balsam"
+     "Noir et blanc",
+     "Couleur",
+     "Sépia",
+     "Bleuté"
     ],
-    "a": 2
+    "a": "Noir et blanc"
    },
    {
-    "q": "Quelle musique emblématique accompagne la scène de la douche ?",
-    "c": [
-     "Une symphonie classique",
-     "Des coups de violon stridents",
-     "Un battement de tambour",
-     "Un silence total"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quel est le secret de Norman Bates ?",
-    "c": [
-     "Il a une double personnalité",
-     "Il est le tueur",
-     "Il est innocent",
-     "Sa mère est morte depuis des années"
-    ],
-    "a": 1
+    "q": "En quelle année est sorti le film Psychose ?",
+    "a": "1960"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cinema_024",
@@ -3622,86 +3607,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a réalisé Seven ?",
+    "q": "Combien de péchés capitaux structurent les meurtres du film ?",
+    "a": "7"
+   },
+   {
+    "q": "Quel réalisateur de Fight Club a réalisé Seven ? David ___ ?",
     "c": [
-     "Mann",
-     "Jonze",
      "Fincher",
-     "Singer"
+     "Nolan",
+     "Scott",
+     "Aronofsky"
     ],
-    "a": 2
+    "a": "Fincher"
    },
    {
-    "q": "Seven se déroule dans une ville qui n'est jamais nommée, et où il pleut presque en permanence. Vrai ou faux ?",
+    "q": "Quel jeune inspecteur, joué par Brad Pitt, enquête ? L'inspecteur ___ ?",
     "c": [
-     "Vrai",
-     "Faux, l'action se déroule en plein désert",
-     "Faux, la ville est clairement identifiée comme New York",
-     "Faux, il fait beau du début à la fin"
+     "Mills",
+     "Somerset",
+     "Doe",
+     "Tracy"
     ],
-    "a": 0
+    "a": "Mills"
    },
    {
-    "q": "Quels acteurs jouent les détectives ?",
+    "q": "Quel vétéran proche de la retraite fait équipe avec Mills ? Morgan ___ ?",
     "c": [
-     "Tom Hanks et Denzel Washington",
-     "Al Pacino et Robert De Niro",
-     "Kevin Spacey et Brad Pitt",
-     "Morgan Freeman et Brad Pitt"
+     "Freeman",
+     "Pitt",
+     "Spacey",
+     "Kane"
     ],
-    "a": 3
+    "a": "Freeman"
    },
    {
-    "q": "En quelle année Seven est-il sorti ?",
+    "q": "Que découvre Mills dans la boîte livrée à la fin du film ? La tête de sa ___ ?",
     "c": [
-     "1993",
-     "1997",
-     "1995",
-     "1994"
+     "femme",
+     "sœur",
+     "mère",
+     "fille"
     ],
-    "a": 2
+    "a": "femme"
    },
    {
-    "q": "Quels sont les sept péchés capitaux du film ?",
+    "q": "Quel acteur incarne le tueur en série John Doe ? Kevin ___ ?",
     "c": [
-     "Les sept péchés capitaux chrétiens",
-     "Les sept plaies",
-     "Les sept vertus",
-     "Gourmandise, Avarice, Paresse, Luxure, Orgueil, Envie, Colère"
+     "Spacey",
+     "Costner",
+     "Bacon",
+     "Kline"
     ],
-    "a": 3
+    "a": "Spacey"
    },
    {
-    "q": "Quel acteur joue le tueur John Doe ?",
+    "q": "Quel temps fait-il quasiment tout le long du film, ajoutant à l'ambiance ? Il ___ ?",
     "c": [
-     "Morgan Freeman",
-     "Kevin Spacey",
-     "Gwyneth Paltrow",
-     "Brad Pitt"
+     "pleut",
+     "neige",
+     "vente",
+     "gèle"
     ],
-    "a": 1
+    "a": "pleut"
    },
    {
-    "q": "Quelle est la célèbre réplique du tueur ?",
-    "c": [
-     "La colère est un péché",
-     "What's in the box ?",
-     "Détective !",
-     "Le monde est un bel endroit"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Qui a composé la musique de Seven ?",
-    "c": [
-     "David Shire",
-     "Howard Shore",
-     "Hans Zimmer",
-     "Trent Reznor"
-    ],
-    "a": 1
+    "q": "En quelle année est sorti le film Seven ?",
+    "a": "1995"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cinema_025",
@@ -3710,86 +3684,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a réalisé La Guerre des Étoiles ?",
+    "q": "Quel jeune fermier de Tatooine devient un puissant Jedi ? Luke ___ ?",
     "c": [
-     "Kasdan",
-     "Lucas",
-     "Spielberg",
-     "Kershner"
+     "Skywalker",
+     "Solo",
+     "Kenobi",
+     "Antilles"
     ],
-    "a": 1
+    "a": "Skywalker"
    },
    {
-    "q": "Qui a créé Star Wars ?",
+    "q": "Comment s'appelle le grand vaisseau-station capable de détruire une planète ? L'Étoile ___ ?",
     "c": [
-     "Irvin Kershner",
-     "George Lucas",
-     "Steven Spielberg",
-     "Richard Marquand"
+     "Noire",
+     "de la Mort",
+     "Rouge",
+     "Impériale"
     ],
-    "a": 1
+    "a": "Noire"
    },
    {
-    "q": "En quelle année l'Épisode IV est-il sorti ?",
+    "q": "Quel grand humanoïde poilu est le copilote de Han Solo ?",
     "c": [
-     "1983",
-     "1980",
-     "1975",
-     "1977"
+     "Chewbacca",
+     "Yoda",
+     "Jar Jar",
+     "Ewok"
     ],
-    "a": 3
+    "a": "Chewbacca"
    },
    {
-    "q": "Qui est le mentor de Luke Skywalker ?",
+    "q": "Quel maître Jedi âgé forme d'abord Luke ? Obi-Wan ___ ?",
     "c": [
-     "Mace Windu",
-     "Obi-Wan Kenobi",
-     "Dark Vador",
-     "Yoda"
+     "Kenobi",
+     "Windu",
+     "Yoda",
+     "Qui-Gon"
     ],
-    "a": 3
+    "a": "Kenobi"
    },
    {
-    "q": "Comment s'appelle la princesse de la saga ?",
+    "q": "Quelle force mystique lie tous les êtres vivants dans la saga ? La ___ ?",
     "c": [
-     "Jyn Erso",
-     "Rey",
-     "Padmé Amidala",
-     "Leia Organa"
+     "Force",
+     "Foi",
+     "Lumière",
+     "Énergie"
     ],
-    "a": 3
+    "a": "Force"
    },
    {
-    "q": "Quel est le vaisseau spatial le plus emblématique ?",
+    "q": "Quels petits êtres poilus vivent sur la lune forestière d'Endor ?",
     "c": [
-     "Le X-Wing",
-     "Le TIE Fighter",
-     "Le Destroyer Stellaire",
-     "Le Faucon Millenium"
+     "Ewoks",
+     "Jawas",
+     "Wookiees",
+     "Gungans"
     ],
-    "a": 3
+    "a": "Ewoks"
    },
    {
-    "q": "Qui a tué Dark Vador dans Le Retour du Jedi ?",
+    "q": "Quel chasseur de primes en armure Mandalorienne poursuit Han Solo ? Boba ___ ?",
     "c": [
-     "Han Solo",
-     "Luke Skywalker",
-     "L'Empereur",
-     "Dark Vador lui-même"
+     "Fett",
+     "Solo",
+     "Bane",
+     "Maul"
     ],
-    "a": 3
+    "a": "Fett"
    },
    {
-    "q": "Combien d'épisodes comporte la saga principale ?",
-    "c": [
-     "6",
-     "9",
-     "3",
-     "12"
-    ],
-    "a": 1
+    "q": "Combien d'épisodes numérotés compte la saga principale Skywalker ?",
+    "a": "9"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cinema_026",
@@ -3798,86 +3767,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a réalisé la trilogie Batman avec Christian Bale (The Dark Knight) ?",
+    "q": "Dans quelle ville sombre et corrompue Batman veille-t-il ? ___ City ?",
     "c": [
-     "Zack Snyder",
-     "Tim Burton",
-     "Christopher Nolan",
-     "Matt Reeves"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Qui a créé Batman ?",
-    "c": [
-     "Steve Ditko",
-     "Stan Lee",
-     "Bob Kane et Bill Finger",
-     "Jack Kirby"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quel acteur a incarné Batman dans The Dark Knight ?",
-    "c": [
-     "George Clooney",
-     "Michael Keaton",
-     "Christian Bale",
-     "Val Kilmer"
-    ],
-    "a": 2
-   },
-   {
-    "q": "En quelle année The Dark Knight est-il sorti ?",
-    "c": [
-     "2007",
-     "2010",
-     "2005",
-     "2008"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel acteur joue le Joker dans The Dark Knight ?",
-    "c": [
-     "César Romero",
-     "Joaquin Phoenix",
-     "Jack Nicholson",
-     "Heath Ledger"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Comment s'appelle le majordome de Bruce Wayne ?",
-    "c": [
-     "Lucius Fox",
-     "Robin",
-     "Alfred Pennyworth",
-     "James Gordon"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quelle est la ville de Batman ?",
-    "c": [
-     "Star City",
+     "Gotham",
      "Metropolis",
-     "Gotham City",
-     "Central City"
+     "Star",
+     "Central"
     ],
-    "a": 2
+    "a": "Gotham"
    },
    {
-    "q": "Combien d'Oscars a remporté The Dark Knight ?",
+    "q": "Quel animal nocturne inspire le costume du héros ? Une chauve-___ ?",
     "c": [
-     "0",
-     "3",
-     "1",
-     "2"
+     "souris",
+     "araignée",
+     "chatte",
+     "grenouille"
     ],
-    "a": 3
+    "a": "souris"
+   },
+   {
+    "q": "Quel est le véritable nom de Batman ? Bruce ___ ?",
+    "c": [
+     "Wayne",
+     "Kent",
+     "Parker",
+     "Stark"
+    ],
+    "a": "Wayne"
+   },
+   {
+    "q": "Quel ennemi au visage blanc et sourire rouge est le pire ennemi de Batman ?",
+    "c": [
+     "Joker",
+     "Pingouin",
+     "Bane",
+     "Sphinx"
+    ],
+    "a": "Joker"
+   },
+   {
+    "q": "Quel fidèle majordome sert Bruce Wayne ?",
+    "c": [
+     "Alfred",
+     "Lucius",
+     "James",
+     "Robin"
+    ],
+    "a": "Alfred"
+   },
+   {
+    "q": "Quel jeune acrobate en costume est l'acolyte de Batman ?",
+    "c": [
+     "Robin",
+     "Nightwing",
+     "Batgirl",
+     "Alfred"
+    ],
+    "a": "Robin"
+   },
+   {
+    "q": "Quel acteur incarne le Joker dans The Dark Knight (2008) ? Heath ___ ?",
+    "c": [
+     "Ledger",
+     "Nicholson",
+     "Phoenix",
+     "Leto"
+    ],
+    "a": "Ledger"
+   },
+   {
+    "q": "En quelle année le personnage de Batman est-il apparu pour la première fois en BD ?",
+    "a": "1939"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cinema_027",
@@ -3886,86 +3850,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a réalisé James Bond ?",
+    "q": "Quel numéro de matricule d'agent secret porte James Bond ? ___ ?",
     "c": [
-     "Fleming",
-     "Campbell",
-     "Young",
-     "Spielberg"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Qui a créé James Bond ?",
-    "c": [
-     "Ian Fleming",
-     "Graham Greene",
-     "Agatha Christie",
-     "John le Carré"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quel acteur a incarné Bond dans GoldenEye ?",
-    "c": [
-     "Pierce Brosnan",
-     "Timothy Dalton",
-     "Sean Connery",
-     "Roger Moore"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quel est le numéro d'agent de James Bond ?",
-    "c": [
+     "007",
+     "008",
      "001",
-     "009",
-     "006",
-     "007"
+     "009"
     ],
-    "a": 3
+    "a": "007"
    },
    {
-    "q": "Quel acteur a joué Bond le plus longtemps ?",
+    "q": "Quel cocktail Bond commande-t-il « au shaker, pas à la cuillère » ? Un ___ Martini ?",
     "c": [
-     "Roger Moore",
-     "Pierce Brosnan",
-     "Sean Connery",
-     "Daniel Craig"
+     "Vodka",
+     "Gin",
+     "Rhum",
+     "Dry"
     ],
-    "a": 0
+    "a": "Vodka"
    },
    {
-    "q": "Comment s'appelle le chef de Bond ?",
+    "q": "Pour quel service secret britannique travaille James Bond ?",
+    "c": [
+     "MI6",
+     "CIA",
+     "KGB",
+     "FBI"
+    ],
+    "a": "MI6"
+   },
+   {
+    "q": "Quel gadget-fournisseur, ingénieur du MI6, équipe Bond de ses gadgets ?",
     "c": [
      "Q",
-     "Miss Moneypenny",
-     "Moneypenny",
-     "M"
+     "M",
+     "R",
+     "Z"
     ],
-    "a": 3
+    "a": "Q"
    },
    {
-    "q": "Quelle est la boisson préférée de James Bond ?",
+    "q": "Quel acteur écossais fut le premier James Bond au cinéma ? Sean ___ ?",
     "c": [
-     "Champagne",
-     "Martini (shaken, not stirred)",
-     "Vodka",
-     "Whisky"
+     "Connery",
+     "Moore",
+     "Craig",
+     "Brosnan"
     ],
-    "a": 1
+    "a": "Connery"
    },
    {
-    "q": "Combien de films James Bond officiels existent ?",
+    "q": "Comment appelle-t-on les héroïnes récurrentes des films ? Les ___ girls ?",
     "c": [
-     "30",
-     "20",
-     "27",
-     "25"
+     "Bond",
+     "Spy",
+     "Gold",
+     "Dr No"
     ],
-    "a": 2
+    "a": "Bond"
+   },
+   {
+    "q": "Quelle organisation criminelle dirigée par Blofeld affronte souvent Bond ?",
+    "c": [
+     "SPECTRE",
+     "HYDRA",
+     "KAOS",
+     "COBRA"
+    ],
+    "a": "SPECTRE"
+   },
+   {
+    "q": "En quelle année est sorti le premier film James Bond, Dr No ?",
+    "a": "1962"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cinema_028",
@@ -3974,86 +3933,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a réalisé Toy Story ?",
+    "q": "De quel type d'objets, qui prennent vie, parle le film ? Des ___ ?",
     "c": [
-     "Stanton",
-     "Lasseter",
+     "jouets",
+     "robots",
+     "poupées",
+     "peluches"
+    ],
+    "a": "jouets"
+   },
+   {
+    "q": "Quel cow-boy à ficelle est le jouet préféré d'Andy ?",
+    "c": [
+     "Woody",
+     "Buzz",
+     "Rex",
+     "Slinky"
+    ],
+    "a": "Woody"
+   },
+   {
+    "q": "Quel ranger de l'espace au cri « Vers l'infini et au-delà » rejoint la bande ? Buzz l'___ ?",
+    "c": [
+     "Éclair",
+     "Espace",
+     "Étoile",
+     "Astre"
+    ],
+    "a": "Éclair"
+   },
+   {
+    "q": "Quel studio d'animation, pionnier de la 3D, a créé Toy Story ?",
+    "c": [
      "Pixar",
-     "Bird"
+     "Disney",
+     "DreamWorks",
+     "Ghibli"
     ],
-    "a": 1
+    "a": "Pixar"
    },
    {
-    "q": "Toy Story est un film marquant car il s'agit :",
+    "q": "Quel petit garçon est le propriétaire des jouets dans les trois premiers films ?",
     "c": [
-     "Du premier long-métrage entièrement animé par ordinateur",
-     "Du premier film muet de l'histoire",
-     "Du premier film tourné en une seule prise",
-     "Du premier film distribué uniquement en streaming"
-    ],
-    "a": 0
-   },
-   {
-    "q": "En quelle année Toy Story est-il sorti ?",
-    "c": [
-     "1998",
-     "1993",
-     "1995",
-     "1997"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quel acteur double Woody en VO ?",
-    "c": [
-     "Billy Crystal",
-     "Tim Allen",
-     "John Goodman",
-     "Tom Hanks"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Comment s'appelle le personnage de la petite fille dans Toy Story 3 ?",
-    "c": [
-     "Sid",
      "Andy",
-     "Molly",
+     "Sid",
+     "Al",
      "Bonnie"
     ],
-    "a": 3
+    "a": "Andy"
    },
    {
-    "q": "Combien de films Toy Story comptent la saga ?",
+    "q": "Quel dinosaure vert et peureux fait partie des jouets ?",
     "c": [
-     "5",
-     "4",
-     "2",
-     "3"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quel est le cowboy qui chante 'Je suis ton ami' ?",
-    "c": [
-     "M. Patate",
+     "Rex",
      "Woody",
-     "Buzz l'Éclair",
-     "Rex"
+     "Buzz",
+     "Zurg"
     ],
-    "a": 1
+    "a": "Rex"
    },
    {
-    "q": "Qui double Buzz l'Éclair en VO ?",
+    "q": "Quel voisin destructeur torture les jouets dans le premier film ?",
     "c": [
-     "Tim Allen",
-     "Eddie Murphy",
-     "Tom Hanks",
-     "Steve Carell"
+     "Sid",
+     "Al",
+     "Lotso",
+     "Gabby"
     ],
-    "a": 0
+    "a": "Sid"
+   },
+   {
+    "q": "En quelle année est sorti Toy Story, premier long-métrage entièrement en 3D ?",
+    "a": "1995"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cinema_029",
@@ -4062,86 +4016,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a réalisé Blanche-Neige ?",
+    "q": "Combien de nains accueillent Blanche-Neige dans leur maison ?",
+    "a": "7"
+   },
+   {
+    "q": "Quel fruit empoisonné la sorcière offre-t-elle à Blanche-Neige ? Une ___ ?",
     "c": [
-     "Hand",
-     "Cukor",
+     "pomme",
+     "poire",
+     "cerise",
+     "prune"
+    ],
+    "a": "pomme"
+   },
+   {
+    "q": "Quel studio a produit ce premier long-métrage animé en 1937 ?",
+    "c": [
      "Disney",
-     "Grimm"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Qui a produit Blanche-Neige et les Sept Nains ?",
-    "c": [
      "Pixar",
-     "Walt Disney",
-     "Don Bluth",
-     "Les Frères Grimm"
+     "Warner",
+     "MGM"
     ],
-    "a": 1
+    "a": "Disney"
    },
    {
-    "q": "En quelle année Blanche-Neige est-il sorti ?",
+    "q": "Que demande la reine à son miroir ? « Qui est la plus ___ ? » ?",
     "c": [
-     "1942",
-     "1935",
-     "1940",
-     "1937"
+     "belle",
+     "forte",
+     "riche",
+     "sage"
     ],
-    "a": 3
+    "a": "belle"
    },
    {
-    "q": "Comment s'appelle la méchante du film ?",
+    "q": "Quel nain grincheux est nommé d'après son mauvais caractère ?",
     "c": [
-     "Grimhilde",
-     "La Sorcière",
-     "La Reine",
-     "Maléfique"
+     "Grincheux",
+     "Joyeux",
+     "Simplet",
+     "Dormeur"
     ],
-    "a": 2
+    "a": "Grincheux"
    },
    {
-    "q": "Combien de nains accompagnent Blanche-Neige ?",
+    "q": "Comment Blanche-Neige est-elle réveillée de son sommeil ? Par un ___ ?",
     "c": [
-     "5",
-     "8",
-     "6",
-     "7"
+     "baiser",
+     "cri",
+     "bruit",
+     "remède"
     ],
-    "a": 3
+    "a": "baiser"
    },
    {
-    "q": "Quel est le premier long-métrage d'animation Disney ?",
+    "q": "Quel animal la reine envoie-t-elle chercher le cœur de Blanche-Neige, mais qui refuse ? Le ___ ?",
     "c": [
-     "Cendrillon",
-     "Blanche-Neige",
-     "Pinocchio",
-     "Fantasia"
+     "chasseur",
+     "loup",
+     "corbeau",
+     "serpent"
     ],
-    "a": 1
+    "a": "chasseur"
    },
    {
-    "q": "Quelle est la célèbre chanson du film ?",
-    "c": [
-     "Siffler en travaillant",
-     "Je souhaite",
-     "Un jour mon prince viendra",
-     "Heigh-Ho"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quel fruit empoisonné la méchante offre-t-elle ?",
-    "c": [
-     "Une pêche",
-     "Une cerise",
-     "Une pomme",
-     "Une poire"
-    ],
-    "a": 2
+    "q": "En quelle année est sorti Blanche-Neige et les Sept Nains, tout premier long-métrage Disney ?",
+    "a": "1937"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cinema_030",
@@ -4150,86 +4093,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a réalisé Shrek ?",
+    "q": "Quel genre de créature verte et grognon est le héros du film ?",
     "c": [
-     "Katzenberg",
-     "Jenson",
-     "Adamson",
-     "Elliott"
+     "Ogre",
+     "Troll",
+     "Géant",
+     "Gobelin"
     ],
-    "a": 2
+    "a": "Ogre"
    },
    {
-    "q": "Shrek est adapté d'un livre pour enfants écrit par :",
+    "q": "Quel âne bavard accompagne Shrek dans son aventure ?",
     "c": [
-     "William Steig",
-     "Roald Dahl",
-     "Maurice Sendak",
-     "Dr. Seuss"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quel acteur double Shrek en VO ?",
-    "c": [
-     "John Lithgow",
-     "Cameron Diaz",
-     "Mike Myers",
-     "Eddie Murphy"
-    ],
-    "a": 2
-   },
-   {
-    "q": "En quelle année Shrek est-il sorti ?",
-    "c": [
-     "2002",
-     "2001",
-     "2000",
-     "1999"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Comment s'appelle l'âne qui suit Shrek ?",
-    "c": [
-     "Lord Farquaad",
+     "Âne",
+     "Chat",
      "Dragon",
-     "L'Âne",
-     "Fiona"
+     "Cheval"
     ],
-    "a": 2
+    "a": "Âne"
    },
    {
-    "q": "Quel est le premier film d'animation à avoir gagné un Oscar ?",
+    "q": "Quelle princesse Shrek doit-il d'abord aller délivrer ?",
     "c": [
-     "Le Roi Lion",
-     "Toy Story",
-     "Shrek",
-     "Blanche-Neige"
+     "Fiona",
+     "Aurore",
+     "Belle",
+     "Raiponce"
     ],
-    "a": 2
+    "a": "Fiona"
    },
    {
-    "q": "Qui double l'Âne en VO ?",
+    "q": "Dans quel type d'habitat isolé vit Shrek au début ? Un ___ ?",
     "c": [
-     "Eddie Murphy",
-     "Antonio Banderas",
-     "John Cleese",
-     "Mike Myers"
+     "marais",
+     "château",
+     "forêt",
+     "grotte"
     ],
-    "a": 0
+    "a": "marais"
    },
    {
-    "q": "Combien de films Shrek principaux existent ?",
+    "q": "Quel petit seigneur complexé par sa taille est le méchant ? Lord ___ ?",
     "c": [
-     "2",
-     "4",
-     "3",
-     "5"
+     "Farquaad",
+     "Charmant",
+     "Hook",
+     "Jafar"
     ],
-    "a": 1
+    "a": "Farquaad"
+   },
+   {
+    "q": "En quoi se transforme Fiona chaque nuit à cause d'un sortilège ? En ___ ?",
+    "c": [
+     "ogresse",
+     "grenouille",
+     "sorcière",
+     "louve"
+    ],
+    "a": "ogresse"
+   },
+   {
+    "q": "Quel studio, rival de Disney, a produit Shrek ?",
+    "c": [
+     "DreamWorks",
+     "Pixar",
+     "Disney",
+     "Illumination"
+    ],
+    "a": "DreamWorks"
+   },
+   {
+    "q": "En quelle année Shrek a-t-il remporté le tout premier Oscar du film d'animation ?",
+    "a": "2002"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sport_001",
