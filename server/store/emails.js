@@ -184,13 +184,18 @@ export function getEmailTemplates() {
   }
 }
 
+function hasRealContent(html) {
+  const s = String(html || '').replace(/<p>\s*<br\s*\/?>\s*<\/p>/gi, '').replace(/<[^>]*>/g, '').trim();
+  return s.length > 0;
+}
+
 export function saveEmailTemplates(templates) {
   const clean = {};
   for (const key of Object.keys(DEFAULT_TEMPLATES)) {
     if (templates[key]) {
       clean[key] = {
         subject: String(templates[key].subject || '').trim().slice(0, 200) || DEFAULT_TEMPLATES[key].subject,
-        html: String(templates[key].html || '').trim() || DEFAULT_TEMPLATES[key].html,
+        html: hasRealContent(templates[key].html) ? String(templates[key].html).trim() : DEFAULT_TEMPLATES[key].html,
       };
     }
   }

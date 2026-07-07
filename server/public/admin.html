@@ -1067,10 +1067,10 @@ let etTemplates = {};
 async function loadEmailTemplates() {
   try {
     const r = await fetch('/api/admin/email-templates', { headers: headers() });
-    if (!r.ok) return;
+    if (!r.ok) { console.warn('loadEmailTemplates échec', r.status); return; }
     const d = await r.json();
     etTemplates = d.templates || {};
-  } catch {}
+  } catch (e) { console.warn('loadEmailTemplates erreur', e); }
 }
 
 function switchEmailTemplate(key) {
@@ -1083,9 +1083,13 @@ function switchEmailTemplate(key) {
   // Afficher les placeholders
   const ph = ET_PLACEHOLDERS[key] || [];
   document.getElementById('etPlaceholders').innerHTML = 'Variables disponibles : ' + ph.map(p => '<code>' + esc(p) + '</code>').join(' ');
-  // Mettre à jour Quill
+  // Mettre à jour Quill (dangerouslyPasteHTML préserve mieux le HTML complexe)
   if (etQuill) {
-    etQuill.root.innerHTML = tpl.html || '';
+    etQuill.root.innerHTML = '';
+    if (tpl.html) {
+      // Vider puis insérer le HTML
+      etQuill.clipboard.dangerouslyPasteHTML(tpl.html, 'silent');
+    }
   }
 }
 
@@ -1115,7 +1119,24 @@ async function saveEmailTemplate() {
 async function resetEmailTemplate() {
   if (!confirm('Réinitialiser ce template aux valeurs par défaut ?')) return;
   delete etTemplates[etCurrent];
-  await saveEmailTemplate();
+  // Envoyer sans la clé → le serveur utilisera DEFAULT_TEMPLATES
+  const s = document.getElementById('etSaved'); s.textContent = 'Réinitialisation…';
+  try {
+    const r = await fetch('/api/admin/email-templates', {
+      method: 'POST', headers: headers(),
+      body: JSON.stringify({ templates: etTemplates }),
+    });
+    const d = await r.json();
+    if (r.ok) {
+      etTemplates = d.templates || etTemplates;
+      s.textContent = '✓ Réinitialisé'; s.style.color = 'var(--a-ok)';
+    } else {
+      s.textContent = '✗ ' + (d.error || 'Erreur'); s.style.color = 'var(--a-danger)';
+    }
+  } catch {
+    s.textContent = '✗ Erreur réseau'; s.style.color = 'var(--a-danger)';
+  }
+  setTimeout(() => { s.textContent = ''; s.style.color = ''; }, 3000);
   switchEmailTemplate(etCurrent);
 }
 
