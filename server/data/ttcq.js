@@ -19759,84 +19759,84 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Que signifie VIH ?",
+    "q": "Le vagin est un organe du corps ___ ?",
     "c": [
-     "Virus de l'Immunité",
-     "Virus Infectieux Humain",
-     "Virus de l'Immunodéficience Humaine",
-     "Virus International Humain"
+     "féminin",
+     "masculin",
+     "neutre",
+     "animal seul"
     ],
-    "a": "Virus de l'Immunodéficience Humaine"
+    "a": "féminin"
    },
    {
-    "q": "Que signifie SIDA ?",
+    "q": "Le vagin relie la vulve à quel organe ? L'___ ?",
     "c": [
-     "Système Immunitaire Détruit",
-     "Maladie Immunitaire",
-     "Syndrome d'ImmunoDéficience Acquise",
-     "Syndrome Infectieux Dangereux"
+     "utérus",
+     "estomac",
+     "vessie",
+     "rein"
     ],
-    "a": "Syndrome d'ImmunoDéficience Acquise"
+    "a": "utérus"
    },
    {
-    "q": "Comment se transmet le VIH ?",
+    "q": "Le vagin est-il un organe musculaire capable de s'étirer ? ___ ?",
     "c": [
-     "Par le sang, les rapports sexuels et de la mère à l'enfant",
-     "Par les poignées de main",
-     "Par la salive",
-     "Par l'air"
+     "oui",
+     "non",
+     "seulement rigide",
+     "osseux"
     ],
-    "a": "Par le sang, les rapports sexuels et de la mère à l'enfant"
+    "a": "oui"
    },
    {
-    "q": "Existe-t-il un vaccin contre le VIH ?",
+    "q": "Comment appelle-t-on l'équilibre microbien naturel qui protège le vagin ? La flore ___ ?",
     "c": [
-     "Oui, depuis 2020",
-     "Non, pas encore",
-     "Non et cela n'existera jamais",
-     "Oui, depuis 2010"
+     "vaginale",
+     "intestinale seule",
+     "buccale",
+     "cutanée"
     ],
-    "a": "Non, pas encore"
+    "a": "vaginale"
    },
    {
-    "q": "Qu'est-ce qu'une charge virale indétectable ?",
+    "q": "Faut-il laver l'intérieur du vagin (douche vaginale) selon les médecins ? ___ ?",
     "c": [
-     "Absence totale de virus",
-     "Virus inactif",
-     "Guérison du SIDA",
-     "Quantité de virus si faible qu'elle est indétectable"
+     "non",
+     "oui chaque jour",
+     "au savon fort",
+     "à l'alcool"
     ],
-    "a": "Quantité de virus si faible qu'elle est indétectable"
+    "a": "non"
    },
    {
-    "q": "Que signifie être séropositif ?",
+    "q": "Quelle infection fréquente due à un champignon touche le vagin ? La ___ (candidose) ?",
     "c": [
-     "Être immunisé",
-     "Être porteur du VIH sans avoir développé le SIDA",
-     "Être malade",
-     "Avoir le SIDA"
+     "mycose",
+     "carie",
+     "otite",
+     "sinusite"
     ],
-    "a": "Être porteur du VIH sans avoir développé le SIDA"
+    "a": "mycose"
    },
    {
-    "q": "Comment se faire dépister du VIH ?",
+    "q": "Quel type de bactéries « amies » maintient l'acidité protectrice du vagin ? Les ___ ?",
     "c": [
-     "Par examen urinaire",
-     "Par IRM",
-     "Par radiographie",
-     "Par prise de sang ou test rapide (TROD)"
+     "lactobacilles",
+     "streptocoques",
+     "staphylocoques",
+     "salmonelles"
     ],
-    "a": "Par prise de sang ou test rapide (TROD)"
+    "a": "lactobacilles"
    },
    {
-    "q": "Qu'est-ce que la Prep (PrEP) ?",
+    "q": "Quel pH, acide, protège naturellement le vagin ? Un pH d'environ ___ ?",
     "c": [
-     "Traitement curatif",
-     "Vaccin",
-     "Traitement préventif avant exposition au VIH",
-     "Médicament contre le SIDA"
+     "4",
+     "7",
+     "10",
+     "14"
     ],
-    "a": "Traitement préventif avant exposition au VIH"
+    "a": "4"
    }
   ],
   "rw": true
@@ -19848,84 +19848,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que le papillomavirus humain (HPV) ?",
+    "q": "Le pénis est un organe du corps ___ ?",
     "c": [
-     "Maladie génétique",
-     "Virus de la grippe",
-     "Bactérie",
-     "Virus sexuellement transmissible très courant"
+     "masculin",
+     "féminin",
+     "neutre",
+     "végétal"
     ],
-    "a": "Virus sexuellement transmissible très courant"
+    "a": "masculin"
    },
    {
-    "q": "Combien de types de HPV existent ?",
+    "q": "Quelles deux fonctions le pénis assure-t-il ? La reproduction et l'___ ?",
     "c": [
-     "Environ 20",
-     "Environ 200",
-     "Plus de 100",
-     "Environ 50"
+     "urine",
+     "digestion",
+     "respiration",
+     "audition"
     ],
-    "a": "Plus de 100"
+    "a": "urine"
    },
    {
-    "q": "Le HPV peut-il causer le cancer du col de l'utérus ?",
+    "q": "Grâce à quel afflux le pénis entre-t-il en érection ? L'afflux de ___ ?",
     "c": [
-     "Rarement",
-     "Uniquement associé à d'autres facteurs",
-     "Oui, certains types à haut risque",
-     "Non"
+     "sang",
+     "air",
+     "eau",
+     "lymphe seule"
     ],
-    "a": "Oui, certains types à haut risque"
+    "a": "sang"
    },
    {
-    "q": "Existe-t-il un vaccin contre le HPV ?",
+    "q": "Comment appelle-t-on l'extrémité sensible du pénis ? Le ___ ?",
     "c": [
-     "Oui, recommandé aux adolescents",
-     "Non",
-     "Oui, mais inefficace",
-     "Oui, mais seulement pour les adultes"
+     "gland",
+     "talon",
+     "lobe",
+     "coude"
     ],
-    "a": "Oui, recommandé aux adolescents"
+    "a": "gland"
    },
    {
-    "q": "Comment se transmet le HPV ?",
+    "q": "Quel repli de peau, parfois retiré par circoncision, recouvre le gland ? Le ___ ?",
     "c": [
-     "Par contact sexuel (peau à peau)",
-     "Par le sang",
-     "Par la salive",
-     "Par l'air"
+     "prépuce",
+     "tympan",
+     "hymen",
+     "capuchon clitoridien"
     ],
-    "a": "Par contact sexuel (peau à peau)"
+    "a": "prépuce"
    },
    {
-    "q": "Le HPV est-il fréquent ?",
+    "q": "Comment appelle-t-on la difficulté à obtenir une érection ? La dysfonction ___ ?",
     "c": [
-     "Assez rare",
-     "Non, très rare",
-     "Uniquement dans certains pays",
-     "Oui, 80% des personnes sexuellement actives l'auront"
+     "érectile",
+     "cardiaque seule",
+     "rénale",
+     "auditive"
     ],
-    "a": "Oui, 80% des personnes sexuellement actives l'auront"
+    "a": "érectile"
    },
    {
-    "q": "Comment dépiste-t-on le HPV ?",
+    "q": "Quel médicament bleu célèbre traite les troubles de l'érection ? Le ___ ?",
     "c": [
-     "Par frottis cervical (test HPV)",
-     "Par échographie",
-     "Par prise de sang",
-     "Par examen urinaire"
+     "Viagra",
+     "Doliprane",
+     "Aspirine",
+     "Smecta"
     ],
-    "a": "Par frottis cervical (test HPV)"
+    "a": "Viagra"
    },
    {
-    "q": "À quel âge le vaccin HPV est-il recommandé en France ?",
-    "c": [
-     "Entre 11 et 14 ans",
-     "Entre 18 et 25 ans",
-     "À tout âge",
-     "Entre 15 et 18 ans"
-    ],
-    "a": "Entre 11 et 14 ans"
+    "q": "Quelle est la longueur moyenne, en centimètres, d'un pénis en érection selon les études ?",
+    "a": "13"
    }
   ],
   "rw": true
@@ -19937,84 +19931,72 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Quelles hépatites sont sexuellement transmissibles ?",
+    "q": "Que produisent les testicules ? Des ___ ?",
     "c": [
-     "Hépatites A et B",
-     "Hépatite B uniquement",
-     "Hépatites B et C",
-     "Hépatites A, B et C"
+     "spermatozoïdes",
+     "globules rouges",
+     "larmes",
+     "salive"
     ],
-    "a": "Hépatites B et C"
+    "a": "spermatozoïdes"
    },
    {
-    "q": "Existe-t-il un vaccin contre l'hépatite B ?",
-    "c": [
-     "Non",
-     "Oui, obligatoire pour les enfants en France",
-     "Oui, mais pas en France",
-     "Uniquement pour les adultes"
-    ],
-    "a": "Oui, obligatoire pour les enfants en France"
+    "q": "Combien de testicules un homme possède-t-il généralement ?",
+    "a": "2"
    },
    {
-    "q": "Comment se transmet l'hépatite B ?",
+    "q": "Dans quelle poche de peau se trouvent les testicules ? Le ___ ?",
     "c": [
-     "Par le sang et les rapports sexuels",
-     "Par l'alimentation",
-     "Par la toux",
-     "Par l'eau"
+     "scrotum",
+     "sternum",
+     "abdomen fixe",
+     "thorax"
     ],
-    "a": "Par le sang et les rapports sexuels"
+    "a": "scrotum"
    },
    {
-    "q": "L'hépatite C se transmet-elle sexuellement ?",
+    "q": "Quelle hormone masculine les testicules produisent-ils ? La ___ ?",
     "c": [
-     "Non, jamais",
-     "Rarement, principalement par le sang",
-     "Oui, comme l'hépatite B",
-     "Oui, très fréquemment"
+     "testostérone",
+     "insuline",
+     "œstrogène seul",
+     "mélatonine"
     ],
-    "a": "Rarement, principalement par le sang"
+    "a": "testostérone"
    },
    {
-    "q": "Qu'est-ce que l'hépatite B chronique ?",
+    "q": "Pourquoi les testicules sont-ils à l'extérieur du corps ? Pour rester au ___ (bonne température) ?",
     "c": [
-     "Infection persistante par le virus de l'hépatite B",
-     "Maladie aiguë",
-     "Cancer du foie",
-     "Cirrhose"
+     "frais",
+     "chaud",
+     "sec",
+     "sombre"
     ],
-    "a": "Infection persistante par le virus de l'hépatite B"
+    "a": "frais"
    },
    {
-    "q": "Combien de personnes vivent avec l'hépatite B dans le monde ?",
+    "q": "Quel geste d'auto-examen aide à détecter tôt une anomalie testiculaire ? La ___ ?",
     "c": [
-     "Environ 250 millions",
-     "Environ 50 millions",
-     "Environ 100 millions",
-     "Environ 500 millions"
+     "palpation",
+     "radiographie annuelle",
+     "prise de sang seule",
+     "échographie mensuelle"
     ],
-    "a": "Environ 250 millions"
+    "a": "palpation"
    },
    {
-    "q": "Quels sont les symptômes des hépatites virales ?",
+    "q": "Quel cancer, touchant surtout les jeunes hommes, se dépiste par auto-palpation ? Le cancer des ___ ?",
     "c": [
-     "Maux de tête",
-     "Aucun symptôme",
-     "Fièvre et toux",
-     "Fatigue, jaunisse, douleurs abdominales"
+     "testicules",
+     "poumons",
+     "reins",
+     "os"
     ],
-    "a": "Fatigue, jaunisse, douleurs abdominales"
+    "a": "testicules"
    },
    {
-    "q": "Comment se protéger de l'hépatite B sexuelle ?",
-    "c": [
-     "Par le préservatif uniquement",
-     "Par l'hygiène",
-     "Par la vaccination uniquement",
-     "Par la vaccination et le préservatif"
-    ],
-    "a": "Par la vaccination et le préservatif"
+    "q": "Combien de spermatozoïdes, environ en millions, contient un millilitre de sperme sain ?",
+    "a": "50"
    }
   ],
   "rw": true
@@ -20026,84 +20008,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que la chlamydia ?",
+    "q": "La masturbation est une pratique ___ et naturelle ? (soi-même)",
     "c": [
-     "Maladie génétique",
-     "Infection sexuellement transmissible bactérienne",
-     "Infection virale",
-     "Infection urinaire"
+     "solitaire",
+     "collective obligatoire",
+     "interdite",
+     "dangereuse"
     ],
-    "a": "Infection sexuellement transmissible bactérienne"
+    "a": "solitaire"
    },
    {
-    "q": "Quels sont les symptômes de la chlamydia ?",
+    "q": "La masturbation est-elle nocive pour la santé, selon la médecine moderne ? ___ ?",
     "c": [
-     "Éruption cutanée",
-     "Toujours des symptômes",
-     "Fièvre",
-     "Souvent aucun symptôme"
+     "non",
+     "oui",
+     "seulement le matin",
+     "seulement en hiver"
     ],
-    "a": "Souvent aucun symptôme"
+    "a": "non"
    },
    {
-    "q": "Peut-on traiter la chlamydia ?",
+    "q": "La masturbation fait-elle partie du développement normal, y compris à l'adolescence ? ___ ?",
     "c": [
-     "Oui, avec des antiviraux",
-     "Oui, avec des antibiotiques",
-     "Non, c'est incurable",
-     "Oui, par chirurgie"
+     "oui",
+     "non",
+     "seulement adulte",
+     "seulement marié"
     ],
-    "a": "Oui, avec des antibiotiques"
+    "a": "oui"
    },
    {
-    "q": "Que peut causer une chlamydia non traitée ?",
+    "q": "Quels vieux mythes (rendre sourd, aveugle...) sur la masturbation sont ___ ?",
     "c": [
-     "Maladies cardiaques",
-     "Cancer",
-     "Stérilité et salpingite",
-     "SIDA"
+     "faux",
+     "vrais",
+     "prouvés",
+     "médicaux"
     ],
-    "a": "Stérilité et salpingite"
+    "a": "faux"
    },
    {
-    "q": "Comment se transmet la chlamydia ?",
+    "q": "La masturbation peut aider à mieux connaître son propre ___ ?",
     "c": [
-     "Par relations sexuelles non protégées",
-     "Par les mains",
-     "Par la salive",
-     "Par l'eau"
+     "corps",
+     "voisin",
+     "quartier",
+     "agenda"
     ],
-    "a": "Par relations sexuelles non protégées"
+    "a": "corps"
    },
    {
-    "q": "Comment dépiste-t-on la chlamydia ?",
+    "q": "Quelle hormone relaxante, libérée à l'orgasme, peut aider à l'endormissement ? L'___ ?",
     "c": [
-     "Par test urinaire ou prélèvement local",
-     "Par prise de sang",
-     "Par radiographie",
-     "Par échographie"
+     "ocytocine",
+     "adrénaline",
+     "cortisol",
+     "insuline"
     ],
-    "a": "Par test urinaire ou prélèvement local"
+    "a": "ocytocine"
    },
    {
-    "q": "La chlamydia est-elle fréquente ?",
+    "q": "Comment appelle-t-on la notion de respect de l'intimité, importante autour de la masturbation ? La ___ ?",
     "c": [
-     "Très rare",
-     "Non, assez rare",
-     "Uniquement dans les pays tropicaux",
-     "Oui, c'est l'IST bactérienne la plus fréquente"
+     "vie privée",
+     "publicité",
+     "célébrité",
+     "comptabilité"
     ],
-    "a": "Oui, c'est l'IST bactérienne la plus fréquente"
+    "a": "vie privée"
    },
    {
-    "q": "Combien de nouveaux cas de chlamydia par an dans le monde ?",
-    "c": [
-     "Environ 10 millions",
-     "Environ 50 millions",
-     "Environ 130 millions",
-     "Environ 500 millions"
-    ],
-    "a": "Environ 130 millions"
+    "q": "Selon le célèbre rapport Kinsey, quel pourcentage environ des hommes déclaraient s'être masturbés ?",
+    "a": "90"
    }
   ],
   "rw": true
@@ -20115,84 +20091,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que l'herpès génital ?",
+    "q": "Quel principe doit toujours guider le choix d'une position à deux ? Le ___ mutuel ?",
     "c": [
-     "Infection bactérienne",
-     "Infection virale sexuellement transmissible",
-     "Maladie de peau",
-     "Allergie"
+     "consentement",
+     "hasard",
+     "record",
+     "chronomètre"
     ],
-    "a": "Infection virale sexuellement transmissible"
+    "a": "consentement"
    },
    {
-    "q": "Quel virus cause l'herpès génital ?",
+    "q": "Quel ancien texte indien décrit de nombreuses positions ? Le ___ ?",
     "c": [
-     "Le HSV (Herpes Simplex Virus)",
-     "Le VHB",
-     "Le HPV",
-     "Le VIH"
+     "Kamasutra",
+     "Coran",
+     "Talmud",
+     "Popol Vuh"
     ],
-    "a": "Le HSV (Herpes Simplex Virus)"
+    "a": "Kamasutra"
    },
    {
-    "q": "Existe-t-il un traitement curatif contre l'herpès ?",
+    "q": "Qu'est-ce qui rend une position « bonne » avant tout ? Le ___ des deux partenaires ?",
     "c": [
-     "Oui, la guérison est totale",
-     "Oui, un vaccin",
-     "Oui, des antibiotiques",
-     "Non, mais des traitements réduisent les poussées"
+     "confort",
+     "prix",
+     "bruit",
+     "décor"
     ],
-    "a": "Non, mais des traitements réduisent les poussées"
+    "a": "confort"
    },
    {
-    "q": "Comment se manifeste l'herpès génital ?",
+    "q": "La communication entre partenaires est-elle utile pour trouver ce qui plaît ? ___ ?",
     "c": [
-     "Éruption sur tout le corps",
-     "Fièvre",
-     "Vésicules et ulcérations génitales",
-     "Toux"
+     "oui",
+     "non",
+     "seulement par écrit",
+     "seulement au médecin"
     ],
-    "a": "Vésicules et ulcérations génitales"
+    "a": "oui"
    },
    {
-    "q": "Comment se transmet l'herpès génital ?",
+    "q": "Comment appelle-t-on une position où les partenaires se font face ? En ___ à ___ ? (face-à-face)",
     "c": [
-     "Par la salive",
-     "Par contact direct avec les lésions",
-     "Par le sang",
-     "Par l'air"
+     "face-à-face",
+     "dos-à-dos",
+     "côte perpendiculaire",
+     "à l'envers"
     ],
-    "a": "Par contact direct avec les lésions"
+    "a": "face-à-face"
    },
    {
-    "q": "Quelle est la différence entre HSV-1 et HSV-2 ?",
+    "q": "Quel accessoire de confort peut aider à soulager le dos ou le bassin ? Un ___ ?",
     "c": [
-     "HSV-1 est génital, HSV-2 est oral",
-     "Aucune différence",
-     "HSV-1 est souvent oral, HSV-2 souvent génital",
-     "HSV-1 est plus dangereux"
+     "coussin",
+     "casque",
+     "gant",
+     "parapluie"
     ],
-    "a": "HSV-1 est souvent oral, HSV-2 souvent génital"
+    "a": "coussin"
    },
    {
-    "q": "Combien de personnes sont porteuses du HSV ?",
+    "q": "Existe-t-il UNE position « meilleure » universelle, ou cela dépend-il de chaque couple ? Cela ___ ?",
     "c": [
-     "500 millions",
-     "Plus de 3,7 milliards (HSV-1)",
-     "1 milliard",
-     "2 milliards"
+     "dépend",
+     "est fixe",
+     "est unique",
+     "est interdit"
     ],
-    "a": "Plus de 3,7 milliards (HSV-1)"
+    "a": "dépend"
    },
    {
-    "q": "Qu'est-ce qui déclenche une poussée d'herpès ?",
-    "c": [
-     "Sport",
-     "Alimentation",
-     "Stress, fatigue, baisse d'immunité",
-     "Météo"
-    ],
-    "a": "Stress, fatigue, baisse d'immunité"
+    "q": "Combien de positions principales le Kamasutra décrit-il environ (souvent cité) ?",
+    "a": "64"
    }
   ],
   "rw": true
@@ -20204,84 +20174,72 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que la syphilis ?",
+    "q": "Contre quoi le préservatif protège-t-il, en plus des grossesses ? Les ___ ?",
     "c": [
-     "Maladie virale",
-     "Maladie génétique",
-     "Infection fongique",
-     "Infection sexuellement transmissible bactérienne"
+     "IST",
+     "coups de soleil",
+     "caries",
+     "moustiques"
     ],
-    "a": "Infection sexuellement transmissible bactérienne"
+    "a": "IST"
    },
    {
-    "q": "Quelle bactérie cause la syphilis ?",
+    "q": "En quelle matière la plupart des préservatifs sont-ils faits ? Le ___ ?",
     "c": [
-     "Escherichia coli",
-     "Neisseria gonorrhoeae",
-     "Treponema pallidum",
-     "Chlamydia trachomatis"
+     "latex",
+     "coton",
+     "cuir",
+     "papier"
     ],
-    "a": "Treponema pallidum"
+    "a": "latex"
    },
    {
-    "q": "La syphilis est-elle curable ?",
-    "c": [
-     "Elle se guérit seule",
-     "Non",
-     "Oui, mais très difficilement",
-     "Oui, avec des antibiotiques (pénicilline)"
-    ],
-    "a": "Oui, avec des antibiotiques (pénicilline)"
+    "q": "Combien de fois peut-on réutiliser un préservatif ?",
+    "a": "1"
    },
    {
-    "q": "Comment se manifeste le premier stade de la syphilis ?",
+    "q": "Que faut-il vérifier avant d'utiliser un préservatif ? La date de ___ ?",
     "c": [
-     "Des douleurs musculaires",
-     "Un chancre (ulcère) indolore",
-     "De la fièvre",
-     "Des boutons"
+     "péremption",
+     "fabrication seule",
+     "livraison",
+     "vente"
     ],
-    "a": "Un chancre (ulcère) indolore"
+    "a": "péremption"
    },
    {
-    "q": "Que peut causer la syphilis non traitée à long terme ?",
+    "q": "Quel type de lubrifiant est compatible avec un préservatif en latex ? À base d'___ ?",
     "c": [
-     "Diabète",
-     "Cancer",
-     "Atteintes neurologiques et cardiovasculaires graves",
-     "SIDA"
+     "eau",
+     "huile",
+     "beurre",
+     "graisse"
     ],
-    "a": "Atteintes neurologiques et cardiovasculaires graves"
+    "a": "eau"
    },
    {
-    "q": "Comment se transmet la syphilis ?",
+    "q": "Pour les personnes allergiques au latex, en quelle autre matière existe-t-il des préservatifs ? Le ___ ?",
     "c": [
-     "Par la salive",
-     "Par l'air",
-     "Par le sang",
-     "Par contact direct avec un chancre"
+     "polyuréthane",
+     "laine",
+     "soie",
+     "lin"
     ],
-    "a": "Par contact direct avec un chancre"
+    "a": "polyuréthane"
    },
    {
-    "q": "Qu'est-ce que la syphilis congénitale ?",
+    "q": "Existe-t-il un préservatif conçu pour le vagin, en plus du préservatif externe ? Le préservatif ___ ?",
     "c": [
-     "Transmission de la mère à l'enfant pendant la grossesse",
-     "Syphilis héréditaire",
-     "Syphilis chez l'enfant",
-     "Syphilis génétique"
+     "interne",
+     "double",
+     "réutilisable",
+     "invisible"
     ],
-    "a": "Transmission de la mère à l'enfant pendant la grossesse"
+    "a": "interne"
    },
    {
-    "q": "La syphilis est-elle en recrudescence ?",
-    "c": [
-     "Elle est stable",
-     "Non, elle a disparu",
-     "Elle diminue",
-     "Oui, les cas augmentent depuis les années 2000"
-    ],
-    "a": "Oui, les cas augmentent depuis les années 2000"
+    "q": "Quel pourcentage d'efficacité, environ, atteint le préservatif contre la grossesse en usage correct ?",
+    "a": "98"
    }
   ],
   "rw": true
@@ -20293,84 +20251,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que la gonorrhée ?",
+    "q": "La pilule contraceptive se prend-elle plutôt chaque jour ou une fois par an ? Chaque ___ ?",
     "c": [
-     "IST bactérienne aussi appelée chaude-pisse",
-     "Maladie de peau",
-     "Infection urinaire",
-     "Infection virale"
+     "jour",
+     "an",
+     "mois",
+     "semaine"
     ],
-    "a": "IST bactérienne aussi appelée chaude-pisse"
+    "a": "jour"
    },
    {
-    "q": "Quelle bactérie cause la gonorrhée ?",
+    "q": "À quoi sert la pilule contraceptive ? À éviter une ___ ?",
     "c": [
-     "Neisseria gonorrhoeae",
-     "Treponema pallidum",
-     "Escherichia coli",
-     "Chlamydia trachomatis"
+     "grossesse",
+     "grippe",
+     "carie",
+     "insomnie"
     ],
-    "a": "Neisseria gonorrhoeae"
+    "a": "grossesse"
    },
    {
-    "q": "Quels sont les symptômes chez l'homme ?",
+    "q": "Que contient la pilule pour agir ? Des ___ ?",
     "c": [
-     "Fièvre",
-     "Éruption cutanée",
-     "Aucun symptôme",
-     "Écoulement urétral et douleur en urinant"
+     "hormones",
+     "vitamines",
+     "antibiotiques",
+     "sucres"
     ],
-    "a": "Écoulement urétral et douleur en urinant"
+    "a": "hormones"
    },
    {
-    "q": "Quels sont les symptômes chez la femme ?",
+    "q": "La pilule protège-t-elle des IST ? ___ ?",
     "c": [
-     "Tous ces symptômes possibles",
-     "Douleurs abdominales",
-     "Souvent asymptomatique",
-     "Écoulement vaginal"
+     "non",
+     "oui",
+     "seulement du VIH",
+     "seulement l'été"
     ],
-    "a": "Tous ces symptômes possibles"
+    "a": "non"
    },
    {
-    "q": "La gonorrhée est-elle curable ?",
+    "q": "Comment appelle-t-on la pilule contraceptive d'urgence ? La pilule du ___ ?",
     "c": [
-     "Oui, mais résistante",
-     "Oui, avec des antibiotiques",
-     "Guérison spontanée",
-     "Non"
+     "lendemain",
+     "matin",
+     "mois",
+     "soir"
     ],
-    "a": "Oui, avec des antibiotiques"
+    "a": "lendemain"
    },
    {
-    "q": "Que peut causer une gonorrhée non traitée ?",
+    "q": "Quelle pilule ne contient qu'une hormone, sans œstrogène ? La pilule ___ ?",
     "c": [
-     "Stérilité et infections pelviennes",
-     "Diabète",
-     "Cancer",
-     "Maladies cardiaques"
+     "progestative",
+     "double",
+     "vitaminée",
+     "effervescente"
     ],
-    "a": "Stérilité et infections pelviennes"
+    "a": "progestative"
    },
    {
-    "q": "Qu'est-ce que la résistance aux antibiotiques de la gonorrhée ?",
+    "q": "Comment appelle-t-on l'oubli qui peut réduire l'efficacité de la pilule ? Un ___ de prise ?",
     "c": [
-     "La maladie est plus grave",
-     "Le traitement est plus fort",
-     "La bactérie devient moins sensible aux traitements",
-     "La bactérie disparaît"
+     "oubli",
+     "surdosage",
+     "recyclage",
+     "renouvellement"
     ],
-    "a": "La bactérie devient moins sensible aux traitements"
+    "a": "oubli"
    },
    {
-    "q": "Combien de cas de gonorrhée par an dans le monde ?",
-    "c": [
-     "Environ 50 millions",
-     "Environ 87 millions",
-     "Environ 10 millions",
-     "Environ 200 millions"
-    ],
-    "a": "Environ 87 millions"
+    "q": "En quelle année la première pilule contraceptive a-t-elle été commercialisée aux États-Unis ?",
+    "a": "1960"
    }
   ],
   "rw": true
@@ -20382,84 +20334,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que la ménopause ?",
+    "q": "La stérilisation est une méthode contraceptive ___ ? (durable)",
     "c": [
-     "Ralentissement des règles",
-     "Arrêt définitif des menstruations",
-     "Fin de l'ovulation",
-     "Arrêt temporaire des règles"
+     "permanente",
+     "quotidienne",
+     "hebdomadaire",
+     "saisonnière"
     ],
-    "a": "Arrêt définitif des menstruations"
+    "a": "permanente"
    },
    {
-    "q": "À quel âge survient la ménopause en moyenne ?",
+    "q": "Comment appelle-t-on la stérilisation masculine ? La ___ ?",
     "c": [
-     "Vers 55 ans",
-     "Vers 51 ans",
-     "Vers 48 ans",
-     "Vers 45 ans"
+     "vasectomie",
+     "vasodilatation",
+     "vaccination",
+     "circoncision"
     ],
-    "a": "Vers 51 ans"
+    "a": "vasectomie"
    },
    {
-    "q": "Qu'est-ce que la périménopause ?",
+    "q": "Quel conduit est bloqué lors d'une vasectomie ? Le canal ___ (déférent) ?",
     "c": [
-     "Trouble de la ménopause",
-     "Après la ménopause",
-     "Période de transition avant la ménopause",
-     "Début de la ménopause"
+     "déférent",
+     "auditif",
+     "lacrymal",
+     "urinaire seul"
     ],
-    "a": "Période de transition avant la ménopause"
+    "a": "déférent"
    },
    {
-    "q": "Quels sont les symptômes fréquents de la ménopause ?",
+    "q": "Comment appelle-t-on la stérilisation féminine par blocage des trompes ? La ligature des ___ ?",
     "c": [
-     "Aucun symptôme",
-     "Maux de tête",
-     "Douleurs musculaires",
-     "Bouffées de chaleur, troubles du sommeil"
+     "trompes",
+     "veines",
+     "nerfs",
+     "tendons"
     ],
-    "a": "Bouffées de chaleur, troubles du sommeil"
+    "a": "trompes"
    },
    {
-    "q": "Qu'est-ce que le traitement hormonal substitutif (THS) ?",
+    "q": "La vasectomie empêche-t-elle l'éjaculation, ou seulement la présence de spermatozoïdes ? Seulement les ___ ?",
     "c": [
-     "Antidépresseurs",
-     "Vitamines",
-     "Traitement qui compense la baisse d'hormones",
-     "Traitement contre l'ostéoporose"
+     "spermatozoïdes",
+     "hormones",
+     "érections",
+     "plaisirs"
     ],
-    "a": "Traitement qui compense la baisse d'hormones"
+    "a": "spermatozoïdes"
    },
    {
-    "q": "La ménopause est-elle réversible ?",
+    "q": "La stérilisation protège-t-elle des IST ? ___ ?",
     "c": [
-     "Non, c'est un processus naturel définitif",
-     "Oui, naturellement",
-     "Oui, avec un traitement",
-     "Parfois"
+     "non",
+     "oui",
+     "seulement du VIH",
+     "totalement"
     ],
-    "a": "Non, c'est un processus naturel définitif"
+    "a": "non"
    },
    {
-    "q": "Quelles complications de santé sont liées à la ménopause ?",
+    "q": "Quel délai de réflexion légal est imposé en France avant une stérilisation volontaire ? Un délai de ___ mois ?",
     "c": [
-     "Cancer",
-     "Ostéoporose et risques cardiovasculaires",
-     "Diabète",
-     "Obésité"
+     "4",
+     "1",
+     "12",
+     "0"
     ],
-    "a": "Ostéoporose et risques cardiovasculaires"
+    "a": "4"
    },
    {
-    "q": "À partir de combien de temps sans règles parle-t-on de ménopause ?",
-    "c": [
-     "12 mois sans règles",
-     "3 mois sans règles",
-     "24 mois sans règles",
-     "6 mois sans règles"
-    ],
-    "a": "12 mois sans règles"
+    "q": "Après combien de semaines, environ, une vasectomie est-elle pleinement efficace (contrôle du sperme) ?",
+    "a": "12"
    }
   ],
   "rw": true
@@ -20471,84 +20417,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que l'andropause ?",
+    "q": "Que signifie le sigle IVG ? Interruption ___ de grossesse ?",
     "c": [
-     "Ménopause masculine",
-     "Baisse progressive de la testostérone chez l'homme",
-     "Arrêt de la production de spermatozoïdes",
-     "Arrêt total de la production de testostérone"
+     "volontaire",
+     "vitale",
+     "vaccinale",
+     "veineuse"
     ],
-    "a": "Baisse progressive de la testostérone chez l'homme"
+    "a": "volontaire"
    },
    {
-    "q": "À quel âge commence l'andropause ?",
+    "q": "En France, l'IVG est-elle un droit légal ? ___ ?",
     "c": [
-     "Vers 30-40 ans",
-     "Vers 55 ans, brutalement",
-     "Vers 60-70 ans",
-     "Vers 40-50 ans, progressivement"
+     "oui",
+     "non",
+     "seulement à l'étranger",
+     "sur autorisation d'un juge"
     ],
-    "a": "Vers 40-50 ans, progressivement"
+    "a": "oui"
    },
    {
-    "q": "L'andropause est-elle comparable à la ménopause ?",
+    "q": "Quelle grande loi française de 1975 a légalisé l'IVG ? La loi ___ ?",
     "c": [
-     "Non, c'est plus progressif et moins brutal",
-     "Oui, mais plus tardif",
-     "Non, ce n'est pas lié aux hormones",
-     "Oui, identique"
+     "Veil",
+     "Neuwirth",
+     "Aubry",
+     "Taubira"
     ],
-    "a": "Non, c'est plus progressif et moins brutal"
+    "a": "Veil"
    },
    {
-    "q": "Quels sont les symptômes de l'andropause ?",
+    "q": "Quelle femme politique a porté la loi sur l'IVG en France ? Simone ___ ?",
     "c": [
-     "Arrêt des règles",
-     "Bouffées de chaleur",
-     "Nausées",
-     "Baisse de libido, fatigue, irritabilité"
+     "Veil",
+     "de Beauvoir",
+     "Curie",
+     "Weil"
     ],
-    "a": "Baisse de libido, fatigue, irritabilité"
+    "a": "Veil"
    },
    {
-    "q": "Quel traitement existe pour l'andropause ?",
+    "q": "Quels sont les deux types principaux d'IVG ? Médicamenteuse et ___ ?",
     "c": [
-     "Oestrogènes",
-     "Aucun traitement",
-     "Testostérone en gel ou injections",
-     "Antidépresseurs"
+     "chirurgicale",
+     "chirologique",
+     "thermique",
+     "hormonale seule"
     ],
-    "a": "Testostérone en gel ou injections"
+    "a": "chirurgicale"
    },
    {
-    "q": "L'andropause affecte-t-elle la fertilité ?",
+    "q": "En 2024, dans quel texte fondamental la France a-t-elle inscrit la liberté de recourir à l'IVG ? La ___ ?",
     "c": [
-     "Oui, stérilité totale",
-     "Elle diminue la fertilité mais ne l'arrête pas",
-     "Oui, irréversible",
-     "Non, aucun effet"
+     "Constitution",
+     "Bible",
+     "Déclaration de 1789 seule",
+     "loi de finances"
     ],
-    "a": "Elle diminue la fertilité mais ne l'arrête pas"
+    "a": "Constitution"
    },
    {
-    "q": "Qu'est-ce que la DHEA ?",
+    "q": "Quelle femme, autrice du « Manifeste des 343 », a milité pour ce droit ? Simone de ___ ?",
     "c": [
-     "Testostérone",
-     "Progestérone",
-     "Hormone précurseur qui diminue avec l'âge",
-     "Oestrogène"
+     "Beauvoir",
+     "Veil",
+     "Signoret",
+     "Weil"
     ],
-    "a": "Hormone précurseur qui diminue avec l'âge"
+    "a": "Beauvoir"
    },
    {
-    "q": "Le traitement à la testostérone est-il sans risque ?",
-    "c": [
-     "Non, très dangereux",
-     "Non, il a des effets secondaires potentiels",
-     "Oui, totalement sûr",
-     "Oui, sans aucun risque"
-    ],
-    "a": "Non, il a des effets secondaires potentiels"
+    "q": "En quelle année exacte la loi Veil a-t-elle légalisé l'IVG en France ?",
+    "a": "1975"
    }
   ],
   "rw": true
@@ -20560,84 +20500,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que la libido ?",
+    "q": "La puberté est le passage de l'enfance à l'âge ___ ?",
     "c": [
-     "Fréquence des rapports",
-     "Performance sexuelle",
-     "Attirance physique",
-     "Désir sexuel"
+     "adulte",
+     "mûr",
+     "scolaire",
+     "retraité"
     ],
-    "a": "Désir sexuel"
+    "a": "adulte"
    },
    {
-    "q": "Qu'est-ce qui influence la libido ?",
+    "q": "Quelles substances déclenchent les changements de la puberté ? Les ___ ?",
     "c": [
-     "Uniquement l'alimentation",
-     "Uniquement l'âge",
-     "Hormones, stress, santé, émotions",
-     "Uniquement les hormones"
+     "hormones",
+     "vitamines",
+     "bactéries",
+     "enzymes digestives"
     ],
-    "a": "Hormones, stress, santé, émotions"
+    "a": "hormones"
    },
    {
-    "q": "La libido est-elle la même chez les hommes et les femmes ?",
+    "q": "Chez la fille, quel événement marque souvent le début de la puberté ? Les premières ___ ?",
     "c": [
-     "Les femmes ont plus de libido",
-     "Elle est identique",
-     "Elle varie selon les individus, pas selon le genre",
-     "Les hommes ont plus de libido"
+     "règles",
+     "rides",
+     "dents",
+     "canities"
     ],
-    "a": "Elle varie selon les individus, pas selon le genre"
+    "a": "règles"
    },
    {
-    "q": "Qu'est-ce qu'une baisse de libido ?",
+    "q": "Chez le garçon, quel changement affecte la voix à la puberté ? La voix ___ (mue) ?",
     "c": [
-     "Dépression",
-     "Impuissance",
-     "Diminution du désir sexuel",
-     "Absence d'érection"
+     "mue",
+     "disparaît",
+     "double",
+     "s'éteint"
     ],
-    "a": "Diminution du désir sexuel"
+    "a": "mue"
    },
    {
-    "q": "Quels facteurs peuvent diminuer la libido ?",
+    "q": "Quelle pilosité apparaît chez les deux sexes à la puberté ? Les poils ___ ?",
     "c": [
-     "Uniquement les hormones",
-     "Uniquement l'âge",
-     "Stress, fatigue, dépression, médicaments",
-     "Uniquement l'alimentation"
+     "pubiens",
+     "gris",
+     "de sourcils seuls",
+     "de cils"
     ],
-    "a": "Stress, fatigue, dépression, médicaments"
+    "a": "pubiens"
    },
    {
-    "q": "Qu'est-ce que la libido élevée ?",
+    "q": "Quelle poussée physique accompagne la puberté ? La poussée de ___ ?",
     "c": [
-     "Addiction sexuelle",
-     "Hypersexualité",
-     "Trouble mental",
-     "Désir sexuel fort et fréquent"
+     "croissance",
+     "fièvre",
+     "tension seule",
+     "poids uniquement"
     ],
-    "a": "Désir sexuel fort et fréquent"
+    "a": "croissance"
    },
    {
-    "q": "Existe-t-il des traitements pour la baisse de libido ?",
+    "q": "Quelle glande cérébrale (hypophyse) pilote le déclenchement de la puberté sous l'ordre de l'___ ?",
     "c": [
-     "Uniquement des médicaments",
-     "Aucun traitement",
-     "Uniquement la chirurgie",
-     "Traitements hormonaux, thérapie, changement de mode de vie"
+     "hypothalamus",
+     "estomac",
+     "foie",
+     "rein"
     ],
-    "a": "Traitements hormonaux, thérapie, changement de mode de vie"
+    "a": "hypothalamus"
    },
    {
-    "q": "La libido diminue-t-elle avec l'âge ?",
-    "c": [
-     "Non, jamais",
-     "Oui, toujours",
-     "Elle peut diminuer mais pas forcément",
-     "Uniquement après 70 ans"
-    ],
-    "a": "Elle peut diminuer mais pas forcément"
+    "q": "Vers quel âge, en moyenne, débute la puberté chez les filles ? Environ ___ ans ?",
+    "a": "11"
    }
   ],
   "rw": true
@@ -20649,84 +20583,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce qu'une érection ?",
+    "q": "La ménopause marque la fin de quoi chez la femme ? Des ___ ?",
     "c": [
-     "Contraction musculaire",
-     "Excitation sexuelle",
-     "Rigidification du pénis par afflux sanguin",
-     "Émission de sperme"
+     "règles",
+     "cheveux",
+     "dents",
+     "ongles"
     ],
-    "a": "Rigidification du pénis par afflux sanguin"
+    "a": "règles"
    },
    {
-    "q": "Quel mécanisme provoque l'érection ?",
+    "q": "La ménopause signifie la fin de la période de ___ ? (avoir des enfants)",
     "c": [
-     "Afflux de sang dans les corps caverneux",
-     "Contraction des muscles",
-     "Production d'hormones",
-     "Stimulation nerveuse"
+     "fertilité",
+     "croissance",
+     "scolarité",
+     "activité"
     ],
-    "a": "Afflux de sang dans les corps caverneux"
+    "a": "fertilité"
    },
    {
-    "q": "Qu'est-ce que la dysfonction érectile ?",
+    "q": "Quel symptôme courant de la ménopause provoque des bouffées de ___ ?",
     "c": [
-     "Incapacité à obtenir ou maintenir une érection",
-     "Manque d'érection matinale",
-     "Éjaculation précoce",
-     "Érection douloureuse"
+     "chaleur",
+     "froid",
+     "couleur",
+     "bruit"
     ],
-    "a": "Incapacité à obtenir ou maintenir une érection"
+    "a": "chaleur"
    },
    {
-    "q": "Quels facteurs peuvent causer des troubles de l'érection ?",
+    "q": "Quelle hormone féminine chute fortement à la ménopause ? L'___ ?",
     "c": [
-     "Uniquement l'alimentation",
-     "Uniquement l'âge",
-     "Uniquement le stress",
-     "Stress, diabète, maladies cardiovasculaires"
+     "œstrogène",
+     "insuline",
+     "testostérone seule",
+     "adrénaline"
     ],
-    "a": "Stress, diabète, maladies cardiovasculaires"
+    "a": "œstrogène"
    },
    {
-    "q": "Quels médicaments traitent la dysfonction érectile ?",
+    "q": "Comment appelle-t-on la période de transition qui précède la ménopause ? La ___ ?",
     "c": [
-     "Antibiotiques",
-     "Anti-inflammatoires",
-     "Antidépresseurs",
-     "Viagra, Cialis (inhibiteurs de PDE5)"
+     "préménopause",
+     "postménopause",
+     "andropause",
+     "puberté"
     ],
-    "a": "Viagra, Cialis (inhibiteurs de PDE5)"
+    "a": "préménopause"
    },
    {
-    "q": "À partir de quel âge les troubles de l'érection sont-ils fréquents ?",
+    "q": "Quel traitement peut soulager les symptômes de la ménopause ? Le traitement ___ substitutif ?",
     "c": [
-     "Après 50 ans",
-     "À tout âge",
-     "Après 60 ans",
-     "Après 40 ans, de façon croissante"
+     "hormonal",
+     "antibiotique",
+     "vitaminé seul",
+     "chirurgical"
     ],
-    "a": "Après 40 ans, de façon croissante"
+    "a": "hormonal"
    },
    {
-    "q": "L'érection est-elle contrôlée par le système nerveux ?",
+    "q": "Quelle maladie osseuse, favorisée par la baisse d'œstrogènes, guette après la ménopause ? L'___ ?",
     "c": [
-     "Non, c'est un réflexe",
-     "Uniquement par le cerveau",
-     "Non, c'est hormonal",
-     "Oui, par le système nerveux autonome"
+     "ostéoporose",
+     "arthrite seule",
+     "myopie",
+     "anémie"
     ],
-    "a": "Oui, par le système nerveux autonome"
+    "a": "ostéoporose"
    },
    {
-    "q": "Qu'est-ce qu'un priapisme ?",
-    "c": [
-     "Érection normale",
-     "Absence d'érection",
-     "Érection prolongée et douloureuse sans stimulation",
-     "Éjaculation"
-    ],
-    "a": "Érection prolongée et douloureuse sans stimulation"
+    "q": "Vers quel âge, en moyenne, survient la ménopause ? Environ ___ ans ?",
+    "a": "51"
    }
   ],
   "rw": true
@@ -20738,84 +20666,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que l'éjaculation ?",
+    "q": "Que signifie le V de VIH ? ___ de l'immunodéficience humaine ?",
     "c": [
-     "Début de l'érection",
-     "Émission d'urine",
-     "Émission de sperme par le pénis lors de l'orgasme",
-     "Contraction du pénis"
+     "Virus",
+     "Vaccin",
+     "Vecteur",
+     "Voie"
     ],
-    "a": "Émission de sperme par le pénis lors de l'orgasme"
+    "a": "Virus"
    },
    {
-    "q": "Qu'est-ce que l'éjaculation précoce ?",
+    "q": "Quel système du corps le VIH attaque-t-il ? Le système ___ ?",
     "c": [
-     "Absence d'éjaculation",
-     "Éjaculation tardive",
-     "Éjaculation survenant trop rapidement",
-     "Éjaculation douloureuse"
+     "immunitaire",
+     "digestif",
+     "osseux",
+     "auditif"
     ],
-    "a": "Éjaculation survenant trop rapidement"
+    "a": "immunitaire"
    },
    {
-    "q": "Qu'est-ce que l'éjaculation retardée ?",
+    "q": "Quel moyen simple réduit fortement le risque de transmission sexuelle du VIH ? Le ___ ?",
     "c": [
-     "Éjaculation lente",
-     "Éjaculation tardive",
-     "Difficulté ou impossibilité d'éjaculer",
-     "Éjaculation sans orgasme"
+     "préservatif",
+     "gant",
+     "masque",
+     "chapeau"
     ],
-    "a": "Difficulté ou impossibilité d'éjaculer"
+    "a": "préservatif"
    },
    {
-    "q": "Qu'est-ce que l'éjaculation rétrograde ?",
+    "q": "Quelle maladie le VIH peut-il provoquer à un stade avancé ? Le ___ ?",
     "c": [
-     "Sperme liquide",
-     "Éjaculation sans sensation",
-     "Le sperme va dans la vessie au lieu de sortir",
-     "Absence de sperme"
+     "SIDA",
+     "diabète",
+     "cancer du poumon",
+     "asthme"
     ],
-    "a": "Le sperme va dans la vessie au lieu de sortir"
+    "a": "SIDA"
    },
    {
-    "q": "Combien de spermatozoïdes dans une éjaculation moyenne ?",
+    "q": "Quel traitement permet aujourd'hui de vivre avec le VIH et de le rendre indétectable ? Les ___ ?",
     "c": [
-     "10 à 40 millions",
-     "40 à 300 millions",
-     "1 à 10 millions",
-     "500 millions à 1 milliard"
+     "antirétroviraux",
+     "antibiotiques",
+     "vaccins",
+     "vitamines"
     ],
-    "a": "40 à 300 millions"
+    "a": "antirétroviraux"
    },
    {
-    "q": "Quel volume de sperme est éjaculé en moyenne ?",
+    "q": "Que signifie « indétectable = ___ » (une personne traitée ne transmet plus) ?",
     "c": [
-     "0,5 à 1 ml",
-     "2 à 5 ml",
-     "10 à 15 ml",
-     "5 à 10 ml"
+     "intransmissible",
+     "immunisé",
+     "invincible",
+     "insensible"
     ],
-    "a": "2 à 5 ml"
+    "a": "intransmissible"
    },
    {
-    "q": "L'éjaculation est-elle toujours accompagnée d'orgasme ?",
+    "q": "Quel traitement préventif quotidien protège du VIH ? La ___ ?",
     "c": [
-     "Non, les deux peuvent être dissociés",
-     "Oui, toujours",
-     "Rarement",
-     "Parfois"
+     "PrEP",
+     "PMA",
+     "IVG",
+     "TPE seule"
     ],
-    "a": "Non, les deux peuvent être dissociés"
+    "a": "PrEP"
    },
    {
-    "q": "Qu'est-ce que l'orgasme ?",
-    "c": [
-     "Érection",
-     "Éjaculation",
-     "Excitation maximale",
-     "Point culminant du plaisir sexuel avec contractions musculaires"
-    ],
-    "a": "Point culminant du plaisir sexuel avec contractions musculaires"
+    "q": "En quelle année le virus du SIDA (VIH) a-t-il été identifié par l'équipe de l'Institut Pasteur ?",
+    "a": "1983"
    }
   ],
   "rw": true
@@ -20827,84 +20749,84 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Que signifie FIV ?",
+    "q": "La syphilis est une infection sexuellement ___ ?",
     "c": [
-     "Fécondation Intra-Vaginale",
-     "Fécondation In Vitro",
-     "Fertilité In Vitro",
-     "Fusion In Vitro"
+     "transmissible",
+     "héréditaire",
+     "alimentaire",
+     "respiratoire"
     ],
-    "a": "Fécondation In Vitro"
+    "a": "transmissible"
    },
    {
-    "q": "Qui a réalisé la première FIV réussie ?",
+    "q": "Quel type de micro-organisme cause la syphilis ? Une ___ ?",
     "c": [
-     "Jacques Testart",
-     "Robert Edwards et Patrick Steptoe",
-     "Alan Trounson",
-     "René Frydman"
+     "bactérie",
+     "virus",
+     "champignon",
+     "parasite géant"
     ],
-    "a": "Robert Edwards et Patrick Steptoe"
+    "a": "bactérie"
    },
    {
-    "q": "En quelle année est née Louise Brown, premier bébé FIV ?",
+    "q": "Avec quel type de médicament soigne-t-on la syphilis ? Des ___ ?",
     "c": [
-     "1980",
-     "1975",
-     "1985",
-     "1978"
+     "antibiotiques",
+     "vaccins",
+     "vitamines",
+     "sirops"
     ],
-    "a": "1978"
+    "a": "antibiotiques"
    },
    {
-    "q": "Quelles sont les étapes d'une FIV ?",
+    "q": "Quel moyen de protection limite la transmission de la syphilis ? Le ___ ?",
     "c": [
-     "Fécondation puis transfert",
-     "Stimulation, ponction, fécondation, transfert",
-     "Ponction puis fécondation",
-     "Stimulation puis transfert"
+     "préservatif",
+     "gant",
+     "foulard",
+     "casque"
     ],
-    "a": "Stimulation, ponction, fécondation, transfert"
+    "a": "préservatif"
    },
    {
-    "q": "Quel est le taux de réussite moyen d'une FIV ?",
+    "q": "Comment détecte-t-on la syphilis ? Par un ___ (prise de sang) ?",
     "c": [
-     "Environ 70%",
-     "Environ 50%",
-     "Environ 30% par tentative",
-     "Environ 10%"
+     "dépistage",
+     "scanner cérébral",
+     "test respiratoire",
+     "audiogramme"
     ],
-    "a": "Environ 30% par tentative"
+    "a": "dépistage"
    },
    {
-    "q": "Qu'est-ce que l'ICSI en FIV ?",
+    "q": "Quel antibiotique historique reste efficace contre la syphilis ? La ___ ?",
     "c": [
-     "Culture d'embryon",
-     "Transfert d'embryon",
-     "Fécondation classique",
-     "Injection directe d'un spermatozoïde dans l'ovule"
+     "pénicilline",
+     "aspirine",
+     "cortisone",
+     "insuline"
     ],
-    "a": "Injection directe d'un spermatozoïde dans l'ovule"
+    "a": "pénicilline"
    },
    {
-    "q": "Combien de bébés sont nés par FIV dans le monde ?",
+    "q": "Comment appelle-t-on la petite lésion indolore du premier stade de la syphilis ? Le ___ ?",
     "c": [
-     "Plus de 2 millions",
-     "Plus de 8 millions",
-     "Plus de 10 millions",
-     "Plus de 5 millions"
+     "chancre",
+     "furoncle",
+     "aphte",
+     "durillon"
     ],
-    "a": "Plus de 8 millions"
+    "a": "chancre"
    },
    {
-    "q": "La FIV est-elle remboursée par la Sécurité sociale en France ?",
+    "q": "En quel siècle une grande épidémie de syphilis a-t-elle déferlé sur l'Europe ? Le XV___ ?",
     "c": [
-     "Uniquement dans le privé",
-     "Non",
-     "Uniquement la première tentative",
-     "Oui, sous conditions"
+     "e",
+     "Ier",
+     "IIe",
+     "IIIe"
     ],
-    "a": "Oui, sous conditions"
+    "a": "e"
    }
   ],
   "rw": true
