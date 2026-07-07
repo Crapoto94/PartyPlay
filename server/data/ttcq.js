@@ -27948,14 +27948,14 @@ export const TTCQ_THEMES = [
   "rw": true,
   "levels": [
    {
-    "q": "Contre quoi les essuie-glaces protègent-ils la visibilité du conducteur ? La ___ ?",
+    "q": "Les essuie-glaces, c'est : un équipement de voiture, un fromage, une danse ou un légume ?",
     "c": [
-     "pluie",
-     "neige",
-     "boue",
-     "grêle"
+     "un équipement de voiture",
+     "un fromage",
+     "une danse",
+     "un légume"
     ],
-    "a": "pluie"
+    "a": "un équipement de voiture"
    },
    {
     "q": "Sur quelle partie de la voiture les essuie-glaces balaient-ils ? Le ___ ?",
@@ -28025,14 +28025,14 @@ export const TTCQ_THEMES = [
   "rw": true,
   "levels": [
    {
-    "q": "Quel métier exerce Jean-Jacques Goldman ? Il est chanteur et ___ ?",
+    "q": "Jean-Jacques Goldman, c'est : un chanteur français, un fromage, une planète ou un plat ?",
     "c": [
-     "compositeur",
-     "acteur",
-     "peintre",
-     "danseur"
+     "un chanteur français",
+     "un fromage",
+     "une planète",
+     "un plat"
     ],
-    "a": "compositeur"
+    "a": "un chanteur français"
    },
    {
     "q": "De quelle nationalité est Jean-Jacques Goldman ?",
@@ -28108,14 +28108,14 @@ export const TTCQ_THEMES = [
   "rw": true,
   "levels": [
    {
-    "q": "Dans quelle partie du corps se trouve la langue ? La ___ ?",
+    "q": "La langue, c'est : un organe de la bouche, un fromage, une planète ou un outil ?",
     "c": [
-     "bouche",
-     "main",
-     "oreille",
-     "narine"
+     "un organe de la bouche",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "bouche"
+    "a": "un organe de la bouche"
    },
    {
     "q": "Quel sens principal la langue permet-elle grâce à ses papilles ? Le ___ ?",
@@ -28185,14 +28185,14 @@ export const TTCQ_THEMES = [
   "rw": true,
   "levels": [
    {
-    "q": "À quel type de croisement le rond-point sert-il d'alternative ? Le ___ ?",
+    "q": "Les ronds-points, c'est : des carrefours de route, des fromages, des planètes ou des desserts ?",
     "c": [
-     "carrefour",
-     "tunnel",
-     "pont",
-     "péage"
+     "des carrefours de route",
+     "des fromages",
+     "des planètes",
+     "des desserts"
     ],
-    "a": "carrefour"
+    "a": "des carrefours de route"
    },
    {
     "q": "Dans quel sens tourne-t-on sur un rond-point en France ?",
@@ -28268,14 +28268,14 @@ export const TTCQ_THEMES = [
   "rw": true,
   "levels": [
    {
-    "q": "Dans quelle pièce de la maison utilise-t-on surtout le papier toilette ? Les ___ ?",
+    "q": "Le papier toilette, c'est : un objet du quotidien, un fromage, une planète ou un animal ?",
     "c": [
-     "toilettes",
-     "cuisine",
-     "chambre",
-     "garage"
+     "un objet du quotidien",
+     "un fromage",
+     "une planète",
+     "un animal"
     ],
-    "a": "toilettes"
+    "a": "un objet du quotidien"
    },
    {
     "q": "Sous quelle forme le papier toilette est-il vendu ? En ___ ?",
@@ -28351,14 +28351,14 @@ export const TTCQ_THEMES = [
   "rw": true,
   "levels": [
    {
-    "q": "Sur quelle partie du visage pousse la moustache ? Au-dessus de la ___ ?",
+    "q": "Les moustaches, c'est : des poils sur le visage, des fromages, des planètes ou des voitures ?",
     "c": [
-     "bouche",
-     "oreille",
-     "joue",
-     "paupière"
+     "des poils sur le visage",
+     "des fromages",
+     "des planètes",
+     "des voitures"
     ],
-    "a": "bouche"
+    "a": "des poils sur le visage"
    },
    {
     "q": "Avec quel outil taille-t-on une moustache ? Un ___ ?",
@@ -28434,14 +28434,14 @@ export const TTCQ_THEMES = [
   "rw": true,
   "levels": [
    {
-    "q": "À quel moment de la journée fait-on généralement la sieste ? L'après-___ ?",
+    "q": "La sieste, c'est : un petit somme dans la journée, un fromage, une planète ou un outil ?",
     "c": [
-     "midi",
-     "soir",
-     "aube",
-     "nuit"
+     "un petit somme dans la journée",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "midi"
+    "a": "un petit somme dans la journée"
    },
    {
     "q": "Quelle activité principale fait-on pendant une sieste ? On ___ ?",
@@ -28517,14 +28517,14 @@ export const TTCQ_THEMES = [
   "rw": true,
   "levels": [
    {
-    "q": "Quelle est la couleur de la pâte à tartiner Nutella ?",
+    "q": "Le Nutella, c'est : une pâte à tartiner, un fromage, une planète ou un meuble ?",
     "c": [
-     "marron",
-     "jaune",
-     "rouge",
-     "vert"
+     "une pâte à tartiner",
+     "un fromage",
+     "une planète",
+     "un meuble"
     ],
-    "a": "marron"
+    "a": "une pâte à tartiner"
    },
    {
     "q": "Quel fruit sec est l'un des ingrédients phares du Nutella ? La ___ ?",
@@ -28600,14 +28600,14 @@ export const TTCQ_THEMES = [
   "rw": true,
   "levels": [
    {
-    "q": "Quel attribut unique la licorne porte-t-elle sur le front ? Une ___ ?",
+    "q": "Les licornes, c'est : des créatures imaginaires, des fromages, des voitures ou des outils ?",
     "c": [
-     "corne",
-     "plume",
-     "crête",
-     "antenne"
+     "des créatures imaginaires",
+     "des fromages",
+     "des voitures",
+     "des outils"
     ],
-    "a": "corne"
+    "a": "des créatures imaginaires"
    },
    {
     "q": "À quel animal ressemble le corps de la licorne ? Un ___ ?",
@@ -28689,14 +28689,14 @@ export const TTCQ_THEMES = [
   "rw": true,
   "levels": [
    {
-    "q": "Quel aliment principal fait-on fondre pour une raclette ? Le ___ ?",
+    "q": "La raclette, c'est : un plat de fromage fondu, une planète, un sport ou un logiciel ?",
     "c": [
-     "fromage",
-     "chocolat",
-     "beurre",
-     "pain"
+     "un plat de fromage fondu",
+     "une planète",
+     "un sport",
+     "un logiciel"
     ],
-    "a": "fromage"
+    "a": "un plat de fromage fondu"
    },
    {
     "q": "Quel féculent accompagne traditionnellement la raclette ? La pomme de ___ ?",
@@ -28772,14 +28772,14 @@ export const TTCQ_THEMES = [
   "rw": true,
   "levels": [
    {
-    "q": "Sur quelle partie du corps enfile-t-on des chaussettes ? Les ___ ?",
+    "q": "Les chaussettes, c'est : des vêtements pour les pieds, des fromages, des planètes ou des voitures ?",
     "c": [
-     "pieds",
-     "mains",
-     "oreilles",
-     "genoux"
+     "des vêtements pour les pieds",
+     "des fromages",
+     "des planètes",
+     "des voitures"
     ],
-    "a": "pieds"
+    "a": "des vêtements pour les pieds"
    },
    {
     "q": "Comment appelle-t-on deux chaussettes identiques portées ensemble ? Une ___ ?",
@@ -28855,14 +28855,14 @@ export const TTCQ_THEMES = [
   "rw": true,
   "levels": [
    {
-    "q": "Sur quel appareil utilise-t-on le plus les emojis ? Le ___ ?",
+    "q": "Les emojis, c'est : de petites images de messagerie, des fromages, des planètes ou des légumes ?",
     "c": [
-     "smartphone",
-     "grille-pain",
-     "réveil",
-     "aspirateur"
+     "de petites images de messagerie",
+     "des fromages",
+     "des planètes",
+     "des légumes"
     ],
-    "a": "smartphone"
+    "a": "de petites images de messagerie"
    },
    {
     "q": "Que représente le plus souvent un emoji ? Une ___ ?",
@@ -28938,14 +28938,14 @@ export const TTCQ_THEMES = [
   "rw": true,
   "levels": [
    {
-    "q": "Quel geste irrésistible fait-on avec les bulles du papier bulle ? On les ___ ?",
+    "q": "Le papier bulle, c'est : un emballage à bulles d'air, un fromage, une planète ou un animal ?",
     "c": [
-     "éclate",
-     "mange",
-     "peint",
-     "coud"
+     "un emballage à bulles d'air",
+     "un fromage",
+     "une planète",
+     "un animal"
     ],
-    "a": "éclate"
+    "a": "un emballage à bulles d'air"
    },
    {
     "q": "À quoi sert principalement le papier bulle ? À ___ les objets fragiles ?",
@@ -29021,14 +29021,14 @@ export const TTCQ_THEMES = [
   "rw": true,
   "levels": [
    {
-    "q": "Quel petit bruit involontaire caractérise le hoquet ? Un « ___ » répété ?",
+    "q": "Le hoquet, c'est : un petit spasme involontaire, un fromage, une planète ou un outil ?",
     "c": [
-     "hic",
-     "toc",
-     "boum",
-     "clac"
+     "un petit spasme involontaire",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "hic"
+    "a": "un petit spasme involontaire"
    },
    {
     "q": "Quel muscle de la respiration se contracte brusquement lors du hoquet ? Le ___ ?",
@@ -29104,14 +29104,14 @@ export const TTCQ_THEMES = [
   "rw": true,
   "levels": [
    {
-    "q": "De quel ingrédient sucré la barbe à papa est-elle entièrement faite ? Le ___ ?",
+    "q": "La barbe à papa, c'est : une friandise sucrée, une planète, un outil ou un meuble ?",
     "c": [
-     "sucre",
-     "sel",
-     "beurre",
-     "miel"
+     "une friandise sucrée",
+     "une planète",
+     "un outil",
+     "un meuble"
     ],
-    "a": "sucre"
+    "a": "une friandise sucrée"
    },
    {
     "q": "Dans quel lieu de fête achète-t-on typiquement une barbe à papa ? La ___ ?",
@@ -29187,14 +29187,14 @@ export const TTCQ_THEMES = [
   "rw": true,
   "levels": [
    {
-    "q": "À quoi sert surtout un four à micro-ondes ? À ___ les plats ?",
+    "q": "Le four à micro-ondes, c'est : un appareil de cuisine, un fromage, une planète ou un animal ?",
     "c": [
-     "réchauffer",
-     "peindre",
-     "laver",
-     "peser"
+     "un appareil de cuisine",
+     "un fromage",
+     "une planète",
+     "un animal"
     ],
-    "a": "réchauffer"
+    "a": "un appareil de cuisine"
    },
    {
     "q": "Quel type d'ondes chauffe les aliments dans l'appareil ? Des micro-___ ?",
@@ -29270,14 +29270,14 @@ export const TTCQ_THEMES = [
   "rw": true,
   "levels": [
    {
-    "q": "Dans quelle pièce joue-t-on avec un canard de bain ? La salle de ___ ?",
+    "q": "Le canard de bain, c'est : un jouet de bain, un fromage, une planète ou un outil ?",
     "c": [
-     "bain",
-     "sport",
-     "classe",
-     "réunion"
+     "un jouet de bain",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "bain"
+    "a": "un jouet de bain"
    },
    {
     "q": "De quelle couleur est le canard de bain classique ?",
@@ -29353,14 +29353,14 @@ export const TTCQ_THEMES = [
   "rw": true,
   "levels": [
    {
-    "q": "Pour nettoyer quelle partie du corps utilise-t-on (à tort) les cotons-tiges ? Les ___ ?",
+    "q": "Les cotons-tiges, c'est : des bâtonnets d'hygiène, des fromages, des planètes ou des voitures ?",
     "c": [
-     "oreilles",
-     "yeux",
-     "pieds",
-     "cheveux"
+     "des bâtonnets d'hygiène",
+     "des fromages",
+     "des planètes",
+     "des voitures"
     ],
-    "a": "oreilles"
+    "a": "des bâtonnets d'hygiène"
    },
    {
     "q": "Quelle matière douce se trouve aux deux bouts d'un coton-tige ? Le ___ ?",
@@ -29430,14 +29430,14 @@ export const TTCQ_THEMES = [
   "rw": true,
   "levels": [
    {
-    "q": "Quel bruit caractéristique fait-on en ouvrant une bande Velcro ? Un ___ ?",
+    "q": "Le Velcro, c'est : un système d'attache, un fromage, une planète ou un légume ?",
     "c": [
-     "scratch",
-     "clic",
-     "pouf",
-     "ding"
+     "un système d'attache",
+     "un fromage",
+     "une planète",
+     "un légume"
     ],
-    "a": "scratch"
+    "a": "un système d'attache"
    },
    {
     "q": "À quoi sert le Velcro sur des chaussures d'enfant ? À les ___ sans lacets ?",
@@ -29513,14 +29513,14 @@ export const TTCQ_THEMES = [
   "rw": true,
   "levels": [
    {
-    "q": "Sur quelle partie du corps porte-t-on des tongs ? Les ___ ?",
+    "q": "Les tongs, c'est : des chaussures d'été, des fromages, des planètes ou des outils ?",
     "c": [
-     "pieds",
-     "mains",
-     "oreilles",
-     "coudes"
+     "des chaussures d'été",
+     "des fromages",
+     "des planètes",
+     "des outils"
     ],
-    "a": "pieds"
+    "a": "des chaussures d'été"
    },
    {
     "q": "Entre quels orteils passe la lanière d'une tong ? Le gros orteil et le ___ ?",
