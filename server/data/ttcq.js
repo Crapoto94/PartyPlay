@@ -12254,86 +12254,87 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qu'est-ce qu'une mosaïque ?",
+    "q": "Avec quoi assemble-t-on une mosaïque ? De petits ___ ?",
     "c": [
-     "Une peinture",
-     "Une fresque",
-     "Une sculpture",
-     "Un assemblage de petites pièces colorées"
+     "carreaux",
+     "clous",
+     "fils",
+     "grains"
     ],
-    "a": 3
+    "a": "carreaux"
    },
    {
-    "q": "Comment s'appellent les petits cubes utilisés en mosaïque ?",
+    "q": "Comment appelle-t-on chaque petit morceau coloré d'une mosaïque ? Une ___ ?",
     "c": [
-     "Des carreaux",
-     "Des morceaux",
-     "Des tesselles",
-     "Des fragments"
+     "tesselle",
+     "brique",
+     "perle",
+     "bille"
     ],
-    "a": 2
+    "a": "tesselle"
    },
    {
-    "q": "Quelle civilisation antique a excellé dans l'art de la mosaïque ?",
+    "q": "Quelle civilisation antique excellait dans les mosaïques de sol ? Les ___ ?",
     "c": [
-     "Romaine",
-     "Grecque",
-     "Égyptienne",
-     "Persane"
+     "Romains",
+     "Vikings",
+     "Aztèques",
+     "Celtes"
     ],
-    "a": 0
+    "a": "Romains"
    },
    {
-    "q": "Quelle ville italienne est célèbre pour ses mosaïques byzantines ?",
+    "q": "En quelles matières sont souvent faites les tesselles ? Pierre, verre ou ___ ?",
     "c": [
-     "Rome",
+     "céramique",
+     "papier",
+     "tissu",
+     "bois"
+    ],
+    "a": "céramique"
+   },
+   {
+    "q": "Quel artiste français de rue signe des mosaïques de Space Invaders en ville ?",
+    "c": [
+     "Invader",
+     "Banksy",
+     "JR",
+     "Miss.Tic"
+    ],
+    "a": "Invader"
+   },
+   {
+    "q": "Quel matériau brillant et doré ornait les mosaïques byzantines ? La feuille d'___ ?",
+    "c": [
+     "or",
+     "argent",
+     "cuivre",
+     "étain"
+    ],
+    "a": "or"
+   },
+   {
+    "q": "Dans quelle ville italienne, capitale de la mosaïque byzantine, se trouvent de célèbres basiliques ?",
+    "c": [
      "Ravenne",
-     "Florence",
-     "Venise"
+     "Venise",
+     "Rome",
+     "Florence"
     ],
-    "a": 1
+    "a": "Ravenne"
    },
    {
-    "q": "Où se trouve la plus grande mosaïque du monde antique ?",
+    "q": "En quel siècle, environ, les mosaïques byzantines de Ravenne ont-elles été réalisées ? Au ___e siècle ?",
     "c": [
-     "Constantinople",
-     "Antioche",
-     "Pompéi",
-     "Rome"
+     "6",
+     "12",
+     "2",
+     "15"
     ],
-    "a": 2
-   },
-   {
-    "q": "Quel matériau est utilisé comme support pour la mosaïque ?",
-    "c": [
-     "La colle",
-     "Le mortier",
-     "Le ciment",
-     "La chaux"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quel artiste catalan a utilisé la mosaïque dans ses œuvres ?",
-    "c": [
-     "Joan Miró",
-     "Pablo Picasso",
-     "Antoni Gaudí",
-     "Salvador Dalí"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quelle basilique de Ravenne est célèbre pour ses mosaïques ?",
-    "c": [
-     "Basilique Sainte-Marie",
-     "Basilique Saint-Vital",
-     "Basilique Saint-Jean",
-     "Basilique Saint-Apollinaire"
-    ],
-    "a": 1
+    "a": "6"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "arts_014",
@@ -12342,86 +12343,87 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel artiste de street art est le plus célèbre ?",
+    "q": "Où le street art s'expose-t-il, par définition ? Dans la ___ ?",
     "c": [
-     "JR",
+     "rue",
+     "galerie",
+     "maison",
+     "église"
+    ],
+    "a": "rue"
+   },
+   {
+    "q": "Avec quelle bombe colorée les graffeurs peignent-ils les murs ? La bombe de ___ ?",
+    "c": [
+     "peinture",
+     "gaz",
+     "crème",
+     "mousse"
+    ],
+    "a": "peinture"
+   },
+   {
+    "q": "Quel artiste britannique anonyme est la star mondiale du street art ?",
+    "c": [
      "Banksy",
-     "Shepard Fairey",
-     "Keith Haring"
+     "Warhol",
+     "Basquiat",
+     "Haring"
     ],
-    "a": 1
+    "a": "Banksy"
    },
    {
-    "q": "Qu'est-ce qu'un pochoir dans le street art ?",
+    "q": "Comment appelle-t-on la signature stylisée d'un graffeur ? Un ___ ?",
     "c": [
-     "Une fresque",
-     "Un tag",
-     "Une peinture",
-     "Une technique utilisant un masque découpé"
+     "tag",
+     "logo",
+     "sceau",
+     "code"
     ],
-    "a": 3
+    "a": "tag"
    },
    {
-    "q": "Quelle technique de street art utilise des affiches ?",
+    "q": "Quel pochoir permet de reproduire vite un motif au mur ? Le ___ (stencil) ?",
     "c": [
-     "Le graffiti",
-     "Le pochoir",
-     "La peinture",
-     "Le collage"
+     "pochoir",
+     "rouleau",
+     "pinceau",
+     "tampon"
     ],
-    "a": 3
+    "a": "pochoir"
    },
    {
-    "q": "Quel street artiste français est connu pour ses collages de visages ?",
+    "q": "Quel artiste new-yorkais des années 80, aux personnages tracés, a marqué le street art ? Keith ___ ?",
     "c": [
-     "JR",
-     "Keith Haring",
-     "Shepard Fairey",
-     "Banksy"
+     "Haring",
+     "Basquiat",
+     "Warhol",
+     "Koons"
     ],
-    "a": 0
+    "a": "Haring"
    },
    {
-    "q": "Quel quartier parisien est connu pour ses fresques murales ?",
+    "q": "Dans quelle ville, le long du mur, se trouve la fameuse East Side Gallery de street art ?",
     "c": [
-     "Belleville",
-     "Saint-Germain",
-     "Le Marais",
-     "Montmartre"
+     "Berlin",
+     "Paris",
+     "Londres",
+     "New York"
     ],
-    "a": 0
+    "a": "Berlin"
    },
    {
-    "q": "Qu'est-ce qu'un tag ?",
+    "q": "En quelle année, environ, le graffiti moderne émerge-t-il à New York (métros) ? Les années ___ ?",
     "c": [
-     "Un pochoir",
-     "Signature stylisée d'un graffeur",
-     "Une affiche",
-     "Une fresque"
+     "1970",
+     "1990",
+     "2010",
+     "1950"
     ],
-    "a": 1
-   },
-   {
-    "q": "Quel artiste américain a commencé par le graffiti dans le métro new-yorkais ?",
-    "c": [
-     "Jean-Michel Basquiat",
-     "Keith Haring",
-     "Richard Hambleton",
-     "Andy Warhol"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quel quartier londonien est célèbre pour le street art ?",
-    "c": [
-     "Borough",
-     "Shoreditch",
-     "Notting Hill",
-     "Camden"
-    ],
-    "a": 1
+    "a": "1970"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cuisine_001",
@@ -12430,86 +12432,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "De quel pays est originaire la pizza ?",
+    "q": "De quel pays la pizza est-elle originaire ?",
     "c": [
-     "Grèce",
-     "Espagne",
      "Italie",
-     "France"
+     "France",
+     "Grèce",
+     "Espagne"
     ],
-    "a": 2
+    "a": "Italie"
    },
    {
-    "q": "Quelle ville italienne est associée à la pizza Margherita ?",
+    "q": "Quelle sauce rouge nappe la base d'une pizza classique ? La sauce ___ ?",
     "c": [
-     "Florence",
+     "tomate",
+     "blanche",
+     "soja",
+     "piment"
+    ],
+    "a": "tomate"
+   },
+   {
+    "q": "Quel fromage fondant recouvre traditionnellement la pizza ? La ___ ?",
+    "c": [
+     "mozzarella",
+     "gruyère",
+     "roquefort",
+     "brie"
+    ],
+    "a": "mozzarella"
+   },
+   {
+    "q": "Quelle pizza aux couleurs du drapeau italien porte le nom d'une reine ? La ___ ?",
+    "c": [
+     "margherita",
+     "regina",
+     "napolitaine",
+     "calzone"
+    ],
+    "a": "margherita"
+   },
+   {
+    "q": "Dans quelle ville italienne la pizza moderne est-elle née ?",
+    "c": [
      "Naples",
+     "Rome",
      "Milan",
-     "Rome"
+     "Turin"
     ],
-    "a": 1
+    "a": "Naples"
    },
    {
-    "q": "Quels sont les ingrédients de la pizza Margherita ?",
+    "q": "Quelle pizza fourrée et pliée en chausson porte ce nom italien ? La ___ ?",
     "c": [
-     "Mozzarella, tomate, jambon",
-     "Mozzarella, tomate, origan",
-     "Tomate, fromage, champignons",
-     "Mozzarella, tomate, basilic"
+     "calzone",
+     "focaccia",
+     "panini",
+     "ciabatta"
     ],
-    "a": 3
+    "a": "calzone"
    },
    {
-    "q": "En quelle année la pizza a-t-elle été inventée ?",
+    "q": "Dans quel type de four traditionnel cuit-on la vraie pizza napolitaine ? Un four à ___ ?",
     "c": [
-     "XIXe siècle",
-     "XXe siècle",
-     "XVIIIe siècle",
-     "XVIIe siècle"
+     "bois",
+     "gaz",
+     "micro-ondes",
+     "charbon"
     ],
-    "a": 0
+    "a": "bois"
    },
    {
-    "q": "Quelle est la pizza la plus chère du monde ?",
-    "c": [
-     "Pizza Margherita",
-     "Pizza Regina",
-     "Pizza Capricciosa",
-     "Pizza Louis XIII"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Comment s'appelle la pâte à pizza fine et croustillante ?",
-    "c": [
-     "Pâte romaine",
-     "Pâte à pizza",
-     "Pâte napolitaine",
-     "Pâte fine"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quel fromage est traditionnellement utilisé sur la pizza ?",
-    "c": [
-     "Ricotta",
-     "Mozzarella",
-     "Gorgonzola",
-     "Parmesan"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Qui a inventé la pizza Margherita ?",
-    "c": [
-     "Giuseppe Pizza",
-     "Raffaele Esposito",
-     "Pietro Pizzaiolo",
-     "Antonio Napoletano"
-    ],
-    "a": 1
+    "q": "À quelle température, en °C, environ, cuit un four à pizza napolitain ?",
+    "a": "450"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cuisine_002",
@@ -12518,86 +12515,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "De quel arbre provient le cacao ?",
+    "q": "De quelle fève le chocolat est-il fabriqué ? La fève de ___ ?",
     "c": [
-     "Chocolatier",
-     "Caféier",
-     "Cocotier",
-     "Cacaoyer"
+     "cacao",
+     "café",
+     "vanille",
+     "soja"
     ],
-    "a": 3
+    "a": "cacao"
    },
    {
-    "q": "Dans quelle région du monde le cacao est-il originaire ?",
+    "q": "De quelle couleur est le chocolat « noir » ?",
     "c": [
-     "Europe",
-     "Amérique centrale",
-     "Afrique",
-     "Asie"
+     "noir",
+     "blanc",
+     "rouge",
+     "vert"
     ],
-    "a": 1
+    "a": "noir"
    },
    {
-    "q": "Quel pays est le plus grand producteur de cacao ?",
+    "q": "Quel chocolat, sans cacao solide, est très clair et sucré ? Le chocolat ___ ?",
     "c": [
-     "Ghana",
-     "Brésil",
-     "Côte d'Ivoire",
-     "Indonésie"
+     "blanc",
+     "noir",
+     "brun",
+     "gris"
     ],
-    "a": 2
+    "a": "blanc"
    },
    {
-    "q": "Comment s'appelle la fève de cacao séchée ?",
+    "q": "Quel pays africain est le premier producteur mondial de cacao ? La ___ d'Ivoire ?",
     "c": [
-     "Cabosse",
-     "Pépin",
-     "Graîne",
-     "Fève de cacao"
+     "Côte",
+     "Rive",
+     "Terre",
+     "Baie"
     ],
-    "a": 3
+    "a": "Côte"
    },
    {
-    "q": "Qui a inventé le chocolat au lait ?",
+    "q": "Quelle civilisation précolombienne consommait le cacao en boisson sacrée ? Les ___ ?",
     "c": [
-     "Daniel Peter",
-     "Henri Nestlé",
-     "François-Louis Cailler",
-     "Milton Hershey"
+     "Aztèques",
+     "Vikings",
+     "Romains",
+     "Égyptiens"
     ],
-    "a": 0
+    "a": "Aztèques"
    },
    {
-    "q": "Quelle est la différence entre chocolat noir et au lait ?",
+    "q": "Quel pays d'Europe est réputé pour son chocolat de haute qualité ? La ___ ?",
     "c": [
-     "Le lait en poudre",
-     "Le sucre",
-     "La teneur en cacao",
-     "Le beurre de cacao"
+     "Suisse",
+     "Grèce",
+     "Pologne",
+     "Irlande"
     ],
-    "a": 2
+    "a": "Suisse"
    },
    {
-    "q": "Quel chocolatier belge est le plus célèbre ?",
+    "q": "Comment appelle-t-on l'artisan qui fabrique le chocolat ? Le ___ ?",
     "c": [
-     "Gallien",
-     "Leonidas",
-     "Godiva",
-     "Neuhaus"
+     "chocolatier",
+     "boulanger",
+     "pâtissier",
+     "confiseur"
     ],
-    "a": 2
+    "a": "chocolatier"
    },
    {
-    "q": "Quelle civilisation a consommé le cacao en premier ?",
-    "c": [
-     "Les Incas",
-     "Les Mayas",
-     "Les Aztèques",
-     "Les Olmèques"
-    ],
-    "a": 1
+    "q": "Quel pourcentage de cacao, environ, contient au minimum un chocolat noir digne de ce nom ?",
+    "a": "70"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cuisine_003",
@@ -12606,86 +12598,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Combien de types de fromages existe-t-il en France ?",
+    "q": "À partir de quel liquide fabrique-t-on le fromage ? Le ___ ?",
     "c": [
-     "Plus de 1 000",
-     "Plus de 300",
-     "Plus de 500",
-     "Plus de 2 000"
+     "lait",
+     "vin",
+     "jus",
+     "sirop"
     ],
-    "a": 0
+    "a": "lait"
    },
    {
-    "q": "Quel fromage est célèbre pour ses trous ?",
+    "q": "Quel pays est mondialement réputé pour ses centaines de fromages ? La ___ ?",
     "c": [
-     "Le gruyère",
-     "Le comté",
-     "Le beaufort",
-     "L'emmental"
+     "France",
+     "Suède",
+     "Japon",
+     "Brésil"
     ],
-    "a": 3
+    "a": "France"
    },
    {
-    "q": "Quel fromage français est interdit aux États-Unis pour son lait cru ?",
+    "q": "Quel fromage à trous vient de Suisse ? L'___ ?",
     "c": [
-     "Le camembert",
-     "Le brie",
-     "Le roquefort",
-     "Le munster"
+     "emmental",
+     "camembert",
+     "roquefort",
+     "brie"
     ],
-    "a": 0
+    "a": "emmental"
    },
    {
-    "q": "Comment s'appelle la croûte du fromage ?",
+    "q": "Quel fromage normand à croûte blanche se vend en boîte ronde ?",
     "c": [
-     "La fleur",
-     "L'écorce",
-     "La peau",
-     "La croûte"
+     "camembert",
+     "gruyère",
+     "cantal",
+     "comté"
     ],
-    "a": 3
+    "a": "camembert"
    },
    {
-    "q": "Quel fromage est fabriqué dans le Massif central ?",
+    "q": "Quel fromage bleu persillé de brebis vient de l'Aveyron ?",
     "c": [
-     "Le maroilles",
-     "Le camembert",
-     "Le saint-nectaire",
-     "Le reblochon"
+     "roquefort",
+     "bleu",
+     "fourme",
+     "gorgonzola"
     ],
-    "a": 2
+    "a": "roquefort"
    },
    {
-    "q": "Quel petit fromage de chèvre est en forme de bûche ?",
+    "q": "Comment appelle-t-on les veines bleues de moisissure dans certains fromages ? Le ___ ?",
     "c": [
-     "Le picodon",
-     "Le chèvre",
-     "Le crottin de Chavignol",
-     "Le saint-marcellin"
+     "persillé",
+     "quadrillé",
+     "rayé",
+     "moucheté"
     ],
-    "a": 2
+    "a": "persillé"
    },
    {
-    "q": "Quel fromage italien est filé ?",
+    "q": "Quel morceau de lait caillé sépare-t-on du petit-lait pour faire le fromage ? Le ___ ?",
     "c": [
-     "Le pecorino",
-     "La mozzarella",
-     "Le gorgonzola",
-     "Le parmesan"
+     "caillé",
+     "beurre",
+     "crème",
+     "yaourt"
     ],
-    "a": 1
+    "a": "caillé"
    },
    {
-    "q": "Quel fromage suisse est connu pour ses arômes fruités ?",
-    "c": [
-     "Le gruyère",
-     "Le raclette",
-     "L'emmental",
-     "Le vacherin"
-    ],
-    "a": 0
+    "q": "Combien de sortes de fromages différents la France compterait-elle, environ (chiffre souvent cité) ?",
+    "a": "1200"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cuisine_004",
@@ -12694,86 +12681,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quels sont les trois cépages principaux du Bordeaux rouge ?",
+    "q": "À partir de quel fruit fabrique-t-on le vin ? Le ___ ?",
     "c": [
-     "Merlot, Cabernet Sauvignon, Cabernet Franc",
-     "Grenache, Syrah, Mourvèdre",
-     "Pinot, Gamay, Syrah",
-     "Chardonnay, Sauvignon, Riesling"
+     "raisin",
+     "pomme",
+     "prune",
+     "cerise"
     ],
-    "a": 0
+    "a": "raisin"
    },
    {
-    "q": "Qu'est-ce qu'un millésime ?",
+    "q": "Quelles sont les deux couleurs principales de vin : rouge et ___ ?",
     "c": [
-     "Le cépage",
-     "La région",
-     "L'année de récolte du raisin",
-     "L'âge du vin"
+     "blanc",
+     "vert",
+     "noir",
+     "bleu"
     ],
-    "a": 2
+    "a": "blanc"
    },
    {
-    "q": "Quelle région française produit du champagne ?",
+    "q": "Quel vin pétillant de fête vient d'une région française éponyme ? Le ___ ?",
     "c": [
-     "Champagne",
-     "Alsace",
-     "Bourgogne",
-     "Bordeaux"
+     "champagne",
+     "bordeaux",
+     "muscadet",
+     "beaujolais"
     ],
-    "a": 0
+    "a": "champagne"
    },
    {
-    "q": "Quel est le cépage du vin rouge de Bourgogne ?",
+    "q": "Comment appelle-t-on la science et l'art de la dégustation du vin ? L'___ ?",
     "c": [
-     "Syrah",
-     "Cabernet Sauvignon",
-     "Merlot",
-     "Pinot noir"
+     "œnologie",
+     "biologie",
+     "géologie",
+     "écologie"
     ],
-    "a": 3
+    "a": "œnologie"
    },
    {
-    "q": "Comment s'appelle la dégustation du vin ?",
-    "c": [
-     "Le goût",
-     "La dégustation",
-     "L'évaluation",
-     "L'analyse"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Qu'est-ce qu'un 'grand cru' ?",
-    "c": [
-     "Un cépage",
-     "Une parcelle viticole d'excellence",
-     "Un grand vin",
-     "Une marque"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quelle région viticole produit des vins moelleux comme le Sauternes ?",
+    "q": "Quelle région du sud-ouest est mondialement célèbre pour ses grands vins rouges ?",
     "c": [
      "Bordeaux",
-     "Loire",
-     "Bourgogne",
-     "Alsace"
+     "Bretagne",
+     "Alsace",
+     "Normandie"
     ],
-    "a": 0
+    "a": "Bordeaux"
    },
    {
-    "q": "Quel pays est le plus grand producteur de vin au monde ?",
+    "q": "Comment appelle-t-on le professionnel du vin dans un restaurant ? Le ___ ?",
     "c": [
-     "États-Unis",
-     "Espagne",
-     "Italie",
-     "France"
+     "sommelier",
+     "serveur",
+     "chef",
+     "caviste"
     ],
-    "a": 2
+    "a": "sommelier"
+   },
+   {
+    "q": "Dans quel récipient en bois vieillit souvent le vin ? Un ___ ?",
+    "c": [
+     "tonneau",
+     "seau",
+     "bidon",
+     "verre"
+    ],
+    "a": "tonneau"
+   },
+   {
+    "q": "Combien de bulles, en millions, environ, contient une flûte de champagne (chiffre souvent cité) ?",
+    "a": "1"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cuisine_005",
@@ -12782,86 +12764,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle pâtisserie française est faite de pâte feuilletée et de crème ?",
+    "q": "Quel ingrédient blanc sucré est essentiel en pâtisserie ? Le ___ ?",
     "c": [
-     "L'éclair",
-     "La tarte Tatin",
-     "Le Paris-Brest",
-     "Le mille-feuille"
+     "sucre",
+     "sel",
+     "poivre",
+     "vinaigre"
     ],
-    "a": 3
+    "a": "sucre"
    },
    {
-    "q": "Qui a créé le macaron moderne ?",
+    "q": "Quelle viennoiserie française en forme de croissant est mondialement connue ? Le ___ ?",
     "c": [
-     "Pierre Desfontaines",
-     "Pierre Hermé",
-     "Ladurée",
-     "Gaston Lenôtre"
+     "croissant",
+     "bagel",
+     "muffin",
+     "donut"
     ],
-    "a": 0
+    "a": "croissant"
    },
    {
-    "q": "Qu'est-ce que la crème pâtissière ?",
+    "q": "Quel petit gâteau rond et coloré, à la coque craquante, est un délice parisien ? Le ___ ?",
     "c": [
-     "Crème chantilly",
-     "Crème au beurre",
-     "Crème anglaise",
-     "Crème à base de lait, œufs et farine"
+     "macaron",
+     "éclair",
+     "cannelé",
+     "financier"
     ],
-    "a": 3
+    "a": "macaron"
    },
    {
-    "q": "Quelle pâtisserie viennoise est un roulé à la confiture ?",
+    "q": "Quel pâtissier français aux boutiques mondiales est surnommé roi du macaron ? Pierre ___ ?",
     "c": [
-     "Le gâteau Sacher",
-     "Le kugelhopf",
-     "Le strudel",
-     "La tarte Linzer"
+     "Hermé",
+     "Conticini",
+     "Michalak",
+     "Felder"
     ],
-    "a": 2
+    "a": "Hermé"
    },
    {
-    "q": "Comment s'appelle la crème au beurre utilisée en pâtisserie ?",
+    "q": "Comment appelle-t-on la crème fouettée sucrée qui décore les desserts ? La ___ ?",
     "c": [
-     "Crème mousseline",
-     "Crème diplomate",
-     "Crème Chiboust",
-     "Crème au beurre"
+     "chantilly",
+     "ganache",
+     "mousse",
+     "glace"
     ],
-    "a": 3
+    "a": "chantilly"
    },
    {
-    "q": "Quelle pâtissière française a créé le Paris-Brest ?",
+    "q": "Quel gâteau français en couronne, garni de fèves, se mange à l'Épiphanie ? La galette des ___ ?",
     "c": [
-     "Gaston Lenôtre",
-     "Pierre Hermé",
-     "Antoine Carême",
-     "Louis Durand"
+     "rois",
+     "reines",
+     "anges",
+     "saints"
     ],
-    "a": 3
+    "a": "rois"
    },
    {
-    "q": "Qu'est-ce que le fondant en pâtisserie ?",
+    "q": "Quel chef pâtissier français a inventé de nombreuses pièces montées au XIXe siècle ? Antonin ___ ?",
     "c": [
-     "Une décoration",
-     "Une pâte",
-     "Un glaçage lisse",
-     "Une crème"
+     "Carême",
+     "Escoffier",
+     "Bocuse",
+     "Ducasse"
     ],
-    "a": 2
+    "a": "Carême"
    },
    {
-    "q": "Quel gâteau autrichien est au chocolat et à l'abricot ?",
-    "c": [
-     "Le strudel",
-     "Le Sachertorte",
-     "Le gâteau Esterházy",
-     "Le kaiserschmarrn"
-    ],
-    "a": 1
+    "q": "Combien de couches de pâte feuilletée, environ, compte un croissant bien réalisé ?",
+    "a": "27"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cuisine_006",
@@ -12870,86 +12847,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quels sont les ingrédients de base du pain ?",
+    "q": "Quelle farine sert principalement à faire le pain ? La farine de ___ ?",
     "c": [
-     "Farine, eau, sucre, sel",
-     "Farine, eau, levure, sel",
-     "Farine, eau, œufs, beurre",
-     "Farine, lait, levure, beurre"
+     "blé",
+     "riz",
+     "maïs",
+     "soja"
     ],
-    "a": 1
+    "a": "blé"
    },
    {
-    "q": "Quelle est la baguette de pain traditionnelle française ?",
+    "q": "Quel long pain français est un symbole national ? La ___ ?",
     "c": [
-     "Le pain de campagne",
-     "La ficelle",
-     "Le pain complet",
-     "La baguette"
+     "baguette",
+     "brioche",
+     "fougasse",
+     "miche"
     ],
-    "a": 3
+    "a": "baguette"
    },
    {
-    "q": "Comment s'appelle la croûte du pain ?",
+    "q": "Quel ingrédient vivant fait lever la pâte à pain ? La ___ ?",
     "c": [
-     "La croute",
-     "L'écorce",
-     "La croûte",
-     "La coquille"
+     "levure",
+     "farine",
+     "eau",
+     "huile"
     ],
-    "a": 2
+    "a": "levure"
    },
    {
-    "q": "Quel pays a la plus grande variété de pains ?",
+    "q": "Chez quel artisan achète-t-on le pain frais ? Le ___ ?",
     "c": [
-     "France",
-     "Italie",
-     "Allemagne",
-     "Belgique"
+     "boulanger",
+     "boucher",
+     "épicier",
+     "pâtissier"
     ],
-    "a": 2
+    "a": "boulanger"
    },
    {
-    "q": "Qu'est-ce que le levain ?",
+    "q": "Quelle partie dorée et croustillante entoure le pain ? La ___ ?",
     "c": [
-     "Levure de boulanger",
-     "Levure chimique",
-     "Bactérie",
-     "Ferment naturel à base de farine et d'eau"
+     "croûte",
+     "mie",
+     "graine",
+     "peau"
     ],
-    "a": 3
+    "a": "croûte"
    },
    {
-    "q": "Comment s'appelle la pâte avant la cuisson ?",
+    "q": "Quelle partie moelleuse se trouve à l'intérieur du pain ? La ___ ?",
     "c": [
-     "La miche",
-     "La boule",
-     "Le pâton",
-     "Le pain"
+     "mie",
+     "croûte",
+     "graine",
+     "levain"
     ],
-    "a": 2
+    "a": "mie"
    },
    {
-    "q": "Quelle farine est utilisée pour le pain complet ?",
+    "q": "Quel levain naturel, sans levure industrielle, fait aussi lever le pain ? Le ___ ?",
     "c": [
-     "Farine blanche (T55)",
-     "Farine complète (T150)",
-     "Farine semi-complète (T80)",
-     "Farine de seigle"
+     "levain",
+     "sucre",
+     "sel",
+     "beurre"
     ],
-    "a": 1
+    "a": "levain"
    },
    {
-    "q": "Qui a inventé la baguette ?",
-    "c": [
-     "Auguste Zang",
-     "Marie-Antoine Carême",
-     "Les boulangers parisiens",
-     "Napoléon"
-    ],
-    "a": 0
+    "q": "Combien de grammes, environ, pèse une baguette de pain traditionnelle française ?",
+    "a": "250"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cuisine_007",
@@ -12958,86 +12930,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel pays a inventé les sushis ?",
+    "q": "Avec quels ustensiles mange-t-on souvent en Asie ? Des ___ ?",
     "c": [
-     "Chine",
-     "Thaïlande",
-     "Japon",
-     "Corée"
+     "baguettes",
+     "fourchettes",
+     "cuillères",
+     "couteaux"
     ],
-    "a": 2
+    "a": "baguettes"
    },
    {
-    "q": "Quel plat chinois est composé de nouilles sautées ?",
+    "q": "Quelle céréale blanche est la base de la cuisine asiatique ? Le ___ ?",
     "c": [
-     "Le dim sum",
-     "Les nouilles sautées",
-     "Le riz cantonais",
-     "Les raviolis"
+     "riz",
+     "blé",
+     "orge",
+     "seigle"
     ],
-    "a": 1
+    "a": "riz"
    },
    {
-    "q": "Quel plat thaïlandais est une soupe de crevettes ?",
+    "q": "Quelle bouchée japonaise de riz et poisson cru est mondialement connue ? Le ___ ?",
     "c": [
-     "Pad thaï",
-     "Tom yum",
-     "Green curry",
-     "Som tam"
+     "sushi",
+     "wok",
+     "nem",
+     "dim sum"
     ],
-    "a": 1
+    "a": "sushi"
    },
    {
-    "q": "Quel pays asiatique utilise le plus de piment dans sa cuisine ?",
+    "q": "Quelle sauce brune et salée, à base de soja, assaisonne les plats asiatiques ? La sauce ___ ?",
     "c": [
-     "Thaïlande",
-     "Chine",
-     "Japon",
-     "Inde"
+     "soja",
+     "tomate",
+     "aigre",
+     "curry"
     ],
-    "a": 0
+    "a": "soja"
    },
    {
-    "q": "Qu'est-ce que le kimchi coréen ?",
+    "q": "Quelle grande poêle ronde chinoise sert à faire sauter les aliments ? Le ___ ?",
     "c": [
-     "Chou fermenté épicé",
-     "Plat de riz",
-     "Soupe",
-     "Galette de légumes"
+     "wok",
+     "four",
+     "gril",
+     "bain"
     ],
-    "a": 0
+    "a": "wok"
    },
    {
-    "q": "Quel plat vietnamien est une soupe de nouilles et de bœuf ?",
+    "q": "Quelle pâte de soja fermenté, blanche et molle, est riche en protéines ? Le ___ ?",
     "c": [
-     "Le bánh mì",
-     "Le bò bún",
-     "Le nems",
-     "Le phở"
+     "tofu",
+     "miso",
+     "wasabi",
+     "kimchi"
     ],
-    "a": 3
+    "a": "tofu"
    },
    {
-    "q": "Quels sont les ingrédients de base de la cuisine japonaise ?",
+    "q": "Quelle soupe de nouilles japonaise, en bol fumant, est très populaire ? Le ___ ?",
     "c": [
-     "Riz, poisson, algues, soja",
-     "Nouilles, viande, huile",
-     "Riz, légumes, huile",
-     "Riz, viande, légumes, épices"
+     "ramen",
+     "pho",
+     "udon",
+     "miso"
     ],
-    "a": 0
+    "a": "ramen"
    },
    {
-    "q": "Qu'est-ce que le wasabi ?",
-    "c": [
-     "Gingembre mariné",
-     "Piment vert",
-     "Racine de raifort japonais",
-     "Pâte de soja"
-    ],
-    "a": 2
+    "q": "Depuis combien de milliers d'années, environ, le riz est-il cultivé en Asie ?",
+    "a": "9000"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cuisine_008",
@@ -13046,86 +13013,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "De quel arbre provient le café ?",
+    "q": "De quelle couleur est un café noir classique ?",
     "c": [
-     "Cocotier",
-     "Caféier",
-     "Théier",
-     "Cacaoyer"
+     "noir",
+     "blanc",
+     "rouge",
+     "vert"
     ],
-    "a": 1
+    "a": "noir"
    },
    {
-    "q": "Quel pays est le plus grand producteur de café au monde ?",
+    "q": "De quel grain torréfié fait-on le café ? Le grain de ___ ?",
     "c": [
-     "Colombie",
-     "Indonésie",
+     "café",
+     "cacao",
+     "blé",
+     "poivre"
+    ],
+    "a": "café"
+   },
+   {
+    "q": "Quel café italien court et serré est très fort ? L'___ ?",
+    "c": [
+     "expresso",
+     "allongé",
+     "filtre",
+     "glacé"
+    ],
+    "a": "expresso"
+   },
+   {
+    "q": "Quelle substance stimulante contient le café ? La ___ ?",
+    "c": [
+     "caféine",
+     "nicotine",
+     "théine",
+     "morphine"
+    ],
+    "a": "caféine"
+   },
+   {
+    "q": "Quel café italien mêle expresso et mousse de lait ? Le ___ ?",
+    "c": [
+     "cappuccino",
+     "ristretto",
+     "lungo",
+     "corretto"
+    ],
+    "a": "cappuccino"
+   },
+   {
+    "q": "De quel continent, région d'Éthiopie, le café serait-il originaire ? L'___ ?",
+    "c": [
+     "Afrique",
+     "Asie",
+     "Amérique",
+     "Europe"
+    ],
+    "a": "Afrique"
+   },
+   {
+    "q": "Quel pays d'Amérique du Sud est le premier producteur mondial de café ? Le ___ ?",
+    "c": [
      "Brésil",
-     "Vietnam"
+     "Chili",
+     "Pérou",
+     "Argentine"
     ],
-    "a": 2
+    "a": "Brésil"
    },
    {
-    "q": "Quels sont les deux principaux types de café ?",
-    "c": [
-     "Arabica et Canephora",
-     "Robusta et Excelsa",
-     "Arabica et Robusta",
-     "Arabica et Liberica"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Qu'est-ce qu'un expresso ?",
-    "c": [
-     "Café long",
-     "Café glacé",
-     "Café au lait",
-     "Café court et concentré"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Comment s'appelle la mousse du café expresso ?",
-    "c": [
-     "L'écume",
-     "La mousse",
-     "La crema",
-     "La crème"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Qui a inventé la machine à expresso ?",
-    "c": [
-     "Pavoni",
-     "Illy",
-     "Achille Gaggia",
-     "Luigi Bezzera"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quelle boisson au café contient du lait chaud ?",
-    "c": [
-     "Le café latte",
-     "Le cappuccino",
-     "Le macchiato",
-     "L'americano"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quel pays a inventé le café filtre ?",
-    "c": [
-     "France",
-     "Italie",
-     "États-Unis",
-     "Allemagne"
-    ],
-    "a": 2
+    "q": "Combien de tasses de café, en milliards, sont bues chaque jour dans le monde (estimation) ?",
+    "a": "2"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cuisine_009",
