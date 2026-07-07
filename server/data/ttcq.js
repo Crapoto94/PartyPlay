@@ -20838,84 +20838,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce qu'un stérilet (DIU) ?",
+    "q": "L'herpès est une infection causée par un ___ ?",
     "c": [
-     "Dispositif Intra-Utérin contraceptif",
-     "Dispositif d'hygiène",
-     "Implant sous-cutané",
-     "Dispositif Intra-Urinaire"
+     "virus",
+     "bactérie",
+     "champignon",
+     "parasite"
     ],
-    "a": "Dispositif Intra-Utérin contraceptif"
+    "a": "virus"
    },
    {
-    "q": "Combien de types de stérilet existe-t-il ?",
+    "q": "Sous quelle forme visible l'herpès se manifeste-t-il souvent ? Des ___ ?",
     "c": [
-     "Quatre",
-     "Un seul",
-     "Deux : au cuivre et hormonal",
-     "Trois"
+     "boutons",
+     "taches de rousseur",
+     "grains de beauté",
+     "cicatrices osseuses"
     ],
-    "a": "Deux : au cuivre et hormonal"
+    "a": "boutons"
    },
    {
-    "q": "Combien de temps dure un stérilet au cuivre ?",
+    "q": "Quel herpès très courant apparaît autour de la bouche ? Le bouton de ___ ?",
     "c": [
-     "1 à 2 ans",
-     "5 à 10 ans",
-     "2 à 3 ans",
-     "10 à 15 ans"
+     "fièvre",
+     "chaleur",
+     "froid",
+     "colère"
     ],
-    "a": "5 à 10 ans"
+    "a": "fièvre"
    },
    {
-    "q": "Combien de temps dure un stérilet hormonal ?",
+    "q": "L'herpès se guérit-il définitivement, ou reste-t-il dans le corps ? Il ___ (dormant) ?",
     "c": [
-     "3 à 5 ans",
-     "5 à 10 ans",
-     "1 à 2 ans",
-     "10 ans"
+     "reste",
+     "disparaît",
+     "se digère",
+     "s'évapore"
     ],
-    "a": "3 à 5 ans"
+    "a": "reste"
    },
    {
-    "q": "Quel est le taux d'efficacité du stérilet ?",
+    "q": "Quel moyen réduit la transmission de l'herpès génital ? Le ___ ?",
     "c": [
-     "Environ 85%",
-     "Environ 95%",
-     "Plus de 99%",
-     "Environ 90%"
+     "préservatif",
+     "gant",
+     "masque",
+     "chapeau"
     ],
-    "a": "Plus de 99%"
+    "a": "préservatif"
    },
    {
-    "q": "Le stérilet peut-il être posé chez une femme n'ayant jamais accouché ?",
+    "q": "Quel type de médicament antiviral limite les poussées d'herpès ? L'___ ?",
     "c": [
-     "Oui, c'est possible",
-     "Non, impossible",
-     "Non, déconseillé",
-     "Uniquement après 25 ans"
+     "aciclovir",
+     "paracétamol",
+     "ibuprofène",
+     "amoxicilline"
     ],
-    "a": "Oui, c'est possible"
+    "a": "aciclovir"
    },
    {
-    "q": "Quels sont les effets secondaires possibles du stérilet ?",
+    "q": "Quel autre nom porte le virus responsable de l'herpès ? Le virus Herpès ___ (HSV) ?",
     "c": [
-     "Nausées",
-     "Saignements, douleurs, infections",
-     "Aucun effet secondaire",
-     "Prise de poids"
+     "simplex",
+     "zoster seul",
+     "major",
+     "primus"
     ],
-    "a": "Saignements, douleurs, infections"
+    "a": "simplex"
    },
    {
-    "q": "Le stérilet protège-t-il des IST ?",
-    "c": [
-     "Oui, totalement",
-     "Non",
-     "Oui, partiellement",
-     "Oui, comme le préservatif"
-    ],
-    "a": "Non"
+    "q": "Quel pourcentage, environ, de la population mondiale porte le virus de l'herpès labial (OMS) ?",
+    "a": "67"
    }
   ],
   "rw": true
@@ -20927,84 +20921,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que l'implant contraceptif ?",
+    "q": "Le papillomavirus (HPV) se transmet-il par contact sexuel ? ___ ?",
     "c": [
-     "Anneau vaginal",
-     "Patch",
-     "Dispositif intra-utérin",
-     "Bâtonnet hormonal placé sous la peau du bras"
+     "oui",
+     "non",
+     "par l'air",
+     "par l'eau"
     ],
-    "a": "Bâtonnet hormonal placé sous la peau du bras"
+    "a": "oui"
    },
    {
-    "q": "Combien de temps dure l'implant contraceptif ?",
+    "q": "Contre le HPV, quel moyen de prévention médical existe-t-il ? Le ___ ?",
     "c": [
-     "5 ans",
-     "1 an",
-     "3 ans",
-     "2 ans"
+     "vaccin",
+     "sirop",
+     "patch chauffant",
+     "collyre"
     ],
-    "a": "3 ans"
+    "a": "vaccin"
    },
    {
-    "q": "Quelle hormone contient l'implant contraceptif ?",
+    "q": "Quel cancer féminin le HPV peut-il provoquer ? Le cancer du col de l'___ ?",
     "c": [
-     "Oestrogènes et progestérone",
-     "Oestrogènes seuls",
-     "Testostérone",
-     "Progestérone seule (étonogestrel)"
+     "utérus",
+     "estomac",
+     "poumon",
+     "sein seul"
     ],
-    "a": "Progestérone seule (étonogestrel)"
+    "a": "utérus"
    },
    {
-    "q": "Quelle est l'efficacité de l'implant ?",
+    "q": "À quel âge recommande-t-on la vaccination HPV, avant les premiers rapports ? À l'___ ?",
     "c": [
-     "Environ 90%",
-     "Plus de 99%",
-     "Environ 95%",
-     "Environ 85%"
+     "adolescence",
+     "retraite",
+     "naissance",
+     "âge adulte tardif"
     ],
-    "a": "Plus de 99%"
+    "a": "adolescence"
    },
    {
-    "q": "Comment agit l'implant contraceptif ?",
+    "q": "La vaccination HPV concerne-t-elle seulement les filles ou aussi les garçons ? ___ ?",
     "c": [
-     "En empêchant l'ovulation",
-     "En empêchant la nidation",
-     "En stérilisant",
-     "En bloquant les spermatozoïdes"
+     "les deux",
+     "les filles",
+     "les garçons",
+     "personne"
     ],
-    "a": "En empêchant l'ovulation"
+    "a": "les deux"
    },
    {
-    "q": "Où est placé l'implant exactement ?",
+    "q": "Quel dépistage régulier détecte les lésions du col causées par le HPV ? Le ___ (test) ?",
     "c": [
-     "Dans le vagin",
-     "Dans l'utérus",
-     "Sous la peau du ventre",
-     "Sous la peau du bras, face interne"
+     "frottis",
+     "scanner",
+     "électrocardiogramme",
+     "audiogramme"
     ],
-    "a": "Sous la peau du bras, face interne"
+    "a": "frottis"
    },
    {
-    "q": "Faut-il une prescription pour l'implant ?",
+    "q": "Quelles petites excroissances bénignes le HPV peut-il provoquer ? Des ___ ? (condylomes)",
     "c": [
-     "Oui, mais en pharmacie",
-     "Non, acheté en ligne",
-     "Oui, posé par un médecin",
-     "Non, en vente libre"
+     "verrues",
+     "cloques d'eau",
+     "cors",
+     "taches"
     ],
-    "a": "Oui, posé par un médecin"
+    "a": "verrues"
    },
    {
-    "q": "Quels sont les effets secondaires de l'implant ?",
-    "c": [
-     "Prise de poids importante",
-     "Saignements irréguliers, maux de tête",
-     "Aucun",
-     "Nausées sévères"
-    ],
-    "a": "Saignements irréguliers, maux de tête"
+    "q": "En quelle année le vaccin contre le HPV a-t-il été introduit pour la première fois (2006) ?",
+    "a": "2006"
    }
   ],
   "rw": true
@@ -21016,84 +21004,84 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que l'anneau vaginal (NuvaRing) ?",
+    "q": "La chlamydia est une IST causée par une ___ ?",
     "c": [
-     "Dispositif intra-utérin",
-     "Implant vaginal",
-     "Anneau contraceptif oral",
-     "Anneau flexible inséré dans le vagin qui libère des hormones"
+     "bactérie",
+     "virus",
+     "champignon",
+     "algue"
     ],
-    "a": "Anneau flexible inséré dans le vagin qui libère des hormones"
+    "a": "bactérie"
    },
    {
-    "q": "Combien de temps l'anneau vaginal reste-t-il en place ?",
+    "q": "La chlamydia est-elle souvent silencieuse (sans symptôme) ? ___ ?",
     "c": [
-     "2 semaines",
-     "3 semaines, puis 1 semaine de pause",
-     "1 semaine",
-     "1 mois"
+     "oui",
+     "non",
+     "toujours douloureuse",
+     "seulement visible"
     ],
-    "a": "3 semaines, puis 1 semaine de pause"
+    "a": "oui"
    },
    {
-    "q": "Quels hormones libère l'anneau vaginal ?",
+    "q": "Avec quel type de médicament soigne-t-on la chlamydia ? Des ___ ?",
     "c": [
-     "Testostérone",
-     "Oestrogènes et progestérone",
-     "Progestérone seule",
-     "Oestrogènes seuls"
+     "antibiotiques",
+     "vaccins",
+     "vitamines",
+     "antifongiques"
     ],
-    "a": "Oestrogènes et progestérone"
+    "a": "antibiotiques"
    },
    {
-    "q": "Quelle est l'efficacité de l'anneau vaginal ?",
+    "q": "Quel moyen de protection limite la transmission de la chlamydia ? Le ___ ?",
     "c": [
-     "Environ 95%",
-     "Plus de 99%",
-     "Environ 90%",
-     "Environ 85%"
+     "préservatif",
+     "gant",
+     "masque",
+     "foulard"
     ],
-    "a": "Plus de 99%"
+    "a": "préservatif"
    },
    {
-    "q": "Comment agit l'anneau vaginal ?",
+    "q": "Non traitée, la chlamydia peut nuire à quelle capacité future ? La ___ ?",
     "c": [
-     "Chauffage local",
-     "Libération de spermicide",
-     "Barrière physique",
-     "Libération d'hormones absorbées par la paroi vaginale"
+     "fertilité",
+     "vue",
+     "audition",
+     "mémoire"
     ],
-    "a": "Libération d'hormones absorbées par la paroi vaginale"
+    "a": "fertilité"
    },
    {
-    "q": "L'anneau vaginal peut-il être retiré temporairement ?",
+    "q": "Comment détecte-t-on la chlamydia sans symptôme ? Par un ___ ?",
     "c": [
-     "Non, jamais",
-     "Oui, jusqu'à 12 heures",
-     "Oui, jusqu'à 3 heures",
-     "Oui, jusqu'à 1 heure"
+     "dépistage",
+     "pari",
+     "sondage",
+     "vote"
     ],
-    "a": "Oui, jusqu'à 3 heures"
+    "a": "dépistage"
    },
    {
-    "q": "L'anneau vaginal protège-t-il des IST ?",
+    "q": "Quelle tranche d'âge est la plus touchée par la chlamydia ? Les ___ ?",
     "c": [
-     "Oui, comme le préservatif",
-     "Oui, partiellement",
-     "Oui, totalement",
-     "Non"
+     "jeunes",
+     "retraités",
+     "nourrissons",
+     "centenaires"
     ],
-    "a": "Non"
+    "a": "jeunes"
    },
    {
-    "q": "Où se procurer l'anneau vaginal ?",
+    "q": "Quel est le nom scientifique de la bactérie ? Chlamydia ___ ?",
     "c": [
-     "En ligne sans ordonnance",
-     "En grande surface",
-     "Sur prescription médicale en pharmacie",
-     "En vente libre"
+     "trachomatis",
+     "coli",
+     "aureus",
+     "pylori"
     ],
-    "a": "Sur prescription médicale en pharmacie"
+    "a": "trachomatis"
    }
   ],
   "rw": true
@@ -21105,84 +21093,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que le patch contraceptif ?",
+    "q": "La gonorrhée est une infection sexuellement ___ ?",
     "c": [
-     "Timbre cutané qui libère des hormones contraceptives",
-     "Dispositif intra-utérin",
-     "Implant",
-     "Pansement"
+     "transmissible",
+     "héréditaire",
+     "alimentaire",
+     "aérienne"
     ],
-    "a": "Timbre cutané qui libère des hormones contraceptives"
+    "a": "transmissible"
    },
    {
-    "q": "Où applique-t-on le patch contraceptif ?",
+    "q": "Quel surnom familier désigne la gonorrhée ? La ___ ?",
     "c": [
-     "Sur la peau du ventre, fesse, bras ou dos",
-     "Sur la poitrine",
-     "Dans le vagin",
-     "Sur le visage"
+     "chaude-pisse",
+     "grippette",
+     "gastro",
+     "angine"
     ],
-    "a": "Sur la peau du ventre, fesse, bras ou dos"
+    "a": "chaude-pisse"
    },
    {
-    "q": "Combien de temps dure un patch ?",
+    "q": "Quel type de micro-organisme cause la gonorrhée ? Une ___ ?",
     "c": [
-     "24 heures",
-     "3 jours",
-     "Deux semaines",
-     "Une semaine"
+     "bactérie",
+     "virus",
+     "levure",
+     "parasite"
     ],
-    "a": "Une semaine"
+    "a": "bactérie"
    },
    {
-    "q": "Quels hormones contient le patch ?",
+    "q": "Avec quoi soigne-t-on la gonorrhée ? Des ___ ?",
     "c": [
-     "Testostérone",
-     "Progestérone seule",
-     "Oestrogènes et progestérone",
-     "Oestrogènes seuls"
+     "antibiotiques",
+     "vaccins",
+     "vitamines",
+     "sirops sucrés"
     ],
-    "a": "Oestrogènes et progestérone"
+    "a": "antibiotiques"
    },
    {
-    "q": "Quelle est l'efficacité du patch contraceptif ?",
+    "q": "Quel moyen de protection réduit le risque de gonorrhée ? Le ___ ?",
     "c": [
-     "Environ 85%",
-     "Environ 95%",
-     "Environ 90%",
-     "Plus de 99%"
+     "préservatif",
+     "gant",
+     "casque",
+     "écharpe"
     ],
-    "a": "Plus de 99%"
+    "a": "préservatif"
    },
    {
-    "q": "Combien de patchs par cycle ?",
+    "q": "Quel phénomène inquiétant rend certaines gonorrhées difficiles à traiter ? L'antibio___ ?",
     "c": [
-     "2 patchs par cycle",
-     "1 patch par mois",
-     "3 patchs (3 semaines)",
-     "4 patchs (1 mois)"
+     "résistance",
+     "logie",
+     "thérapie",
+     "gramme"
     ],
-    "a": "3 patchs (3 semaines)"
+    "a": "résistance"
    },
    {
-    "q": "Le patch peut-il se décoller ?",
+    "q": "Quelle bactérie cause la gonorrhée ? Le ___ (Neisseria gonorrhoeae) ?",
     "c": [
-     "Uniquement lors du sport",
-     "Oui, sous certaines conditions (eau, sudation)",
-     "Oui, toujours",
-     "Non, jamais"
+     "gonocoque",
+     "streptocoque",
+     "staphylocoque",
+     "pneumocoque"
     ],
-    "a": "Oui, sous certaines conditions (eau, sudation)"
+    "a": "gonocoque"
    },
    {
-    "q": "Le patch protège-t-il des IST ?",
-    "c": [
-     "Oui, comme le préservatif",
-     "Oui, totalement",
-     "Oui, partiellement",
-     "Non"
-    ],
-    "a": "Non"
+    "q": "Combien de nouveaux cas de gonorrhée, environ en millions, l'OMS estime-t-elle chaque année ?",
+    "a": "82"
    }
   ],
   "rw": true
@@ -21194,84 +21176,84 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce qu'un spermicide ?",
+    "q": "Sur quel principe absolu repose une pratique BDSM saine ? Le ___ ?",
     "c": [
-     "Hormone contraceptive",
-     "Lubrifiant",
-     "Antibiotique",
-     "Substance qui détruit ou immobilise les spermatozoïdes"
+     "consentement",
+     "hasard",
+     "secret",
+     "argent"
     ],
-    "a": "Substance qui détruit ou immobilise les spermatozoïdes"
+    "a": "consentement"
    },
    {
-    "q": "Sous quelle forme se présente le spermicide ?",
+    "q": "Comment appelle-t-on le mot convenu pour tout arrêter immédiatement ? Le mot de ___ ?",
     "c": [
-     "Crème, gel, mousse, ovule, film",
-     "Comprimé",
-     "Injection",
-     "Patch"
+     "sécurité",
+     "passe secret",
+     "code postal",
+     "ralliement"
     ],
-    "a": "Crème, gel, mousse, ovule, film"
+    "a": "sécurité"
    },
    {
-    "q": "Quel est l'ingrédient actif principal des spermicides ?",
+    "q": "Quelle règle anglaise résume l'éthique BDSM : « Safe, Sane and ___ » ? (consensuel)",
     "c": [
-     "Le latex",
-     "Le paracétamol",
-     "L'alcool",
-     "Le nonoxynol-9"
+     "Consensual",
+     "Cheap",
+     "Casual",
+     "Clean"
     ],
-    "a": "Le nonoxynol-9"
+    "a": "Consensual"
    },
    {
-    "q": "Quelle est l'efficacité du spermicide seul ?",
+    "q": "Que signifie le « B » et le « D » de BDSM ? Bondage et ___ ?",
     "c": [
-     "Plus de 99%",
-     "Environ 72%",
-     "Environ 90%",
-     "Environ 85%"
+     "Discipline",
+     "Danse",
+     "Dialogue",
+     "Détente"
     ],
-    "a": "Environ 72%"
+    "a": "Discipline"
    },
    {
-    "q": "Le spermicide protège-t-il des IST ?",
+    "q": "Quel rôle est dit « dominant », l'autre étant « ___ » ? (soumis)",
     "c": [
-     "Oui, totalement",
-     "Oui, partiellement",
-     "Non, il peut même irriter la peau",
-     "Oui, comme le préservatif"
+     "soumis",
+     "neutre",
+     "absent",
+     "spectateur"
     ],
-    "a": "Non, il peut même irriter la peau"
+    "a": "soumis"
    },
    {
-    "q": "Comment utiliser un spermicide ?",
+    "q": "Que signifient les lettres « SM » de BDSM ? Sadisme et ___ ?",
     "c": [
-     "Injection",
-     "Appliquer dans le vagin avant les rapports",
-     "Boire",
-     "Appliquer sur le pénis"
+     "Masochisme",
+     "Mysticisme",
+     "Matérialisme",
+     "Modernisme"
     ],
-    "a": "Appliquer dans le vagin avant les rapports"
+    "a": "Masochisme"
    },
    {
-    "q": "Combien de temps avant le rapport faut-il appliquer le spermicide ?",
+    "q": "Comment appelle-t-on le moment de tendresse et de réconfort après une séance ? L'after___ ?",
     "c": [
-     "24 heures avant",
-     "1 heure avant",
-     "5 à 30 minutes avant",
-     "Immédiatement"
+     "care",
+     "party",
+     "show",
+     "work"
     ],
-    "a": "5 à 30 minutes avant"
+    "a": "care"
    },
    {
-    "q": "Le spermicide est-il recommandé comme méthode contraceptive principale ?",
+    "q": "Quel roman à succès de 2011 a popularisé le BDSM auprès du grand public ? Cinquante nuances de ___ ?",
     "c": [
-     "Oui, recommandé",
-     "Non, interdit",
-     "Non, son efficacité est insuffisante seule",
-     "Oui, c'est très efficace"
+     "Grey",
+     "Rouge",
+     "Noir",
+     "Bleu"
     ],
-    "a": "Non, son efficacité est insuffisante seule"
+    "a": "Grey"
    }
   ],
   "rw": true
@@ -21283,84 +21265,84 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que l'abstinence sexuelle ?",
+    "q": "Un fétichisme est une attirance marquée pour un objet ou une partie du ___ ?",
     "c": [
-     "Frigidité",
-     "Stérilité",
-     "Absence volontaire de relations sexuelles",
-     "Impossibilité d'avoir des relations"
+     "corps",
+     "ciel",
+     "jardin",
+     "bureau"
     ],
-    "a": "Absence volontaire de relations sexuelles"
+    "a": "corps"
    },
    {
-    "q": "L'abstinence sexuelle peut-elle être une méthode contraceptive ?",
+    "q": "Tant qu'il est consenti et sans danger, le fétichisme est-il considéré comme normal ? ___ ?",
     "c": [
-     "Parfois",
-     "Uniquement pour les femmes",
-     "Non",
-     "Oui, c'est la seule méthode à 100% efficace"
+     "oui",
+     "non",
+     "illégal",
+     "contagieux"
     ],
-    "a": "Oui, c'est la seule méthode à 100% efficace"
+    "a": "oui"
    },
    {
-    "q": "Quelles sont les raisons de l'abstinence ?",
+    "q": "Quel fétichisme concerne l'attirance pour les pieds ? La ___ (podophilie) ?",
     "c": [
-     "Uniquement médicales",
-     "Uniquement religieuses",
-     "Uniquement personnelles",
-     "Religieuses, personnelles, médicales"
+     "podophilie",
+     "claustrophilie",
+     "arachnophilie",
+     "bibliophilie"
     ],
-    "a": "Religieuses, personnelles, médicales"
+    "a": "podophilie"
    },
    {
-    "q": "L'abstinence est-elle dangereuse pour la santé ?",
+    "q": "Quelle matière brillante et moulante est un grand classique fétichiste ? Le ___ ?",
     "c": [
-     "Parfois",
-     "Non, c'est un choix personnel sans danger",
-     "Oui, elle est nocive",
-     "Oui, elle cause des maladies"
+     "latex",
+     "coton",
+     "laine",
+     "papier"
     ],
-    "a": "Non, c'est un choix personnel sans danger"
+    "a": "latex"
    },
    {
-    "q": "Qu'est-ce que l'abstinence périodique ?",
+    "q": "Quel médecin autrichien a popularisé l'étude psychologique du fétichisme ? Sigmund ___ ?",
     "c": [
-     "Méthode naturelle basée sur l'observation du cycle",
-     "Abstinence totale",
-     "Retrait",
-     "Méthode contraceptive chimique"
+     "Freud",
+     "Jung",
+     "Adler",
+     "Lacan"
     ],
-    "a": "Méthode naturelle basée sur l'observation du cycle"
+    "a": "Freud"
    },
    {
-    "q": "Quelle est l'efficacité des méthodes d'abstinence périodique ?",
+    "q": "Quel autre matériau sombre, comme le latex, est prisé dans l'esthétique fétichiste ? Le ___ ?",
     "c": [
-     "Variable, de 75% à 99% selon la méthode",
-     "100%",
-     "Moins de 50%",
-     "50%"
+     "cuir",
+     "lin",
+     "velours",
+     "jute"
     ],
-    "a": "Variable, de 75% à 99% selon la méthode"
+    "a": "cuir"
    },
    {
-    "q": "Comment fonctionne la méthode Ogino (rythme) ?",
+    "q": "À partir de quand un fétichisme devient-il un « trouble » en psychiatrie ? Quand il cause une ___ ? (souffrance)",
     "c": [
-     "Observation de la glaire",
-     "Suppression des rapports",
-     "Calcul de la période d'ovulation pour éviter les rapports",
-     "Mesure de température"
+     "souffrance",
+     "joie",
+     "fatigue normale",
+     "surprise"
     ],
-    "a": "Calcul de la période d'ovulation pour éviter les rapports"
+    "a": "souffrance"
    },
    {
-    "q": "Qu'est-ce que la méthode symptothermique ?",
+    "q": "De quel mot portugais, désignant un objet à pouvoir magique, vient le terme « fétiche » ? ___ ?",
     "c": [
-     "Méthode hormonale",
-     "Méthode chimique",
-     "Méthode naturelle combinant température et glaire",
-     "Méthode chirurgicale"
+     "feitiço",
+     "fiesta",
+     "fogo",
+     "festa"
     ],
-    "a": "Méthode naturelle combinant température et glaire"
+    "a": "feitiço"
    }
   ],
   "rw": true
@@ -21372,84 +21354,84 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que le célibat ?",
+    "q": "L'exhibitionnisme consiste à s'exposer sans le ___ d'autrui ?",
     "c": [
-     "Choix de ne pas avoir d'enfants",
-     "Fait de ne pas être en couple ou marié",
-     "Absence de relations sexuelles",
-     "Vie solitaire"
+     "consentement",
+     "sourire",
+     "salaire",
+     "regard"
     ],
-    "a": "Fait de ne pas être en couple ou marié"
+    "a": "consentement"
    },
    {
-    "q": "Le célibat est-il un choix ou une situation subie ?",
+    "q": "S'exhiber devant une personne non consentante est-il, en France, un délit ? ___ ?",
     "c": [
-     "Les deux cas existent",
-     "Uniquement temporaire",
-     "Toujours un choix",
-     "Toujours subi"
+     "oui",
+     "non",
+     "un droit",
+     "un devoir"
     ],
-    "a": "Les deux cas existent"
+    "a": "oui"
    },
    {
-    "q": "Qu'est-ce que le célibat prolongé ?",
+    "q": "Quelle notion essentielle distingue la nudité consentie de l'exhibitionnisme imposé ? Le ___ ?",
     "c": [
-     "Retraite sexuelle",
-     "Choix de vie",
-     "Célibat définitif",
-     "Célibat qui dure plusieurs années"
+     "consentement",
+     "climat",
+     "décor",
+     "budget"
     ],
-    "a": "Célibat qui dure plusieurs années"
+    "a": "consentement"
    },
    {
-    "q": "Le célibat a-t-il des effets sur la santé mentale ?",
+    "q": "L'exhibitionnisme imposé porte atteinte à quoi chez la victime ? À sa ___ ?",
     "c": [
-     "Toujours négatifs",
-     "Toujours positifs",
-     "Cela dépend des personnes et du contexte",
-     "Aucun effet"
+     "dignité",
+     "adresse",
+     "coiffure",
+     "montre"
     ],
-    "a": "Cela dépend des personnes et du contexte"
+    "a": "dignité"
    },
    {
-    "q": "Qu'est-ce que le célibat religieux ?",
+    "q": "Dans quel cadre la nudité peut-elle être légale et consentie ? Le ___ (plage naturiste) ?",
     "c": [
-     "Voeu de chasteté pour des motifs religieux",
-     "Choix de vie",
-     "Mariage religieux",
-     "Abstinence"
+     "naturisme",
+     "délit",
+     "vol",
+     "harcèlement"
     ],
-    "a": "Voeu de chasteté pour des motifs religieux"
+    "a": "naturisme"
    },
    {
-    "q": "Quel pourcentage d'adultes sont célibataires en France ?",
+    "q": "Comment nomme-t-on, en psychiatrie, l'exhibitionnisme pathologique et répétitif ? Un ___ ?",
     "c": [
-     "Environ 20%",
-     "Environ 10%",
-     "Environ 30%",
-     "Environ 50%"
+     "trouble",
+     "loisir",
+     "métier",
+     "sport"
     ],
-    "a": "Environ 30%"
+    "a": "trouble"
    },
    {
-    "q": "Le célibat est-il plus fréquent dans certaines tranches d'âge ?",
+    "q": "Quel autre comportement, s'exposer en ligne sans consentement d'autrui, est aussi répréhensible ? L'envoi non sollicité de photos, dit « cyber___ » ?",
     "c": [
-     "Uniquement chez les jeunes",
-     "Uniquement chez les seniors",
-     "Non, uniforme",
-     "Oui, chez les jeunes et les seniors"
+     "exhibition",
+     "shopping",
+     "café",
+     "tourisme"
     ],
-    "a": "Oui, chez les jeunes et les seniors"
+    "a": "exhibition"
    },
    {
-    "q": "Qu'est-ce que le célibat géographique ?",
+    "q": "De quel article, environ, du Code pénal français relève l'exhibition sexuelle (222-32) ? L'article 222-___ ?",
     "c": [
-     "Célibat choisi",
-     "Célibat lié à l'isolement géographique",
-     "Célibat temporaire",
-     "Célibat professionnel"
+     "32",
+     "10",
+     "99",
+     "1"
     ],
-    "a": "Célibat lié à l'isolement géographique"
+    "a": "32"
    }
   ],
   "rw": true
@@ -21461,84 +21443,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que l'orientation sexuelle ?",
+    "q": "Le voyeurisme consiste à observer autrui à son ___ ? (sans accord)",
     "c": [
-     "Habitude",
-     "Préférence",
-     "Choix sexuel",
-     "Attirance sexuelle et affective pour un genre"
+     "insu",
+     "invitation",
+     "sourire",
+     "profit"
     ],
-    "a": "Attirance sexuelle et affective pour un genre"
+    "a": "insu"
    },
    {
-    "q": "Quels sont les principaux types d'orientation sexuelle ?",
+    "q": "Filmer ou observer quelqu'un dans son intimité sans accord est-il légal ? ___ ?",
     "c": [
-     "Toutes les orientations",
-     "Hétérosexualité, homosexualité, bisexualité",
-     "Homosexualité",
-     "Hétérosexualité et homosexualité"
+     "non",
+     "oui",
+     "recommandé",
+     "obligatoire"
     ],
-    "a": "Hétérosexualité, homosexualité, bisexualité"
+    "a": "non"
    },
    {
-    "q": "Qu'est-ce que l'hétérosexualité ?",
+    "q": "Quelle notion, absente dans le voyeurisme, est pourtant essentielle ? Le ___ ?",
     "c": [
-     "Absence d'attirance",
-     "Attirance pour le sexe opposé",
-     "Attirance pour le même sexe",
-     "Attirance pour les deux sexes"
+     "consentement",
+     "budget",
+     "décor",
+     "éclairage"
     ],
-    "a": "Attirance pour le sexe opposé"
+    "a": "consentement"
    },
    {
-    "q": "Qu'est-ce que l'homosexualité ?",
+    "q": "Quel droit fondamental le voyeurisme viole-t-il ? Le droit à la ___ privée ?",
     "c": [
-     "Attirance pour les deux",
-     "Attirance pour le sexe opposé",
-     "Aucune attirance",
-     "Attirance pour le même sexe"
+     "vie",
+     "route",
+     "parole libre",
+     "propriété seule"
     ],
-    "a": "Attirance pour le même sexe"
+    "a": "vie"
    },
    {
-    "q": "Qu'est-ce que la bisexualité ?",
+    "q": "Comment appelle-t-on le fait de placer une caméra cachée dans un lieu intime ? Un acte de ___ ?",
     "c": [
-     "Changement d'orientation",
-     "Attirance pour les deux sexes",
-     "Attirance pour aucun sexe",
-     "Attirance pour le même sexe"
+     "voyeurisme",
+     "journalisme",
+     "cinéma",
+     "sondage"
     ],
-    "a": "Attirance pour les deux sexes"
+    "a": "voyeurisme"
    },
    {
-    "q": "Depuis quand l'homosexualité n'est-elle plus considérée comme une maladie ?",
+    "q": "Dans quel type de lieux privés le voyeurisme est-il particulièrement grave ? Les ___ (vestiaires, toilettes) ?",
     "c": [
-     "Depuis 2000",
-     "Depuis 1990 (OMS)",
-     "Depuis 1980",
-     "Depuis 1970"
+     "intimes",
+     "publics ouverts",
+     "commerciaux",
+     "sportifs bruyants"
     ],
-    "a": "Depuis 1990 (OMS)"
+    "a": "intimes"
    },
    {
-    "q": "Qu'est-ce que l'asexualité ?",
+    "q": "Comment nomme-t-on en psychiatrie le voyeurisme pathologique et compulsif ? Un ___ ?",
     "c": [
-     "Refus de la sexualité",
-     "Choix de célibat",
-     "Maladie",
-     "Absence ou faible désir sexuel envers autrui"
+     "trouble",
+     "hobby",
+     "talent",
+     "réflexe sain"
     ],
-    "a": "Absence ou faible désir sexuel envers autrui"
+    "a": "trouble"
    },
    {
-    "q": "L'orientation sexuelle peut-elle changer ?",
-    "c": [
-     "Elle est généralement stable mais peut évoluer",
-     "Non, jamais",
-     "Elle change toujours",
-     "Oui, volontairement"
-    ],
-    "a": "Elle est généralement stable mais peut évoluer"
+    "q": "Le « upskirting » (photo sous les vêtements) a été spécifiquement pénalisé en France en quelle année (2018) ?",
+    "a": "2018"
    }
   ],
   "rw": true
@@ -21550,84 +21526,84 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que le mariage ?",
+    "q": "La bisexualité est l'attirance envers ___ sexes ? (les deux)",
     "c": [
-     "Contrat religieux",
-     "Engagement informel",
-     "Union légale entre deux personnes",
-     "Simple cohabitation"
+     "deux",
+     "aucun",
+     "trois",
+     "quatre"
     ],
-    "a": "Union légale entre deux personnes"
+    "a": "deux"
    },
    {
-    "q": "En quelle année le mariage homosexuel a-t-il été légalisé en France ?",
+    "q": "Quelle lettre du sigle LGBT correspond à la bisexualité ? Le ___ ?",
     "c": [
-     "2015",
-     "2010",
-     "2013 (loi Taubira)",
-     "2000"
+     "B",
+     "L",
+     "G",
+     "T"
     ],
-    "a": "2013 (loi Taubira)"
+    "a": "B"
    },
    {
-    "q": "Quel pays a été le premier à légaliser le mariage homosexuel ?",
+    "q": "La bisexualité est-elle une orientation sexuelle reconnue ? ___ ?",
     "c": [
-     "Belgique (2003)",
-     "France (2013)",
-     "Canada (2005)",
-     "Pays-Bas (2001)"
+     "oui",
+     "non",
+     "une maladie",
+     "un choix imposé"
     ],
-    "a": "Pays-Bas (2001)"
+    "a": "oui"
    },
    {
-    "q": "Qu'est-ce que le PACS en France ?",
+    "q": "De quelles couleurs est composé le drapeau bisexuel : rose, violet et ___ ?",
     "c": [
-     "Contrat de travail",
-     "Contrat d'union civile entre deux adultes",
-     "Mariage simplifié",
-     "Union religieuse"
+     "bleu",
+     "vert",
+     "jaune",
+     "noir"
     ],
-    "a": "Contrat d'union civile entre deux adultes"
+    "a": "bleu"
    },
    {
-    "q": "Combien de mariages sont célébrés chaque année en France ?",
+    "q": "Comment appelle-t-on l'attirance indépendante du genre, proche de la bisexualité ? La ___ ?",
     "c": [
-     "Environ 230 000",
-     "Environ 300 000",
-     "Environ 100 000",
-     "Environ 500 000"
+     "pansexualité",
+     "asexualité",
+     "démisexualité",
+     "autosexualité"
     ],
-    "a": "Environ 230 000"
+    "a": "pansexualité"
    },
    {
-    "q": "Qu'est-ce que le mariage civil ?",
+    "q": "Quel mois de l'année est consacré aux fiertés (dont la bisexualité) ? Le mois des ___ ? (Pride)",
     "c": [
-     "Mariage célébré par un officier d'état civil",
-     "Union libre",
-     "Mariage symbolique",
-     "Mariage religieux"
+     "fiertés",
+     "récoltes",
+     "soldes",
+     "vacances"
     ],
-    "a": "Mariage célébré par un officier d'état civil"
+    "a": "fiertés"
    },
    {
-    "q": "Quel âge minimum pour se marier en France ?",
+    "q": "Quelle journée de septembre célèbre la visibilité bisexuelle ? La journée de la ___ bi ?",
     "c": [
-     "21 ans",
-     "18 ans",
-     "15 ans",
-     "16 ans"
+     "visibilité",
+     "mémoire",
+     "santé",
+     "famille"
     ],
-    "a": "18 ans"
+    "a": "visibilité"
    },
    {
-    "q": "Qu'est-ce que le divorce ?",
+    "q": "Quel jour de septembre est célébré le « Bi Visibility Day » chaque année ? Le ___ septembre ?",
     "c": [
-     "Séparation de fait",
-     "Annulation",
-     "Rupture",
-     "Dissolution légale du mariage"
+     "23",
+     "1",
+     "15",
+     "30"
     ],
-    "a": "Dissolution légale du mariage"
+    "a": "23"
    }
   ],
   "rw": true
@@ -21639,84 +21615,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que la pornographie ?",
+    "q": "La transidentité concerne l'identité de ___ d'une personne ?",
     "c": [
-     "Éducation sexuelle",
-     "Art érotique",
-     "Représentation explicite d'actes sexuels dans le but d'exciter",
-     "Film érotique"
+     "genre",
+     "quartier",
+     "métier",
+     "loisir"
     ],
-    "a": "Représentation explicite d'actes sexuels dans le but d'exciter"
+    "a": "genre"
    },
    {
-    "q": "Depuis quand la pornographie moderne existe-t-elle ?",
+    "q": "Une personne trans a une identité de genre différente de celle assignée à la ___ ?",
     "c": [
-     "Depuis le cinéma (années 1970)",
-     "Depuis l'antiquité",
-     "Depuis internet",
-     "Depuis les années 1950"
+     "naissance",
+     "retraite",
+     "majorité",
+     "école"
     ],
-    "a": "Depuis le cinéma (années 1970)"
+    "a": "naissance"
    },
    {
-    "q": "Quel est l'âge légal pour accéder à la pornographie en France ?",
+    "q": "Quelle lettre du sigle LGBT correspond à « transgenre » ? Le ___ ?",
     "c": [
-     "18 ans",
-     "16 ans",
-     "15 ans",
-     "21 ans"
+     "T",
+     "L",
+     "G",
+     "B"
     ],
-    "a": "18 ans"
+    "a": "T"
    },
    {
-    "q": "Qu'est-ce que la pornographie montre-t-elle souvent de manière irréaliste ?",
+    "q": "Comment appelle-t-on le fait de changer de prénom et d'apparence pour vivre selon son genre ? La ___ ?",
     "c": [
-     "Uniquement les émotions",
-     "Les corps, les pratiques et les relations",
-     "Tout est réaliste",
-     "Les sentiments"
+     "transition",
+     "translation",
+     "traduction",
+     "transfusion"
     ],
-    "a": "Les corps, les pratiques et les relations"
+    "a": "transition"
    },
    {
-    "q": "Quels sont les risques de la pornographie pour les jeunes ?",
+    "q": "Quel drapeau trans est composé de bandes bleue, rose et ___ ?",
     "c": [
-     "Effets positifs",
-     "Image irréaliste de la sexualité, addiction",
-     "Développement normal",
-     "Aucun risque"
+     "blanche",
+     "noire",
+     "verte",
+     "jaune"
     ],
-    "a": "Image irréaliste de la sexualité, addiction"
+    "a": "blanche"
    },
    {
-    "q": "Qu'est-ce que le revenge porn ?",
+    "q": "Comment appelle-t-on une personne dont le genre correspond à celui assigné à la naissance ? ___ ?",
     "c": [
-     "Publicité",
-     "Diffusion non consentie d'images intimes",
-     "Pornographie professionnelle",
-     "Film amateur"
+     "cisgenre",
+     "transgenre",
+     "agenre",
+     "bigenre"
     ],
-    "a": "Diffusion non consentie d'images intimes"
+    "a": "cisgenre"
    },
    {
-    "q": "La pornographie est-elle légale en France ?",
+    "q": "Quel jour de novembre honore la mémoire des personnes trans victimes de violences ? Le ___ of Remembrance ?",
     "c": [
-     "Oui, sans restrictions",
-     "Uniquement sur internet",
-     "Non, interdite",
-     "Oui, avec des restrictions (âge, consentement)"
+     "Transgender Day",
+     "Pride Day",
+     "Coming Out Day",
+     "Spirit Day"
     ],
-    "a": "Oui, avec des restrictions (âge, consentement)"
+    "a": "Transgender Day"
    },
    {
-    "q": "Qu'est-ce que la production éthique dans la pornographie ?",
-    "c": [
-     "Production gratuite",
-     "Production respectant le consentement et les droits des acteurs",
-     "Production artistique",
-     "Production amateur"
-    ],
-    "a": "Production respectant le consentement et les droits des acteurs"
+    "q": "En quelle année l'OMS a-t-elle cessé de classer la transidentité comme trouble mental (CIM-11) ?",
+    "a": "2019"
    }
   ],
   "rw": true
@@ -21728,84 +21698,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que la prostitution ?",
+    "q": "Une personne asexuelle ressent peu ou pas d'attirance ___ ?",
     "c": [
-     "Harcèlement sexuel",
-     "Commerce",
-     "Échange d'actes sexuels contre de l'argent ou des biens",
-     "Liberté sexuelle"
+     "sexuelle",
+     "amicale",
+     "familiale",
+     "professionnelle"
     ],
-    "a": "Échange d'actes sexuels contre de l'argent ou des biens"
+    "a": "sexuelle"
    },
    {
-    "q": "La prostitution est-elle légale en France ?",
+    "q": "L'asexualité est-elle une orientation valide ? ___ ?",
     "c": [
-     "L'acte est légal, mais le proxénétisme est interdit",
-     "Totalement illégale",
-     "Uniquement dans les maisons closes",
-     "Totalement légale"
+     "oui",
+     "non",
+     "une maladie",
+     "un choix forcé"
     ],
-    "a": "L'acte est légal, mais le proxénétisme est interdit"
+    "a": "oui"
    },
    {
-    "q": "Qu'est-ce que le proxénétisme ?",
+    "q": "Une personne asexuelle peut-elle tout de même ressentir de l'amour romantique ? ___ ?",
     "c": [
-     "Le fait de tirer profit de la prostitution d'autrui",
-     "Métier",
-     "Prostitué",
-     "Client de la prostitution"
+     "oui",
+     "non",
+     "jamais",
+     "seulement amical"
     ],
-    "a": "Le fait de tirer profit de la prostitution d'autrui"
+    "a": "oui"
    },
    {
-    "q": "En quelle année la loi française a-t-elle pénalisé les clients ?",
+    "q": "Comment abrège-t-on souvent « asexuel » en anglais ? ___ ?",
     "c": [
-     "2016",
-     "2000",
-     "2010",
-     "2018"
+     "ace",
+     "aro",
+     "bi",
+     "pan"
     ],
-    "a": "2016"
+    "a": "ace"
    },
    {
-    "q": "Combien de personnes se prostituent en France ?",
+    "q": "L'asexualité fait-elle partie du spectre de la diversité des orientations ? ___ ?",
     "c": [
-     "Environ 200 000",
-     "Environ 30 000 à 40 000",
-     "Environ 100 000",
-     "Environ 10 000"
+     "oui",
+     "non",
+     "seulement médical",
+     "seulement temporaire"
     ],
-    "a": "Environ 30 000 à 40 000"
+    "a": "oui"
    },
    {
-    "q": "Qu'est-ce que l'exploitation sexuelle ?",
+    "q": "Comment appelle-t-on l'attirance romantique sans attirance sexuelle ? L'___ romantique ?",
     "c": [
-     "Prostitution forcée ou subie sous contrainte",
-     "Travail du sexe",
-     "Prostitution choisie",
-     "Métier"
+     "orientation",
+     "profession",
+     "religion",
+     "nationalité"
     ],
-    "a": "Prostitution forcée ou subie sous contrainte"
+    "a": "orientation"
    },
    {
-    "q": "Quel est le lien entre prostitution et trafic d'êtres humains ?",
+    "q": "Quelle communauté en ligne a popularisé la visibilité asexuelle ? Le réseau ___ (AVEN) ?",
     "c": [
-     "Lien uniquement à l'étranger",
-     "Très faible",
-     "Beaucoup de prostituées sont victimes de trafic",
-     "Aucun lien"
+     "AVEN",
+     "NASA",
+     "FIFA",
+     "OMS"
     ],
-    "a": "Beaucoup de prostituées sont victimes de trafic"
+    "a": "AVEN"
    },
    {
-    "q": "Quelles sont les conséquences de la prostitution sur la santé ?",
-    "c": [
-     "Conséquences positives",
-     "IST, traumatismes, dépendances",
-     "Aucune conséquence",
-     "Problèmes uniquement physiques"
-    ],
-    "a": "IST, traumatismes, dépendances"
+    "q": "Quel pourcentage, environ, de la population s'identifierait comme asexuelle selon des études ?",
+    "a": "1"
    }
   ],
   "rw": true
@@ -21817,84 +21781,84 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que le consentement ?",
+    "q": "Le polyamour consiste à aimer plusieurs personnes avec leur ___ ? (accord)",
     "c": [
-     "Autorisation",
-     "Simple politesse",
-     "Absence de refus",
-     "Accord libre et éclairé à un acte sexuel"
+     "consentement",
+     "argent",
+     "silence",
+     "secret"
     ],
-    "a": "Accord libre et éclairé à un acte sexuel"
+    "a": "consentement"
    },
    {
-    "q": "Le consentement peut-il être donné sous l'emprise de l'alcool ?",
+    "q": "Sur quelles valeurs repose un polyamour sain ? L'honnêteté et la ___ ?",
     "c": [
-     "Oui, l'alcool n'a pas d'importance",
-     "Oui, si la personne est consciente",
-     "Oui, tant qu'il n'y a pas de violence",
-     "Non, le consentement doit être libre et lucide"
+     "communication",
+     "jalousie",
+     "cachotterie",
+     "compétition"
     ],
-    "a": "Non, le consentement doit être libre et lucide"
+    "a": "communication"
    },
    {
-    "q": "Le consentement est-il réversible ?",
+    "q": "Le polyamour se distingue de l'infidélité car il est ___ (tout le monde sait) ?",
     "c": [
-     "Non, cela n'existe pas",
-     "Non, une fois donné il est définitif",
-     "Oui, il peut être retiré à tout moment",
-     "Parfois"
+     "transparent",
+     "caché",
+     "illégal",
+     "imposé"
     ],
-    "a": "Oui, il peut être retiré à tout moment"
+    "a": "transparent"
    },
    {
-    "q": "Peut-on présumer du consentement ?",
+    "q": "Comment appelle-t-on le fait de n'avoir qu'un seul partenaire, à l'opposé ? La ___ ?",
     "c": [
-     "Oui, après un premier rendez-vous",
-     "Oui, dans un couple",
-     "Non, il doit être exprimé clairement",
-     "Oui, par défaut"
+     "monogamie",
+     "polygamie",
+     "bigamie",
+     "autonomie"
     ],
-    "a": "Non, il doit être exprimé clairement"
+    "a": "monogamie"
    },
    {
-    "q": "Qu'est-ce que l'âge du consentement en France ?",
+    "q": "Quel sentiment de joie de voir son partenaire heureux avec un autre est valorisé ? La ___ ? (compersion)",
     "c": [
-     "18 ans",
-     "14 ans",
-     "15 ans",
-     "16 ans"
+     "compersion",
+     "jalousie",
+     "colère",
+     "indifférence"
     ],
-    "a": "15 ans"
+    "a": "compersion"
    },
    {
-    "q": "Le silence peut-il être considéré comme un consentement ?",
+    "q": "Le polyamour est-il la même chose que le mariage à plusieurs (polygamie légale) ? ___ ?",
     "c": [
-     "Oui",
-     "Oui, parfois",
-     "Oui, dans le couple",
-     "Non, le consentement doit être explicite"
+     "non",
+     "oui",
+     "toujours",
+     "obligatoirement"
     ],
-    "a": "Non, le consentement doit être explicite"
+    "a": "non"
    },
    {
-    "q": "Qu'est-ce que le consentement explicite ?",
+    "q": "Comment appelle-t-on l'ensemble des relations non exclusives et consenties ? La non-monogamie ___ ?",
     "c": [
-     "Un accord supposé",
-     "Un accord verbal ou gestuel clair",
-     "Une signature",
-     "Une absence de refus"
+     "éthique",
+     "cachée",
+     "illégale",
+     "forcée"
     ],
-    "a": "Un accord verbal ou gestuel clair"
+    "a": "éthique"
    },
    {
-    "q": "Différence entre consentement et soumission ?",
+    "q": "Quel préfixe grec, dans « polyamour », signifie « plusieurs » ? ___ ?",
     "c": [
-     "Aucune différence",
-     "La soumission est volontaire",
-     "C'est la même chose",
-     "Le consentement est libre, la soumission est contrainte"
+     "poly",
+     "mono",
+     "bi",
+     "a"
     ],
-    "a": "Le consentement est libre, la soumission est contrainte"
+    "a": "poly"
    }
   ],
   "rw": true
@@ -21906,84 +21870,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que le harcèlement sexuel ?",
+    "q": "Le mariage homosexuel unit deux personnes du ___ sexe ?",
     "c": [
-     "Comportements à connotation sexuelle imposés de façon répétée",
-     "Relation consentie",
-     "Drague",
-     "Compliment"
+     "même",
+     "opposé",
+     "troisième",
+     "aucun"
     ],
-    "a": "Comportements à connotation sexuelle imposés de façon répétée"
+    "a": "même"
    },
    {
-    "q": "Quels sont les éléments constitutifs du harcèlement sexuel ?",
+    "q": "En France, quelle loi de 2013 a ouvert le mariage aux couples de même sexe ? Le mariage pour ___ ?",
     "c": [
-     "Consentement",
-     "Un seul acte",
-     "Répétition et caractère non désiré",
-     "Intention humoristique"
+     "tous",
+     "riches",
+     "élus",
+     "certains"
     ],
-    "a": "Répétition et caractère non désiré"
+    "a": "tous"
    },
    {
-    "q": "Le harcèlement sexuel est-il un délit pénal en France ?",
+    "q": "Quel premier pays au monde a légalisé le mariage homosexuel en 2001 ? Les ___ ?",
     "c": [
-     "Uniquement au travail",
-     "Uniquement dans le privé",
-     "Oui, puni par la loi",
-     "Non, ce n'est pas un délit"
+     "Pays-Bas",
+     "France",
+     "États-Unis",
+     "Canada"
     ],
-    "a": "Oui, puni par la loi"
+    "a": "Pays-Bas"
    },
    {
-    "q": "Quelle est la peine maximale pour harcèlement sexuel en France ?",
+    "q": "Quel droit, en plus du mariage, la loi de 2013 a-t-elle ouvert aux couples de même sexe ? L'___ ?",
     "c": [
-     "6 mois",
-     "3 ans d'emprisonnement et 45 000 euros d'amende",
-     "1 an",
-     "5 ans"
+     "adoption",
+     "expatriation",
+     "conduite",
+     "vote double"
     ],
-    "a": "3 ans d'emprisonnement et 45 000 euros d'amende"
+    "a": "adoption"
    },
    {
-    "q": "Où peut avoir lieu le harcèlement sexuel ?",
+    "q": "Quelle ministre française a défendu la loi « mariage pour tous » ? Christiane ___ ?",
     "c": [
-     "Uniquement dans les lieux publics",
-     "Uniquement en ligne",
-     "Uniquement au travail",
-     "Au travail, dans les transports, à l'école, en ligne"
+     "Taubira",
+     "Veil",
+     "Royal",
+     "Aubry"
     ],
-    "a": "Au travail, dans les transports, à l'école, en ligne"
+    "a": "Taubira"
    },
    {
-    "q": "Qu'est-ce que le harcèlement de rue ?",
+    "q": "Quel contrat d'union civile existait en France avant le mariage pour tous ? Le ___ ?",
     "c": [
-     "Discussion",
-     "Rencontre",
-     "Comportements sexistes dans l'espace public",
-     "Compliment"
+     "PACS",
+     "CDI",
+     "bail",
+     "PEL"
     ],
-    "a": "Comportements sexistes dans l'espace public"
+    "a": "PACS"
    },
    {
-    "q": "Comment réagir face au harcèlement sexuel ?",
+    "q": "En quelle année la Cour suprême des États-Unis a-t-elle légalisé le mariage gay dans tout le pays ? En ___ ?",
     "c": [
-     "Ne rien faire",
-     "Accepter",
-     "Signaler, porter plainte, témoigner",
-     "Ignorer"
+     "2015",
+     "2001",
+     "1990",
+     "2020"
     ],
-    "a": "Signaler, porter plainte, témoigner"
+    "a": "2015"
    },
    {
-    "q": "Qu'est-ce que la loi sur le harcèlement sexuel en France ?",
-    "c": [
-     "Loi sur l'éducation",
-     "Loi sur l'égalité",
-     "Loi qui définit et punit le harcèlement sexuel",
-     "Loi sur le travail"
-    ],
-    "a": "Loi qui définit et punit le harcèlement sexuel"
+    "q": "En quelle année exacte la France a-t-elle adopté la loi sur le mariage pour tous ?",
+    "a": "2013"
    }
   ],
   "rw": true
