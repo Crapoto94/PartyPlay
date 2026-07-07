@@ -24239,84 +24239,84 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce qu'une overdose ?",
+    "q": "De quelle drogue le crack est-il une forme fumable ? La ___ ?",
     "c": [
-     "Dose thérapeutique",
-     "Fort effet",
-     "Prise d'une dose toxique qui peut entraîner la mort",
-     "Prise régulière"
+     "cocaïne",
+     "héroïne",
+     "MDMA",
+     "kétamine"
     ],
-    "a": "Prise d'une dose toxique qui peut entraîner la mort"
+    "a": "cocaïne"
    },
    {
-    "q": "Quels sont les signes d'une overdose aux opioïdes ?",
+    "q": "Sous quelle forme solide le crack se présente-t-il ? Des petits ___ (cailloux) ?",
     "c": [
-     "Convulsions",
-     "Hallucinations",
-     "Agitation",
-     "Respirations lentes, pupilles contractées, inconscience"
+     "cailloux",
+     "comprimés",
+     "buvards",
+     "cristaux liquides"
     ],
-    "a": "Respirations lentes, pupilles contractées, inconscience"
+    "a": "cailloux"
    },
    {
-    "q": "Quels sont les signes d'une overdose aux stimulants ?",
+    "q": "Comment consomme-t-on le crack ? On le ___ ?",
     "c": [
-     "Hypothermie",
-     "Somnolence",
-     "Bradycardie",
-     "Crise cardiaque, AVC, hyperthermie, convulsions"
+     "fume",
+     "boit",
+     "mange",
+     "applique"
     ],
-    "a": "Crise cardiaque, AVC, hyperthermie, convulsions"
+    "a": "fume"
    },
    {
-    "q": "Que faire en cas d'overdose présumée ?",
+    "q": "Quel bruit de craquement à la combustion a donné son nom au crack ? Le ___ ?",
     "c": [
-     "Faire marcher la personne",
-     "Appeler les urgences, administrer naloxone si opioïdes",
-     "Attendre",
-     "Donner à boire"
+     "craquement",
+     "sifflement",
+     "grésillement doux",
+     "silence"
     ],
-    "a": "Appeler les urgences, administrer naloxone si opioïdes"
+    "a": "craquement"
    },
    {
-    "q": "Qu'est-ce que la naloxone ?",
+    "q": "Quelle très forte propriété rend le crack extrêmement dangereux ? Une ___ rapide et intense ?",
     "c": [
-     "Antibiotique",
-     "Vaccin",
-     "Stimulant",
-     "Antidote qui réverse une overdose aux opioïdes"
+     "dépendance",
+     "guérison",
+     "immunité",
+     "satiété"
     ],
-    "a": "Antidote qui réverse une overdose aux opioïdes"
+    "a": "dépendance"
    },
    {
-    "q": "Combien de personnes meurent d'overdose chaque année dans le monde ?",
+    "q": "Pourquoi les effets du crack sont-ils très brefs et poussent à reconsommer ? Ils sont ___ ?",
     "c": [
-     "Environ 50 000",
-     "Environ 1 million",
-     "Environ 500 000",
-     "Environ 100 000"
+     "courts",
+     "éternels",
+     "d'une journée",
+     "hebdomadaires"
     ],
-    "a": "Environ 500 000"
+    "a": "courts"
    },
    {
-    "q": "Qu'est-ce qu'une overdose retardée ?",
+    "q": "Quel organe vital le crack met-il gravement en danger, comme la cocaïne ? Le ___ ?",
     "c": [
-     "Overdose qui survient plusieurs heures après la prise",
-     "Overdose légère",
-     "Réaction allergique",
-     "Fausse overdose"
+     "cœur",
+     "genou",
+     "coude",
+     "cheveu"
     ],
-    "a": "Overdose qui survient plusieurs heures après la prise"
+    "a": "cœur"
    },
    {
-    "q": "Qui peut administrer la naloxone ?",
+    "q": "Dans quelle décennie le crack a-t-il ravagé les grandes villes américaines ? Les années ___ ?",
     "c": [
-     "Toute personne formée, y compris les proches",
-     "Uniquement les médecins",
-     "Uniquement les ambulanciers",
-     "Uniquement à l'hôpital"
+     "1980",
+     "1950",
+     "2010",
+     "1930"
     ],
-    "a": "Toute personne formée, y compris les proches"
+    "a": "1980"
    }
   ],
   "rw": true
@@ -24328,84 +24328,84 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que l'alcoolisme (trouble de l'usage d'alcool) ?",
+    "q": "De quelle fleur l'opium est-il extrait ? Le ___ ?",
     "c": [
-     "Simple ivresse",
-     "Maladie caractérisée par une consommation excessive et compulsive d'alcool",
-     "Consommation modérée",
-     "Usage occasionnel"
+     "pavot",
+     "tournesol",
+     "rose",
+     "tulipe"
     ],
-    "a": "Maladie caractérisée par une consommation excessive et compulsive d'alcool"
+    "a": "pavot"
    },
    {
-    "q": "Combien de personnes souffrent d'alcoolisme en France ?",
+    "q": "Quel suc laiteux du pavot est récolté pour faire l'opium ? Le ___ ?",
     "c": [
-     "Environ 1 million",
-     "Environ 10 millions",
-     "Environ 5 millions",
-     "Environ 500 000"
+     "latex",
+     "nectar",
+     "pollen",
+     "sève de tronc"
     ],
-    "a": "Environ 5 millions"
+    "a": "latex"
    },
    {
-    "q": "Qu'est-ce qu'un verre standard d'alcool ?",
+    "q": "Dans quel type d'établissement, au XIXe s., fumait-on l'opium ? Une ___ à opium ?",
     "c": [
-     "20 g d'alcool",
-     "30 g d'alcool",
-     "10 g d'alcool pur",
-     "5 g d'alcool"
+     "fumerie",
+     "cave",
+     "grange",
+     "usine"
     ],
-    "a": "10 g d'alcool pur"
+    "a": "fumerie"
    },
    {
-    "q": "Quelles sont les limites de consommation recommandées par l'OMS ?",
+    "q": "Quel effet principal l'opium procure-t-il ? Un effet ___ (antidouleur, euphorie) ?",
     "c": [
-     "Pas de limite",
-     "Pas plus de 2 verres par jour et jours de pause",
-     "10 verres par jour",
-     "5 verres par jour"
+     "sédatif",
+     "stimulant",
+     "psychédélique",
+     "diurétique"
     ],
-    "a": "Pas plus de 2 verres par jour et jours de pause"
+    "a": "sédatif"
    },
    {
-    "q": "Quelles maladies sont causées par l'alcoolisme chronique ?",
+    "q": "Quels puissants antidouleurs médicaux sont dérivés de l'opium ? Les ___ ?",
     "c": [
-     "Diabète",
-     "Maladies cardiaques",
-     "Cirrhose, pancréatite, cancers, neuropathies",
-     "Uniquement la cirrhose"
+     "opiacés",
+     "antibiotiques",
+     "vaccins",
+     "vitamines"
     ],
-    "a": "Cirrhose, pancréatite, cancers, neuropathies"
+    "a": "opiacés"
    },
    {
-    "q": "Qu'est-ce que le syndrome de sevrage alcoolique ?",
+    "q": "Quelles guerres du XIXe s. ont opposé la Chine au Royaume-Uni à propos de ce commerce ? Les guerres de l'___ ?",
     "c": [
-     "Irritabilité",
-     "Fatigue",
-     "Symptômes après arrêt brutal: tremblements, hallucinations, convulsions",
-     "Simple gueule de bois"
+     "opium",
+     "thé",
+     "soie",
+     "riz"
     ],
-    "a": "Symptômes après arrêt brutal: tremblements, hallucinations, convulsions"
+    "a": "opium"
    },
    {
-    "q": "Qu'est-ce que le delirium tremens ?",
+    "q": "Quel puissant antidouleur, isolé de l'opium au XIXe s., est encore utilisé à l'hôpital ? La ___ ?",
     "c": [
-     "Forme grave du sevrage alcoolique avec confusion et hallucinations",
-     "Trouble léger",
-     "Intoxication",
-     "Ivresse"
+     "morphine",
+     "aspirine",
+     "pénicilline",
+     "insuline"
     ],
-    "a": "Forme grave du sevrage alcoolique avec confusion et hallucinations"
+    "a": "morphine"
    },
    {
-    "q": "Existe-t-il des traitements médicamenteux pour l'alcoolisme ?",
+    "q": "En quel millénaire, avant J.-C., le pavot était-il déjà cultivé (Sumer) ? Le ___e millénaire av. J.-C. ?",
     "c": [
-     "Uniquement les groupes de parole",
-     "Oui, comme le baclofène, le naltrexone, l'acamprosate",
-     "Non, aucun",
-     "Uniquement la psychothérapie"
+     "3",
+     "1",
+     "5",
+     "10"
     ],
-    "a": "Oui, comme le baclofène, le naltrexone, l'acamprosate"
+    "a": "3"
    }
   ],
   "rw": true
@@ -24417,84 +24417,84 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce qu'une drogue de synthèse ?",
+    "q": "Dans quel lieu la morphine est-elle utilisée pour soulager la douleur ? L'___ ?",
     "c": [
-     "Champignon",
-     "Drogue naturelle",
-     "Plante",
-     "Substance psychoactive créée chimiquement en laboratoire"
+     "hôpital",
+     "école",
+     "stade",
+     "cinéma"
     ],
-    "a": "Substance psychoactive créée chimiquement en laboratoire"
+    "a": "hôpital"
    },
    {
-    "q": "Pourquoi les drogues de synthèse sont-elles dangereuses ?",
+    "q": "Contre quel symptôme la morphine est-elle prescrite ? La ___ intense ?",
     "c": [
-     "Bien connues",
-     "Peu d'effets",
-     "Elles sont sûres",
-     "Composition inconnue, dosage imprévisible, effets graves"
+     "douleur",
+     "fièvre",
+     "toux légère",
+     "démangeaison"
     ],
-    "a": "Composition inconnue, dosage imprévisible, effets graves"
+    "a": "douleur"
    },
    {
-    "q": "Qu'est-ce qu'un NPS (Nouveau Produit de Synthèse) ?",
+    "q": "De quelle substance végétale la morphine est-elle dérivée ? L'___ ?",
     "c": [
-     "Médicament",
-     "Complément alimentaire",
-     "Drogue naturelle",
-     "Molécule modifiée pour contourner les lois"
+     "opium",
+     "café",
+     "cacao",
+     "houblon"
     ],
-    "a": "Molécule modifiée pour contourner les lois"
+    "a": "opium"
    },
    {
-    "q": "Quels sont les types de drogues de synthèse ?",
+    "q": "À quelle famille d'antidouleurs puissants la morphine appartient-elle ? Les ___ ?",
     "c": [
-     "Uniquement les amphétamines",
-     "Uniquement les opioïdes",
-     "Amphétamines, cathinones, cannabinoïdes synthétiques, benzodiazépines",
-     "Uniquement les cannabinoïdes"
+     "opiacés",
+     "anti-inflammatoires",
+     "antibiotiques",
+     "antihistaminiques"
     ],
-    "a": "Amphétamines, cathinones, cannabinoïdes synthétiques, benzodiazépines"
+    "a": "opiacés"
    },
    {
-    "q": "Qu'est-ce que le GHB ?",
+    "q": "Quel risque, en cas de surdosage de morphine, menace la respiration ? Une ___ respiratoire ?",
     "c": [
-     "Cannabinoïde",
-     "Stimulant",
-     "Drogue de synthèse sédative utilisée comme drogue du viol",
-     "Hallucinogène"
+     "dépression",
+     "accélération",
+     "allergie cutanée",
+     "crampe"
     ],
-    "a": "Drogue de synthèse sédative utilisée comme drogue du viol"
+    "a": "dépression"
    },
    {
-    "q": "Qu'est-ce que le 2CB ?",
+    "q": "De quel dieu grec du sommeil et des rêves la morphine tire-t-elle son nom ? ___ ?",
     "c": [
-     "Opiacé",
-     "Drogue de synthèse aux effets hallucinogènes et empathogènes",
-     "Stimulant",
-     "Sédatif"
+     "Morphée",
+     "Zeus",
+     "Apollon",
+     "Hermès"
     ],
-    "a": "Drogue de synthèse aux effets hallucinogènes et empathogènes"
+    "a": "Morphée"
    },
    {
-    "q": "Comment sont fabriquées les drogues de synthèse ?",
+    "q": "Quel médicament d'urgence peut inverser un surdosage de morphine ? La ___ ?",
     "c": [
-     "Dans des laboratoires clandestins avec des précurseurs chimiques",
-     "Dans des usines pharmaceutiques",
-     "Dans des cuisines",
-     "Dans des laboratoires naturels"
+     "naloxone",
+     "aspirine",
+     "insuline",
+     "cortisone"
     ],
-    "a": "Dans des laboratoires clandestins avec des précurseurs chimiques"
+    "a": "naloxone"
    },
    {
-    "q": "Quels sont les risques d'overdose avec les drogues de synthèse ?",
+    "q": "En quel début de siècle la morphine a-t-elle été isolée de l'opium ? Le XIX___ ?",
     "c": [
-     "Faibles si testées",
-     "Élevés car la pureté et le dosage sont inconnus",
-     "Nuls",
-     "Faibles"
+     "e",
+     "Ier",
+     "IIe",
+     "IIIe"
     ],
-    "a": "Élevés car la pureté et le dosage sont inconnus"
+    "a": "e"
    }
   ],
   "rw": true
@@ -24506,84 +24506,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que la distinction entre drogues douces et dures ?",
+    "q": "Contre quel trouble les benzodiazépines sont-elles surtout prescrites ? L'___ ?",
     "c": [
-     "Classification basée sur la dangerosité et le potentiel addictif",
-     "Prix",
-     "Légalité",
-     "Origine naturelle ou synthétique"
+     "anxiété",
+     "myopie",
+     "carie",
+     "fracture"
     ],
-    "a": "Classification basée sur la dangerosité et le potentiel addictif"
+    "a": "anxiété"
    },
    {
-    "q": "Quelle drogue est généralement classée comme 'douce' ?",
+    "q": "Quel autre effet, favorisant le sommeil, ont les benzodiazépines ? Elles sont ___ ?",
     "c": [
-     "La cocaïne",
-     "Le crack",
-     "L'héroïne",
-     "Le cannabis"
+     "somnifères",
+     "stimulantes",
+     "hallucinogènes",
+     "diurétiques"
     ],
-    "a": "Le cannabis"
+    "a": "somnifères"
    },
    {
-    "q": "Le terme 'drogue douce' est-il utilisé par les autorités scientifiques ?",
+    "q": "Ces médicaments ne s'obtiennent que sur ___ ? (délivrance encadrée)",
     "c": [
-     "Non, il est contesté car toute drogue comporte des risques",
-     "Oui, validé",
-     "Oui, officiellement",
-     "Oui, par l'OMS"
+     "ordonnance",
+     "internet libre",
+     "au bar",
+     "en boîte"
     ],
-    "a": "Non, il est contesté car toute drogue comporte des risques"
+    "a": "ordonnance"
    },
    {
-    "q": "Quels sont les risques du cannabis considéré comme drogue douce ?",
+    "q": "Pourquoi ne faut-il pas mélanger benzodiazépines et alcool ? Risque de ___ respiratoire ?",
     "c": [
-     "Aucun risque",
-     "Risques physiques uniquement",
-     "Dépendance psychique, troubles de la mémoire, anxiété",
-     "Risques vitaux"
+     "dépression",
+     "excitation",
+     "allergie",
+     "acné"
     ],
-    "a": "Dépendance psychique, troubles de la mémoire, anxiété"
+    "a": "dépression"
    },
    {
-    "q": "Quelle est la position de la France sur le cannabis ?",
+    "q": "Que développe le corps à l'usage prolongé, imposant d'augmenter les doses ? Une ___ ?",
     "c": [
-     "En cours de légalisation",
-     "C'est illégal mais le débat sur la légalisation existe",
-     "Autorisé médicalement",
-     "Totalement légal"
+     "tolérance",
+     "immunité totale",
+     "guérison",
+     "allergie"
     ],
-    "a": "C'est illégal mais le débat sur la légalisation existe"
+    "a": "tolérance"
    },
    {
-    "q": "Qu'est-ce que la dépénalisation ?",
+    "q": "Quel calmant célèbre, le Valium, appartient-il à cette famille ? Le ___ ?",
     "c": [
-     "Légalisation totale",
-     "Absence de sanction pénale pour la consommation personnelle",
-     "Autorisation",
-     "Vente libre"
+     "diazépam",
+     "paracétamol",
+     "ibuprofène",
+     "amoxicilline"
     ],
-    "a": "Absence de sanction pénale pour la consommation personnelle"
+    "a": "diazépam"
    },
    {
-    "q": "Dans quels pays le cannabis est-il dépénalisé ou légalisé ?",
+    "q": "Comment doit-on arrêter les benzodiazépines pour éviter un sevrage brutal ? De façon ___ (progressive) ?",
     "c": [
-     "Aucun",
-     "Pays-Bas (dépénalisé), Canada (légal), Portugal (dépénalisé)",
-     "Uniquement aux USA",
-     "Partout en Europe"
+     "progressive",
+     "immédiate",
+     "aléatoire",
+     "doublée"
     ],
-    "a": "Pays-Bas (dépénalisé), Canada (légal), Portugal (dépénalisé)"
+    "a": "progressive"
    },
    {
-    "q": "Les drogues dites douces peuvent-elles mener aux drogues dures ?",
-    "c": [
-     "Non, jamais",
-     "C'est un mythe",
-     "Oui, systématiquement",
-     "C'est un facteur de risque parmi d'autres, pas une fatalité"
-    ],
-    "a": "C'est un facteur de risque parmi d'autres, pas une fatalité"
+    "q": "En quelle année la première benzodiazépine (le chlordiazépoxide) a-t-elle été commercialisée ?",
+    "a": "1960"
    }
   ],
   "rw": true
@@ -24595,84 +24589,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Quelles drogues sont classées comme 'dures' ?",
+    "q": "Contre quelle maladie les antidépresseurs sont-ils prescrits ? La ___ ?",
     "c": [
-     "Cannabis, tabac",
-     "LSD, champignons",
-     "Héroïne, cocaïne, crack, méthamphétamine",
-     "Caféine, théine"
+     "dépression",
+     "grippe",
+     "otite",
+     "entorse"
     ],
-    "a": "Héroïne, cocaïne, crack, méthamphétamine"
+    "a": "dépression"
    },
    {
-    "q": "Qu'est-ce qui caractérise une drogue dure ?",
+    "q": "Sur quel organe agissent les antidépresseurs ? Le ___ ?",
     "c": [
-     "Potentiel addictif élevé et risques graves pour la santé",
-     "Origine synthétique",
-     "Prix élevé",
-     "Illégalité"
+     "cerveau",
+     "genou",
+     "foie seul",
+     "poumon"
     ],
-    "a": "Potentiel addictif élevé et risques graves pour la santé"
+    "a": "cerveau"
    },
    {
-    "q": "Quels sont les risques d'une dépendance à l'héroïne ?",
+    "q": "Les antidépresseurs sont-ils des drogues récréatives ou des médicaments prescrits ?",
     "c": [
-     "Aucun risque physique",
-     "Peu de conséquences",
-     "Dépendance légère",
-     "Dépendance physique intense, overdoses, infections"
+     "médicaments",
+     "drogues festives",
+     "compléments alimentaires",
+     "vaccins"
     ],
-    "a": "Dépendance physique intense, overdoses, infections"
+    "a": "médicaments"
    },
    {
-    "q": "Quels sont les risques à long terme de la cocaïne ?",
+    "q": "Quel neurotransmetteur du bien-être les antidépresseurs les plus courants augmentent-ils ? La ___ ?",
     "c": [
-     "Uniquement cardiaques",
-     "Cardiaques, neurologiques, ORL, psychiatriques",
-     "Uniquement psychologiques",
-     "Aucun"
+     "sérotonine",
+     "insuline",
+     "kératine",
+     "histamine"
     ],
-    "a": "Cardiaques, neurologiques, ORL, psychiatriques"
+    "a": "sérotonine"
    },
    {
-    "q": "Qu'est-ce que la polyconsommation de drogues dures ?",
+    "q": "Au bout de combien de temps les antidépresseurs commencent-ils à agir ? Plusieurs ___ ?",
     "c": [
-     "Traitement",
-     "Consommation régulière",
-     "Consommation simultanée ou alternée de plusieurs drogues dures",
-     "Consommation modérée"
+     "semaines",
+     "secondes",
+     "années",
+     "minutes"
     ],
-    "a": "Consommation simultanée ou alternée de plusieurs drogues dures"
+    "a": "semaines"
    },
    {
-    "q": "Pourquoi le mélange héroïne-cocaïne (speedball) est-il dangereux ?",
+    "q": "Comment appelle-t-on la grande famille d'antidépresseurs « ISRS » ? Inhibiteurs de la recapture de la ___ ?",
     "c": [
-     "Moins dangereux",
-     "Effets annulés",
-     "Sans risque",
-     "Risque d'overdose mortel car effets opposés masquent les symptômes"
+     "sérotonine",
+     "dopamine",
+     "adrénaline",
+     "insuline"
     ],
-    "a": "Risque d'overdose mortel car effets opposés masquent les symptômes"
+    "a": "sérotonine"
    },
    {
-    "q": "Quels sont les signes de l'addiction aux drogues dures ?",
+    "q": "Que ne faut-il jamais faire brutalement avec un antidépresseur, sous peine d'effets de sevrage ? L'___ ?",
     "c": [
-     "Perte de contrôle, craving, isolement, problèmes financiers",
-     "Santé stable",
-     "Réussite sociale",
-     "Bonne humeur"
+     "arrêter",
+     "diluer",
+     "chauffer",
+     "congeler"
     ],
-    "a": "Perte de contrôle, craving, isolement, problèmes financiers"
+    "a": "arrêter"
    },
    {
-    "q": "Quels traitements existent pour les addictions aux drogues dures ?",
-    "c": [
-     "Traitements de substitution, thérapies, communautés thérapeutiques",
-     "Uniquement l'hôpital",
-     "Aucun",
-     "Uniquement les médicaments"
-    ],
-    "a": "Traitements de substitution, thérapies, communautés thérapeutiques"
+    "q": "En quelle année le Prozac (fluoxétine), antidépresseur emblématique, a-t-il été mis sur le marché américain ?",
+    "a": "1987"
    }
   ],
   "rw": true
@@ -24684,84 +24672,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que la légalisation d'une drogue ?",
+    "q": "De quel type de plante la mescaline est-elle extraite ? Un ___ ?",
     "c": [
-     "Simple dépénalisation",
-     "Autorisation légale de produire, vendre et consommer une substance",
-     "Autorisation médicale",
-     "Autorisation partielle"
+     "cactus",
+     "champignon",
+     "arbre",
+     "algue"
     ],
-    "a": "Autorisation légale de produire, vendre et consommer une substance"
+    "a": "cactus"
    },
    {
-    "q": "Quelle est la différence entre légalisation et dépénalisation ?",
+    "q": "Quel type d'effets la mescaline provoque-t-elle ? Des effets ___ ?",
     "c": [
-     "Identique",
-     "Dépénalisation = plus strict",
-     "Légalisation = cadre légal complet, dépénalisation = pas de sanction pénale",
-     "Légalisation = moins strict"
+     "psychédéliques",
+     "sédatifs",
+     "stimulants purs",
+     "opiacés"
     ],
-    "a": "Légalisation = cadre légal complet, dépénalisation = pas de sanction pénale"
+    "a": "psychédéliques"
    },
    {
-    "q": "Quel pays a le premier légalisé le cannabis récréatif ?",
+    "q": "Quel cactus mexicain contient de la mescaline et est utilisé rituellement ? Le ___ ?",
     "c": [
-     "Canada (2018)",
-     "Pays-Bas",
-     "Uruguay (2013)",
-     "Portugal"
+     "peyotl",
+     "aloès",
+     "figuier",
+     "saguaro"
     ],
-    "a": "Uruguay (2013)"
+    "a": "peyotl"
    },
    {
-    "q": "Quels sont les arguments pour la légalisation ?",
+    "q": "Par quels peuples la mescaline est-elle utilisée traditionnellement en Amérique ? Les peuples ___ ?",
     "c": [
-     "Contrôle qualité, réduction du marché noir, taxes, liberté individuelle",
-     "Risques pour la santé",
-     "Moralité",
-     "Augmentation de la consommation"
+     "amérindiens",
+     "vikings",
+     "romains",
+     "mongols"
     ],
-    "a": "Contrôle qualité, réduction du marché noir, taxes, liberté individuelle"
+    "a": "amérindiens"
    },
    {
-    "q": "Quels sont les arguments contre la légalisation ?",
+    "q": "Quel écrivain a raconté son expérience à la mescaline dans « Les Portes de la perception » ? Aldous ___ ?",
     "c": [
-     "Diminution des risques",
-     "Avantages économiques",
-     "Meilleur contrôle",
-     "Augmentation de la consommation, risques sanitaires"
+     "Huxley",
+     "Orwell",
+     "Tolkien",
+     "Verne"
     ],
-    "a": "Augmentation de la consommation, risques sanitaires"
+    "a": "Huxley"
    },
    {
-    "q": "Le Portugal a-t-il dépénalisé toutes les drogues ?",
+    "q": "Quel autre cactus sud-américain, en colonne, contient aussi de la mescaline ? Le San ___ ?",
     "c": [
-     "Non, uniquement le cannabis",
-     "Oui, depuis 2001, avec des résultats positifs sur la santé",
-     "Uniquement les drogues douces",
-     "Oui, mais échec"
+     "Pedro",
+     "Juan",
+     "Diego",
+     "Carlos"
     ],
-    "a": "Oui, depuis 2001, avec des résultats positifs sur la santé"
+    "a": "Pedro"
    },
    {
-    "q": "Qu'est-ce que la réduction des risques (RDR) ?",
+    "q": "Combien d'heures, environ, peut durer un trip à la mescaline, particulièrement long ?",
     "c": [
-     "Traitement obligatoire",
-     "Répression",
-     "Promotion de la consommation",
-     "Politique visant à réduire les conséquences négatives de la consommation"
+     "12",
+     "1",
+     "48",
+     "3"
     ],
-    "a": "Politique visant à réduire les conséquences négatives de la consommation"
+    "a": "12"
    },
    {
-    "q": "Quels sont les résultats de la légalisation du cannabis au Canada ?",
-    "c": [
-     "Échec total",
-     "Baisse du marché noir, mais augmentation de la consommation",
-     "Aucun effet",
-     "Uniquement des effets négatifs"
-    ],
-    "a": "Baisse du marché noir, mais augmentation de la consommation"
+    "q": "En quelle année, à la fin du XIXe s., la mescaline a-t-elle été isolée pour la première fois ?",
+    "a": "1897"
    }
   ],
   "rw": true
@@ -24773,84 +24755,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que le trafic de drogue ?",
+    "q": "Quel type d'effets le DMT provoque-t-il, très intenses et brefs ? Des effets ___ ?",
     "c": [
-     "Consommation personnelle",
-     "Production, transport et vente illégale de substances",
-     "Usage récréatif",
-     "Prescription médicale"
+     "psychédéliques",
+     "sédatifs",
+     "stimulants doux",
+     "opiacés"
     ],
-    "a": "Production, transport et vente illégale de substances"
+    "a": "psychédéliques"
    },
    {
-    "q": "Quel est le chiffre d'affaires du trafic de drogue dans le monde ?",
+    "q": "Dans quelle boisson rituelle amazonienne le DMT est-il actif ? L'___ ?",
     "c": [
-     "Environ 1 000 milliards",
-     "Plus de 300 milliards de dollars par an",
-     "Moins de 100 millions",
-     "Environ 50 milliards"
+     "ayahuasca",
+     "maté",
+     "chicha",
+     "guarana"
     ],
-    "a": "Plus de 300 milliards de dollars par an"
+    "a": "ayahuasca"
    },
    {
-    "q": "Quelles sont les principales routes du trafic de drogue ?",
+    "q": "Comment consomme-t-on le DMT pur pour un effet éclair ? On le ___ ?",
     "c": [
-     "Amérique du Sud vers USA/Europe, Asie du Sud-Est, Afghanistan",
-     "Routes maritimes uniquement",
-     "Routes locales",
-     "Uniquement entre l'Amérique et l'Europe"
+     "fume",
+     "boit seulement",
+     "applique",
+     "renifle en poudre sèche"
     ],
-    "a": "Amérique du Sud vers USA/Europe, Asie du Sud-Est, Afghanistan"
+    "a": "fume"
    },
    {
-    "q": "Quels sont les cartels de la drogue les plus puissants ?",
+    "q": "Combien de minutes, très peu, dure environ un trip de DMT fumé ?",
     "c": [
-     "Réseaux chinois",
-     "Cartels mexicains (Sinaloa, Jalisco), mafia italienne",
-     "Cartels français",
-     "Mafias russes"
+     "15",
+     "180",
+     "600",
+     "1"
     ],
-    "a": "Cartels mexicains (Sinaloa, Jalisco), mafia italienne"
+    "a": "15"
    },
    {
-    "q": "Qu'est-ce que le blanchiment d'argent dans le trafic ?",
+    "q": "Le DMT est-il présent naturellement, en traces, dans de nombreuses plantes ? Vrai ou faux ?",
     "c": [
-     "Dépense",
-     "Épargne",
-     "Investissement légal",
-     "Dissimulation de l'origine illicite des profits"
+     "vrai",
+     "faux",
+     "seulement synthétique",
+     "seulement animal"
     ],
-    "a": "Dissimulation de l'origine illicite des profits"
+    "a": "vrai"
    },
    {
-    "q": "Quel pays est le plus grand producteur d'opium ?",
+    "q": "Par quels peuples d'Amazonie l'ayahuasca est-elle utilisée traditionnellement ? Des peuples ___ ?",
     "c": [
-     "Birmanie",
-     "Afghanistan",
-     "Colombie",
-     "Mexique"
+     "autochtones",
+     "vikings",
+     "aztèques seuls",
+     "coloniaux"
     ],
-    "a": "Afghanistan"
+    "a": "autochtones"
    },
    {
-    "q": "Quelles sont les peines pour trafic de drogue en France ?",
+    "q": "Quel type d'enzyme la liane d'ayahuasca inhibe-t-elle pour rendre le DMT actif par voie orale ? Une ___ ?",
     "c": [
-     "10 ans",
-     "5 ans",
-     "Perpétuité",
-     "Jusqu'à 30 ans de réclusion et 7,5 millions € d'amende"
+     "MAO",
+     "protéase",
+     "lipase",
+     "amylase"
     ],
-    "a": "Jusqu'à 30 ans de réclusion et 7,5 millions € d'amende"
+    "a": "MAO"
    },
    {
-    "q": "Qu'est-ce que l'Office anti-stupéfiants (OFAST) ?",
-    "c": [
-     "Agence européenne",
-     "Police française spécialisée dans la lutte contre le trafic",
-     "ONU",
-     "ONG"
-    ],
-    "a": "Police française spécialisée dans la lutte contre le trafic"
+    "q": "En quelle année le DMT a-t-il été synthétisé pour la première fois en laboratoire ?",
+    "a": "1931"
    }
   ],
   "rw": true
@@ -24862,84 +24838,84 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que la réhabilitation des toxicomanes ?",
+    "q": "Sous quelle forme le poppers se consomme-t-il ? En ___ (inhalation) ?",
     "c": [
-     "Isolement",
-     "Processus pour aider une personne à se rétablir de l'addiction",
-     "Soins médicaux uniquement",
-     "Punition"
+     "vapeur",
+     "comprimé",
+     "injection",
+     "poudre"
     ],
-    "a": "Processus pour aider une personne à se rétablir de l'addiction"
+    "a": "vapeur"
    },
    {
-    "q": "Qu'est-ce qu'une communauté thérapeutique ?",
+    "q": "Quel effet bref le poppers provoque-t-il ? Une ___ des vaisseaux (bouffée de chaleur) ?",
     "c": [
-     "Centre médical",
-     "Prison",
-     "Hôpital",
-     "Structure d'hébergement et de soins pour personnes addictes"
+     "dilatation",
+     "contraction totale",
+     "coagulation",
+     "cristallisation"
     ],
-    "a": "Structure d'hébergement et de soins pour personnes addictes"
+    "a": "dilatation"
    },
    {
-    "q": "Combien de temps dure un programme de réhabilitation ?",
+    "q": "À quelle famille chimique le poppers appartient-il ? Les nitrites d'___ ?",
     "c": [
-     "Toute la vie",
-     "Quelques mois à plusieurs années selon les besoins",
-     "Un mois",
-     "Quelques jours"
+     "alkyle",
+     "sodium",
+     "calcium",
+     "potassium"
     ],
-    "a": "Quelques mois à plusieurs années selon les besoins"
+    "a": "alkyle"
    },
    {
-    "q": "Qu'est-ce que le suivi post-cure ?",
+    "q": "Combien de temps, très court, durent les effets du poppers ? Quelques ___ ?",
     "c": [
-     "Prévention",
-     "Traitement initial",
-     "Accompagnement après la sortie d'une cure de désintoxication",
-     "Évaluation"
+     "secondes",
+     "heures",
+     "jours",
+     "semaines"
     ],
-    "a": "Accompagnement après la sortie d'une cure de désintoxication"
+    "a": "secondes"
    },
    {
-    "q": "Qu'est-ce que les groupes de parole (Narcotiques Anonymes) ?",
+    "q": "Quel danger existe si l'on avale du poppers au lieu de l'inhaler ? Une ___ grave ?",
     "c": [
-     "Groupes médicaux",
-     "Réunions d'information",
-     "Groupes d'entraide entre personnes addictes",
-     "Thérapie de groupe"
+     "intoxication",
+     "guérison",
+     "immunité",
+     "digestion normale"
     ],
-    "a": "Groupes d'entraide entre personnes addictes"
+    "a": "intoxication"
    },
    {
-    "q": "Qu'est-ce que la thérapie cognitivo-comportementale (TCC) ?",
+    "q": "Sur quel organe le poppers a-t-il un effet immédiat en dilatant les vaisseaux ? Le ___ ?",
     "c": [
-     "Thérapie qui aide à modifier les pensées et comportements liés à l'addiction",
-     "Médicaments",
-     "Hypnose",
-     "Hospitalisation"
+     "cœur",
+     "genou",
+     "coude",
+     "ongle"
     ],
-    "a": "Thérapie qui aide à modifier les pensées et comportements liés à l'addiction"
+    "a": "cœur"
    },
    {
-    "q": "Quels sont les facteurs clés de succès d'une réhabilitation ?",
+    "q": "Avec quel médicament cardiaque (dérivés nitrés) le poppers est-il dangereusement incompatible ? Le ___ ?",
     "c": [
-     "Isolement",
-     "Motivation, soutien social, accompagnement professionnel",
-     "Médicaments",
-     "Traitement forcé"
+     "Viagra",
+     "paracétamol",
+     "aspirine",
+     "insuline"
     ],
-    "a": "Motivation, soutien social, accompagnement professionnel"
+    "a": "Viagra"
    },
    {
-    "q": "Qu'est-ce que la prévention de la rechute ?",
+    "q": "En quel siècle les nitrites, à l'origine du poppers, ont-ils été utilisés en médecine cardiaque ? Le XIX___ ?",
     "c": [
-     "Arrêt des soins",
-     "Stratégies pour éviter de retomber dans l'addiction",
-     "Traitement continu",
-     "Retour à la consommation"
+     "e",
+     "Ier",
+     "IIe",
+     "IIIe"
     ],
-    "a": "Stratégies pour éviter de retomber dans l'addiction"
+    "a": "e"
    }
   ],
   "rw": true
@@ -24951,84 +24927,84 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Quelles drogues étaient utilisées dans l'Antiquité ?",
+    "q": "La salvia est une plante de la famille de quelle herbe aromatique ? La ___ ?",
     "c": [
-     "LSD",
-     "Amphétamines",
-     "Opium, cannabis, alcool, champignons hallucinogènes",
-     "Cocaïne"
+     "sauge",
+     "menthe seule",
+     "thym",
+     "basilic"
     ],
-    "a": "Opium, cannabis, alcool, champignons hallucinogènes"
+    "a": "sauge"
    },
    {
-    "q": "Quel peuple utilisait des champignons hallucinogènes (teonanácatl) ?",
+    "q": "De quel pays d'Amérique centrale la salvia est-elle originaire ? Le ___ ?",
     "c": [
-     "Les Aztèques",
-     "Les Égyptiens",
-     "Les Romains",
-     "Les Grecs"
+     "Mexique",
+     "Canada",
+     "Chili",
+     "Cuba"
     ],
-    "a": "Les Aztèques"
+    "a": "Mexique"
    },
    {
-    "q": "Quand l'opium a-t-il été découvert ?",
+    "q": "Quel type d'effets, brefs mais intenses, la salvia provoque-t-elle ? Des effets ___ ?",
     "c": [
-     "Au Moyen Âge",
-     "XXe siècle",
-     "XIXe siècle",
-     "Utilisé depuis 3 400 av. J.-C. par les Sumériens"
+     "hallucinogènes",
+     "sédatifs longs",
+     "stimulants",
+     "opiacés"
     ],
-    "a": "Utilisé depuis 3 400 av. J.-C. par les Sumériens"
+    "a": "hallucinogènes"
    },
    {
-    "q": "Qu'est-ce que la guerre de l'opium (1839-1860) ?",
+    "q": "Par quel peuple la salvia était-elle utilisée rituellement ? Les ___ (Mazatèques) ?",
     "c": [
-     "Conflit entre cartels",
-     "Guerre en Colombie",
-     "Conflit entre la Chine et le Royaume-Uni sur le commerce d'opium",
-     "Guerre en Afghanistan"
+     "chamans",
+     "soldats",
+     "marins",
+     "rois"
     ],
-    "a": "Conflit entre la Chine et le Royaume-Uni sur le commerce d'opium"
+    "a": "chamans"
    },
    {
-    "q": "Quand la cocaïne a-t-elle été isolée pour la première fois ?",
+    "q": "Comment consomme-t-on souvent les feuilles de salvia pour un effet rapide ? On les ___ ?",
     "c": [
-     "1910",
-     "1859 par Albert Niemann",
-     "1900",
-     "1800"
+     "fume",
+     "plante",
+     "arrose",
+     "expose"
     ],
-    "a": "1859 par Albert Niemann"
+    "a": "fume"
    },
    {
-    "q": "Qui a popularisé le LSD dans les années 1960 ?",
+    "q": "Combien de minutes, très peu, durent les effets les plus forts de la salvia fumée ?",
     "c": [
-     "Sigmund Freud",
-     "Aldous Huxley",
-     "Timothy Leary et le mouvement psychédélique",
-     "Albert Hofmann"
+     "10",
+     "120",
+     "600",
+     "1"
     ],
-    "a": "Timothy Leary et le mouvement psychédélique"
+    "a": "10"
    },
    {
-    "q": "Quand l'héroïne a-t-elle été synthétisée ?",
+    "q": "Quel nom scientifique porte la salvia hallucinogène ? Salvia ___ ?",
     "c": [
-     "1874 par C.R. Wright, commercialisée en 1898 par Bayer",
-     "1900",
-     "1880",
-     "1920"
+     "divinorum",
+     "officinalis",
+     "vulgaris",
+     "alba"
     ],
-    "a": "1874 par C.R. Wright, commercialisée en 1898 par Bayer"
+    "a": "divinorum"
    },
    {
-    "q": "Quelle drogue était utilisée comme médicament pour enfants au XIXe siècle ?",
+    "q": "Quelle molécule active puissante contient la salvia ? La salvinorine ___ ?",
     "c": [
-     "La morphine et l'opium (sirops pour enfants)",
-     "La cocaïne",
-     "Le LSD",
-     "L'ecstasy"
+     "A",
+     "B",
+     "C",
+     "Z"
     ],
-    "a": "La morphine et l'opium (sirops pour enfants)"
+    "a": "A"
    }
   ],
   "rw": true
@@ -25040,84 +25016,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Que sont les dépresseurs du système nerveux ?",
+    "q": "De quelle plante la plupart des opiacés sont-ils dérivés ? Le ___ ?",
     "c": [
-     "Hallucinogènes",
-     "Stimulants",
-     "Substances qui ralentissent l'activité cérébrale et corporelle",
-     "Psychédéliques"
+     "pavot",
+     "chanvre",
+     "coca",
+     "tabac"
     ],
-    "a": "Substances qui ralentissent l'activité cérébrale et corporelle"
+    "a": "pavot"
    },
    {
-    "q": "Quels sont les principaux dépresseurs ?",
+    "q": "Contre quoi les opiacés sont-ils utilisés en médecine ? La ___ ?",
     "c": [
-     "Alcool, benzodiazépines, opioïdes, barbituriques",
-     "LSD, champignons",
-     "Cocaïne, amphétamines",
-     "Cannabis, CBD"
+     "douleur",
+     "fièvre légère",
+     "toux sèche seule",
+     "acné"
     ],
-    "a": "Alcool, benzodiazépines, opioïdes, barbituriques"
+    "a": "douleur"
    },
    {
-    "q": "Comment agissent les dépresseurs sur le système nerveux ?",
+    "q": "Quel puissant opiacé médical est extrait directement de l'opium ? La ___ ?",
     "c": [
-     "En activant la sérotonine",
-     "En stimulant l'adrénaline",
-     "En bloquant la dopamine",
-     "En renforçant l'action du GABA, un neurotransmetteur inhibiteur"
+     "morphine",
+     "aspirine",
+     "pénicilline",
+     "insuline"
     ],
-    "a": "En renforçant l'action du GABA, un neurotransmetteur inhibiteur"
+    "a": "morphine"
    },
    {
-    "q": "Quels sont les effets des dépresseurs ?",
+    "q": "Quelle fonction vitale un surdosage d'opiacés ralentit-il dangereusement ? La ___ ?",
     "c": [
-     "Hallucinations",
-     "Hyperactivité",
-     "Relaxation, somnolence, diminution de l'anxiété",
-     "Excitation"
+     "respiration",
+     "digestion",
+     "vue",
+     "audition"
     ],
-    "a": "Relaxation, somnolence, diminution de l'anxiété"
+    "a": "respiration"
    },
    {
-    "q": "Quels sont les risques des dépresseurs ?",
+    "q": "Quel médicament d'urgence inverse une overdose d'opiacés ? La ___ ?",
     "c": [
-     "Psychose",
-     "Hypertension",
-     "Crise cardiaque",
-     "Dépression respiratoire, dépendance, overdose"
+     "naloxone",
+     "aspirine",
+     "insuline",
+     "cortisone"
     ],
-    "a": "Dépression respiratoire, dépendance, overdose"
+    "a": "naloxone"
    },
    {
-    "q": "Qu'est-ce que les benzodiazépines ?",
+    "q": "Quel opiacé de synthèse très puissant est responsable de nombreuses overdoses aux USA ? Le ___ ?",
     "c": [
-     "Stimulants",
-     "Antipsychotiques",
-     "Antidépresseurs",
-     "Médicaments anxiolytiques et sédatifs qui agissent sur le GABA"
+     "fentanyl",
+     "paracétamol",
+     "ibuprofène",
+     "diazépam"
     ],
-    "a": "Médicaments anxiolytiques et sédatifs qui agissent sur le GABA"
+    "a": "fentanyl"
    },
    {
-    "q": "Quels sont les risques du mélange alcool-benzodiazépines ?",
+    "q": "Comment appelle-t-on la crise sanitaire des opiacés aux États-Unis ? La crise des ___ ?",
     "c": [
-     "Insomnie",
-     "Dépression respiratoire mortelle",
-     "Anxiété",
-     "Effet nul"
+     "opioïdes",
+     "vitamines",
+     "vaccins",
+     "antibiotiques"
     ],
-    "a": "Dépression respiratoire mortelle"
+    "a": "opioïdes"
    },
    {
-    "q": "Qu'est-ce que les barbituriques ?",
-    "c": [
-     "Anciens sédatifs très dangereux, aujourd'hui peu prescrits",
-     "Antidouleurs",
-     "Antibiotiques",
-     "Stimulants"
-    ],
-    "a": "Anciens sédatifs très dangereux, aujourd'hui peu prescrits"
+    "q": "Combien de fois plus puissant que la morphine le fentanyl est-il, environ ?",
+    "a": "100"
    }
   ],
   "rw": true
@@ -25129,84 +25099,84 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Que sont les stimulants du système nerveux ?",
+    "q": "Dans quel médicament courant la codéine est-elle présente ? Un ___ (antitussif/antidouleur) ?",
     "c": [
-     "Substances qui augmentent l'éveil, l'énergie et l'attention",
-     "Dépresseurs",
-     "Hallucinogènes",
-     "Sédatifs"
+     "sirop",
+     "vaccin",
+     "pansement",
+     "collyre"
     ],
-    "a": "Substances qui augmentent l'éveil, l'énergie et l'attention"
+    "a": "sirop"
    },
    {
-    "q": "Quels sont les principaux stimulants ?",
+    "q": "Contre quels deux symptômes la codéine est-elle utilisée ? La toux et la ___ ?",
     "c": [
-     "Cocaïne, amphétamines, caféine, nicotine",
-     "Alcool, GHB",
-     "Héroïne, morphine",
-     "LSD, champignons"
+     "douleur",
+     "fièvre seule",
+     "fatigue",
+     "faim"
     ],
-    "a": "Cocaïne, amphétamines, caféine, nicotine"
+    "a": "douleur"
    },
    {
-    "q": "Comment agissent les stimulants ?",
+    "q": "À quelle famille de substances la codéine appartient-elle ? Les ___ ?",
     "c": [
-     "En réduisant l'activité cérébrale",
-     "En bloquant le GABA",
-     "En activant les récepteurs opioïdes",
-     "En augmentant la dopamine, noradrénaline et sérotonine"
+     "opiacés",
+     "vitamines",
+     "antibiotiques",
+     "antihistaminiques"
     ],
-    "a": "En augmentant la dopamine, noradrénaline et sérotonine"
+    "a": "opiacés"
    },
    {
-    "q": "Quels sont les effets des stimulants ?",
+    "q": "En quel composé plus puissant le foie transforme-t-il une partie de la codéine ? La ___ ?",
     "c": [
-     "Énergie, vigilance, euphorie, diminution de l'appétit",
-     "Relaxation",
-     "Ralentissement",
-     "Somnolence"
+     "morphine",
+     "caféine",
+     "nicotine",
+     "insuline"
     ],
-    "a": "Énergie, vigilance, euphorie, diminution de l'appétit"
+    "a": "morphine"
    },
    {
-    "q": "Quels sont les risques des stimulants ?",
+    "q": "Depuis 2017 en France, comment la codéine s'obtient-elle, pour limiter les abus ? Sur ___ ?",
     "c": [
-     "Problèmes cardiaques, dépendance, anxiété, psychose",
-     "Aucun risque",
-     "Hypotension",
-     "Bradycardie"
+     "ordonnance",
+     "internet libre",
+     "en boîte de nuit",
+     "au supermarché"
     ],
-    "a": "Problèmes cardiaques, dépendance, anxiété, psychose"
+    "a": "ordonnance"
    },
    {
-    "q": "Qu'est-ce que la cocaïne ?",
+    "q": "Quel mélange détourné de sirop codéiné et de soda est appelé « ___ » (purple drank) ?",
     "c": [
-     "Opiacé",
-     "Sédatif",
-     "Stimulant puissant dérivé des feuilles de coca",
-     "Hallucinogène"
+     "lean",
+     "speed",
+     "ice",
+     "molly"
     ],
-    "a": "Stimulant puissant dérivé des feuilles de coca"
+    "a": "lean"
    },
    {
-    "q": "Qu'est-ce que la nicotine ?",
+    "q": "Quel risque, comme les autres opiacés, la codéine à forte dose fait-elle courir ? Une ___ respiratoire ?",
     "c": [
-     "Stimulant légal présent dans le tabac, très addictif",
-     "Sédatif",
-     "Hallucinogène",
-     "Anxiolytique"
+     "dépression",
+     "excitation",
+     "allergie cutanée",
+     "crampe"
     ],
-    "a": "Stimulant légal présent dans le tabac, très addictif"
+    "a": "dépression"
    },
    {
-    "q": "Quelle différence entre stimulants légaux et illégaux ?",
+    "q": "En quel début de siècle la codéine a-t-elle été isolée de l'opium ? Le XIX___ ?",
     "c": [
-     "Les illégaux sont tous mortels",
-     "Aucune différence",
-     "Les légaux sont sans danger",
-     "Les légaux (caféine, nicotine) sont régulés mais peuvent aussi être dangereux"
+     "e",
+     "Ier",
+     "IIe",
+     "IIIe"
     ],
-    "a": "Les légaux (caféine, nicotine) sont régulés mais peuvent aussi être dangereux"
+    "a": "e"
    }
   ],
   "rw": true
@@ -25218,84 +25188,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Que sont les hallucinogènes ?",
+    "q": "Dans quelle plante la nicotine est-elle naturellement présente ? Le ___ ?",
     "c": [
-     "Opiacés",
-     "Substances qui modifient la perception, la pensée et les émotions",
-     "Sédatifs",
-     "Stimulants"
+     "tabac",
+     "chanvre",
+     "pavot",
+     "café"
     ],
-    "a": "Substances qui modifient la perception, la pensée et les émotions"
+    "a": "tabac"
    },
    {
-    "q": "Quels sont les principaux hallucinogènes ?",
+    "q": "Quel puissant effet la nicotine a-t-elle, expliquant la difficulté à arrêter de fumer ? Une forte ___ ?",
     "c": [
-     "Cocaïne, héroïne",
-     "Cannabis, tabac",
-     "Alcool, GHB",
-     "LSD, psilocybine, mescaline, DMT"
+     "dépendance",
+     "immunité",
+     "satiété",
+     "guérison"
     ],
-    "a": "LSD, psilocybine, mescaline, DMT"
+    "a": "dépendance"
    },
    {
-    "q": "Comment agissent les hallucinogènes ?",
+    "q": "Dans quel dispositif électronique inhale-t-on de la nicotine sans combustion ? La ___ ?",
     "c": [
-     "En bloquant la dopamine",
-     "En agissant sur les récepteurs sérotoninergiques 5-HT2A",
-     "En inhibant la noradrénaline",
-     "En activant le GABA"
+     "cigarette électronique",
+     "montre",
+     "radio",
+     "lampe"
     ],
-    "a": "En agissant sur les récepteurs sérotoninergiques 5-HT2A"
+    "a": "cigarette électronique"
    },
    {
-    "q": "Quels sont les effets des hallucinogènes ?",
+    "q": "Sous quelle forme collée sur la peau la nicotine aide-t-elle au sevrage ? Un ___ ?",
     "c": [
-     "Hallucinations visuelles, auditives, altération de la conscience",
-     "Euphorie physique",
-     "Agitation",
-     "Sédation"
+     "patch",
+     "collier",
+     "bracelet lumineux",
+     "tatouage"
     ],
-    "a": "Hallucinations visuelles, auditives, altération de la conscience"
+    "a": "patch"
    },
    {
-    "q": "Le LSD peut-il provoquer des flashbacks ?",
+    "q": "Quel effet la nicotine a-t-elle sur le rythme cardiaque ? Elle l'___ ?",
     "c": [
-     "Uniquement en cas de surdose",
-     "Non, jamais",
-     "Oui, des réminiscences imprévisibles des effets",
-     "Oui, systématiquement"
+     "accélère",
+     "arrête",
+     "n'a aucun effet",
+     "divise par deux"
     ],
-    "a": "Oui, des réminiscences imprévisibles des effets"
+    "a": "accélère"
    },
    {
-    "q": "Qu'est-ce que les champignons hallucinogènes (psilocybine) ?",
+    "q": "La nicotine est-elle le principal responsable des cancers du tabac, ou est-ce surtout la combustion et le goudron ? La ___ ?",
     "c": [
-     "Champignons contenant de la psilocybine, un hallucinogène naturel",
-     "Champignons comestibles",
-     "Médicaments",
-     "Champignons vénéneux"
+     "combustion",
+     "nicotine seule",
+     "salive",
+     "chaleur douce"
     ],
-    "a": "Champignons contenant de la psilocybine, un hallucinogène naturel"
+    "a": "combustion"
    },
    {
-    "q": "Les hallucinogènes sont-ils utilisés en recherche médicale ?",
+    "q": "Quel neurotransmetteur du plaisir la nicotine libère-t-elle dans le cerveau ? La ___ ?",
     "c": [
-     "Oui, très courants",
-     "Non, jamais",
-     "Oui, pour traiter la dépression, l'anxiété et les addictions",
-     "Uniquement dans les années 1960"
+     "dopamine",
+     "insuline",
+     "kératine",
+     "mélatonine"
     ],
-    "a": "Oui, pour traiter la dépression, l'anxiété et les addictions"
+    "a": "dopamine"
    },
    {
-    "q": "Qu'est-ce que la mescaline ?",
-    "c": [
-     "Hallucinogène naturel extrait du cactus peyotl utilisé par les Amérindiens",
-     "Stimulant",
-     "Amphétamine",
-     "Opiacé"
-    ],
-    "a": "Hallucinogène naturel extrait du cactus peyotl utilisé par les Amérindiens"
+    "q": "En combien de secondes, environ, la nicotine d'une bouffée atteint-elle le cerveau ?",
+    "a": "10"
    }
   ],
   "rw": true
