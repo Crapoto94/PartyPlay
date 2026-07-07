@@ -19302,24 +19302,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "L'homosexualité désigne l'attirance envers une personne du ___ sexe ?",
+    "q": "L'homosexualité, c'est : une orientation sexuelle, un fromage, une planète ou un sport ?",
     "c": [
-     "même",
-     "opposé",
-     "aucun",
-     "troisième"
+     "une orientation sexuelle",
+     "un fromage",
+     "une planète",
+     "un sport"
     ],
-    "a": "même"
+    "a": "une orientation sexuelle"
    },
    {
-    "q": "Quel drapeau multicolore est le symbole des communautés LGBT ? Le drapeau ___ ?",
+    "q": "L'homosexualité, c'est l'attirance envers une personne du : même sexe, sexe opposé uniquement, d'aucun être ou d'un objet ?",
     "c": [
-     "arc-en-ciel",
-     "noir",
-     "blanc",
-     "à damier"
+     "même sexe",
+     "sexe opposé uniquement",
+     "d'aucun être",
+     "d'un objet"
     ],
-    "a": "arc-en-ciel"
+    "a": "même sexe"
    },
    {
     "q": "Comment appelle-t-on le fait d'annoncer publiquement son homosexualité ? Le coming ___ ?",
@@ -19379,24 +19379,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "De quel pays le Kamasutra est-il originaire ?",
+    "q": "Le Kamasutra, c'est : un ancien texte indien, un plat épicé, une danse ou un jeu vidéo ?",
     "c": [
-     "Inde",
-     "Chine",
-     "Japon",
-     "Grèce"
+     "un ancien texte indien",
+     "un plat épicé",
+     "une danse",
+     "un jeu vidéo"
     ],
-    "a": "Inde"
+    "a": "un ancien texte indien"
    },
    {
-    "q": "Le Kamasutra est avant tout un ancien ___ ? (texte)",
+    "q": "Le Kamasutra vient : d'Inde, du pôle Nord, de la Lune ou du fond des mers ?",
     "c": [
-     "traité",
-     "film",
-     "tableau",
-     "opéra"
+     "d'Inde",
+     "du pôle Nord",
+     "de la Lune",
+     "du fond des mers"
     ],
-    "a": "traité"
+    "a": "d'Inde"
    },
    {
     "q": "Dans quelle langue ancienne le Kamasutra a-t-il été écrit ? Le ___ ?",
@@ -19468,24 +19468,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "À quoi sert la contraception ? À éviter une ___ non désirée ?",
+    "q": "La contraception, c'est : un moyen d'éviter une grossesse, un fromage, une planète ou un outil ?",
     "c": [
-     "grossesse",
-     "maladie osseuse",
-     "carie",
-     "insomnie"
+     "un moyen d'éviter une grossesse",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "grossesse"
+    "a": "un moyen d'éviter une grossesse"
    },
    {
-    "q": "Quelle contraception orale féminine se prend chaque jour ? La ___ ?",
+    "q": "La pilule contraceptive se prend plutôt : chaque jour, une fois par an, une fois par vie ou jamais ?",
     "c": [
-     "pilule",
-     "gélule de fer",
-     "vitamine",
-     "tisane"
+     "chaque jour",
+     "une fois par an",
+     "une fois par vie",
+     "jamais"
     ],
-    "a": "pilule"
+    "a": "chaque jour"
    },
    {
     "q": "Quel moyen protège à la fois d'une grossesse ET des IST ? Le ___ ?",
@@ -19551,21 +19551,21 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Que signifie le sigle IST ? Infection ___ transmissible ?",
+    "q": "Les IST (MST), c'est : des infections qui se transmettent lors des rapports, des fromages, des planètes ou des légumes ?",
     "c": [
-     "sexuellement",
-     "socialement",
-     "spontanément",
-     "saisonnièrement"
+     "des infections qui se transmettent lors des rapports",
+     "des fromages",
+     "des planètes",
+     "des légumes"
     ],
-    "a": "sexuellement"
+    "a": "des infections qui se transmettent lors des rapports"
    },
    {
-    "q": "Quel moyen simple réduit fortement le risque d'attraper une IST ? Le ___ ?",
+    "q": "Quel objet aide à se protéger des IST ? Le : préservatif, chapeau, gant de jardin ou foulard ?",
     "c": [
      "préservatif",
      "chapeau",
-     "gant",
+     "gant de jardin",
      "foulard"
     ],
     "a": "préservatif"
@@ -19634,24 +19634,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Comment appelle-t-on l'organe où se développe le bébé pendant la grossesse ? L'___ ?",
+    "q": "L'anatomie féminine, c'est : l'ensemble des organes du corps féminin, un plat, une planète ou un logiciel ?",
     "c": [
-     "utérus",
-     "estomac",
-     "foie",
-     "poumon"
+     "l'ensemble des organes du corps féminin",
+     "un plat",
+     "une planète",
+     "un logiciel"
     ],
-    "a": "utérus"
+    "a": "l'ensemble des organes du corps féminin"
    },
    {
-    "q": "Comment appelle-t-on l'ensemble des organes génitaux externes féminins ? La ___ ?",
+    "q": "L'organe où grandit le bébé pendant la grossesse est : l'utérus, l'estomac, le poumon ou le foie ?",
     "c": [
-     "vulve",
-     "rotule",
-     "clavicule",
-     "trachée"
+     "l'utérus",
+     "l'estomac",
+     "le poumon",
+     "le foie"
     ],
-    "a": "vulve"
+    "a": "l'utérus"
    },
    {
     "q": "Quelles glandes produisent les ovules chez la femme ? Les ___ ?",
@@ -19717,24 +19717,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Quels organes produisent les spermatozoïdes chez l'homme ? Les ___ ?",
+    "q": "L'anatomie masculine, c'est : l'ensemble des organes du corps masculin, un plat, une planète ou un logiciel ?",
     "c": [
-     "testicules",
-     "reins",
-     "poumons",
-     "amygdales"
+     "l'ensemble des organes du corps masculin",
+     "un plat",
+     "une planète",
+     "un logiciel"
     ],
-    "a": "testicules"
+    "a": "l'ensemble des organes du corps masculin"
    },
    {
-    "q": "Dans quelle poche de peau se trouvent les testicules ? Le ___ ?",
+    "q": "Les spermatozoïdes sont produits par les : testicules, poumons, reins ou oreilles ?",
     "c": [
-     "scrotum",
-     "sternum",
-     "tympan",
-     "diaphragme"
+     "testicules",
+     "poumons",
+     "reins",
+     "oreilles"
     ],
-    "a": "scrotum"
+    "a": "testicules"
    },
    {
     "q": "Quel liquide, éjaculé, transporte les spermatozoïdes ? Le ___ ?",
@@ -19800,24 +19800,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "La pornographie est un contenu réservé à un public ___ ? (âge)",
+    "q": "La pornographie, c'est : des contenus réservés aux adultes, un fromage, une planète ou un sport ?",
+    "c": [
+     "des contenus réservés aux adultes",
+     "un fromage",
+     "une planète",
+     "un sport"
+    ],
+    "a": "des contenus réservés aux adultes"
+   },
+   {
+    "q": "La pornographie est réservée à un public : adulte, enfantin, scolaire ou familial ?",
     "c": [
      "adulte",
      "enfantin",
-     "familial",
-     "scolaire"
+     "scolaire",
+     "familial"
     ],
     "a": "adulte"
-   },
-   {
-    "q": "Quel type de contrôle les sites pornographiques doivent-ils légalement mettre en place ? La vérification de l'___ ?",
-    "c": [
-     "âge",
-     "adresse",
-     "poids",
-     "taille"
-    ],
-    "a": "âge"
    },
    {
     "q": "La pornographie donne-t-elle une image réaliste ou déformée de la sexualité ? ___ ?",
@@ -19883,24 +19883,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "La virginité désigne le fait de n'avoir jamais eu de rapport ___ ?",
+    "q": "La virginité, c'est : le fait de n'avoir jamais eu de rapport sexuel, un fromage, une planète ou un outil ?",
     "c": [
-     "sexuel",
-     "verbal",
-     "visuel",
-     "écrit"
+     "le fait de n'avoir jamais eu de rapport sexuel",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "sexuel"
+    "a": "le fait de n'avoir jamais eu de rapport sexuel"
    },
    {
-    "q": "La « première fois » est une notion surtout ___ et personnelle ? (pas un état médical)",
+    "q": "La « première fois » est une notion surtout : personnelle et culturelle, mesurable en litres, en kilos ou en mètres ?",
     "c": [
-     "culturelle",
-     "chimique",
-     "génétique",
-     "climatique"
+     "personnelle et culturelle",
+     "mesurable en litres",
+     "en kilos",
+     "en mètres"
     ],
-    "a": "culturelle"
+    "a": "personnelle et culturelle"
    },
    {
     "q": "Quelle fine membrane a longtemps été associée à tort à un « test » de virginité ? L'___ ?",
@@ -19966,24 +19966,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Les phéromones sont des signaux ___ émis par le corps ? (odeur)",
+    "q": "Les phéromones, c'est : des signaux chimiques odorants du corps, des fromages, des planètes ou des outils ?",
     "c": [
-     "chimiques",
-     "sonores",
-     "lumineux",
-     "électriques"
+     "des signaux chimiques odorants du corps",
+     "des fromages",
+     "des planètes",
+     "des outils"
     ],
-    "a": "chimiques"
+    "a": "des signaux chimiques odorants du corps"
    },
    {
-    "q": "Par quel sens perçoit-on essentiellement les phéromones ? L'___ ?",
+    "q": "Les phéromones se perçoivent surtout par : l'odorat, la vue, l'ouïe ou le goût ?",
     "c": [
-     "odorat",
-     "vue",
-     "ouïe",
-     "toucher"
+     "l'odorat",
+     "la vue",
+     "l'ouïe",
+     "le goût"
     ],
-    "a": "odorat"
+    "a": "l'odorat"
    },
    {
     "q": "Chez les animaux, à quoi servent surtout les phéromones ? À la ___ ?",
@@ -20049,7 +20049,17 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "L'orgasme est le point culminant du ___ sexuel ?",
+    "q": "L'orgasme, c'est : le sommet du plaisir sexuel, un fromage, une planète ou un légume ?",
+    "c": [
+     "le sommet du plaisir sexuel",
+     "un fromage",
+     "une planète",
+     "un légume"
+    ],
+    "a": "le sommet du plaisir sexuel"
+   },
+   {
+    "q": "L'orgasme est le point culminant du : plaisir, sommeil, repas ou sport ?",
     "c": [
      "plaisir",
      "sommeil",
@@ -20057,16 +20067,6 @@ export const TTCQ_THEMES = [
      "sport"
     ],
     "a": "plaisir"
-   },
-   {
-    "q": "Quelle hormone du bien-être et de l'attachement est libérée lors de l'orgasme ? L'___ ?",
-    "c": [
-     "ocytocine",
-     "insuline",
-     "cortisol",
-     "adrénaline seule"
-    ],
-    "a": "ocytocine"
    },
    {
     "q": "Quel phénomène musculaire rythmique accompagne l'orgasme ? Des ___ ?",
@@ -20132,22 +20132,22 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Le clitoris est un organe dédié principalement au ___ féminin ?",
+    "q": "Le clitoris, c'est : un organe du corps féminin, un fromage, une planète ou un outil ?",
     "c": [
-     "plaisir",
-     "digestion",
-     "équilibre",
-     "sommeil"
+     "un organe du corps féminin",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "plaisir"
+    "a": "un organe du corps féminin"
    },
    {
-    "q": "Quelle est la seule fonction connue du clitoris ? Le ___ ?",
+    "q": "Le clitoris est un organe dédié surtout au : plaisir, à la digestion, à l'équilibre ou au sommeil ?",
     "c": [
      "plaisir",
-     "la reproduction directe",
-     "la digestion",
-     "la respiration"
+     "à la digestion",
+     "à l'équilibre",
+     "au sommeil"
     ],
     "a": "plaisir"
    },
@@ -20215,24 +20215,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Le vagin est un organe du corps ___ ?",
+    "q": "Le vagin, c'est : un organe du corps féminin, un fromage, une planète ou un outil ?",
+    "c": [
+     "un organe du corps féminin",
+     "un fromage",
+     "une planète",
+     "un outil"
+    ],
+    "a": "un organe du corps féminin"
+   },
+   {
+    "q": "Le vagin est un organe du corps : féminin, masculin, des plantes ou des voitures ?",
     "c": [
      "féminin",
      "masculin",
-     "neutre",
-     "animal seul"
+     "des plantes",
+     "des voitures"
     ],
     "a": "féminin"
-   },
-   {
-    "q": "Le vagin relie la vulve à quel organe ? L'___ ?",
-    "c": [
-     "utérus",
-     "estomac",
-     "vessie",
-     "rein"
-    ],
-    "a": "utérus"
    },
    {
     "q": "Le vagin est-il un organe musculaire capable de s'étirer ? ___ ?",
@@ -20304,24 +20304,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Le pénis est un organe du corps ___ ?",
+    "q": "Le pénis, c'est : un organe du corps masculin, un fromage, une planète ou un outil ?",
+    "c": [
+     "un organe du corps masculin",
+     "un fromage",
+     "une planète",
+     "un outil"
+    ],
+    "a": "un organe du corps masculin"
+   },
+   {
+    "q": "Le pénis est un organe du corps : masculin, féminin, des arbres ou des robots ?",
     "c": [
      "masculin",
      "féminin",
-     "neutre",
-     "végétal"
+     "des arbres",
+     "des robots"
     ],
     "a": "masculin"
-   },
-   {
-    "q": "Quelles deux fonctions le pénis assure-t-il ? La reproduction et l'___ ?",
-    "c": [
-     "urine",
-     "digestion",
-     "respiration",
-     "audition"
-    ],
-    "a": "urine"
    },
    {
     "q": "Grâce à quel afflux le pénis entre-t-il en érection ? L'afflux de ___ ?",
@@ -20387,18 +20387,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Que produisent les testicules ? Des ___ ?",
+    "q": "Les testicules, c'est : des organes du corps masculin, des fromages, des planètes ou des outils ?",
+    "c": [
+     "des organes du corps masculin",
+     "des fromages",
+     "des planètes",
+     "des outils"
+    ],
+    "a": "des organes du corps masculin"
+   },
+   {
+    "q": "Les testicules produisent des : spermatozoïdes, larmes, globules rouges ou salive ?",
     "c": [
      "spermatozoïdes",
-     "globules rouges",
      "larmes",
+     "globules rouges",
      "salive"
     ],
     "a": "spermatozoïdes"
-   },
-   {
-    "q": "Combien de testicules un homme possède-t-il généralement ?",
-    "a": "2"
    },
    {
     "q": "Dans quelle poche de peau se trouvent les testicules ? Le ___ ?",
@@ -20464,24 +20470,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "La masturbation est une pratique ___ et naturelle ? (soi-même)",
+    "q": "La masturbation, c'est : une pratique sexuelle en solitaire, un sport d'équipe, un plat ou une danse ?",
     "c": [
-     "solitaire",
-     "collective obligatoire",
-     "interdite",
-     "dangereuse"
+     "une pratique sexuelle en solitaire",
+     "un sport d'équipe",
+     "un plat",
+     "une danse"
     ],
-    "a": "solitaire"
+    "a": "une pratique sexuelle en solitaire"
    },
    {
-    "q": "La masturbation est-elle nocive pour la santé, selon la médecine moderne ? ___ ?",
+    "q": "La masturbation est, selon la médecine, une pratique : naturelle et sans danger, très dangereuse, interdite par la loi ou réservée aux médecins ?",
     "c": [
-     "non",
-     "oui",
-     "seulement le matin",
-     "seulement en hiver"
+     "naturelle et sans danger",
+     "très dangereuse",
+     "interdite par la loi",
+     "réservée aux médecins"
     ],
-    "a": "non"
+    "a": "naturelle et sans danger"
    },
    {
     "q": "La masturbation fait-elle partie du développement normal, y compris à l'adolescence ? ___ ?",
@@ -20547,24 +20553,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Quel principe doit toujours guider le choix d'une position à deux ? Le ___ mutuel ?",
+    "q": "Les positions sexuelles, c'est : des façons de faire l'amour à deux, des recettes de cuisine, des figures de ski ou des danses folkloriques ?",
     "c": [
-     "consentement",
-     "hasard",
-     "record",
-     "chronomètre"
+     "des façons de faire l'amour à deux",
+     "des recettes de cuisine",
+     "des figures de ski",
+     "des danses folkloriques"
     ],
-    "a": "consentement"
+    "a": "des façons de faire l'amour à deux"
    },
    {
-    "q": "Quel ancien texte indien décrit de nombreuses positions ? Le ___ ?",
+    "q": "Le choix d'une position doit toujours reposer sur le : consentement des deux, chronomètre, décor ou budget ?",
     "c": [
-     "Kamasutra",
-     "Coran",
-     "Talmud",
-     "Popol Vuh"
+     "consentement des deux",
+     "chronomètre",
+     "décor",
+     "budget"
     ],
-    "a": "Kamasutra"
+    "a": "consentement des deux"
    },
    {
     "q": "Qu'est-ce qui rend une position « bonne » avant tout ? Le ___ des deux partenaires ?",
@@ -20630,7 +20636,17 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Contre quoi le préservatif protège-t-il, en plus des grossesses ? Les ___ ?",
+    "q": "Le préservatif, c'est : une protection lors des rapports sexuels, un fromage, une planète ou un légume ?",
+    "c": [
+     "une protection lors des rapports sexuels",
+     "un fromage",
+     "une planète",
+     "un légume"
+    ],
+    "a": "une protection lors des rapports sexuels"
+   },
+   {
+    "q": "Le préservatif protège à la fois d'une grossesse et des : IST, coups de soleil, caries ou moustiques ?",
     "c": [
      "IST",
      "coups de soleil",
@@ -20638,16 +20654,6 @@ export const TTCQ_THEMES = [
      "moustiques"
     ],
     "a": "IST"
-   },
-   {
-    "q": "En quelle matière la plupart des préservatifs sont-ils faits ? Le ___ ?",
-    "c": [
-     "latex",
-     "coton",
-     "cuir",
-     "papier"
-    ],
-    "a": "latex"
    },
    {
     "q": "Combien de fois peut-on réutiliser un préservatif ?",
@@ -20707,24 +20713,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "La pilule contraceptive se prend-elle plutôt chaque jour ou une fois par an ? Chaque ___ ?",
+    "q": "La pilule contraceptive, c'est : un moyen de contraception, un bonbon, une planète ou un outil ?",
     "c": [
-     "jour",
-     "an",
-     "mois",
-     "semaine"
+     "un moyen de contraception",
+     "un bonbon",
+     "une planète",
+     "un outil"
     ],
-    "a": "jour"
+    "a": "un moyen de contraception"
    },
    {
-    "q": "À quoi sert la pilule contraceptive ? À éviter une ___ ?",
+    "q": "La pilule contraceptive se prend plutôt : chaque jour, une fois par an, une fois par vie ou jamais ?",
     "c": [
-     "grossesse",
-     "grippe",
-     "carie",
-     "insomnie"
+     "chaque jour",
+     "une fois par an",
+     "une fois par vie",
+     "jamais"
     ],
-    "a": "grossesse"
+    "a": "chaque jour"
    },
    {
     "q": "Que contient la pilule pour agir ? Des ___ ?",
@@ -20790,7 +20796,17 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "La stérilisation est une méthode contraceptive ___ ? (durable)",
+    "q": "La stérilisation, c'est : une contraception définitive, un plat, une danse ou un jeu ?",
+    "c": [
+     "une contraception définitive",
+     "un plat",
+     "une danse",
+     "un jeu"
+    ],
+    "a": "une contraception définitive"
+   },
+   {
+    "q": "La stérilisation est une contraception plutôt : permanente, quotidienne, hebdomadaire ou saisonnière ?",
     "c": [
      "permanente",
      "quotidienne",
@@ -20798,16 +20814,6 @@ export const TTCQ_THEMES = [
      "saisonnière"
     ],
     "a": "permanente"
-   },
-   {
-    "q": "Comment appelle-t-on la stérilisation masculine ? La ___ ?",
-    "c": [
-     "vasectomie",
-     "vasodilatation",
-     "vaccination",
-     "circoncision"
-    ],
-    "a": "vasectomie"
    },
    {
     "q": "Quel conduit est bloqué lors d'une vasectomie ? Le canal ___ (déférent) ?",
@@ -20873,24 +20879,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Que signifie le sigle IVG ? Interruption ___ de grossesse ?",
+    "q": "L'avortement (IVG), c'est : l'interruption d'une grossesse, un fromage, une planète ou un sport ?",
     "c": [
-     "volontaire",
-     "vitale",
-     "vaccinale",
-     "veineuse"
+     "l'interruption d'une grossesse",
+     "un fromage",
+     "une planète",
+     "un sport"
     ],
-    "a": "volontaire"
+    "a": "l'interruption d'une grossesse"
    },
    {
-    "q": "En France, l'IVG est-elle un droit légal ? ___ ?",
+    "q": "En France, l'IVG est : un droit légal, interdit partout, réservé aux médecins-chefs ou décidé par un juge ?",
     "c": [
-     "oui",
-     "non",
-     "seulement à l'étranger",
-     "sur autorisation d'un juge"
+     "un droit légal",
+     "interdit partout",
+     "réservé aux médecins-chefs",
+     "décidé par un juge"
     ],
-    "a": "oui"
+    "a": "un droit légal"
    },
    {
     "q": "Quelle grande loi française de 1975 a légalisé l'IVG ? La loi ___ ?",
@@ -20956,22 +20962,22 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "La puberté est le passage de l'enfance à l'âge ___ ?",
+    "q": "La puberté, c'est : le passage de l'enfance à l'âge adulte, un fromage, une planète ou un outil ?",
     "c": [
-     "adulte",
-     "mûr",
-     "scolaire",
-     "retraité"
+     "le passage de l'enfance à l'âge adulte",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "adulte"
+    "a": "le passage de l'enfance à l'âge adulte"
    },
    {
-    "q": "Quelles substances déclenchent les changements de la puberté ? Les ___ ?",
+    "q": "La puberté est déclenchée par des : hormones, vitamines, bactéries ou piqûres de moustiques ?",
     "c": [
      "hormones",
      "vitamines",
      "bactéries",
-     "enzymes digestives"
+     "piqûres de moustiques"
     ],
     "a": "hormones"
    },
@@ -21039,7 +21045,17 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "La ménopause marque la fin de quoi chez la femme ? Des ___ ?",
+    "q": "La ménopause, c'est : la fin des règles chez la femme, un plat, une danse ou un jeu ?",
+    "c": [
+     "la fin des règles chez la femme",
+     "un plat",
+     "une danse",
+     "un jeu"
+    ],
+    "a": "la fin des règles chez la femme"
+   },
+   {
+    "q": "La ménopause marque la fin des : règles, cheveux, dents ou ongles ?",
     "c": [
      "règles",
      "cheveux",
@@ -21047,16 +21063,6 @@ export const TTCQ_THEMES = [
      "ongles"
     ],
     "a": "règles"
-   },
-   {
-    "q": "La ménopause signifie la fin de la période de ___ ? (avoir des enfants)",
-    "c": [
-     "fertilité",
-     "croissance",
-     "scolarité",
-     "activité"
-    ],
-    "a": "fertilité"
    },
    {
     "q": "Quel symptôme courant de la ménopause provoque des bouffées de ___ ?",
@@ -21122,17 +21128,17 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Que signifie le V de VIH ? ___ de l'immunodéficience humaine ?",
+    "q": "Le VIH, c'est : un virus, un fromage, une planète ou un légume ?",
     "c": [
-     "Virus",
-     "Vaccin",
-     "Vecteur",
-     "Voie"
+     "un virus",
+     "un fromage",
+     "une planète",
+     "un légume"
     ],
-    "a": "Virus"
+    "a": "un virus"
    },
    {
-    "q": "Quel système du corps le VIH attaque-t-il ? Le système ___ ?",
+    "q": "Le VIH s'attaque au système : immunitaire, digestif, osseux ou auditif ?",
     "c": [
      "immunitaire",
      "digestif",
@@ -21205,24 +21211,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "La syphilis est une infection sexuellement ___ ?",
+    "q": "La syphilis, c'est : une infection sexuellement transmissible, un fromage, une planète ou un outil ?",
     "c": [
-     "transmissible",
-     "héréditaire",
-     "alimentaire",
-     "respiratoire"
+     "une infection sexuellement transmissible",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "transmissible"
+    "a": "une infection sexuellement transmissible"
    },
    {
-    "q": "Quel type de micro-organisme cause la syphilis ? Une ___ ?",
+    "q": "La syphilis se soigne avec des : antibiotiques, vitamines, vaccins ou sirops sucrés ?",
     "c": [
-     "bactérie",
-     "virus",
-     "champignon",
-     "parasite géant"
+     "antibiotiques",
+     "vitamines",
+     "vaccins",
+     "sirops sucrés"
     ],
-    "a": "bactérie"
+    "a": "antibiotiques"
    },
    {
     "q": "Avec quel type de médicament soigne-t-on la syphilis ? Des ___ ?",
@@ -21294,24 +21300,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "L'herpès est une infection causée par un ___ ?",
+    "q": "L'herpès, c'est : une infection due à un virus, un fromage, une planète ou un légume ?",
     "c": [
-     "virus",
-     "bactérie",
-     "champignon",
-     "parasite"
+     "une infection due à un virus",
+     "un fromage",
+     "une planète",
+     "un légume"
     ],
-    "a": "virus"
+    "a": "une infection due à un virus"
    },
    {
-    "q": "Sous quelle forme visible l'herpès se manifeste-t-il souvent ? Des ___ ?",
+    "q": "L'herpès labial provoque un bouton autour de la : bouche, cheville, oreille ou omoplate ?",
     "c": [
-     "boutons",
-     "taches de rousseur",
-     "grains de beauté",
-     "cicatrices osseuses"
+     "bouche",
+     "cheville",
+     "oreille",
+     "omoplate"
     ],
-    "a": "boutons"
+    "a": "bouche"
    },
    {
     "q": "Quel herpès très courant apparaît autour de la bouche ? Le bouton de ___ ?",
@@ -21377,21 +21383,21 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Le papillomavirus (HPV) se transmet-il par contact sexuel ? ___ ?",
+    "q": "Le papillomavirus (HPV), c'est : une infection sexuellement transmissible, un fromage, un papillon géant ou un outil ?",
     "c": [
-     "oui",
-     "non",
-     "par l'air",
-     "par l'eau"
+     "une infection sexuellement transmissible",
+     "un fromage",
+     "un papillon géant",
+     "un outil"
     ],
-    "a": "oui"
+    "a": "une infection sexuellement transmissible"
    },
    {
-    "q": "Contre le HPV, quel moyen de prévention médical existe-t-il ? Le ___ ?",
+    "q": "Contre le HPV, il existe un : vaccin, sirop chauffant, patch magique ou collyre ?",
     "c": [
      "vaccin",
-     "sirop",
-     "patch chauffant",
+     "sirop chauffant",
+     "patch magique",
      "collyre"
     ],
     "a": "vaccin"
@@ -21460,24 +21466,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "La chlamydia est une IST causée par une ___ ?",
+    "q": "La chlamydia, c'est : une infection sexuellement transmissible, un fromage, une planète ou une fleur ?",
     "c": [
-     "bactérie",
-     "virus",
-     "champignon",
-     "algue"
+     "une infection sexuellement transmissible",
+     "un fromage",
+     "une planète",
+     "une fleur"
     ],
-    "a": "bactérie"
+    "a": "une infection sexuellement transmissible"
    },
    {
-    "q": "La chlamydia est-elle souvent silencieuse (sans symptôme) ? ___ ?",
+    "q": "La chlamydia est causée par une : bactérie, une chanson, un caillou ou une couleur ?",
     "c": [
-     "oui",
-     "non",
-     "toujours douloureuse",
-     "seulement visible"
+     "bactérie",
+     "une chanson",
+     "un caillou",
+     "une couleur"
     ],
-    "a": "oui"
+    "a": "bactérie"
    },
    {
     "q": "Avec quel type de médicament soigne-t-on la chlamydia ? Des ___ ?",
@@ -21549,24 +21555,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "La gonorrhée est une infection sexuellement ___ ?",
+    "q": "La gonorrhée, c'est : une infection sexuellement transmissible, un fromage, une planète ou un outil ?",
     "c": [
-     "transmissible",
-     "héréditaire",
-     "alimentaire",
-     "aérienne"
+     "une infection sexuellement transmissible",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "transmissible"
+    "a": "une infection sexuellement transmissible"
    },
    {
-    "q": "Quel surnom familier désigne la gonorrhée ? La ___ ?",
+    "q": "La gonorrhée se soigne avec des : antibiotiques, vitamines, vaccins ou tisanes ?",
     "c": [
-     "chaude-pisse",
-     "grippette",
-     "gastro",
-     "angine"
+     "antibiotiques",
+     "vitamines",
+     "vaccins",
+     "tisanes"
     ],
-    "a": "chaude-pisse"
+    "a": "antibiotiques"
    },
    {
     "q": "Quel type de micro-organisme cause la gonorrhée ? Une ___ ?",
@@ -21632,24 +21638,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Sur quel principe absolu repose une pratique BDSM saine ? Le ___ ?",
+    "q": "Le BDSM, c'est : des pratiques entre adultes consentants, un plat, un sport collectif ou une danse folklorique ?",
+    "c": [
+     "des pratiques entre adultes consentants",
+     "un plat",
+     "un sport collectif",
+     "une danse folklorique"
+    ],
+    "a": "des pratiques entre adultes consentants"
+   },
+   {
+    "q": "Une pratique BDSM saine repose avant tout sur le : consentement, hasard, secret ou paiement ?",
     "c": [
      "consentement",
      "hasard",
      "secret",
-     "argent"
+     "paiement"
     ],
     "a": "consentement"
-   },
-   {
-    "q": "Comment appelle-t-on le mot convenu pour tout arrêter immédiatement ? Le mot de ___ ?",
-    "c": [
-     "sécurité",
-     "passe secret",
-     "code postal",
-     "ralliement"
-    ],
-    "a": "sécurité"
    },
    {
     "q": "Quelle règle anglaise résume l'éthique BDSM : « Safe, Sane and ___ » ? (consensuel)",
@@ -21721,24 +21727,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Un fétichisme est une attirance marquée pour un objet ou une partie du ___ ?",
+    "q": "Le fétichisme, c'est : une attirance marquée pour un objet ou une partie du corps, un fromage, une planète ou un outil ?",
     "c": [
-     "corps",
-     "ciel",
-     "jardin",
-     "bureau"
+     "une attirance marquée pour un objet ou une partie du corps",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "corps"
+    "a": "une attirance marquée pour un objet ou une partie du corps"
    },
    {
-    "q": "Tant qu'il est consenti et sans danger, le fétichisme est-il considéré comme normal ? ___ ?",
+    "q": "Tant qu'il est consenti et sans danger, le fétichisme est considéré comme : normal, interdit, contagieux ou dangereux ?",
     "c": [
-     "oui",
-     "non",
-     "illégal",
-     "contagieux"
+     "normal",
+     "interdit",
+     "contagieux",
+     "dangereux"
     ],
-    "a": "oui"
+    "a": "normal"
    },
    {
     "q": "Quel fétichisme concerne l'attirance pour les pieds ? La ___ (podophilie) ?",
@@ -21810,24 +21816,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "L'exhibitionnisme consiste à s'exposer sans le ___ d'autrui ?",
+    "q": "L'exhibitionnisme, c'est : le fait de s'exposer sans l'accord d'autrui, un fromage, une planète ou un sport ?",
     "c": [
-     "consentement",
-     "sourire",
-     "salaire",
-     "regard"
+     "le fait de s'exposer sans l'accord d'autrui",
+     "un fromage",
+     "une planète",
+     "un sport"
     ],
-    "a": "consentement"
+    "a": "le fait de s'exposer sans l'accord d'autrui"
    },
    {
-    "q": "S'exhiber devant une personne non consentante est-il, en France, un délit ? ___ ?",
+    "q": "S'exhiber devant une personne non consentante est, en France : un délit, un droit, un devoir ou un usage normal ?",
     "c": [
-     "oui",
-     "non",
+     "un délit",
      "un droit",
-     "un devoir"
+     "un devoir",
+     "un usage normal"
     ],
-    "a": "oui"
+    "a": "un délit"
    },
    {
     "q": "Quelle notion essentielle distingue la nudité consentie de l'exhibitionnisme imposé ? Le ___ ?",
@@ -21899,24 +21905,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Le voyeurisme consiste à observer autrui à son ___ ? (sans accord)",
+    "q": "Le voyeurisme, c'est : le fait d'observer autrui à son insu, un fromage, une planète ou un jeu ?",
     "c": [
-     "insu",
-     "invitation",
-     "sourire",
-     "profit"
+     "le fait d'observer autrui à son insu",
+     "un fromage",
+     "une planète",
+     "un jeu"
     ],
-    "a": "insu"
+    "a": "le fait d'observer autrui à son insu"
    },
    {
-    "q": "Filmer ou observer quelqu'un dans son intimité sans accord est-il légal ? ___ ?",
+    "q": "Filmer quelqu'un dans son intimité sans son accord est : interdit, autorisé, recommandé ou obligatoire ?",
     "c": [
-     "non",
-     "oui",
+     "interdit",
+     "autorisé",
      "recommandé",
      "obligatoire"
     ],
-    "a": "non"
+    "a": "interdit"
    },
    {
     "q": "Quelle notion, absente dans le voyeurisme, est pourtant essentielle ? Le ___ ?",
@@ -21982,24 +21988,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "La bisexualité est l'attirance envers ___ sexes ? (les deux)",
+    "q": "La bisexualité, c'est : une orientation sexuelle, un fromage, une planète ou un sport ?",
     "c": [
-     "deux",
-     "aucun",
-     "trois",
-     "quatre"
+     "une orientation sexuelle",
+     "un fromage",
+     "une planète",
+     "un sport"
     ],
-    "a": "deux"
+    "a": "une orientation sexuelle"
    },
    {
-    "q": "Quelle lettre du sigle LGBT correspond à la bisexualité ? Le ___ ?",
+    "q": "La bisexualité est l'attirance envers : les deux sexes, aucun être, un objet ou une couleur ?",
     "c": [
-     "B",
-     "L",
-     "G",
-     "T"
+     "les deux sexes",
+     "aucun être",
+     "un objet",
+     "une couleur"
     ],
-    "a": "B"
+    "a": "les deux sexes"
    },
    {
     "q": "La bisexualité est-elle une orientation sexuelle reconnue ? ___ ?",
@@ -22071,7 +22077,17 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "La transidentité concerne l'identité de ___ d'une personne ?",
+    "q": "La transidentité, c'est : une identité de genre, un plat, une planète ou un logiciel ?",
+    "c": [
+     "une identité de genre",
+     "un plat",
+     "une planète",
+     "un logiciel"
+    ],
+    "a": "une identité de genre"
+   },
+   {
+    "q": "La transidentité concerne l'identité de : genre, quartier, métier ou loisir d'une personne ?",
     "c": [
      "genre",
      "quartier",
@@ -22079,16 +22095,6 @@ export const TTCQ_THEMES = [
      "loisir"
     ],
     "a": "genre"
-   },
-   {
-    "q": "Une personne trans a une identité de genre différente de celle assignée à la ___ ?",
-    "c": [
-     "naissance",
-     "retraite",
-     "majorité",
-     "école"
-    ],
-    "a": "naissance"
    },
    {
     "q": "Quelle lettre du sigle LGBT correspond à « transgenre » ? Le ___ ?",
@@ -22154,24 +22160,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Une personne asexuelle ressent peu ou pas d'attirance ___ ?",
+    "q": "L'asexualité, c'est : une orientation sexuelle, un fromage, une planète ou un sport ?",
     "c": [
-     "sexuelle",
-     "amicale",
-     "familiale",
-     "professionnelle"
+     "une orientation sexuelle",
+     "un fromage",
+     "une planète",
+     "un sport"
     ],
-    "a": "sexuelle"
+    "a": "une orientation sexuelle"
    },
    {
-    "q": "L'asexualité est-elle une orientation valide ? ___ ?",
+    "q": "Une personne asexuelle ressent peu ou pas d'attirance : sexuelle, pour la nourriture, pour la musique ou pour le sport ?",
     "c": [
-     "oui",
-     "non",
-     "une maladie",
-     "un choix forcé"
+     "sexuelle",
+     "pour la nourriture",
+     "pour la musique",
+     "pour le sport"
     ],
-    "a": "oui"
+    "a": "sexuelle"
    },
    {
     "q": "Une personne asexuelle peut-elle tout de même ressentir de l'amour romantique ? ___ ?",
@@ -22237,17 +22243,17 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Le polyamour consiste à aimer plusieurs personnes avec leur ___ ? (accord)",
+    "q": "Le polyamour, c'est : aimer plusieurs personnes avec leur accord, un fromage, une planète ou un outil ?",
     "c": [
-     "consentement",
-     "argent",
-     "silence",
-     "secret"
+     "aimer plusieurs personnes avec leur accord",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "consentement"
+    "a": "aimer plusieurs personnes avec leur accord"
    },
    {
-    "q": "Sur quelles valeurs repose un polyamour sain ? L'honnêteté et la ___ ?",
+    "q": "Le polyamour repose surtout sur l'honnêteté et la : communication, jalousie, cachotterie ou compétition ?",
     "c": [
      "communication",
      "jalousie",
@@ -22326,24 +22332,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Le mariage homosexuel unit deux personnes du ___ sexe ?",
+    "q": "Le mariage homosexuel, c'est : le mariage entre personnes de même sexe, un plat, une danse ou un jeu ?",
     "c": [
-     "même",
-     "opposé",
-     "troisième",
-     "aucun"
+     "le mariage entre personnes de même sexe",
+     "un plat",
+     "une danse",
+     "un jeu"
     ],
-    "a": "même"
+    "a": "le mariage entre personnes de même sexe"
    },
    {
-    "q": "En France, quelle loi de 2013 a ouvert le mariage aux couples de même sexe ? Le mariage pour ___ ?",
+    "q": "En France, le mariage pour tous a été autorisé en : 2013, 1850, l'an 3000 ou hier ?",
     "c": [
-     "tous",
-     "riches",
-     "élus",
-     "certains"
+     "2013",
+     "1850",
+     "l'an 3000",
+     "hier"
     ],
-    "a": "tous"
+    "a": "2013"
    },
    {
     "q": "Quel premier pays au monde a légalisé le mariage homosexuel en 2001 ? Les ___ ?",
