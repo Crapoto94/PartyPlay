@@ -23310,24 +23310,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "De quelle plante provient le cannabis ? Le ___ ?",
+    "q": "Le cannabis, c'est : une substance / drogue, un fromage, une planète ou un légume ?",
     "c": [
-     "chanvre",
-     "pavot",
-     "coca",
-     "tabac"
+     "une substance / drogue",
+     "un fromage",
+     "une planète",
+     "un légume"
     ],
-    "a": "chanvre"
+    "a": "une substance / drogue"
    },
    {
-    "q": "Comment fume-t-on couramment le cannabis, roulé avec du tabac ? Un ___ ?",
+    "q": "Le cannabis provient d'une : plante (le chanvre), pierre, machine ou métal ?",
     "c": [
-     "joint",
-     "cigare",
-     "narguilé",
-     "pipe à eau seule"
+     "plante (le chanvre)",
+     "pierre",
+     "machine",
+     "métal"
     ],
-    "a": "joint"
+    "a": "plante (le chanvre)"
    },
    {
     "q": "Quelle molécule psychoactive principale du cannabis provoque le « planant » ? Le ___ ?",
@@ -23393,24 +23393,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "De quelle plante d'Amérique du Sud la cocaïne est-elle extraite ? La ___ ?",
+    "q": "La cocaïne, c'est : une substance / drogue, un fromage, une planète ou un légume ?",
+    "c": [
+     "une substance / drogue",
+     "un fromage",
+     "une planète",
+     "un légume"
+    ],
+    "a": "une substance / drogue"
+   },
+   {
+    "q": "La cocaïne est extraite d'une plante appelée : coca, canne à sucre, vigne ou menthe ?",
     "c": [
      "coca",
-     "canne",
+     "canne à sucre",
      "vigne",
      "menthe"
     ],
     "a": "coca"
-   },
-   {
-    "q": "Sous quelle forme la cocaïne se présente-t-elle souvent ? Une ___ blanche ?",
-    "c": [
-     "poudre",
-     "gélule",
-     "feuille verte",
-     "huile"
-    ],
-    "a": "poudre"
    },
    {
     "q": "Quel type d'effet stimulant la cocaïne produit-elle sur le système nerveux ? Un effet ___ ?",
@@ -23482,24 +23482,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "De quelle fleur, le pavot, l'héroïne est-elle dérivée ? Le pavot à ___ ?",
+    "q": "L'héroïne, c'est : une substance / drogue, un fromage, une planète ou un légume ?",
     "c": [
-     "opium",
-     "parfum",
-     "graines seules",
-     "huile"
+     "une substance / drogue",
+     "un fromage",
+     "une planète",
+     "un légume"
     ],
-    "a": "opium"
+    "a": "une substance / drogue"
    },
    {
-    "q": "À quelle famille de drogues très addictives l'héroïne appartient-elle ? Les ___ ?",
+    "q": "L'héroïne est une drogue très : dangereuse et addictive, inoffensive, comestible ou décorative ?",
     "c": [
-     "opiacés",
-     "stimulants",
-     "psychédéliques",
-     "solvants"
+     "dangereuse et addictive",
+     "inoffensive",
+     "comestible",
+     "décorative"
     ],
-    "a": "opiacés"
+    "a": "dangereuse et addictive"
    },
    {
     "q": "Quel mode d'usage de l'héroïne présente le plus de risques infectieux ? L'___ ?",
@@ -23571,7 +23571,17 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Sous quelle forme colorée l'ecstasy se présente-t-elle souvent ? Un ___ ?",
+    "q": "L'ecstasy, c'est : une substance / drogue, un fromage, une planète ou un légume ?",
+    "c": [
+     "une substance / drogue",
+     "un fromage",
+     "une planète",
+     "un légume"
+    ],
+    "a": "une substance / drogue"
+   },
+   {
+    "q": "L'ecstasy se présente souvent sous forme de : comprimé, liquide vert, spray ou patch ?",
     "c": [
      "comprimé",
      "liquide vert",
@@ -23579,16 +23589,6 @@ export const TTCQ_THEMES = [
      "patch"
     ],
     "a": "comprimé"
-   },
-   {
-    "q": "Dans quel milieu festif l'ecstasy est-elle surtout consommée ? Les soirées ___ ?",
-    "c": [
-     "techno",
-     "classiques",
-     "littéraires",
-     "sportives"
-    ],
-    "a": "techno"
    },
    {
     "q": "Quelle molécule active se cache principalement dans l'ecstasy ? La ___ ?",
@@ -23660,24 +23660,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "À quelle grande famille d'effets le LSD appartient-il ? Les ___ (hallucinogènes) ?",
+    "q": "Le LSD, c'est : une substance / drogue, un fromage, une planète ou un légume ?",
     "c": [
-     "psychédéliques",
-     "stimulants",
-     "opiacés",
-     "sédatifs"
+     "une substance / drogue",
+     "un fromage",
+     "une planète",
+     "un légume"
     ],
-    "a": "psychédéliques"
+    "a": "une substance / drogue"
    },
    {
-    "q": "Sur quel petit support en papier le LSD est-il souvent déposé ? Un ___ ?",
+    "q": "Le LSD provoque surtout des : hallucinations, courbatures, caries ou éternuements ?",
     "c": [
-     "buvard",
-     "comprimé lourd",
-     "sachet de poudre",
-     "flacon"
+     "hallucinations",
+     "courbatures",
+     "caries",
+     "éternuements"
     ],
-    "a": "buvard"
+    "a": "hallucinations"
    },
    {
     "q": "Quel type de perceptions déformées le LSD provoque-t-il ? Des ___ ?",
@@ -23743,24 +23743,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Sous quelle forme naturelle ces champignons se consomment-ils ? Ils sont ___ ?",
+    "q": "Les champignons hallucinogènes, c'est : une substance / drogue, un fromage, une planète ou un légume ?",
     "c": [
-     "cueillis",
-     "distillés",
-     "fumés en résine",
-     "injectés"
+     "une substance / drogue",
+     "un fromage",
+     "une planète",
+     "un légume"
     ],
-    "a": "cueillis"
+    "a": "une substance / drogue"
    },
    {
-    "q": "Quel type d'effets ces champignons provoquent-ils comme le LSD ? Des effets ___ ?",
+    "q": "Ces champignons se ramassent dans la : nature, mer, un aquarium ou un four ?",
     "c": [
-     "psychédéliques",
-     "stimulants",
-     "sédatifs",
-     "opiacés"
+     "nature",
+     "mer",
+     "un aquarium",
+     "un four"
     ],
-    "a": "psychédéliques"
+    "a": "nature"
    },
    {
     "q": "Quelle molécule active contiennent les champignons hallucinogènes ? La ___ ?",
@@ -23832,24 +23832,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Quel type d'effet général les amphétamines produisent-elles ? Un effet ___ ?",
+    "q": "Les amphétamines, c'est : une substance / drogue, un fromage, une planète ou un légume ?",
     "c": [
-     "stimulant",
-     "calmant",
-     "hallucinogène",
-     "anesthésiant"
+     "une substance / drogue",
+     "un fromage",
+     "une planète",
+     "un légume"
     ],
-    "a": "stimulant"
+    "a": "une substance / drogue"
    },
    {
-    "q": "Sur quel besoin fondamental les amphétamines agissent-elles en le supprimant ? Le ___ ?",
+    "q": "Les amphétamines ont surtout un effet : stimulant, endormant, hydratant ou rafraîchissant ?",
     "c": [
-     "sommeil",
-     "toucher",
-     "goût",
-     "équilibre"
+     "stimulant",
+     "endormant",
+     "hydratant",
+     "rafraîchissant"
     ],
-    "a": "sommeil"
+    "a": "stimulant"
    },
    {
     "q": "Dans quel contexte militaire les amphétamines ont-elles été distribuées pour tenir éveillé ? La ___ ?",
@@ -23915,24 +23915,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "À quelle famille de drogues la méthamphétamine appartient-elle ? Les ___ ?",
+    "q": "La méthamphétamine, c'est : une substance / drogue, un fromage, une planète ou un légume ?",
     "c": [
-     "stimulants",
-     "opiacés",
-     "psychédéliques",
-     "sédatifs"
+     "une substance / drogue",
+     "un fromage",
+     "une planète",
+     "un légume"
     ],
-    "a": "stimulants"
+    "a": "une substance / drogue"
    },
    {
-    "q": "Quelle série TV américaine culte a pour héros un professeur fabriquant de la méthamphétamine ? Breaking ___ ?",
+    "q": "La méthamphétamine est une drogue très : addictive et dangereuse, inoffensive, comestible ou décorative ?",
     "c": [
-     "Bad",
-     "News",
-     "Point",
-     "Dawn"
+     "addictive et dangereuse",
+     "inoffensive",
+     "comestible",
+     "décorative"
     ],
-    "a": "Bad"
+    "a": "addictive et dangereuse"
    },
    {
     "q": "Sous quelle forme cristalline la méthamphétamine est-elle connue ? Le crystal ___ ?",
@@ -24004,24 +24004,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Dans quelle boisson chaude très courante trouve-t-on de la caféine ? Le ___ ?",
+    "q": "La caféine, c'est : une substance stimulante, un fromage, une planète ou un meuble ?",
+    "c": [
+     "une substance stimulante",
+     "un fromage",
+     "une planète",
+     "un meuble"
+    ],
+    "a": "une substance stimulante"
+   },
+   {
+    "q": "On trouve de la caféine surtout dans le : café, lait, jus d'orange ou eau plate ?",
     "c": [
      "café",
      "lait",
-     "eau",
-     "jus"
+     "jus d'orange",
+     "eau plate"
     ],
     "a": "café"
-   },
-   {
-    "q": "Quel effet la caféine produit-elle sur la vigilance ? Elle rend plus ___ ?",
-    "c": [
-     "éveillé",
-     "endormi",
-     "triste",
-     "affamé"
-    ],
-    "a": "éveillé"
    },
    {
     "q": "Dans quelle autre boisson chaude, faite de feuilles, trouve-t-on aussi de la caféine ? Le ___ ?",
@@ -24087,7 +24087,17 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Sous quelle forme roulée fume-t-on le plus souvent le tabac ? Une ___ ?",
+    "q": "Le tabac, c'est : une substance que l'on fume, un fromage, une planète ou un légume vert ?",
+    "c": [
+     "une substance que l'on fume",
+     "un fromage",
+     "une planète",
+     "un légume vert"
+    ],
+    "a": "une substance que l'on fume"
+   },
+   {
+    "q": "Le tabac se fume souvent sous forme de : cigarette, bougie, paille ou allumette ?",
     "c": [
      "cigarette",
      "bougie",
@@ -24095,16 +24105,6 @@ export const TTCQ_THEMES = [
      "allumette"
     ],
     "a": "cigarette"
-   },
-   {
-    "q": "Quelle substance du tabac rend fortement dépendant ? La ___ ?",
-    "c": [
-     "nicotine",
-     "caféine",
-     "vitamine C",
-     "insuline"
-    ],
-    "a": "nicotine"
    },
    {
     "q": "Quelle grave maladie le tabac est-il le premier facteur de risque de provoquer ? Le ___ du poumon ?",
@@ -24170,24 +24170,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "De quelle drogue festive en comprimé la MDMA est-elle le principe actif ? L'___ ?",
+    "q": "La MDMA, c'est : une substance / drogue, un fromage, une planète ou un légume ?",
     "c": [
-     "ecstasy",
-     "héroïne",
-     "cocaïne",
-     "cannabis"
+     "une substance / drogue",
+     "un fromage",
+     "une planète",
+     "un légume"
     ],
-    "a": "ecstasy"
+    "a": "une substance / drogue"
    },
    {
-    "q": "Quel type d'effet « d'ouverture aux autres » la MDMA provoque-t-elle ? Un effet ___ ?",
+    "q": "La MDMA est le principe actif de l': ecstasy, aspirine, vitamine C ou tisane ?",
     "c": [
-     "empathogène",
-     "sédatif",
-     "anesthésiant",
-     "laxatif"
+     "ecstasy",
+     "aspirine",
+     "vitamine C",
+     "tisane"
     ],
-    "a": "empathogène"
+    "a": "ecstasy"
    },
    {
     "q": "Sous quelle forme, autre que le comprimé, trouve-t-on la MDMA ? En ___ (cristaux) ?",
@@ -24253,24 +24253,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Sous quelle forme le GHB se présente-t-il le plus souvent ? Un ___ incolore ?",
+    "q": "Le GHB, c'est : une substance / drogue, un fromage, une planète ou un légume ?",
     "c": [
-     "liquide",
-     "comprimé",
-     "poudre rouge",
-     "gaz"
+     "une substance / drogue",
+     "un fromage",
+     "une planète",
+     "un légume"
     ],
-    "a": "liquide"
+    "a": "une substance / drogue"
    },
    {
-    "q": "Quel effet sédatif le GHB a-t-il à forte dose ? Il ___ (endort) ?",
+    "q": "Le GHB se présente souvent sous forme : liquide, de comprimé rouge, de poudre bleue ou de gaz ?",
     "c": [
-     "endort",
-     "réveille",
-     "excite",
-     "affame"
+     "liquide",
+     "de comprimé rouge",
+     "de poudre bleue",
+     "de gaz"
     ],
-    "a": "endort"
+    "a": "liquide"
    },
    {
     "q": "Pour quel usage criminel le GHB est-il tristement surnommé « drogue du ___ » ?",
@@ -24342,24 +24342,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "À l'origine, dans quel domaine médical la kétamine est-elle utilisée ? Comme ___ ?",
+    "q": "La kétamine, c'est : une substance / drogue, un fromage, une planète ou un légume ?",
+    "c": [
+     "une substance / drogue",
+     "un fromage",
+     "une planète",
+     "un légume"
+    ],
+    "a": "une substance / drogue"
+   },
+   {
+    "q": "La kétamine est à l'origine un produit utilisé en médecine comme : anesthésique, vaccin, vitamine ou pansement ?",
     "c": [
      "anesthésique",
      "vaccin",
-     "antibiotique",
-     "vitamine"
+     "vitamine",
+     "pansement"
     ],
     "a": "anesthésique"
-   },
-   {
-    "q": "Sur quels patients, en plus des humains, la kétamine est-elle employée en médecine ? Les ___ ?",
-    "c": [
-     "animaux",
-     "robots",
-     "plantes",
-     "poissons seuls"
-    ],
-    "a": "animaux"
    },
    {
     "q": "Quel état de déconnexion la kétamine provoque-t-elle à dose récréative ? Un état ___ ?",
@@ -24425,24 +24425,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "De quelle drogue le crack est-il une forme fumable ? La ___ ?",
+    "q": "Le crack, c'est : une substance / drogue, un fromage, une planète ou un légume ?",
     "c": [
-     "cocaïne",
-     "héroïne",
-     "MDMA",
-     "kétamine"
+     "une substance / drogue",
+     "un fromage",
+     "une planète",
+     "un légume"
     ],
-    "a": "cocaïne"
+    "a": "une substance / drogue"
    },
    {
-    "q": "Sous quelle forme solide le crack se présente-t-il ? Des petits ___ (cailloux) ?",
+    "q": "Le crack est une forme fumable de : cocaïne, chocolat, café ou sucre ?",
     "c": [
-     "cailloux",
-     "comprimés",
-     "buvards",
-     "cristaux liquides"
+     "cocaïne",
+     "chocolat",
+     "café",
+     "sucre"
     ],
-    "a": "cailloux"
+    "a": "cocaïne"
    },
    {
     "q": "Comment consomme-t-on le crack ? On le ___ ?",
@@ -24514,24 +24514,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "De quelle fleur l'opium est-il extrait ? Le ___ ?",
+    "q": "L'opium, c'est : une substance / drogue, un fromage, une planète ou un légume ?",
     "c": [
-     "pavot",
-     "tournesol",
-     "rose",
-     "tulipe"
+     "une substance / drogue",
+     "un fromage",
+     "une planète",
+     "un légume"
     ],
-    "a": "pavot"
+    "a": "une substance / drogue"
    },
    {
-    "q": "Quel suc laiteux du pavot est récolté pour faire l'opium ? Le ___ ?",
+    "q": "L'opium est extrait d'une fleur : le pavot, le tournesol, la rose ou la tulipe ?",
     "c": [
-     "latex",
-     "nectar",
-     "pollen",
-     "sève de tronc"
+     "le pavot",
+     "le tournesol",
+     "la rose",
+     "la tulipe"
     ],
-    "a": "latex"
+    "a": "le pavot"
    },
    {
     "q": "Dans quel type d'établissement, au XIXe s., fumait-on l'opium ? Une ___ à opium ?",
@@ -24603,24 +24603,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Dans quel lieu la morphine est-elle utilisée pour soulager la douleur ? L'___ ?",
+    "q": "La morphine, c'est : un puissant médicament antidouleur, un fromage, une planète ou un outil ?",
+    "c": [
+     "un puissant médicament antidouleur",
+     "un fromage",
+     "une planète",
+     "un outil"
+    ],
+    "a": "un puissant médicament antidouleur"
+   },
+   {
+    "q": "La morphine est utilisée surtout à l': hôpital, la piscine, au stade ou au cinéma ?",
     "c": [
      "hôpital",
-     "école",
+     "piscine",
      "stade",
      "cinéma"
     ],
     "a": "hôpital"
-   },
-   {
-    "q": "Contre quel symptôme la morphine est-elle prescrite ? La ___ intense ?",
-    "c": [
-     "douleur",
-     "fièvre",
-     "toux légère",
-     "démangeaison"
-    ],
-    "a": "douleur"
    },
    {
     "q": "De quelle substance végétale la morphine est-elle dérivée ? L'___ ?",
@@ -24692,24 +24692,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Contre quel trouble les benzodiazépines sont-elles surtout prescrites ? L'___ ?",
+    "q": "Les benzodiazépines, ce sont : des médicaments calmants, des fromages, des planètes ou des légumes ?",
     "c": [
-     "anxiété",
-     "myopie",
-     "carie",
-     "fracture"
+     "des médicaments calmants",
+     "des fromages",
+     "des planètes",
+     "des légumes"
     ],
-    "a": "anxiété"
+    "a": "des médicaments calmants"
    },
    {
-    "q": "Quel autre effet, favorisant le sommeil, ont les benzodiazépines ? Elles sont ___ ?",
+    "q": "Les benzodiazépines sont prescrites surtout contre l': anxiété, la myopie, les caries ou les fractures ?",
     "c": [
-     "somnifères",
-     "stimulantes",
-     "hallucinogènes",
-     "diurétiques"
+     "anxiété",
+     "la myopie",
+     "les caries",
+     "les fractures"
     ],
-    "a": "somnifères"
+    "a": "anxiété"
    },
    {
     "q": "Ces médicaments ne s'obtiennent que sur ___ ? (délivrance encadrée)",
@@ -24775,7 +24775,17 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Contre quelle maladie les antidépresseurs sont-ils prescrits ? La ___ ?",
+    "q": "Les antidépresseurs, ce sont : des médicaments, des fromages, des planètes ou des outils ?",
+    "c": [
+     "des médicaments",
+     "des fromages",
+     "des planètes",
+     "des outils"
+    ],
+    "a": "des médicaments"
+   },
+   {
+    "q": "Les antidépresseurs sont prescrits contre la : dépression, grippe, otite ou entorse ?",
     "c": [
      "dépression",
      "grippe",
@@ -24783,16 +24793,6 @@ export const TTCQ_THEMES = [
      "entorse"
     ],
     "a": "dépression"
-   },
-   {
-    "q": "Sur quel organe agissent les antidépresseurs ? Le ___ ?",
-    "c": [
-     "cerveau",
-     "genou",
-     "foie seul",
-     "poumon"
-    ],
-    "a": "cerveau"
    },
    {
     "q": "Les antidépresseurs sont-ils des drogues récréatives ou des médicaments prescrits ?",
@@ -24858,7 +24858,17 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "De quel type de plante la mescaline est-elle extraite ? Un ___ ?",
+    "q": "La mescaline, c'est : une substance / drogue, un fromage, une planète ou un légume ?",
+    "c": [
+     "une substance / drogue",
+     "un fromage",
+     "une planète",
+     "un légume"
+    ],
+    "a": "une substance / drogue"
+   },
+   {
+    "q": "La mescaline est extraite d'un : cactus, champignon, arbre ou algue ?",
     "c": [
      "cactus",
      "champignon",
@@ -24866,16 +24876,6 @@ export const TTCQ_THEMES = [
      "algue"
     ],
     "a": "cactus"
-   },
-   {
-    "q": "Quel type d'effets la mescaline provoque-t-elle ? Des effets ___ ?",
-    "c": [
-     "psychédéliques",
-     "sédatifs",
-     "stimulants purs",
-     "opiacés"
-    ],
-    "a": "psychédéliques"
    },
    {
     "q": "Quel cactus mexicain contient de la mescaline et est utilisé rituellement ? Le ___ ?",
@@ -24941,24 +24941,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Quel type d'effets le DMT provoque-t-il, très intenses et brefs ? Des effets ___ ?",
+    "q": "Le DMT, c'est : une substance / drogue, un fromage, une planète ou un légume ?",
     "c": [
-     "psychédéliques",
-     "sédatifs",
-     "stimulants doux",
-     "opiacés"
+     "une substance / drogue",
+     "un fromage",
+     "une planète",
+     "un légume"
     ],
-    "a": "psychédéliques"
+    "a": "une substance / drogue"
    },
    {
-    "q": "Dans quelle boisson rituelle amazonienne le DMT est-il actif ? L'___ ?",
+    "q": "Le DMT provoque des effets : psychédéliques très brefs, apaisants pour dormir, digestifs ou nutritifs ?",
     "c": [
-     "ayahuasca",
-     "maté",
-     "chicha",
-     "guarana"
+     "psychédéliques très brefs",
+     "apaisants pour dormir",
+     "digestifs",
+     "nutritifs"
     ],
-    "a": "ayahuasca"
+    "a": "psychédéliques très brefs"
    },
    {
     "q": "Comment consomme-t-on le DMT pur pour un effet éclair ? On le ___ ?",
@@ -25024,24 +25024,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Sous quelle forme le poppers se consomme-t-il ? En ___ (inhalation) ?",
+    "q": "Le poppers, c'est : une substance / drogue, un fromage, une planète ou un légume ?",
     "c": [
-     "vapeur",
-     "comprimé",
-     "injection",
-     "poudre"
+     "une substance / drogue",
+     "un fromage",
+     "une planète",
+     "un légume"
     ],
-    "a": "vapeur"
+    "a": "une substance / drogue"
    },
    {
-    "q": "Quel effet bref le poppers provoque-t-il ? Une ___ des vaisseaux (bouffée de chaleur) ?",
+    "q": "Le poppers se consomme par : inhalation, comprimé, injection ou en poudre ?",
     "c": [
-     "dilatation",
-     "contraction totale",
-     "coagulation",
-     "cristallisation"
+     "inhalation",
+     "comprimé",
+     "injection",
+     "en poudre"
     ],
-    "a": "dilatation"
+    "a": "inhalation"
    },
    {
     "q": "À quelle famille chimique le poppers appartient-il ? Les nitrites d'___ ?",
@@ -25113,24 +25113,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "La salvia est une plante de la famille de quelle herbe aromatique ? La ___ ?",
+    "q": "La salvia, c'est : une substance / drogue, un fromage, une planète ou un légume ?",
     "c": [
-     "sauge",
-     "menthe seule",
-     "thym",
-     "basilic"
+     "une substance / drogue",
+     "un fromage",
+     "une planète",
+     "un légume"
     ],
-    "a": "sauge"
+    "a": "une substance / drogue"
    },
    {
-    "q": "De quel pays d'Amérique centrale la salvia est-elle originaire ? Le ___ ?",
+    "q": "La salvia est une : plante, pierre, machine ou métal ?",
     "c": [
-     "Mexique",
-     "Canada",
-     "Chili",
-     "Cuba"
+     "plante",
+     "pierre",
+     "machine",
+     "métal"
     ],
-    "a": "Mexique"
+    "a": "plante"
    },
    {
     "q": "Quel type d'effets, brefs mais intenses, la salvia provoque-t-elle ? Des effets ___ ?",
@@ -25202,24 +25202,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "De quelle plante la plupart des opiacés sont-ils dérivés ? Le ___ ?",
+    "q": "Les opiacés, c'est : une substance / drogue, un fromage, une planète ou un légume ?",
     "c": [
-     "pavot",
-     "chanvre",
-     "coca",
-     "tabac"
+     "une substance / drogue",
+     "un fromage",
+     "une planète",
+     "un légume"
     ],
-    "a": "pavot"
+    "a": "une substance / drogue"
    },
    {
-    "q": "Contre quoi les opiacés sont-ils utilisés en médecine ? La ___ ?",
+    "q": "La plupart des opiacés sont dérivés d'une fleur : le pavot, le tournesol, la rose ou le lys ?",
     "c": [
-     "douleur",
-     "fièvre légère",
-     "toux sèche seule",
-     "acné"
+     "le pavot",
+     "le tournesol",
+     "la rose",
+     "le lys"
     ],
-    "a": "douleur"
+    "a": "le pavot"
    },
    {
     "q": "Quel puissant opiacé médical est extrait directement de l'opium ? La ___ ?",
@@ -25285,24 +25285,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Dans quel médicament courant la codéine est-elle présente ? Un ___ (antitussif/antidouleur) ?",
+    "q": "La codéine, c'est : une substance présente dans certains médicaments, un fromage, une planète ou un outil ?",
     "c": [
-     "sirop",
-     "vaccin",
-     "pansement",
-     "collyre"
+     "une substance présente dans certains médicaments",
+     "un fromage",
+     "une planète",
+     "un outil"
     ],
-    "a": "sirop"
+    "a": "une substance présente dans certains médicaments"
    },
    {
-    "q": "Contre quels deux symptômes la codéine est-elle utilisée ? La toux et la ___ ?",
+    "q": "La codéine se trouve souvent dans des : sirops contre la toux, vaccins, pansements ou collyres ?",
     "c": [
-     "douleur",
-     "fièvre seule",
-     "fatigue",
-     "faim"
+     "sirops contre la toux",
+     "vaccins",
+     "pansements",
+     "collyres"
     ],
-    "a": "douleur"
+    "a": "sirops contre la toux"
    },
    {
     "q": "À quelle famille de substances la codéine appartient-elle ? Les ___ ?",
@@ -25374,24 +25374,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Dans quelle plante la nicotine est-elle naturellement présente ? Le ___ ?",
+    "q": "La nicotine, c'est : une substance présente dans le tabac, un fromage, une planète ou un légume ?",
     "c": [
-     "tabac",
-     "chanvre",
-     "pavot",
-     "café"
+     "une substance présente dans le tabac",
+     "un fromage",
+     "une planète",
+     "un légume"
     ],
-    "a": "tabac"
+    "a": "une substance présente dans le tabac"
    },
    {
-    "q": "Quel puissant effet la nicotine a-t-elle, expliquant la difficulté à arrêter de fumer ? Une forte ___ ?",
+    "q": "La nicotine rend fortement : dépendant, immunisé, guéri ou rassasié ?",
     "c": [
-     "dépendance",
-     "immunité",
-     "satiété",
-     "guérison"
+     "dépendant",
+     "immunisé",
+     "guéri",
+     "rassasié"
     ],
-    "a": "dépendance"
+    "a": "dépendant"
    },
    {
     "q": "Dans quel dispositif électronique inhale-t-on de la nicotine sans combustion ? La ___ ?",
@@ -25457,24 +25457,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "De quelle couleur est le vin rouge ?",
+    "q": "Le vin rouge, c'est : une boisson, un matériau de construction, le nom d'une forêt ou un appareil de musculation ?",
     "c": [
-     "rouge",
-     "blanc",
-     "vert",
-     "bleu"
+     "une boisson",
+     "un matériau de construction",
+     "le nom d'une forêt",
+     "un appareil de musculation"
     ],
-    "a": "rouge"
+    "a": "une boisson"
    },
    {
-    "q": "De quel fruit fait-on le vin ? Le ___ ?",
+    "q": "Le vin rouge est de couleur : rouge, bleu fluo, transparent ou noir profond ?",
     "c": [
-     "raisin",
-     "pomme",
-     "prune",
-     "cassis"
+     "rouge",
+     "bleu fluo",
+     "transparent",
+     "noir profond"
     ],
-    "a": "raisin"
+    "a": "rouge"
    },
    {
     "q": "Quelle région du sud-ouest de la France est mondialement réputée pour ses vins rouges ?",
@@ -25540,22 +25540,22 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "De quelle couleur est le vin blanc ?",
+    "q": "Le vin blanc, c'est : une boisson, un matériau de construction, le nom d'une forêt ou un appareil de musculation ?",
     "c": [
-     "jaune pâle",
-     "rouge",
-     "noir",
-     "bleu"
+     "une boisson",
+     "un matériau de construction",
+     "le nom d'une forêt",
+     "un appareil de musculation"
     ],
-    "a": "jaune pâle"
+    "a": "une boisson"
    },
    {
-    "q": "À quelle température sert-on le vin blanc, plutôt que chambré ? ___ ?",
+    "q": "Le vin blanc se sert plutôt : frais, bouillant, gelé en bloc ou fumé ?",
     "c": [
      "frais",
-     "brûlant",
-     "tiède",
-     "bouillant"
+     "bouillant",
+     "gelé en bloc",
+     "fumé"
     ],
     "a": "frais"
    },
@@ -25623,24 +25623,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Quelle céréale maltée est la base de la bière ? L'___ ?",
+    "q": "La bière, c'est : une boisson, un matériau de construction, le nom d'une forêt ou un appareil de musculation ?",
     "c": [
-     "orge",
-     "maïs",
-     "riz",
-     "seigle"
+     "une boisson",
+     "un matériau de construction",
+     "le nom d'une forêt",
+     "un appareil de musculation"
     ],
-    "a": "orge"
+    "a": "une boisson"
    },
    {
-    "q": "Quelle plante donne l'amertume et l'arôme de la bière ? Le ___ ?",
+    "q": "La bière est fabriquée à base d': orge, de sucre d'orge, de sirop d'orgeat ou d'ordre ?",
     "c": [
-     "houblon",
-     "lierre",
-     "romarin",
-     "basilic"
+     "orge",
+     "sucre d'orge",
+     "sirop d'orgeat",
+     "ordre"
     ],
-    "a": "houblon"
+    "a": "orge"
    },
    {
     "q": "Quelle mousse blanche couronne un verre de bière ? La ___ ?",
@@ -25706,24 +25706,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "De quelle région française le champagne tient-il son nom ?",
+    "q": "Le champagne, c'est : une boisson, un matériau de construction, le nom d'une forêt ou un appareil de musculation ?",
     "c": [
-     "Champagne",
-     "Bourgogne",
-     "Provence",
-     "Loire"
+     "une boisson",
+     "un matériau de construction",
+     "le nom d'une forêt",
+     "un appareil de musculation"
     ],
-    "a": "Champagne"
+    "a": "une boisson"
    },
    {
-    "q": "Qu'y a-t-il dans le champagne qui pétille dans le verre ? Des ___ ?",
+    "q": "Le champagne est une boisson : pétillante, plate comme de l'eau, solide ou en poudre ?",
     "c": [
-     "bulles",
-     "glaçons",
-     "grumeaux",
-     "graines"
+     "pétillante",
+     "plate comme de l'eau",
+     "solide",
+     "en poudre"
     ],
-    "a": "bulles"
+    "a": "pétillante"
    },
    {
     "q": "Dans quel type de verre allongé sert-on souvent le champagne ? La ___ ?",
@@ -25789,24 +25789,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "À partir de quelles céréales distille-t-on le whisky ? Des ___ ?",
+    "q": "Le whisky, c'est : une boisson, un matériau de construction, le nom d'une forêt ou un appareil de musculation ?",
     "c": [
-     "céréales",
-     "fruits",
-     "légumes",
-     "fleurs"
+     "une boisson",
+     "un matériau de construction",
+     "le nom d'une forêt",
+     "un appareil de musculation"
     ],
-    "a": "céréales"
+    "a": "une boisson"
    },
    {
-    "q": "Quel pays, avec l'Irlande, revendique l'origine du whisky ? L'___ ?",
+    "q": "Le whisky est un alcool plutôt : fort, sans alcool, sucré comme un soda ou gazeux ?",
     "c": [
-     "Écosse",
-     "Espagne",
-     "Grèce",
-     "Portugal"
+     "fort",
+     "sans alcool",
+     "sucré comme un soda",
+     "gazeux"
     ],
-    "a": "Écosse"
+    "a": "fort"
    },
    {
     "q": "Dans quel récipient en bois le whisky vieillit-il pour se colorer ? Le fût de ___ ?",
@@ -25872,24 +25872,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "De quelle couleur est la vodka classique ?",
+    "q": "La vodka, c'est : une boisson, un matériau de construction, le nom d'une forêt ou un appareil de musculation ?",
     "c": [
-     "transparente",
-     "brune",
-     "verte",
-     "rouge"
+     "une boisson",
+     "un matériau de construction",
+     "le nom d'une forêt",
+     "un appareil de musculation"
     ],
-    "a": "transparente"
+    "a": "une boisson"
    },
    {
-    "q": "Quels pays de l'Est revendiquent l'origine de la vodka ? La Russie et la ___ ?",
+    "q": "La vodka est le plus souvent : transparente, rose fluo, verte ou marron ?",
     "c": [
-     "Pologne",
-     "Grèce",
-     "Italie",
-     "Espagne"
+     "transparente",
+     "rose fluo",
+     "verte",
+     "marron"
     ],
-    "a": "Pologne"
+    "a": "transparente"
    },
    {
     "q": "À partir de quel tubercule, souvent, distille-t-on la vodka ? La ___ de terre ?",
@@ -25955,24 +25955,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "De quelle plante sucrée le rhum est-il distillé ? La canne à ___ ?",
+    "q": "Le rhum, c'est : une boisson, un matériau de construction, le nom d'une forêt ou un appareil de musculation ?",
     "c": [
-     "sucre",
-     "sel",
-     "miel",
-     "sève"
+     "une boisson",
+     "un matériau de construction",
+     "le nom d'une forêt",
+     "un appareil de musculation"
     ],
-    "a": "sucre"
+    "a": "une boisson"
    },
    {
-    "q": "Dans quelle zone tropicale, les Caraïbes, le rhum est-il roi ? Les ___ ?",
+    "q": "Le rhum est fabriqué à partir de canne à : sucre, pêche, laine ou plomb ?",
     "c": [
-     "Antilles",
-     "Alpes",
-     "Andes",
-     "Balkans"
+     "sucre",
+     "pêche",
+     "laine",
+     "plomb"
     ],
-    "a": "Antilles"
+    "a": "sucre"
    },
    {
     "q": "Quel cocktail cubain associe rhum, menthe, citron vert et sucre ? Le ___ ?",
@@ -26038,24 +26038,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "De quel pays la tequila est-elle originaire ?",
+    "q": "La tequila, c'est : une boisson, un matériau de construction, le nom d'une forêt ou un appareil de musculation ?",
     "c": [
-     "Mexique",
-     "Espagne",
-     "Pérou",
-     "Chili"
+     "une boisson",
+     "un matériau de construction",
+     "le nom d'une forêt",
+     "un appareil de musculation"
     ],
-    "a": "Mexique"
+    "a": "une boisson"
    },
    {
-    "q": "De quelle plante bleue épineuse distille-t-on la tequila ? L'___ ?",
+    "q": "La tequila vient : du Mexique, du pôle Nord, de la Lune ou du fond des mers ?",
     "c": [
-     "agave",
-     "cactus",
-     "aloès",
-     "yucca"
+     "du Mexique",
+     "du pôle Nord",
+     "de la Lune",
+     "du fond des mers"
     ],
-    "a": "agave"
+    "a": "du Mexique"
    },
    {
     "q": "Que met-on souvent sur la main avant un shot de tequila ? Du ___ ?",
@@ -26121,24 +26121,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Quelle petite baie violette parfume typiquement le gin ? La baie de ___ ?",
+    "q": "Le gin, c'est : une boisson, un matériau de construction, le nom d'une forêt ou un appareil de musculation ?",
     "c": [
-     "genièvre",
-     "sureau",
-     "cassis",
-     "myrtille"
+     "une boisson",
+     "un matériau de construction",
+     "le nom d'une forêt",
+     "un appareil de musculation"
     ],
-    "a": "genièvre"
+    "a": "une boisson"
    },
    {
-    "q": "De quel pays le gin « London Dry » est-il emblématique ? Le ___-Uni ?",
+    "q": "Le gin se mélange souvent avec du : tonic, lait chaud, jus de cornichon ou sirop de menthe pur ?",
     "c": [
-     "Royaume",
-     "États",
-     "Pays",
-     "Emirats"
+     "tonic",
+     "lait chaud",
+     "jus de cornichon",
+     "sirop de menthe pur"
     ],
-    "a": "Royaume"
+    "a": "tonic"
    },
    {
     "q": "Avec quelle eau gazeuse tonique mélange-t-on souvent le gin ? Le ___ ?",
@@ -26204,24 +26204,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "De quel fruit distillé le cognac est-il fait ? Le ___ (vin) ?",
+    "q": "Le cognac, c'est : une boisson, un matériau de construction, le nom d'une forêt ou un appareil de musculation ?",
     "c": [
-     "raisin",
-     "pomme",
-     "poire",
-     "prune"
+     "une boisson",
+     "un matériau de construction",
+     "le nom d'une forêt",
+     "un appareil de musculation"
     ],
-    "a": "raisin"
+    "a": "une boisson"
    },
    {
-    "q": "De quelle ville de Charente le cognac tient-il son nom ?",
+    "q": "Le cognac est fabriqué à partir de : raisin, pomme de terre, sable ou plastique ?",
     "c": [
-     "Cognac",
-     "Reims",
-     "Dijon",
-     "Cahors"
+     "raisin",
+     "pomme de terre",
+     "sable",
+     "plastique"
     ],
-    "a": "Cognac"
+    "a": "raisin"
    },
    {
     "q": "Quelle catégorie d'alcool est le cognac ? Une eau-de-___ ?",
@@ -26287,24 +26287,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Quelle saveur dominante caractérise une liqueur, par rapport à un alcool sec ? Elle est ___ ?",
+    "q": "La liqueur, c'est : une boisson, un matériau de construction, le nom d'une forêt ou un appareil de musculation ?",
     "c": [
-     "sucrée",
-     "amère",
-     "acide",
-     "salée"
+     "une boisson",
+     "un matériau de construction",
+     "le nom d'une forêt",
+     "un appareil de musculation"
     ],
-    "a": "sucrée"
+    "a": "une boisson"
    },
    {
-    "q": "Quand boit-on souvent une liqueur, en petite quantité ? En ___ (après le repas) ?",
+    "q": "Une liqueur est en général plutôt : sucrée, salée, amère comme du citron ou piquante comme du piment ?",
     "c": [
-     "digestif",
-     "apéritif seulement",
-     "petit-déjeuner",
-     "goûter"
+     "sucrée",
+     "salée",
+     "amère comme du citron",
+     "piquante comme du piment"
     ],
-    "a": "digestif"
+    "a": "sucrée"
    },
    {
     "q": "Quelle liqueur d'orange française est célèbre dans les cocktails ? Le ___ ?",
@@ -26370,24 +26370,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "De quel fruit fait-on le cidre ? La ___ ?",
+    "q": "Le cidre, c'est : une boisson, un matériau de construction, le nom d'une forêt ou un appareil de musculation ?",
     "c": [
-     "pomme",
-     "poire",
-     "prune",
-     "cerise"
+     "une boisson",
+     "un matériau de construction",
+     "le nom d'une forêt",
+     "un appareil de musculation"
     ],
-    "a": "pomme"
+    "a": "une boisson"
    },
    {
-    "q": "Quelle région française de l'ouest est réputée pour son cidre ? La ___ ?",
+    "q": "Le cidre est fabriqué à partir de : pommes, cailloux, plastique ou métal ?",
     "c": [
-     "Normandie",
-     "Provence",
-     "Alsace",
-     "Corse"
+     "pommes",
+     "cailloux",
+     "plastique",
+     "métal"
     ],
-    "a": "Normandie"
+    "a": "pommes"
    },
    {
     "q": "Le cidre est-il pétillant ou plat, en général ?",
@@ -26453,24 +26453,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Quelle plante donne au pastis son goût anisé ? L'___ ?",
+    "q": "Le pastis, c'est : une boisson, un matériau de construction, le nom d'une forêt ou un appareil de musculation ?",
     "c": [
-     "anis",
-     "menthe",
-     "thym",
-     "lavande"
+     "une boisson",
+     "un matériau de construction",
+     "le nom d'une forêt",
+     "un appareil de musculation"
     ],
-    "a": "anis"
+    "a": "une boisson"
    },
    {
-    "q": "Dans quelle région du sud de la France le pastis est-il un rituel ? La ___ ?",
+    "q": "Le pastis a un goût : d'anis, de fraise, de chocolat ou de poisson ?",
     "c": [
-     "Provence",
-     "Bretagne",
-     "Alsace",
-     "Normandie"
+     "d'anis",
+     "de fraise",
+     "de chocolat",
+     "de poisson"
     ],
-    "a": "Provence"
+    "a": "d'anis"
    },
    {
     "q": "Que devient le pastis quand on ajoute de l'eau ? Il devient ___ (trouble) ?",
@@ -26536,24 +26536,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "De quelle céréale, fermentée, est fait le saké ? Le ___ ?",
+    "q": "Le saké, c'est : une boisson, un matériau de construction, le nom d'une forêt ou un appareil de musculation ?",
     "c": [
-     "riz",
-     "blé",
-     "orge",
-     "maïs"
+     "une boisson",
+     "un matériau de construction",
+     "le nom d'une forêt",
+     "un appareil de musculation"
     ],
-    "a": "riz"
+    "a": "une boisson"
    },
    {
-    "q": "De quel pays le saké est-il la boisson traditionnelle ?",
+    "q": "Le saké est fabriqué à partir de : riz, cailloux, plastique ou métal ?",
     "c": [
-     "Japon",
-     "Chine",
-     "Corée",
-     "Thaïlande"
+     "riz",
+     "cailloux",
+     "plastique",
+     "métal"
     ],
-    "a": "Japon"
+    "a": "riz"
    },
    {
     "q": "À quelle température peut-on servir le saké, contrairement au vin ? ___ ou froid ?",
@@ -26619,24 +26619,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "De quel pays le porto est-il originaire ?",
+    "q": "Le porto, c'est : une boisson, un matériau de construction, le nom d'une forêt ou un appareil de musculation ?",
     "c": [
-     "Portugal",
-     "Espagne",
-     "Italie",
-     "Grèce"
+     "une boisson",
+     "un matériau de construction",
+     "le nom d'une forêt",
+     "un appareil de musculation"
     ],
-    "a": "Portugal"
+    "a": "une boisson"
    },
    {
-    "q": "De quelle ville portugaise le porto tient-il son nom ?",
+    "q": "Le porto vient : du Portugal, du pôle Nord, de la Lune ou du désert ?",
     "c": [
-     "Porto",
-     "Lisbonne",
-     "Braga",
-     "Faro"
+     "du Portugal",
+     "du pôle Nord",
+     "de la Lune",
+     "du désert"
     ],
-    "a": "Porto"
+    "a": "du Portugal"
    },
    {
     "q": "Le porto est un vin muté, c'est-à-dire enrichi en ___ ? (alcool ajouté)",
@@ -26702,24 +26702,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Quel alcool est la base de la sangria ? Le ___ ?",
+    "q": "La sangria, c'est : une boisson, un matériau de construction, le nom d'une forêt ou un appareil de musculation ?",
     "c": [
-     "vin",
-     "whisky",
-     "vodka",
-     "gin"
+     "une boisson",
+     "un matériau de construction",
+     "le nom d'une forêt",
+     "un appareil de musculation"
     ],
-    "a": "vin"
+    "a": "une boisson"
    },
    {
-    "q": "De quel pays la sangria est-elle une boisson emblématique ?",
+    "q": "La sangria contient des morceaux de : fruits, cailloux, bonbons ou biscuits ?",
     "c": [
-     "Espagne",
-     "Suède",
-     "Russie",
-     "Irlande"
+     "fruits",
+     "cailloux",
+     "bonbons",
+     "biscuits"
     ],
-    "a": "Espagne"
+    "a": "fruits"
    },
    {
     "q": "Que met-on en morceaux dans la sangria en plus du vin ? Des ___ ?",
@@ -26785,22 +26785,22 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Le cocktail Martini est un mélange de gin et de ___ ?",
+    "q": "Le martini (cocktail), c'est : une boisson, un matériau de construction, le nom d'une forêt ou un appareil de musculation ?",
     "c": [
-     "vermouth",
-     "cola",
-     "jus d'orange",
-     "lait"
+     "une boisson",
+     "un matériau de construction",
+     "le nom d'une forêt",
+     "un appareil de musculation"
     ],
-    "a": "vermouth"
+    "a": "une boisson"
    },
    {
-    "q": "Quel fruit vert garnit souvent un Martini ? Une ___ ?",
+    "q": "Un Martini est souvent garni d'une : olive, banane, fraise ou pastèque ?",
     "c": [
      "olive",
-     "cerise",
+     "banane",
      "fraise",
-     "banane"
+     "pastèque"
     ],
     "a": "olive"
    },
@@ -26868,24 +26868,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Le punch est une boisson servie en grande quantité pour les ___ ? (soirées)",
+    "q": "Le punch, c'est : une boisson, un matériau de construction, le nom d'une forêt ou un appareil de musculation ?",
     "c": [
-     "fêtes",
-     "enterrements",
-     "examens",
-     "réunions"
+     "une boisson",
+     "un matériau de construction",
+     "le nom d'une forêt",
+     "un appareil de musculation"
     ],
-    "a": "fêtes"
+    "a": "une boisson"
    },
    {
-    "q": "Quel alcool est souvent la base d'un punch antillais ? Le ___ ?",
+    "q": "Le punch est une boisson servie surtout pour les : fêtes, examens, réunions de travail ou enterrements ?",
     "c": [
-     "rhum",
-     "whisky",
-     "vodka",
-     "gin"
+     "fêtes",
+     "examens",
+     "réunions de travail",
+     "enterrements"
     ],
-    "a": "rhum"
+    "a": "fêtes"
    },
    {
     "q": "Quels ingrédients colorés donnent son goût au punch ? Des jus de ___ ?",
@@ -26951,24 +26951,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "De quelle couleur est l'absinthe traditionnelle ? La « fée ___ » ?",
+    "q": "L'absinthe, c'est : une boisson, un matériau de construction, le nom d'une forêt ou un appareil de musculation ?",
     "c": [
-     "verte",
-     "rouge",
-     "bleue",
-     "noire"
+     "une boisson",
+     "un matériau de construction",
+     "le nom d'une forêt",
+     "un appareil de musculation"
     ],
-    "a": "verte"
+    "a": "une boisson"
    },
    {
-    "q": "Quelle plante amère donne son nom et son goût à l'absinthe ? La grande ___ ?",
+    "q": "L'absinthe traditionnelle est de couleur : verte, rose fluo, noire ou dorée ?",
     "c": [
-     "absinthe",
-     "menthe",
-     "sauge",
-     "ortie"
+     "verte",
+     "rose fluo",
+     "noire",
+     "dorée"
     ],
-    "a": "absinthe"
+    "a": "verte"
    },
    {
     "q": "Quel objet troué pose-t-on sur le verre pour faire fondre le sucre ? La ___ ?",
@@ -27034,24 +27034,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Quels religieux fabriquent la liqueur Chartreuse ? Des ___ ?",
+    "q": "La chartreuse, c'est : une boisson, un matériau de construction, le nom d'une forêt ou un appareil de musculation ?",
     "c": [
-     "moines",
-     "soldats",
-     "marins",
-     "boulangers"
+     "une boisson",
+     "un matériau de construction",
+     "le nom d'une forêt",
+     "un appareil de musculation"
     ],
-    "a": "moines"
+    "a": "une boisson"
    },
    {
-    "q": "De quelle couleur vive est la Chartreuse la plus connue ?",
+    "q": "La Chartreuse est une liqueur fabriquée par des : moines, marins, boulangers ou soldats ?",
     "c": [
-     "verte",
-     "rouge",
-     "bleue",
-     "noire"
+     "moines",
+     "marins",
+     "boulangers",
+     "soldats"
     ],
-    "a": "verte"
+    "a": "moines"
    },
    {
     "q": "Dans quel massif alpin français est produite la Chartreuse ? Le massif de la ___ ?",
@@ -27117,24 +27117,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "De quel fruit le calvados est-il distillé ? La ___ ?",
+    "q": "Le calvados, c'est : une boisson, un matériau de construction, le nom d'une forêt ou un appareil de musculation ?",
     "c": [
-     "pomme",
-     "poire",
-     "raisin",
-     "prune"
+     "une boisson",
+     "un matériau de construction",
+     "le nom d'une forêt",
+     "un appareil de musculation"
     ],
-    "a": "pomme"
+    "a": "une boisson"
    },
    {
-    "q": "De quelle région française le calvados est-il originaire ? La ___ ?",
+    "q": "Le calvados est fabriqué à partir de : pommes, raisin, cailloux ou plastique ?",
     "c": [
-     "Normandie",
-     "Provence",
-     "Alsace",
-     "Corse"
+     "pommes",
+     "raisin",
+     "cailloux",
+     "plastique"
     ],
-    "a": "Normandie"
+    "a": "pommes"
    },
    {
     "q": "De quelle boisson fermentée le calvados est-il distillé ? Le ___ ?",
@@ -27200,24 +27200,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "De quel fruit distillé l'armagnac est-il fait ? Le ___ (vin) ?",
+    "q": "L'armagnac, c'est : une boisson, un matériau de construction, le nom d'une forêt ou un appareil de musculation ?",
     "c": [
-     "raisin",
-     "pomme",
-     "poire",
-     "figue"
+     "une boisson",
+     "un matériau de construction",
+     "le nom d'une forêt",
+     "un appareil de musculation"
     ],
-    "a": "raisin"
+    "a": "une boisson"
    },
    {
-    "q": "De quelle région du sud-ouest de la France l'armagnac est-il originaire ? La ___ ?",
+    "q": "L'armagnac est fabriqué à partir de : raisin, pommes de terre, sable ou métal ?",
     "c": [
-     "Gascogne",
-     "Bretagne",
-     "Alsace",
-     "Savoie"
+     "raisin",
+     "pommes de terre",
+     "sable",
+     "métal"
     ],
-    "a": "Gascogne"
+    "a": "raisin"
    },
    {
     "q": "Quelle catégorie d'alcool est l'armagnac ? Une eau-de-___ ?",
@@ -27283,24 +27283,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "De quelle céréale majoritaire le bourbon est-il distillé ? Le ___ ?",
+    "q": "Le bourbon, c'est : une boisson, un matériau de construction, le nom d'une forêt ou un appareil de musculation ?",
     "c": [
-     "maïs",
-     "orge",
-     "seigle",
-     "blé"
+     "une boisson",
+     "un matériau de construction",
+     "le nom d'une forêt",
+     "un appareil de musculation"
     ],
-    "a": "maïs"
+    "a": "une boisson"
    },
    {
-    "q": "De quel pays le bourbon est-il le whiskey emblématique ? Les ___-Unis ?",
+    "q": "Le bourbon est un whiskey fabriqué surtout à partir de : maïs, cailloux, plastique ou verre ?",
     "c": [
-     "États",
-     "Émirats",
-     "Pays",
-     "Provinces"
+     "maïs",
+     "cailloux",
+     "plastique",
+     "verre"
     ],
-    "a": "États"
+    "a": "maïs"
    },
    {
     "q": "Quel État américain est le berceau du bourbon ? Le ___ ?",
@@ -27366,24 +27366,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "De quelle couleur est une bière stout ?",
+    "q": "La stout, c'est : une boisson, un matériau de construction, le nom d'une forêt ou un appareil de musculation ?",
     "c": [
-     "noire",
-     "blonde",
-     "rousse",
-     "blanche"
+     "une boisson",
+     "un matériau de construction",
+     "le nom d'une forêt",
+     "un appareil de musculation"
     ],
-    "a": "noire"
+    "a": "une boisson"
    },
    {
-    "q": "Quelle stout irlandaise à mousse crémeuse est mondialement connue ?",
+    "q": "Une bière stout est de couleur : noire, rose, transparente ou dorée fluo ?",
     "c": [
-     "Guinness",
-     "Heineken",
-     "Corona",
-     "Leffe"
+     "noire",
+     "rose",
+     "transparente",
+     "dorée fluo"
     ],
-    "a": "Guinness"
+    "a": "noire"
    },
    {
     "q": "Quel ingrédient torréfié donne à la stout sa couleur noire et son goût ? L'orge ___ ?",
@@ -27449,24 +27449,24 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Le lambic est un type de quelle boisson ? Une ___ belge ?",
+    "q": "Le lambic, c'est : une boisson, un matériau de construction, le nom d'une forêt ou un appareil de musculation ?",
     "c": [
-     "bière",
-     "vin",
-     "cidre",
-     "liqueur"
+     "une boisson",
+     "un matériau de construction",
+     "le nom d'une forêt",
+     "un appareil de musculation"
     ],
-    "a": "bière"
+    "a": "une boisson"
    },
    {
-    "q": "De quel pays le lambic est-il une spécialité ? La ___ ?",
+    "q": "Le lambic est un type de : bière belge, jus de fruits, soda ou eau minérale ?",
     "c": [
-     "Belgique",
-     "France",
-     "Allemagne",
-     "Irlande"
+     "bière belge",
+     "jus de fruits",
+     "soda",
+     "eau minérale"
     ],
-    "a": "Belgique"
+    "a": "bière belge"
    },
    {
     "q": "Quel mode de fermentation, sans levure ajoutée, caractérise le lambic ? La fermentation ___ ?",
