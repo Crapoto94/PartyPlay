@@ -1154,7 +1154,7 @@ function closeExpiredParties() {
     if (!cfg || cfg.closed || !cfg.partyDate) continue;
     // partyDate est "YYYY-MM-DD", minuit local → 1 jour après = +24h
     const partyEnd = new Date(cfg.partyDate + 'T23:59:59').getTime();
-    if (now > partyEnd + 86400000) {
+    if (now > partyEnd + 86400000 * 2) {
       cfg.closed = true;
       cfg.closedAt = now;
       // Envoi d'email aux joueurs avec email (non-bloquant)
