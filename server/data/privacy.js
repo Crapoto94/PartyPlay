@@ -4,8 +4,8 @@
 //  tout le monde parie sur le nombre de OUI).
 //
 //  500 questions ORIGINALES en deux niveaux :
-//  - 18+ soft : amour, hontes, secrets, soirées… piquant mais soft (normal)
-//  - 18+ hard : sexualité et confessions crues — vrai 18+, adultes consentants only
+//  - Intime : amour, hontes, secrets, soirées… piquant mais soft (normal)
+//  - 18+    : sexualité et confessions crues — vrai 18+, adultes consentants only
 //
 //  ⚠️ Contenu adulte pour les deux niveaux. À réserver aux soirées
 //  entre adultes. Aucune question n'implique de mineurs ni d'actes
@@ -13,13 +13,13 @@
 // =====================================================================
 
 export const PRIVACY_LEVELS = {
-  intime: { label: '18+ soft', emoji: '🔞', desc: 'Confessions piquantes mais soft — amour, hontes, secrets, soirées. Niveau adulte normal.' },
-  trash:  { label: '18+ hard', emoji: '🌶️', desc: 'Vrai 18+ — sexualité et confessions très crues, sans tabou. Adultes consentants uniquement.' },
+  intime: { label: 'Intime', emoji: '🔞', desc: 'Confessions piquantes mais soft — amour, hontes, secrets, soirées.' },
+  trash:  { label: '18+', emoji: '🌶️', desc: 'Vrai 18+ — sexualité et confessions très crues, sans tabou. Adultes consentants uniquement.' },
 };
 
 export const PRIVACY_QUESTIONS = {
   // ================================================================
-  //   NIVEAU 18+ SOFT — 250 questions (normal)
+  //   NIVEAU INTIME — 250 questions (normal)
   // ================================================================
   intime: [
     // --- Amour & flirt ---
@@ -285,7 +285,7 @@ export const PRIVACY_QUESTIONS = {
   ],
 
   // ================================================================
-  //   NIVEAU 18+ HARD — 250 questions (vrai 18+)
+  //   NIVEAU 18+ — 250 questions (vrai 18+)
   // ================================================================
   trash: [
     // --- Expériences ---
