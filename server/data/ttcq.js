@@ -4892,86 +4892,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel pays a gagné le plus de Coupes du Monde en Judo ?",
+    "q": "De quel pays est originaire le judo ?",
     "c": [
-     "France",
      "Japon",
+     "Chine",
      "Corée",
-     "Brésil"
+     "Thaïlande"
     ],
-    "a": 1
+    "a": "Japon"
    },
    {
-    "q": "Combien de joueurs par équipe en Judo ?",
+    "q": "Comment appelle-t-on la tenue portée par les judokas ? Un ___ ?",
     "c": [
-     "2",
-     "1",
-     "4",
-     "3"
+     "kimono",
+     "peignoir",
+     "maillot",
+     "short"
     ],
-    "a": 1
+    "a": "kimono"
    },
    {
-    "q": "Quel ceinture est la plus élevée en judo ?",
+    "q": "De quelle couleur est la ceinture du débutant en judo ?",
     "c": [
-     "Noire",
-     "Rouge et blanche",
-     "Rouge",
-     "Dorée"
+     "blanche",
+     "noire",
+     "jaune",
+     "rouge"
     ],
-    "a": 0
+    "a": "blanche"
    },
    {
-    "q": "Combien de ceintures existe-t-il en judo ?",
+    "q": "De quelle couleur est la ceinture d'un judoka expert de haut niveau ?",
     "c": [
-     "5",
-     "7",
-     "8",
-     "6"
+     "noire",
+     "blanche",
+     "verte",
+     "bleue"
     ],
-    "a": 3
+    "a": "noire"
    },
    {
-    "q": "Comment s'appelle le créateur du judo ?",
+    "q": "Comment appelle-t-on le score maximal qui met fin au combat immédiatement ?",
     "c": [
-     "Gichin Funakoshi",
-     "Jigoro Kano",
-     "Yoshitaka Yano",
-     "Morihei Ueshiba"
+     "ippon",
+     "waza-ari",
+     "yuko",
+     "koka"
     ],
-    "a": 1
+    "a": "ippon"
    },
    {
-    "q": "Quelle est la plus haute distinction au judo ?",
+    "q": "Sur quelle surface molle se pratique le judo ? Le ___ ?",
     "c": [
-     "Grand maître",
-     "10e dan",
-     "Ceinture rouge",
-     "9e dan"
+     "tatami",
+     "ring",
+     "gazon",
+     "sable"
     ],
-    "a": 1
+    "a": "tatami"
    },
    {
-    "q": "En quelle année le judo est-il devenu olympique ?",
+    "q": "Quel maître japonais a fondé le judo à la fin du XIXe siècle ? Jigoro ___ ?",
     "c": [
-     "1972",
-     "1980",
-     "1968",
-     "1964"
+     "Kano",
+     "Ueshiba",
+     "Funakoshi",
+     "Mifune"
     ],
-    "a": 3
+    "a": "Kano"
    },
    {
-    "q": "Quel judoka français a le plus de médailles olympiques ?",
-    "c": [
-     "Frédéric Demontfaucon",
-     "David Douillet",
-     "Angelo Parisi",
-     "Teddy Riner"
-    ],
-    "a": 3
+    "q": "En quelle année Jigoro Kano a-t-il fondé le judo (Kodokan) ?",
+    "a": "1882"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sport_012",
@@ -4980,86 +4975,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel pays a gagné le plus de Coupes du Monde en Golf ?",
+    "q": "Dans quoi le joueur de golf doit-il faire entrer la balle ? Un ___ ?",
     "c": [
-     "Grande-Bretagne",
-     "Irlande",
-     "États-Unis",
-     "Afrique Sud"
+     "trou",
+     "panier",
+     "filet",
+     "cercle"
     ],
-    "a": 2
+    "a": "trou"
    },
    {
-    "q": "Combien de joueurs par équipe en Golf ?",
-    "c": [
-     "1",
-     "4",
-     "2",
-     "3"
-    ],
-    "a": 0
+    "q": "Combien de trous compte un parcours de golf classique ?",
+    "a": "18"
    },
    {
-    "q": "Combien de trous compte un parcours de golf standard ?",
+    "q": "Avec quel équipement frappe-t-on la balle de golf ? Un ___ ?",
     "c": [
-     "12",
-     "9",
-     "18",
-     "36"
+     "club",
+     "batte",
+     "raquette",
+     "maillet"
     ],
-    "a": 2
+    "a": "club"
    },
    {
-    "q": "Quel golfeur a le plus de titres du Grand Chelem ?",
+    "q": "Comment appelle-t-on un score d'un coup sous le par sur un trou ? Un ___ ?",
     "c": [
-     "Jack Nicklaus",
-     "Gary Player",
-     "Arnold Palmer",
-     "Tiger Woods"
+     "birdie",
+     "bogey",
+     "eagle",
+     "par"
     ],
-    "a": 0
+    "a": "birdie"
    },
    {
-    "q": "Comment s'appelle le club utilisé pour frapper sur le tee ?",
+    "q": "Comment appelle-t-on le fait de rentrer la balle en un seul coup ? Un trou en ___ ?",
     "c": [
-     "Le driver",
-     "Le fer",
-     "Le putter",
-     "Le wedge"
+     "un",
+     "deux",
+     "or",
+     "puissance"
     ],
-    "a": 0
+    "a": "un"
    },
    {
-    "q": "Quel est le score en dessous du par appelé ?",
+    "q": "Quel golfeur américain surnommé « Tiger » a dominé le sport dans les années 2000 ? Tiger ___ ?",
     "c": [
-     "Bogey",
-     "Albatros",
-     "Eagle",
-     "Birdie"
+     "Woods",
+     "Mickelson",
+     "Nicklaus",
+     "Palmer"
     ],
-    "a": 2
+    "a": "Woods"
    },
    {
-    "q": "En quelle année le golf est-il devenu olympique ?",
+    "q": "Comment appelle-t-on le petit support sur lequel on pose la balle au départ ? Un ___ ?",
     "c": [
-     "2016",
-     "2012",
-     "2008",
-     "1900"
+     "tee",
+     "green",
+     "putt",
+     "par"
     ],
-    "a": 0
+    "a": "tee"
    },
    {
-    "q": "Quel tournoi majeur se joue en août ?",
-    "c": [
-     "L'US Open",
-     "The Masters",
-     "The Open Championship",
-     "Le PGA Championship"
-    ],
-    "a": 3
+    "q": "En quelle année le golf est-il attesté pour la première fois en Écosse, son berceau ?",
+    "a": "1457"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sport_013",
@@ -5068,86 +5052,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel pays a gagné le plus de Coupes du Monde en Escrime ?",
+    "q": "Avec quel type d'arme longue et fine pratique-t-on l'escrime ? Une ___ ?",
     "c": [
-     "Hongrie",
-     "France",
-     "Italie",
-     "Allemagne"
+     "épée",
+     "hache",
+     "lance",
+     "masse"
     ],
-    "a": 2
+    "a": "épée"
    },
    {
-    "q": "Combien de joueurs par équipe en Escrime ?",
+    "q": "Que porte l'escrimeur sur le visage pour se protéger ? Un ___ ?",
     "c": [
-     "1",
-     "3",
-     "2",
-     "4"
+     "masque",
+     "casque",
+     "voile",
+     "bandeau"
     ],
-    "a": 0
+    "a": "masque"
    },
    {
-    "q": "Quelles sont les trois armes de l'escrime ?",
+    "q": "Quelles sont les trois armes de l'escrime : le fleuret, l'épée et le ___ ?",
     "c": [
-     "Fleuret, épée, rapière",
-     "Fleuret, épée, sabre",
-     "Sabre, épée, poignard",
-     "Fleuret, sabre, poignard"
+     "sabre",
+     "poignard",
+     "rapière",
+     "glaive"
     ],
-    "a": 1
+    "a": "sabre"
    },
    {
-    "q": "Quelle est la cible valide au fleuret ?",
+    "q": "Comment appelle-t-on le fait de toucher l'adversaire ? Une ___ ?",
     "c": [
-     "Le torse",
-     "La tête",
-     "Les bras",
-     "Tout le corps"
+     "touche",
+     "prise",
+     "faute",
+     "botte"
     ],
-    "a": 0
+    "a": "touche"
    },
    {
-    "q": "Comment s'appelle l'arbitre en escrime ?",
+    "q": "Quel mot lance-t-on pour attaquer, célèbre cri d'escrime ? En ___ !",
     "c": [
-     "Le président du jury",
-     "Le directeur de combat",
-     "Le maître d'armes",
-     "Le juge"
+     "garde",
+     "avant",
+     "action",
+     "piste"
     ],
-    "a": 0
+    "a": "garde"
    },
    {
-    "q": "Quelle arme permet de toucher partout ?",
+    "q": "Sur quelle longue bande étroite se déroule un assaut d'escrime ? La ___ ?",
     "c": [
-     "Toutes les armes",
-     "Le fleuret",
-     "L'épée",
-     "Le sabre"
+     "piste",
+     "arène",
+     "salle",
+     "aire"
     ],
-    "a": 2
+    "a": "piste"
    },
    {
-    "q": "En quelle année l'escrime a-t-elle été aux premiers JO modernes ?",
+    "q": "Quel héros de roman de cape et d'épée manie l'épée avec panache ? Cyrano de ___ ?",
     "c": [
-     "1900",
-     "1904",
-     "1896",
-     "1912"
+     "Bergerac",
+     "Bâle",
+     "Bordeaux",
+     "Beaune"
     ],
-    "a": 2
+    "a": "Bergerac"
    },
    {
-    "q": "Quel escrimeur français est le plus titré ?",
-    "c": [
-     "Christian d'Oriola",
-     "Jean-Noël Ferrari",
-     "Brice Guyart",
-     "Érik Srecki"
-    ],
-    "a": 0
+    "q": "En quelle année l'escrime figure-t-elle aux premiers Jeux olympiques modernes ?",
+    "a": "1896"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sport_014",
@@ -5156,86 +5135,69 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel pays a gagné le plus de Coupes du Monde en Handball ?",
+    "q": "Avec quelle partie du corps joue-t-on principalement au handball ? Les ___ ?",
     "c": [
-     "Danemark",
-     "France",
-     "Croatie",
-     "Suède"
+     "mains",
+     "pieds",
+     "genoux",
+     "coudes"
     ],
-    "a": 0
+    "a": "mains"
    },
    {
-    "q": "Combien de joueurs par équipe en Handball ?",
-    "c": [
-     "9",
-     "5",
-     "7",
-     "11"
-    ],
-    "a": 2
+    "q": "Combien de joueurs de champ, plus le gardien, une équipe a-t-elle sur le terrain ?",
+    "a": "7"
    },
    {
-    "q": "Combien de joueurs par équipe au handball ?",
-    "c": [
-     "7",
-     "5",
-     "6",
-     "8"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quelle équipe a le plus de titres aux Championnats du Monde ?",
+    "q": "Quelle nation, aux « Experts », a longtemps dominé le handball mondial ?",
     "c": [
      "France",
      "Allemagne",
-     "Danemark",
-     "Suède"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quel pays domine le handball féminin ?",
-    "c": [
-     "Norvège",
-     "Russie",
-     "France",
+     "Espagne",
      "Danemark"
     ],
-    "a": 0
+    "a": "France"
    },
    {
-    "q": "Comment s'appelle la zone interdite devant le but ?",
-    "c": [
-     "Le cercle central",
-     "La surface de but",
-     "La zone",
-     "La ligne des 6 mètres"
-    ],
-    "a": 2
+    "q": "Comment appelle-t-on le fait de marquer dans la cage adverse ? Un ___ ?",
+    "a": "But"
    },
    {
-    "q": "En quelle année le handball est-il devenu olympique ?",
+    "q": "Quel joueur se tient dans la cage pour arrêter les tirs ? Le ___ ?",
     "c": [
-     "1972",
-     "1980",
-     "1936",
-     "1968"
+     "gardien",
+     "pivot",
+     "arrière",
+     "ailier"
     ],
-    "a": 0
+    "a": "gardien"
    },
    {
-    "q": "Quel gardien français est considéré comme le meilleur du monde ?",
+    "q": "Comment appelle-t-on le tir sanction accordé après une faute grave ? Un jet de ___ mètres ?",
     "c": [
-     "Cyril Dumoulin",
-     "Andréj Lavrov",
-     "Vincent Gérard",
-     "Thierry Omeyer"
+     "7",
+     "9",
+     "6",
+     "11"
     ],
-    "a": 3
+    "a": "7"
+   },
+   {
+    "q": "Quel joueur planté au centre de la défense adverse est le pivot : vrai poste ? Le ___ ?",
+    "c": [
+     "pivot",
+     "libéro",
+     "meneur",
+     "ailier"
+    ],
+    "a": "pivot"
+   },
+   {
+    "q": "En quelle année les règles modernes du handball à 7 ont-elles été fixées (années 1930-1940) : quelle année exacte de la 1re Coupe du monde masculine en salle ?",
+    "a": "1938"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sport_015",
@@ -5244,86 +5206,69 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel pays a gagné le plus de Coupes du Monde en Volley-ball ?",
+    "q": "Qu'est-ce qui sépare les deux équipes au volley-ball ? Un ___ ?",
     "c": [
-     "Italie",
-     "Pologne",
-     "Brésil",
-     "Russie"
+     "filet",
+     "mur",
+     "trait",
+     "poteau"
     ],
-    "a": 2
+    "a": "filet"
    },
    {
-    "q": "Combien de joueurs par équipe en Volley-ball ?",
-    "c": [
-     "8",
-     "4",
-     "6",
-     "10"
-    ],
-    "a": 2
+    "q": "Combien de joueurs compose une équipe de volley sur le terrain ?",
+    "a": "6"
    },
    {
-    "q": "Combien de joueurs par équipe au volley-ball ?",
-    "c": [
-     "7",
-     "6",
-     "4",
-     "5"
-    ],
-    "a": 1
+    "q": "Combien de touches de balle maximum une équipe a-t-elle avant de renvoyer ?",
+    "a": "3"
    },
    {
-    "q": "Combien de sets faut-il gagner pour remporter un match ?",
+    "q": "Comment appelle-t-on l'attaque puissante frappée au-dessus du filet ? Un ___ ?",
     "c": [
-     "4",
-     "1",
-     "2",
-     "3"
+     "smash",
+     "service",
+     "block",
+     "passe"
     ],
-    "a": 3
+    "a": "smash"
    },
    {
-    "q": "À combien de points se joue un set ?",
+    "q": "Comment appelle-t-on le joueur défensif en maillot différent qui ne peut attaquer ? Le ___ ?",
     "c": [
-     "25",
-     "15",
-     "21",
-     "11"
+     "libéro",
+     "passeur",
+     "central",
+     "pointu"
     ],
-    "a": 0
+    "a": "libéro"
    },
    {
-    "q": "Quelle est la taille minimale d'un filet masculin ?",
+    "q": "Sur quelle surface se pratique le beach-volley ? Le ___ ?",
     "c": [
-     "2,40 m",
-     "2,43 m",
-     "2,35 m",
-     "2,50 m"
+     "sable",
+     "gazon",
+     "béton",
+     "parquet"
     ],
-    "a": 1
+    "a": "sable"
    },
    {
-    "q": "En quelle année le volley-ball est-il devenu olympique ?",
+    "q": "Comment appelle-t-on le contre défensif au filet, mains levées ? Un ___ ?",
     "c": [
-     "1968",
-     "1972",
-     "1960",
-     "1964"
+     "block",
+     "smash",
+     "dig",
+     "set"
     ],
-    "a": 3
+    "a": "block"
    },
    {
-    "q": "Qui a inventé le volley-ball ?",
-    "c": [
-     "William G. Morgan",
-     "Pierre de Coubertin",
-     "James Naismith",
-     "Luther H. Gulick"
-    ],
-    "a": 0
+    "q": "En quelle année William Morgan a-t-il inventé le volley-ball aux États-Unis ?",
+    "a": "1895"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sport_016",
@@ -5332,86 +5277,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel pays a gagné le plus de Coupes du Monde en Surf ?",
+    "q": "Sur quel élément naturel le surfeur glisse-t-il ? Les ___ ?",
     "c": [
-     "États-Unis",
+     "vagues",
+     "dunes",
+     "nuages",
+     "rochers"
+    ],
+    "a": "vagues"
+   },
+   {
+    "q": "Sur quel objet le surfeur se tient-il debout ? Une ___ ?",
+    "c": [
+     "planche",
+     "bouée",
+     "flotteur",
+     "barque"
+    ],
+    "a": "planche"
+   },
+   {
+    "q": "Quel archipel américain du Pacifique est le berceau du surf moderne ?",
+    "c": [
      "Hawaï",
-     "Brésil",
-     "Australie"
+     "Bali",
+     "Tahiti",
+     "Fidji"
     ],
-    "a": 0
+    "a": "Hawaï"
    },
    {
-    "q": "Combien de joueurs par équipe en Surf ?",
+    "q": "Comment appelle-t-on le tunnel formé par une vague qui déferle ? Le ___ ?",
     "c": [
-     "2",
-     "4",
-     "3",
-     "1"
+     "tube",
+     "creux",
+     "rouleau",
+     "mur"
     ],
-    "a": 3
+    "a": "tube"
    },
    {
-    "q": "Quelle discipline de surf consiste à dompter les vagues les plus hautes ?",
+    "q": "Quel cordon relie la cheville du surfeur à sa planche ? Le ___ ?",
     "c": [
-     "Bodyboard",
-     "Longboard",
-     "Shortboard",
-     "Big wave surfing"
+     "leash",
+     "wax",
+     "fin",
+     "rail"
     ],
-    "a": 3
+    "a": "leash"
    },
    {
-    "q": "Comment s'appelle la compétition mondiale de surf ?",
+    "q": "Comment appelle-t-on une très grosse vague, spot mythique ? Une vague ___ ?",
     "c": [
-     "Championship Tour",
-     "World Surf League",
-     "Surfing World Cup",
-     "ASP"
+     "géante",
+     "petite",
+     "molle",
+     "plate"
     ],
-    "a": 1
+    "a": "géante"
    },
    {
-    "q": "Quel surfeur français est le plus connu ?",
+    "q": "Que met-on sur la planche pour ne pas glisser ? De la ___ ?",
     "c": [
-     "Kelly Slater",
-     "Gabriel Medina",
-     "Mick Fanning",
-     "Jérémy Florès"
+     "wax",
+     "colle",
+     "huile",
+     "cire"
     ],
-    "a": 3
+    "a": "wax"
    },
    {
-    "q": "Quel surfeur détient le plus de titres mondiaux ?",
-    "c": [
-     "John John Florence",
-     "Kelly Slater",
-     "Mick Fanning",
-     "Andy Irons"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Combien de titres Slater a-t-il remportés ?",
-    "c": [
-     "13",
-     "11",
-     "8",
-     "10"
-    ],
-    "a": 1
-   },
-   {
-    "q": "En quelle année le surf a-t-il fait ses débuts olympiques ?",
-    "c": [
-     "2020",
-     "2024",
-     "2012",
-     "2016"
-    ],
-    "a": 0
+    "q": "Quelle hauteur, en mètres, faisait la plus grosse vague jamais surfée (record à Nazaré, 2020) ?",
+    "a": "26"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sport_017",
@@ -5420,86 +5360,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel pays a gagné le plus de Coupes du Monde en Escalade ?",
+    "q": "Sur quoi grimpe-t-on en escalade ? Une ___ ?",
     "c": [
-     "Corée",
-     "Japon",
-     "France",
-     "Autriche"
+     "paroi",
+     "échelle",
+     "corde",
+     "pente"
     ],
-    "a": 2
+    "a": "paroi"
    },
    {
-    "q": "Combien de joueurs par équipe en Escalade ?",
+    "q": "Quel équipement de sécurité relie le grimpeur à la corde ? Un ___ ?",
     "c": [
-     "4",
-     "1",
-     "2",
-     "3"
+     "baudrier",
+     "casque",
+     "gant",
+     "harnais"
     ],
-    "a": 1
+    "a": "baudrier"
    },
    {
-    "q": "Quelles sont les trois disciplines de l'escalade olympique ?",
+    "q": "Comment appelle-t-on l'escalade de blocs bas sans corde, sur tapis ? Le ___ ?",
     "c": [
-     "Difficulté, bloc, lead",
-     "Vitesse, bloc, trad",
-     "Lead, bouldering, vitesse",
-     "Difficulté, bloc, vitesse"
+     "bloc",
+     "grande voie",
+     "solo",
+     "via"
     ],
-    "a": 3
+    "a": "bloc"
    },
    {
-    "q": "Comment s'appelle la protection mobile en escalade ?",
+    "q": "Que met-on sur les mains pour ne pas glisser en escalade ? De la ___ ?",
     "c": [
-     "La corde",
-     "Le baudrier",
-     "Le dégaine",
-     "Le mousqueton"
+     "magnésie",
+     "craie",
+     "colle",
+     "cire"
     ],
-    "a": 2
+    "a": "magnésie"
    },
    {
-    "q": "Quel est le niveau de difficulté le plus élevé en escalade ?",
+    "q": "Comment appelle-t-on l'escalade sans corde ni protection, très dangereuse ? Le solo ___ ?",
     "c": [
-     "9c",
-     "9b",
-     "9a",
-     "10a"
+     "intégral",
+     "assisté",
+     "sportif",
+     "artificiel"
     ],
-    "a": 0
+    "a": "intégral"
    },
    {
-    "q": "Comment s'appelle le grimpeur qui protège le grimpeur ?",
+    "q": "Quel grimpeur américain a gravi El Capitan sans corde (film Free Solo) ? Alex ___ ?",
     "c": [
-     "Le partenaire",
-     "L'assureur",
-     "Le second",
-     "Le garant"
+     "Honnold",
+     "Ondra",
+     "Sharma",
+     "Caldwell"
     ],
-    "a": 1
+    "a": "Honnold"
    },
    {
-    "q": "En quelle année l'escalade a-t-elle fait ses débuts olympiques ?",
+    "q": "Dans quel célèbre parc américain se dresse la paroi d'El Capitan ?",
     "c": [
-     "2024",
-     "2016",
-     "2012",
-     "2020"
+     "Yosemite",
+     "Yellowstone",
+     "Zion",
+     "Grand Canyon"
     ],
-    "a": 3
+    "a": "Yosemite"
    },
    {
-    "q": "Quel grimpeur tchèque est une légende de l'escalade ?",
-    "c": [
-     "Adam Ondra",
-     "Chris Sharma",
-     "Alex Honnold",
-     "Janja Garnbret"
-    ],
-    "a": 0
+    "q": "Quelle est la hauteur, en mètres, de la paroi d'El Capitan à Yosemite ?",
+    "a": "900"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sport_018",
@@ -5508,86 +5443,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel pays a gagné le plus de Coupes du Monde en MMA ?",
+    "q": "Que signifie le sigle MMA : Mixed ___ Arts ?",
     "c": [
-     "Nouvelle-Zélande",
-     "Brésil",
-     "États-Unis",
-     "Canada"
+     "Martial",
+     "Master",
+     "Modern",
+     "Major"
     ],
-    "a": 2
+    "a": "Martial"
    },
    {
-    "q": "Combien de joueurs par équipe en MMA ?",
+    "q": "Dans quelle enceinte grillagée à huit côtés se déroulent les combats de MMA ? L'___ ?",
     "c": [
-     "2",
-     "1",
-     "4",
-     "3"
+     "octogone",
+     "hexagone",
+     "ring",
+     "cage"
     ],
-    "a": 1
+    "a": "octogone"
    },
    {
-    "q": "Que signifie MMA ?",
-    "c": [
-     "Mixed Martial Arts",
-     "Mixed Multi Arts",
-     "Modern Martial Arts",
-     "Martial Mixed Arts"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quelle organisation est la plus célèbre en MMA ?",
+    "q": "Quelle est la plus grande organisation mondiale de MMA ?",
     "c": [
      "UFC",
-     "ONE Championship",
-     "PRIDE",
-     "Bellator"
+     "WWE",
+     "NBA",
+     "PFL"
     ],
-    "a": 0
+    "a": "UFC"
    },
    {
-    "q": "Dans quel pays le MMA professionnel a-t-il été légalisé pour la première fois ?",
+    "q": "Comment appelle-t-on une prise de soumission qui étrangle l'adversaire ? Un ___ ?",
     "c": [
-     "Brésil",
-     "Japon",
-     "États-Unis",
-     "Russie"
+     "étranglement",
+     "crochet",
+     "uppercut",
+     "jab"
     ],
-    "a": 2
+    "a": "étranglement"
    },
    {
-    "q": "Quel combattant est surnommé 'The Notorious' ?",
+    "q": "Comment abandonne-t-on un combat quand on est en difficulté ? On ___ (tape au sol) ?",
     "c": [
-     "Conor McGregor",
-     "Jon Jones",
-     "Khabib Nurmagomedov",
-     "Israel Adesanya"
+     "tape",
+     "crie",
+     "lève",
+     "recule"
     ],
-    "a": 0
+    "a": "tape"
    },
    {
-    "q": "Combien de rounds dure un combat de championnat UFC ?",
+    "q": "Quel combattant irlandais tapageur est une star mondiale du MMA ? Conor ___ ?",
     "c": [
-     "3",
-     "5",
-     "6",
-     "4"
+     "McGregor",
+     "Nurmagomedov",
+     "Jones",
+     "Adesanya"
     ],
-    "a": 1
+    "a": "McGregor"
    },
    {
-    "q": "Quelle technique est interdite en MMA ?",
+    "q": "Comment appelle-t-on la victoire par mise KO ou soumission avant la limite ? Un ___ avant la limite ?",
     "c": [
-     "Étranglement",
-     "Coup de poing au visage",
-     "Coup de pied dans les parties",
-     "Clé de bras"
+     "finish",
+     "draw",
+     "split",
+     "points"
     ],
-    "a": 2
+    "a": "finish"
+   },
+   {
+    "q": "En quelle année a eu lieu le tout premier tournoi UFC 1 ?",
+    "a": "1993"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sport_019",
@@ -5596,86 +5526,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel pays a gagné le plus de Coupes du Monde en Badminton ?",
+    "q": "Quel projectile à plumes frappe-t-on au badminton ? Un ___ ?",
     "c": [
-     "Indonésie",
-     "Chine",
-     "Japon",
-     "Malaisie"
+     "volant",
+     "ballon",
+     "palet",
+     "disque"
     ],
-    "a": 1
+    "a": "volant"
    },
    {
-    "q": "Combien de joueurs par équipe en Badminton ?",
+    "q": "Avec quel équipement frappe-t-on le volant ? Une ___ ?",
     "c": [
-     "3",
-     "2",
-     "1",
-     "4"
+     "raquette",
+     "batte",
+     "crosse",
+     "planche"
     ],
-    "a": 2
+    "a": "raquette"
    },
    {
-    "q": "Combien de joueurs par équipe en double ?",
+    "q": "Qu'y a-t-il au milieu du terrain de badminton ? Un ___ ?",
     "c": [
-     "1",
-     "3",
-     "2",
-     "4"
+     "filet",
+     "mur",
+     "trait",
+     "poteau"
     ],
-    "a": 2
+    "a": "filet"
    },
    {
-    "q": "Comment s'appelle la balle en badminton ?",
-    "c": [
-     "Le shuttlecock",
-     "Le projectile",
-     "Le plumier",
-     "Le volant"
-    ],
-    "a": 3
+    "q": "Combien de points faut-il pour gagner un set en badminton (règle actuelle) ?",
+    "a": "21"
    },
    {
-    "q": "Quel pays domine le badminton mondial ?",
+    "q": "Quel continent domine largement le badminton mondial ?",
     "c": [
-     "Chine",
-     "Indonésie",
-     "Corée du Sud",
-     "Danemark"
+     "Asie",
+     "Europe",
+     "Amérique",
+     "Afrique"
     ],
-    "a": 0
+    "a": "Asie"
    },
    {
-    "q": "Combien de sets pour gagner un match ?",
+    "q": "Comment appelle-t-on le coup smashé puissant vers le bas ? Un ___ ?",
     "c": [
-     "3",
-     "4",
-     "2",
-     "1"
+     "smash",
+     "lob",
+     "service",
+     "drive"
     ],
-    "a": 2
+    "a": "smash"
    },
    {
-    "q": "En quelle année le badminton est-il devenu olympique ?",
+    "q": "À quelle vitesse, en km/h, peut voler un volant lors d'un smash record ?",
     "c": [
-     "1996",
-     "1992",
-     "1988",
-     "2000"
+     "426",
+     "150",
+     "250",
+     "600"
     ],
-    "a": 1
+    "a": "426"
    },
    {
-    "q": "Quel est le coup le plus puissant au badminton ?",
-    "c": [
-     "Le drive",
-     "Le drop",
-     "Le smash",
-     "Le service"
-    ],
-    "a": 2
+    "q": "En quelle année le badminton est-il devenu sport olympique officiel ?",
+    "a": "1992"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sport_020",
@@ -5684,86 +5603,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel pays a gagné le plus de Coupes du Monde en Baseball ?",
+    "q": "Avec quel objet en bois frappe-t-on la balle au baseball ? Une ___ ?",
     "c": [
-     "Japon",
-     "Cuba",
-     "Corée",
-     "États-Unis"
+     "batte",
+     "raquette",
+     "crosse",
+     "planche"
     ],
-    "a": 3
+    "a": "batte"
    },
    {
-    "q": "Combien de joueurs par équipe en Baseball ?",
-    "c": [
-     "7",
-     "5",
-     "11",
-     "9"
-    ],
-    "a": 3
+    "q": "Combien de bases doit parcourir un joueur pour marquer un point ?",
+    "a": "4"
    },
    {
-    "q": "Combien de joueurs par équipe au baseball ?",
+    "q": "Dans quel pays le baseball est-il le sport national par excellence ?",
     "c": [
-     "9",
-     "10",
-     "11",
-     "8"
+     "États-Unis",
+     "Canada",
+     "Mexique",
+     "Cuba"
     ],
-    "a": 0
+    "a": "États-Unis"
    },
    {
-    "q": "Combien de manches dure un match standard ?",
+    "q": "Comment appelle-t-on un coup de circuit envoyant la balle hors du terrain ? Un home ___ ?",
     "c": [
-     "7",
-     "9",
-     "10",
-     "8"
+     "run",
+     "base",
+     "plate",
+     "field"
     ],
-    "a": 1
+    "a": "run"
    },
    {
-    "q": "Quelle équipe a gagné le plus de Séries Mondiales ?",
+    "q": "Quel joueur lance la balle vers le frappeur ? Le ___ ?",
     "c": [
-     "St. Louis Cardinals",
-     "Los Angeles Dodgers",
-     "New York Yankees",
-     "Boston Red Sox"
+     "lanceur",
+     "receveur",
+     "frappeur",
+     "arbitre"
     ],
-    "a": 2
+    "a": "lanceur"
    },
    {
-    "q": "Comment s'appelle le frappeur ?",
+    "q": "Quelle grande ligue professionnelle regroupe les meilleures équipes américaines ?",
     "c": [
-     "Le batteur",
-     "Le lanceur",
-     "Le receveur",
-     "Le voltigeur"
+     "MLB",
+     "NBA",
+     "NFL",
+     "NHL"
     ],
-    "a": 0
+    "a": "MLB"
    },
    {
-    "q": "En quelle année le baseball est-il devenu olympique ?",
+    "q": "Comment appelle-t-on trois prises manquées par le frappeur ? Il est ___ (out) ?",
     "c": [
-     "1984",
-     "1996",
-     "1992",
-     "1988"
+     "éliminé",
+     "sauvé",
+     "libre",
+     "prêt"
     ],
-    "a": 2
+    "a": "éliminé"
    },
    {
-    "q": "Qui a inventé le baseball ?",
-    "c": [
-     "Albert Spalding",
-     "Henry Chadwick",
-     "Alexander Cartwright",
-     "Abner Doubleday"
-    ],
-    "a": 2
+    "q": "En quelle année a eu lieu la première partie officielle de baseball à règles modernes (1846) ?",
+    "a": "1846"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "animaux_001",
