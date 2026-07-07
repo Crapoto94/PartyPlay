@@ -18681,7 +18681,7 @@ export const TTCQ_THEMES = [
      "Utérus, ovaires, trompes de Fallope, vagin",
      "Vagin, clitoris, anus"
     ],
-    "a": 2
+    "a": "Utérus, ovaires, trompes de Fallope, vagin"
    },
    {
     "q": "Quel organe produit les ovules ?",
@@ -18691,7 +18691,7 @@ export const TTCQ_THEMES = [
      "L'utérus",
      "Les trompes de Fallope"
     ],
-    "a": 0
+    "a": "Les ovaires"
    },
    {
     "q": "Combien de trompes de Fallope une femme possède-t-elle ?",
@@ -18701,7 +18701,7 @@ export const TTCQ_THEMES = [
      "3",
      "1"
     ],
-    "a": 1
+    "a": "2"
    },
    {
     "q": "Quelle est la fonction du vagin ?",
@@ -18711,7 +18711,7 @@ export const TTCQ_THEMES = [
      "Abriter le foetus",
      "Produire des hormones"
     ],
-    "a": 0
+    "a": "Conduit pour les rapports et l'accouchement"
    },
    {
     "q": "Où se trouve le clitoris ?",
@@ -18721,7 +18721,7 @@ export const TTCQ_THEMES = [
      "Partie supérieure de la vulve",
      "À l'intérieur du vagin"
     ],
-    "a": 2
+    "a": "Partie supérieure de la vulve"
    },
    {
     "q": "Qu'est-ce que le col de l'utérus ?",
@@ -18731,7 +18731,7 @@ export const TTCQ_THEMES = [
      "Partie inférieure de l'utérus qui s'ouvre dans le vagin",
      "Le fond de l'utérus"
     ],
-    "a": 2
+    "a": "Partie inférieure de l'utérus qui s'ouvre dans le vagin"
    },
    {
     "q": "Quelle est la taille moyenne de l'utérus ?",
@@ -18741,7 +18741,7 @@ export const TTCQ_THEMES = [
      "15-20 cm de long",
      "7-8 cm de long"
     ],
-    "a": 3
+    "a": "7-8 cm de long"
    },
    {
     "q": "Combien d'ovocytes une femme a-t-elle à la naissance ?",
@@ -18751,9 +18751,10 @@ export const TTCQ_THEMES = [
      "Environ 10 millions",
      "Environ 100 000"
     ],
-    "a": 1
+    "a": "Environ 1 à 2 millions"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_002",
@@ -18769,7 +18770,7 @@ export const TTCQ_THEMES = [
      "Vessie, testicules, pénis",
      "Testicules, pénis, prostate"
     ],
-    "a": 3
+    "a": "Testicules, pénis, prostate"
    },
    {
     "q": "Quel organe produit les spermatozoïdes ?",
@@ -18779,7 +18780,7 @@ export const TTCQ_THEMES = [
      "Le pénis",
      "La prostate"
     ],
-    "a": 1
+    "a": "Les testicules"
    },
    {
     "q": "Où sont situés les testicules ?",
@@ -18789,7 +18790,7 @@ export const TTCQ_THEMES = [
      "Dans le pénis",
      "Dans l'abdomen"
     ],
-    "a": 1
+    "a": "Dans le scrotum"
    },
    {
     "q": "Quelle est la fonction de la prostate ?",
@@ -18799,7 +18800,7 @@ export const TTCQ_THEMES = [
      "Produire des spermatozoïdes",
      "Produire le liquide séminal"
     ],
-    "a": 3
+    "a": "Produire le liquide séminal"
    },
    {
     "q": "Qu'est-ce que l'urètre masculin ?",
@@ -18809,7 +18810,7 @@ export const TTCQ_THEMES = [
      "Nerf",
      "Muscle"
     ],
-    "a": 1
+    "a": "Canal qui conduit l'urine et le sperme"
    },
    {
     "q": "Combien de spermatozoïdes produit un homme par jour ?",
@@ -18819,7 +18820,7 @@ export const TTCQ_THEMES = [
      "Plusieurs millions",
      "Plusieurs milliards"
     ],
-    "a": 2
+    "a": "Plusieurs millions"
    },
    {
     "q": "Quel est le rôle du scrotum ?",
@@ -18829,7 +18830,7 @@ export const TTCQ_THEMES = [
      "Stocker le sperme",
      "Protéger le pénis"
     ],
-    "a": 0
+    "a": "Réguler la température des testicules"
    },
    {
     "q": "Qu'est-ce que le prépuce ?",
@@ -18839,9 +18840,10 @@ export const TTCQ_THEMES = [
      "Frein du pénis",
      "Base du pénis"
     ],
-    "a": 0
+    "a": "Peau qui recouvre le gland du pénis"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_003",
@@ -18857,7 +18859,7 @@ export const TTCQ_THEMES = [
      "Protection contre les MST",
      "Traitement hormonal"
     ],
-    "a": 0
+    "a": "Moyen d'éviter une grossesse non désirée"
    },
    {
     "q": "Quelle est la méthode contraceptive la plus efficace ?",
@@ -18867,7 +18869,7 @@ export const TTCQ_THEMES = [
      "La pilule",
      "Le retrait"
     ],
-    "a": 0
+    "a": "L'implant et le stérilet"
    },
    {
     "q": "Combien de méthodes contraceptives existent ?",
@@ -18877,7 +18879,7 @@ export const TTCQ_THEMES = [
      "Plus de 15",
      "20"
     ],
-    "a": 2
+    "a": "Plus de 15"
    },
    {
     "q": "Qu'est-ce que la contraception d'urgence ?",
@@ -18887,7 +18889,7 @@ export const TTCQ_THEMES = [
      "Pilule du lendemain à prendre après un rapport",
      "Pilule quotidienne"
     ],
-    "a": 2
+    "a": "Pilule du lendemain à prendre après un rapport"
    },
    {
     "q": "Dans quel délai faut-il prendre la pilule du lendemain ?",
@@ -18897,7 +18899,7 @@ export const TTCQ_THEMES = [
      "Jusqu'à 48 heures",
      "Jusqu'à 24 heures"
     ],
-    "a": 0
+    "a": "Jusqu'à 72 heures après le rapport"
    },
    {
     "q": "Quelle méthode contraceptive est réversible ?",
@@ -18907,7 +18909,7 @@ export const TTCQ_THEMES = [
      "Aucune",
      "La stérilisation"
     ],
-    "a": 1
+    "a": "Toutes les méthodes sauf la stérilisation"
    },
    {
     "q": "Qu'est-ce que l'indice de Pearl ?",
@@ -18917,7 +18919,7 @@ export const TTCQ_THEMES = [
      "Nombre de grossesses",
      "Taux de réussite"
     ],
-    "a": 0
+    "a": "Taux d'échec d'une méthode contraceptive"
    },
    {
     "q": "Quelle contraception nécessite une prescription médicale en France ?",
@@ -18927,9 +18929,10 @@ export const TTCQ_THEMES = [
      "Pilule, implant, stérilet, patch, anneau",
      "Préservatif"
     ],
-    "a": 2
+    "a": "Pilule, implant, stérilet, patch, anneau"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_004",
@@ -18945,7 +18948,7 @@ export const TTCQ_THEMES = [
      "Améliorer le plaisir",
      "Protéger uniquement des IST"
     ],
-    "a": 0
+    "a": "Protéger des IST et éviter une grossesse"
    },
    {
     "q": "Quel matériau est utilisé pour la plupart des préservatifs ?",
@@ -18955,7 +18958,7 @@ export const TTCQ_THEMES = [
      "Silicone",
      "Polyuréthane"
     ],
-    "a": 0
+    "a": "Latex"
    },
    {
     "q": "Quelle est la fiabilité du préservatif contre les grossesses ?",
@@ -18965,7 +18968,7 @@ export const TTCQ_THEMES = [
      "Environ 99,9%",
      "Environ 85%"
     ],
-    "a": 0
+    "a": "Environ 98% en utilisation parfaite"
    },
    {
     "q": "Le préservatif protège-t-il contre toutes les IST ?",
@@ -18975,7 +18978,7 @@ export const TTCQ_THEMES = [
      "Non, certaines IST peuvent se transmettre par contact cutané",
      "Oui, toutes"
     ],
-    "a": 2
+    "a": "Non, certaines IST peuvent se transmettre par contact cutané"
    },
    {
     "q": "Comment conserver les préservatifs ?",
@@ -18985,7 +18988,7 @@ export const TTCQ_THEMES = [
      "Au réfrigérateur",
      "Dans la poche"
     ],
-    "a": 1
+    "a": "Dans un endroit frais et sec"
    },
    {
     "q": "Peut-on utiliser un préservatif deux fois ?",
@@ -18995,7 +18998,7 @@ export const TTCQ_THEMES = [
      "Oui, une deuxième fois",
      "Oui, une fois retourné"
     ],
-    "a": 0
+    "a": "Non, jamais"
    },
    {
     "q": "Depuis quand le préservatif moderne existe-t-il ?",
@@ -19005,7 +19008,7 @@ export const TTCQ_THEMES = [
      "XIXe siècle",
      "Années 1970"
     ],
-    "a": 1
+    "a": "Début du XXe siècle (latex)"
    },
    {
     "q": "Quelle est la date de péremption typique d'un préservatif ?",
@@ -19015,9 +19018,10 @@ export const TTCQ_THEMES = [
      "1 an",
      "10 ans"
     ],
-    "a": 0
+    "a": "3 à 5 ans"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_005",
@@ -19033,7 +19037,7 @@ export const TTCQ_THEMES = [
      "Cycle hormonal",
      "Période de préparation du corps à une éventuelle grossesse"
     ],
-    "a": 3
+    "a": "Période de préparation du corps à une éventuelle grossesse"
    },
    {
     "q": "Quelle est la durée moyenne d'un cycle menstruel ?",
@@ -19043,7 +19047,7 @@ export const TTCQ_THEMES = [
      "35 jours",
      "21 jours"
     ],
-    "a": 1
+    "a": "28 jours"
    },
    {
     "q": "Qu'est-ce que l'ovulation ?",
@@ -19053,7 +19057,7 @@ export const TTCQ_THEMES = [
      "Libération d'un ovule par l'ovaire",
      "Début des règles"
     ],
-    "a": 2
+    "a": "Libération d'un ovule par l'ovaire"
    },
    {
     "q": "Quand a lieu l'ovulation dans un cycle de 28 jours ?",
@@ -19063,7 +19067,7 @@ export const TTCQ_THEMES = [
      "Autour du 21e jour",
      "Au 1er jour"
     ],
-    "a": 0
+    "a": "Autour du 14e jour"
    },
    {
     "q": "Combien de temps durent les règles en moyenne ?",
@@ -19073,7 +19077,7 @@ export const TTCQ_THEMES = [
      "1 à 2 jours",
      "7 à 10 jours"
     ],
-    "a": 0
+    "a": "3 à 7 jours"
    },
    {
     "q": "Quelles hormones régulent le cycle menstruel ?",
@@ -19083,7 +19087,7 @@ export const TTCQ_THEMES = [
      "Testostérone et oestrogènes",
      "Oestrogènes et progestérone"
     ],
-    "a": 3
+    "a": "Oestrogènes et progestérone"
    },
    {
     "q": "Qu'est-ce que le syndrome prémenstruel (SPM) ?",
@@ -19093,7 +19097,7 @@ export const TTCQ_THEMES = [
      "Pendant l'ovulation",
      "Ensemble de symptômes avant les règles"
     ],
-    "a": 3
+    "a": "Ensemble de symptômes avant les règles"
    },
    {
     "q": "À quel âge survient la première menstruation ?",
@@ -19103,9 +19107,10 @@ export const TTCQ_THEMES = [
      "Entre 15 et 17 ans",
      "Entre 11 et 14 ans en moyenne"
     ],
-    "a": 3
+    "a": "Entre 11 et 14 ans en moyenne"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_006",
@@ -19121,7 +19126,7 @@ export const TTCQ_THEMES = [
      "Croissance",
      "Période de transition entre l'enfance et l'âge adulte"
     ],
-    "a": 3
+    "a": "Période de transition entre l'enfance et l'âge adulte"
    },
    {
     "q": "À quel âge commence la puberté chez les filles ?",
@@ -19131,7 +19136,7 @@ export const TTCQ_THEMES = [
      "Entre 6 et 10 ans",
      "Entre 10 et 15 ans"
     ],
-    "a": 0
+    "a": "Entre 8 et 13 ans"
    },
    {
     "q": "À quel âge commence la puberté chez les garçons ?",
@@ -19141,7 +19146,7 @@ export const TTCQ_THEMES = [
      "Entre 7 et 12 ans",
      "Entre 11 et 16 ans"
     ],
-    "a": 1
+    "a": "Entre 9 et 14 ans"
    },
    {
     "q": "Quel est le premier signe de la puberté chez les filles ?",
@@ -19151,7 +19156,7 @@ export const TTCQ_THEMES = [
      "Le développement des seins",
      "La croissance"
     ],
-    "a": 2
+    "a": "Le développement des seins"
    },
    {
     "q": "Quel est le premier signe de la puberté chez les garçons ?",
@@ -19161,7 +19166,7 @@ export const TTCQ_THEMES = [
      "L'augmentation du volume des testicules",
      "La pousse des poils"
     ],
-    "a": 2
+    "a": "L'augmentation du volume des testicules"
    },
    {
     "q": "Quelles hormones déclenchent la puberté ?",
@@ -19171,7 +19176,7 @@ export const TTCQ_THEMES = [
      "Les oestrogènes",
      "La testostérone"
     ],
-    "a": 0
+    "a": "Les gonadotrophines (LH et FSH)"
    },
    {
     "q": "Combien de temps dure la puberté ?",
@@ -19181,7 +19186,7 @@ export const TTCQ_THEMES = [
      "5 à 7 ans",
      "Environ 3 à 5 ans"
     ],
-    "a": 3
+    "a": "Environ 3 à 5 ans"
    },
    {
     "q": "Qu'est-ce que la poussée de croissance à la puberté ?",
@@ -19191,9 +19196,10 @@ export const TTCQ_THEMES = [
      "Accélération de la taille sur 2-3 ans",
      "Développement musculaire"
     ],
-    "a": 2
+    "a": "Accélération de la taille sur 2-3 ans"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_007",
@@ -19209,7 +19215,7 @@ export const TTCQ_THEMES = [
      "8 mois",
      "10 mois"
     ],
-    "a": 0
+    "a": "9 mois (environ 40 semaines)"
    },
    {
     "q": "Comment s'appelle la période de la grossesse ?",
@@ -19219,7 +19225,7 @@ export const TTCQ_THEMES = [
      "La gestation",
      "La fécondation"
     ],
-    "a": 2
+    "a": "La gestation"
    },
    {
     "q": "Quels sont les trois trimestres de la grossesse ?",
@@ -19229,7 +19235,7 @@ export const TTCQ_THEMES = [
      "3 périodes de 3 mois chacune",
      "3 périodes de 4 mois"
     ],
-    "a": 2
+    "a": "3 périodes de 3 mois chacune"
    },
    {
     "q": "Qu'est-ce que la nidation ?",
@@ -19239,7 +19245,7 @@ export const TTCQ_THEMES = [
      "Formation du foetus",
      "Début du travail"
     ],
-    "a": 1
+    "a": "Implantation de l'embryon dans l'utérus"
    },
    {
     "q": "Comment s'appelle le premier trimestre de la grossesse ?",
@@ -19249,7 +19255,7 @@ export const TTCQ_THEMES = [
      "Phase embryonnaire",
      "Phase foetale"
     ],
-    "a": 2
+    "a": "Phase embryonnaire"
    },
    {
     "q": "Qu'est-ce qu'une échographie obstétricale ?",
@@ -19259,7 +19265,7 @@ export const TTCQ_THEMES = [
      "IRM",
      "Analyse de sang"
     ],
-    "a": 1
+    "a": "Examen pour visualiser le foetus"
    },
    {
     "q": "Combien d'échographies sont recommandées en France ?",
@@ -19269,7 +19275,7 @@ export const TTCQ_THEMES = [
      "3",
      "5"
     ],
-    "a": 2
+    "a": "3"
    },
    {
     "q": "Qu'est-ce que le congé maternité en France ?",
@@ -19279,9 +19285,10 @@ export const TTCQ_THEMES = [
      "Congé pour la mère avant et après l'accouchement",
      "Congé parental"
     ],
-    "a": 2
+    "a": "Congé pour la mère avant et après l'accouchement"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_008",
@@ -19297,7 +19304,7 @@ export const TTCQ_THEMES = [
      "Travail, naissance, récupération",
      "Contractions, poussée, repos"
     ],
-    "a": 0
+    "a": "Travail, expulsion, délivrance"
    },
    {
     "q": "Qu'est-ce que le travail lors de l'accouchement ?",
@@ -19307,7 +19314,7 @@ export const TTCQ_THEMES = [
      "La poussée",
      "La délivrance du placenta"
     ],
-    "a": 0
+    "a": "Les contractions qui dilatent le col de l'utérus"
    },
    {
     "q": "Combien de temps dure le travail en moyenne ?",
@@ -19317,7 +19324,7 @@ export const TTCQ_THEMES = [
      "2 à 4 heures",
      "8 à 12 heures pour un premier enfant"
     ],
-    "a": 3
+    "a": "8 à 12 heures pour un premier enfant"
    },
    {
     "q": "Qu'est-ce qu'une péridurale ?",
@@ -19327,7 +19334,7 @@ export const TTCQ_THEMES = [
      "Anesthésie générale",
      "Piqûre de médicament"
     ],
-    "a": 0
+    "a": "Anesthésie locale pour accoucher sans douleur"
    },
    {
     "q": "Comment s'appelle la sortie du bébé ?",
@@ -19337,7 +19344,7 @@ export const TTCQ_THEMES = [
      "La nidation",
      "L'expulsion"
     ],
-    "a": 3
+    "a": "L'expulsion"
    },
    {
     "q": "Qu'est-ce que la délivrance ?",
@@ -19347,7 +19354,7 @@ export const TTCQ_THEMES = [
      "L'expulsion du placenta",
      "La coupure du cordon"
     ],
-    "a": 2
+    "a": "L'expulsion du placenta"
    },
    {
     "q": "Qu'est-ce qu'une césarienne ?",
@@ -19357,7 +19364,7 @@ export const TTCQ_THEMES = [
      "Accouchement par voie basse",
      "Accouchement sous eau"
     ],
-    "a": 0
+    "a": "Accouchement chirurgical par incision abdominale"
    },
    {
     "q": "Quel pourcentage d'accouchements se fait par césarienne en France ?",
@@ -19367,9 +19374,10 @@ export const TTCQ_THEMES = [
      "Environ 20%",
      "Environ 30%"
     ],
-    "a": 2
+    "a": "Environ 20%"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_009",
@@ -19385,7 +19393,7 @@ export const TTCQ_THEMES = [
      "La LH",
      "La progestérone"
     ],
-    "a": 0
+    "a": "La testostérone"
    },
    {
     "q": "Quelles sont les principales hormones sexuelles féminines ?",
@@ -19395,7 +19403,7 @@ export const TTCQ_THEMES = [
      "L'adrénaline",
      "La testostérone"
     ],
-    "a": 0
+    "a": "Les oestrogènes et la progestérone"
    },
    {
     "q": "Où est produite la testostérone chez l'homme ?",
@@ -19405,7 +19413,7 @@ export const TTCQ_THEMES = [
      "Dans la prostate",
      "Dans le pénis"
     ],
-    "a": 1
+    "a": "Dans les testicules"
    },
    {
     "q": "Où sont produits les oestrogènes ?",
@@ -19415,7 +19423,7 @@ export const TTCQ_THEMES = [
      "Dans les ovaires",
      "Dans le vagin"
     ],
-    "a": 2
+    "a": "Dans les ovaires"
    },
    {
     "q": "Quelle hormone déclenche l'ovulation ?",
@@ -19425,7 +19433,7 @@ export const TTCQ_THEMES = [
      "La LH (hormone lutéinisante)",
      "La FSH"
     ],
-    "a": 2
+    "a": "La LH (hormone lutéinisante)"
    },
    {
     "q": "Quel est le rôle de la progestérone ?",
@@ -19435,7 +19443,7 @@ export const TTCQ_THEMES = [
      "Déclencher l'ovulation",
      "Produire du lait"
     ],
-    "a": 0
+    "a": "Préparer l'utérus à une grossesse"
    },
    {
     "q": "À quoi sert la FSH ?",
@@ -19445,7 +19453,7 @@ export const TTCQ_THEMES = [
      "Produire la testostérone",
      "Stimuler la maturation des follicules ovariens"
     ],
-    "a": 3
+    "a": "Stimuler la maturation des follicules ovariens"
    },
    {
     "q": "Qu'est-ce qu'un dérèglement hormonal ?",
@@ -19455,9 +19463,10 @@ export const TTCQ_THEMES = [
      "Arrêt des hormones",
      "Production anormale d'hormones"
     ],
-    "a": 3
+    "a": "Production anormale d'hormones"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_010",
@@ -19473,7 +19482,7 @@ export const TTCQ_THEMES = [
      "Dans la prostate",
      "Dans les vésicules séminales"
     ],
-    "a": 0
+    "a": "Dans les testicules"
    },
    {
     "q": "Combien de temps vit un spermatozoïde dans le corps féminin ?",
@@ -19483,7 +19492,7 @@ export const TTCQ_THEMES = [
      "Jusqu'à 24 heures",
      "Jusqu'à 48 heures"
     ],
-    "a": 0
+    "a": "Jusqu'à 5 jours"
    },
    {
     "q": "Quelle est la taille d'un spermatozoïde ?",
@@ -19493,7 +19502,7 @@ export const TTCQ_THEMES = [
      "Environ 100 micromètres",
      "Environ 10 micromètres"
     ],
-    "a": 1
+    "a": "Environ 50 micromètres"
    },
    {
     "q": "De quoi est composé un spermatozoïde ?",
@@ -19503,7 +19512,7 @@ export const TTCQ_THEMES = [
      "Noyau et membrane",
      "Tête et queue"
     ],
-    "a": 0
+    "a": "Tête, pièce intermédiaire et flagelle"
    },
    {
     "q": "Qu'est-ce qu'un spermogramme ?",
@@ -19513,7 +19522,7 @@ export const TTCQ_THEMES = [
      "Test de fertilité féminine",
      "Examen urinaire"
     ],
-    "a": 1
+    "a": "Analyse de la qualité du sperme"
    },
    {
     "q": "Combien de spermatozoïdes contient un éjaculat ?",
@@ -19523,7 +19532,7 @@ export const TTCQ_THEMES = [
      "10 à 40 millions",
      "1 à 10 millions"
     ],
-    "a": 1
+    "a": "40 à 300 millions"
    },
    {
     "q": "Qu'est-ce que l'azoospermie ?",
@@ -19533,7 +19542,7 @@ export const TTCQ_THEMES = [
      "Trop de spermatozoïdes",
      "Faible nombre de spermatozoïdes"
     ],
-    "a": 0
+    "a": "Absence de spermatozoïdes dans le sperme"
    },
    {
     "q": "Quelle température affecte la production de spermatozoïdes ?",
@@ -19543,9 +19552,10 @@ export const TTCQ_THEMES = [
      "L'humidité",
      "Le froid"
     ],
-    "a": 1
+    "a": "Une température trop élevée (au-dessus de 35°C)"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_011",
@@ -19561,7 +19571,7 @@ export const TTCQ_THEMES = [
      "Nidation",
      "Libération d'un ovule mature par l'ovaire"
     ],
-    "a": 3
+    "a": "Libération d'un ovule mature par l'ovaire"
    },
    {
     "q": "Quand a lieu l'ovulation dans un cycle régulier de 28 jours ?",
@@ -19571,7 +19581,7 @@ export const TTCQ_THEMES = [
      "Au 1er jour",
      "Au 14e jour environ"
     ],
-    "a": 3
+    "a": "Au 14e jour environ"
    },
    {
     "q": "Combien d'ovules sont libérés à chaque ovulation ?",
@@ -19581,7 +19591,7 @@ export const TTCQ_THEMES = [
      "Aucun",
      "Un seul en général"
     ],
-    "a": 3
+    "a": "Un seul en général"
    },
    {
     "q": "Quelle hormone déclenche l'ovulation ?",
@@ -19591,7 +19601,7 @@ export const TTCQ_THEMES = [
      "La FSH",
      "Les oestrogènes"
     ],
-    "a": 0
+    "a": "La LH (hormone lutéinisante)"
    },
    {
     "q": "Combien de temps l'ovule est-il viable après l'ovulation ?",
@@ -19601,7 +19611,7 @@ export const TTCQ_THEMES = [
      "2 à 3 jours",
      "12 à 24 heures"
     ],
-    "a": 3
+    "a": "12 à 24 heures"
    },
    {
     "q": "Qu'est-ce qu'un test d'ovulation ?",
@@ -19611,7 +19621,7 @@ export const TTCQ_THEMES = [
      "Test de grossesse",
      "Prise de sang"
     ],
-    "a": 0
+    "a": "Test qui détecte le pic de LH"
    },
    {
     "q": "Peut-on ressentir l'ovulation ?",
@@ -19621,7 +19631,7 @@ export const TTCQ_THEMES = [
      "Uniquement en cas de problème",
      "Oui, toujours"
     ],
-    "a": 0
+    "a": "Certaines femmes ressentent une douleur légère"
    },
    {
     "q": "Qu'est-ce que la période fertile ?",
@@ -19631,9 +19641,10 @@ export const TTCQ_THEMES = [
      "La semaine avant les règles",
      "Fenêtre de quelques jours autour de l'ovulation"
     ],
-    "a": 3
+    "a": "Fenêtre de quelques jours autour de l'ovulation"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_012",
@@ -19649,7 +19660,7 @@ export const TTCQ_THEMES = [
      "Début de la grossesse",
      "Nidation"
     ],
-    "a": 0
+    "a": "Union d'un spermatozoïde et d'un ovule"
    },
    {
     "q": "Où a lieu la fécondation ?",
@@ -19659,7 +19670,7 @@ export const TTCQ_THEMES = [
      "Dans le vagin",
      "Dans l'utérus"
     ],
-    "a": 0
+    "a": "Dans les trompes de Fallope"
    },
    {
     "q": "Combien de spermatozoïdes atteignent l'ovule ?",
@@ -19669,7 +19680,7 @@ export const TTCQ_THEMES = [
      "Des centaines",
      "Des milliers"
     ],
-    "a": 1
+    "a": "Un seul féconde l'ovule"
    },
    {
     "q": "Que devient l'ovule après la fécondation ?",
@@ -19679,7 +19690,7 @@ export const TTCQ_THEMES = [
      "Il devient un zygote",
      "Il meurt"
     ],
-    "a": 2
+    "a": "Il devient un zygote"
    },
    {
     "q": "Combien de temps après la fécondation a lieu la nidation ?",
@@ -19689,7 +19700,7 @@ export const TTCQ_THEMES = [
      "24 heures",
      "2 à 3 semaines"
     ],
-    "a": 1
+    "a": "Environ 6 à 10 jours"
    },
    {
     "q": "Qu'est-ce qu'un zygote ?",
@@ -19699,7 +19710,7 @@ export const TTCQ_THEMES = [
      "Ovule fécondé",
      "Foetus"
     ],
-    "a": 0
+    "a": "Cellule résultant de la fécondation"
    },
    {
     "q": "Qu'est-ce que la conception ?",
@@ -19709,7 +19720,7 @@ export const TTCQ_THEMES = [
      "La nidation",
      "La grossesse"
     ],
-    "a": 1
+    "a": "Le moment de la fécondation"
    },
    {
     "q": "Combien de temps les spermatozoïdes mettent-ils pour atteindre l'ovule ?",
@@ -19719,9 +19730,10 @@ export const TTCQ_THEMES = [
      "Quelques heures",
      "Quelques secondes"
     ],
-    "a": 2
+    "a": "Quelques heures"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_013",
@@ -19737,7 +19749,7 @@ export const TTCQ_THEMES = [
      "Comprimé qui tue les spermatozoïdes",
      "Comprimé pour les règles"
     ],
-    "a": 1
+    "a": "Comprimé hormonal qui empêche l'ovulation"
    },
    {
     "q": "Quels hormones contient la pilule combinée ?",
@@ -19747,7 +19759,7 @@ export const TTCQ_THEMES = [
      "LH et FSH",
      "Oestrogènes et progestérone"
     ],
-    "a": 3
+    "a": "Oestrogènes et progestérone"
    },
    {
     "q": "Comment agit la pilule contraceptive ?",
@@ -19757,7 +19769,7 @@ export const TTCQ_THEMES = [
      "En empêchant la nidation",
      "En stérilisant temporairement"
     ],
-    "a": 1
+    "a": "En empêchant l'ovulation"
    },
    {
     "q": "Quelle est l'efficacité de la pilule en utilisation parfaite ?",
@@ -19767,7 +19779,7 @@ export const TTCQ_THEMES = [
      "Environ 90%",
      "Environ 95%"
     ],
-    "a": 1
+    "a": "Plus de 99%"
    },
    {
     "q": "Faut-il une prescription pour la pilule en France ?",
@@ -19777,7 +19789,7 @@ export const TTCQ_THEMES = [
      "Non, en vente libre",
      "Non, sauf la pilule d'urgence"
     ],
-    "a": 1
+    "a": "Oui, une ordonnance est nécessaire"
    },
    {
     "q": "Qu'est-ce que la pilule progestative (micro-pilule) ?",
@@ -19787,7 +19799,7 @@ export const TTCQ_THEMES = [
      "Pilule d'urgence",
      "Pilule du lendemain"
     ],
-    "a": 1
+    "a": "Pilule sans oestrogènes"
    },
    {
     "q": "Que faire si on oublie une pilule ?",
@@ -19797,7 +19809,7 @@ export const TTCQ_THEMES = [
      "Ne rien faire",
      "La prendre dès que possible et utiliser un préservatif"
     ],
-    "a": 3
+    "a": "La prendre dès que possible et utiliser un préservatif"
    },
    {
     "q": "La pilule protège-t-elle des IST ?",
@@ -19807,9 +19819,10 @@ export const TTCQ_THEMES = [
      "Oui, totalement",
      "Oui, partiellement"
     ],
-    "a": 1
+    "a": "Non, elle ne protège pas des IST"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_014",
@@ -19825,7 +19838,7 @@ export const TTCQ_THEMES = [
      "Virus de l'Immunodéficience Humaine",
      "Virus International Humain"
     ],
-    "a": 2
+    "a": "Virus de l'Immunodéficience Humaine"
    },
    {
     "q": "Que signifie SIDA ?",
@@ -19835,7 +19848,7 @@ export const TTCQ_THEMES = [
      "Syndrome d'ImmunoDéficience Acquise",
      "Syndrome Infectieux Dangereux"
     ],
-    "a": 2
+    "a": "Syndrome d'ImmunoDéficience Acquise"
    },
    {
     "q": "Comment se transmet le VIH ?",
@@ -19845,7 +19858,7 @@ export const TTCQ_THEMES = [
      "Par la salive",
      "Par l'air"
     ],
-    "a": 0
+    "a": "Par le sang, les rapports sexuels et de la mère à l'enfant"
    },
    {
     "q": "Existe-t-il un vaccin contre le VIH ?",
@@ -19855,7 +19868,7 @@ export const TTCQ_THEMES = [
      "Non et cela n'existera jamais",
      "Oui, depuis 2010"
     ],
-    "a": 1
+    "a": "Non, pas encore"
    },
    {
     "q": "Qu'est-ce qu'une charge virale indétectable ?",
@@ -19865,7 +19878,7 @@ export const TTCQ_THEMES = [
      "Guérison du SIDA",
      "Quantité de virus si faible qu'elle est indétectable"
     ],
-    "a": 3
+    "a": "Quantité de virus si faible qu'elle est indétectable"
    },
    {
     "q": "Que signifie être séropositif ?",
@@ -19875,7 +19888,7 @@ export const TTCQ_THEMES = [
      "Être malade",
      "Avoir le SIDA"
     ],
-    "a": 1
+    "a": "Être porteur du VIH sans avoir développé le SIDA"
    },
    {
     "q": "Comment se faire dépister du VIH ?",
@@ -19885,7 +19898,7 @@ export const TTCQ_THEMES = [
      "Par radiographie",
      "Par prise de sang ou test rapide (TROD)"
     ],
-    "a": 3
+    "a": "Par prise de sang ou test rapide (TROD)"
    },
    {
     "q": "Qu'est-ce que la Prep (PrEP) ?",
@@ -19895,9 +19908,10 @@ export const TTCQ_THEMES = [
      "Traitement préventif avant exposition au VIH",
      "Médicament contre le SIDA"
     ],
-    "a": 2
+    "a": "Traitement préventif avant exposition au VIH"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_015",
@@ -19913,7 +19927,7 @@ export const TTCQ_THEMES = [
      "Bactérie",
      "Virus sexuellement transmissible très courant"
     ],
-    "a": 3
+    "a": "Virus sexuellement transmissible très courant"
    },
    {
     "q": "Combien de types de HPV existent ?",
@@ -19923,7 +19937,7 @@ export const TTCQ_THEMES = [
      "Plus de 100",
      "Environ 50"
     ],
-    "a": 2
+    "a": "Plus de 100"
    },
    {
     "q": "Le HPV peut-il causer le cancer du col de l'utérus ?",
@@ -19933,7 +19947,7 @@ export const TTCQ_THEMES = [
      "Oui, certains types à haut risque",
      "Non"
     ],
-    "a": 2
+    "a": "Oui, certains types à haut risque"
    },
    {
     "q": "Existe-t-il un vaccin contre le HPV ?",
@@ -19943,7 +19957,7 @@ export const TTCQ_THEMES = [
      "Oui, mais inefficace",
      "Oui, mais seulement pour les adultes"
     ],
-    "a": 0
+    "a": "Oui, recommandé aux adolescents"
    },
    {
     "q": "Comment se transmet le HPV ?",
@@ -19953,7 +19967,7 @@ export const TTCQ_THEMES = [
      "Par la salive",
      "Par l'air"
     ],
-    "a": 0
+    "a": "Par contact sexuel (peau à peau)"
    },
    {
     "q": "Le HPV est-il fréquent ?",
@@ -19963,7 +19977,7 @@ export const TTCQ_THEMES = [
      "Uniquement dans certains pays",
      "Oui, 80% des personnes sexuellement actives l'auront"
     ],
-    "a": 3
+    "a": "Oui, 80% des personnes sexuellement actives l'auront"
    },
    {
     "q": "Comment dépiste-t-on le HPV ?",
@@ -19973,7 +19987,7 @@ export const TTCQ_THEMES = [
      "Par prise de sang",
      "Par examen urinaire"
     ],
-    "a": 0
+    "a": "Par frottis cervical (test HPV)"
    },
    {
     "q": "À quel âge le vaccin HPV est-il recommandé en France ?",
@@ -19983,9 +19997,10 @@ export const TTCQ_THEMES = [
      "À tout âge",
      "Entre 15 et 18 ans"
     ],
-    "a": 0
+    "a": "Entre 11 et 14 ans"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_016",
@@ -20001,7 +20016,7 @@ export const TTCQ_THEMES = [
      "Hépatites B et C",
      "Hépatites A, B et C"
     ],
-    "a": 2
+    "a": "Hépatites B et C"
    },
    {
     "q": "Existe-t-il un vaccin contre l'hépatite B ?",
@@ -20011,7 +20026,7 @@ export const TTCQ_THEMES = [
      "Oui, mais pas en France",
      "Uniquement pour les adultes"
     ],
-    "a": 1
+    "a": "Oui, obligatoire pour les enfants en France"
    },
    {
     "q": "Comment se transmet l'hépatite B ?",
@@ -20021,7 +20036,7 @@ export const TTCQ_THEMES = [
      "Par la toux",
      "Par l'eau"
     ],
-    "a": 0
+    "a": "Par le sang et les rapports sexuels"
    },
    {
     "q": "L'hépatite C se transmet-elle sexuellement ?",
@@ -20031,7 +20046,7 @@ export const TTCQ_THEMES = [
      "Oui, comme l'hépatite B",
      "Oui, très fréquemment"
     ],
-    "a": 1
+    "a": "Rarement, principalement par le sang"
    },
    {
     "q": "Qu'est-ce que l'hépatite B chronique ?",
@@ -20041,7 +20056,7 @@ export const TTCQ_THEMES = [
      "Cancer du foie",
      "Cirrhose"
     ],
-    "a": 0
+    "a": "Infection persistante par le virus de l'hépatite B"
    },
    {
     "q": "Combien de personnes vivent avec l'hépatite B dans le monde ?",
@@ -20051,7 +20066,7 @@ export const TTCQ_THEMES = [
      "Environ 100 millions",
      "Environ 500 millions"
     ],
-    "a": 0
+    "a": "Environ 250 millions"
    },
    {
     "q": "Quels sont les symptômes des hépatites virales ?",
@@ -20061,7 +20076,7 @@ export const TTCQ_THEMES = [
      "Fièvre et toux",
      "Fatigue, jaunisse, douleurs abdominales"
     ],
-    "a": 3
+    "a": "Fatigue, jaunisse, douleurs abdominales"
    },
    {
     "q": "Comment se protéger de l'hépatite B sexuelle ?",
@@ -20071,9 +20086,10 @@ export const TTCQ_THEMES = [
      "Par la vaccination uniquement",
      "Par la vaccination et le préservatif"
     ],
-    "a": 3
+    "a": "Par la vaccination et le préservatif"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_017",
@@ -20089,7 +20105,7 @@ export const TTCQ_THEMES = [
      "Infection virale",
      "Infection urinaire"
     ],
-    "a": 1
+    "a": "Infection sexuellement transmissible bactérienne"
    },
    {
     "q": "Quels sont les symptômes de la chlamydia ?",
@@ -20099,7 +20115,7 @@ export const TTCQ_THEMES = [
      "Fièvre",
      "Souvent aucun symptôme"
     ],
-    "a": 3
+    "a": "Souvent aucun symptôme"
    },
    {
     "q": "Peut-on traiter la chlamydia ?",
@@ -20109,7 +20125,7 @@ export const TTCQ_THEMES = [
      "Non, c'est incurable",
      "Oui, par chirurgie"
     ],
-    "a": 1
+    "a": "Oui, avec des antibiotiques"
    },
    {
     "q": "Que peut causer une chlamydia non traitée ?",
@@ -20119,7 +20135,7 @@ export const TTCQ_THEMES = [
      "Stérilité et salpingite",
      "SIDA"
     ],
-    "a": 2
+    "a": "Stérilité et salpingite"
    },
    {
     "q": "Comment se transmet la chlamydia ?",
@@ -20129,7 +20145,7 @@ export const TTCQ_THEMES = [
      "Par la salive",
      "Par l'eau"
     ],
-    "a": 0
+    "a": "Par relations sexuelles non protégées"
    },
    {
     "q": "Comment dépiste-t-on la chlamydia ?",
@@ -20139,7 +20155,7 @@ export const TTCQ_THEMES = [
      "Par radiographie",
      "Par échographie"
     ],
-    "a": 0
+    "a": "Par test urinaire ou prélèvement local"
    },
    {
     "q": "La chlamydia est-elle fréquente ?",
@@ -20149,7 +20165,7 @@ export const TTCQ_THEMES = [
      "Uniquement dans les pays tropicaux",
      "Oui, c'est l'IST bactérienne la plus fréquente"
     ],
-    "a": 3
+    "a": "Oui, c'est l'IST bactérienne la plus fréquente"
    },
    {
     "q": "Combien de nouveaux cas de chlamydia par an dans le monde ?",
@@ -20159,9 +20175,10 @@ export const TTCQ_THEMES = [
      "Environ 130 millions",
      "Environ 500 millions"
     ],
-    "a": 2
+    "a": "Environ 130 millions"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_018",
@@ -20177,7 +20194,7 @@ export const TTCQ_THEMES = [
      "Maladie de peau",
      "Allergie"
     ],
-    "a": 1
+    "a": "Infection virale sexuellement transmissible"
    },
    {
     "q": "Quel virus cause l'herpès génital ?",
@@ -20187,7 +20204,7 @@ export const TTCQ_THEMES = [
      "Le HPV",
      "Le VIH"
     ],
-    "a": 0
+    "a": "Le HSV (Herpes Simplex Virus)"
    },
    {
     "q": "Existe-t-il un traitement curatif contre l'herpès ?",
@@ -20197,7 +20214,7 @@ export const TTCQ_THEMES = [
      "Oui, des antibiotiques",
      "Non, mais des traitements réduisent les poussées"
     ],
-    "a": 3
+    "a": "Non, mais des traitements réduisent les poussées"
    },
    {
     "q": "Comment se manifeste l'herpès génital ?",
@@ -20207,7 +20224,7 @@ export const TTCQ_THEMES = [
      "Vésicules et ulcérations génitales",
      "Toux"
     ],
-    "a": 2
+    "a": "Vésicules et ulcérations génitales"
    },
    {
     "q": "Comment se transmet l'herpès génital ?",
@@ -20217,7 +20234,7 @@ export const TTCQ_THEMES = [
      "Par le sang",
      "Par l'air"
     ],
-    "a": 1
+    "a": "Par contact direct avec les lésions"
    },
    {
     "q": "Quelle est la différence entre HSV-1 et HSV-2 ?",
@@ -20227,7 +20244,7 @@ export const TTCQ_THEMES = [
      "HSV-1 est souvent oral, HSV-2 souvent génital",
      "HSV-1 est plus dangereux"
     ],
-    "a": 2
+    "a": "HSV-1 est souvent oral, HSV-2 souvent génital"
    },
    {
     "q": "Combien de personnes sont porteuses du HSV ?",
@@ -20237,7 +20254,7 @@ export const TTCQ_THEMES = [
      "1 milliard",
      "2 milliards"
     ],
-    "a": 1
+    "a": "Plus de 3,7 milliards (HSV-1)"
    },
    {
     "q": "Qu'est-ce qui déclenche une poussée d'herpès ?",
@@ -20247,9 +20264,10 @@ export const TTCQ_THEMES = [
      "Stress, fatigue, baisse d'immunité",
      "Météo"
     ],
-    "a": 2
+    "a": "Stress, fatigue, baisse d'immunité"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_019",
@@ -20265,7 +20283,7 @@ export const TTCQ_THEMES = [
      "Infection fongique",
      "Infection sexuellement transmissible bactérienne"
     ],
-    "a": 3
+    "a": "Infection sexuellement transmissible bactérienne"
    },
    {
     "q": "Quelle bactérie cause la syphilis ?",
@@ -20275,7 +20293,7 @@ export const TTCQ_THEMES = [
      "Treponema pallidum",
      "Chlamydia trachomatis"
     ],
-    "a": 2
+    "a": "Treponema pallidum"
    },
    {
     "q": "La syphilis est-elle curable ?",
@@ -20285,7 +20303,7 @@ export const TTCQ_THEMES = [
      "Oui, mais très difficilement",
      "Oui, avec des antibiotiques (pénicilline)"
     ],
-    "a": 3
+    "a": "Oui, avec des antibiotiques (pénicilline)"
    },
    {
     "q": "Comment se manifeste le premier stade de la syphilis ?",
@@ -20295,7 +20313,7 @@ export const TTCQ_THEMES = [
      "De la fièvre",
      "Des boutons"
     ],
-    "a": 1
+    "a": "Un chancre (ulcère) indolore"
    },
    {
     "q": "Que peut causer la syphilis non traitée à long terme ?",
@@ -20305,7 +20323,7 @@ export const TTCQ_THEMES = [
      "Atteintes neurologiques et cardiovasculaires graves",
      "SIDA"
     ],
-    "a": 2
+    "a": "Atteintes neurologiques et cardiovasculaires graves"
    },
    {
     "q": "Comment se transmet la syphilis ?",
@@ -20315,7 +20333,7 @@ export const TTCQ_THEMES = [
      "Par le sang",
      "Par contact direct avec un chancre"
     ],
-    "a": 3
+    "a": "Par contact direct avec un chancre"
    },
    {
     "q": "Qu'est-ce que la syphilis congénitale ?",
@@ -20325,7 +20343,7 @@ export const TTCQ_THEMES = [
      "Syphilis chez l'enfant",
      "Syphilis génétique"
     ],
-    "a": 0
+    "a": "Transmission de la mère à l'enfant pendant la grossesse"
    },
    {
     "q": "La syphilis est-elle en recrudescence ?",
@@ -20335,9 +20353,10 @@ export const TTCQ_THEMES = [
      "Elle diminue",
      "Oui, les cas augmentent depuis les années 2000"
     ],
-    "a": 3
+    "a": "Oui, les cas augmentent depuis les années 2000"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_020",
@@ -20353,7 +20372,7 @@ export const TTCQ_THEMES = [
      "Infection urinaire",
      "Infection virale"
     ],
-    "a": 0
+    "a": "IST bactérienne aussi appelée chaude-pisse"
    },
    {
     "q": "Quelle bactérie cause la gonorrhée ?",
@@ -20363,7 +20382,7 @@ export const TTCQ_THEMES = [
      "Escherichia coli",
      "Chlamydia trachomatis"
     ],
-    "a": 0
+    "a": "Neisseria gonorrhoeae"
    },
    {
     "q": "Quels sont les symptômes chez l'homme ?",
@@ -20373,7 +20392,7 @@ export const TTCQ_THEMES = [
      "Aucun symptôme",
      "Écoulement urétral et douleur en urinant"
     ],
-    "a": 3
+    "a": "Écoulement urétral et douleur en urinant"
    },
    {
     "q": "Quels sont les symptômes chez la femme ?",
@@ -20383,7 +20402,7 @@ export const TTCQ_THEMES = [
      "Souvent asymptomatique",
      "Écoulement vaginal"
     ],
-    "a": 0
+    "a": "Tous ces symptômes possibles"
    },
    {
     "q": "La gonorrhée est-elle curable ?",
@@ -20393,7 +20412,7 @@ export const TTCQ_THEMES = [
      "Guérison spontanée",
      "Non"
     ],
-    "a": 1
+    "a": "Oui, avec des antibiotiques"
    },
    {
     "q": "Que peut causer une gonorrhée non traitée ?",
@@ -20403,7 +20422,7 @@ export const TTCQ_THEMES = [
      "Cancer",
      "Maladies cardiaques"
     ],
-    "a": 0
+    "a": "Stérilité et infections pelviennes"
    },
    {
     "q": "Qu'est-ce que la résistance aux antibiotiques de la gonorrhée ?",
@@ -20413,7 +20432,7 @@ export const TTCQ_THEMES = [
      "La bactérie devient moins sensible aux traitements",
      "La bactérie disparaît"
     ],
-    "a": 2
+    "a": "La bactérie devient moins sensible aux traitements"
    },
    {
     "q": "Combien de cas de gonorrhée par an dans le monde ?",
@@ -20423,9 +20442,10 @@ export const TTCQ_THEMES = [
      "Environ 10 millions",
      "Environ 200 millions"
     ],
-    "a": 1
+    "a": "Environ 87 millions"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_021",
@@ -20441,7 +20461,7 @@ export const TTCQ_THEMES = [
      "Fin de l'ovulation",
      "Arrêt temporaire des règles"
     ],
-    "a": 1
+    "a": "Arrêt définitif des menstruations"
    },
    {
     "q": "À quel âge survient la ménopause en moyenne ?",
@@ -20451,7 +20471,7 @@ export const TTCQ_THEMES = [
      "Vers 48 ans",
      "Vers 45 ans"
     ],
-    "a": 1
+    "a": "Vers 51 ans"
    },
    {
     "q": "Qu'est-ce que la périménopause ?",
@@ -20461,7 +20481,7 @@ export const TTCQ_THEMES = [
      "Période de transition avant la ménopause",
      "Début de la ménopause"
     ],
-    "a": 2
+    "a": "Période de transition avant la ménopause"
    },
    {
     "q": "Quels sont les symptômes fréquents de la ménopause ?",
@@ -20471,7 +20491,7 @@ export const TTCQ_THEMES = [
      "Douleurs musculaires",
      "Bouffées de chaleur, troubles du sommeil"
     ],
-    "a": 3
+    "a": "Bouffées de chaleur, troubles du sommeil"
    },
    {
     "q": "Qu'est-ce que le traitement hormonal substitutif (THS) ?",
@@ -20481,7 +20501,7 @@ export const TTCQ_THEMES = [
      "Traitement qui compense la baisse d'hormones",
      "Traitement contre l'ostéoporose"
     ],
-    "a": 2
+    "a": "Traitement qui compense la baisse d'hormones"
    },
    {
     "q": "La ménopause est-elle réversible ?",
@@ -20491,7 +20511,7 @@ export const TTCQ_THEMES = [
      "Oui, avec un traitement",
      "Parfois"
     ],
-    "a": 0
+    "a": "Non, c'est un processus naturel définitif"
    },
    {
     "q": "Quelles complications de santé sont liées à la ménopause ?",
@@ -20501,7 +20521,7 @@ export const TTCQ_THEMES = [
      "Diabète",
      "Obésité"
     ],
-    "a": 1
+    "a": "Ostéoporose et risques cardiovasculaires"
    },
    {
     "q": "À partir de combien de temps sans règles parle-t-on de ménopause ?",
@@ -20511,9 +20531,10 @@ export const TTCQ_THEMES = [
      "24 mois sans règles",
      "6 mois sans règles"
     ],
-    "a": 0
+    "a": "12 mois sans règles"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_022",
@@ -20529,7 +20550,7 @@ export const TTCQ_THEMES = [
      "Arrêt de la production de spermatozoïdes",
      "Arrêt total de la production de testostérone"
     ],
-    "a": 1
+    "a": "Baisse progressive de la testostérone chez l'homme"
    },
    {
     "q": "À quel âge commence l'andropause ?",
@@ -20539,7 +20560,7 @@ export const TTCQ_THEMES = [
      "Vers 60-70 ans",
      "Vers 40-50 ans, progressivement"
     ],
-    "a": 3
+    "a": "Vers 40-50 ans, progressivement"
    },
    {
     "q": "L'andropause est-elle comparable à la ménopause ?",
@@ -20549,7 +20570,7 @@ export const TTCQ_THEMES = [
      "Non, ce n'est pas lié aux hormones",
      "Oui, identique"
     ],
-    "a": 0
+    "a": "Non, c'est plus progressif et moins brutal"
    },
    {
     "q": "Quels sont les symptômes de l'andropause ?",
@@ -20559,7 +20580,7 @@ export const TTCQ_THEMES = [
      "Nausées",
      "Baisse de libido, fatigue, irritabilité"
     ],
-    "a": 3
+    "a": "Baisse de libido, fatigue, irritabilité"
    },
    {
     "q": "Quel traitement existe pour l'andropause ?",
@@ -20569,7 +20590,7 @@ export const TTCQ_THEMES = [
      "Testostérone en gel ou injections",
      "Antidépresseurs"
     ],
-    "a": 2
+    "a": "Testostérone en gel ou injections"
    },
    {
     "q": "L'andropause affecte-t-elle la fertilité ?",
@@ -20579,7 +20600,7 @@ export const TTCQ_THEMES = [
      "Oui, irréversible",
      "Non, aucun effet"
     ],
-    "a": 1
+    "a": "Elle diminue la fertilité mais ne l'arrête pas"
    },
    {
     "q": "Qu'est-ce que la DHEA ?",
@@ -20589,7 +20610,7 @@ export const TTCQ_THEMES = [
      "Hormone précurseur qui diminue avec l'âge",
      "Oestrogène"
     ],
-    "a": 2
+    "a": "Hormone précurseur qui diminue avec l'âge"
    },
    {
     "q": "Le traitement à la testostérone est-il sans risque ?",
@@ -20599,9 +20620,10 @@ export const TTCQ_THEMES = [
      "Oui, totalement sûr",
      "Oui, sans aucun risque"
     ],
-    "a": 1
+    "a": "Non, il a des effets secondaires potentiels"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_023",
@@ -20617,7 +20639,7 @@ export const TTCQ_THEMES = [
      "Attirance physique",
      "Désir sexuel"
     ],
-    "a": 3
+    "a": "Désir sexuel"
    },
    {
     "q": "Qu'est-ce qui influence la libido ?",
@@ -20627,7 +20649,7 @@ export const TTCQ_THEMES = [
      "Hormones, stress, santé, émotions",
      "Uniquement les hormones"
     ],
-    "a": 2
+    "a": "Hormones, stress, santé, émotions"
    },
    {
     "q": "La libido est-elle la même chez les hommes et les femmes ?",
@@ -20637,7 +20659,7 @@ export const TTCQ_THEMES = [
      "Elle varie selon les individus, pas selon le genre",
      "Les hommes ont plus de libido"
     ],
-    "a": 2
+    "a": "Elle varie selon les individus, pas selon le genre"
    },
    {
     "q": "Qu'est-ce qu'une baisse de libido ?",
@@ -20647,7 +20669,7 @@ export const TTCQ_THEMES = [
      "Diminution du désir sexuel",
      "Absence d'érection"
     ],
-    "a": 2
+    "a": "Diminution du désir sexuel"
    },
    {
     "q": "Quels facteurs peuvent diminuer la libido ?",
@@ -20657,7 +20679,7 @@ export const TTCQ_THEMES = [
      "Stress, fatigue, dépression, médicaments",
      "Uniquement l'alimentation"
     ],
-    "a": 2
+    "a": "Stress, fatigue, dépression, médicaments"
    },
    {
     "q": "Qu'est-ce que la libido élevée ?",
@@ -20667,7 +20689,7 @@ export const TTCQ_THEMES = [
      "Trouble mental",
      "Désir sexuel fort et fréquent"
     ],
-    "a": 3
+    "a": "Désir sexuel fort et fréquent"
    },
    {
     "q": "Existe-t-il des traitements pour la baisse de libido ?",
@@ -20677,7 +20699,7 @@ export const TTCQ_THEMES = [
      "Uniquement la chirurgie",
      "Traitements hormonaux, thérapie, changement de mode de vie"
     ],
-    "a": 3
+    "a": "Traitements hormonaux, thérapie, changement de mode de vie"
    },
    {
     "q": "La libido diminue-t-elle avec l'âge ?",
@@ -20687,9 +20709,10 @@ export const TTCQ_THEMES = [
      "Elle peut diminuer mais pas forcément",
      "Uniquement après 70 ans"
     ],
-    "a": 2
+    "a": "Elle peut diminuer mais pas forcément"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_024",
@@ -20705,7 +20728,7 @@ export const TTCQ_THEMES = [
      "Rigidification du pénis par afflux sanguin",
      "Émission de sperme"
     ],
-    "a": 2
+    "a": "Rigidification du pénis par afflux sanguin"
    },
    {
     "q": "Quel mécanisme provoque l'érection ?",
@@ -20715,7 +20738,7 @@ export const TTCQ_THEMES = [
      "Production d'hormones",
      "Stimulation nerveuse"
     ],
-    "a": 0
+    "a": "Afflux de sang dans les corps caverneux"
    },
    {
     "q": "Qu'est-ce que la dysfonction érectile ?",
@@ -20725,7 +20748,7 @@ export const TTCQ_THEMES = [
      "Éjaculation précoce",
      "Érection douloureuse"
     ],
-    "a": 0
+    "a": "Incapacité à obtenir ou maintenir une érection"
    },
    {
     "q": "Quels facteurs peuvent causer des troubles de l'érection ?",
@@ -20735,7 +20758,7 @@ export const TTCQ_THEMES = [
      "Uniquement le stress",
      "Stress, diabète, maladies cardiovasculaires"
     ],
-    "a": 3
+    "a": "Stress, diabète, maladies cardiovasculaires"
    },
    {
     "q": "Quels médicaments traitent la dysfonction érectile ?",
@@ -20745,7 +20768,7 @@ export const TTCQ_THEMES = [
      "Antidépresseurs",
      "Viagra, Cialis (inhibiteurs de PDE5)"
     ],
-    "a": 3
+    "a": "Viagra, Cialis (inhibiteurs de PDE5)"
    },
    {
     "q": "À partir de quel âge les troubles de l'érection sont-ils fréquents ?",
@@ -20755,7 +20778,7 @@ export const TTCQ_THEMES = [
      "Après 60 ans",
      "Après 40 ans, de façon croissante"
     ],
-    "a": 3
+    "a": "Après 40 ans, de façon croissante"
    },
    {
     "q": "L'érection est-elle contrôlée par le système nerveux ?",
@@ -20765,7 +20788,7 @@ export const TTCQ_THEMES = [
      "Non, c'est hormonal",
      "Oui, par le système nerveux autonome"
     ],
-    "a": 3
+    "a": "Oui, par le système nerveux autonome"
    },
    {
     "q": "Qu'est-ce qu'un priapisme ?",
@@ -20775,9 +20798,10 @@ export const TTCQ_THEMES = [
      "Érection prolongée et douloureuse sans stimulation",
      "Éjaculation"
     ],
-    "a": 2
+    "a": "Érection prolongée et douloureuse sans stimulation"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_025",
@@ -20793,7 +20817,7 @@ export const TTCQ_THEMES = [
      "Émission de sperme par le pénis lors de l'orgasme",
      "Contraction du pénis"
     ],
-    "a": 2
+    "a": "Émission de sperme par le pénis lors de l'orgasme"
    },
    {
     "q": "Qu'est-ce que l'éjaculation précoce ?",
@@ -20803,7 +20827,7 @@ export const TTCQ_THEMES = [
      "Éjaculation survenant trop rapidement",
      "Éjaculation douloureuse"
     ],
-    "a": 2
+    "a": "Éjaculation survenant trop rapidement"
    },
    {
     "q": "Qu'est-ce que l'éjaculation retardée ?",
@@ -20813,7 +20837,7 @@ export const TTCQ_THEMES = [
      "Difficulté ou impossibilité d'éjaculer",
      "Éjaculation sans orgasme"
     ],
-    "a": 2
+    "a": "Difficulté ou impossibilité d'éjaculer"
    },
    {
     "q": "Qu'est-ce que l'éjaculation rétrograde ?",
@@ -20823,7 +20847,7 @@ export const TTCQ_THEMES = [
      "Le sperme va dans la vessie au lieu de sortir",
      "Absence de sperme"
     ],
-    "a": 2
+    "a": "Le sperme va dans la vessie au lieu de sortir"
    },
    {
     "q": "Combien de spermatozoïdes dans une éjaculation moyenne ?",
@@ -20833,7 +20857,7 @@ export const TTCQ_THEMES = [
      "1 à 10 millions",
      "500 millions à 1 milliard"
     ],
-    "a": 1
+    "a": "40 à 300 millions"
    },
    {
     "q": "Quel volume de sperme est éjaculé en moyenne ?",
@@ -20843,7 +20867,7 @@ export const TTCQ_THEMES = [
      "10 à 15 ml",
      "5 à 10 ml"
     ],
-    "a": 1
+    "a": "2 à 5 ml"
    },
    {
     "q": "L'éjaculation est-elle toujours accompagnée d'orgasme ?",
@@ -20853,7 +20877,7 @@ export const TTCQ_THEMES = [
      "Rarement",
      "Parfois"
     ],
-    "a": 0
+    "a": "Non, les deux peuvent être dissociés"
    },
    {
     "q": "Qu'est-ce que l'orgasme ?",
@@ -20863,9 +20887,10 @@ export const TTCQ_THEMES = [
      "Excitation maximale",
      "Point culminant du plaisir sexuel avec contractions musculaires"
     ],
-    "a": 3
+    "a": "Point culminant du plaisir sexuel avec contractions musculaires"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_026",
@@ -20881,7 +20906,7 @@ export const TTCQ_THEMES = [
      "Fertilité In Vitro",
      "Fusion In Vitro"
     ],
-    "a": 1
+    "a": "Fécondation In Vitro"
    },
    {
     "q": "Qui a réalisé la première FIV réussie ?",
@@ -20891,7 +20916,7 @@ export const TTCQ_THEMES = [
      "Alan Trounson",
      "René Frydman"
     ],
-    "a": 1
+    "a": "Robert Edwards et Patrick Steptoe"
    },
    {
     "q": "En quelle année est née Louise Brown, premier bébé FIV ?",
@@ -20901,7 +20926,7 @@ export const TTCQ_THEMES = [
      "1985",
      "1978"
     ],
-    "a": 3
+    "a": "1978"
    },
    {
     "q": "Quelles sont les étapes d'une FIV ?",
@@ -20911,7 +20936,7 @@ export const TTCQ_THEMES = [
      "Ponction puis fécondation",
      "Stimulation puis transfert"
     ],
-    "a": 1
+    "a": "Stimulation, ponction, fécondation, transfert"
    },
    {
     "q": "Quel est le taux de réussite moyen d'une FIV ?",
@@ -20921,7 +20946,7 @@ export const TTCQ_THEMES = [
      "Environ 30% par tentative",
      "Environ 10%"
     ],
-    "a": 2
+    "a": "Environ 30% par tentative"
    },
    {
     "q": "Qu'est-ce que l'ICSI en FIV ?",
@@ -20931,7 +20956,7 @@ export const TTCQ_THEMES = [
      "Fécondation classique",
      "Injection directe d'un spermatozoïde dans l'ovule"
     ],
-    "a": 3
+    "a": "Injection directe d'un spermatozoïde dans l'ovule"
    },
    {
     "q": "Combien de bébés sont nés par FIV dans le monde ?",
@@ -20941,7 +20966,7 @@ export const TTCQ_THEMES = [
      "Plus de 10 millions",
      "Plus de 5 millions"
     ],
-    "a": 1
+    "a": "Plus de 8 millions"
    },
    {
     "q": "La FIV est-elle remboursée par la Sécurité sociale en France ?",
@@ -20951,9 +20976,10 @@ export const TTCQ_THEMES = [
      "Uniquement la première tentative",
      "Oui, sous conditions"
     ],
-    "a": 3
+    "a": "Oui, sous conditions"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_027",
@@ -20969,7 +20995,7 @@ export const TTCQ_THEMES = [
      "Implant sous-cutané",
      "Dispositif Intra-Urinaire"
     ],
-    "a": 0
+    "a": "Dispositif Intra-Utérin contraceptif"
    },
    {
     "q": "Combien de types de stérilet existe-t-il ?",
@@ -20979,7 +21005,7 @@ export const TTCQ_THEMES = [
      "Deux : au cuivre et hormonal",
      "Trois"
     ],
-    "a": 2
+    "a": "Deux : au cuivre et hormonal"
    },
    {
     "q": "Combien de temps dure un stérilet au cuivre ?",
@@ -20989,7 +21015,7 @@ export const TTCQ_THEMES = [
      "2 à 3 ans",
      "10 à 15 ans"
     ],
-    "a": 1
+    "a": "5 à 10 ans"
    },
    {
     "q": "Combien de temps dure un stérilet hormonal ?",
@@ -20999,7 +21025,7 @@ export const TTCQ_THEMES = [
      "1 à 2 ans",
      "10 ans"
     ],
-    "a": 0
+    "a": "3 à 5 ans"
    },
    {
     "q": "Quel est le taux d'efficacité du stérilet ?",
@@ -21009,7 +21035,7 @@ export const TTCQ_THEMES = [
      "Plus de 99%",
      "Environ 90%"
     ],
-    "a": 2
+    "a": "Plus de 99%"
    },
    {
     "q": "Le stérilet peut-il être posé chez une femme n'ayant jamais accouché ?",
@@ -21019,7 +21045,7 @@ export const TTCQ_THEMES = [
      "Non, déconseillé",
      "Uniquement après 25 ans"
     ],
-    "a": 0
+    "a": "Oui, c'est possible"
    },
    {
     "q": "Quels sont les effets secondaires possibles du stérilet ?",
@@ -21029,7 +21055,7 @@ export const TTCQ_THEMES = [
      "Aucun effet secondaire",
      "Prise de poids"
     ],
-    "a": 1
+    "a": "Saignements, douleurs, infections"
    },
    {
     "q": "Le stérilet protège-t-il des IST ?",
@@ -21039,9 +21065,10 @@ export const TTCQ_THEMES = [
      "Oui, partiellement",
      "Oui, comme le préservatif"
     ],
-    "a": 1
+    "a": "Non"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_028",
@@ -21057,7 +21084,7 @@ export const TTCQ_THEMES = [
      "Dispositif intra-utérin",
      "Bâtonnet hormonal placé sous la peau du bras"
     ],
-    "a": 3
+    "a": "Bâtonnet hormonal placé sous la peau du bras"
    },
    {
     "q": "Combien de temps dure l'implant contraceptif ?",
@@ -21067,7 +21094,7 @@ export const TTCQ_THEMES = [
      "3 ans",
      "2 ans"
     ],
-    "a": 2
+    "a": "3 ans"
    },
    {
     "q": "Quelle hormone contient l'implant contraceptif ?",
@@ -21077,7 +21104,7 @@ export const TTCQ_THEMES = [
      "Testostérone",
      "Progestérone seule (étonogestrel)"
     ],
-    "a": 3
+    "a": "Progestérone seule (étonogestrel)"
    },
    {
     "q": "Quelle est l'efficacité de l'implant ?",
@@ -21087,7 +21114,7 @@ export const TTCQ_THEMES = [
      "Environ 95%",
      "Environ 85%"
     ],
-    "a": 1
+    "a": "Plus de 99%"
    },
    {
     "q": "Comment agit l'implant contraceptif ?",
@@ -21097,7 +21124,7 @@ export const TTCQ_THEMES = [
      "En stérilisant",
      "En bloquant les spermatozoïdes"
     ],
-    "a": 0
+    "a": "En empêchant l'ovulation"
    },
    {
     "q": "Où est placé l'implant exactement ?",
@@ -21107,7 +21134,7 @@ export const TTCQ_THEMES = [
      "Sous la peau du ventre",
      "Sous la peau du bras, face interne"
     ],
-    "a": 3
+    "a": "Sous la peau du bras, face interne"
    },
    {
     "q": "Faut-il une prescription pour l'implant ?",
@@ -21117,7 +21144,7 @@ export const TTCQ_THEMES = [
      "Oui, posé par un médecin",
      "Non, en vente libre"
     ],
-    "a": 2
+    "a": "Oui, posé par un médecin"
    },
    {
     "q": "Quels sont les effets secondaires de l'implant ?",
@@ -21127,9 +21154,10 @@ export const TTCQ_THEMES = [
      "Aucun",
      "Nausées sévères"
     ],
-    "a": 1
+    "a": "Saignements irréguliers, maux de tête"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_029",
@@ -21145,7 +21173,7 @@ export const TTCQ_THEMES = [
      "Anneau contraceptif oral",
      "Anneau flexible inséré dans le vagin qui libère des hormones"
     ],
-    "a": 3
+    "a": "Anneau flexible inséré dans le vagin qui libère des hormones"
    },
    {
     "q": "Combien de temps l'anneau vaginal reste-t-il en place ?",
@@ -21155,7 +21183,7 @@ export const TTCQ_THEMES = [
      "1 semaine",
      "1 mois"
     ],
-    "a": 1
+    "a": "3 semaines, puis 1 semaine de pause"
    },
    {
     "q": "Quels hormones libère l'anneau vaginal ?",
@@ -21165,7 +21193,7 @@ export const TTCQ_THEMES = [
      "Progestérone seule",
      "Oestrogènes seuls"
     ],
-    "a": 1
+    "a": "Oestrogènes et progestérone"
    },
    {
     "q": "Quelle est l'efficacité de l'anneau vaginal ?",
@@ -21175,7 +21203,7 @@ export const TTCQ_THEMES = [
      "Environ 90%",
      "Environ 85%"
     ],
-    "a": 1
+    "a": "Plus de 99%"
    },
    {
     "q": "Comment agit l'anneau vaginal ?",
@@ -21185,7 +21213,7 @@ export const TTCQ_THEMES = [
      "Barrière physique",
      "Libération d'hormones absorbées par la paroi vaginale"
     ],
-    "a": 3
+    "a": "Libération d'hormones absorbées par la paroi vaginale"
    },
    {
     "q": "L'anneau vaginal peut-il être retiré temporairement ?",
@@ -21195,7 +21223,7 @@ export const TTCQ_THEMES = [
      "Oui, jusqu'à 3 heures",
      "Oui, jusqu'à 1 heure"
     ],
-    "a": 2
+    "a": "Oui, jusqu'à 3 heures"
    },
    {
     "q": "L'anneau vaginal protège-t-il des IST ?",
@@ -21205,7 +21233,7 @@ export const TTCQ_THEMES = [
      "Oui, totalement",
      "Non"
     ],
-    "a": 3
+    "a": "Non"
    },
    {
     "q": "Où se procurer l'anneau vaginal ?",
@@ -21215,9 +21243,10 @@ export const TTCQ_THEMES = [
      "Sur prescription médicale en pharmacie",
      "En vente libre"
     ],
-    "a": 2
+    "a": "Sur prescription médicale en pharmacie"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_030",
@@ -21233,7 +21262,7 @@ export const TTCQ_THEMES = [
      "Implant",
      "Pansement"
     ],
-    "a": 0
+    "a": "Timbre cutané qui libère des hormones contraceptives"
    },
    {
     "q": "Où applique-t-on le patch contraceptif ?",
@@ -21243,7 +21272,7 @@ export const TTCQ_THEMES = [
      "Dans le vagin",
      "Sur le visage"
     ],
-    "a": 0
+    "a": "Sur la peau du ventre, fesse, bras ou dos"
    },
    {
     "q": "Combien de temps dure un patch ?",
@@ -21253,7 +21282,7 @@ export const TTCQ_THEMES = [
      "Deux semaines",
      "Une semaine"
     ],
-    "a": 3
+    "a": "Une semaine"
    },
    {
     "q": "Quels hormones contient le patch ?",
@@ -21263,7 +21292,7 @@ export const TTCQ_THEMES = [
      "Oestrogènes et progestérone",
      "Oestrogènes seuls"
     ],
-    "a": 2
+    "a": "Oestrogènes et progestérone"
    },
    {
     "q": "Quelle est l'efficacité du patch contraceptif ?",
@@ -21273,7 +21302,7 @@ export const TTCQ_THEMES = [
      "Environ 90%",
      "Plus de 99%"
     ],
-    "a": 3
+    "a": "Plus de 99%"
    },
    {
     "q": "Combien de patchs par cycle ?",
@@ -21283,7 +21312,7 @@ export const TTCQ_THEMES = [
      "3 patchs (3 semaines)",
      "4 patchs (1 mois)"
     ],
-    "a": 2
+    "a": "3 patchs (3 semaines)"
    },
    {
     "q": "Le patch peut-il se décoller ?",
@@ -21293,7 +21322,7 @@ export const TTCQ_THEMES = [
      "Oui, toujours",
      "Non, jamais"
     ],
-    "a": 1
+    "a": "Oui, sous certaines conditions (eau, sudation)"
    },
    {
     "q": "Le patch protège-t-il des IST ?",
@@ -21303,9 +21332,10 @@ export const TTCQ_THEMES = [
      "Oui, partiellement",
      "Non"
     ],
-    "a": 3
+    "a": "Non"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_031",
@@ -21321,7 +21351,7 @@ export const TTCQ_THEMES = [
      "Antibiotique",
      "Substance qui détruit ou immobilise les spermatozoïdes"
     ],
-    "a": 3
+    "a": "Substance qui détruit ou immobilise les spermatozoïdes"
    },
    {
     "q": "Sous quelle forme se présente le spermicide ?",
@@ -21331,7 +21361,7 @@ export const TTCQ_THEMES = [
      "Injection",
      "Patch"
     ],
-    "a": 0
+    "a": "Crème, gel, mousse, ovule, film"
    },
    {
     "q": "Quel est l'ingrédient actif principal des spermicides ?",
@@ -21341,7 +21371,7 @@ export const TTCQ_THEMES = [
      "L'alcool",
      "Le nonoxynol-9"
     ],
-    "a": 3
+    "a": "Le nonoxynol-9"
    },
    {
     "q": "Quelle est l'efficacité du spermicide seul ?",
@@ -21351,7 +21381,7 @@ export const TTCQ_THEMES = [
      "Environ 90%",
      "Environ 85%"
     ],
-    "a": 1
+    "a": "Environ 72%"
    },
    {
     "q": "Le spermicide protège-t-il des IST ?",
@@ -21361,7 +21391,7 @@ export const TTCQ_THEMES = [
      "Non, il peut même irriter la peau",
      "Oui, comme le préservatif"
     ],
-    "a": 2
+    "a": "Non, il peut même irriter la peau"
    },
    {
     "q": "Comment utiliser un spermicide ?",
@@ -21371,7 +21401,7 @@ export const TTCQ_THEMES = [
      "Boire",
      "Appliquer sur le pénis"
     ],
-    "a": 1
+    "a": "Appliquer dans le vagin avant les rapports"
    },
    {
     "q": "Combien de temps avant le rapport faut-il appliquer le spermicide ?",
@@ -21381,7 +21411,7 @@ export const TTCQ_THEMES = [
      "5 à 30 minutes avant",
      "Immédiatement"
     ],
-    "a": 2
+    "a": "5 à 30 minutes avant"
    },
    {
     "q": "Le spermicide est-il recommandé comme méthode contraceptive principale ?",
@@ -21391,9 +21421,10 @@ export const TTCQ_THEMES = [
      "Non, son efficacité est insuffisante seule",
      "Oui, c'est très efficace"
     ],
-    "a": 2
+    "a": "Non, son efficacité est insuffisante seule"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_032",
@@ -21409,7 +21440,7 @@ export const TTCQ_THEMES = [
      "Absence volontaire de relations sexuelles",
      "Impossibilité d'avoir des relations"
     ],
-    "a": 2
+    "a": "Absence volontaire de relations sexuelles"
    },
    {
     "q": "L'abstinence sexuelle peut-elle être une méthode contraceptive ?",
@@ -21419,7 +21450,7 @@ export const TTCQ_THEMES = [
      "Non",
      "Oui, c'est la seule méthode à 100% efficace"
     ],
-    "a": 3
+    "a": "Oui, c'est la seule méthode à 100% efficace"
    },
    {
     "q": "Quelles sont les raisons de l'abstinence ?",
@@ -21429,7 +21460,7 @@ export const TTCQ_THEMES = [
      "Uniquement personnelles",
      "Religieuses, personnelles, médicales"
     ],
-    "a": 3
+    "a": "Religieuses, personnelles, médicales"
    },
    {
     "q": "L'abstinence est-elle dangereuse pour la santé ?",
@@ -21439,7 +21470,7 @@ export const TTCQ_THEMES = [
      "Oui, elle est nocive",
      "Oui, elle cause des maladies"
     ],
-    "a": 1
+    "a": "Non, c'est un choix personnel sans danger"
    },
    {
     "q": "Qu'est-ce que l'abstinence périodique ?",
@@ -21449,7 +21480,7 @@ export const TTCQ_THEMES = [
      "Retrait",
      "Méthode contraceptive chimique"
     ],
-    "a": 0
+    "a": "Méthode naturelle basée sur l'observation du cycle"
    },
    {
     "q": "Quelle est l'efficacité des méthodes d'abstinence périodique ?",
@@ -21459,7 +21490,7 @@ export const TTCQ_THEMES = [
      "Moins de 50%",
      "50%"
     ],
-    "a": 0
+    "a": "Variable, de 75% à 99% selon la méthode"
    },
    {
     "q": "Comment fonctionne la méthode Ogino (rythme) ?",
@@ -21469,7 +21500,7 @@ export const TTCQ_THEMES = [
      "Calcul de la période d'ovulation pour éviter les rapports",
      "Mesure de température"
     ],
-    "a": 2
+    "a": "Calcul de la période d'ovulation pour éviter les rapports"
    },
    {
     "q": "Qu'est-ce que la méthode symptothermique ?",
@@ -21479,9 +21510,10 @@ export const TTCQ_THEMES = [
      "Méthode naturelle combinant température et glaire",
      "Méthode chirurgicale"
     ],
-    "a": 2
+    "a": "Méthode naturelle combinant température et glaire"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_033",
@@ -21497,7 +21529,7 @@ export const TTCQ_THEMES = [
      "Absence de relations sexuelles",
      "Vie solitaire"
     ],
-    "a": 1
+    "a": "Fait de ne pas être en couple ou marié"
    },
    {
     "q": "Le célibat est-il un choix ou une situation subie ?",
@@ -21507,7 +21539,7 @@ export const TTCQ_THEMES = [
      "Toujours un choix",
      "Toujours subi"
     ],
-    "a": 0
+    "a": "Les deux cas existent"
    },
    {
     "q": "Qu'est-ce que le célibat prolongé ?",
@@ -21517,7 +21549,7 @@ export const TTCQ_THEMES = [
      "Célibat définitif",
      "Célibat qui dure plusieurs années"
     ],
-    "a": 3
+    "a": "Célibat qui dure plusieurs années"
    },
    {
     "q": "Le célibat a-t-il des effets sur la santé mentale ?",
@@ -21527,7 +21559,7 @@ export const TTCQ_THEMES = [
      "Cela dépend des personnes et du contexte",
      "Aucun effet"
     ],
-    "a": 2
+    "a": "Cela dépend des personnes et du contexte"
    },
    {
     "q": "Qu'est-ce que le célibat religieux ?",
@@ -21537,7 +21569,7 @@ export const TTCQ_THEMES = [
      "Mariage religieux",
      "Abstinence"
     ],
-    "a": 0
+    "a": "Voeu de chasteté pour des motifs religieux"
    },
    {
     "q": "Quel pourcentage d'adultes sont célibataires en France ?",
@@ -21547,7 +21579,7 @@ export const TTCQ_THEMES = [
      "Environ 30%",
      "Environ 50%"
     ],
-    "a": 2
+    "a": "Environ 30%"
    },
    {
     "q": "Le célibat est-il plus fréquent dans certaines tranches d'âge ?",
@@ -21557,7 +21589,7 @@ export const TTCQ_THEMES = [
      "Non, uniforme",
      "Oui, chez les jeunes et les seniors"
     ],
-    "a": 3
+    "a": "Oui, chez les jeunes et les seniors"
    },
    {
     "q": "Qu'est-ce que le célibat géographique ?",
@@ -21567,9 +21599,10 @@ export const TTCQ_THEMES = [
      "Célibat temporaire",
      "Célibat professionnel"
     ],
-    "a": 1
+    "a": "Célibat lié à l'isolement géographique"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_034",
@@ -21585,7 +21618,7 @@ export const TTCQ_THEMES = [
      "Choix sexuel",
      "Attirance sexuelle et affective pour un genre"
     ],
-    "a": 3
+    "a": "Attirance sexuelle et affective pour un genre"
    },
    {
     "q": "Quels sont les principaux types d'orientation sexuelle ?",
@@ -21595,7 +21628,7 @@ export const TTCQ_THEMES = [
      "Homosexualité",
      "Hétérosexualité et homosexualité"
     ],
-    "a": 1
+    "a": "Hétérosexualité, homosexualité, bisexualité"
    },
    {
     "q": "Qu'est-ce que l'hétérosexualité ?",
@@ -21605,7 +21638,7 @@ export const TTCQ_THEMES = [
      "Attirance pour le même sexe",
      "Attirance pour les deux sexes"
     ],
-    "a": 1
+    "a": "Attirance pour le sexe opposé"
    },
    {
     "q": "Qu'est-ce que l'homosexualité ?",
@@ -21615,7 +21648,7 @@ export const TTCQ_THEMES = [
      "Aucune attirance",
      "Attirance pour le même sexe"
     ],
-    "a": 3
+    "a": "Attirance pour le même sexe"
    },
    {
     "q": "Qu'est-ce que la bisexualité ?",
@@ -21625,7 +21658,7 @@ export const TTCQ_THEMES = [
      "Attirance pour aucun sexe",
      "Attirance pour le même sexe"
     ],
-    "a": 1
+    "a": "Attirance pour les deux sexes"
    },
    {
     "q": "Depuis quand l'homosexualité n'est-elle plus considérée comme une maladie ?",
@@ -21635,7 +21668,7 @@ export const TTCQ_THEMES = [
      "Depuis 1980",
      "Depuis 1970"
     ],
-    "a": 1
+    "a": "Depuis 1990 (OMS)"
    },
    {
     "q": "Qu'est-ce que l'asexualité ?",
@@ -21645,7 +21678,7 @@ export const TTCQ_THEMES = [
      "Maladie",
      "Absence ou faible désir sexuel envers autrui"
     ],
-    "a": 3
+    "a": "Absence ou faible désir sexuel envers autrui"
    },
    {
     "q": "L'orientation sexuelle peut-elle changer ?",
@@ -21655,9 +21688,10 @@ export const TTCQ_THEMES = [
      "Elle change toujours",
      "Oui, volontairement"
     ],
-    "a": 0
+    "a": "Elle est généralement stable mais peut évoluer"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_035",
@@ -21673,7 +21707,7 @@ export const TTCQ_THEMES = [
      "Union légale entre deux personnes",
      "Simple cohabitation"
     ],
-    "a": 2
+    "a": "Union légale entre deux personnes"
    },
    {
     "q": "En quelle année le mariage homosexuel a-t-il été légalisé en France ?",
@@ -21683,7 +21717,7 @@ export const TTCQ_THEMES = [
      "2013 (loi Taubira)",
      "2000"
     ],
-    "a": 2
+    "a": "2013 (loi Taubira)"
    },
    {
     "q": "Quel pays a été le premier à légaliser le mariage homosexuel ?",
@@ -21693,7 +21727,7 @@ export const TTCQ_THEMES = [
      "Canada (2005)",
      "Pays-Bas (2001)"
     ],
-    "a": 3
+    "a": "Pays-Bas (2001)"
    },
    {
     "q": "Qu'est-ce que le PACS en France ?",
@@ -21703,7 +21737,7 @@ export const TTCQ_THEMES = [
      "Mariage simplifié",
      "Union religieuse"
     ],
-    "a": 1
+    "a": "Contrat d'union civile entre deux adultes"
    },
    {
     "q": "Combien de mariages sont célébrés chaque année en France ?",
@@ -21713,7 +21747,7 @@ export const TTCQ_THEMES = [
      "Environ 100 000",
      "Environ 500 000"
     ],
-    "a": 0
+    "a": "Environ 230 000"
    },
    {
     "q": "Qu'est-ce que le mariage civil ?",
@@ -21723,7 +21757,7 @@ export const TTCQ_THEMES = [
      "Mariage symbolique",
      "Mariage religieux"
     ],
-    "a": 0
+    "a": "Mariage célébré par un officier d'état civil"
    },
    {
     "q": "Quel âge minimum pour se marier en France ?",
@@ -21733,7 +21767,7 @@ export const TTCQ_THEMES = [
      "15 ans",
      "16 ans"
     ],
-    "a": 1
+    "a": "18 ans"
    },
    {
     "q": "Qu'est-ce que le divorce ?",
@@ -21743,9 +21777,10 @@ export const TTCQ_THEMES = [
      "Rupture",
      "Dissolution légale du mariage"
     ],
-    "a": 3
+    "a": "Dissolution légale du mariage"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_036",
@@ -21761,7 +21796,7 @@ export const TTCQ_THEMES = [
      "Représentation explicite d'actes sexuels dans le but d'exciter",
      "Film érotique"
     ],
-    "a": 2
+    "a": "Représentation explicite d'actes sexuels dans le but d'exciter"
    },
    {
     "q": "Depuis quand la pornographie moderne existe-t-elle ?",
@@ -21771,7 +21806,7 @@ export const TTCQ_THEMES = [
      "Depuis internet",
      "Depuis les années 1950"
     ],
-    "a": 0
+    "a": "Depuis le cinéma (années 1970)"
    },
    {
     "q": "Quel est l'âge légal pour accéder à la pornographie en France ?",
@@ -21781,7 +21816,7 @@ export const TTCQ_THEMES = [
      "15 ans",
      "21 ans"
     ],
-    "a": 0
+    "a": "18 ans"
    },
    {
     "q": "Qu'est-ce que la pornographie montre-t-elle souvent de manière irréaliste ?",
@@ -21791,7 +21826,7 @@ export const TTCQ_THEMES = [
      "Tout est réaliste",
      "Les sentiments"
     ],
-    "a": 1
+    "a": "Les corps, les pratiques et les relations"
    },
    {
     "q": "Quels sont les risques de la pornographie pour les jeunes ?",
@@ -21801,7 +21836,7 @@ export const TTCQ_THEMES = [
      "Développement normal",
      "Aucun risque"
     ],
-    "a": 1
+    "a": "Image irréaliste de la sexualité, addiction"
    },
    {
     "q": "Qu'est-ce que le revenge porn ?",
@@ -21811,7 +21846,7 @@ export const TTCQ_THEMES = [
      "Pornographie professionnelle",
      "Film amateur"
     ],
-    "a": 1
+    "a": "Diffusion non consentie d'images intimes"
    },
    {
     "q": "La pornographie est-elle légale en France ?",
@@ -21821,7 +21856,7 @@ export const TTCQ_THEMES = [
      "Non, interdite",
      "Oui, avec des restrictions (âge, consentement)"
     ],
-    "a": 3
+    "a": "Oui, avec des restrictions (âge, consentement)"
    },
    {
     "q": "Qu'est-ce que la production éthique dans la pornographie ?",
@@ -21831,9 +21866,10 @@ export const TTCQ_THEMES = [
      "Production artistique",
      "Production amateur"
     ],
-    "a": 1
+    "a": "Production respectant le consentement et les droits des acteurs"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_037",
@@ -21849,7 +21885,7 @@ export const TTCQ_THEMES = [
      "Échange d'actes sexuels contre de l'argent ou des biens",
      "Liberté sexuelle"
     ],
-    "a": 2
+    "a": "Échange d'actes sexuels contre de l'argent ou des biens"
    },
    {
     "q": "La prostitution est-elle légale en France ?",
@@ -21859,7 +21895,7 @@ export const TTCQ_THEMES = [
      "Uniquement dans les maisons closes",
      "Totalement légale"
     ],
-    "a": 0
+    "a": "L'acte est légal, mais le proxénétisme est interdit"
    },
    {
     "q": "Qu'est-ce que le proxénétisme ?",
@@ -21869,7 +21905,7 @@ export const TTCQ_THEMES = [
      "Prostitué",
      "Client de la prostitution"
     ],
-    "a": 0
+    "a": "Le fait de tirer profit de la prostitution d'autrui"
    },
    {
     "q": "En quelle année la loi française a-t-elle pénalisé les clients ?",
@@ -21879,7 +21915,7 @@ export const TTCQ_THEMES = [
      "2010",
      "2018"
     ],
-    "a": 0
+    "a": "2016"
    },
    {
     "q": "Combien de personnes se prostituent en France ?",
@@ -21889,7 +21925,7 @@ export const TTCQ_THEMES = [
      "Environ 100 000",
      "Environ 10 000"
     ],
-    "a": 1
+    "a": "Environ 30 000 à 40 000"
    },
    {
     "q": "Qu'est-ce que l'exploitation sexuelle ?",
@@ -21899,7 +21935,7 @@ export const TTCQ_THEMES = [
      "Prostitution choisie",
      "Métier"
     ],
-    "a": 0
+    "a": "Prostitution forcée ou subie sous contrainte"
    },
    {
     "q": "Quel est le lien entre prostitution et trafic d'êtres humains ?",
@@ -21909,7 +21945,7 @@ export const TTCQ_THEMES = [
      "Beaucoup de prostituées sont victimes de trafic",
      "Aucun lien"
     ],
-    "a": 2
+    "a": "Beaucoup de prostituées sont victimes de trafic"
    },
    {
     "q": "Quelles sont les conséquences de la prostitution sur la santé ?",
@@ -21919,9 +21955,10 @@ export const TTCQ_THEMES = [
      "Aucune conséquence",
      "Problèmes uniquement physiques"
     ],
-    "a": 1
+    "a": "IST, traumatismes, dépendances"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_038",
@@ -21937,7 +21974,7 @@ export const TTCQ_THEMES = [
      "Absence de refus",
      "Accord libre et éclairé à un acte sexuel"
     ],
-    "a": 3
+    "a": "Accord libre et éclairé à un acte sexuel"
    },
    {
     "q": "Le consentement peut-il être donné sous l'emprise de l'alcool ?",
@@ -21947,7 +21984,7 @@ export const TTCQ_THEMES = [
      "Oui, tant qu'il n'y a pas de violence",
      "Non, le consentement doit être libre et lucide"
     ],
-    "a": 3
+    "a": "Non, le consentement doit être libre et lucide"
    },
    {
     "q": "Le consentement est-il réversible ?",
@@ -21957,7 +21994,7 @@ export const TTCQ_THEMES = [
      "Oui, il peut être retiré à tout moment",
      "Parfois"
     ],
-    "a": 2
+    "a": "Oui, il peut être retiré à tout moment"
    },
    {
     "q": "Peut-on présumer du consentement ?",
@@ -21967,7 +22004,7 @@ export const TTCQ_THEMES = [
      "Non, il doit être exprimé clairement",
      "Oui, par défaut"
     ],
-    "a": 2
+    "a": "Non, il doit être exprimé clairement"
    },
    {
     "q": "Qu'est-ce que l'âge du consentement en France ?",
@@ -21977,7 +22014,7 @@ export const TTCQ_THEMES = [
      "15 ans",
      "16 ans"
     ],
-    "a": 2
+    "a": "15 ans"
    },
    {
     "q": "Le silence peut-il être considéré comme un consentement ?",
@@ -21987,7 +22024,7 @@ export const TTCQ_THEMES = [
      "Oui, dans le couple",
      "Non, le consentement doit être explicite"
     ],
-    "a": 3
+    "a": "Non, le consentement doit être explicite"
    },
    {
     "q": "Qu'est-ce que le consentement explicite ?",
@@ -21997,7 +22034,7 @@ export const TTCQ_THEMES = [
      "Une signature",
      "Une absence de refus"
     ],
-    "a": 1
+    "a": "Un accord verbal ou gestuel clair"
    },
    {
     "q": "Différence entre consentement et soumission ?",
@@ -22007,9 +22044,10 @@ export const TTCQ_THEMES = [
      "C'est la même chose",
      "Le consentement est libre, la soumission est contrainte"
     ],
-    "a": 3
+    "a": "Le consentement est libre, la soumission est contrainte"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_039",
@@ -22025,7 +22063,7 @@ export const TTCQ_THEMES = [
      "Drague",
      "Compliment"
     ],
-    "a": 0
+    "a": "Comportements à connotation sexuelle imposés de façon répétée"
    },
    {
     "q": "Quels sont les éléments constitutifs du harcèlement sexuel ?",
@@ -22035,7 +22073,7 @@ export const TTCQ_THEMES = [
      "Répétition et caractère non désiré",
      "Intention humoristique"
     ],
-    "a": 2
+    "a": "Répétition et caractère non désiré"
    },
    {
     "q": "Le harcèlement sexuel est-il un délit pénal en France ?",
@@ -22045,7 +22083,7 @@ export const TTCQ_THEMES = [
      "Oui, puni par la loi",
      "Non, ce n'est pas un délit"
     ],
-    "a": 2
+    "a": "Oui, puni par la loi"
    },
    {
     "q": "Quelle est la peine maximale pour harcèlement sexuel en France ?",
@@ -22055,7 +22093,7 @@ export const TTCQ_THEMES = [
      "1 an",
      "5 ans"
     ],
-    "a": 1
+    "a": "3 ans d'emprisonnement et 45 000 euros d'amende"
    },
    {
     "q": "Où peut avoir lieu le harcèlement sexuel ?",
@@ -22065,7 +22103,7 @@ export const TTCQ_THEMES = [
      "Uniquement au travail",
      "Au travail, dans les transports, à l'école, en ligne"
     ],
-    "a": 3
+    "a": "Au travail, dans les transports, à l'école, en ligne"
    },
    {
     "q": "Qu'est-ce que le harcèlement de rue ?",
@@ -22075,7 +22113,7 @@ export const TTCQ_THEMES = [
      "Comportements sexistes dans l'espace public",
      "Compliment"
     ],
-    "a": 2
+    "a": "Comportements sexistes dans l'espace public"
    },
    {
     "q": "Comment réagir face au harcèlement sexuel ?",
@@ -22085,7 +22123,7 @@ export const TTCQ_THEMES = [
      "Signaler, porter plainte, témoigner",
      "Ignorer"
     ],
-    "a": 2
+    "a": "Signaler, porter plainte, témoigner"
    },
    {
     "q": "Qu'est-ce que la loi sur le harcèlement sexuel en France ?",
@@ -22095,9 +22133,10 @@ export const TTCQ_THEMES = [
      "Loi qui définit et punit le harcèlement sexuel",
      "Loi sur le travail"
     ],
-    "a": 2
+    "a": "Loi qui définit et punit le harcèlement sexuel"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_040",
@@ -22113,7 +22152,7 @@ export const TTCQ_THEMES = [
      "Acte sexuel imposé sans consentement",
      "Tous ces éléments"
     ],
-    "a": 3
+    "a": "Tous ces éléments"
    },
    {
     "q": "Comment la loi française définit-elle le viol ?",
@@ -22123,7 +22162,7 @@ export const TTCQ_THEMES = [
      "Attouchement",
      "Tout acte de pénétration sexuelle imposé par violence ou contrainte"
     ],
-    "a": 3
+    "a": "Tout acte de pénétration sexuelle imposé par violence ou contrainte"
    },
    {
     "q": "Quelle est la peine maximale pour viol en France ?",
@@ -22133,7 +22172,7 @@ export const TTCQ_THEMES = [
      "20 ans",
      "15 ans de réclusion criminelle"
     ],
-    "a": 3
+    "a": "15 ans de réclusion criminelle"
    },
    {
     "q": "Qui peut être victime de viol ?",
@@ -22143,7 +22182,7 @@ export const TTCQ_THEMES = [
      "Uniquement les hommes",
      "Uniquement les enfants"
     ],
-    "a": 1
+    "a": "Toute personne, quel que soit son âge, sexe ou genre"
    },
    {
     "q": "Que faire en cas de viol ?",
@@ -22153,7 +22192,7 @@ export const TTCQ_THEMES = [
      "Appeler les urgences, ne pas se laver, porter plainte",
      "Oublier"
     ],
-    "a": 2
+    "a": "Appeler les urgences, ne pas se laver, porter plainte"
    },
    {
     "q": "Qu'est-ce que la prescription pour viol en France ?",
@@ -22163,7 +22202,7 @@ export const TTCQ_THEMES = [
      "10 ans",
      "5 ans"
     ],
-    "a": 1
+    "a": "20 ans après la majorité de la victime"
    },
    {
     "q": "Quel est le pourcentage de plaintes pour viol classées sans suite ?",
@@ -22173,7 +22212,7 @@ export const TTCQ_THEMES = [
      "Environ 30%",
      "Environ 10%"
     ],
-    "a": 1
+    "a": "Environ 80%"
    },
    {
     "q": "Qu'est-ce qu'une agression sexuelle ?",
@@ -22183,9 +22222,10 @@ export const TTCQ_THEMES = [
      "Viol",
      "Inceste"
     ],
-    "a": 1
+    "a": "Atteinte sexuelle sans pénétration"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_041",
@@ -22201,7 +22241,7 @@ export const TTCQ_THEMES = [
      "Cours de biologie",
      "Apprentissage des techniques sexuelles"
     ],
-    "a": 0
+    "a": "Apprentissage sur le corps, les relations et la vie affective"
    },
    {
     "q": "Depuis quand l'éducation sexuelle est-elle obligatoire à l'école en France ?",
@@ -22211,7 +22251,7 @@ export const TTCQ_THEMES = [
      "Depuis 2010",
      "Depuis 2001 (loi relative à la régulation des naissances)"
     ],
-    "a": 3
+    "a": "Depuis 2001 (loi relative à la régulation des naissances)"
    },
    {
     "q": "Combien de séances d'éducation sexuelle sont prévues par an ?",
@@ -22221,7 +22261,7 @@ export const TTCQ_THEMES = [
      "5 séances",
      "Aucune"
     ],
-    "a": 0
+    "a": "Au moins 3 séances"
    },
    {
     "q": "À quel âge commence l'éducation sexuelle à l'école ?",
@@ -22231,7 +22271,7 @@ export const TTCQ_THEMES = [
      "Au collège",
      "Au lycée"
     ],
-    "a": 1
+    "a": "À l'école primaire (cycle 3)"
    },
    {
     "q": "Quels sujets sont abordés dans l'éducation sexuelle ?",
@@ -22241,7 +22281,7 @@ export const TTCQ_THEMES = [
      "Uniquement les IST",
      "Consentement, contraception, IST, relations"
     ],
-    "a": 3
+    "a": "Consentement, contraception, IST, relations"
    },
    {
     "q": "Qui dispense les séances d'éducation sexuelle ?",
@@ -22251,7 +22291,7 @@ export const TTCQ_THEMES = [
      "Enseignants et intervenants extérieurs spécialisés",
      "Uniquement les médecins"
     ],
-    "a": 2
+    "a": "Enseignants et intervenants extérieurs spécialisés"
    },
    {
     "q": "L'éducation sexuelle réduit-elle les grossesses précoces ?",
@@ -22261,7 +22301,7 @@ export const TTCQ_THEMES = [
      "Effet variable",
      "Non, aucun effet"
     ],
-    "a": 0
+    "a": "Oui, c'est démontré"
    },
    {
     "q": "Quel pays a l'un des meilleurs programmes d'éducation sexuelle ?",
@@ -22271,9 +22311,10 @@ export const TTCQ_THEMES = [
      "Japon",
      "États-Unis"
     ],
-    "a": 1
+    "a": "Pays-Bas"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_042",
@@ -22289,7 +22330,7 @@ export const TTCQ_THEMES = [
      "Opération esthétique",
      "Circoncision"
     ],
-    "a": 0
+    "a": "Ablation partielle ou totale des organes génitaux externes"
    },
    {
     "q": "Combien de femmes ont subi des MGF dans le monde ?",
@@ -22299,7 +22340,7 @@ export const TTCQ_THEMES = [
      "Plus de 200 millions",
      "Environ 1 milliard"
     ],
-    "a": 2
+    "a": "Plus de 200 millions"
    },
    {
     "q": "Dans quelles régions les MGF sont-elles pratiquées ?",
@@ -22309,7 +22350,7 @@ export const TTCQ_THEMES = [
      "Uniquement au Moyen-Orient",
      "Uniquement en Afrique"
     ],
-    "a": 1
+    "a": "Afrique subsaharienne, Moyen-Orient, Asie"
    },
    {
     "q": "Les MGF sont-elles illégales en France ?",
@@ -22319,7 +22360,7 @@ export const TTCQ_THEMES = [
      "Autorisées avec consentement",
      "Oui, interdites et sévèrement punies"
     ],
-    "a": 3
+    "a": "Oui, interdites et sévèrement punies"
    },
    {
     "q": "Quelles sont les conséquences des MGF sur la santé ?",
@@ -22329,7 +22370,7 @@ export const TTCQ_THEMES = [
      "Esthétiques",
      "Aucunes"
     ],
-    "a": 1
+    "a": "Douleur, infections, complications obstétricales"
    },
    {
     "q": "Pourquoi les MGF sont-elles pratiquées ?",
@@ -22339,7 +22380,7 @@ export const TTCQ_THEMES = [
      "Hygiène",
      "Traditions culturelles et croyances religieuses"
     ],
-    "a": 3
+    "a": "Traditions culturelles et croyances religieuses"
    },
    {
     "q": "Qu'est-ce que l'excision ?",
@@ -22349,7 +22390,7 @@ export const TTCQ_THEMES = [
      "Circoncision",
      "Opération chirurgicale"
     ],
-    "a": 1
+    "a": "Ablation du clitoris et parfois des petites lèvres"
    },
    {
     "q": "Quelle organisation lutte contre les MGF ?",
@@ -22359,9 +22400,10 @@ export const TTCQ_THEMES = [
      "Croix-Rouge",
      "Toutes ces organisations"
     ],
-    "a": 3
+    "a": "Toutes ces organisations"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_043",
@@ -22377,7 +22419,7 @@ export const TTCQ_THEMES = [
      "Structure médicale",
      "Association qui informe sur la contraception et la sexualité"
     ],
-    "a": 3
+    "a": "Association qui informe sur la contraception et la sexualité"
    },
    {
     "q": "En quelle année le Planning familial a-t-il été créé en France ?",
@@ -22387,7 +22429,7 @@ export const TTCQ_THEMES = [
      "1960",
      "1980"
     ],
-    "a": 0
+    "a": "1956"
    },
    {
     "q": "Quels services propose le Planning familial ?",
@@ -22397,7 +22439,7 @@ export const TTCQ_THEMES = [
      "Uniquement la contraception",
      "Uniquement les informations"
     ],
-    "a": 0
+    "a": "Consultations contraceptives, IST, IVG, informations"
    },
    {
     "q": "Les consultations au Planning familial sont-elles gratuites ?",
@@ -22407,7 +22449,7 @@ export const TTCQ_THEMES = [
      "Uniquement pour les adultes",
      "Non, payantes"
     ],
-    "a": 1
+    "a": "Oui, et anonymes pour les mineurs"
    },
    {
     "q": "Qui peut consulter le Planning familial ?",
@@ -22417,7 +22459,7 @@ export const TTCQ_THEMES = [
      "Uniquement les jeunes",
      "Uniquement les femmes"
     ],
-    "a": 1
+    "a": "Toute personne, sans condition"
    },
    {
     "q": "Qu'est-ce que l'IVG au Planning familial ?",
@@ -22427,7 +22469,7 @@ export const TTCQ_THEMES = [
      "Examen",
      "Interruption Volontaire de Grossesse"
     ],
-    "a": 3
+    "a": "Interruption Volontaire de Grossesse"
    },
    {
     "q": "Depuis quand la contraception est-elle autorisée en France ?",
@@ -22437,7 +22479,7 @@ export const TTCQ_THEMES = [
      "1967 (loi Neuwirth)",
      "1960"
     ],
-    "a": 2
+    "a": "1967 (loi Neuwirth)"
    },
    {
     "q": "Depuis quand l'IVG est-elle légale en France ?",
@@ -22447,9 +22489,10 @@ export const TTCQ_THEMES = [
      "1967",
      "1980"
     ],
-    "a": 1
+    "a": "1975 (loi Veil)"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_044",
@@ -22465,7 +22508,7 @@ export const TTCQ_THEMES = [
      "Opération chirurgicale",
      "Processus pour aligner son apparence et son identité de genre"
     ],
-    "a": 3
+    "a": "Processus pour aligner son apparence et son identité de genre"
    },
    {
     "q": "Qu'est-ce qu'une personne transgenre ?",
@@ -22475,7 +22518,7 @@ export const TTCQ_THEMES = [
      "Homosexuel",
      "Personne qui change de sexe"
     ],
-    "a": 0
+    "a": "Personne dont l'identité de genre diffère du sexe assigné"
    },
    {
     "q": "Qu'est-ce que le parcours de transition médicale ?",
@@ -22485,7 +22528,7 @@ export const TTCQ_THEMES = [
      "Simple changement administratif",
      "Traitement obligatoire"
     ],
-    "a": 1
+    "a": "Suivi par des spécialistes avec traitements possibles"
    },
    {
     "q": "Quels traitements peuvent être suivis lors d'une transition ?",
@@ -22495,7 +22538,7 @@ export const TTCQ_THEMES = [
      "Uniquement les hormones",
      "Uniquement la chirurgie"
     ],
-    "a": 1
+    "a": "Hormones et/ou chirurgies"
    },
    {
     "q": "Depuis quand le changement de sexe à l'état civil est-il possible en France ?",
@@ -22505,7 +22548,7 @@ export const TTCQ_THEMES = [
      "Depuis 2010",
      "Depuis 2000"
     ],
-    "a": 1
+    "a": "Depuis 2016 (loi de modernisation de la justice)"
    },
    {
     "q": "Qu'est-ce que la dysphorie de genre ?",
@@ -22515,7 +22558,7 @@ export const TTCQ_THEMES = [
      "Malaise lié à la discordance entre identité de genre et sexe assigné",
      "Simple insatisfaction"
     ],
-    "a": 2
+    "a": "Malaise lié à la discordance entre identité de genre et sexe assigné"
    },
    {
     "q": "La transidentité est-elle une maladie mentale ?",
@@ -22525,7 +22568,7 @@ export const TTCQ_THEMES = [
      "Non, mais autrefois",
      "Non, l'OMS ne la considère plus comme telle"
     ],
-    "a": 3
+    "a": "Non, l'OMS ne la considère plus comme telle"
    },
    {
     "q": "Qu'est-ce que le coming out trans ?",
@@ -22535,9 +22578,10 @@ export const TTCQ_THEMES = [
      "Révélation de son identité de genre à son entourage",
      "Sortir d'une boîte"
     ],
-    "a": 2
+    "a": "Révélation de son identité de genre à son entourage"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_045",
@@ -22553,7 +22597,7 @@ export const TTCQ_THEMES = [
      "Orientation sexuelle",
      "Sentiment intime et personnel d'appartenir à un genre"
     ],
-    "a": 3
+    "a": "Sentiment intime et personnel d'appartenir à un genre"
    },
    {
     "q": "Quelle est la différence entre sexe et genre ?",
@@ -22563,7 +22607,7 @@ export const TTCQ_THEMES = [
      "Identiques",
      "Le genre est biologique"
     ],
-    "a": 0
+    "a": "Le sexe est biologique, le genre est social et identitaire"
    },
    {
     "q": "Qu'est-ce que la cisidentité ?",
@@ -22573,7 +22617,7 @@ export const TTCQ_THEMES = [
      "Homosexuel",
      "Personne non-binaire"
     ],
-    "a": 0
+    "a": "Personne dont l'identité de genre correspond au sexe assigné"
    },
    {
     "q": "Qu'est-ce qu'une personne non-binaire ?",
@@ -22583,7 +22627,7 @@ export const TTCQ_THEMES = [
      "Personne qui ne se reconnaît pas dans la binarité homme/femme",
      "Personne androgyne"
     ],
-    "a": 2
+    "a": "Personne qui ne se reconnaît pas dans la binarité homme/femme"
    },
    {
     "q": "L'identité de genre est-elle liée à l'orientation sexuelle ?",
@@ -22593,7 +22637,7 @@ export const TTCQ_THEMES = [
      "Non, ce sont des concepts distincts",
      "Parfois"
     ],
-    "a": 2
+    "a": "Non, ce sont des concepts distincts"
    },
    {
     "q": "Qu'est-ce que l'expression de genre ?",
@@ -22603,7 +22647,7 @@ export const TTCQ_THEMES = [
      "Identité de genre",
      "Façon dont une personne exprime son genre (vêtements, comportement)"
     ],
-    "a": 3
+    "a": "Façon dont une personne exprime son genre (vêtements, comportement)"
    },
    {
     "q": "Quels sont les pronoms utilisés pour les personnes non-binaires ?",
@@ -22613,7 +22657,7 @@ export const TTCQ_THEMES = [
      "Aucun pronom",
      "Il ou elle uniquement"
     ],
-    "a": 1
+    "a": "Iel, al, ol (ou autres selon la personne)"
    },
    {
     "q": "L'identité de genre est-elle choisie ?",
@@ -22623,9 +22667,10 @@ export const TTCQ_THEMES = [
      "Oui, on la choisit",
      "Oui, comme un vêtement"
     ],
-    "a": 0
+    "a": "Non, elle est ressentie et personnelle"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_046",
@@ -22641,7 +22686,7 @@ export const TTCQ_THEMES = [
      "Choix de vie",
      "Maladie"
     ],
-    "a": 1
+    "a": "Identité de genre différente du sexe assigné à la naissance"
    },
    {
     "q": "Quel est le terme médical utilisé dans les classifications internationales ?",
@@ -22651,7 +22696,7 @@ export const TTCQ_THEMES = [
      "Transsexualisme",
      "Dysphorie de genre"
     ],
-    "a": 3
+    "a": "Dysphorie de genre"
    },
    {
     "q": "À quel âge une personne peut-elle ressentir une dysphorie de genre ?",
@@ -22661,7 +22706,7 @@ export const TTCQ_THEMES = [
      "Uniquement à l'adolescence",
      "Après 30 ans"
     ],
-    "a": 0
+    "a": "Dès l'enfance"
    },
    {
     "q": "Quels sont les traitements possibles pour la dysphorie de genre ?",
@@ -22671,7 +22716,7 @@ export const TTCQ_THEMES = [
      "THS, chirurgies, accompagnement psychologique",
      "Aucun traitement"
     ],
-    "a": 2
+    "a": "THS, chirurgies, accompagnement psychologique"
    },
    {
     "q": "Qu'est-ce que le traitement hormonal substitutif (THS) dans la transition ?",
@@ -22681,7 +22726,7 @@ export const TTCQ_THEMES = [
      "Médicaments",
      "Hormones pour développer les caractères du genre souhaité"
     ],
-    "a": 3
+    "a": "Hormones pour développer les caractères du genre souhaité"
    },
    {
     "q": "Qu'est-ce que la chirurgie de réassignation sexuelle ?",
@@ -22691,7 +22736,7 @@ export const TTCQ_THEMES = [
      "Chirurgie mammaire",
      "Lipoaspiration"
     ],
-    "a": 0
+    "a": "Opérations chirurgicales pour modifier les caractéristiques sexuelles"
    },
    {
     "q": "Depuis quand la France rembourse-t-elle les opérations de changement de sexe ?",
@@ -22701,7 +22746,7 @@ export const TTCQ_THEMES = [
      "Depuis 1990",
      "Depuis 2010"
     ],
-    "a": 1
+    "a": "Depuis les années 2000 (ALD)"
    },
    {
     "q": "La transidentité est-elle reconnue comme une affection de longue durée (ALD) ?",
@@ -22711,9 +22756,10 @@ export const TTCQ_THEMES = [
      "Non, jamais",
      "Oui, systématiquement"
     ],
-    "a": 0
+    "a": "Oui, dans certains cas"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_047",
@@ -22729,7 +22775,7 @@ export const TTCQ_THEMES = [
      "Parents de même sexe qui élèvent des enfants",
      "Famille nombreuse"
     ],
-    "a": 2
+    "a": "Parents de même sexe qui élèvent des enfants"
    },
    {
     "q": "Qu'est-ce que la PMA pour les couples de femmes en France ?",
@@ -22739,7 +22785,7 @@ export const TTCQ_THEMES = [
      "Gestation pour autrui",
      "Procréation Médicalement Assistée pour couples lesbiens"
     ],
-    "a": 3
+    "a": "Procréation Médicalement Assistée pour couples lesbiens"
    },
    {
     "q": "Depuis quand la PMA est-elle ouverte à toutes les femmes en France ?",
@@ -22749,7 +22795,7 @@ export const TTCQ_THEMES = [
      "2023",
      "2013"
     ],
-    "a": 0
+    "a": "2021 (loi bioéthique)"
    },
    {
     "q": "Qu'est-ce que l'adoption homoparentale ?",
@@ -22759,7 +22805,7 @@ export const TTCQ_THEMES = [
      "Adoption d'un enfant par un couple de même sexe",
      "Famille d'accueil"
     ],
-    "a": 2
+    "a": "Adoption d'un enfant par un couple de même sexe"
    },
    {
     "q": "Qu'est-ce que l'adoption de l'enfant du conjoint ?",
@@ -22769,7 +22815,7 @@ export const TTCQ_THEMES = [
      "Adoption simple",
      "Adoption plénière"
     ],
-    "a": 1
+    "a": "Adoption de l'enfant du partenaire par le beau-parent"
    },
    {
     "q": "Combien d'enfants vivent dans une famille homoparentale en France ?",
@@ -22779,7 +22825,7 @@ export const TTCQ_THEMES = [
      "Environ 500 000",
      "Environ 200 000 à 300 000"
     ],
-    "a": 3
+    "a": "Environ 200 000 à 300 000"
    },
    {
     "q": "Comment les enfants de familles homoparentales se développent-ils ?",
@@ -22789,7 +22835,7 @@ export const TTCQ_THEMES = [
      "Cela dépend de l'orientation des parents",
      "Moins bien"
     ],
-    "a": 1
+    "a": "Aussi bien que les autres enfants"
    },
    {
     "q": "Quelle est la différence entre homoparentalité et parent seul ?",
@@ -22799,9 +22845,10 @@ export const TTCQ_THEMES = [
      "Parent seul = couple homosexuel",
      "C'est la même chose"
     ],
-    "a": 1
+    "a": "Homoparentalité = couple de même sexe, parent seul = célibataire"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_048",
@@ -22817,7 +22864,7 @@ export const TTCQ_THEMES = [
      "Préparation Médicale à l'Accouchement",
      "Prémédication Assistée"
     ],
-    "a": 0
+    "a": "Procréation Médicalement Assistée"
    },
    {
     "q": "Quelles techniques inclut la PMA ?",
@@ -22827,7 +22874,7 @@ export const TTCQ_THEMES = [
      "Insémination, FIV, ICSI",
      "La chirurgie"
     ],
-    "a": 2
+    "a": "Insémination, FIV, ICSI"
    },
    {
     "q": "À qui s'adresse la PMA en France ?",
@@ -22837,7 +22884,7 @@ export const TTCQ_THEMES = [
      "Uniquement couples de femmes",
      "Uniquement couples mariés"
     ],
-    "a": 1
+    "a": "Couples hétérosexuels, couples de femmes et femmes seules"
    },
    {
     "q": "Qu'est-ce que l'insémination artificielle (IAC) ?",
@@ -22847,7 +22894,7 @@ export const TTCQ_THEMES = [
      "Fécondation in vitro",
      "Transfert d'embryon"
     ],
-    "a": 0
+    "a": "Dépôt de sperme directement dans l'utérus"
    },
    {
     "q": "Quel est l'âge limite pour la PMA en France ?",
@@ -22857,7 +22904,7 @@ export const TTCQ_THEMES = [
      "50 ans",
      "43 ans pour la femme"
     ],
-    "a": 3
+    "a": "43 ans pour la femme"
    },
    {
     "q": "Combien de tentatives de PMA sont remboursées en France ?",
@@ -22867,7 +22914,7 @@ export const TTCQ_THEMES = [
      "4 inséminations et 2 FIV",
      "Tentatives illimitées"
     ],
-    "a": 1
+    "a": "6 inséminations et 4 FIV"
    },
    {
     "q": "Qu'est-ce que la conservation des ovocytes ?",
@@ -22877,7 +22924,7 @@ export const TTCQ_THEMES = [
      "Stockage d'embryons",
      "Congélation des ovules pour préserver la fertilité"
     ],
-    "a": 3
+    "a": "Congélation des ovules pour préserver la fertilité"
    },
    {
     "q": "Depuis quand les femmes peuvent-elles conserver leurs ovocytes sans raison médicale en France ?",
@@ -22887,9 +22934,10 @@ export const TTCQ_THEMES = [
      "Ce n'est pas autorisé",
      "Depuis 2021"
     ],
-    "a": 3
+    "a": "Depuis 2021"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_049",
@@ -22905,7 +22953,7 @@ export const TTCQ_THEMES = [
      "Grossesse à Procréation Assistée",
      "Grossesse Pour Autrui"
     ],
-    "a": 1
+    "a": "Gestation Pour Autrui (mère porteuse)"
    },
    {
     "q": "La GPA est-elle autorisée en France ?",
@@ -22915,7 +22963,7 @@ export const TTCQ_THEMES = [
      "Uniquement pour les couples hétéros",
      "Non, interdite en France"
     ],
-    "a": 3
+    "a": "Non, interdite en France"
    },
    {
     "q": "Pourquoi la GPA est-elle interdite en France ?",
@@ -22925,7 +22973,7 @@ export const TTCQ_THEMES = [
      "Pour des raisons religieuses",
      "Pour des raisons économiques"
     ],
-    "a": 1
+    "a": "Pour des raisons éthiques et juridiques"
    },
    {
     "q": "Dans quels pays la GPA est-elle autorisée ?",
@@ -22935,7 +22983,7 @@ export const TTCQ_THEMES = [
      "Partout dans le monde",
      "Uniquement en Europe"
     ],
-    "a": 0
+    "a": "Canada, Royaume-Uni, Belgique, Grèce, USA (certains états)"
    },
    {
     "q": "Qu'est-ce que la GPA ?",
@@ -22945,7 +22993,7 @@ export const TTCQ_THEMES = [
      "Insémination",
      "Une femme porte un enfant pour un couple ou une personne"
     ],
-    "a": 3
+    "a": "Une femme porte un enfant pour un couple ou une personne"
    },
    {
     "q": "Comment les parents d'intention récupèrent-ils la filiation ?",
@@ -22955,7 +23003,7 @@ export const TTCQ_THEMES = [
      "Automatiquement",
      "Par contrat"
     ],
-    "a": 1
+    "a": "Par procédure judiciaire dans leur pays"
    },
    {
     "q": "Quels sont les principaux débats éthiques autour de la GPA ?",
@@ -22965,7 +23013,7 @@ export const TTCQ_THEMES = [
      "Religieux",
      "Médicaux"
     ],
-    "a": 1
+    "a": "Marchandisation du corps, exploitation, filiation"
    },
    {
     "q": "La GPA est-elle autorisée en Belgique ?",
@@ -22975,9 +23023,10 @@ export const TTCQ_THEMES = [
      "Oui, mais non encadrée légalement",
      "Non"
     ],
-    "a": 2
+    "a": "Oui, mais non encadrée légalement"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_050",
@@ -22993,7 +23042,7 @@ export const TTCQ_THEMES = [
      "Accouchement sans douleur",
      "Accouchement dans l'anonymat à l'hôpital"
     ],
-    "a": 3
+    "a": "Accouchement dans l'anonymat à l'hôpital"
    },
    {
     "q": "Depuis quand l'accouchement sous X existe-t-il en France ?",
@@ -23003,7 +23052,7 @@ export const TTCQ_THEMES = [
      "Depuis 1970",
      "Depuis 1900"
     ],
-    "a": 1
+    "a": "Depuis 1941 (loi de 1941)"
    },
    {
     "q": "Quel est le but de l'accouchement sous X ?",
@@ -23013,7 +23062,7 @@ export const TTCQ_THEMES = [
      "Cacher la naissance",
      "Simplifier l'adoption"
     ],
-    "a": 1
+    "a": "Éviter les abandons dangereux et les infanticides"
    },
    {
     "q": "La mère a-t-elle accès à un suivi médical ?",
@@ -23023,7 +23072,7 @@ export const TTCQ_THEMES = [
      "Uniquement un suivi minimal",
      "Non, aucun"
     ],
-    "a": 0
+    "a": "Oui, elle bénéficie des mêmes soins"
    },
    {
     "q": "L'enfant né sous X peut-il retrouver ses origines ?",
@@ -23033,7 +23082,7 @@ export const TTCQ_THEMES = [
      "Oui, à sa majorité via le CNAOP",
      "Non, jamais"
     ],
-    "a": 2
+    "a": "Oui, à sa majorité via le CNAOP"
    },
    {
     "q": "Qu'est-ce que le CNAOP ?",
@@ -23043,7 +23092,7 @@ export const TTCQ_THEMES = [
      "Conseil National pour l'Accès aux Origines Personnelles",
      "Centre d'adoption"
     ],
-    "a": 2
+    "a": "Conseil National pour l'Accès aux Origines Personnelles"
    },
    {
     "q": "Combien d'accouchements sous X par an en France ?",
@@ -23053,7 +23102,7 @@ export const TTCQ_THEMES = [
      "Environ 5 000",
      "Environ 600 à 700"
     ],
-    "a": 3
+    "a": "Environ 600 à 700"
    },
    {
     "q": "La mère peut-elle revenir sur sa décision ?",
@@ -23063,9 +23112,10 @@ export const TTCQ_THEMES = [
      "Oui, jusqu'à la majorité de l'enfant",
      "Non, c'est définitif"
     ],
-    "a": 0
+    "a": "Oui, pendant 2 mois après la naissance"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "drogues_001",
@@ -23081,7 +23131,7 @@ export const TTCQ_THEMES = [
      "La caféine",
      "La nicotine"
     ],
-    "a": 0
+    "a": "Le THC (tétrahydrocannabinol)"
    },
    {
     "q": "Le cannabis est-il légal en France ?",
@@ -23091,7 +23141,7 @@ export const TTCQ_THEMES = [
      "Oui, totalement",
      "Non, c'est interdit"
     ],
-    "a": 3
+    "a": "Non, c'est interdit"
    },
    {
     "q": "Quels sont les effets à court terme du cannabis ?",
@@ -23101,7 +23151,7 @@ export const TTCQ_THEMES = [
      "Somnolence",
      "Agitation"
     ],
-    "a": 1
+    "a": "Euphorie, relaxation, altération des perceptions"
    },
    {
     "q": "Qu'est-ce que le CBD ?",
@@ -23111,7 +23161,7 @@ export const TTCQ_THEMES = [
      "THC synthétique",
      "Cannabidiol, une molécule non psychotrope du cannabis"
     ],
-    "a": 3
+    "a": "Cannabidiol, une molécule non psychotrope du cannabis"
    },
    {
     "q": "Le cannabis peut-il créer une dépendance ?",
@@ -23121,7 +23171,7 @@ export const TTCQ_THEMES = [
      "Non, aucune dépendance",
      "Oui, une dépendance psychique peut se développer"
     ],
-    "a": 3
+    "a": "Oui, une dépendance psychique peut se développer"
    },
    {
     "q": "Quels sont les risques du cannabis sur la santé mentale ?",
@@ -23131,7 +23181,7 @@ export const TTCQ_THEMES = [
      "Anxiété, dépression, psychose chez les prédisposés",
      "Uniquement physique"
     ],
-    "a": 2
+    "a": "Anxiété, dépression, psychose chez les prédisposés"
    },
    {
     "q": "Dans quels pays le cannabis est-il légalisé ?",
@@ -23141,7 +23191,7 @@ export const TTCQ_THEMES = [
      "Uniquement en Amérique",
      "Aucun"
     ],
-    "a": 1
+    "a": "Canada, Uruguay, certains états USA, Allemagne"
    },
    {
     "q": "Le cannabis a-t-il des usages médicinaux ?",
@@ -23151,9 +23201,10 @@ export const TTCQ_THEMES = [
      "Uniquement en oncologie",
      "Oui, mais inefficace"
     ],
-    "a": 1
+    "a": "Oui, contre la douleur, les nausées, certaines maladies"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "drogues_002",
@@ -23169,7 +23220,7 @@ export const TTCQ_THEMES = [
      "Des feuilles de coca cultivées en Amérique du Sud",
      "Des champignons"
     ],
-    "a": 2
+    "a": "Des feuilles de coca cultivées en Amérique du Sud"
    },
    {
     "q": "Comment se présente la cocaïne ?",
@@ -23179,7 +23230,7 @@ export const TTCQ_THEMES = [
      "Poudre blanche cristalline",
      "Herbe séchée"
     ],
-    "a": 2
+    "a": "Poudre blanche cristalline"
    },
    {
     "q": "Quels sont les effets de la cocaïne ?",
@@ -23189,7 +23240,7 @@ export const TTCQ_THEMES = [
      "Somnolence",
      "Sédation"
     ],
-    "a": 0
+    "a": "Excitation, euphorie, augmentation de l'énergie"
    },
    {
     "q": "Qu'est-ce que le crack ?",
@@ -23199,7 +23250,7 @@ export const TTCQ_THEMES = [
      "Cocaïne diluée",
      "Cocaïne injectable"
     ],
-    "a": 0
+    "a": "Cocaïne transformée pour être fumée"
    },
    {
     "q": "La cocaïne crée-t-elle une dépendance rapide ?",
@@ -23209,7 +23260,7 @@ export const TTCQ_THEMES = [
      "Oui, une dépendance psychique peut s'installer très vite",
      "Non, lentement"
     ],
-    "a": 2
+    "a": "Oui, une dépendance psychique peut s'installer très vite"
    },
    {
     "q": "Quels sont les risques cardiovasculaires de la cocaïne ?",
@@ -23219,7 +23270,7 @@ export const TTCQ_THEMES = [
      "Uniquement tachycardie",
      "Aucun"
     ],
-    "a": 1
+    "a": "Infarctus, AVC, hypertension, arythmies"
    },
    {
     "q": "Comment la cocaïne est-elle consommée ?",
@@ -23229,7 +23280,7 @@ export const TTCQ_THEMES = [
      "Uniquement fumée",
      "Uniquement en comprimé"
     ],
-    "a": 1
+    "a": "Sniffée, fumée, injectée"
    },
    {
     "q": "Qu'il est le trafic de cocaïne dans le monde ?",
@@ -23239,9 +23290,10 @@ export const TTCQ_THEMES = [
      "Régional",
      "Faible"
     ],
-    "a": 0
+    "a": "Un des trafics les plus lucratifs, plusieurs milliards de dollars"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "drogues_003",
@@ -23257,7 +23309,7 @@ export const TTCQ_THEMES = [
      "Du cannabis",
      "De la coca"
     ],
-    "a": 0
+    "a": "De la morphine, extraite du pavot à opium"
    },
    {
     "q": "Comment se présente l'héroïne ?",
@@ -23267,7 +23319,7 @@ export const TTCQ_THEMES = [
      "Liquide",
      "Poudre blanche ou brune"
     ],
-    "a": 3
+    "a": "Poudre blanche ou brune"
    },
    {
     "q": "Quels sont les effets de l'héroïne ?",
@@ -23277,7 +23329,7 @@ export const TTCQ_THEMES = [
      "Hallucinations",
      "Euphorie, sédation, bien-être intense"
     ],
-    "a": 3
+    "a": "Euphorie, sédation, bien-être intense"
    },
    {
     "q": "Pourquoi l'héroïne est-elle particulièrement dangereuse ?",
@@ -23287,7 +23339,7 @@ export const TTCQ_THEMES = [
      "Risque élevé de dépendance et d'overdose mortelle",
      "Effets bénins"
     ],
-    "a": 2
+    "a": "Risque élevé de dépendance et d'overdose mortelle"
    },
    {
     "q": "Qu'est-ce qu'un traitement de substitution aux opiacés ?",
@@ -23297,7 +23349,7 @@ export const TTCQ_THEMES = [
      "Antidépresseurs",
      "Antibiotiques"
     ],
-    "a": 0
+    "a": "Méthadone ou buprénorphine prescrits aux dépendants"
    },
    {
     "q": "Comment l'héroïne est-elle généralement consommée ?",
@@ -23307,7 +23359,7 @@ export const TTCQ_THEMES = [
      "Uniquement sniffée",
      "Injection intraveineuse, sniffée, fumée"
     ],
-    "a": 3
+    "a": "Injection intraveineuse, sniffée, fumée"
    },
    {
     "q": "Quels sont les symptômes de sevrage à l'héroïne ?",
@@ -23317,7 +23369,7 @@ export const TTCQ_THEMES = [
      "Uniquement psychologiques",
      "Douleurs, anxiété, insomnie, diarrhée"
     ],
-    "a": 3
+    "a": "Douleurs, anxiété, insomnie, diarrhée"
    },
    {
     "q": "Qu'est-ce que la naloxone ?",
@@ -23327,9 +23379,10 @@ export const TTCQ_THEMES = [
      "Antidote qui réverse une overdose d'opiacés",
      "Traitement de substitution"
     ],
-    "a": 2
+    "a": "Antidote qui réverse une overdose d'opiacés"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "drogues_004",
@@ -23345,7 +23398,7 @@ export const TTCQ_THEMES = [
      "Hallucinogène naturel",
      "Cannabinoïde"
     ],
-    "a": 0
+    "a": "Molécule psychoactive de la famille des amphétamines"
    },
    {
     "q": "Comment se présente l'ecstasy ?",
@@ -23355,7 +23408,7 @@ export const TTCQ_THEMES = [
      "Poudre blanche",
      "Herbe"
     ],
-    "a": 0
+    "a": "Comprimés, gélules, poudre"
    },
    {
     "q": "Quels sont les effets de la MDMA ?",
@@ -23365,7 +23418,7 @@ export const TTCQ_THEMES = [
      "Tristesse",
      "Sédation"
     ],
-    "a": 0
+    "a": "Empathie, euphorie, énergie, perception sensorielle accrue"
    },
    {
     "q": "Quels sont les risques immédiats de la MDMA ?",
@@ -23375,7 +23428,7 @@ export const TTCQ_THEMES = [
      "Infarctus",
      "Coma"
     ],
-    "a": 0
+    "a": "Hyperthermie, déshydratation, hyponatrémie"
    },
    {
     "q": "La MDMA crée-t-elle une dépendance ?",
@@ -23385,7 +23438,7 @@ export const TTCQ_THEMES = [
      "Principalement psychique, moins physique que l'héroïne",
      "Forte dépendance physique"
     ],
-    "a": 2
+    "a": "Principalement psychique, moins physique que l'héroïne"
    },
    {
     "q": "Qu'est-ce que la 'descente' après MDMA ?",
@@ -23395,7 +23448,7 @@ export const TTCQ_THEMES = [
      "Période de fatigue et dépression après les effets",
      "Retour des effets"
     ],
-    "a": 2
+    "a": "Période de fatigue et dépression après les effets"
    },
    {
     "q": "Où la MDMA est-elle principalement consommée ?",
@@ -23405,7 +23458,7 @@ export const TTCQ_THEMES = [
      "Au travail",
      "À la maison"
     ],
-    "a": 0
+    "a": "En soirée, festivals, free parties"
    },
    {
     "q": "La MDMA est-elle neurotoxique ?",
@@ -23415,9 +23468,10 @@ export const TTCQ_THEMES = [
      "Non, sans danger",
      "Des études suggèrent des dommages aux neurones sérotoninergiques"
     ],
-    "a": 3
+    "a": "Des études suggèrent des dommages aux neurones sérotoninergiques"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "drogues_005",
@@ -23433,7 +23487,7 @@ export const TTCQ_THEMES = [
      "Opiacé",
      "Amphétamine"
     ],
-    "a": 1
+    "a": "Hallucinogène semi-synthétique dérivé de l'ergot de seigle"
    },
    {
     "q": "Comment se présente le LSD ?",
@@ -23443,7 +23497,7 @@ export const TTCQ_THEMES = [
      "Poudre",
      "Herbe"
     ],
-    "a": 1
+    "a": "Petits papiers buvards, gouttes, gélules"
    },
    {
     "q": "Quels sont les effets du LSD ?",
@@ -23453,7 +23507,7 @@ export const TTCQ_THEMES = [
      "Sédation",
      "Euphorie physique"
     ],
-    "a": 0
+    "a": "Hallucinations visuelles, altération de la perception, introspection"
    },
    {
     "q": "Qu'est-ce qu'un 'bad trip' sous LSD ?",
@@ -23463,7 +23517,7 @@ export const TTCQ_THEMES = [
      "Effet secondaire",
      "Crise d'épilepsie"
     ],
-    "a": 0
+    "a": "Expérience psychotique angoissante et désagréable"
    },
    {
     "q": "Le LSD crée-t-il une dépendance physique ?",
@@ -23473,7 +23527,7 @@ export const TTCQ_THEMES = [
      "Non, pas de dépendance physique documentée",
      "Oui comme l'héroïne"
     ],
-    "a": 2
+    "a": "Non, pas de dépendance physique documentée"
    },
    {
     "q": "Combien de temps durent les effets du LSD ?",
@@ -23483,7 +23537,7 @@ export const TTCQ_THEMES = [
      "8 à 12 heures",
      "4 à 6 heures"
     ],
-    "a": 2
+    "a": "8 à 12 heures"
    },
    {
     "q": "Qu'est-ce que la microdose de LSD ?",
@@ -23493,7 +23547,7 @@ export const TTCQ_THEMES = [
      "Surdose",
      "Prise de très petites doses à des fins thérapeutiques ou cognitives"
     ],
-    "a": 3
+    "a": "Prise de très petites doses à des fins thérapeutiques ou cognitives"
    },
    {
     "q": "Le LSD a-t-il été utilisé en psychothérapie ?",
@@ -23503,9 +23557,10 @@ export const TTCQ_THEMES = [
      "Uniquement dans les années 2000",
      "Non, jamais"
     ],
-    "a": 0
+    "a": "Oui, dans les années 1950-1960, et aujourd'hui en recherche"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "drogues_006",
@@ -23521,7 +23576,7 @@ export const TTCQ_THEMES = [
      "Stimulants du système nerveux central",
      "Hallucinogènes"
     ],
-    "a": 2
+    "a": "Stimulants du système nerveux central"
    },
    {
     "q": "Comment se présentent les amphétamines ?",
@@ -23531,7 +23586,7 @@ export const TTCQ_THEMES = [
      "Comprimés, gélules, poudre",
      "Patch"
     ],
-    "a": 2
+    "a": "Comprimés, gélules, poudre"
    },
    {
     "q": "Quels sont les effets des amphétamines ?",
@@ -23541,7 +23596,7 @@ export const TTCQ_THEMES = [
      "Relaxation",
      "Sédation"
     ],
-    "a": 0
+    "a": "Augmentation de l'énergie, vigilance, diminution de l'appétit"
    },
    {
     "q": "Qu'est-ce que la méthamphétamine ?",
@@ -23551,7 +23606,7 @@ export const TTCQ_THEMES = [
      "Cannabinoïde",
      "Amphétamine très puissante et très addictive"
     ],
-    "a": 3
+    "a": "Amphétamine très puissante et très addictive"
    },
    {
     "q": "Quels sont les risques des amphétamines ?",
@@ -23561,7 +23616,7 @@ export const TTCQ_THEMES = [
      "Uniquement insomniaques",
      "Aucun risque"
     ],
-    "a": 1
+    "a": "Dépendance, problèmes cardiaques, psychose"
    },
    {
     "q": "À quoi sert le Ritalin (méthylphénidate) ?",
@@ -23571,7 +23626,7 @@ export const TTCQ_THEMES = [
      "Antidépresseur",
      "Traitement du TDAH, c'est une amphétamine légale"
     ],
-    "a": 3
+    "a": "Traitement du TDAH, c'est une amphétamine légale"
    },
    {
     "q": "Qu'est-ce que la 'speed' ?",
@@ -23581,7 +23636,7 @@ export const TTCQ_THEMES = [
      "Amphétamine de rue sous forme de poudre",
      "Héroïne"
     ],
-    "a": 2
+    "a": "Amphétamine de rue sous forme de poudre"
    },
    {
     "q": "Les amphétamines sont-elles utilisées en médecine ?",
@@ -23591,9 +23646,10 @@ export const TTCQ_THEMES = [
      "Uniquement en psychiatrie",
      "Uniquement aux USA"
     ],
-    "a": 0
+    "a": "Oui, pour le TDAH et la narcolepsie"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "drogues_007",
@@ -23609,7 +23665,7 @@ export const TTCQ_THEMES = [
      "Cannabis concentré",
      "Amphétamine"
     ],
-    "a": 0
+    "a": "Cocaïne transformée chimiquement pour être fumée"
    },
    {
     "q": "Pourquoi le crack est-il particulièrement dangereux ?",
@@ -23619,7 +23675,7 @@ export const TTCQ_THEMES = [
      "Peu d'effets",
      "Longue durée d'action"
     ],
-    "a": 1
+    "a": "Dépendance extrêmement rapide et violente"
    },
    {
     "q": "Comment se consomme le crack ?",
@@ -23629,7 +23685,7 @@ export const TTCQ_THEMES = [
      "Avale",
      "Sniffé"
     ],
-    "a": 0
+    "a": "Fumé dans une pipe"
    },
    {
     "q": "Quels sont les effets immédiats du crack ?",
@@ -23639,7 +23695,7 @@ export const TTCQ_THEMES = [
      "Euphorie intense mais très brève (5-10 minutes)",
      "Euphorie longue (heures)"
     ],
-    "a": 2
+    "a": "Euphorie intense mais très brève (5-10 minutes)"
    },
    {
     "q": "Qu'est-ce que le 'craving' dans l'addiction au crack ?",
@@ -23649,7 +23705,7 @@ export const TTCQ_THEMES = [
      "Besoin irrépressible et urgent de consommer",
      "Petite dose"
     ],
-    "a": 2
+    "a": "Besoin irrépressible et urgent de consommer"
    },
    {
     "q": "Quelles sont les conséquences sociales du crack ?",
@@ -23659,7 +23715,7 @@ export const TTCQ_THEMES = [
      "Santé améliorée",
      "Réussite professionnelle"
     ],
-    "a": 0
+    "a": "Exclusion, précarité, délinquance"
    },
    {
     "q": "Où le crack est-il le plus consommé dans le monde ?",
@@ -23669,7 +23725,7 @@ export const TTCQ_THEMES = [
      "Asie",
      "Australie"
     ],
-    "a": 1
+    "a": "États-Unis, Brésil, Europe de l'Ouest"
    },
    {
     "q": "Existe-t-il un traitement pour l'addiction au crack ?",
@@ -23679,9 +23735,10 @@ export const TTCQ_THEMES = [
      "Aucun traitement",
      "Substitution comme l'héroïne"
     ],
-    "a": 1
+    "a": "Oui, thérapie et accompagnement social"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "drogues_008",
@@ -23697,7 +23754,7 @@ export const TTCQ_THEMES = [
      "Cannabinoïde",
      "Hallucinogène"
     ],
-    "a": 1
+    "a": "Stimulant très puissant et très addictif dérivé des amphétamines"
    },
    {
     "q": "Comment se présente la méthamphétamine ?",
@@ -23707,7 +23764,7 @@ export const TTCQ_THEMES = [
      "Papiers",
      "Herbe"
     ],
-    "a": 0
+    "a": "Cristaux, poudre, comprimés"
    },
    {
     "q": "Comment se consomme la méthamphétamine ?",
@@ -23717,7 +23774,7 @@ export const TTCQ_THEMES = [
      "Fumée, sniffée, injectée, avalée",
      "Uniquement injectée"
     ],
-    "a": 2
+    "a": "Fumée, sniffée, injectée, avalée"
    },
    {
     "q": "Quels sont les effets de la méthamphétamine ?",
@@ -23727,7 +23784,7 @@ export const TTCQ_THEMES = [
      "Relaxation",
      "Somnolence"
     ],
-    "a": 1
+    "a": "Euphorie intense, hyperactivité, perte d'appétit"
    },
    {
     "q": "Pourquoi la méthamphétamine est-elle si destructrice ?",
@@ -23737,7 +23794,7 @@ export const TTCQ_THEMES = [
      "Peu d'effets",
      "Guérison rapide"
     ],
-    "a": 0
+    "a": "Dépendance rapide, dommages dentaires, cérébraux, psychose"
    },
    {
     "q": "Qu'est-ce que le 'meth mouth' ?",
@@ -23747,7 +23804,7 @@ export const TTCQ_THEMES = [
      "Mauvaise haleine",
      "Carie simple"
     ],
-    "a": 1
+    "a": "Détérioration dentaire sévère due à la méthamphétamine"
    },
    {
     "q": "Dans quels pays la méthamphétamine est-elle un problème majeur ?",
@@ -23757,7 +23814,7 @@ export const TTCQ_THEMES = [
      "France",
      "Afrique"
     ],
-    "a": 0
+    "a": "États-Unis, Asie du Sud-Est, Australie"
    },
    {
     "q": "Quel est le nom de rue le plus courant pour la méthamphétamine ?",
@@ -23767,9 +23824,10 @@ export const TTCQ_THEMES = [
      "Speed",
      "Weed, pot"
     ],
-    "a": 1
+    "a": "Meth, crystal, ice"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "drogues_009",
@@ -23785,7 +23843,7 @@ export const TTCQ_THEMES = [
      "Hallucinogènes",
      "Stimulants"
     ],
-    "a": 0
+    "a": "Substances qui agissent sur les récepteurs opioïdes du cerveau"
    },
    {
     "q": "Quels sont les opioïdes légaux ?",
@@ -23795,7 +23853,7 @@ export const TTCQ_THEMES = [
      "Morphine, codéine, tramadol, oxycodone",
      "LSD"
     ],
-    "a": 2
+    "a": "Morphine, codéine, tramadol, oxycodone"
    },
    {
     "q": "À quoi servent les opioïdes en médecine ?",
@@ -23805,7 +23863,7 @@ export const TTCQ_THEMES = [
      "Antidouleurs puissants",
      "Antidépresseurs"
     ],
-    "a": 2
+    "a": "Antidouleurs puissants"
    },
    {
     "q": "Qu'est-ce que la crise des opioïdes aux États-Unis ?",
@@ -23815,7 +23873,7 @@ export const TTCQ_THEMES = [
      "Épidémie de dépendance et d'overdose aux opioïdes prescrits",
      "Réforme de santé"
     ],
-    "a": 2
+    "a": "Épidémie de dépendance et d'overdose aux opioïdes prescrits"
    },
    {
     "q": "Quels sont les risques des opioïdes ?",
@@ -23825,7 +23883,7 @@ export const TTCQ_THEMES = [
      "Allergies",
      "Dépendance, accoutumance, dépression respiratoire"
     ],
-    "a": 3
+    "a": "Dépendance, accoutumance, dépression respiratoire"
    },
    {
     "q": "Qu'est-ce que le fentanyl ?",
@@ -23835,7 +23893,7 @@ export const TTCQ_THEMES = [
      "Antidépresseur",
      "Opioïde synthétique 50 à 100 fois plus puissant que la morphine"
     ],
-    "a": 3
+    "a": "Opioïde synthétique 50 à 100 fois plus puissant que la morphine"
    },
    {
     "q": "Comment prévenir une overdose aux opioïdes ?",
@@ -23845,7 +23903,7 @@ export const TTCQ_THEMES = [
      "Se reposer",
      "Avoir de la naloxone à disposition"
     ],
-    "a": 3
+    "a": "Avoir de la naloxone à disposition"
    },
    {
     "q": "Combien de personnes meurent d'overdose d'opioïdes par an dans le monde ?",
@@ -23855,9 +23913,10 @@ export const TTCQ_THEMES = [
      "Plus de 100 000",
      "Environ 10 000"
     ],
-    "a": 2
+    "a": "Plus de 100 000"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "drogues_010",
@@ -23873,7 +23932,7 @@ export const TTCQ_THEMES = [
      "Le benzène",
      "Le goudron"
     ],
-    "a": 1
+    "a": "La nicotine"
    },
    {
     "q": "Combien de substances chimiques contient la fumée de cigarette ?",
@@ -23883,7 +23942,7 @@ export const TTCQ_THEMES = [
      "Plus de 10 000",
      "Environ 1 000"
     ],
-    "a": 1
+    "a": "Plus de 7 000"
    },
    {
     "q": "Combien de cancers sont causés par le tabac ?",
@@ -23893,7 +23952,7 @@ export const TTCQ_THEMES = [
      "Uniquement le cancer du poumon",
      "2 types de cancers"
     ],
-    "a": 0
+    "a": "Le tabac est lié à 17 types de cancers"
    },
    {
     "q": "Combien de fumeurs meurent chaque année à cause du tabac ?",
@@ -23903,7 +23962,7 @@ export const TTCQ_THEMES = [
      "Plus de 8 millions dans le monde",
      "1 million"
     ],
-    "a": 2
+    "a": "Plus de 8 millions dans le monde"
    },
    {
     "q": "Qu'est-ce que la cigarette électronique (vapotage) ?",
@@ -23913,7 +23972,7 @@ export const TTCQ_THEMES = [
      "Dispositif qui chauffe un liquide contenant de la nicotine",
      "Patch"
     ],
-    "a": 2
+    "a": "Dispositif qui chauffe un liquide contenant de la nicotine"
    },
    {
     "q": "Combien de temps faut-il pour que les poumons commencent à se régénérer après l'arrêt ?",
@@ -23923,7 +23982,7 @@ export const TTCQ_THEMES = [
      "1 an",
      "Quelques semaines"
     ],
-    "a": 3
+    "a": "Quelques semaines"
    },
    {
     "q": "Qu'est-ce que le sevrage tabagique ?",
@@ -23933,7 +23992,7 @@ export const TTCQ_THEMES = [
      "Processus d'arrêt de la consommation de tabac",
      "Traitement médical"
     ],
-    "a": 2
+    "a": "Processus d'arrêt de la consommation de tabac"
    },
    {
     "q": "Quel est le pourcentage de fumeurs en France ?",
@@ -23943,9 +24002,10 @@ export const TTCQ_THEMES = [
      "Environ 50%",
      "Environ 25% de la population"
     ],
-    "a": 3
+    "a": "Environ 25% de la population"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "drogues_011",
@@ -23961,7 +24021,7 @@ export const TTCQ_THEMES = [
      "Uniquement le thé",
      "Café, thé, guarana, maté"
     ],
-    "a": 3
+    "a": "Café, thé, guarana, maté"
    },
    {
     "q": "Quel est l'effet principal de la caféine ?",
@@ -23971,7 +24031,7 @@ export const TTCQ_THEMES = [
      "Sédatif",
      "Anxiolytique"
     ],
-    "a": 1
+    "a": "Stimulant du système nerveux central (réduction de la fatigue)"
    },
    {
     "q": "Combien de caféine contient une tasse de café filtre ?",
@@ -23981,7 +24041,7 @@ export const TTCQ_THEMES = [
      "300 à 500 mg",
      "80 à 120 mg"
     ],
-    "a": 3
+    "a": "80 à 120 mg"
    },
    {
     "q": "Quelle est la dose quotidienne recommandée de caféine ?",
@@ -23991,7 +24051,7 @@ export const TTCQ_THEMES = [
      "Jusqu'à 200 mg",
      "Jusqu'à 400 mg par jour (environ 3-4 tasses)"
     ],
-    "a": 3
+    "a": "Jusqu'à 400 mg par jour (environ 3-4 tasses)"
    },
    {
     "q": "Quels sont les symptômes du surdosage en caféine ?",
@@ -24001,7 +24061,7 @@ export const TTCQ_THEMES = [
      "Ralentissement cardiaque",
      "Insomnie, palpitations, anxiété, tremblements"
     ],
-    "a": 3
+    "a": "Insomnie, palpitations, anxiété, tremblements"
    },
    {
     "q": "La caféine crée-t-elle une dépendance ?",
@@ -24011,7 +24071,7 @@ export const TTCQ_THEMES = [
      "Oui, une dépendance psychique légère à modérée",
      "Aucun effet"
     ],
-    "a": 2
+    "a": "Oui, une dépendance psychique légère à modérée"
    },
    {
     "q": "Qu'est-ce que le sevrage à la caféine ?",
@@ -24021,7 +24081,7 @@ export const TTCQ_THEMES = [
      "Délire",
      "Symptômes sévères"
     ],
-    "a": 1
+    "a": "Maux de tête, fatigue, irritabilité pendant quelques jours"
    },
    {
     "q": "La caféine est-elle considérée comme une drogue ?",
@@ -24031,9 +24091,10 @@ export const TTCQ_THEMES = [
      "Oui, comme l'héroïne",
      "Non, c'est un aliment"
     ],
-    "a": 1
+    "a": "Oui, c'est un psychoactif stimulant légal"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "drogues_012",
@@ -24049,7 +24110,7 @@ export const TTCQ_THEMES = [
      "Choix délibéré",
      "Manque de volonté"
     ],
-    "a": 1
+    "a": "Maladie chronique caractérisée par la recherche compulsive d'une substance ou d'un comportement"
    },
    {
     "q": "Quels sont les trois critères de l'addiction ?",
@@ -24059,7 +24120,7 @@ export const TTCQ_THEMES = [
      "Usage régulier, plaisir, prix",
      "Occasionnel, modéré, excessif"
     ],
-    "a": 1
+    "a": "Perte de contrôle, craving, poursuite malgré les conséquences"
    },
    {
     "q": "Qu'est-ce que la dépendance physique ?",
@@ -24069,7 +24130,7 @@ export const TTCQ_THEMES = [
      "Besoin psychologique",
      "Adaptation du corps à une substance, avec syndrome de sevrage"
     ],
-    "a": 3
+    "a": "Adaptation du corps à une substance, avec syndrome de sevrage"
    },
    {
     "q": "Qu'est-ce que la dépendance psychique ?",
@@ -24079,7 +24140,7 @@ export const TTCQ_THEMES = [
      "Dépendance physique",
      "Accoutumance"
     ],
-    "a": 1
+    "a": "Besoin compulsif de consommer pour obtenir du plaisir ou éviter le malaise"
    },
    {
     "q": "Qu'est-ce que le craving ?",
@@ -24089,7 +24150,7 @@ export const TTCQ_THEMES = [
      "Petite quantité",
      "Désir intense et irrépressible de consommer"
     ],
-    "a": 3
+    "a": "Désir intense et irrépressible de consommer"
    },
    {
     "q": "Qu'est-ce que la tolérance ?",
@@ -24099,7 +24160,7 @@ export const TTCQ_THEMES = [
      "Allergie",
      "Nécessité d'augmenter les doses pour obtenir le même effet"
     ],
-    "a": 3
+    "a": "Nécessité d'augmenter les doses pour obtenir le même effet"
    },
    {
     "q": "Quels traitements existent pour l'addiction ?",
@@ -24109,7 +24170,7 @@ export const TTCQ_THEMES = [
      "Uniquement les médicaments",
      "Uniquement l'hospitalisation"
     ],
-    "a": 1
+    "a": "Thérapie cognitivo-comportementale, traitements de substitution, groupes de parole"
    },
    {
     "q": "L'addiction est-elle reconnue comme une maladie par l'OMS ?",
@@ -24119,9 +24180,10 @@ export const TTCQ_THEMES = [
      "Oui, c'est une maladie chronique du cerveau",
      "Oui, mais mal classée"
     ],
-    "a": 2
+    "a": "Oui, c'est une maladie chronique du cerveau"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "drogues_013",
@@ -24137,7 +24199,7 @@ export const TTCQ_THEMES = [
      "Remplacement par une autre substance",
      "Arrêt ou réduction de la consommation d'une substance addictive"
     ],
-    "a": 3
+    "a": "Arrêt ou réduction de la consommation d'une substance addictive"
    },
    {
     "q": "Quels sont les symptômes du sevrage ?",
@@ -24147,7 +24209,7 @@ export const TTCQ_THEMES = [
      "Aucun symptôme",
      "Anxiété, irritabilité, insomnie, sueurs, douleurs"
     ],
-    "a": 3
+    "a": "Anxiété, irritabilité, insomnie, sueurs, douleurs"
    },
    {
     "q": "Combien de temps dure un sevrage aigu ?",
@@ -24157,7 +24219,7 @@ export const TTCQ_THEMES = [
      "Plusieurs mois",
      "1 an"
     ],
-    "a": 0
+    "a": "Quelques jours à quelques semaines selon la substance"
    },
    {
     "q": "Qu'est-ce que le syndrome de sevrage alcoolique ?",
@@ -24167,7 +24229,7 @@ export const TTCQ_THEMES = [
      "Nostalgie",
      "Ensemble de symptômes après arrêt de l'alcool (parfois mortel)"
     ],
-    "a": 3
+    "a": "Ensemble de symptômes après arrêt de l'alcool (parfois mortel)"
    },
    {
     "q": "Qu'est-ce qu'un sevrage médicalisé ?",
@@ -24177,7 +24239,7 @@ export const TTCQ_THEMES = [
      "Auto-sevrage",
      "Sevrage brutal"
     ],
-    "a": 1
+    "a": "Sevrage supervisé par des professionnels de santé"
    },
    {
     "q": "Le sevrage peut-il être dangereux ?",
@@ -24187,7 +24249,7 @@ export const TTCQ_THEMES = [
      "Seulement psychologiquement",
      "Légèrement"
     ],
-    "a": 0
+    "a": "Oui, pour l'alcool et les benzodiazépines, il peut être mortel"
    },
    {
     "q": "Qu'est-ce que la cure de désintoxication ?",
@@ -24197,7 +24259,7 @@ export const TTCQ_THEMES = [
      "Médicaments",
      "Traitement à domicile"
     ],
-    "a": 1
+    "a": "Programme intensif pour arrêter une addiction en milieu spécialisé"
    },
    {
     "q": "Quelle est la première étape d'un sevrage réussi ?",
@@ -24207,9 +24269,10 @@ export const TTCQ_THEMES = [
      "Le traitement médical",
      "La reconnaissance du problème et la demande d'aide"
     ],
-    "a": 3
+    "a": "La reconnaissance du problème et la demande d'aide"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "drogues_014",
@@ -24225,7 +24288,7 @@ export const TTCQ_THEMES = [
      "Prise d'une dose toxique qui peut entraîner la mort",
      "Prise régulière"
     ],
-    "a": 2
+    "a": "Prise d'une dose toxique qui peut entraîner la mort"
    },
    {
     "q": "Quels sont les signes d'une overdose aux opioïdes ?",
@@ -24235,7 +24298,7 @@ export const TTCQ_THEMES = [
      "Agitation",
      "Respirations lentes, pupilles contractées, inconscience"
     ],
-    "a": 3
+    "a": "Respirations lentes, pupilles contractées, inconscience"
    },
    {
     "q": "Quels sont les signes d'une overdose aux stimulants ?",
@@ -24245,7 +24308,7 @@ export const TTCQ_THEMES = [
      "Bradycardie",
      "Crise cardiaque, AVC, hyperthermie, convulsions"
     ],
-    "a": 3
+    "a": "Crise cardiaque, AVC, hyperthermie, convulsions"
    },
    {
     "q": "Que faire en cas d'overdose présumée ?",
@@ -24255,7 +24318,7 @@ export const TTCQ_THEMES = [
      "Attendre",
      "Donner à boire"
     ],
-    "a": 1
+    "a": "Appeler les urgences, administrer naloxone si opioïdes"
    },
    {
     "q": "Qu'est-ce que la naloxone ?",
@@ -24265,7 +24328,7 @@ export const TTCQ_THEMES = [
      "Stimulant",
      "Antidote qui réverse une overdose aux opioïdes"
     ],
-    "a": 3
+    "a": "Antidote qui réverse une overdose aux opioïdes"
    },
    {
     "q": "Combien de personnes meurent d'overdose chaque année dans le monde ?",
@@ -24275,7 +24338,7 @@ export const TTCQ_THEMES = [
      "Environ 500 000",
      "Environ 100 000"
     ],
-    "a": 2
+    "a": "Environ 500 000"
    },
    {
     "q": "Qu'est-ce qu'une overdose retardée ?",
@@ -24285,7 +24348,7 @@ export const TTCQ_THEMES = [
      "Réaction allergique",
      "Fausse overdose"
     ],
-    "a": 0
+    "a": "Overdose qui survient plusieurs heures après la prise"
    },
    {
     "q": "Qui peut administrer la naloxone ?",
@@ -24295,9 +24358,10 @@ export const TTCQ_THEMES = [
      "Uniquement les ambulanciers",
      "Uniquement à l'hôpital"
     ],
-    "a": 0
+    "a": "Toute personne formée, y compris les proches"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "drogues_015",
@@ -24313,7 +24377,7 @@ export const TTCQ_THEMES = [
      "Consommation modérée",
      "Usage occasionnel"
     ],
-    "a": 1
+    "a": "Maladie caractérisée par une consommation excessive et compulsive d'alcool"
    },
    {
     "q": "Combien de personnes souffrent d'alcoolisme en France ?",
@@ -24323,7 +24387,7 @@ export const TTCQ_THEMES = [
      "Environ 5 millions",
      "Environ 500 000"
     ],
-    "a": 2
+    "a": "Environ 5 millions"
    },
    {
     "q": "Qu'est-ce qu'un verre standard d'alcool ?",
@@ -24333,7 +24397,7 @@ export const TTCQ_THEMES = [
      "10 g d'alcool pur",
      "5 g d'alcool"
     ],
-    "a": 2
+    "a": "10 g d'alcool pur"
    },
    {
     "q": "Quelles sont les limites de consommation recommandées par l'OMS ?",
@@ -24343,7 +24407,7 @@ export const TTCQ_THEMES = [
      "10 verres par jour",
      "5 verres par jour"
     ],
-    "a": 1
+    "a": "Pas plus de 2 verres par jour et jours de pause"
    },
    {
     "q": "Quelles maladies sont causées par l'alcoolisme chronique ?",
@@ -24353,7 +24417,7 @@ export const TTCQ_THEMES = [
      "Cirrhose, pancréatite, cancers, neuropathies",
      "Uniquement la cirrhose"
     ],
-    "a": 2
+    "a": "Cirrhose, pancréatite, cancers, neuropathies"
    },
    {
     "q": "Qu'est-ce que le syndrome de sevrage alcoolique ?",
@@ -24363,7 +24427,7 @@ export const TTCQ_THEMES = [
      "Symptômes après arrêt brutal: tremblements, hallucinations, convulsions",
      "Simple gueule de bois"
     ],
-    "a": 2
+    "a": "Symptômes après arrêt brutal: tremblements, hallucinations, convulsions"
    },
    {
     "q": "Qu'est-ce que le delirium tremens ?",
@@ -24373,7 +24437,7 @@ export const TTCQ_THEMES = [
      "Intoxication",
      "Ivresse"
     ],
-    "a": 0
+    "a": "Forme grave du sevrage alcoolique avec confusion et hallucinations"
    },
    {
     "q": "Existe-t-il des traitements médicamenteux pour l'alcoolisme ?",
@@ -24383,9 +24447,10 @@ export const TTCQ_THEMES = [
      "Non, aucun",
      "Uniquement la psychothérapie"
     ],
-    "a": 1
+    "a": "Oui, comme le baclofène, le naltrexone, l'acamprosate"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "drogues_016",
@@ -24401,7 +24466,7 @@ export const TTCQ_THEMES = [
      "Plante",
      "Substance psychoactive créée chimiquement en laboratoire"
     ],
-    "a": 3
+    "a": "Substance psychoactive créée chimiquement en laboratoire"
    },
    {
     "q": "Pourquoi les drogues de synthèse sont-elles dangereuses ?",
@@ -24411,7 +24476,7 @@ export const TTCQ_THEMES = [
      "Elles sont sûres",
      "Composition inconnue, dosage imprévisible, effets graves"
     ],
-    "a": 3
+    "a": "Composition inconnue, dosage imprévisible, effets graves"
    },
    {
     "q": "Qu'est-ce qu'un NPS (Nouveau Produit de Synthèse) ?",
@@ -24421,7 +24486,7 @@ export const TTCQ_THEMES = [
      "Drogue naturelle",
      "Molécule modifiée pour contourner les lois"
     ],
-    "a": 3
+    "a": "Molécule modifiée pour contourner les lois"
    },
    {
     "q": "Quels sont les types de drogues de synthèse ?",
@@ -24431,7 +24496,7 @@ export const TTCQ_THEMES = [
      "Amphétamines, cathinones, cannabinoïdes synthétiques, benzodiazépines",
      "Uniquement les cannabinoïdes"
     ],
-    "a": 2
+    "a": "Amphétamines, cathinones, cannabinoïdes synthétiques, benzodiazépines"
    },
    {
     "q": "Qu'est-ce que le GHB ?",
@@ -24441,7 +24506,7 @@ export const TTCQ_THEMES = [
      "Drogue de synthèse sédative utilisée comme drogue du viol",
      "Hallucinogène"
     ],
-    "a": 2
+    "a": "Drogue de synthèse sédative utilisée comme drogue du viol"
    },
    {
     "q": "Qu'est-ce que le 2CB ?",
@@ -24451,7 +24516,7 @@ export const TTCQ_THEMES = [
      "Stimulant",
      "Sédatif"
     ],
-    "a": 1
+    "a": "Drogue de synthèse aux effets hallucinogènes et empathogènes"
    },
    {
     "q": "Comment sont fabriquées les drogues de synthèse ?",
@@ -24461,7 +24526,7 @@ export const TTCQ_THEMES = [
      "Dans des cuisines",
      "Dans des laboratoires naturels"
     ],
-    "a": 0
+    "a": "Dans des laboratoires clandestins avec des précurseurs chimiques"
    },
    {
     "q": "Quels sont les risques d'overdose avec les drogues de synthèse ?",
@@ -24471,9 +24536,10 @@ export const TTCQ_THEMES = [
      "Nuls",
      "Faibles"
     ],
-    "a": 1
+    "a": "Élevés car la pureté et le dosage sont inconnus"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "drogues_017",
@@ -24489,7 +24555,7 @@ export const TTCQ_THEMES = [
      "Légalité",
      "Origine naturelle ou synthétique"
     ],
-    "a": 0
+    "a": "Classification basée sur la dangerosité et le potentiel addictif"
    },
    {
     "q": "Quelle drogue est généralement classée comme 'douce' ?",
@@ -24499,7 +24565,7 @@ export const TTCQ_THEMES = [
      "L'héroïne",
      "Le cannabis"
     ],
-    "a": 3
+    "a": "Le cannabis"
    },
    {
     "q": "Le terme 'drogue douce' est-il utilisé par les autorités scientifiques ?",
@@ -24509,7 +24575,7 @@ export const TTCQ_THEMES = [
      "Oui, officiellement",
      "Oui, par l'OMS"
     ],
-    "a": 0
+    "a": "Non, il est contesté car toute drogue comporte des risques"
    },
    {
     "q": "Quels sont les risques du cannabis considéré comme drogue douce ?",
@@ -24519,7 +24585,7 @@ export const TTCQ_THEMES = [
      "Dépendance psychique, troubles de la mémoire, anxiété",
      "Risques vitaux"
     ],
-    "a": 2
+    "a": "Dépendance psychique, troubles de la mémoire, anxiété"
    },
    {
     "q": "Quelle est la position de la France sur le cannabis ?",
@@ -24529,7 +24595,7 @@ export const TTCQ_THEMES = [
      "Autorisé médicalement",
      "Totalement légal"
     ],
-    "a": 1
+    "a": "C'est illégal mais le débat sur la légalisation existe"
    },
    {
     "q": "Qu'est-ce que la dépénalisation ?",
@@ -24539,7 +24605,7 @@ export const TTCQ_THEMES = [
      "Autorisation",
      "Vente libre"
     ],
-    "a": 1
+    "a": "Absence de sanction pénale pour la consommation personnelle"
    },
    {
     "q": "Dans quels pays le cannabis est-il dépénalisé ou légalisé ?",
@@ -24549,7 +24615,7 @@ export const TTCQ_THEMES = [
      "Uniquement aux USA",
      "Partout en Europe"
     ],
-    "a": 1
+    "a": "Pays-Bas (dépénalisé), Canada (légal), Portugal (dépénalisé)"
    },
    {
     "q": "Les drogues dites douces peuvent-elles mener aux drogues dures ?",
@@ -24559,9 +24625,10 @@ export const TTCQ_THEMES = [
      "Oui, systématiquement",
      "C'est un facteur de risque parmi d'autres, pas une fatalité"
     ],
-    "a": 3
+    "a": "C'est un facteur de risque parmi d'autres, pas une fatalité"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "drogues_018",
@@ -24577,7 +24644,7 @@ export const TTCQ_THEMES = [
      "Héroïne, cocaïne, crack, méthamphétamine",
      "Caféine, théine"
     ],
-    "a": 2
+    "a": "Héroïne, cocaïne, crack, méthamphétamine"
    },
    {
     "q": "Qu'est-ce qui caractérise une drogue dure ?",
@@ -24587,7 +24654,7 @@ export const TTCQ_THEMES = [
      "Prix élevé",
      "Illégalité"
     ],
-    "a": 0
+    "a": "Potentiel addictif élevé et risques graves pour la santé"
    },
    {
     "q": "Quels sont les risques d'une dépendance à l'héroïne ?",
@@ -24597,7 +24664,7 @@ export const TTCQ_THEMES = [
      "Dépendance légère",
      "Dépendance physique intense, overdoses, infections"
     ],
-    "a": 3
+    "a": "Dépendance physique intense, overdoses, infections"
    },
    {
     "q": "Quels sont les risques à long terme de la cocaïne ?",
@@ -24607,7 +24674,7 @@ export const TTCQ_THEMES = [
      "Uniquement psychologiques",
      "Aucun"
     ],
-    "a": 1
+    "a": "Cardiaques, neurologiques, ORL, psychiatriques"
    },
    {
     "q": "Qu'est-ce que la polyconsommation de drogues dures ?",
@@ -24617,7 +24684,7 @@ export const TTCQ_THEMES = [
      "Consommation simultanée ou alternée de plusieurs drogues dures",
      "Consommation modérée"
     ],
-    "a": 2
+    "a": "Consommation simultanée ou alternée de plusieurs drogues dures"
    },
    {
     "q": "Pourquoi le mélange héroïne-cocaïne (speedball) est-il dangereux ?",
@@ -24627,7 +24694,7 @@ export const TTCQ_THEMES = [
      "Sans risque",
      "Risque d'overdose mortel car effets opposés masquent les symptômes"
     ],
-    "a": 3
+    "a": "Risque d'overdose mortel car effets opposés masquent les symptômes"
    },
    {
     "q": "Quels sont les signes de l'addiction aux drogues dures ?",
@@ -24637,7 +24704,7 @@ export const TTCQ_THEMES = [
      "Réussite sociale",
      "Bonne humeur"
     ],
-    "a": 0
+    "a": "Perte de contrôle, craving, isolement, problèmes financiers"
    },
    {
     "q": "Quels traitements existent pour les addictions aux drogues dures ?",
@@ -24647,9 +24714,10 @@ export const TTCQ_THEMES = [
      "Aucun",
      "Uniquement les médicaments"
     ],
-    "a": 0
+    "a": "Traitements de substitution, thérapies, communautés thérapeutiques"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "drogues_019",
@@ -24665,7 +24733,7 @@ export const TTCQ_THEMES = [
      "Autorisation médicale",
      "Autorisation partielle"
     ],
-    "a": 1
+    "a": "Autorisation légale de produire, vendre et consommer une substance"
    },
    {
     "q": "Quelle est la différence entre légalisation et dépénalisation ?",
@@ -24675,7 +24743,7 @@ export const TTCQ_THEMES = [
      "Légalisation = cadre légal complet, dépénalisation = pas de sanction pénale",
      "Légalisation = moins strict"
     ],
-    "a": 2
+    "a": "Légalisation = cadre légal complet, dépénalisation = pas de sanction pénale"
    },
    {
     "q": "Quel pays a le premier légalisé le cannabis récréatif ?",
@@ -24685,7 +24753,7 @@ export const TTCQ_THEMES = [
      "Uruguay (2013)",
      "Portugal"
     ],
-    "a": 2
+    "a": "Uruguay (2013)"
    },
    {
     "q": "Quels sont les arguments pour la légalisation ?",
@@ -24695,7 +24763,7 @@ export const TTCQ_THEMES = [
      "Moralité",
      "Augmentation de la consommation"
     ],
-    "a": 0
+    "a": "Contrôle qualité, réduction du marché noir, taxes, liberté individuelle"
    },
    {
     "q": "Quels sont les arguments contre la légalisation ?",
@@ -24705,7 +24773,7 @@ export const TTCQ_THEMES = [
      "Meilleur contrôle",
      "Augmentation de la consommation, risques sanitaires"
     ],
-    "a": 3
+    "a": "Augmentation de la consommation, risques sanitaires"
    },
    {
     "q": "Le Portugal a-t-il dépénalisé toutes les drogues ?",
@@ -24715,7 +24783,7 @@ export const TTCQ_THEMES = [
      "Uniquement les drogues douces",
      "Oui, mais échec"
     ],
-    "a": 1
+    "a": "Oui, depuis 2001, avec des résultats positifs sur la santé"
    },
    {
     "q": "Qu'est-ce que la réduction des risques (RDR) ?",
@@ -24725,7 +24793,7 @@ export const TTCQ_THEMES = [
      "Promotion de la consommation",
      "Politique visant à réduire les conséquences négatives de la consommation"
     ],
-    "a": 3
+    "a": "Politique visant à réduire les conséquences négatives de la consommation"
    },
    {
     "q": "Quels sont les résultats de la légalisation du cannabis au Canada ?",
@@ -24735,9 +24803,10 @@ export const TTCQ_THEMES = [
      "Aucun effet",
      "Uniquement des effets négatifs"
     ],
-    "a": 1
+    "a": "Baisse du marché noir, mais augmentation de la consommation"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "drogues_020",
@@ -24753,7 +24822,7 @@ export const TTCQ_THEMES = [
      "Usage récréatif",
      "Prescription médicale"
     ],
-    "a": 1
+    "a": "Production, transport et vente illégale de substances"
    },
    {
     "q": "Quel est le chiffre d'affaires du trafic de drogue dans le monde ?",
@@ -24763,7 +24832,7 @@ export const TTCQ_THEMES = [
      "Moins de 100 millions",
      "Environ 50 milliards"
     ],
-    "a": 1
+    "a": "Plus de 300 milliards de dollars par an"
    },
    {
     "q": "Quelles sont les principales routes du trafic de drogue ?",
@@ -24773,7 +24842,7 @@ export const TTCQ_THEMES = [
      "Routes locales",
      "Uniquement entre l'Amérique et l'Europe"
     ],
-    "a": 0
+    "a": "Amérique du Sud vers USA/Europe, Asie du Sud-Est, Afghanistan"
    },
    {
     "q": "Quels sont les cartels de la drogue les plus puissants ?",
@@ -24783,7 +24852,7 @@ export const TTCQ_THEMES = [
      "Cartels français",
      "Mafias russes"
     ],
-    "a": 1
+    "a": "Cartels mexicains (Sinaloa, Jalisco), mafia italienne"
    },
    {
     "q": "Qu'est-ce que le blanchiment d'argent dans le trafic ?",
@@ -24793,7 +24862,7 @@ export const TTCQ_THEMES = [
      "Investissement légal",
      "Dissimulation de l'origine illicite des profits"
     ],
-    "a": 3
+    "a": "Dissimulation de l'origine illicite des profits"
    },
    {
     "q": "Quel pays est le plus grand producteur d'opium ?",
@@ -24803,7 +24872,7 @@ export const TTCQ_THEMES = [
      "Colombie",
      "Mexique"
     ],
-    "a": 1
+    "a": "Afghanistan"
    },
    {
     "q": "Quelles sont les peines pour trafic de drogue en France ?",
@@ -24813,7 +24882,7 @@ export const TTCQ_THEMES = [
      "Perpétuité",
      "Jusqu'à 30 ans de réclusion et 7,5 millions € d'amende"
     ],
-    "a": 3
+    "a": "Jusqu'à 30 ans de réclusion et 7,5 millions € d'amende"
    },
    {
     "q": "Qu'est-ce que l'Office anti-stupéfiants (OFAST) ?",
@@ -24823,9 +24892,10 @@ export const TTCQ_THEMES = [
      "ONU",
      "ONG"
     ],
-    "a": 1
+    "a": "Police française spécialisée dans la lutte contre le trafic"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "drogues_021",
@@ -24841,7 +24911,7 @@ export const TTCQ_THEMES = [
      "Soins médicaux uniquement",
      "Punition"
     ],
-    "a": 1
+    "a": "Processus pour aider une personne à se rétablir de l'addiction"
    },
    {
     "q": "Qu'est-ce qu'une communauté thérapeutique ?",
@@ -24851,7 +24921,7 @@ export const TTCQ_THEMES = [
      "Hôpital",
      "Structure d'hébergement et de soins pour personnes addictes"
     ],
-    "a": 3
+    "a": "Structure d'hébergement et de soins pour personnes addictes"
    },
    {
     "q": "Combien de temps dure un programme de réhabilitation ?",
@@ -24861,7 +24931,7 @@ export const TTCQ_THEMES = [
      "Un mois",
      "Quelques jours"
     ],
-    "a": 1
+    "a": "Quelques mois à plusieurs années selon les besoins"
    },
    {
     "q": "Qu'est-ce que le suivi post-cure ?",
@@ -24871,7 +24941,7 @@ export const TTCQ_THEMES = [
      "Accompagnement après la sortie d'une cure de désintoxication",
      "Évaluation"
     ],
-    "a": 2
+    "a": "Accompagnement après la sortie d'une cure de désintoxication"
    },
    {
     "q": "Qu'est-ce que les groupes de parole (Narcotiques Anonymes) ?",
@@ -24881,7 +24951,7 @@ export const TTCQ_THEMES = [
      "Groupes d'entraide entre personnes addictes",
      "Thérapie de groupe"
     ],
-    "a": 2
+    "a": "Groupes d'entraide entre personnes addictes"
    },
    {
     "q": "Qu'est-ce que la thérapie cognitivo-comportementale (TCC) ?",
@@ -24891,7 +24961,7 @@ export const TTCQ_THEMES = [
      "Hypnose",
      "Hospitalisation"
     ],
-    "a": 0
+    "a": "Thérapie qui aide à modifier les pensées et comportements liés à l'addiction"
    },
    {
     "q": "Quels sont les facteurs clés de succès d'une réhabilitation ?",
@@ -24901,7 +24971,7 @@ export const TTCQ_THEMES = [
      "Médicaments",
      "Traitement forcé"
     ],
-    "a": 1
+    "a": "Motivation, soutien social, accompagnement professionnel"
    },
    {
     "q": "Qu'est-ce que la prévention de la rechute ?",
@@ -24911,9 +24981,10 @@ export const TTCQ_THEMES = [
      "Traitement continu",
      "Retour à la consommation"
     ],
-    "a": 1
+    "a": "Stratégies pour éviter de retomber dans l'addiction"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "drogues_022",
@@ -24929,7 +25000,7 @@ export const TTCQ_THEMES = [
      "Opium, cannabis, alcool, champignons hallucinogènes",
      "Cocaïne"
     ],
-    "a": 2
+    "a": "Opium, cannabis, alcool, champignons hallucinogènes"
    },
    {
     "q": "Quel peuple utilisait des champignons hallucinogènes (teonanácatl) ?",
@@ -24939,7 +25010,7 @@ export const TTCQ_THEMES = [
      "Les Romains",
      "Les Grecs"
     ],
-    "a": 0
+    "a": "Les Aztèques"
    },
    {
     "q": "Quand l'opium a-t-il été découvert ?",
@@ -24949,7 +25020,7 @@ export const TTCQ_THEMES = [
      "XIXe siècle",
      "Utilisé depuis 3 400 av. J.-C. par les Sumériens"
     ],
-    "a": 3
+    "a": "Utilisé depuis 3 400 av. J.-C. par les Sumériens"
    },
    {
     "q": "Qu'est-ce que la guerre de l'opium (1839-1860) ?",
@@ -24959,7 +25030,7 @@ export const TTCQ_THEMES = [
      "Conflit entre la Chine et le Royaume-Uni sur le commerce d'opium",
      "Guerre en Afghanistan"
     ],
-    "a": 2
+    "a": "Conflit entre la Chine et le Royaume-Uni sur le commerce d'opium"
    },
    {
     "q": "Quand la cocaïne a-t-elle été isolée pour la première fois ?",
@@ -24969,7 +25040,7 @@ export const TTCQ_THEMES = [
      "1900",
      "1800"
     ],
-    "a": 1
+    "a": "1859 par Albert Niemann"
    },
    {
     "q": "Qui a popularisé le LSD dans les années 1960 ?",
@@ -24979,7 +25050,7 @@ export const TTCQ_THEMES = [
      "Timothy Leary et le mouvement psychédélique",
      "Albert Hofmann"
     ],
-    "a": 2
+    "a": "Timothy Leary et le mouvement psychédélique"
    },
    {
     "q": "Quand l'héroïne a-t-elle été synthétisée ?",
@@ -24989,7 +25060,7 @@ export const TTCQ_THEMES = [
      "1880",
      "1920"
     ],
-    "a": 0
+    "a": "1874 par C.R. Wright, commercialisée en 1898 par Bayer"
    },
    {
     "q": "Quelle drogue était utilisée comme médicament pour enfants au XIXe siècle ?",
@@ -24999,9 +25070,10 @@ export const TTCQ_THEMES = [
      "Le LSD",
      "L'ecstasy"
     ],
-    "a": 0
+    "a": "La morphine et l'opium (sirops pour enfants)"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "drogues_023",
@@ -25017,7 +25089,7 @@ export const TTCQ_THEMES = [
      "Substances qui ralentissent l'activité cérébrale et corporelle",
      "Psychédéliques"
     ],
-    "a": 2
+    "a": "Substances qui ralentissent l'activité cérébrale et corporelle"
    },
    {
     "q": "Quels sont les principaux dépresseurs ?",
@@ -25027,7 +25099,7 @@ export const TTCQ_THEMES = [
      "Cocaïne, amphétamines",
      "Cannabis, CBD"
     ],
-    "a": 0
+    "a": "Alcool, benzodiazépines, opioïdes, barbituriques"
    },
    {
     "q": "Comment agissent les dépresseurs sur le système nerveux ?",
@@ -25037,7 +25109,7 @@ export const TTCQ_THEMES = [
      "En bloquant la dopamine",
      "En renforçant l'action du GABA, un neurotransmetteur inhibiteur"
     ],
-    "a": 3
+    "a": "En renforçant l'action du GABA, un neurotransmetteur inhibiteur"
    },
    {
     "q": "Quels sont les effets des dépresseurs ?",
@@ -25047,7 +25119,7 @@ export const TTCQ_THEMES = [
      "Relaxation, somnolence, diminution de l'anxiété",
      "Excitation"
     ],
-    "a": 2
+    "a": "Relaxation, somnolence, diminution de l'anxiété"
    },
    {
     "q": "Quels sont les risques des dépresseurs ?",
@@ -25057,7 +25129,7 @@ export const TTCQ_THEMES = [
      "Crise cardiaque",
      "Dépression respiratoire, dépendance, overdose"
     ],
-    "a": 3
+    "a": "Dépression respiratoire, dépendance, overdose"
    },
    {
     "q": "Qu'est-ce que les benzodiazépines ?",
@@ -25067,7 +25139,7 @@ export const TTCQ_THEMES = [
      "Antidépresseurs",
      "Médicaments anxiolytiques et sédatifs qui agissent sur le GABA"
     ],
-    "a": 3
+    "a": "Médicaments anxiolytiques et sédatifs qui agissent sur le GABA"
    },
    {
     "q": "Quels sont les risques du mélange alcool-benzodiazépines ?",
@@ -25077,7 +25149,7 @@ export const TTCQ_THEMES = [
      "Anxiété",
      "Effet nul"
     ],
-    "a": 1
+    "a": "Dépression respiratoire mortelle"
    },
    {
     "q": "Qu'est-ce que les barbituriques ?",
@@ -25087,9 +25159,10 @@ export const TTCQ_THEMES = [
      "Antibiotiques",
      "Stimulants"
     ],
-    "a": 0
+    "a": "Anciens sédatifs très dangereux, aujourd'hui peu prescrits"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "drogues_024",
@@ -25105,7 +25178,7 @@ export const TTCQ_THEMES = [
      "Hallucinogènes",
      "Sédatifs"
     ],
-    "a": 0
+    "a": "Substances qui augmentent l'éveil, l'énergie et l'attention"
    },
    {
     "q": "Quels sont les principaux stimulants ?",
@@ -25115,7 +25188,7 @@ export const TTCQ_THEMES = [
      "Héroïne, morphine",
      "LSD, champignons"
     ],
-    "a": 0
+    "a": "Cocaïne, amphétamines, caféine, nicotine"
    },
    {
     "q": "Comment agissent les stimulants ?",
@@ -25125,7 +25198,7 @@ export const TTCQ_THEMES = [
      "En activant les récepteurs opioïdes",
      "En augmentant la dopamine, noradrénaline et sérotonine"
     ],
-    "a": 3
+    "a": "En augmentant la dopamine, noradrénaline et sérotonine"
    },
    {
     "q": "Quels sont les effets des stimulants ?",
@@ -25135,7 +25208,7 @@ export const TTCQ_THEMES = [
      "Ralentissement",
      "Somnolence"
     ],
-    "a": 0
+    "a": "Énergie, vigilance, euphorie, diminution de l'appétit"
    },
    {
     "q": "Quels sont les risques des stimulants ?",
@@ -25145,7 +25218,7 @@ export const TTCQ_THEMES = [
      "Hypotension",
      "Bradycardie"
     ],
-    "a": 0
+    "a": "Problèmes cardiaques, dépendance, anxiété, psychose"
    },
    {
     "q": "Qu'est-ce que la cocaïne ?",
@@ -25155,7 +25228,7 @@ export const TTCQ_THEMES = [
      "Stimulant puissant dérivé des feuilles de coca",
      "Hallucinogène"
     ],
-    "a": 2
+    "a": "Stimulant puissant dérivé des feuilles de coca"
    },
    {
     "q": "Qu'est-ce que la nicotine ?",
@@ -25165,7 +25238,7 @@ export const TTCQ_THEMES = [
      "Hallucinogène",
      "Anxiolytique"
     ],
-    "a": 0
+    "a": "Stimulant légal présent dans le tabac, très addictif"
    },
    {
     "q": "Quelle différence entre stimulants légaux et illégaux ?",
@@ -25175,9 +25248,10 @@ export const TTCQ_THEMES = [
      "Les légaux sont sans danger",
      "Les légaux (caféine, nicotine) sont régulés mais peuvent aussi être dangereux"
     ],
-    "a": 3
+    "a": "Les légaux (caféine, nicotine) sont régulés mais peuvent aussi être dangereux"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "drogues_025",
@@ -25193,7 +25267,7 @@ export const TTCQ_THEMES = [
      "Sédatifs",
      "Stimulants"
     ],
-    "a": 1
+    "a": "Substances qui modifient la perception, la pensée et les émotions"
    },
    {
     "q": "Quels sont les principaux hallucinogènes ?",
@@ -25203,7 +25277,7 @@ export const TTCQ_THEMES = [
      "Alcool, GHB",
      "LSD, psilocybine, mescaline, DMT"
     ],
-    "a": 3
+    "a": "LSD, psilocybine, mescaline, DMT"
    },
    {
     "q": "Comment agissent les hallucinogènes ?",
@@ -25213,7 +25287,7 @@ export const TTCQ_THEMES = [
      "En inhibant la noradrénaline",
      "En activant le GABA"
     ],
-    "a": 1
+    "a": "En agissant sur les récepteurs sérotoninergiques 5-HT2A"
    },
    {
     "q": "Quels sont les effets des hallucinogènes ?",
@@ -25223,7 +25297,7 @@ export const TTCQ_THEMES = [
      "Agitation",
      "Sédation"
     ],
-    "a": 0
+    "a": "Hallucinations visuelles, auditives, altération de la conscience"
    },
    {
     "q": "Le LSD peut-il provoquer des flashbacks ?",
@@ -25233,7 +25307,7 @@ export const TTCQ_THEMES = [
      "Oui, des réminiscences imprévisibles des effets",
      "Oui, systématiquement"
     ],
-    "a": 2
+    "a": "Oui, des réminiscences imprévisibles des effets"
    },
    {
     "q": "Qu'est-ce que les champignons hallucinogènes (psilocybine) ?",
@@ -25243,7 +25317,7 @@ export const TTCQ_THEMES = [
      "Médicaments",
      "Champignons vénéneux"
     ],
-    "a": 0
+    "a": "Champignons contenant de la psilocybine, un hallucinogène naturel"
    },
    {
     "q": "Les hallucinogènes sont-ils utilisés en recherche médicale ?",
@@ -25253,7 +25327,7 @@ export const TTCQ_THEMES = [
      "Oui, pour traiter la dépression, l'anxiété et les addictions",
      "Uniquement dans les années 1960"
     ],
-    "a": 2
+    "a": "Oui, pour traiter la dépression, l'anxiété et les addictions"
    },
    {
     "q": "Qu'est-ce que la mescaline ?",
@@ -25263,9 +25337,10 @@ export const TTCQ_THEMES = [
      "Amphétamine",
      "Opiacé"
     ],
-    "a": 0
+    "a": "Hallucinogène naturel extrait du cactus peyotl utilisé par les Amérindiens"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "alcool_001",
@@ -25281,7 +25356,7 @@ export const TTCQ_THEMES = [
      "Depuis environ 8 000 ans (Caucase)",
      "Depuis le Moyen Âge"
     ],
-    "a": 2
+    "a": "Depuis environ 8 000 ans (Caucase)"
    },
    {
     "q": "Quel pays est le plus grand producteur de vin au monde ?",
@@ -25291,7 +25366,7 @@ export const TTCQ_THEMES = [
      "Espagne",
      "Italie"
     ],
-    "a": 3
+    "a": "Italie"
    },
    {
     "q": "Quels étaient les principaux producteurs de vin dans l'Antiquité ?",
@@ -25301,7 +25376,7 @@ export const TTCQ_THEMES = [
      "Gaule et Bretagne",
      "Grèce et Rome"
     ],
-    "a": 3
+    "a": "Grèce et Rome"
    },
    {
     "q": "Qu'est-ce que le vin ?",
@@ -25311,7 +25386,7 @@ export const TTCQ_THEMES = [
      "Boisson gazeuse",
      "Boisson alcoolisée obtenue par fermentation du raisin"
     ],
-    "a": 3
+    "a": "Boisson alcoolisée obtenue par fermentation du raisin"
    },
    {
     "q": "Comment le vin s'est-il répandu en Europe ?",
@@ -25321,7 +25396,7 @@ export const TTCQ_THEMES = [
      "Par les Vikings",
      "Par les Romains et les Grecs"
     ],
-    "a": 3
+    "a": "Par les Romains et les Grecs"
    },
    {
     "q": "Qu'est-ce que l'amphore dans l'histoire du vin ?",
@@ -25331,7 +25406,7 @@ export const TTCQ_THEMES = [
      "Rituel",
      "Cépage"
     ],
-    "a": 1
+    "a": "Récipient antique pour transporter le vin"
    },
    {
     "q": "Qui a introduit la culture de la vigne en Gaule ?",
@@ -25341,7 +25416,7 @@ export const TTCQ_THEMES = [
      "Les Grecs",
      "Les Gaulois"
     ],
-    "a": 1
+    "a": "Les Romains"
    },
    {
     "q": "Quand la Champagne est-elle devenue une région viticole ?",
@@ -25351,9 +25426,10 @@ export const TTCQ_THEMES = [
      "À l'époque médiévale",
      "Au XVIe siècle"
     ],
-    "a": 2
+    "a": "À l'époque médiévale"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "alcool_002",
@@ -25369,7 +25445,7 @@ export const TTCQ_THEMES = [
      "Sec, doux, moelleux",
      "Rouge, blanc, rosé, effervescent"
     ],
-    "a": 3
+    "a": "Rouge, blanc, rosé, effervescent"
    },
    {
     "q": "Qu'est-ce qu'un vin rouge ?",
@@ -25379,7 +25455,7 @@ export const TTCQ_THEMES = [
      "Vin issu de raisins noirs fermentés avec la peau",
      "Vin coloré"
     ],
-    "a": 2
+    "a": "Vin issu de raisins noirs fermentés avec la peau"
    },
    {
     "q": "Qu'est-ce qu'un vin blanc ?",
@@ -25389,7 +25465,7 @@ export const TTCQ_THEMES = [
      "Vin clair",
      "Vin sec"
     ],
-    "a": 1
+    "a": "Vin issu de raisins blancs ou noirs sans la peau"
    },
    {
     "q": "Qu'est-ce qu'un vin rosé ?",
@@ -25399,7 +25475,7 @@ export const TTCQ_THEMES = [
      "Vin clair",
      "Mélange de rouge et blanc"
     ],
-    "a": 0
+    "a": "Vin obtenu par une macération courte des raisins noirs"
    },
    {
     "q": "Comment est produit le champagne ?",
@@ -25409,7 +25485,7 @@ export const TTCQ_THEMES = [
      "Par ajout de sucre",
      "Par double fermentation en bouteille (méthode champenoise)"
     ],
-    "a": 3
+    "a": "Par double fermentation en bouteille (méthode champenoise)"
    },
    {
     "q": "Qu'est-ce qu'un vin moelleux ?",
@@ -25419,7 +25495,7 @@ export const TTCQ_THEMES = [
      "Vin contenant du sucre résiduel (plus sucré)",
      "Vin sans alcool"
     ],
-    "a": 2
+    "a": "Vin contenant du sucre résiduel (plus sucré)"
    },
    {
     "q": "Qu'est-ce qu'un vin AOC ?",
@@ -25429,7 +25505,7 @@ export const TTCQ_THEMES = [
      "Alcool Ordinaire de Consommation",
      "Vin artisanal"
     ],
-    "a": 0
+    "a": "Appellation d'Origine Contrôlée, garantissant l'origine"
    },
    {
     "q": "Quels sont les cépages principaux pour le vin rouge ?",
@@ -25439,9 +25515,10 @@ export const TTCQ_THEMES = [
      "Merlot, Cabernet Sauvignon, Pinot Noir, Syrah",
      "Ugni Blanc, Colombard"
     ],
-    "a": 2
+    "a": "Merlot, Cabernet Sauvignon, Pinot Noir, Syrah"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "alcool_003",
@@ -25457,7 +25534,7 @@ export const TTCQ_THEMES = [
      "Eau, malt, riz, levure",
      "Eau, malt, houblon, levure"
     ],
-    "a": 3
+    "a": "Eau, malt, houblon, levure"
    },
    {
     "q": "Quel pays est le plus grand consommateur de bière par habitant ?",
@@ -25467,7 +25544,7 @@ export const TTCQ_THEMES = [
      "Allemagne",
      "Belgique"
     ],
-    "a": 0
+    "a": "République tchèque"
    },
    {
     "q": "Qu'est-ce que le houblon ?",
@@ -25477,7 +25554,7 @@ export const TTCQ_THEMES = [
      "Plante qui donne l'amertume et l'arôme à la bière",
      "Céréale"
     ],
-    "a": 2
+    "a": "Plante qui donne l'amertume et l'arôme à la bière"
    },
    {
     "q": "Quels sont les principaux types de bière ?",
@@ -25487,7 +25564,7 @@ export const TTCQ_THEMES = [
      "Brune, rousse, dorée",
      "Rouge, blanche, rosée"
     ],
-    "a": 0
+    "a": "Lager, Ale, Stout, IPA, Blonde"
    },
    {
     "q": "Qu'est-ce qu'une bière IPA ?",
@@ -25497,7 +25574,7 @@ export const TTCQ_THEMES = [
      "Bière d'abbaye",
      "India Pale Ale, bière très houblonnée"
     ],
-    "a": 3
+    "a": "India Pale Ale, bière très houblonnée"
    },
    {
     "q": "Qu'est-ce que la fermentation haute ?",
@@ -25507,7 +25584,7 @@ export const TTCQ_THEMES = [
      "Fermentation à température ambiante pour les Ales",
      "Fermentation rapide"
     ],
-    "a": 2
+    "a": "Fermentation à température ambiante pour les Ales"
    },
    {
     "q": "Quelle est la teneur en alcool moyenne d'une bière standard ?",
@@ -25517,7 +25594,7 @@ export const TTCQ_THEMES = [
      "7-9% vol.",
      "10-12% vol."
     ],
-    "a": 1
+    "a": "4-6% vol."
    },
    {
     "q": "Quelle est la plus ancienne brasserie encore en activité ?",
@@ -25527,9 +25604,10 @@ export const TTCQ_THEMES = [
      "Budweiser",
      "Heineken"
     ],
-    "a": 1
+    "a": "Weihenstephan (Allemagne, 1040)"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "alcool_004",
@@ -25545,7 +25623,7 @@ export const TTCQ_THEMES = [
      "Vin",
      "Boisson alcoolisée obtenue par distillation"
     ],
-    "a": 3
+    "a": "Boisson alcoolisée obtenue par distillation"
    },
    {
     "q": "Quelle est la teneur en alcool minimale d'un spiritueux ?",
@@ -25555,7 +25633,7 @@ export const TTCQ_THEMES = [
      "10% vol.",
      "5% vol."
     ],
-    "a": 1
+    "a": "15% vol."
    },
    {
     "q": "Quels sont les principaux spiritueux ?",
@@ -25565,7 +25643,7 @@ export const TTCQ_THEMES = [
      "Vin, bière, cidre",
      "Porto, Xérès, Muscat"
     ],
-    "a": 1
+    "a": "Whisky, vodka, rhum, gin, tequila, cognac"
    },
    {
     "q": "Qu'est-ce que la distillation ?",
@@ -25575,7 +25653,7 @@ export const TTCQ_THEMES = [
      "Macération",
      "Procédé qui concentre l'alcool par chauffage et condensation"
     ],
-    "a": 3
+    "a": "Procédé qui concentre l'alcool par chauffage et condensation"
    },
    {
     "q": "Qu'est-ce qu'un alambic ?",
@@ -25585,7 +25663,7 @@ export const TTCQ_THEMES = [
      "Verre",
      "Bouteille"
     ],
-    "a": 0
+    "a": "Appareil utilisé pour la distillation"
    },
    {
     "q": "Qu'est-ce que le vieillissement en fût ?",
@@ -25595,7 +25673,7 @@ export const TTCQ_THEMES = [
      "Fermentation longue",
      "Distillation lente"
     ],
-    "a": 0
+    "a": "Maturation du spiritueux en fût de chêne pour développer les arômes"
    },
    {
     "q": "Quelle est la différence entre cognac et armagnac ?",
@@ -25605,7 +25683,7 @@ export const TTCQ_THEMES = [
      "Couleur différente",
      "Teneur en alcool"
     ],
-    "a": 0
+    "a": "Région et méthode de distillation différentes"
    },
    {
     "q": "Qu'est-ce qu'une eau-de-vie ?",
@@ -25615,9 +25693,10 @@ export const TTCQ_THEMES = [
      "Vieil alcool",
      "Alcool pur"
     ],
-    "a": 0
+    "a": "Spiritueux issu de la distillation de fruits fermentés"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "alcool_005",
@@ -25633,7 +25712,7 @@ export const TTCQ_THEMES = [
      "Pomme de terre",
      "Raisin"
     ],
-    "a": 1
+    "a": "Céréales fermentées et distillées (orge, maïs, seigle)"
    },
    {
     "q": "Quels sont les principaux pays producteurs de whisky ?",
@@ -25643,7 +25722,7 @@ export const TTCQ_THEMES = [
      "France, Italie, Espagne",
      "Écosse, États-Unis, Canada, Japon, Irlande"
     ],
-    "a": 3
+    "a": "Écosse, États-Unis, Canada, Japon, Irlande"
    },
    {
     "q": "Qu'est-ce que le Scotch whisky ?",
@@ -25653,7 +25732,7 @@ export const TTCQ_THEMES = [
      "Whisky de luxe",
      "Whisky produit en Écosse"
     ],
-    "a": 3
+    "a": "Whisky produit en Écosse"
    },
    {
     "q": "Qu'est-ce que le Bourbon ?",
@@ -25663,7 +25742,7 @@ export const TTCQ_THEMES = [
      "Whisky japonais",
      "Whisky canadien"
     ],
-    "a": 1
+    "a": "Whisky américain à base de maïs (au moins 51%)"
    },
    {
     "q": "Combien d'années un whisky doit-il vieillir minimum ?",
@@ -25673,7 +25752,7 @@ export const TTCQ_THEMES = [
      "10 ans",
      "3 ans pour le Scotch"
     ],
-    "a": 3
+    "a": "3 ans pour le Scotch"
    },
    {
     "q": "Qu'est-ce que le single malt ?",
@@ -25683,7 +25762,7 @@ export const TTCQ_THEMES = [
      "Whisky d'une seule distillerie à base de pur malt d'orge",
      "Mélange de whiskies"
     ],
-    "a": 2
+    "a": "Whisky d'une seule distillerie à base de pur malt d'orge"
    },
    {
     "q": "Qu'est-ce que le blended whisky ?",
@@ -25693,7 +25772,7 @@ export const TTCQ_THEMES = [
      "Whisky de luxe",
      "Whisky allégé"
     ],
-    "a": 1
+    "a": "Assemblage de whiskies de différentes distilleries"
    },
    {
     "q": "Qu'est-ce que la tourbe dans le whisky écossais ?",
@@ -25703,9 +25782,10 @@ export const TTCQ_THEMES = [
      "Combustible utilisé pour sécher le malt, donnant un goût fumé",
      "Fût spécial"
     ],
-    "a": 2
+    "a": "Combustible utilisé pour sécher le malt, donnant un goût fumé"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "alcool_006",
@@ -25721,7 +25801,7 @@ export const TTCQ_THEMES = [
      "Raisin",
      "Orge"
     ],
-    "a": 0
+    "a": "Blé, seigle ou pommes de terre"
    },
    {
     "q": "Quels pays sont les plus réputés pour la vodka ?",
@@ -25731,7 +25811,7 @@ export const TTCQ_THEMES = [
      "France et Italie",
      "Russie et Pologne"
     ],
-    "a": 3
+    "a": "Russie et Pologne"
    },
    {
     "q": "Quelle est la teneur en alcool typique de la vodka ?",
@@ -25741,7 +25821,7 @@ export const TTCQ_THEMES = [
      "40% vol.",
      "50% vol."
     ],
-    "a": 2
+    "a": "40% vol."
    },
    {
     "q": "Qu'est-ce que la filtration au charbon dans la vodka ?",
@@ -25751,7 +25831,7 @@ export const TTCQ_THEMES = [
      "Méthode de fermentation",
      "Ajout d'arôme"
     ],
-    "a": 0
+    "a": "Procédé qui purifie la vodka et adoucit le goût"
    },
    {
     "q": "Qui a standardisé la vodka à 40° ?",
@@ -25761,7 +25841,7 @@ export const TTCQ_THEMES = [
      "Léon Tolstoï",
      "Dmitri Mendeleïev"
     ],
-    "a": 3
+    "a": "Dmitri Mendeleïev"
    },
    {
     "q": "Qu'est-ce qu'une vodka premium ?",
@@ -25771,7 +25851,7 @@ export const TTCQ_THEMES = [
      "Vodka importée",
      "Vodka aromatisée"
     ],
-    "a": 0
+    "a": "Vodka haut de gamme distillée plusieurs fois et filtrée"
    },
    {
     "q": "Quelle est la différence entre vodka et vodka aromatisée ?",
@@ -25781,7 +25861,7 @@ export const TTCQ_THEMES = [
      "Elles sont identiques",
      "La vodka aromatisée contient des arômes ajoutés"
     ],
-    "a": 3
+    "a": "La vodka aromatisée contient des arômes ajoutés"
    },
    {
     "q": "Comment boit-on traditionnellement la vodka en Russie ?",
@@ -25791,9 +25871,10 @@ export const TTCQ_THEMES = [
      "Avec du cola",
      "En cocktail"
     ],
-    "a": 0
+    "a": "Glacée, en un shot, accompagnée de zakouskis"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "alcool_007",
@@ -25809,7 +25890,7 @@ export const TTCQ_THEMES = [
      "Du raisin",
      "De l'orge"
     ],
-    "a": 0
+    "a": "De la canne à sucre (jus, mélasse ou sirop)"
    },
    {
     "q": "Quels pays sont les plus grands producteurs de rhum ?",
@@ -25819,7 +25900,7 @@ export const TTCQ_THEMES = [
      "Brésil, Argentine",
      "États-Unis, Canada"
     ],
-    "a": 1
+    "a": "Caraïbes (Cuba, Porto Rico, Jamaïque, Barbade)"
    },
    {
     "q": "Quels sont les principaux types de rhum ?",
@@ -25829,7 +25910,7 @@ export const TTCQ_THEMES = [
      "Rhum blanc, rhum ambré, rhum vieux",
      "Rhum léger, rhum fort"
     ],
-    "a": 2
+    "a": "Rhum blanc, rhum ambré, rhum vieux"
    },
    {
     "q": "Qu'est-ce que le rhum agricole ?",
@@ -25839,7 +25920,7 @@ export const TTCQ_THEMES = [
      "Rhum de mélasse",
      "Rhum vieux"
     ],
-    "a": 0
+    "a": "Rhum produit à partir du pur jus de canne à sucre"
    },
    {
     "q": "Qu'est-ce que le rhum arrangé ?",
@@ -25849,7 +25930,7 @@ export const TTCQ_THEMES = [
      "Rhum dans lequel on fait macérer des fruits ou épices",
      "Rhum mélangé"
     ],
-    "a": 2
+    "a": "Rhum dans lequel on fait macérer des fruits ou épices"
    },
    {
     "q": "Qu'est-ce que le rhum vieux ?",
@@ -25859,7 +25940,7 @@ export const TTCQ_THEMES = [
      "Rhum vieilli en fût de chêne pendant plusieurs années",
      "Rhum épicé"
     ],
-    "a": 2
+    "a": "Rhum vieilli en fût de chêne pendant plusieurs années"
    },
    {
     "q": "Qu'est-ce que le Ti'Punch ?",
@@ -25869,7 +25950,7 @@ export const TTCQ_THEMES = [
      "Rhum sucré",
      "Rhum épicé"
     ],
-    "a": 0
+    "a": "Cocktail antillais traditionnel à base de rhum blanc"
    },
    {
     "q": "Qu'est-ce que la mélasse ?",
@@ -25879,9 +25960,10 @@ export const TTCQ_THEMES = [
      "Type de canne",
      "Alambic"
     ],
-    "a": 0
+    "a": "Sous-produit sucré de la fabrication du sucre de canne"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "alcool_008",
@@ -25897,7 +25979,7 @@ export const TTCQ_THEMES = [
      "Du raisin",
      "De la canne à sucre"
     ],
-    "a": 0
+    "a": "De l'agave bleu (agave tequilana)"
    },
    {
     "q": "Où est produite la tequila ?",
@@ -25907,7 +25989,7 @@ export const TTCQ_THEMES = [
      "Au Mexique (région de Jalisco)",
      "Au Pérou"
     ],
-    "a": 2
+    "a": "Au Mexique (région de Jalisco)"
    },
    {
     "q": "Quels sont les types de tequila ?",
@@ -25917,7 +25999,7 @@ export const TTCQ_THEMES = [
      "Blanche, rouge, rosée",
      "Blanco, Reposado, Añejo, Extra Añejo"
     ],
-    "a": 3
+    "a": "Blanco, Reposado, Añejo, Extra Añejo"
    },
    {
     "q": "Qu'est-ce que la tequila 100% agave ?",
@@ -25927,7 +26009,7 @@ export const TTCQ_THEMES = [
      "Tequila non diluée",
      "Tequila faite uniquement avec du sucre d'agave"
     ],
-    "a": 3
+    "a": "Tequila faite uniquement avec du sucre d'agave"
    },
    {
     "q": "Qu'est-ce que le mezcal ?",
@@ -25937,7 +26019,7 @@ export const TTCQ_THEMES = [
      "Liqueur",
      "Tequila fumée"
     ],
-    "a": 0
+    "a": "Boisson mexicaine similaire à la tequila mais faite avec différentes espèces d'agave"
    },
    {
     "q": "Comment se boit traditionnellement la tequila ?",
@@ -25947,7 +26029,7 @@ export const TTCQ_THEMES = [
      "Avec sel et citron (dégustation) ou en cocktail",
      "Avec du cola"
     ],
-    "a": 2
+    "a": "Avec sel et citron (dégustation) ou en cocktail"
    },
    {
     "q": "Qu'est-ce que le ver dans la bouteille de mezcal ?",
@@ -25957,7 +26039,7 @@ export const TTCQ_THEMES = [
      "Larve naturelle",
      "Insecte comestible"
     ],
-    "a": 1
+    "a": "Larve ajoutée dans certaines bouteilles de mezcal comme tradition"
    },
    {
     "q": "Quelle est la teneur en alcool typique de la tequila ?",
@@ -25967,9 +26049,10 @@ export const TTCQ_THEMES = [
      "38-40% vol.",
      "30-35% vol."
     ],
-    "a": 2
+    "a": "38-40% vol."
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "alcool_009",
@@ -25985,7 +26068,7 @@ export const TTCQ_THEMES = [
      "Les agrumes",
      "Le genévrier"
     ],
-    "a": 0
+    "a": "Les baies de genièvre"
    },
    {
     "q": "De quoi est fait le gin ?",
@@ -25995,7 +26078,7 @@ export const TTCQ_THEMES = [
      "Céréales fermentées",
      "Alcool neutre redistillé avec des baies de genièvre et botaniques"
     ],
-    "a": 3
+    "a": "Alcool neutre redistillé avec des baies de genièvre et botaniques"
    },
    {
     "q": "Quels pays sont réputés pour le gin ?",
@@ -26005,7 +26088,7 @@ export const TTCQ_THEMES = [
      "Italie, Grèce",
      "Japon, Chine"
     ],
-    "a": 1
+    "a": "Royaume-Uni, Pays-Bas, Espagne, France"
    },
    {
     "q": "Qu'est-ce que le London Dry Gin ?",
@@ -26015,7 +26098,7 @@ export const TTCQ_THEMES = [
      "Gin bon marché",
      "Gin de Londres"
     ],
-    "a": 0
+    "a": "Style de gin sans sucre ajouté, traditionnellement anglais"
    },
    {
     "q": "Qu'est-ce que le Gin Tonic ?",
@@ -26025,7 +26108,7 @@ export const TTCQ_THEMES = [
      "Boisson au gin",
      "Mélange gin-bière"
     ],
-    "a": 1
+    "a": "Cocktail classique à base de gin et d'eau tonique"
    },
    {
     "q": "Quelles épices sont souvent utilisées dans le gin ?",
@@ -26035,7 +26118,7 @@ export const TTCQ_THEMES = [
      "Cannelle, vanille, chocolat",
      "Poivre, sel, paprika"
     ],
-    "a": 0
+    "a": "Coriandre, cardamome, angélique, écorces d'agrumes"
    },
    {
     "q": "Qu'est-ce que le genièvre ?",
@@ -26045,7 +26128,7 @@ export const TTCQ_THEMES = [
      "Céréale",
      "Fruit tropical"
     ],
-    "a": 1
+    "a": "Baie du genévrier, ingrédient obligatoire du gin"
    },
    {
     "q": "Quel est l'ancêtre du gin moderne ?",
@@ -26055,9 +26138,10 @@ export const TTCQ_THEMES = [
      "Le rhum",
      "Le whisky"
     ],
-    "a": 0
+    "a": "Le genièvre hollandais (jenever)"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "alcool_010",
@@ -26073,7 +26157,7 @@ export const TTCQ_THEMES = [
      "En Alsace",
      "En Italie"
     ],
-    "a": 0
+    "a": "Dans la région Champagne (France)"
    },
    {
     "q": "Quels cépages sont utilisés pour le champagne ?",
@@ -26083,7 +26167,7 @@ export const TTCQ_THEMES = [
      "Merlot, Cabernet Sauvignon",
      "Pinot Noir, Pinot Meunier, Chardonnay"
     ],
-    "a": 3
+    "a": "Pinot Noir, Pinot Meunier, Chardonnay"
    },
    {
     "q": "Qu'est-ce que la méthode champenoise ?",
@@ -26093,7 +26177,7 @@ export const TTCQ_THEMES = [
      "Double fermentation en bouteille pour créer les bulles",
      "Fermentation en cuve"
     ],
-    "a": 2
+    "a": "Double fermentation en bouteille pour créer les bulles"
    },
    {
     "q": "Qui est considéré comme le père du champagne ?",
@@ -26103,7 +26187,7 @@ export const TTCQ_THEMES = [
      "Dom Pérignon",
      "Moët"
     ],
-    "a": 2
+    "a": "Dom Pérignon"
    },
    {
     "q": "Qu'est-ce que le brut ?",
@@ -26113,7 +26197,7 @@ export const TTCQ_THEMES = [
      "Champagne sucré",
      "Champagne rosé"
     ],
-    "a": 0
+    "a": "Champagne sec avec peu de sucre ajouté"
    },
    {
     "q": "Combien de bulles y a-t-il dans une bouteille de champagne ?",
@@ -26123,7 +26207,7 @@ export const TTCQ_THEMES = [
      "Environ 10 millions",
      "Environ 100 millions"
     ],
-    "a": 1
+    "a": "Environ 50 millions"
    },
    {
     "q": "Qu'est-ce que le champagne rosé ?",
@@ -26133,7 +26217,7 @@ export const TTCQ_THEMES = [
      "Champagne obtenu par macération ou assemblage de vin rouge",
      "Champagne coloré"
     ],
-    "a": 2
+    "a": "Champagne obtenu par macération ou assemblage de vin rouge"
    },
    {
     "q": "Qu'est-ce qu'un millésime en champagne ?",
@@ -26143,9 +26227,10 @@ export const TTCQ_THEMES = [
      "Champagne d'une seule année, produit lors des grandes années",
      "Année de production"
     ],
-    "a": 2
+    "a": "Champagne d'une seule année, produit lors des grandes années"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "alcool_011",
@@ -26161,7 +26246,7 @@ export const TTCQ_THEMES = [
      "Shot d'alcool",
      "Boisson unique"
     ],
-    "a": 1
+    "a": "Mélange de boissons alcoolisées et/ou non alcoolisées"
    },
    {
     "q": "Quel est le cocktail le plus connu au monde ?",
@@ -26171,7 +26256,7 @@ export const TTCQ_THEMES = [
      "Martini",
      "Old Fashioned"
     ],
-    "a": 1
+    "a": "Margarita"
    },
    {
     "q": "Quels sont les ingrédients d'un Mojito ?",
@@ -26181,7 +26266,7 @@ export const TTCQ_THEMES = [
      "Tequila, citron, sel",
      "Gin, tonic"
     ],
-    "a": 1
+    "a": "Rhum, menthe, citron, sucre, eau gazeuse"
    },
    {
     "q": "Qu'est-ce qu'un Martini ?",
@@ -26191,7 +26276,7 @@ export const TTCQ_THEMES = [
      "Marque de vodka",
      "Apéritif italien"
     ],
-    "a": 1
+    "a": "Cocktail à base de gin et vermouth"
    },
    {
     "q": "Qu'est-ce qu'une Margarita ?",
@@ -26201,7 +26286,7 @@ export const TTCQ_THEMES = [
      "Punch",
      "Cocktail à base de tequila, triple sec et citron"
     ],
-    "a": 3
+    "a": "Cocktail à base de tequila, triple sec et citron"
    },
    {
     "q": "Qu'est-ce qu'un cocktail 'sans alcool' ?",
@@ -26211,7 +26296,7 @@ export const TTCQ_THEMES = [
      "Boisson gazeuse",
      "Jus de fruits"
     ],
-    "a": 1
+    "a": "Cocktail sans alcool appelé 'mocktail'"
    },
    {
     "q": "Qui a inventé le cocktail moderne ?",
@@ -26221,7 +26306,7 @@ export const TTCQ_THEMES = [
      "Ernest Hemingway",
      "Jerry Thomas (XIXe siècle)"
     ],
-    "a": 3
+    "a": "Jerry Thomas (XIXe siècle)"
    },
    {
     "q": "Qu'est-ce qu'un shaker dans la confection de cocktails ?",
@@ -26231,9 +26316,10 @@ export const TTCQ_THEMES = [
      "Verre",
      "Récipient pour mélanger et refroidir les ingrédients"
     ],
-    "a": 3
+    "a": "Récipient pour mélanger et refroidir les ingrédients"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "alcool_012",
@@ -26249,7 +26335,7 @@ export const TTCQ_THEMES = [
      "Taux d'alcool dans le sang",
      "Alcool dans l'haleine"
     ],
-    "a": 2
+    "a": "Taux d'alcool dans le sang"
    },
    {
     "q": "En France, quel est le taux d'alcoolémie maximal autorisé pour conduire ?",
@@ -26259,7 +26345,7 @@ export const TTCQ_THEMES = [
      "0,2 g/L",
      "0,8 g/L"
     ],
-    "a": 0
+    "a": "0,5 g/L de sang"
    },
    {
     "q": "Pour les jeunes conducteurs, quelle est la limite ?",
@@ -26269,7 +26355,7 @@ export const TTCQ_THEMES = [
      "0,5 g/L",
      "0,2 g/L"
     ],
-    "a": 3
+    "a": "0,2 g/L"
    },
    {
     "q": "Combien de temps faut-il pour éliminer un verre d'alcool ?",
@@ -26279,7 +26365,7 @@ export const TTCQ_THEMES = [
      "Environ 30 minutes",
      "Environ 2 heures"
     ],
-    "a": 1
+    "a": "Environ 1 heure"
    },
    {
     "q": "Qu'est-ce qu'un éthylotest ?",
@@ -26289,7 +26375,7 @@ export const TTCQ_THEMES = [
      "Breathalyzer",
      "Verre doseur"
     ],
-    "a": 1
+    "a": "Appareil pour mesurer l'alcoolémie"
    },
    {
     "q": "Quels facteurs influencent l'alcoolémie ?",
@@ -26299,7 +26385,7 @@ export const TTCQ_THEMES = [
      "Poids, sexe, nourriture, vitesse de consommation",
      "Uniquement le poids"
     ],
-    "a": 2
+    "a": "Poids, sexe, nourriture, vitesse de consommation"
    },
    {
     "q": "Qu'est-ce que l'alcoolémie à jeun ?",
@@ -26309,7 +26395,7 @@ export const TTCQ_THEMES = [
      "Taux d'alcool plus élevé car l'absorption est plus rapide",
      "Taux nul"
     ],
-    "a": 2
+    "a": "Taux d'alcool plus élevé car l'absorption est plus rapide"
    },
    {
     "q": "Quelle est la peine pour conduite en état d'ivresse en France ?",
@@ -26319,9 +26405,10 @@ export const TTCQ_THEMES = [
      "Amende et suspension de permis, possible prison",
      "Amende uniquement"
     ],
-    "a": 2
+    "a": "Amende et suspension de permis, possible prison"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "alcool_013",
@@ -26337,7 +26424,7 @@ export const TTCQ_THEMES = [
      "Ivresse",
      "Sevrage"
     ],
-    "a": 0
+    "a": "Ensemble de symptômes après une consommation excessive d'alcool"
    },
    {
     "q": "Quels sont les symptômes de la gueule de bois ?",
@@ -26347,7 +26434,7 @@ export const TTCQ_THEMES = [
      "Faim",
      "Euphorie"
     ],
-    "a": 0
+    "a": "Maux de tête, nausées, fatigue, déshydratation"
    },
    {
     "q": "Quelle est la cause principale de la gueule de bois ?",
@@ -26357,7 +26444,7 @@ export const TTCQ_THEMES = [
      "Intoxication alimentaire",
      "Manque de sucre"
     ],
-    "a": 1
+    "a": "Déshydratation et accumulation de toxines"
    },
    {
     "q": "Existe-t-il un remède miracle contre la gueule de bois ?",
@@ -26367,7 +26454,7 @@ export const TTCQ_THEMES = [
      "Oui, les boissons énergisantes",
      "Oui, le café"
     ],
-    "a": 1
+    "a": "Non, seuls le repos et l'hydratation aident"
    },
    {
     "q": "Quels types d'alcool provoquent les pires gueules de bois ?",
@@ -26377,7 +26464,7 @@ export const TTCQ_THEMES = [
      "Les alcools foncés (whisky, vin rouge, rhum)",
      "La bière"
     ],
-    "a": 2
+    "a": "Les alcools foncés (whisky, vin rouge, rhum)"
    },
    {
     "q": "Combien de temps dure une gueule de bois ?",
@@ -26387,7 +26474,7 @@ export const TTCQ_THEMES = [
      "12 à 24 heures",
      "2 à 4 heures"
     ],
-    "a": 2
+    "a": "12 à 24 heures"
    },
    {
     "q": "L'alcool déshydrate-t-il le corps ?",
@@ -26397,7 +26484,7 @@ export const TTCQ_THEMES = [
      "Oui, car il inhibe l'hormone antidiurétique",
      "Non"
     ],
-    "a": 2
+    "a": "Oui, car il inhibe l'hormone antidiurétique"
    },
    {
     "q": "Peut-on prévenir la gueule de bois ?",
@@ -26407,9 +26494,10 @@ export const TTCQ_THEMES = [
      "Non, impossible",
      "En buvant de l'eau entre les verres et en mangeant"
     ],
-    "a": 3
+    "a": "En buvant de l'eau entre les verres et en mangeant"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "alcool_014",
@@ -26425,7 +26513,7 @@ export const TTCQ_THEMES = [
      "Sentir et boire",
      "Examen visuel, olfactif, gustatif"
     ],
-    "a": 3
+    "a": "Examen visuel, olfactif, gustatif"
    },
    {
     "q": "Qu'est-ce que le 'nez' d'un vin ?",
@@ -26435,7 +26523,7 @@ export const TTCQ_THEMES = [
      "La couleur",
      "L'odeur et les arômes du vin"
     ],
-    "a": 3
+    "a": "L'odeur et les arômes du vin"
    },
    {
     "q": "Qu'est-ce que la robe d'un vin ?",
@@ -26445,7 +26533,7 @@ export const TTCQ_THEMES = [
      "L'étiquette",
      "L'apparence visuelle et la couleur du vin"
     ],
-    "a": 3
+    "a": "L'apparence visuelle et la couleur du vin"
    },
    {
     "q": "Quels sont les arômes primaires du vin ?",
@@ -26455,7 +26543,7 @@ export const TTCQ_THEMES = [
      "Arômes ajoutés",
      "Arômes du raisin (fruits, fleurs)"
     ],
-    "a": 3
+    "a": "Arômes du raisin (fruits, fleurs)"
    },
    {
     "q": "Qu'est-ce que la longueur en bouche ?",
@@ -26465,7 +26553,7 @@ export const TTCQ_THEMES = [
      "Ampleur du goût",
      "Persistance des saveurs après avoir avalé"
     ],
-    "a": 3
+    "a": "Persistance des saveurs après avoir avalé"
    },
    {
     "q": "Qu'est-ce qu'une dégustation à l'aveugle ?",
@@ -26475,7 +26563,7 @@ export const TTCQ_THEMES = [
      "Dégustation sans parler",
      "Dégustation debout"
     ],
-    "a": 0
+    "a": "Dégustation sans connaître l'identité du vin"
    },
    {
     "q": "Quelle température pour déguster un vin rouge ?",
@@ -26485,7 +26573,7 @@ export const TTCQ_THEMES = [
      "8-10°C",
      "12-14°C"
     ],
-    "a": 0
+    "a": "16-18°C"
    },
    {
     "q": "Quelle température pour déguster un vin blanc ?",
@@ -26495,9 +26583,10 @@ export const TTCQ_THEMES = [
      "16-18°C",
      "14-16°C"
     ],
-    "a": 1
+    "a": "8-12°C"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "alcool_015",
@@ -26513,7 +26602,7 @@ export const TTCQ_THEMES = [
      "Japon",
      "France"
     ],
-    "a": 0
+    "a": "Biélorussie"
    },
    {
     "q": "Quelle est la boisson alcoolisée la plus consommée dans le monde ?",
@@ -26523,7 +26612,7 @@ export const TTCQ_THEMES = [
      "Les spiritueux",
      "La bière"
     ],
-    "a": 3
+    "a": "La bière"
    },
    {
     "q": "Qu'est-ce que le saké ?",
@@ -26533,7 +26622,7 @@ export const TTCQ_THEMES = [
      "Vin de riz",
      "Bière japonaise"
     ],
-    "a": 0
+    "a": "Boisson alcoolisée japonaise à base de riz fermenté"
    },
    {
     "q": "Qu'est-ce que la chicha ?",
@@ -26543,7 +26632,7 @@ export const TTCQ_THEMES = [
      "Bière andine",
      "Vin argentin"
     ],
-    "a": 0
+    "a": "Alcool de maïs traditionnel d'Amérique latine"
    },
    {
     "q": "Qu'est-ce que le vin de palme ?",
@@ -26553,7 +26642,7 @@ export const TTCQ_THEMES = [
      "Spiritueux",
      "Vin fruité"
     ],
-    "a": 1
+    "a": "Boisson alcoolisée africaine issue de la sève de palmier"
    },
    {
     "q": "Dans quels pays la consommation d'alcool est-elle interdite ?",
@@ -26563,7 +26652,7 @@ export const TTCQ_THEMES = [
      "Chine, Inde",
      "Arabie saoudite, Koweït, Iran, Libye"
     ],
-    "a": 3
+    "a": "Arabie saoudite, Koweït, Iran, Libye"
    },
    {
     "q": "Quel pays est le plus grand exportateur de vin ?",
@@ -26573,7 +26662,7 @@ export const TTCQ_THEMES = [
      "Chili",
      "France"
     ],
-    "a": 0
+    "a": "Espagne (en volume)"
    },
    {
     "q": "Qu'est-ce que le whisky irlandais ?",
@@ -26583,9 +26672,10 @@ export const TTCQ_THEMES = [
      "Whisky distillé trois fois, plus doux que le Scotch",
      "Whisky sucré"
     ],
-    "a": 2
+    "a": "Whisky distillé trois fois, plus doux que le Scotch"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "alcool_016",
@@ -26601,7 +26691,7 @@ export const TTCQ_THEMES = [
      "Moyen",
      "Faible"
     ],
-    "a": 1
+    "a": "Parmi les plus élevés d'Europe"
    },
    {
     "q": "Quelle boisson alcoolisée est la plus associée à la France ?",
@@ -26611,7 +26701,7 @@ export const TTCQ_THEMES = [
      "Le champagne",
      "La bière"
     ],
-    "a": 0
+    "a": "Le vin"
    },
    {
     "q": "Qu'est-ce que l'apéritif (apéro) dans la culture française ?",
@@ -26621,7 +26711,7 @@ export const TTCQ_THEMES = [
      "Cocktail",
      "Vin"
     ],
-    "a": 0
+    "a": "Moment de convivialité avant le repas avec des boissons"
    },
    {
     "q": "Quels sont les principaux vignobles français ?",
@@ -26631,7 +26721,7 @@ export const TTCQ_THEMES = [
      "Cognac, Armagnac, Calvados",
      "Bordeaux, Bourgogne, Vallée du Rhône, Alsace, Loire"
     ],
-    "a": 3
+    "a": "Bordeaux, Bourgogne, Vallée du Rhône, Alsace, Loire"
    },
    {
     "q": "Qu'est-ce qu'un digestif en France ?",
@@ -26641,7 +26731,7 @@ export const TTCQ_THEMES = [
      "Vin",
      "Apéritif"
     ],
-    "a": 1
+    "a": "Boisson alcoolisée prise après le repas"
    },
    {
     "q": "Combien de litres d'alcool pur un Français consomme-t-il par an en moyenne ?",
@@ -26651,7 +26741,7 @@ export const TTCQ_THEMES = [
      "Environ 10-12 litres",
      "Environ 5 litres"
     ],
-    "a": 2
+    "a": "Environ 10-12 litres"
    },
    {
     "q": "Qu'est-ce qu'une cave à vin en France ?",
@@ -26661,7 +26751,7 @@ export const TTCQ_THEMES = [
      "Bar à vin",
      "Caveau"
     ],
-    "a": 0
+    "a": "Lieu de stockage et de vieillissement du vin"
    },
    {
     "q": "Quelle loi française réglemente l'IVresse publique ?",
@@ -26671,9 +26761,10 @@ export const TTCQ_THEMES = [
      "Loi de 1905",
      "Ivresse publique et manifeste est une contravention"
     ],
-    "a": 3
+    "a": "Ivresse publique et manifeste est une contravention"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "alcool_017",
@@ -26689,7 +26780,7 @@ export const TTCQ_THEMES = [
      "En l'activant",
      "En le stimulant"
     ],
-    "a": 0
+    "a": "En déprimant le système nerveux central"
    },
    {
     "q": "Quels sont les effets à court terme de l'alcool ?",
@@ -26699,7 +26790,7 @@ export const TTCQ_THEMES = [
      "Concentration",
      "Désinhibition, euphorie, baisse des réflexes"
     ],
-    "a": 3
+    "a": "Désinhibition, euphorie, baisse des réflexes"
    },
    {
     "q": "Qu'est-ce que l'ivresse ?",
@@ -26709,7 +26800,7 @@ export const TTCQ_THEMES = [
      "Intoxication",
      "Maladie"
     ],
-    "a": 1
+    "a": "État de perturbation dû à l'alcool"
    },
    {
     "q": "Quels sont les stades de l'ivresse ?",
@@ -26719,7 +26810,7 @@ export const TTCQ_THEMES = [
      "Excitation, désinhibition, confusion, stupeur, coma",
      "Léger, moyen, fort"
     ],
-    "a": 2
+    "a": "Excitation, désinhibition, confusion, stupeur, coma"
    },
    {
     "q": "Qu'est-ce que le coma éthylique ?",
@@ -26729,7 +26820,7 @@ export const TTCQ_THEMES = [
      "Gueule de bois",
      "Sommeil profond"
     ],
-    "a": 1
+    "a": "Perte de conscience due à une intoxication alcoolique aiguë"
    },
    {
     "q": "Quels sont les effets de l'alcool sur le sommeil ?",
@@ -26739,7 +26830,7 @@ export const TTCQ_THEMES = [
      "Il augmente la durée du sommeil",
      "Il améliore le sommeil"
     ],
-    "a": 0
+    "a": "Il perturbe le sommeil profond et la qualité du repos"
    },
    {
     "q": "L'alcool peut-il causer des trous noirs (blackouts) ?",
@@ -26749,7 +26840,7 @@ export const TTCQ_THEMES = [
      "Non, seulement chez les alcooliques",
      "Oui, chez tout le monde"
     ],
-    "a": 0
+    "a": "Oui, à forte dose, il peut empêcher la formation de souvenirs"
    },
    {
     "q": "Qu'est-ce que l'intoxication alcoolique aiguë ?",
@@ -26759,9 +26850,10 @@ export const TTCQ_THEMES = [
      "Consommation modérée",
      "Surconsommation rapide d'alcool pouvant mettre la vie en danger"
     ],
-    "a": 3
+    "a": "Surconsommation rapide d'alcool pouvant mettre la vie en danger"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "alcool_018",
@@ -26777,7 +26869,7 @@ export const TTCQ_THEMES = [
      "Calculs biliaires",
      "Cancer uniquement"
     ],
-    "a": 1
+    "a": "Stéatose, hépatite alcoolique, cirrhose"
    },
    {
     "q": "L'alcool est-il classé comme cancérogène ?",
@@ -26787,7 +26879,7 @@ export const TTCQ_THEMES = [
      "Uniquement pour le cancer du foie",
      "Oui, par l'OMS (groupe 1)"
     ],
-    "a": 3
+    "a": "Oui, par l'OMS (groupe 1)"
    },
    {
     "q": "À quels cancers l'alcool est-il lié ?",
@@ -26797,7 +26889,7 @@ export const TTCQ_THEMES = [
      "Uniquement au cancer de l'estomac",
      "Uniquement au cancer du foie"
     ],
-    "a": 0
+    "a": "Cancers de la bouche, gorge, foie, sein, côlon"
    },
    {
     "q": "Qu'est-ce que le syndrome d'alcoolisation fœtale (SAF) ?",
@@ -26807,7 +26899,7 @@ export const TTCQ_THEMES = [
      "Trouble alimentaire",
      "Ensemble de malformations chez l'enfant dues à l'alcool pendant la grossesse"
     ],
-    "a": 3
+    "a": "Ensemble de malformations chez l'enfant dues à l'alcool pendant la grossesse"
    },
    {
     "q": "L'alcool est-il bon pour le cœur à petite dose ?",
@@ -26817,7 +26909,7 @@ export const TTCQ_THEMES = [
      "Oui, recommandé",
      "Oui, très bon"
     ],
-    "a": 1
+    "a": "Le débat est controversé, les risques l'emportent"
    },
    {
     "q": "Qu'est-ce que la cardiomyopathie alcoolique ?",
@@ -26827,7 +26919,7 @@ export const TTCQ_THEMES = [
      "Infarctus",
      "Trouble du rythme"
     ],
-    "a": 0
+    "a": "Maladie du muscle cardiaque due à l'alcool"
    },
    {
     "q": "Combien de maladies sont liées à l'alcool ?",
@@ -26837,7 +26929,7 @@ export const TTCQ_THEMES = [
      "Environ 50",
      "Environ 20"
     ],
-    "a": 0
+    "a": "Plus de 200 maladies et troubles"
    },
    {
     "q": "Qu'est-ce que la pancréatite alcoolique ?",
@@ -26847,9 +26939,10 @@ export const TTCQ_THEMES = [
      "Inflammation du pancréas due à la consommation d'alcool",
      "Calculs"
     ],
-    "a": 2
+    "a": "Inflammation du pancréas due à la consommation d'alcool"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "alcool_019",
@@ -26865,7 +26958,7 @@ export const TTCQ_THEMES = [
      "Plus de 500",
      "Plus de 1 000"
     ],
-    "a": 3
+    "a": "Plus de 1 000"
    },
    {
     "q": "Quel est le risque d'accident avec 0,5 g/L d'alcoolémie ?",
@@ -26875,7 +26968,7 @@ export const TTCQ_THEMES = [
      "Risque multiplié par 1,5",
      "Risque multiplié par 2"
     ],
-    "a": 3
+    "a": "Risque multiplié par 2"
    },
    {
     "q": "À partir de combien de verres le taux d'alcoolémie dépasse-t-il 0,5 g/L ?",
@@ -26885,7 +26978,7 @@ export const TTCQ_THEMES = [
      "1 verre",
      "3 verres pour une femme, 4 pour un homme"
     ],
-    "a": 0
+    "a": "2 verres pour une femme, 3 pour un homme"
    },
    {
     "q": "Quelles sont les sanctions pour alcoolémie entre 0,5 et 0,8 g/L ?",
@@ -26895,7 +26988,7 @@ export const TTCQ_THEMES = [
      "Prison",
      "Amende forfaitaire et retrait de 6 points"
     ],
-    "a": 3
+    "a": "Amende forfaitaire et retrait de 6 points"
    },
    {
     "q": "Qu'est-ce qu'un éthylotest anti-démarrage (EAD) ?",
@@ -26905,7 +26998,7 @@ export const TTCQ_THEMES = [
      "Test salivaire",
      "Verrouillage automatique"
     ],
-    "a": 0
+    "a": "Dispositif qui empêche le démarrage si l'alcoolémie est positive"
    },
    {
     "q": "Quel pourcentage des accidents mortels impliquent l'alcool en France ?",
@@ -26915,7 +27008,7 @@ export const TTCQ_THEMES = [
      "Environ 20%",
      "Environ 10%"
     ],
-    "a": 0
+    "a": "Environ 30%"
    },
    {
     "q": "Que risque-t-on pour un refus de se soumettre à un dépistage d'alcoolémie ?",
@@ -26925,7 +27018,7 @@ export const TTCQ_THEMES = [
      "Les mêmes peines que pour conduite en état d'ivresse",
      "Amende"
     ],
-    "a": 2
+    "a": "Les mêmes peines que pour conduite en état d'ivresse"
    },
    {
     "q": "Quel est le taux d'alcoolémie considéré comme un délit en France ?",
@@ -26935,9 +27028,10 @@ export const TTCQ_THEMES = [
      "Au-dessus de 0,8 g/L",
      "Au-dessus de 1,0 g/L"
     ],
-    "a": 2
+    "a": "Au-dessus de 0,8 g/L"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "alcool_020",
@@ -26953,7 +27047,7 @@ export const TTCQ_THEMES = [
      "Dégustation",
      "Culture de la vigne"
     ],
-    "a": 0
+    "a": "Processus de transformation du raisin en vin"
    },
    {
     "q": "Quelles sont les étapes de la vinification en rouge ?",
@@ -26963,7 +27057,7 @@ export const TTCQ_THEMES = [
      "Pressurage, fermentation, élevage",
      "Récolte, pressurage, filtration"
     ],
-    "a": 0
+    "a": "Foulage, fermentation, macération, élevage"
    },
    {
     "q": "Qu'est-ce que la fermentation alcoolique ?",
@@ -26973,7 +27067,7 @@ export const TTCQ_THEMES = [
      "Macération",
      "Transformation du sucre en alcool par les levures"
     ],
-    "a": 3
+    "a": "Transformation du sucre en alcool par les levures"
    },
    {
     "q": "Qu'est-ce que la macération en vinification ?",
@@ -26983,7 +27077,7 @@ export const TTCQ_THEMES = [
      "Contact du jus avec les peaux pour extraire couleur et tanins",
      "Pressurage"
     ],
-    "a": 2
+    "a": "Contact du jus avec les peaux pour extraire couleur et tanins"
    },
    {
     "q": "Qu'est-ce que l'élevage du vin ?",
@@ -26993,7 +27087,7 @@ export const TTCQ_THEMES = [
      "Vieillissement en cuve ou en fût avant la mise en bouteille",
      "Vinification"
     ],
-    "a": 2
+    "a": "Vieillissement en cuve ou en fût avant la mise en bouteille"
    },
    {
     "q": "Qu'est-ce qu'une cave de vinification ?",
@@ -27003,7 +27097,7 @@ export const TTCQ_THEMES = [
      "Cave à vin",
      "Lieu où le vin est élaboré et élevé"
     ],
-    "a": 3
+    "a": "Lieu où le vin est élaboré et élevé"
    },
    {
     "q": "Qu'est-ce que les tanins dans le vin ?",
@@ -27013,7 +27107,7 @@ export const TTCQ_THEMES = [
      "Couleur",
      "Sucre"
     ],
-    "a": 0
+    "a": "Composés naturels qui donnent de la structure et de l'astringence"
    },
    {
     "q": "Qu'est-ce qu'un vin nature (sans sulfites ajoutés) ?",
@@ -27023,9 +27117,10 @@ export const TTCQ_THEMES = [
      "Vin artisanal",
      "Vin non alcoolisé"
     ],
-    "a": 0
+    "a": "Vin produit sans additifs chimiques, notamment sans soufre ajouté"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "alcool_021",
@@ -27041,7 +27136,7 @@ export const TTCQ_THEMES = [
      "Processus de fabrication de la bière",
      "Fabrication du malt"
     ],
-    "a": 2
+    "a": "Processus de fabrication de la bière"
    },
    {
     "q": "Quelles sont les étapes du brassage ?",
@@ -27051,7 +27146,7 @@ export const TTCQ_THEMES = [
      "Macération, pressurage, élevage",
      "Récolte, séchage, broyage"
     ],
-    "a": 1
+    "a": "Empâtage, filtration, ébullition, fermentation, garde"
    },
    {
     "q": "Qu'est-ce que l'empâtage ?",
@@ -27061,7 +27156,7 @@ export const TTCQ_THEMES = [
      "Fermentation",
      "Filtration"
     ],
-    "a": 0
+    "a": "Mélange du malt concassé avec de l'eau chaude pour extraire les sucres"
    },
    {
     "q": "Qu'est-ce que le malt ?",
@@ -27071,7 +27166,7 @@ export const TTCQ_THEMES = [
      "Orge germée puis séchée pour le brassage",
      "Levure"
     ],
-    "a": 2
+    "a": "Orge germée puis séchée pour le brassage"
    },
    {
     "q": "Qu'est-ce que le moût de bière ?",
@@ -27081,7 +27176,7 @@ export const TTCQ_THEMES = [
      "Résidu de brassage",
      "Bière non filtrée"
     ],
-    "a": 0
+    "a": "Liquide sucré extrait du malt avant fermentation"
    },
    {
     "q": "À quoi sert l'ébullition du moût ?",
@@ -27091,7 +27186,7 @@ export const TTCQ_THEMES = [
      "Fermentation",
      "Stérilisation et extraction des saveurs du houblon"
     ],
-    "a": 3
+    "a": "Stérilisation et extraction des saveurs du houblon"
    },
    {
     "q": "Qu'est-ce que la garde de la bière ?",
@@ -27101,7 +27196,7 @@ export const TTCQ_THEMES = [
      "Filtration",
      "Période de maturation après fermentation"
     ],
-    "a": 3
+    "a": "Période de maturation après fermentation"
    },
    {
     "q": "Qu'est-ce qu'une microbrasserie ?",
@@ -27111,9 +27206,10 @@ export const TTCQ_THEMES = [
      "Bar à bière",
      "Grande brasserie"
     ],
-    "a": 0
+    "a": "Petite brasserie artisanale produisant des volumes limités"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "alcool_022",
@@ -27129,7 +27225,7 @@ export const TTCQ_THEMES = [
      "Filtration",
      "Macération"
     ],
-    "a": 0
+    "a": "Procédé de séparation de l'alcool par chauffage et condensation"
    },
    {
     "q": "Qui a inventé l'alambic ?",
@@ -27139,7 +27235,7 @@ export const TTCQ_THEMES = [
      "Les Romains",
      "Les Arabes au Moyen Âge"
     ],
-    "a": 3
+    "a": "Les Arabes au Moyen Âge"
    },
    {
     "q": "Qu'est-ce qu'un alambic ?",
@@ -27149,7 +27245,7 @@ export const TTCQ_THEMES = [
      "Fermenteur",
      "Appareil de distillation composé d'un bouilleur et d'un réfrigérant"
     ],
-    "a": 3
+    "a": "Appareil de distillation composé d'un bouilleur et d'un réfrigérant"
    },
    {
     "q": "Qu'est-ce que la double distillation ?",
@@ -27159,7 +27255,7 @@ export const TTCQ_THEMES = [
      "Deux alambics",
      "Distillation effectuée deux fois pour obtenir un alcool plus pur"
     ],
-    "a": 3
+    "a": "Distillation effectuée deux fois pour obtenir un alcool plus pur"
    },
    {
     "q": "Quels spiritueux sont doublement distillés ?",
@@ -27169,7 +27265,7 @@ export const TTCQ_THEMES = [
      "Vodka, gin",
      "Bière, vin"
     ],
-    "a": 1
+    "a": "Cognac, whisky écossais, armagnac"
    },
    {
     "q": "Qu'est-ce que le degré d'alcool (% vol) ?",
@@ -27179,7 +27275,7 @@ export const TTCQ_THEMES = [
      "Pourcentage d'alcool pur dans un volume de boisson",
      "Force de l'alcool"
     ],
-    "a": 2
+    "a": "Pourcentage d'alcool pur dans un volume de boisson"
    },
    {
     "q": "Qu'est-ce que la tête, le cœur et la queue en distillation ?",
@@ -27189,7 +27285,7 @@ export const TTCQ_THEMES = [
      "Qualités de l'alcool",
      "Parties de l'alambic"
     ],
-    "a": 0
+    "a": "Fractions du distillat recueillies à différents moments"
    },
    {
     "q": "Qu'est-ce que le calvados ?",
@@ -27199,9 +27295,10 @@ export const TTCQ_THEMES = [
      "Alcool de vin",
      "Eau-de-vie de cidre produite en Normandie"
     ],
-    "a": 3
+    "a": "Eau-de-vie de cidre produite en Normandie"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "alcool_023",
@@ -27217,7 +27314,7 @@ export const TTCQ_THEMES = [
      "Uniquement le vin interdit",
      "Autorisé avec modération"
     ],
-    "a": 0
+    "a": "Interdit (haram)"
    },
    {
     "q": "Quelle est la position du christianisme sur l'alcool ?",
@@ -27227,7 +27324,7 @@ export const TTCQ_THEMES = [
      "Uniquement le vin autorisé",
      "Autorisé sans limite"
     ],
-    "a": 0
+    "a": "Généralement autorisé avec modération"
    },
    {
     "q": "Quelle est la position du judaïsme sur l'alcool ?",
@@ -27237,7 +27334,7 @@ export const TTCQ_THEMES = [
      "Uniquement la bière autorisée",
      "Interdit"
     ],
-    "a": 1
+    "a": "Autorisé avec modération, le vin a un rôle rituel"
    },
    {
     "q": "Qu'est-ce que le vin de messe ?",
@@ -27247,7 +27344,7 @@ export const TTCQ_THEMES = [
      "Vin sucré",
      "Vin sans alcool"
     ],
-    "a": 1
+    "a": "Vin utilisé dans la liturgie chrétienne"
    },
    {
     "q": "Qu'est-ce que le Kiddouch dans le judaïsme ?",
@@ -27257,7 +27354,7 @@ export const TTCQ_THEMES = [
      "Rituel juif",
      "Chant"
     ],
-    "a": 0
+    "a": "Bénédiction sur le vin lors du Shabbat et des fêtes"
    },
    {
     "q": "Dans quelle religion l'alcool est-il totalement prohibé ?",
@@ -27267,7 +27364,7 @@ export const TTCQ_THEMES = [
      "Judaïsme",
      "Islam"
     ],
-    "a": 3
+    "a": "Islam"
    },
    {
     "q": "Qu'est-ce que la bière sans alcool ?",
@@ -27277,7 +27374,7 @@ export const TTCQ_THEMES = [
      "Boisson gazeuse",
      "Jus de malt"
     ],
-    "a": 0
+    "a": "Bière dont l'alcool a été retiré après fermentation"
    },
    {
     "q": "Quels pays musulmans autorisent la production d'alcool ?",
@@ -27287,9 +27384,10 @@ export const TTCQ_THEMES = [
      "Arabie saoudite, Koweït",
      "Iran, Yémen"
     ],
-    "a": 0
+    "a": "Maroc, Tunisie, Liban, Turquie"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "alcool_024",
@@ -27305,7 +27403,7 @@ export const TTCQ_THEMES = [
      "Régulation de l'alcool",
      "Interdiction légale de la production et vente d'alcool"
     ],
-    "a": 3
+    "a": "Interdiction légale de la production et vente d'alcool"
    },
    {
     "q": "Quand la prohibition a-t-elle eu lieu aux États-Unis ?",
@@ -27315,7 +27413,7 @@ export const TTCQ_THEMES = [
      "1910-1920",
      "1900-1910"
     ],
-    "a": 1
+    "a": "1920-1933"
    },
    {
     "q": "Qu'est-ce que le 18e amendement américain ?",
@@ -27325,7 +27423,7 @@ export const TTCQ_THEMES = [
      "Fin de la prohibition",
      "Liberté d'expression"
     ],
-    "a": 1
+    "a": "Loi qui a instauré la prohibition aux États-Unis"
    },
    {
     "q": "Qui a aboli la prohibition aux USA ?",
@@ -27335,7 +27433,7 @@ export const TTCQ_THEMES = [
      "La Cour suprême",
      "Le président Hoover"
     ],
-    "a": 1
+    "a": "Le 21e amendement (1933)"
    },
    {
     "q": "Quelles ont été les conséquences de la prohibition ?",
@@ -27345,7 +27443,7 @@ export const TTCQ_THEMES = [
      "Marché noir, contrebande, mafia, alambics clandestins",
      "Santé publique améliorée"
     ],
-    "a": 2
+    "a": "Marché noir, contrebande, mafia, alambics clandestins"
    },
    {
     "q": "Qui était Al Capone ?",
@@ -27355,7 +27453,7 @@ export const TTCQ_THEMES = [
      "Célèbre gangster ayant profité du marché noir de l'alcool",
      "Homme politique"
     ],
-    "a": 2
+    "a": "Célèbre gangster ayant profité du marché noir de l'alcool"
    },
    {
     "q": "Qu'est-ce qu'un speakeasy ?",
@@ -27365,7 +27463,7 @@ export const TTCQ_THEMES = [
      "Disco",
      "Bar clandestin pendant la prohibition américaine"
     ],
-    "a": 3
+    "a": "Bar clandestin pendant la prohibition américaine"
    },
    {
     "q": "Quels pays ont eu une période de prohibition ?",
@@ -27375,9 +27473,10 @@ export const TTCQ_THEMES = [
      "Japon, Chine",
      "France, Italie, Espagne"
     ],
-    "a": 1
+    "a": "USA, Finlande, Norvège, Islande, Canada (certaines provinces)"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "alcool_025",
@@ -27393,7 +27492,7 @@ export const TTCQ_THEMES = [
      "Pas plus d'un verre par semaine",
      "Pas plus de 2 verres par jour et pas tous les jours"
     ],
-    "a": 3
+    "a": "Pas plus de 2 verres par jour et pas tous les jours"
    },
    {
     "q": "Quelles sont les recommandations françaises pour la consommation d'alcool ?",
@@ -27403,7 +27502,7 @@ export const TTCQ_THEMES = [
      "Pas de limite",
      "1 verre par jour"
     ],
-    "a": 1
+    "a": "Maximum 10 verres par semaine, 2 verres par jour"
    },
    {
     "q": "Qu'est-ce qu'un verre standard d'alcool ?",
@@ -27413,7 +27512,7 @@ export const TTCQ_THEMES = [
      "15 grammes",
      "5 grammes"
     ],
-    "a": 1
+    "a": "10 grammes d'alcool pur"
    },
    {
     "q": "Qu'est-ce qu'une unité d'alcool ?",
@@ -27423,7 +27522,7 @@ export const TTCQ_THEMES = [
      "Mesure standard correspondant à un verre",
      "Degré"
     ],
-    "a": 2
+    "a": "Mesure standard correspondant à un verre"
    },
    {
     "q": "Quels sont les bienfaits possibles d'une consommation modérée ?",
@@ -27433,7 +27532,7 @@ export const TTCQ_THEMES = [
      "Protection cardiaque",
      "Controversés, les risques l'emportent sur les bénéfices"
     ],
-    "a": 3
+    "a": "Controversés, les risques l'emportent sur les bénéfices"
    },
    {
     "q": "Qu'est-ce qu'un jour sans alcool ?",
@@ -27443,7 +27542,7 @@ export const TTCQ_THEMES = [
      "Régime",
      "Jeûne"
     ],
-    "a": 0
+    "a": "Journée sans consommation d'alcool recommandée régulièrement"
    },
    {
     "q": "Les Français suivent-ils les recommandations de modération ?",
@@ -27453,7 +27552,7 @@ export const TTCQ_THEMES = [
      "Oui, à 80%",
      "Non, une partie importante dépasse les recommandations"
     ],
-    "a": 3
+    "a": "Non, une partie importante dépasse les recommandations"
    },
    {
     "q": "Qu'est-ce que le Dry January (Mois sans alcool) ?",
@@ -27463,9 +27562,10 @@ export const TTCQ_THEMES = [
      "Mois de la modération",
      "Régime"
     ],
-    "a": 0
+    "a": "Défi d'abstinence d'alcool pendant le mois de janvier"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "insolite_101",
