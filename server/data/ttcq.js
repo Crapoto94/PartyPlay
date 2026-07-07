@@ -8152,86 +8152,87 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "De quelle région de l'Inde vient le bhangra ?",
+    "q": "De quelle région d'Asie du Sud le bhangra est-il originaire ? Le ___ (nord de l'Inde/Pakistan) ?",
     "c": [
-     "Le Pendjab",
-     "Le Rajasthan",
-     "L'Haryana",
-     "Le Gujarat"
+     "Pendjab",
+     "Bengale",
+     "Kerala",
+     "Tibet"
     ],
-    "a": 0
+    "a": "Pendjab"
    },
    {
-    "q": "Quel instrument à percussion est essentiel au bhangra ?",
+    "q": "Le bhangra est avant tout une musique de fête et de ___ ?",
     "c": [
-     "Le tabla",
-     "Le dhol",
-     "Le tambour",
-     "Le sitar"
+     "danse",
+     "prière",
+     "deuil",
+     "sieste"
     ],
-    "a": 1
+    "a": "danse"
    },
    {
-    "q": "Quelle fête agricole est associée au bhangra ?",
+    "q": "Quel grand tambour à deux faces, joué avec des baguettes, rythme le bhangra ? Le ___ ?",
     "c": [
-     "Durga Puja",
+     "dhol",
+     "sitar",
+     "tabla",
+     "veena"
+    ],
+    "a": "dhol"
+   },
+   {
+    "q": "À l'origine, le bhangra célébrait quelle activité agricole ? Les ___ (récoltes) ?",
+    "c": [
+     "moissons",
+     "semailles",
+     "vendanges",
+     "labours"
+    ],
+    "a": "moissons"
+   },
+   {
+    "q": "Avec quelle musique occidentale le bhangra moderne fusionne-t-il souvent ? Le ___ (hip-hop/électro) ?",
+    "c": [
+     "hip-hop",
+     "jazz",
+     "opéra",
+     "gospel"
+    ],
+    "a": "hip-hop"
+   },
+   {
+    "q": "Dans quel pays, grâce à sa diaspora indienne, le bhangra moderne a-t-il explosé ? Le ___-Uni ?",
+    "c": [
+     "Royaume",
+     "États",
+     "Émirats",
+     "Pays"
+    ],
+    "a": "Royaume"
+   },
+   {
+    "q": "Pendant quel festival des récoltes du printemps danse-t-on le bhangra ? Le ___ ?",
+    "c": [
+     "Vaisakhi",
      "Diwali",
      "Holi",
-     "Vaisakhi"
+     "Eid"
     ],
-    "a": 3
+    "a": "Vaisakhi"
    },
    {
-    "q": "Quel groupe britannico-pendjabi a popularisé le bhangra ?",
+    "q": "En quelle décennie le bhangra fusion moderne émerge-t-il au Royaume-Uni ? Les années ___ ?",
     "c": [
-     "Panjabi MC",
-     "Malkit Singh",
-     "Bally Sagoo",
-     "Alaap"
+     "1980",
+     "1950",
+     "2000",
+     "1930"
     ],
-    "a": 0
-   },
-   {
-    "q": "Quel DJ a samplé 'Mundian To Bach Ke' dans un hit mondial ?",
-    "c": [
-     "Panjabi MC",
-     "Skrillex",
-     "Dillon Francis",
-     "Diplo"
-    ],
-    "a": 0
-   },
-   {
-    "q": "En quelle année le bhangra a-t-il été popularisé au Royaume-Uni ?",
-    "c": [
-     "Années 1970",
-     "Années 2000",
-     "Années 1990",
-     "Années 1980"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel instrument indien classique est parfois ajouté au bhangra ?",
-    "c": [
-     "Le harmonium",
-     "Le tabla",
-     "Le sarod",
-     "Le sitar"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quel chanteur pendjabi est connu comme 'The King of Bhangra' ?",
-    "c": [
-     "Kuldeep Manak",
-     "Daler Mehndi",
-     "Gurdas Maan",
-     "Malkit Singh"
-    ],
-    "a": 3
+    "a": "1980"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "musique_022",
@@ -8240,86 +8241,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "De quel pays vient le fado ?",
+    "q": "De quel pays le fado est-il l'âme musicale ?",
     "c": [
-     "Espagne",
      "Portugal",
-     "Grèce",
+     "Espagne",
+     "Brésil",
      "Italie"
     ],
-    "a": 1
+    "a": "Portugal"
    },
    {
-    "q": "Quelle chanteuse de fado est une légende ?",
-    "c": [
-     "Dulce Pontes",
-     "Carminho",
-     "Amália Rodrigues",
-     "Mariza"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quel instrument est indispensable au fado ?",
-    "c": [
-     "La guitare classique",
-     "Le violon",
-     "Le piano",
-     "La guitare portugaise"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Que signifie le mot 'fado' en portugais ?",
-    "c": [
-     "Chanson",
-     "Tristesse",
-     "Destin",
-     "Fatalité"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Dans quelle ville portugaise le fado est-il né ?",
+    "q": "Dans quelle capitale, ses quartiers d'Alfama, le fado résonne-t-il surtout ?",
     "c": [
      "Lisbonne",
-     "Faro",
-     "Coimbra",
-     "Porto"
+     "Porto",
+     "Madrid",
+     "Rome"
     ],
-    "a": 0
+    "a": "Lisbonne"
    },
    {
-    "q": "Quels sont les deux styles principaux de fado ?",
+    "q": "Quel sentiment de mélancolie et de nostalgie exprime le fado ? La ___ ?",
     "c": [
-     "Fado vocal et instrumental",
-     "Fado triste et joyeux",
-     "Fado de Lisbonne et de Coimbra",
-     "Fado classique et contemporain"
+     "saudade",
+     "alegria",
+     "fiesta",
+     "tristeza"
     ],
-    "a": 2
+    "a": "saudade"
    },
    {
-    "q": "En quelle année le fado a-t-il été classé patrimoine de l'UNESCO ?",
+    "q": "Quel instrument à cordes en forme de poire accompagne le fado ? La ___ portugaise ?",
     "c": [
-     "2011",
-     "2015",
-     "2013",
-     "2008"
+     "guitare",
+     "harpe",
+     "flûte",
+     "mandoline"
     ],
-    "a": 0
+    "a": "guitare"
    },
    {
-    "q": "Quel chanteur de fado a popularisé le genre hors du Portugal ?",
+    "q": "Quelle chanteuse en noir est la plus grande légende du fado ? Amália ___ ?",
     "c": [
-     "Carlos do Carmo",
-     "Mariza",
-     "Camane",
-     "Amália Rodrigues"
+     "Rodrigues",
+     "Mouskouri",
+     "Baker",
+     "Gulbenkian"
     ],
-    "a": 0
+    "a": "Rodrigues"
+   },
+   {
+    "q": "De quel mot latin signifiant « destin » vient le mot « fado » ?",
+    "c": [
+     "fatum",
+     "fadus",
+     "vita",
+     "sonus"
+    ],
+    "a": "fatum"
+   },
+   {
+    "q": "Quelle chanteuse de fado contemporaine, prénommée Mariza, l'a modernisé et fait connaître au monde : de quel pays africain lusophone est-elle née ? Le ___ ?",
+    "c": [
+     "Mozambique",
+     "Angola",
+     "Cap-Vert",
+     "Guinée"
+    ],
+    "a": "Mozambique"
+   },
+   {
+    "q": "En quelle année l'UNESCO a-t-elle classé le fado au patrimoine immatériel ?",
+    "a": "2011"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "histoire_001",
@@ -8328,86 +8324,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "En quelle année la Révolution française a-t-elle commencé ?",
-    "c": [
-     "1789",
-     "1793",
-     "1791",
-     "1787"
-    ],
-    "a": 0
+    "q": "En quelle année a commencé la Révolution française ?",
+    "a": "1789"
    },
    {
-    "q": "Quelle prison a été prise le 14 juillet 1789 ?",
+    "q": "Quelle forteresse-prison parisienne a été prise le 14 juillet 1789 ? La ___ ?",
     "c": [
-     "Le Châtelet",
-     "La Bastille",
-     "La Conciergerie",
-     "Vincennes"
+     "Bastille",
+     "Conciergerie",
+     "Sorbonne",
+     "Sainte-Chapelle"
     ],
-    "a": 1
+    "a": "Bastille"
    },
    {
-    "q": "Qui était le roi de France au début de la Révolution ?",
+    "q": "Quelle machine à décapiter a été le symbole de la Terreur ? La ___ ?",
     "c": [
-     "Louis XV",
-     "Louis XVI",
-     "Louis XIV",
-     "Louis XVIII"
+     "guillotine",
+     "potence",
+     "roue",
+     "hache"
     ],
-    "a": 1
+    "a": "guillotine"
    },
    {
-    "q": "Quel document proclame les droits de l'homme en 1789 ?",
+    "q": "Quel roi de France a été guillotiné en 1793 ? Louis ___ ?",
     "c": [
-     "Le Code civil",
-     "La Charte",
-     "La Constitution",
-     "La Déclaration des droits de l'homme"
+     "XVI",
+     "XIV",
+     "XV",
+     "XVII"
     ],
-    "a": 3
+    "a": "XVI"
    },
    {
-    "q": "Comment s'appelle la période la plus violente de la Révolution ?",
+    "q": "Quels sont les trois mots de la devise républicaine née de la Révolution ? Liberté, Égalité, ___ ?",
     "c": [
-     "Le Consulat",
-     "La Convention",
-     "Le Directoire",
-     "La Terreur"
+     "Fraternité",
+     "Prospérité",
+     "Vérité",
+     "Sécurité"
     ],
-    "a": 3
+    "a": "Fraternité"
    },
    {
-    "q": "Quel outil de mort est emblématique de la Révolution ?",
+    "q": "Quelle reine, épouse de Louis XVI, a aussi été guillotinée ? Marie-___ ?",
     "c": [
-     "La potence",
-     "Le bûcher",
-     "La guillotine",
-     "L'épée"
+     "Antoinette",
+     "Thérèse",
+     "Louise",
+     "Adélaïde"
     ],
-    "a": 2
+    "a": "Antoinette"
    },
    {
-    "q": "Qui a dirigé le Comité de salut public en 1793 ?",
+    "q": "Quel révolutionnaire, chef de la Terreur, a été surnommé « l'Incorruptible » ?",
     "c": [
-     "Saint-Just",
-     "Marat",
+     "Robespierre",
      "Danton",
-     "Robespierre"
+     "Marat",
+     "Saint-Just"
     ],
-    "a": 3
+    "a": "Robespierre"
    },
    {
-    "q": "En quelle année la Révolution française a-t-elle officiellement pris fin ?",
-    "c": [
-     "1800",
-     "1794",
-     "1795",
-     "1799"
-    ],
-    "a": 3
+    "q": "En quelle année, jour pour jour le 9 Thermidor, Robespierre est-il tombé ? Année : ?",
+    "a": "1794"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "histoire_002",
@@ -8416,86 +8401,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel fleuve traverse Rome ?",
-    "c": [
-     "Le Tibre",
-     "Le Pô",
-     "L'Arno",
-     "L'Adige"
-    ],
-    "a": 0
+    "q": "Quelle ville était la capitale de l'Empire romain ?",
+    "a": "Rome"
    },
    {
-    "q": "Qui a fondé Rome selon la légende ?",
+    "q": "Comment appelait-on le chef suprême de l'Empire romain ? Un ___ ?",
     "c": [
-     "Énée",
-     "Jules César",
-     "Romulus",
-     "Rémus"
+     "empereur",
+     "roi",
+     "pharaon",
+     "sultan"
     ],
-    "a": 2
+    "a": "empereur"
    },
    {
-    "q": "En quelle année Rome a-t-elle été fondée selon la légende ?",
+    "q": "Dans quel grand amphithéâtre romain combattaient les gladiateurs ? Le ___ ?",
     "c": [
-     "509 av. J.-C.",
-     "27 av. J.-C.",
-     "476 av. J.-C.",
-     "753 av. J.-C."
+     "Colisée",
+     "Panthéon",
+     "Forum",
+     "Cirque"
     ],
-    "a": 3
+    "a": "Colisée"
    },
    {
-    "q": "Quel empereur a construit le Colisée ?",
+    "q": "Quel général romain a déclaré « Le sort en est jeté » en franchissant le Rubicon ? Jules ___ ?",
+    "c": [
+     "César",
+     "Auguste",
+     "Néron",
+     "Trajan"
+    ],
+    "a": "César"
+   },
+   {
+    "q": "Selon la légende, quels jumeaux allaités par une louve ont fondé Rome ? Romulus et ___ ?",
+    "c": [
+     "Remus",
+     "Titus",
+     "Marcus",
+     "Brutus"
+    ],
+    "a": "Remus"
+   },
+   {
+    "q": "Quel premier empereur romain, fils adoptif de César, a régné à partir de -27 ?",
     "c": [
      "Auguste",
-     "Vespasien",
-     "Trajan",
-     "Néron"
+     "Néron",
+     "Caligula",
+     "Tibère"
     ],
-    "a": 1
+    "a": "Auguste"
    },
    {
-    "q": "Quel général romain a franchi le Rubicon ?",
+    "q": "Quelles longues voies pavées les Romains ont-ils construites à travers l'empire ? Des ___ (routes) ?",
     "c": [
-     "Pompée",
-     "Jules César",
-     "Crassus",
-     "Marc Antoine"
+     "voies",
+     "canaux",
+     "murs",
+     "ponts"
     ],
-    "a": 1
+    "a": "voies"
    },
    {
-    "q": "En quelle année l'Empire romain d'Occident a-t-il chuté ?",
-    "c": [
-     "395",
-     "410",
-     "500",
-     "476"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quelle langue était parlée par les Romains ?",
-    "c": [
-     "Italien",
-     "Étrusque",
-     "Grec",
-     "Latin"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel empereur a divisé l'Empire romain en deux ?",
-    "c": [
-     "Dioclétien",
-     "Justinien",
-     "Constantin",
-     "Théodose"
-    ],
-    "a": 0
+    "q": "En quelle année, selon la tradition, Rome a-t-elle été fondée ? En -___ ?",
+    "a": "753"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "histoire_003",
@@ -8504,86 +8478,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Comment s'appellent les tombeaux des pharaons ?",
+    "q": "Comment appelait-on les rois de l'Égypte ancienne ? Des ___ ?",
     "c": [
-     "Les hypogées",
-     "Les temples",
-     "Les mastabas",
-     "Les pyramides"
+     "pharaons",
+     "empereurs",
+     "califes",
+     "sultans"
     ],
-    "a": 3
+    "a": "pharaons"
    },
    {
-    "q": "Quel fleuve était vital pour la civilisation égyptienne ?",
+    "q": "Quels immenses tombeaux de pierre les pharaons ont-ils fait construire ? Des ___ ?",
     "c": [
-     "Le Nil",
-     "L'Euphrate",
-     "Le Jourdain",
-     "Le Tigre"
+     "pyramides",
+     "temples",
+     "châteaux",
+     "tours"
     ],
-    "a": 0
+    "a": "pyramides"
    },
    {
-    "q": "Qui a déchiffré les hiéroglyphes grâce à la pierre de Rosette ?",
+    "q": "Comment appelle-t-on un corps embaumé et enveloppé de bandelettes ? Une ___ ?",
     "c": [
-     "Carter",
-     "Champollion",
-     "Maspero",
-     "Young"
+     "momie",
+     "statue",
+     "relique",
+     "idole"
     ],
-    "a": 1
+    "a": "momie"
    },
    {
-    "q": "Quel pharaon a régné le plus longtemps ?",
+    "q": "Quelle écriture faite de dessins les Égyptiens utilisaient-ils ? Les ___ ?",
     "c": [
+     "hiéroglyphes",
+     "runes",
+     "idéogrammes",
+     "cunéiformes"
+    ],
+    "a": "hiéroglyphes"
+   },
+   {
+    "q": "Quel jeune pharaon a été retrouvé intact en 1922, avec son masque d'or ?",
+    "c": [
+     "Toutânkhamon",
+     "Ramsès",
      "Khéops",
-     "Ramsès II",
-     "Akhenaton",
-     "Toutankhamon"
+     "Néfertiti"
     ],
-    "a": 1
+    "a": "Toutânkhamon"
    },
    {
-    "q": "En quelle année la pierre de Rosette a-t-elle été découverte ?",
+    "q": "Quelle pierre gravée en trois écritures a permis de déchiffrer les hiéroglyphes ? La pierre de ___ ?",
     "c": [
-     "1798",
-     "1801",
-     "1805",
-     "1799"
+     "Rosette",
+     "Louxor",
+     "Karnak",
+     "Thèbes"
     ],
-    "a": 3
+    "a": "Rosette"
    },
    {
-    "q": "Quelle déesse égyptienne est représentée avec une tête de lionne ?",
+    "q": "Quel dieu égyptien à tête de chacal veillait sur les morts ?",
     "c": [
-     "Hathor",
-     "Sekhmet",
-     "Isis",
-     "Bastet"
+     "Anubis",
+     "Râ",
+     "Horus",
+     "Osiris"
     ],
-    "a": 1
+    "a": "Anubis"
    },
    {
-    "q": "Quel pharaon a introduit le monothéisme en Égypte ?",
-    "c": [
-     "Ramsès II",
-     "Toutankhamon",
-     "Amenhotep III",
-     "Akhenaton"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Combien de pyramides principales y a-t-il à Gizeh ?",
-    "c": [
-     "5",
-     "3",
-     "4",
-     "2"
-    ],
-    "a": 1
+    "q": "En quelle année, avant J.-C., environ, débute l'Ancien Empire égyptien (pyramides) ?",
+    "a": "2686"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "histoire_004",
@@ -8592,86 +8561,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelles deux superpuissances s'affrontaient pendant la Guerre froide ?",
+    "q": "Quelles deux superpuissances s'opposaient pendant la Guerre froide ? Les USA et l'___ ?",
     "c": [
-     "États-Unis et URSS",
-     "URSS et Chine",
-     "États-Unis et Chine",
-     "États-Unis et Europe"
+     "URSS",
+     "Chine",
+     "Inde",
+     "Cuba"
     ],
-    "a": 0
+    "a": "URSS"
    },
    {
-    "q": "En quelle année le mur de Berlin est-il tombé ?",
+    "q": "Quel mur, tombé en 1989, symbolisait la division Est-Ouest ? Le mur de ___ ?",
     "c": [
-     "1990",
-     "1991",
-     "1989",
-     "1987"
+     "Berlin",
+     "Chine",
+     "Prague",
+     "Varsovie"
     ],
-    "a": 2
+    "a": "Berlin"
    },
    {
-    "q": "Quelle était la signification de la 'crise des missiles de Cuba' ?",
+    "q": "De quelle « couleur » qualifie-t-on cette guerre sans combat direct entre grandes puissances ? La guerre ___ ?",
     "c": [
-     "Un blocus naval",
-     "Les USA installaient des missiles en Turquie",
-     "L'URSS installait des missiles à Cuba",
-     "Une invasion de Cuba"
+     "froide",
+     "chaude",
+     "grise",
+     "noire"
     ],
-    "a": 2
+    "a": "froide"
    },
    {
-    "q": "Qui était le président américain pendant la crise des missiles ?",
+    "q": "Quelle course opposait les deux blocs pour aller sur la Lune ? La course à l'___ ?",
     "c": [
-     "John F. Kennedy",
-     "Dwight Eisenhower",
-     "Lyndon Johnson",
-     "Richard Nixon"
+     "espace",
+     "or",
+     "armement",
+     "pétrole"
     ],
-    "a": 0
+    "a": "espace"
    },
    {
-    "q": "Comment s'appelait la ligne de démarcation en Europe ?",
+    "q": "Quelle crise de 1962, autour d'une île, faillit déclencher une guerre nucléaire ? La crise de ___ ?",
     "c": [
-     "La frontière",
-     "Le rideau de fer",
-     "La ligne",
-     "Le mur"
+     "Cuba",
+     "Corée",
+     "Berlin",
+     "Suez"
     ],
-    "a": 1
+    "a": "Cuba"
    },
    {
-    "q": "Quel programme spatial américain a envoyé l'homme sur la Lune ?",
+    "q": "Quel « rideau » métaphorique séparait l'Europe de l'Ouest et de l'Est ? Le rideau de ___ ?",
     "c": [
-     "Mercury",
-     "Gemini",
-     "Vostok",
-     "Apollo"
+     "fer",
+     "feu",
+     "verre",
+     "brume"
     ],
-    "a": 3
+    "a": "fer"
    },
    {
-    "q": "En quelle année l'URSS s'est-elle effondrée ?",
+    "q": "Quel dirigeant soviétique des années 80 a lancé la perestroïka ? Mikhaïl ___ ?",
     "c": [
-     "1992",
-     "1989",
-     "1991",
-     "1990"
+     "Gorbatchev",
+     "Brejnev",
+     "Staline",
+     "Eltsine"
     ],
-    "a": 2
+    "a": "Gorbatchev"
    },
    {
-    "q": "Qui était le dernier dirigeant de l'URSS ?",
-    "c": [
-     "Mikhaïl Gorbatchev",
-     "Leonid Brejnev",
-     "Boris Eltsine",
-     "Konstantin Tchernenko"
-    ],
-    "a": 0
+    "q": "En quelle année l'URSS a-t-elle officiellement cessé d'exister, marquant la fin de la Guerre froide ?",
+    "a": "1991"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "histoire_005",
@@ -8680,86 +8644,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Dans quel pays la Renaissance a-t-elle commencé ?",
+    "q": "Dans quel pays européen la Renaissance est-elle née ? L'___ ?",
     "c": [
+     "Italie",
      "France",
-     "Allemagne",
      "Espagne",
-     "Italie"
+     "Angleterre"
     ],
-    "a": 3
+    "a": "Italie"
    },
    {
-    "q": "Quel artiste a peint la Joconde ?",
+    "q": "Quel génie italien a peint « La Joconde » ? Léonard de ___ ?",
     "c": [
-     "Léonard de Vinci",
+     "Vinci",
+     "Milan",
+     "Rome",
+     "Florence"
+    ],
+    "a": "Vinci"
+   },
+   {
+    "q": "Quelle ville italienne, berceau de la Renaissance, était dominée par les Médicis ?",
+    "c": [
+     "Florence",
+     "Venise",
+     "Naples",
+     "Milan"
+    ],
+    "a": "Florence"
+   },
+   {
+    "q": "Quel artiste a peint le plafond de la chapelle Sixtine ?",
+    "c": [
      "Michel-Ange",
      "Raphaël",
-     "Donatello"
+     "Titien",
+     "Botticelli"
     ],
-    "a": 0
+    "a": "Michel-Ange"
    },
    {
-    "q": "Quel scientifique a été jugé par l'Église pour ses idées ?",
+    "q": "Quelle invention de Gutenberg a permis de diffuser le savoir à la Renaissance ? L'___ ?",
     "c": [
-     "Kepler",
-     "Galilée",
-     "Copernic",
-     "Newton"
+     "imprimerie",
+     "boussole",
+     "lunette",
+     "horloge"
     ],
-    "a": 1
+    "a": "imprimerie"
    },
    {
-    "q": "En quelle année la Renaissance a-t-elle commencé ?",
+    "q": "Quel navigateur génois a atteint l'Amérique en 1492, à l'aube de la Renaissance ?",
     "c": [
-     "XIVe siècle",
-     "XVIe siècle",
-     "XIIIe siècle",
-     "XVe siècle"
+     "Christophe Colomb",
+     "Magellan",
+     "Vasco de Gama",
+     "Vespucci"
     ],
-    "a": 0
+    "a": "Christophe Colomb"
    },
    {
-    "q": "Quelle famille italienne était la plus puissante à Florence ?",
+    "q": "Quel roi de France a fait venir Léonard de Vinci à Amboise ? François ___ ?",
     "c": [
-     "Les Visconti",
-     "Les Borgia",
-     "Les Médicis",
-     "Les Sforza"
+     "Ier",
+     "II",
+     "III",
+     "IV"
     ],
-    "a": 2
+    "a": "Ier"
    },
    {
-    "q": "Quel artiste a sculpté David ?",
-    "c": [
-     "Donatello",
-     "Le Bernin",
-     "Michel-Ange",
-     "Verrocchio"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Qui a inventé l'imprimerie à caractères mobiles ?",
-    "c": [
-     "Caxton",
-     "Fust",
-     "Alde Manuce",
-     "Gutenberg"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel peintre italien est connu pour ses fresques de la chapelle Sixtine ?",
-    "c": [
-     "Botticelli",
-     "Raphaël",
-     "Michel-Ange",
-     "Léonard de Vinci"
-    ],
-    "a": 2
+    "q": "En quelle année, environ, situe-t-on le début de la Renaissance italienne (Quattrocento) ?",
+    "a": "1400"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "histoire_006",
@@ -8768,86 +8727,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "De quelle région d'Europe venaient les Vikings ?",
+    "q": "De quelle région d'Europe les Vikings étaient-ils originaires ? La ___ ?",
     "c": [
-     "Allemagne",
-     "Europe de l'Est",
-     "Îles Britanniques",
-     "Scandinavie"
+     "Scandinavie",
+     "Méditerranée",
+     "Balkans",
+     "Ibérie"
     ],
-    "a": 3
+    "a": "Scandinavie"
    },
    {
-    "q": "Quel type de bateau utilisaient les Vikings ?",
+    "q": "Sur quel type de bateau long et effilé naviguaient les Vikings ? Un ___ (drakkar) ?",
     "c": [
-     "La galère",
-     "Le longship",
-     "Le knarr",
-     "Le drakkar"
+     "drakkar",
+     "galion",
+     "radeau",
+     "sous-marin"
     ],
-    "a": 3
+    "a": "drakkar"
    },
    {
-    "q": "Quel dieu nordique était le principal ?",
+    "q": "Quel casque, à tort, imagine-t-on souvent sur la tête des Vikings ? Un casque à ___ ?",
+    "c": [
+     "cornes",
+     "plumes",
+     "pointes",
+     "ailes"
+    ],
+    "a": "cornes"
+   },
+   {
+    "q": "Quel explorateur viking aurait atteint l'Amérique bien avant Colomb ? Leif ___ ?",
+    "c": [
+     "Erikson",
+     "Ragnar",
+     "Bjorn",
+     "Ivar"
+    ],
+    "a": "Erikson"
+   },
+   {
+    "q": "Quel dieu viking du tonnerre porte un marteau ?",
     "c": [
      "Thor",
+     "Odin",
      "Loki",
-     "Freyr",
-     "Odin"
+     "Freyr"
     ],
-    "a": 3
+    "a": "Thor"
    },
    {
-    "q": "En quelle année les Vikings ont-ils attaqué Lindisfarne ?",
+    "q": "Quel paradis guerrier viking accueillait les héros morts au combat ? Le ___ ?",
     "c": [
-     "793",
-     "750",
-     "850",
-     "800"
+     "Valhalla",
+     "Olympe",
+     "Éden",
+     "Nirvana"
     ],
-    "a": 0
+    "a": "Valhalla"
    },
    {
-    "q": "Quel navigateur viking a atteint l'Amérique du Nord ?",
+    "q": "Quel dieu viking borgne, roi des dieux, régnait sur Asgard ?",
     "c": [
-     "Leif Erikson",
-     "Harald à la Belle Chevelure",
-     "Bjarni Herjólfsson",
-     "Erik le Rouge"
+     "Odin",
+     "Thor",
+     "Loki",
+     "Baldr"
     ],
-    "a": 0
+    "a": "Odin"
    },
    {
-    "q": "Quelle était la religion des Vikings avant le christianisme ?",
-    "c": [
-     "L'animisme",
-     "La mythologie nordique",
-     "Le paganisme",
-     "Le chamanisme"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Comment s'appelle le paradis nordique des guerriers ?",
-    "c": [
-     "Le Helheim",
-     "Le Valhalla",
-     "Le Midgard",
-     "L'Asgard"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quel roi viking a conquis l'Angleterre au XIe siècle ?",
-    "c": [
-     "Knut le Grand",
-     "Sven à la Barbe Fourchue",
-     "Olaf Tryggvason",
-     "Harald Hardrada"
-    ],
-    "a": 0
+    "q": "En quelle année le raid viking de Lindisfarne marque-t-il le début de l'ère viking ?",
+    "a": "793"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "histoire_007",
@@ -8856,86 +8810,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle était la route commerciale reliant la Chine à l'Occident ?",
+    "q": "Quel long ouvrage défensif la Chine ancienne a-t-elle construit contre les invasions ? La Grande ___ ?",
     "c": [
-     "La Route du Thé",
-     "La Route du Jade",
-     "La Route de la Soie",
-     "La Route des Épices"
+     "Muraille",
+     "Digue",
+     "Route",
+     "Tour"
     ],
-    "a": 2
+    "a": "Muraille"
    },
    {
-    "q": "Quel philosophe chinois a fondé le confucianisme ?",
+    "q": "Quelle armée de statues garde le tombeau du premier empereur ? L'armée en terre ___ ?",
     "c": [
-     "Mencius",
+     "cuite",
+     "or",
+     "pierre",
+     "bronze"
+    ],
+    "a": "cuite"
+   },
+   {
+    "q": "Comment appelait-on les familles qui régnaient sur la Chine pendant des siècles ? Des ___ ?",
+    "c": [
+     "dynasties",
+     "républiques",
+     "tribus",
+     "clans"
+    ],
+    "a": "dynasties"
+   },
+   {
+    "q": "Quel penseur chinois, auteur des Entretiens, a fondé une grande philosophie morale ?",
+    "c": [
      "Confucius",
+     "Bouddha",
      "Lao Tseu",
-     "Sun Tzu"
+     "Mencius"
     ],
-    "a": 1
+    "a": "Confucius"
    },
    {
-    "q": "Quelle dynastie a construit la Grande Muraille ?",
+    "q": "Quelle précieuse étoffe, secret bien gardé, la Chine exportait-elle par une route célèbre ? La ___ ?",
     "c": [
-     "Qin",
-     "Ming",
-     "Han",
-     "Tang"
+     "soie",
+     "laine",
+     "toile",
+     "dentelle"
     ],
-    "a": 0
+    "a": "soie"
    },
    {
-    "q": "Quel empereur a unifié la Chine pour la première fois ?",
+    "q": "Quel premier empereur a unifié la Chine en -221 ? Qin Shi ___ ?",
     "c": [
-     "Kangxi",
-     "Han Wudi",
-     "Tang Taizong",
-     "Qin Shi Huang"
+     "Huang",
+     "Long",
+     "Ping",
+     "Kang"
     ],
-    "a": 3
+    "a": "Huang"
    },
    {
-    "q": "En quelle année la Grande Muraille a-t-elle été construite ?",
+    "q": "Quelle invention chinoise, faite de salpêtre, a servi aux feux d'artifice puis aux armes ? La ___ à canon ?",
     "c": [
-     "Au XIIe siècle",
-     "À partir du IIIe siècle av. J.-C.",
-     "Au VIIe siècle",
-     "Au Ier siècle"
+     "poudre",
+     "cendre",
+     "sciure",
+     "chaux"
     ],
-    "a": 1
+    "a": "poudre"
    },
    {
-    "q": "Quelle invention chinoise est l'une des quatre grandes inventions ?",
-    "c": [
-     "Le papier",
-     "L'imprimerie",
-     "La boussole",
-     "Toutes ces réponses"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quelle dynastie a régné le plus longtemps sur la Chine ?",
-    "c": [
-     "Tang",
-     "Ming",
-     "Han",
-     "Zhou"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel explorateur chinois a navigué jusqu'en Afrique ?",
-    "c": [
-     "Xu Fu",
-     "Wang Dayuan",
-     "Zheng He",
-     "Zhang Qian"
-    ],
-    "a": 2
+    "q": "En quelle année, avant J.-C., Qin Shi Huang a-t-il unifié la Chine ? En -___ ?",
+    "a": "221"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "histoire_008",
@@ -8944,86 +8893,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "En quelle année la Seconde Guerre mondiale a-t-elle commencé ?",
-    "c": [
-     "1940",
-     "1937",
-     "1939",
-     "1941"
-    ],
-    "a": 2
+    "q": "En quelle année a commencé la Seconde Guerre mondiale ?",
+    "a": "1939"
    },
    {
-    "q": "Qui était le dictateur de l'Allemagne nazie ?",
+    "q": "Quel dictateur allemand a déclenché la Seconde Guerre mondiale ? Adolf ___ ?",
     "c": [
-     "Joseph Staline",
-     "Adolf Hitler",
-     "Hideki Tojo",
-     "Benito Mussolini"
+     "Hitler",
+     "Mussolini",
+     "Staline",
+     "Franco"
     ],
-    "a": 1
+    "a": "Hitler"
    },
    {
-    "q": "Quel jour a eu lieu le débarquement en Normandie ?",
+    "q": "Quel jour de 1944 les Alliés ont-ils débarqué en Normandie ? Le jour ___ (D-Day) ?",
     "c": [
-     "8 mai 1945",
-     "7 décembre 1941",
-     "4 juillet 1944",
-     "6 juin 1944"
+     "J",
+     "V",
+     "H",
+     "Z"
     ],
-    "a": 3
+    "a": "J"
    },
    {
-    "q": "Quelle ville a subi la première bombe atomique ?",
+    "q": "Quelles deux villes japonaises ont subi la bombe atomique en 1945 ? Hiroshima et ___ ?",
     "c": [
-     "Osaka",
+     "Nagasaki",
      "Tokyo",
-     "Hiroshima",
-     "Nagasaki"
+     "Kyoto",
+     "Osaka"
     ],
-    "a": 2
+    "a": "Nagasaki"
    },
    {
-    "q": "En quelle année la guerre a-t-elle pris fin en Europe ?",
+    "q": "Quel Premier ministre britannique a mené le pays contre l'Allemagne nazie ? Winston ___ ?",
     "c": [
-     "1945",
-     "1943",
-     "1946",
-     "1944"
+     "Churchill",
+     "Chamberlain",
+     "Attlee",
+     "Eden"
     ],
-    "a": 0
+    "a": "Churchill"
    },
    {
-    "q": "Quel était le nom du front de l'Est ?",
+    "q": "Quel général français a lancé l'appel du 18 juin 1940 à résister ? Charles de ___ ?",
     "c": [
-     "Opération Market Garden",
-     "Opération Torch",
-     "Operation Overlord",
-     "Opération Barbarossa"
+     "Gaulle",
+     "Lattre",
+     "Leclerc",
+     "Juin"
     ],
-    "a": 3
+    "a": "Gaulle"
    },
    {
-    "q": "Quel pays a subi le plus de pertes humaines pendant la guerre ?",
+    "q": "Comment nomme-t-on le génocide des Juifs par les nazis ? La ___ (Shoah) ?",
     "c": [
-     "URSS",
-     "Pologne",
-     "Chine",
-     "Allemagne"
+     "Shoah",
+     "purge",
+     "rafle",
+     "exode"
     ],
-    "a": 0
+    "a": "Shoah"
    },
    {
-    "q": "Comment s'appelait le génocide perpétré par les nazis ?",
-    "c": [
-     "L'Holocauste",
-     "La Shoah",
-     "La Solution finale",
-     "Le génocide"
-    ],
-    "a": 1
+    "q": "En quelle année, exactement, s'est terminée la Seconde Guerre mondiale ?",
+    "a": "1945"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "histoire_009",
