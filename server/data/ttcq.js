@@ -1830,86 +1830,69 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a réalisé Jurassic Park ?",
+    "q": "Quel genre d'animaux disparus sont ramenés à la vie dans Jurassic Park ?",
+    "a": "Dinosaure"
+   },
+   {
+    "q": "Quel réalisateur de E.T. a réalisé Jurassic Park en 1993 ?",
     "c": [
-     "Besson",
+     "Spielberg",
      "Cameron",
-     "Jackson",
-     "Spielberg"
+     "Lucas",
+     "Scott"
     ],
-    "a": 3
+    "a": "Spielberg"
    },
    {
-    "q": "Jurassic Park est adapté d'un roman écrit par :",
-    "c": [
-     "Michael Crichton",
-     "Stephen King",
-     "Michael Bay",
-     "George Lucas"
-    ],
-    "a": 0
+    "q": "Quel grand carnivore aux petits bras est la star du parc ? Le T-___ ?",
+    "a": "Rex"
    },
    {
-    "q": "En quelle année Jurassic Park est-il sorti ?",
+    "q": "À partir de quoi, conservé dans l'ambre, l'ADN des dinosaures est-il extrait ?",
     "c": [
-     "1993",
-     "1995",
-     "1990",
-     "1989"
+     "Moustique",
+     "Abeille",
+     "Fourmi",
+     "Papillon"
     ],
-    "a": 0
+    "a": "Moustique"
    },
    {
-    "q": "Quel acteur incarne le Dr Alan Grant ?",
+    "q": "Quels petits prédateurs rusés et rapides chassent en meute dans la cuisine ?",
     "c": [
-     "Jeff Goldblum",
-     "Sam Neill",
-     "Laura Dern",
-     "Richard Attenborough"
+     "Vélociraptors",
+     "Tricératops",
+     "Diplodocus",
+     "Ptérodactyles"
     ],
-    "a": 1
+    "a": "Vélociraptors"
    },
    {
-    "q": "Quelle est l'espèce de dinosaure la plus dangereuse du film ?",
+    "q": "Quel mathématicien en noir énonce la théorie du chaos ? Ian ___ ?",
     "c": [
-     "Le Dilophosaure",
-     "Le T-Rex",
-     "Le Velociraptor",
-     "Le Brachiosaure"
+     "Malcolm",
+     "Grant",
+     "Hammond",
+     "Nedry"
     ],
-    "a": 2
+    "a": "Malcolm"
    },
    {
-    "q": "Sur quelle île se déroule Jurassic Park ?",
+    "q": "Quel milliardaire a créé le parc sur l'île Nublar ? John ___ ?",
     "c": [
-     "Isla Sorna",
-     "Isla Nublar",
-     "Madagascar",
-     "Hawaii"
+     "Hammond",
+     "Wayne",
+     "Stark",
+     "Kane"
     ],
-    "a": 1
+    "a": "Hammond"
    },
    {
-    "q": "Combien de suites Jurassic Park comptent la saga ?",
-    "c": [
-     "5",
-     "4",
-     "3",
-     "6"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel personnage meurt dans la bouche d'un T-Rex ?",
-    "c": [
-     "Ray Arnold",
-     "Ian Malcolm",
-     "John Hammond",
-     "Donald Gennaro"
-    ],
-    "a": 3
+    "q": "Quelle est la durée exacte, en minutes, du premier film Jurassic Park (1993) ?",
+    "a": "127"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cinema_002",
@@ -1918,86 +1901,63 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a réalisé Star Wars ?",
-    "c": [
-     "Abrams",
-     "Spielberg",
-     "Raimi",
-     "Lucas"
-    ],
-    "a": 3
+    "q": "Quelle arme laser au manche est l'arme emblématique des Jedi ? Le ___ laser ?",
+    "a": "Sabre"
    },
    {
-    "q": "Qui a créé la saga Star Wars ?",
+    "q": "Comment s'appelle le petit robot bleu et blanc qui siffle ? R2-___ ?",
+    "a": "D2"
+   },
+   {
+    "q": "Quel méchant respirant fort porte un masque et une cape noire ? Dark ___ ?",
+    "c": [
+     "Vador",
+     "Maul",
+     "Sidious",
+     "Bane"
+    ],
+    "a": "Vador"
+   },
+   {
+    "q": "Quelle princesse aux macarons capillaires est jouée par Carrie Fisher ?",
+    "c": [
+     "Leia",
+     "Padmé",
+     "Rey",
+     "Jyn"
+    ],
+    "a": "Leia"
+   },
+   {
+    "q": "Quel petit maître Jedi vert parle à l'envers ?",
+    "a": "Yoda"
+   },
+   {
+    "q": "Quel contrebandier pilote le Faucon Millenium ? Han ___ ?",
+    "c": [
+     "Solo",
+     "Calrissian",
+     "Fett",
+     "Antilles"
+    ],
+    "a": "Solo"
+   },
+   {
+    "q": "Quel réalisateur a créé la saga Star Wars en 1977 ?",
     "c": [
      "George Lucas",
-     "Ridley Scott",
-     "James Cameron",
-     "Steven Spielberg"
+     "Spielberg",
+     "Kubrick",
+     "Coppola"
     ],
-    "a": 0
+    "a": "George Lucas"
    },
    {
-    "q": "En quelle année le premier Star Wars est-il sorti ?",
-    "c": [
-     "1980",
-     "1982",
-     "1977",
-     "1975"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quel est le nom du vaisseau de Han Solo ?",
-    "c": [
-     "Le TIE Fighter",
-     "Le Destroyer Stellaire",
-     "Le X-Wing",
-     "Le Faucon Millenium"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Qui a interprété Dark Vador (voix) ?",
-    "c": [
-     "David Prowse",
-     "James Earl Jones",
-     "Ian McDiarmid",
-     "Hayden Christensen"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quelle est la célèbre phrase de Dark Vador au sujet de Luke ?",
-    "c": [
-     "Rejoins-moi",
-     "Je suis ton maître",
-     "Je suis ton père",
-     "Tu es mon fils"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Combien d'épisodes principaux compte la saga Star Wars ?",
-    "c": [
-     "9",
-     "6",
-     "12",
-     "8"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quel acteur joue Obi-Wan Kenobi dans la trilogie préquelle ?",
-    "c": [
-     "Hayden Christensen",
-     "Liam Neeson",
-     "Ewan McGregor",
-     "Alec Guinness"
-    ],
-    "a": 2
+    "q": "Quelle est la durée, en minutes, du film Star Wars épisode IV de 1977 ?",
+    "a": "121"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cinema_003",
@@ -2006,86 +1966,69 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a réalisé Harry Potter ?",
-    "c": [
-     "Heyman",
-     "Yates",
-     "Columbus",
-     "Cauron"
-    ],
-    "a": 2
+    "q": "Quel jeune sorcier à lunettes et cicatrice est le héros de la saga ?",
+    "a": "Harry"
    },
    {
-    "q": "Qui a écrit les romans Harry Potter ?",
+    "q": "Comment s'appelle l'école de sorcellerie où étudie Harry ?",
     "c": [
-     "J.K. Rowling",
-     "J.R.R. Tolkien",
-     "Stephen King",
-     "Roald Dahl"
+     "Poudlard",
+     "Beauxbâtons",
+     "Durmstrang",
+     "Salem"
     ],
-    "a": 0
+    "a": "Poudlard"
    },
    {
-    "q": "Quel acteur joue Harry Potter ?",
+    "q": "Quelle amie brillante et frisée aide Harry ? Hermione ___ ?",
     "c": [
-     "Elijah Wood",
-     "Rupert Grint",
-     "Tom Felton",
-     "Daniel Radcliffe"
+     "Granger",
+     "Weasley",
+     "Lovegood",
+     "Chang"
     ],
-    "a": 3
+    "a": "Granger"
    },
    {
-    "q": "Quelle est la maison de Harry Potter à Poudlard ?",
-    "c": [
-     "Poufsouffle",
-     "Serpentard",
-     "Serdaigle",
-     "Gryffondor"
-    ],
-    "a": 3
+    "q": "Quel sport de sorciers se joue sur des balais volants ?",
+    "a": "Quidditch"
    },
    {
-    "q": "Comment s'appelle l'ennemi principal de Harry Potter ?",
+    "q": "Quel mage noir sans nez veut tuer Harry ? Lord ___ ?",
     "c": [
      "Voldemort",
-     "Severus Rogue",
-     "Drago Malefoy",
-     "Bellatrix Lestrange"
+     "Sauron",
+     "Grindelwald",
+     "Saroumane"
     ],
-    "a": 0
+    "a": "Voldemort"
    },
    {
-    "q": "Quel est le nom du phénix de Dumbledore ?",
+    "q": "Dans quelle maison de Poudlard Harry est-il réparti ?",
     "c": [
-     "Hedwige",
-     "Croack",
-     "Fumseck",
-     "Minuit"
+     "Gryffondor",
+     "Serpentard",
+     "Serdaigle",
+     "Poufsouffle"
     ],
-    "a": 2
+    "a": "Gryffondor"
    },
    {
-    "q": "Combien de films Harry Potter comptent la saga ?",
+    "q": "Quelle romancière britannique a écrit les livres Harry Potter ? J.K. ___ ?",
     "c": [
-     "7",
-     "10",
-     "9",
-     "8"
+     "Rowling",
+     "Christie",
+     "Tolkien",
+     "Austen"
     ],
-    "a": 3
+    "a": "Rowling"
    },
    {
-    "q": "Quel sortilège est utilisé pour désarmer un adversaire ?",
-    "c": [
-     "Expelliarmus",
-     "Expecto Patronum",
-     "Avada Kedavra",
-     "Accio"
-    ],
-    "a": 0
+    "q": "Combien de tomes compte la série de livres Harry Potter ?",
+    "a": "7"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cinema_004",
@@ -2094,86 +2037,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a réalisé Le Seigneur des Anneaux ?",
+    "q": "Quel petit être aux pieds poilus est le héros ? Un ___ ?",
     "c": [
-     "Jackson",
-     "Maddalena",
-     "Toro",
-     "McKellen"
+     "Hobbit",
+     "Elfe",
+     "Nain",
+     "Orc"
     ],
-    "a": 0
+    "a": "Hobbit"
    },
    {
-    "q": "Qui a écrit Le Seigneur des Anneaux ?",
-    "c": [
-     "J.K. Rowling",
-     "J.R.R. Tolkien",
-     "George R.R. Martin",
-     "C.S. Lewis"
-    ],
-    "a": 1
+    "q": "Quel objet doré et magique doit être détruit dans le film ? L'___ unique ?",
+    "a": "Anneau"
    },
    {
-    "q": "Quel acteur joue Frodon Sacquet ?",
+    "q": "Quel hobbit porteur de l'anneau est le héros ? Frodon ___ ?",
     "c": [
-     "Ian McKellen",
-     "Elijah Wood",
-     "Viggo Mortensen",
-     "Sean Astin"
+     "Sacquet",
+     "Touque",
+     "Brandebouc",
+     "Gamgie"
     ],
-    "a": 1
+    "a": "Sacquet"
    },
    {
-    "q": "Comment s'appelle l'anneau unique détruit à la fin ?",
-    "c": [
-     "L'Anneau de Puissance",
-     "L'Anneau des Elfes",
-     "L'Anneau de Sauron",
-     "Le Precious"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quel personnage dit 'Vous ne passerez pas !' ?",
+    "q": "Quel magicien gris à grand chapeau guide la communauté ?",
     "c": [
      "Gandalf",
-     "Gimli",
-     "Aragorn",
-     "Legolas"
+     "Saroumane",
+     "Radagast",
+     "Merlin"
     ],
-    "a": 0
+    "a": "Gandalf"
    },
    {
-    "q": "En quelle année le premier film est-il sorti ?",
+    "q": "Dans quelle montagne l'anneau doit-il être jeté ? La Montagne du ___ ?",
     "c": [
-     "2003",
-     "2001",
-     "2000",
-     "2002"
+     "Destin",
+     "Feu",
+     "Roi",
+     "Nord"
     ],
-    "a": 1
+    "a": "Destin"
    },
    {
-    "q": "Combien de films compose la trilogie ?",
+    "q": "Quelle créature rampante et schizophrène appelle l'anneau « mon précieux » ?",
     "c": [
-     "1",
-     "4",
-     "2",
-     "3"
+     "Gollum",
+     "Sauron",
+     "Grima",
+     "Bilbo"
     ],
-    "a": 3
+    "a": "Gollum"
    },
    {
-    "q": "Qui a réalisé la trilogie ?",
+    "q": "Quel réalisateur néo-zélandais a mis en scène la trilogie ? Peter ___ ?",
     "c": [
-     "Peter Jackson",
-     "George Lucas",
-     "Ridley Scott",
-     "James Cameron"
+     "Jackson",
+     "Cameron",
+     "Nolan",
+     "Scott"
     ],
-    "a": 0
+    "a": "Jackson"
+   },
+   {
+    "q": "Combien d'Oscars a remporté Le Retour du roi, record égalé, en 2004 ?",
+    "a": "11"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cinema_005",
@@ -2182,86 +2114,69 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a réalisé Marvel ?",
-    "c": [
-     "Whedon",
-     "Gunn",
-     "Russo",
-     "Favreau"
-    ],
-    "a": 0
+    "q": "Quel milliardaire en armure de fer est joué par Robert Downey Jr ? Iron ___ ?",
+    "a": "Man"
    },
    {
-    "q": "Qui a créé l'univers Marvel ?",
+    "q": "Quel super-héros lance des toiles et grimpe aux murs ? ___-Man ?",
     "c": [
-     "Stan Lee",
-     "Steve Ditko",
-     "Jack Kirby",
-     "Tous les trois"
+     "Spider",
+     "Ant",
+     "Iron",
+     "Aqua"
     ],
-    "a": 3
+    "a": "Spider"
    },
    {
-    "q": "Quel acteur joue Iron Man ?",
-    "c": [
-     "Robert Downey Jr.",
-     "Chris Evans",
-     "Scarlett Johansson",
-     "Chris Hemsworth"
-    ],
-    "a": 0
+    "q": "Quel dieu nordique du tonnerre porte un marteau chez Marvel ?",
+    "a": "Thor"
    },
    {
-    "q": "Quel est le premier film du MCU ?",
+    "q": "Comment s'appelle l'équipe de super-héros réunie par le SHIELD ? Les ___ ?",
     "c": [
      "Avengers",
-     "Thor",
-     "Iron Man",
-     "Captain America"
+     "X-Men",
+     "Gardiens",
+     "Défenseurs"
     ],
-    "a": 2
+    "a": "Avengers"
    },
    {
-    "q": "Combien de Pierres d'Infinité existe-t-il ?",
-    "c": [
-     "4",
-     "5",
-     "6",
-     "7"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quel film MCU a été le plus gros succès au box-office ?",
-    "c": [
-     "Avengers: Endgame",
-     "Avengers: Infinity War",
-     "Black Panther",
-     "Spider-Man: No Way Home"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Qui est le méchant principal de Infinity War ?",
+    "q": "Quel géant violet cherche les six pierres d'infinité ?",
     "c": [
      "Thanos",
-     "Malekith",
+     "Loki",
      "Ultron",
-     "Loki"
+     "Dormammu"
     ],
-    "a": 0
+    "a": "Thanos"
    },
    {
-    "q": "Quel héros Marvel a le pouvoir de contrôler l'esprit ?",
+    "q": "Quel soldat congelé pendant 70 ans est Captain ___ ?",
     "c": [
-     "Jean Grey",
-     "Magnéto",
-     "Doctor Strange",
-     "Le Professeur Xavier"
+     "America",
+     "Marvel",
+     "Britain",
+     "Falcon"
     ],
-    "a": 3
+    "a": "America"
+   },
+   {
+    "q": "Quel roi du Wakanda est le super-héros Black ___ ?",
+    "c": [
+     "Panther",
+     "Widow",
+     "Bolt",
+     "Cat"
+    ],
+    "a": "Panther"
+   },
+   {
+    "q": "En quelle année est sorti le tout premier film de l'univers Marvel, Iron Man ?",
+    "a": "2008"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cinema_006",
@@ -2270,86 +2185,63 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a réalisé Titanic ?",
+    "q": "Quel grand paquebot insubmersible coule dans le film ?",
+    "a": "Titanic"
+   },
+   {
+    "q": "Quel jeune héros pauvre est joué par Leonardo DiCaprio ?",
+    "a": "Jack"
+   },
+   {
+    "q": "Quelle jeune femme de la haute société tombe amoureuse de Jack ?",
     "c": [
-     "Bigelow",
-     "Jackson",
+     "Rose",
+     "Ruth",
+     "Molly",
+     "Cora"
+    ],
+    "a": "Rose"
+   },
+   {
+    "q": "Contre quel obstacle flottant le Titanic heurte-t-il en pleine nuit ?",
+    "c": [
+     "Iceberg",
+     "Rocher",
+     "Récif",
+     "Navire"
+    ],
+    "a": "Iceberg"
+   },
+   {
+    "q": "Quel réalisateur d'Avatar a aussi réalisé Titanic ? James ___ ?",
+    "c": [
      "Cameron",
-     "Nolan"
+     "Spielberg",
+     "Nolan",
+     "Scott"
     ],
-    "a": 2
+    "a": "Cameron"
    },
    {
-    "q": "Titanic a longtemps détenu le record du film ayant rapporté le plus au box-office mondial. Vrai ou faux ?",
-    "c": [
-     "Vrai",
-     "Faux",
-     "Il n'a jamais été numéro un",
-     "Il n'est jamais sorti en salles"
-    ],
-    "a": 0
+    "q": "Quel énorme diamant bleu porte le nom de « Cœur de l'___ » ?",
+    "a": "Ocean"
    },
    {
-    "q": "Quels acteurs jouent les rôles principaux ?",
+    "q": "Quelle chanson de Céline Dion est le thème du film ? My Heart Will ___ On ?",
     "c": [
-     "Brad Pitt et Julia Roberts",
-     "Johnny Depp et Keira Knightley",
-     "Leonardo DiCaprio et Kate Winslet",
-     "Tom Hanks et Meg Ryan"
+     "Go",
+     "Live",
+     "Stay",
+     "Beat"
     ],
-    "a": 2
+    "a": "Go"
    },
    {
-    "q": "En quelle année le film est-il sorti ?",
-    "c": [
-     "1997",
-     "1998",
-     "1996",
-     "1999"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Comment s'appelle le navire dans le film ?",
-    "c": [
-     "Le Lusitania",
-     "Le Titanic",
-     "Le Britannic",
-     "Le Queen Mary"
-    ],
-    "a": 1
-   },
-   {
-    "q": "En quelle année le vrai Titanic a-t-il coulé ?",
-    "c": [
-     "1912",
-     "1914",
-     "1911",
-     "1910"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Combien d'Oscars Titanic a-t-il remportés ?",
-    "c": [
-     "8",
-     "11",
-     "14",
-     "10"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quelle chanson de Céline Dion est le thème du film ?",
-    "c": [
-     "Because You Loved Me",
-     "The Power of Love",
-     "My Heart Will Go On",
-     "All By Myself"
-    ],
-    "a": 2
+    "q": "En quelle année, exactement, le vrai Titanic a-t-il coulé ?",
+    "a": "1912"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cinema_007",
@@ -2358,86 +2250,63 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a réalisé Retour vers le futur ?",
-    "c": [
-     "Donner",
-     "Gale",
-     "Johnston",
-     "Zemeckis"
-    ],
-    "a": 3
+    "q": "Quel type de machine à voyager dans le temps est faite à partir d'une voiture ?",
+    "a": "DeLorean"
    },
    {
-    "q": "Retour vers le futur est coécrit par Robert Zemeckis et :",
+    "q": "Quel adolescent voyage dans le temps ? Marty ___ ?",
     "c": [
-     "Bob Gale",
-     "Steven Spielberg",
-     "George Lucas",
-     "Dan Aykroyd"
+     "McFly",
+     "Brown",
+     "Tannen",
+     "Parker"
     ],
-    "a": 0
+    "a": "McFly"
    },
    {
-    "q": "Quel acteur joue Marty McFly ?",
+    "q": "Quel savant excentrique aux cheveux blancs a inventé la machine ? Doc ___ ?",
     "c": [
-     "Tom Holland",
-     "John Cusack",
-     "Christopher Lloyd",
-     "Michael J. Fox"
+     "Brown",
+     "Emmett",
+     "Marty",
+     "Biff"
     ],
-    "a": 3
+    "a": "Brown"
    },
    {
-    "q": "Quelle voiture sert de machine à voyager dans le temps ?",
-    "c": [
-     "La Ferrari Testarossa",
-     "La Porsche 911",
-     "La DeLorean DMC-12",
-     "La Ford Mustang"
-    ],
-    "a": 2
+    "q": "À quelle vitesse, en miles/h, la voiture doit-elle rouler pour voyager ?",
+    "a": "88"
    },
    {
-    "q": "Comment s'appelle le docteur ?",
+    "q": "Quel appareil permet le voyage temporel ? Le convecteur ___ ?",
     "c": [
-     "George McFly",
-     "Marty McFly",
-     "Biff Tannen",
-     "Emmett Brown"
+     "temporel",
+     "spatial",
+     "quantique",
+     "cosmique"
     ],
-    "a": 3
+    "a": "temporel"
    },
    {
-    "q": "En quelle année Marty se retrouve-t-il en 1955 ?",
+    "q": "Quelle brute harcèle la famille de Marty à travers les époques ? Biff ___ ?",
     "c": [
-     "1975",
-     "1995",
-     "1965",
-     "1985"
+     "Tannen",
+     "Strickland",
+     "Parker",
+     "Wilson"
     ],
-    "a": 3
+    "a": "Tannen"
    },
    {
-    "q": "Quelle est la puissance nécessaire au voyage temporel ?",
-    "c": [
-     "1 térawatt",
-     "1,21 gigawatts",
-     "100 mégawatts",
-     "1 million de volts"
-    ],
-    "a": 1
+    "q": "En quelle année du passé Marty se retrouve-t-il coincé dans le premier film ?",
+    "a": "1955"
    },
    {
-    "q": "Combien de films compte la trilogie ?",
-    "c": [
-     "4",
-     "1",
-     "2",
-     "3"
-    ],
-    "a": 3
+    "q": "Quelle est la durée, en minutes, du premier film Retour vers le futur (1985) ?",
+    "a": "116"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cinema_008",
@@ -2446,86 +2315,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a réalisé Indiana Jones (Les Aventuriers de l'arche perdue) ?",
-    "c": [
-     "James Cameron",
-     "Robert Zemeckis",
-     "George Lucas",
-     "Steven Spielberg"
-    ],
-    "a": 3
+    "q": "Quel accessoire en cuir Indiana Jones manie-t-il comme une arme ?",
+    "a": "Fouet"
    },
    {
-    "q": "Qui a créé le personnage d'Indiana Jones ?",
+    "q": "Quel type de couvre-chef en feutre porte toujours Indiana Jones ?",
     "c": [
-     "Philip Kaufman",
-     "Steven Spielberg",
-     "Harrison Ford",
-     "George Lucas"
+     "Chapeau",
+     "Casquette",
+     "Béret",
+     "Bonnet"
     ],
-    "a": 3
+    "a": "Chapeau"
    },
    {
-    "q": "Quel acteur joue Indiana Jones ?",
+    "q": "Quel acteur de Star Wars incarne Indiana Jones ? Harrison ___ ?",
     "c": [
-     "Harrison Ford",
-     "Tom Selleck",
-     "John Rhys-Davies",
-     "Sean Connery"
+     "Ford",
+     "Fisher",
+     "Hamill",
+     "Williams"
     ],
-    "a": 0
+    "a": "Ford"
    },
    {
-    "q": "Quel est le premier film de la saga ?",
+    "q": "Quel métier de professeur d'université exerce Indiana Jones ?",
     "c": [
-     "Les Aventuriers de l'Arche Perdue",
-     "Le Royaume du Crâne de Cristal",
-     "Le Temple Maudit",
-     "La Dernière Croisade"
+     "Archéologue",
+     "Historien",
+     "Géologue",
+     "Biologiste"
     ],
-    "a": 0
+    "a": "Archéologue"
    },
    {
-    "q": "Comment s'appelle son père dans le film ?",
+    "q": "Quel objet sacré recherche-t-il dans « Les Aventuriers de l'arche ___ » ?",
     "c": [
-     "Sallah",
-     "Marcus Brody",
-     "René Belloq",
-     "Henry Jones Sr."
+     "perdue",
+     "sainte",
+     "sacrée",
+     "cachée"
     ],
-    "a": 3
+    "a": "perdue"
    },
    {
-    "q": "Quelle arme Indiana Jones utilise-t-il ?",
+    "q": "Quel réalisateur de Jurassic Park a aussi réalisé Indiana Jones ?",
     "c": [
-     "Un revolver",
-     "Un poignard",
-     "Un sabre",
-     "Un fouet"
+     "Spielberg",
+     "Lucas",
+     "Cameron",
+     "Zemeckis"
     ],
-    "a": 3
+    "a": "Spielberg"
    },
    {
-    "q": "En quelle année le premier film est-il sorti ?",
+    "q": "Quels insectes remplissent le temple dans le Temple maudit ?",
     "c": [
-     "1981",
-     "1977",
-     "1989",
-     "1984"
+     "Insectes",
+     "Serpents",
+     "Rats",
+     "Scorpions"
     ],
-    "a": 0
+    "a": "Insectes"
    },
    {
-    "q": "Quel est le nom de l'archéologue rivale dans le dernier film ?",
-    "c": [
-     "Marion Ravenwood",
-     "Helena Shaw",
-     "Irina Spalko",
-     "Elsa Schneider"
-    ],
-    "a": 1
+    "q": "En quelle année est sorti le premier film, Les Aventuriers de l'arche perdue ?",
+    "a": "1981"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cinema_009",
@@ -2534,86 +2392,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a réalisé Forrest Gump ?",
+    "q": "Quelle friandise Forrest compare-t-il à la vie ? La vie est une boîte de ___ ?",
     "c": [
-     "Howard",
-     "Van Sant",
-     "Roth",
-     "Zemeckis"
+     "chocolats",
+     "bonbons",
+     "biscuits",
+     "caramels"
     ],
-    "a": 3
+    "a": "chocolats"
    },
    {
-    "q": "Forrest Gump est adapté d'un roman écrit par :",
+    "q": "Quel acteur, deux fois oscarisé, incarne Forrest Gump ? Tom ___ ?",
     "c": [
-     "Winston Groom",
-     "John Grisham",
-     "Stephen King",
-     "Michael Crichton"
+     "Hanks",
+     "Cruise",
+     "Hopkins",
+     "Cage"
     ],
-    "a": 0
+    "a": "Hanks"
    },
    {
-    "q": "Quel acteur joue Forrest Gump ?",
-    "c": [
-     "Tom Hanks",
-     "Robin Wright",
-     "Sally Field",
-     "Gary Sinise"
-    ],
-    "a": 0
+    "q": "Quel sport de raquette Forrest pratique-t-il pour la Chine ? Le ping-___ ?",
+    "a": "pong"
    },
    {
-    "q": "En quelle année le film est-il sorti ?",
+    "q": "Quelle activité physique Forrest fait-il pendant des années à travers les USA ?",
     "c": [
-     "1990",
-     "1992",
-     "1994",
-     "1996"
+     "Courir",
+     "Nager",
+     "Marcher",
+     "Pédaler"
     ],
-    "a": 2
+    "a": "Courir"
    },
    {
-    "q": "Quelle fameuse phrase répète Forrest ?",
+    "q": "Quel est le prénom de l'amour d'enfance de Forrest ?",
     "c": [
-     "Je suis fatigué",
-     "La vie est comme une boîte de chocolats",
-     "Cours, Forrest, cours !",
-     "Le destin"
+     "Jenny",
+     "Sally",
+     "Mary",
+     "Susan"
     ],
-    "a": 1
+    "a": "Jenny"
    },
    {
-    "q": "Combien d'Oscars a remporté Forrest Gump ?",
+    "q": "Dans quelle guerre Forrest combat-il, y sauvant ses camarades ? La guerre du ___ ?",
     "c": [
-     "7",
-     "5",
-     "4",
-     "6"
+     "Vietnam",
+     "Golfe",
+     "Corée",
+     "Irak"
     ],
-    "a": 3
+    "a": "Vietnam"
    },
    {
-    "q": "Dans quel sport excelle Forrest ?",
+    "q": "Quelle entreprise de pêche Forrest fonde-t-il avec le lieutenant Dan ? Crevettes ___ ?",
     "c": [
-     "Le baseball",
-     "La natation",
-     "Le football américain",
-     "Le basket"
+     "Bubba Gump",
+     "Red Lobster",
+     "Long John",
+     "Captain"
     ],
-    "a": 2
+    "a": "Bubba Gump"
    },
    {
-    "q": "Quel président rencontre Forrest dans le film ?",
-    "c": [
-     "Nixon",
-     "Kennedy",
-     "Johnson",
-     "Reagan"
-    ],
-    "a": 1
+    "q": "Combien d'Oscars le film Forrest Gump a-t-il remportés en 1995 ?",
+    "a": "6"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cinema_010",
@@ -2622,86 +2469,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a réalisé Le Parrain ?",
+    "q": "Quelle organisation criminelle italo-américaine est au cœur du film ?",
+    "a": "Mafia"
+   },
+   {
+    "q": "Quel est le nom de la famille mafieuse du film ? Les ___ ?",
     "c": [
-     "Scorsese",
+     "Corleone",
+     "Soprano",
+     "Gambino",
+     "Barzini"
+    ],
+    "a": "Corleone"
+   },
+   {
+    "q": "Quel acteur légendaire joue le parrain Vito Corleone ? Marlon ___ ?",
+    "c": [
+     "Brando",
+     "Pacino",
+     "De Niro",
+     "Caan"
+    ],
+    "a": "Brando"
+   },
+   {
+    "q": "Quel fils, d'abord réticent, devient le nouveau parrain ? Michael ___ ?",
+    "c": [
+     "Corleone",
+     "Fredo",
+     "Sonny",
+     "Tom"
+    ],
+    "a": "Corleone"
+   },
+   {
+    "q": "Quel réalisateur a mis en scène Le Parrain ? Francis Ford ___ ?",
+    "c": [
      "Coppola",
+     "Scorsese",
      "Leone",
      "De Palma"
     ],
-    "a": 1
+    "a": "Coppola"
    },
    {
-    "q": "Le Parrain est adapté d'un roman écrit par :",
+    "q": "Quel animal retrouve-t-on décapité dans un lit, scène culte du film ?",
     "c": [
-     "Mario Puzo",
-     "Ernest Hemingway",
-     "Truman Capote",
-     "John Steinbeck"
+     "Cheval",
+     "Chien",
+     "Taureau",
+     "Cochon"
     ],
-    "a": 0
+    "a": "Cheval"
    },
    {
-    "q": "Quel acteur joue Vito Corleone ?",
+    "q": "Dans quelle grande île italienne la famille Corleone a-t-elle ses racines ?",
     "c": [
-     "Robert Duvall",
-     "Marlon Brando",
-     "Al Pacino",
-     "James Caan"
+     "Sicile",
+     "Sardaigne",
+     "Corse",
+     "Capri"
     ],
-    "a": 1
+    "a": "Sicile"
    },
    {
-    "q": "En quelle année le film est-il sorti ?",
-    "c": [
-     "1970",
-     "1972",
-     "1974",
-     "1975"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quelle phrase célèbre est dite par Vito Corleone ?",
-    "c": [
-     "C'est strictement business",
-     "La vengeance est un plat qui se mange froid",
-     "Je lui ferai une offre qu'il ne pourra pas refuser",
-     "Laisse le pistolet, prends les cannoli"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Combien d'Oscars a remporté le premier film ?",
-    "c": [
-     "5",
-     "4",
-     "3",
-     "2"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quel acteur joue Michael Corleone ?",
-    "c": [
-     "Robert Duvall",
-     "James Caan",
-     "Al Pacino",
-     "John Cazale"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Qui a composé la musique du film ?",
-    "c": [
-     "Nino Rota",
-     "Bernard Herrmann",
-     "John Williams",
-     "Ennio Morricone"
-    ],
-    "a": 0
+    "q": "En quelle année est sorti le premier film Le Parrain ?",
+    "a": "1972"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cinema_011",
