@@ -25349,84 +25349,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Depuis quand le vin est-il produit ?",
+    "q": "De quelle couleur est le vin rouge ?",
     "c": [
-     "Depuis l'Antiquité grecque",
-     "Depuis 2 000 ans",
-     "Depuis environ 8 000 ans (Caucase)",
-     "Depuis le Moyen Âge"
+     "rouge",
+     "blanc",
+     "vert",
+     "bleu"
     ],
-    "a": "Depuis environ 8 000 ans (Caucase)"
+    "a": "rouge"
    },
    {
-    "q": "Quel pays est le plus grand producteur de vin au monde ?",
+    "q": "De quel fruit fait-on le vin ? Le ___ ?",
     "c": [
-     "États-Unis",
-     "France",
-     "Espagne",
-     "Italie"
+     "raisin",
+     "pomme",
+     "prune",
+     "cassis"
     ],
-    "a": "Italie"
+    "a": "raisin"
    },
    {
-    "q": "Quels étaient les principaux producteurs de vin dans l'Antiquité ?",
+    "q": "Quelle région du sud-ouest de la France est mondialement réputée pour ses vins rouges ?",
     "c": [
-     "Égypte et Perse",
-     "Chine et Inde",
-     "Gaule et Bretagne",
-     "Grèce et Rome"
+     "Bordeaux",
+     "Bretagne",
+     "Normandie",
+     "Alsace"
     ],
-    "a": "Grèce et Rome"
+    "a": "Bordeaux"
    },
    {
-    "q": "Qu'est-ce que le vin ?",
+    "q": "Comment appelle-t-on la science et l'art de la dégustation du vin ? L'___ ?",
     "c": [
-     "Alcool distillé",
-     "Jus de raisin",
-     "Boisson gazeuse",
-     "Boisson alcoolisée obtenue par fermentation du raisin"
+     "œnologie",
+     "astrologie",
+     "zoologie",
+     "géologie"
     ],
-    "a": "Boisson alcoolisée obtenue par fermentation du raisin"
+    "a": "œnologie"
    },
    {
-    "q": "Comment le vin s'est-il répandu en Europe ?",
+    "q": "Dans quel récipient en bois vieillissent souvent les grands vins rouges ? La ___ ?",
     "c": [
-     "Par les Arabes",
-     "Par les Croisés",
-     "Par les Vikings",
-     "Par les Romains et les Grecs"
+     "barrique",
+     "bouteille",
+     "citerne",
+     "gourde"
     ],
-    "a": "Par les Romains et les Grecs"
+    "a": "barrique"
    },
    {
-    "q": "Qu'est-ce que l'amphore dans l'histoire du vin ?",
+    "q": "Quel cépage rouge, roi du Bordelais, est le plus planté au monde ? Le Cabernet ___ ?",
     "c": [
-     "Vin grec",
-     "Récipient antique pour transporter le vin",
-     "Rituel",
-     "Cépage"
+     "Sauvignon",
+     "Franc",
+     "Merlot",
+     "Noir"
     ],
-    "a": "Récipient antique pour transporter le vin"
+    "a": "Sauvignon"
    },
    {
-    "q": "Qui a introduit la culture de la vigne en Gaule ?",
+    "q": "Quel antioxydant du vin rouge est étudié pour de possibles effets cardiovasculaires ? Le ___ ?",
     "c": [
-     "Les Phéniciens",
-     "Les Romains",
-     "Les Grecs",
-     "Les Gaulois"
+     "resvératrol",
+     "cholestérol",
+     "paracétamol",
+     "menthol"
     ],
-    "a": "Les Romains"
+    "a": "resvératrol"
    },
    {
-    "q": "Quand la Champagne est-elle devenue une région viticole ?",
-    "c": [
-     "Au Ier siècle",
-     "Au XIXe siècle",
-     "À l'époque médiévale",
-     "Au XVIe siècle"
-    ],
-    "a": "À l'époque médiévale"
+    "q": "Combien de millions d'hectolitres de vin, environ, la France produit-elle par an ?",
+    "a": "45"
    }
   ],
   "rw": true
@@ -25438,84 +25432,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Quels sont les principaux types de vin ?",
+    "q": "De quelle couleur est le vin blanc ?",
     "c": [
-     "Vin de table, AOC, IGP",
-     "Rouge et blanc uniquement",
-     "Sec, doux, moelleux",
-     "Rouge, blanc, rosé, effervescent"
+     "jaune pâle",
+     "rouge",
+     "noir",
+     "bleu"
     ],
-    "a": "Rouge, blanc, rosé, effervescent"
+    "a": "jaune pâle"
    },
    {
-    "q": "Qu'est-ce qu'un vin rouge ?",
+    "q": "À quelle température sert-on le vin blanc, plutôt que chambré ? ___ ?",
     "c": [
-     "Vin corsé",
-     "Vin de garde",
-     "Vin issu de raisins noirs fermentés avec la peau",
-     "Vin coloré"
+     "frais",
+     "brûlant",
+     "tiède",
+     "bouillant"
     ],
-    "a": "Vin issu de raisins noirs fermentés avec la peau"
+    "a": "frais"
    },
    {
-    "q": "Qu'est-ce qu'un vin blanc ?",
+    "q": "Quel cépage blanc est le plus célèbre pour les vins de Bourgogne ? Le ___ ?",
     "c": [
-     "Vin léger",
-     "Vin issu de raisins blancs ou noirs sans la peau",
-     "Vin clair",
-     "Vin sec"
+     "chardonnay",
+     "merlot",
+     "syrah",
+     "gamay"
     ],
-    "a": "Vin issu de raisins blancs ou noirs sans la peau"
+    "a": "chardonnay"
    },
    {
-    "q": "Qu'est-ce qu'un vin rosé ?",
+    "q": "Quelle région du nord-est de la France est réputée pour ses vins blancs et son riesling ? L'___ ?",
     "c": [
-     "Vin obtenu par une macération courte des raisins noirs",
-     "Vin fruité",
-     "Vin clair",
-     "Mélange de rouge et blanc"
+     "Alsace",
+     "Provence",
+     "Corse",
+     "Savoie"
     ],
-    "a": "Vin obtenu par une macération courte des raisins noirs"
+    "a": "Alsace"
    },
    {
-    "q": "Comment est produit le champagne ?",
+    "q": "Avec quels aliments accorde-t-on classiquement le vin blanc sec ? Les ___ ?",
     "c": [
-     "Par fermentation unique",
-     "Par gazéification",
-     "Par ajout de sucre",
-     "Par double fermentation en bouteille (méthode champenoise)"
+     "fruits de mer",
+     "steaks",
+     "chocolats",
+     "curry"
     ],
-    "a": "Par double fermentation en bouteille (méthode champenoise)"
+    "a": "fruits de mer"
    },
    {
-    "q": "Qu'est-ce qu'un vin moelleux ?",
+    "q": "Quel vin blanc liquoreux de Bordeaux est un vin de dessert prestigieux ? Le ___ ?",
     "c": [
-     "Vin jeune",
-     "Vin pétillant",
-     "Vin contenant du sucre résiduel (plus sucré)",
-     "Vin sans alcool"
+     "sauternes",
+     "muscadet",
+     "chablis",
+     "sancerre"
     ],
-    "a": "Vin contenant du sucre résiduel (plus sucré)"
+    "a": "sauternes"
    },
    {
-    "q": "Qu'est-ce qu'un vin AOC ?",
+    "q": "Quel champignon « noble » concentre les sucres des raisins des grands liquoreux ? La pourriture ___ ?",
     "c": [
-     "Appellation d'Origine Contrôlée, garantissant l'origine",
-     "Vin de cépage",
-     "Alcool Ordinaire de Consommation",
-     "Vin artisanal"
+     "noble",
+     "grise",
+     "verte",
+     "sèche"
     ],
-    "a": "Appellation d'Origine Contrôlée, garantissant l'origine"
+    "a": "noble"
    },
    {
-    "q": "Quels sont les cépages principaux pour le vin rouge ?",
-    "c": [
-     "Chardonnay, Sauvignon, Riesling",
-     "Pinot Gris, Gewurztraminer",
-     "Merlot, Cabernet Sauvignon, Pinot Noir, Syrah",
-     "Ugni Blanc, Colombard"
-    ],
-    "a": "Merlot, Cabernet Sauvignon, Pinot Noir, Syrah"
+    "q": "À quelle température, en degrés, sert-on idéalement un vin blanc sec ?",
+    "a": "10"
    }
   ],
   "rw": true
@@ -25527,84 +25515,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Quels sont les ingrédients de base de la bière ?",
+    "q": "Quelle céréale maltée est la base de la bière ? L'___ ?",
     "c": [
-     "Eau, blé, houblon, sel",
-     "Eau, orge, sucre, levure",
-     "Eau, malt, riz, levure",
-     "Eau, malt, houblon, levure"
+     "orge",
+     "maïs",
+     "riz",
+     "seigle"
     ],
-    "a": "Eau, malt, houblon, levure"
+    "a": "orge"
    },
    {
-    "q": "Quel pays est le plus grand consommateur de bière par habitant ?",
+    "q": "Quelle plante donne l'amertume et l'arôme de la bière ? Le ___ ?",
     "c": [
-     "République tchèque",
-     "Irlande",
-     "Allemagne",
-     "Belgique"
+     "houblon",
+     "lierre",
+     "romarin",
+     "basilic"
     ],
-    "a": "République tchèque"
+    "a": "houblon"
    },
    {
-    "q": "Qu'est-ce que le houblon ?",
+    "q": "Quelle mousse blanche couronne un verre de bière ? La ___ ?",
     "c": [
-     "Levure",
-     "Additif",
-     "Plante qui donne l'amertume et l'arôme à la bière",
-     "Céréale"
+     "mousse",
+     "crème",
+     "buée",
+     "écume rouge"
     ],
-    "a": "Plante qui donne l'amertume et l'arôme à la bière"
+    "a": "mousse"
    },
    {
-    "q": "Quels sont les principaux types de bière ?",
+    "q": "Quel type de bière, fermentée à basse température, est doré et léger ? La ___ ?",
     "c": [
-     "Lager, Ale, Stout, IPA, Blonde",
-     "Bière pression, bouteille, canette",
-     "Brune, rousse, dorée",
-     "Rouge, blanche, rosée"
+     "lager",
+     "stout",
+     "porter",
+     "gueuze"
     ],
-    "a": "Lager, Ale, Stout, IPA, Blonde"
+    "a": "lager"
    },
    {
-    "q": "Qu'est-ce qu'une bière IPA ?",
+    "q": "Quel micro-organisme transforme le sucre du moût en alcool ? La ___ ?",
     "c": [
-     "Bière légère",
-     "Bière blanche",
-     "Bière d'abbaye",
-     "India Pale Ale, bière très houblonnée"
+     "levure",
+     "algue",
+     "moisissure",
+     "bactérie"
     ],
-    "a": "India Pale Ale, bière très houblonnée"
+    "a": "levure"
    },
    {
-    "q": "Qu'est-ce que la fermentation haute ?",
+    "q": "Quelle unité mesure l'amertume d'une bière ? L'___ (International Bitterness Units) ?",
     "c": [
-     "Fermentation au froid",
-     "Fermentation en bouteille",
-     "Fermentation à température ambiante pour les Ales",
-     "Fermentation rapide"
+     "IBU",
+     "ABV",
+     "SRM",
+     "EBC"
     ],
-    "a": "Fermentation à température ambiante pour les Ales"
+    "a": "IBU"
    },
    {
-    "q": "Quelle est la teneur en alcool moyenne d'une bière standard ?",
+    "q": "Quel pays d'Europe centrale détient le record mondial de consommation de bière par habitant ? La ___ ?",
     "c": [
-     "2-3% vol.",
-     "4-6% vol.",
-     "7-9% vol.",
-     "10-12% vol."
+     "Tchéquie",
+     "Grèce",
+     "Italie",
+     "Suède"
     ],
-    "a": "4-6% vol."
+    "a": "Tchéquie"
    },
    {
-    "q": "Quelle est la plus ancienne brasserie encore en activité ?",
-    "c": [
-     "Guinness",
-     "Weihenstephan (Allemagne, 1040)",
-     "Budweiser",
-     "Heineken"
-    ],
-    "a": "Weihenstephan (Allemagne, 1040)"
+    "q": "Combien de litres de bière, environ, un Tchèque boit-il en moyenne par an, record mondial ?",
+    "a": "180"
    }
   ],
   "rw": true
@@ -25616,84 +25598,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce qu'un spiritueux ?",
+    "q": "De quelle région française le champagne tient-il son nom ?",
     "c": [
-     "Bière",
-     "Boisson fermentée",
-     "Vin",
-     "Boisson alcoolisée obtenue par distillation"
+     "Champagne",
+     "Bourgogne",
+     "Provence",
+     "Loire"
     ],
-    "a": "Boisson alcoolisée obtenue par distillation"
+    "a": "Champagne"
    },
    {
-    "q": "Quelle est la teneur en alcool minimale d'un spiritueux ?",
+    "q": "Qu'y a-t-il dans le champagne qui pétille dans le verre ? Des ___ ?",
     "c": [
-     "20% vol.",
-     "15% vol.",
-     "10% vol.",
-     "5% vol."
+     "bulles",
+     "glaçons",
+     "grumeaux",
+     "graines"
     ],
-    "a": "15% vol."
+    "a": "bulles"
    },
    {
-    "q": "Quels sont les principaux spiritueux ?",
+    "q": "Dans quel type de verre allongé sert-on souvent le champagne ? La ___ ?",
     "c": [
-     "Champagne, mousseux",
-     "Whisky, vodka, rhum, gin, tequila, cognac",
-     "Vin, bière, cidre",
-     "Porto, Xérès, Muscat"
+     "flûte",
+     "chope",
+     "tasse",
+     "louche"
     ],
-    "a": "Whisky, vodka, rhum, gin, tequila, cognac"
+    "a": "flûte"
    },
    {
-    "q": "Qu'est-ce que la distillation ?",
+    "q": "Quel gaz forme les bulles du champagne ? Le dioxyde de ___ ?",
     "c": [
-     "Fermentation",
-     "Filtration",
-     "Macération",
-     "Procédé qui concentre l'alcool par chauffage et condensation"
+     "carbone",
+     "azote",
+     "hélium",
+     "oxygène"
     ],
-    "a": "Procédé qui concentre l'alcool par chauffage et condensation"
+    "a": "carbone"
    },
    {
-    "q": "Qu'est-ce qu'un alambic ?",
+    "q": "Quel moine bénédictin est légendairement associé à l'élaboration du champagne ? Dom ___ ?",
     "c": [
-     "Appareil utilisé pour la distillation",
-     "Fût de vieillissement",
-     "Verre",
-     "Bouteille"
+     "Pérignon",
+     "Ruinart",
+     "Bollinger",
+     "Mercier"
     ],
-    "a": "Appareil utilisé pour la distillation"
+    "a": "Pérignon"
    },
    {
-    "q": "Qu'est-ce que le vieillissement en fût ?",
+    "q": "Comment appelle-t-on la méthode de double fermentation en bouteille du champagne ? La méthode ___ ?",
     "c": [
-     "Maturation du spiritueux en fût de chêne pour développer les arômes",
-     "Stockage en bouteille",
-     "Fermentation longue",
-     "Distillation lente"
+     "champenoise",
+     "bourguignonne",
+     "charmat",
+     "solera"
     ],
-    "a": "Maturation du spiritueux en fût de chêne pour développer les arômes"
+    "a": "champenoise"
    },
    {
-    "q": "Quelle est la différence entre cognac et armagnac ?",
+    "q": "Comment appelle-t-on l'opération d'éjection du dépôt avant bouchage final ? Le ___ ?",
     "c": [
-     "Région et méthode de distillation différentes",
-     "Cépage utilisé",
-     "Couleur différente",
-     "Teneur en alcool"
+     "dégorgement",
+     "remuage",
+     "collage",
+     "soutirage"
     ],
-    "a": "Région et méthode de distillation différentes"
+    "a": "dégorgement"
    },
    {
-    "q": "Qu'est-ce qu'une eau-de-vie ?",
-    "c": [
-     "Spiritueux issu de la distillation de fruits fermentés",
-     "Boisson sucrée",
-     "Vieil alcool",
-     "Alcool pur"
-    ],
-    "a": "Spiritueux issu de la distillation de fruits fermentés"
+    "q": "Combien de bars de pression, environ, règnent dans une bouteille de champagne ?",
+    "a": "6"
    }
   ],
   "rw": true
@@ -25705,84 +25681,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "De quoi est fait le whisky ?",
+    "q": "À partir de quelles céréales distille-t-on le whisky ? Des ___ ?",
     "c": [
-     "Canne à sucre",
-     "Céréales fermentées et distillées (orge, maïs, seigle)",
-     "Pomme de terre",
-     "Raisin"
+     "céréales",
+     "fruits",
+     "légumes",
+     "fleurs"
     ],
-    "a": "Céréales fermentées et distillées (orge, maïs, seigle)"
+    "a": "céréales"
    },
    {
-    "q": "Quels sont les principaux pays producteurs de whisky ?",
+    "q": "Quel pays, avec l'Irlande, revendique l'origine du whisky ? L'___ ?",
     "c": [
-     "Russie, Pologne",
-     "Allemagne, Belgique",
-     "France, Italie, Espagne",
-     "Écosse, États-Unis, Canada, Japon, Irlande"
+     "Écosse",
+     "Espagne",
+     "Grèce",
+     "Portugal"
     ],
-    "a": "Écosse, États-Unis, Canada, Japon, Irlande"
+    "a": "Écosse"
    },
    {
-    "q": "Qu'est-ce que le Scotch whisky ?",
+    "q": "Dans quel récipient en bois le whisky vieillit-il pour se colorer ? Le fût de ___ ?",
     "c": [
-     "Whisky vieux",
-     "Whisky tourbé",
-     "Whisky de luxe",
-     "Whisky produit en Écosse"
+     "chêne",
+     "pin",
+     "hêtre",
+     "bambou"
     ],
-    "a": "Whisky produit en Écosse"
+    "a": "chêne"
    },
    {
-    "q": "Qu'est-ce que le Bourbon ?",
+    "q": "Comment appelle-t-on un whisky écossais issu d'une seule distillerie et d'orge maltée ? Un single ___ ?",
     "c": [
-     "Whisky irlandais",
-     "Whisky américain à base de maïs (au moins 51%)",
-     "Whisky japonais",
-     "Whisky canadien"
+     "malt",
+     "grain",
+     "blend",
+     "cask"
     ],
-    "a": "Whisky américain à base de maïs (au moins 51%)"
+    "a": "malt"
    },
    {
-    "q": "Combien d'années un whisky doit-il vieillir minimum ?",
+    "q": "Quel goût fumé caractérise les whiskies de l'île d'Islay ? Le goût de ___ ?",
     "c": [
-     "5 ans",
-     "1 an",
-     "10 ans",
-     "3 ans pour le Scotch"
+     "tourbe",
+     "vanille",
+     "miel",
+     "menthe"
     ],
-    "a": "3 ans pour le Scotch"
+    "a": "tourbe"
    },
    {
-    "q": "Qu'est-ce que le single malt ?",
+    "q": "Quel whisky américain est fait majoritairement de maïs ? Le ___ ?",
     "c": [
-     "Whisky en grain",
-     "Whisky haut de gamme",
-     "Whisky d'une seule distillerie à base de pur malt d'orge",
-     "Mélange de whiskies"
+     "bourbon",
+     "scotch",
+     "rye",
+     "poitín"
     ],
-    "a": "Whisky d'une seule distillerie à base de pur malt d'orge"
+    "a": "bourbon"
    },
    {
-    "q": "Qu'est-ce que le blended whisky ?",
+    "q": "Comment appelle-t-on la part du whisky qui s'évapore du fût pendant le vieillissement ? La part des ___ ?",
     "c": [
-     "Whisky aromatisé",
-     "Assemblage de whiskies de différentes distilleries",
-     "Whisky de luxe",
-     "Whisky allégé"
+     "anges",
+     "démons",
+     "rois",
+     "moines"
     ],
-    "a": "Assemblage de whiskies de différentes distilleries"
+    "a": "anges"
    },
    {
-    "q": "Qu'est-ce que la tourbe dans le whisky écossais ?",
-    "c": [
-     "Région écossaise",
-     "Type d'orge",
-     "Combustible utilisé pour sécher le malt, donnant un goût fumé",
-     "Fût spécial"
-    ],
-    "a": "Combustible utilisé pour sécher le malt, donnant un goût fumé"
+    "q": "Combien d'années, au minimum, un whisky doit-il vieillir en fût pour être appelé « Scotch » ?",
+    "a": "3"
    }
   ],
   "rw": true
@@ -25794,84 +25764,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "De quoi est faite la vodka traditionnelle ?",
+    "q": "De quelle couleur est la vodka classique ?",
     "c": [
-     "Blé, seigle ou pommes de terre",
-     "Canne à sucre",
-     "Raisin",
-     "Orge"
+     "transparente",
+     "brune",
+     "verte",
+     "rouge"
     ],
-    "a": "Blé, seigle ou pommes de terre"
+    "a": "transparente"
    },
    {
-    "q": "Quels pays sont les plus réputés pour la vodka ?",
+    "q": "Quels pays de l'Est revendiquent l'origine de la vodka ? La Russie et la ___ ?",
     "c": [
-     "Japon et Chine",
-     "Écosse et Irlande",
-     "France et Italie",
-     "Russie et Pologne"
+     "Pologne",
+     "Grèce",
+     "Italie",
+     "Espagne"
     ],
-    "a": "Russie et Pologne"
+    "a": "Pologne"
    },
    {
-    "q": "Quelle est la teneur en alcool typique de la vodka ?",
+    "q": "À partir de quel tubercule, souvent, distille-t-on la vodka ? La ___ de terre ?",
     "c": [
-     "35% vol.",
-     "30% vol.",
-     "40% vol.",
-     "50% vol."
+     "pomme",
+     "canne",
+     "betterave rouge",
+     "carotte"
     ],
-    "a": "40% vol."
+    "a": "pomme"
    },
    {
-    "q": "Qu'est-ce que la filtration au charbon dans la vodka ?",
+    "q": "Dans quel cocktail rouge à base de jus de tomate trouve-t-on de la vodka ? Le Bloody ___ ?",
     "c": [
-     "Procédé qui purifie la vodka et adoucit le goût",
-     "Distillation",
-     "Méthode de fermentation",
-     "Ajout d'arôme"
+     "Mary",
+     "Sunday",
+     "Caesar",
+     "Rose"
     ],
-    "a": "Procédé qui purifie la vodka et adoucit le goût"
+    "a": "Mary"
    },
    {
-    "q": "Qui a standardisé la vodka à 40° ?",
+    "q": "Que signifie le mot russe « vodka », diminutif d'un mot voulant dire ___ ?",
     "c": [
-     "Ivan le Terrible",
-     "Pierre le Grand",
-     "Léon Tolstoï",
-     "Dmitri Mendeleïev"
+     "eau",
+     "feu",
+     "glace",
+     "or"
     ],
-    "a": "Dmitri Mendeleïev"
+    "a": "eau"
    },
    {
-    "q": "Qu'est-ce qu'une vodka premium ?",
+    "q": "Quel procédé, répété, rend la vodka très pure et neutre ? La ___ ?",
     "c": [
-     "Vodka haut de gamme distillée plusieurs fois et filtrée",
-     "Vodka ancienne",
-     "Vodka importée",
-     "Vodka aromatisée"
+     "distillation",
+     "fermentation",
+     "macération",
+     "infusion"
     ],
-    "a": "Vodka haut de gamme distillée plusieurs fois et filtrée"
+    "a": "distillation"
    },
    {
-    "q": "Quelle est la différence entre vodka et vodka aromatisée ?",
+    "q": "Quel cocktail associe vodka, liqueur de café et crème, cher au personnage « The Dude » ? Le White ___ ?",
     "c": [
-     "La vodka est plus forte",
-     "La vodka aromatisée est moins chère",
-     "Elles sont identiques",
-     "La vodka aromatisée contient des arômes ajoutés"
+     "Russian",
+     "Lady",
+     "Cosmo",
+     "Sour"
     ],
-    "a": "La vodka aromatisée contient des arômes ajoutés"
+    "a": "Russian"
    },
    {
-    "q": "Comment boit-on traditionnellement la vodka en Russie ?",
-    "c": [
-     "Glacée, en un shot, accompagnée de zakouskis",
-     "Toujours à température ambiante",
-     "Avec du cola",
-     "En cocktail"
-    ],
-    "a": "Glacée, en un shot, accompagnée de zakouskis"
+    "q": "Quel degré d'alcool, en pourcentage, titre classiquement une vodka standard ?",
+    "a": "40"
    }
   ],
   "rw": true
@@ -25883,84 +25847,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "De quoi est fait le rhum ?",
+    "q": "De quelle plante sucrée le rhum est-il distillé ? La canne à ___ ?",
     "c": [
-     "De la canne à sucre (jus, mélasse ou sirop)",
-     "De la pomme de terre",
-     "Du raisin",
-     "De l'orge"
+     "sucre",
+     "sel",
+     "miel",
+     "sève"
     ],
-    "a": "De la canne à sucre (jus, mélasse ou sirop)"
+    "a": "sucre"
    },
    {
-    "q": "Quels pays sont les plus grands producteurs de rhum ?",
+    "q": "Dans quelle zone tropicale, les Caraïbes, le rhum est-il roi ? Les ___ ?",
     "c": [
-     "France, Italie",
-     "Caraïbes (Cuba, Porto Rico, Jamaïque, Barbade)",
-     "Brésil, Argentine",
-     "États-Unis, Canada"
+     "Antilles",
+     "Alpes",
+     "Andes",
+     "Balkans"
     ],
-    "a": "Caraïbes (Cuba, Porto Rico, Jamaïque, Barbade)"
+    "a": "Antilles"
    },
    {
-    "q": "Quels sont les principaux types de rhum ?",
+    "q": "Quel cocktail cubain associe rhum, menthe, citron vert et sucre ? Le ___ ?",
     "c": [
-     "Rhum sec, rhum doux",
-     "Rhum agricole, rhum industriel",
-     "Rhum blanc, rhum ambré, rhum vieux",
-     "Rhum léger, rhum fort"
+     "mojito",
+     "spritz",
+     "margarita",
+     "negroni"
     ],
-    "a": "Rhum blanc, rhum ambré, rhum vieux"
+    "a": "mojito"
    },
    {
-    "q": "Qu'est-ce que le rhum agricole ?",
+    "q": "Comment appelle-t-on le rhum vieilli en fût, ambré et rond ? Le rhum ___ ?",
     "c": [
-     "Rhum produit à partir du pur jus de canne à sucre",
-     "Rhum aromatisé",
-     "Rhum de mélasse",
-     "Rhum vieux"
+     "vieux",
+     "blanc",
+     "agricole seulement",
+     "bleu"
     ],
-    "a": "Rhum produit à partir du pur jus de canne à sucre"
+    "a": "vieux"
    },
    {
-    "q": "Qu'est-ce que le rhum arrangé ?",
+    "q": "Quel rhum est distillé directement à partir du jus de canne frais ? Le rhum ___ ?",
     "c": [
-     "Cocktail",
-     "Rhum sucré",
-     "Rhum dans lequel on fait macérer des fruits ou épices",
-     "Rhum mélangé"
+     "agricole",
+     "industriel",
+     "épicé",
+     "arrangé"
     ],
-    "a": "Rhum dans lequel on fait macérer des fruits ou épices"
+    "a": "agricole"
    },
    {
-    "q": "Qu'est-ce que le rhum vieux ?",
+    "q": "À quel univers, celui des flibustiers, le rhum est-il associé dans l'imaginaire ? Les ___ ?",
     "c": [
-     "Rhum foncé",
-     "Rhum de luxe",
-     "Rhum vieilli en fût de chêne pendant plusieurs années",
-     "Rhum épicé"
+     "pirates",
+     "chevaliers",
+     "cosmonautes",
+     "moines"
     ],
-    "a": "Rhum vieilli en fût de chêne pendant plusieurs années"
+    "a": "pirates"
    },
    {
-    "q": "Qu'est-ce que le Ti'Punch ?",
+    "q": "De quel résidu de la fabrication du sucre est souvent tiré le rhum industriel ? La ___ ?",
     "c": [
-     "Cocktail antillais traditionnel à base de rhum blanc",
-     "Rhum chaud",
-     "Rhum sucré",
-     "Rhum épicé"
+     "mélasse",
+     "farine",
+     "cendre",
+     "pulpe sèche"
     ],
-    "a": "Cocktail antillais traditionnel à base de rhum blanc"
+    "a": "mélasse"
    },
    {
-    "q": "Qu'est-ce que la mélasse ?",
-    "c": [
-     "Sous-produit sucré de la fabrication du sucre de canne",
-     "Ferment",
-     "Type de canne",
-     "Alambic"
-    ],
-    "a": "Sous-produit sucré de la fabrication du sucre de canne"
+    "q": "Quel degré minimum, en pourcentage d'alcool, titre en général un rhum standard ?",
+    "a": "40"
    }
   ],
   "rw": true
@@ -25972,84 +25930,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "De quoi est faite la tequila ?",
+    "q": "De quel pays la tequila est-elle originaire ?",
     "c": [
-     "De l'agave bleu (agave tequilana)",
-     "Du cactus",
-     "Du raisin",
-     "De la canne à sucre"
+     "Mexique",
+     "Espagne",
+     "Pérou",
+     "Chili"
     ],
-    "a": "De l'agave bleu (agave tequilana)"
+    "a": "Mexique"
    },
    {
-    "q": "Où est produite la tequila ?",
+    "q": "De quelle plante bleue épineuse distille-t-on la tequila ? L'___ ?",
     "c": [
-     "En Espagne",
-     "Au Texas",
-     "Au Mexique (région de Jalisco)",
-     "Au Pérou"
+     "agave",
+     "cactus",
+     "aloès",
+     "yucca"
     ],
-    "a": "Au Mexique (région de Jalisco)"
+    "a": "agave"
    },
    {
-    "q": "Quels sont les types de tequila ?",
+    "q": "Que met-on souvent sur la main avant un shot de tequila ? Du ___ ?",
     "c": [
-     "Légère, forte, sucrée",
-     "Jeune, vieille, aromatisée",
-     "Blanche, rouge, rosée",
-     "Blanco, Reposado, Añejo, Extra Añejo"
+     "sel",
+     "sucre",
+     "poivre",
+     "safran"
     ],
-    "a": "Blanco, Reposado, Añejo, Extra Añejo"
+    "a": "sel"
    },
    {
-    "q": "Qu'est-ce que la tequila 100% agave ?",
+    "q": "Quel agrume mord-on après le shot de tequila ? Le ___ vert ?",
     "c": [
-     "Tequila pure",
-     "Tequila biologique",
-     "Tequila non diluée",
-     "Tequila faite uniquement avec du sucre d'agave"
+     "citron",
+     "pamplemousse",
+     "orange",
+     "kiwi"
     ],
-    "a": "Tequila faite uniquement avec du sucre d'agave"
+    "a": "citron"
    },
    {
-    "q": "Qu'est-ce que le mezcal ?",
+    "q": "Dans quel cocktail givré de sel trouve-t-on de la tequila ? La ___ ?",
     "c": [
-     "Boisson mexicaine similaire à la tequila mais faite avec différentes espèces d'agave",
-     "Tequila bon marché",
-     "Liqueur",
-     "Tequila fumée"
+     "margarita",
+     "piña colada",
+     "caipirinha",
+     "daïquiri"
     ],
-    "a": "Boisson mexicaine similaire à la tequila mais faite avec différentes espèces d'agave"
+    "a": "margarita"
    },
    {
-    "q": "Comment se boit traditionnellement la tequila ?",
+    "q": "Quelle ville mexicaine donne son nom à la tequila ?",
     "c": [
-     "Avec de la glace",
-     "Pure et chaude",
-     "Avec sel et citron (dégustation) ou en cocktail",
-     "Avec du cola"
+     "Tequila",
+     "Cancún",
+     "Oaxaca",
+     "Puebla"
     ],
-    "a": "Avec sel et citron (dégustation) ou en cocktail"
+    "a": "Tequila"
    },
    {
-    "q": "Qu'est-ce que le ver dans la bouteille de mezcal ?",
+    "q": "Quelle boisson mexicaine cousine, faite de divers agaves, est plus artisanale ? Le ___ ?",
     "c": [
-     "Décoration",
-     "Larve ajoutée dans certaines bouteilles de mezcal comme tradition",
-     "Larve naturelle",
-     "Insecte comestible"
+     "mezcal",
+     "pulque",
+     "pisco",
+     "cachaça"
     ],
-    "a": "Larve ajoutée dans certaines bouteilles de mezcal comme tradition"
+    "a": "mezcal"
    },
    {
-    "q": "Quelle est la teneur en alcool typique de la tequila ?",
-    "c": [
-     "45-50% vol.",
-     "35% vol.",
-     "38-40% vol.",
-     "30-35% vol."
-    ],
-    "a": "38-40% vol."
+    "q": "Combien d'années, environ, met un agave bleu à mûrir avant d'être récolté pour la tequila ?",
+    "a": "7"
    }
   ],
   "rw": true
@@ -26061,84 +26013,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Quel est l'ingrédient principal qui donne son goût au gin ?",
+    "q": "Quelle petite baie violette parfume typiquement le gin ? La baie de ___ ?",
     "c": [
-     "Les baies de genièvre",
-     "Le houblon",
-     "Les agrumes",
-     "Le genévrier"
+     "genièvre",
+     "sureau",
+     "cassis",
+     "myrtille"
     ],
-    "a": "Les baies de genièvre"
+    "a": "genièvre"
    },
    {
-    "q": "De quoi est fait le gin ?",
+    "q": "De quel pays le gin « London Dry » est-il emblématique ? Le ___-Uni ?",
     "c": [
-     "Raisin distillé",
-     "Canne à sucre",
-     "Céréales fermentées",
-     "Alcool neutre redistillé avec des baies de genièvre et botaniques"
+     "Royaume",
+     "États",
+     "Pays",
+     "Emirats"
     ],
-    "a": "Alcool neutre redistillé avec des baies de genièvre et botaniques"
+    "a": "Royaume"
    },
    {
-    "q": "Quels pays sont réputés pour le gin ?",
+    "q": "Avec quelle eau gazeuse tonique mélange-t-on souvent le gin ? Le ___ ?",
     "c": [
-     "Russie, Pologne",
-     "Royaume-Uni, Pays-Bas, Espagne, France",
-     "Italie, Grèce",
-     "Japon, Chine"
+     "tonic",
+     "cola",
+     "soda orange",
+     "lait"
     ],
-    "a": "Royaume-Uni, Pays-Bas, Espagne, France"
+    "a": "tonic"
    },
    {
-    "q": "Qu'est-ce que le London Dry Gin ?",
+    "q": "Quel fruit garnit classiquement un gin tonic ? Une tranche de ___ ?",
     "c": [
-     "Style de gin sans sucre ajouté, traditionnellement anglais",
-     "Gin aromatisé",
-     "Gin bon marché",
-     "Gin de Londres"
+     "citron",
+     "banane",
+     "melon",
+     "pastèque"
     ],
-    "a": "Style de gin sans sucre ajouté, traditionnellement anglais"
+    "a": "citron"
    },
    {
-    "q": "Qu'est-ce que le Gin Tonic ?",
+    "q": "Comment appelle-t-on les plantes et épices aromatisant le gin ? Les ___ ?",
     "c": [
-     "Gin avec soda",
-     "Cocktail classique à base de gin et d'eau tonique",
-     "Boisson au gin",
-     "Mélange gin-bière"
+     "botaniques",
+     "minéraux",
+     "colorants",
+     "conservateurs"
     ],
-    "a": "Cocktail classique à base de gin et d'eau tonique"
+    "a": "botaniques"
    },
    {
-    "q": "Quelles épices sont souvent utilisées dans le gin ?",
+    "q": "Dans quel cocktail très sec, avec du vermouth, le gin est-il servi avec une olive ? Le ___ ?",
     "c": [
-     "Coriandre, cardamome, angélique, écorces d'agrumes",
-     "Gingembre, curcuma",
-     "Cannelle, vanille, chocolat",
-     "Poivre, sel, paprika"
+     "martini",
+     "mojito",
+     "spritz",
+     "cuba libre"
     ],
-    "a": "Coriandre, cardamome, angélique, écorces d'agrumes"
+    "a": "martini"
    },
    {
-    "q": "Qu'est-ce que le genièvre ?",
+    "q": "De quel alcool néerlandais, le « genièvre », le gin descend-il historiquement ? Le ___ ?",
     "c": [
-     "Épice",
-     "Baie du genévrier, ingrédient obligatoire du gin",
-     "Céréale",
-     "Fruit tropical"
+     "genever",
+     "schnaps",
+     "aquavit",
+     "kirsch"
     ],
-    "a": "Baie du genévrier, ingrédient obligatoire du gin"
+    "a": "genever"
    },
    {
-    "q": "Quel est l'ancêtre du gin moderne ?",
-    "c": [
-     "Le genièvre hollandais (jenever)",
-     "La vodka",
-     "Le rhum",
-     "Le whisky"
-    ],
-    "a": "Le genièvre hollandais (jenever)"
+    "q": "Quel degré d'alcool minimum, en pourcentage, un « London Dry Gin » doit-il titrer dans l'UE ?",
+    "a": "37.5"
    }
   ],
   "rw": true
@@ -26150,84 +26096,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Où est produit le champagne ?",
+    "q": "De quel fruit distillé le cognac est-il fait ? Le ___ (vin) ?",
     "c": [
-     "Dans la région Champagne (France)",
-     "En Bourgogne",
-     "En Alsace",
-     "En Italie"
+     "raisin",
+     "pomme",
+     "poire",
+     "prune"
     ],
-    "a": "Dans la région Champagne (France)"
+    "a": "raisin"
    },
    {
-    "q": "Quels cépages sont utilisés pour le champagne ?",
+    "q": "De quelle ville de Charente le cognac tient-il son nom ?",
     "c": [
-     "Syrah, Grenache",
-     "Sauvignon, Sémillon",
-     "Merlot, Cabernet Sauvignon",
-     "Pinot Noir, Pinot Meunier, Chardonnay"
+     "Cognac",
+     "Reims",
+     "Dijon",
+     "Cahors"
     ],
-    "a": "Pinot Noir, Pinot Meunier, Chardonnay"
+    "a": "Cognac"
    },
    {
-    "q": "Qu'est-ce que la méthode champenoise ?",
+    "q": "Quelle catégorie d'alcool est le cognac ? Une eau-de-___ ?",
     "c": [
-     "Distillation",
-     "Ajout de gaz carbonique",
-     "Double fermentation en bouteille pour créer les bulles",
-     "Fermentation en cuve"
+     "vie",
+     "rose",
+     "source",
+     "mer"
     ],
-    "a": "Double fermentation en bouteille pour créer les bulles"
+    "a": "vie"
    },
    {
-    "q": "Qui est considéré comme le père du champagne ?",
+    "q": "Dans quel type de fût le cognac vieillit-il ? Le fût de ___ ?",
     "c": [
-     "Veuve Clicquot",
-     "Louis XIV",
-     "Dom Pérignon",
-     "Moët"
+     "chêne",
+     "sapin",
+     "olivier",
+     "cerisier"
     ],
-    "a": "Dom Pérignon"
+    "a": "chêne"
    },
    {
-    "q": "Qu'est-ce que le brut ?",
+    "q": "Que signifie la mention « VS » sur une bouteille de cognac ? Very ___ ?",
     "c": [
-     "Champagne sec avec peu de sucre ajouté",
-     "Champagne pétillant",
-     "Champagne sucré",
-     "Champagne rosé"
+     "Special",
+     "Strong",
+     "Sweet",
+     "Smooth"
     ],
-    "a": "Champagne sec avec peu de sucre ajouté"
+    "a": "Special"
    },
    {
-    "q": "Combien de bulles y a-t-il dans une bouteille de champagne ?",
+    "q": "Que signifie le sigle « VSOP » : Very Superior Old ___ ?",
     "c": [
-     "Environ 1 million",
-     "Environ 50 millions",
-     "Environ 10 millions",
-     "Environ 100 millions"
+     "Pale",
+     "Port",
+     "Proof",
+     "Peat"
     ],
-    "a": "Environ 50 millions"
+    "a": "Pale"
    },
    {
-    "q": "Qu'est-ce que le champagne rosé ?",
+    "q": "Comment appelle-t-on le maître qui assemble les eaux-de-vie du cognac ? Le maître de ___ ?",
     "c": [
-     "Champagne léger",
-     "Champagne fruité",
-     "Champagne obtenu par macération ou assemblage de vin rouge",
-     "Champagne coloré"
+     "chai",
+     "cave",
+     "cuisine",
+     "cour"
     ],
-    "a": "Champagne obtenu par macération ou assemblage de vin rouge"
+    "a": "chai"
    },
    {
-    "q": "Qu'est-ce qu'un millésime en champagne ?",
-    "c": [
-     "Champagne rare",
-     "Champagne vieux",
-     "Champagne d'une seule année, produit lors des grandes années",
-     "Année de production"
-    ],
-    "a": "Champagne d'une seule année, produit lors des grandes années"
+    "q": "Combien d'années, au minimum, un cognac « XO » doit-il désormais avoir vieilli ?",
+    "a": "10"
    }
   ],
   "rw": true
@@ -26239,84 +26179,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce qu'un cocktail ?",
+    "q": "Quelle saveur dominante caractérise une liqueur, par rapport à un alcool sec ? Elle est ___ ?",
     "c": [
-     "Jus de fruits",
-     "Mélange de boissons alcoolisées et/ou non alcoolisées",
-     "Shot d'alcool",
-     "Boisson unique"
+     "sucrée",
+     "amère",
+     "acide",
+     "salée"
     ],
-    "a": "Mélange de boissons alcoolisées et/ou non alcoolisées"
+    "a": "sucrée"
    },
    {
-    "q": "Quel est le cocktail le plus connu au monde ?",
+    "q": "Quand boit-on souvent une liqueur, en petite quantité ? En ___ (après le repas) ?",
     "c": [
-     "Mojito",
-     "Margarita",
-     "Martini",
-     "Old Fashioned"
+     "digestif",
+     "apéritif seulement",
+     "petit-déjeuner",
+     "goûter"
     ],
-    "a": "Margarita"
+    "a": "digestif"
    },
    {
-    "q": "Quels sont les ingrédients d'un Mojito ?",
+    "q": "Quelle liqueur d'orange française est célèbre dans les cocktails ? Le ___ ?",
     "c": [
-     "Vodka, jus de cranberry",
-     "Rhum, menthe, citron, sucre, eau gazeuse",
-     "Tequila, citron, sel",
-     "Gin, tonic"
+     "Grand Marnier",
+     "Baileys",
+     "Amaretto",
+     "Limoncello"
     ],
-    "a": "Rhum, menthe, citron, sucre, eau gazeuse"
+    "a": "Grand Marnier"
    },
    {
-    "q": "Qu'est-ce qu'un Martini ?",
+    "q": "Quelle liqueur italienne au goût d'amande porte le nom d'« amer » adouci ? L'___ ?",
     "c": [
-     "Boisson gazeuse",
-     "Cocktail à base de gin et vermouth",
-     "Marque de vodka",
-     "Apéritif italien"
+     "Amaretto",
+     "Sambuca",
+     "Campari",
+     "Aperol"
     ],
-    "a": "Cocktail à base de gin et vermouth"
+    "a": "Amaretto"
    },
    {
-    "q": "Qu'est-ce qu'une Margarita ?",
+    "q": "Quelle liqueur crémeuse irlandaise mêle whiskey et crème ? Le ___ ?",
     "c": [
-     "Cocktail à la mangue",
-     "Smoothie",
-     "Punch",
-     "Cocktail à base de tequila, triple sec et citron"
+     "Baileys",
+     "Cointreau",
+     "Chartreuse",
+     "Kahlúa"
     ],
-    "a": "Cocktail à base de tequila, triple sec et citron"
+    "a": "Baileys"
    },
    {
-    "q": "Qu'est-ce qu'un cocktail 'sans alcool' ?",
+    "q": "Quelle liqueur de citron jaune est typique du sud de l'Italie ? Le ___ ?",
     "c": [
-     "Soda",
-     "Cocktail sans alcool appelé 'mocktail'",
-     "Boisson gazeuse",
-     "Jus de fruits"
+     "Limoncello",
+     "Curaçao",
+     "Triple sec",
+     "Malibu"
     ],
-    "a": "Cocktail sans alcool appelé 'mocktail'"
+    "a": "Limoncello"
    },
    {
-    "q": "Qui a inventé le cocktail moderne ?",
+    "q": "Comment appelle-t-on le procédé de trempage des fruits ou plantes dans l'alcool pour aromatiser ? La ___ ?",
     "c": [
-     "Harry Craddock",
-     "Donn Beach",
-     "Ernest Hemingway",
-     "Jerry Thomas (XIXe siècle)"
+     "macération",
+     "distillation",
+     "fermentation",
+     "pasteurisation"
     ],
-    "a": "Jerry Thomas (XIXe siècle)"
+    "a": "macération"
    },
    {
-    "q": "Qu'est-ce qu'un shaker dans la confection de cocktails ?",
-    "c": [
-     "Passoire",
-     "Bouteille",
-     "Verre",
-     "Récipient pour mélanger et refroidir les ingrédients"
-    ],
-    "a": "Récipient pour mélanger et refroidir les ingrédients"
+    "q": "Quel taux de sucre minimum, en grammes par litre, une « liqueur » doit-elle contenir dans l'UE ?",
+    "a": "100"
    }
   ],
   "rw": true
@@ -26328,84 +26262,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que l'alcoolémie ?",
+    "q": "De quel fruit fait-on le cidre ? La ___ ?",
     "c": [
-     "Effet de l'alcool",
-     "Quantité d'alcool dans une boisson",
-     "Taux d'alcool dans le sang",
-     "Alcool dans l'haleine"
+     "pomme",
+     "poire",
+     "prune",
+     "cerise"
     ],
-    "a": "Taux d'alcool dans le sang"
+    "a": "pomme"
    },
    {
-    "q": "En France, quel est le taux d'alcoolémie maximal autorisé pour conduire ?",
+    "q": "Quelle région française de l'ouest est réputée pour son cidre ? La ___ ?",
     "c": [
-     "0,5 g/L de sang",
-     "1,0 g/L",
-     "0,2 g/L",
-     "0,8 g/L"
+     "Normandie",
+     "Provence",
+     "Alsace",
+     "Corse"
     ],
-    "a": "0,5 g/L de sang"
+    "a": "Normandie"
    },
    {
-    "q": "Pour les jeunes conducteurs, quelle est la limite ?",
+    "q": "Le cidre est-il pétillant ou plat, en général ?",
     "c": [
-     "0,3 g/L",
-     "0,0 g/L",
-     "0,5 g/L",
-     "0,2 g/L"
+     "pétillant",
+     "plat",
+     "gazeux au CO2 ajouté seulement",
+     "gelé"
     ],
-    "a": "0,2 g/L"
+    "a": "pétillant"
    },
    {
-    "q": "Combien de temps faut-il pour éliminer un verre d'alcool ?",
+    "q": "Avec quelle spécialité bretonne sucrée-salée boit-on souvent du cidre ? La ___ ?",
     "c": [
-     "Environ 3 heures",
-     "Environ 1 heure",
-     "Environ 30 minutes",
-     "Environ 2 heures"
+     "galette",
+     "pizza",
+     "paella",
+     "raclette"
     ],
-    "a": "Environ 1 heure"
+    "a": "galette"
    },
    {
-    "q": "Qu'est-ce qu'un éthylotest ?",
+    "q": "Comment appelle-t-on le cidre le moins sucré, plus alcoolisé ? Le cidre ___ ?",
     "c": [
-     "Alcoomètre",
-     "Appareil pour mesurer l'alcoolémie",
-     "Breathalyzer",
-     "Verre doseur"
+     "brut",
+     "doux",
+     "rosé",
+     "de glace"
     ],
-    "a": "Appareil pour mesurer l'alcoolémie"
+    "a": "brut"
    },
    {
-    "q": "Quels facteurs influencent l'alcoolémie ?",
+    "q": "Quel alcool fort est distillé à partir de cidre en Normandie ? Le ___ ?",
     "c": [
-     "Uniquement la quantité",
-     "Uniquement le sexe",
-     "Poids, sexe, nourriture, vitesse de consommation",
-     "Uniquement le poids"
+     "calvados",
+     "cognac",
+     "armagnac",
+     "kirsch"
     ],
-    "a": "Poids, sexe, nourriture, vitesse de consommation"
+    "a": "calvados"
    },
    {
-    "q": "Qu'est-ce que l'alcoolémie à jeun ?",
+    "q": "De quel fruit fait-on le « poiré », cousin du cidre ? La ___ ?",
     "c": [
-     "Taux normal",
-     "Taux faible",
-     "Taux d'alcool plus élevé car l'absorption est plus rapide",
-     "Taux nul"
+     "poire",
+     "pêche",
+     "figue",
+     "datte"
     ],
-    "a": "Taux d'alcool plus élevé car l'absorption est plus rapide"
+    "a": "poire"
    },
    {
-    "q": "Quelle est la peine pour conduite en état d'ivresse en France ?",
-    "c": [
-     "Avertissement",
-     "Retrait de points",
-     "Amende et suspension de permis, possible prison",
-     "Amende uniquement"
-    ],
-    "a": "Amende et suspension de permis, possible prison"
+    "q": "Quel degré d'alcool, en pourcentage, titre en général un cidre brut ?",
+    "a": "5"
    }
   ],
   "rw": true
@@ -26417,84 +26345,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que la gueule de bois ?",
+    "q": "Quelle plante donne au pastis son goût anisé ? L'___ ?",
     "c": [
-     "Ensemble de symptômes après une consommation excessive d'alcool",
-     "Allergie",
-     "Ivresse",
-     "Sevrage"
+     "anis",
+     "menthe",
+     "thym",
+     "lavande"
     ],
-    "a": "Ensemble de symptômes après une consommation excessive d'alcool"
+    "a": "anis"
    },
    {
-    "q": "Quels sont les symptômes de la gueule de bois ?",
+    "q": "Dans quelle région du sud de la France le pastis est-il un rituel ? La ___ ?",
     "c": [
-     "Maux de tête, nausées, fatigue, déshydratation",
-     "Énergie",
-     "Faim",
-     "Euphorie"
+     "Provence",
+     "Bretagne",
+     "Alsace",
+     "Normandie"
     ],
-    "a": "Maux de tête, nausées, fatigue, déshydratation"
+    "a": "Provence"
    },
    {
-    "q": "Quelle est la cause principale de la gueule de bois ?",
+    "q": "Que devient le pastis quand on ajoute de l'eau ? Il devient ___ (trouble) ?",
     "c": [
-     "Allergie",
-     "Déshydratation et accumulation de toxines",
-     "Intoxication alimentaire",
-     "Manque de sucre"
+     "blanc",
+     "rouge",
+     "vert",
+     "noir"
     ],
-    "a": "Déshydratation et accumulation de toxines"
+    "a": "blanc"
    },
    {
-    "q": "Existe-t-il un remède miracle contre la gueule de bois ?",
+    "q": "Que met-on dans le pastis avant de le boire ? De l'___ fraîche ?",
     "c": [
-     "Oui, l'aspirine",
-     "Non, seuls le repos et l'hydratation aident",
-     "Oui, les boissons énergisantes",
-     "Oui, le café"
+     "eau",
+     "huile",
+     "lait",
+     "vinaigre"
     ],
-    "a": "Non, seuls le repos et l'hydratation aident"
+    "a": "eau"
    },
    {
-    "q": "Quels types d'alcool provoquent les pires gueules de bois ?",
+    "q": "Quelle marque emblématique de pastis de Marseille est une institution ?",
     "c": [
-     "Le gin",
-     "La vodka",
-     "Les alcools foncés (whisky, vin rouge, rhum)",
-     "La bière"
+     "Ricard",
+     "Pernod à part",
+     "Get 27",
+     "Suze"
     ],
-    "a": "Les alcools foncés (whisky, vin rouge, rhum)"
+    "a": "Ricard"
    },
    {
-    "q": "Combien de temps dure une gueule de bois ?",
+    "q": "De quel apéritif interdit, à la même famille anisée, le pastis est-il l'héritier ? L'___ ?",
     "c": [
-     "24 à 48 heures",
-     "Quelques heures",
-     "12 à 24 heures",
-     "2 à 4 heures"
+     "absinthe",
+     "vermouth",
+     "porto",
+     "vin cuit"
     ],
-    "a": "12 à 24 heures"
+    "a": "absinthe"
    },
    {
-    "q": "L'alcool déshydrate-t-il le corps ?",
+    "q": "Quel phénomène optique laiteux se produit à l'ajout d'eau ? L'effet ___ (louche) ?",
     "c": [
-     "Uniquement en grande quantité",
-     "Parfois",
-     "Oui, car il inhibe l'hormone antidiurétique",
-     "Non"
+     "ouzo",
+     "mirage",
+     "arc-en-ciel",
+     "halo"
     ],
-    "a": "Oui, car il inhibe l'hormone antidiurétique"
+    "a": "ouzo"
    },
    {
-    "q": "Peut-on prévenir la gueule de bois ?",
-    "c": [
-     "En buvant du lait",
-     "En prenant des médicaments",
-     "Non, impossible",
-     "En buvant de l'eau entre les verres et en mangeant"
-    ],
-    "a": "En buvant de l'eau entre les verres et en mangeant"
+    "q": "Quel degré d'alcool, en pourcentage, titre classiquement un pastis avant dilution ?",
+    "a": "45"
    }
   ],
   "rw": true
