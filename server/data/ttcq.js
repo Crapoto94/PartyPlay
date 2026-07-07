@@ -27574,86 +27574,69 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Combien d'os un adulte possède-t-il ?",
-    "c": [
-     "180",
-     "206",
-     "198",
-     "215"
-    ],
-    "a": 1
+    "q": "Combien d'os possède un squelette humain adulte ?",
+    "a": "206"
    },
    {
-    "q": "Quel est le plus grand organe du corps humain ?",
+    "q": "Quel est le muscle le plus puissant du corps, proportionnellement, dans la mâchoire ? Le ___ ?",
     "c": [
-     "Les poumons",
-     "La peau",
-     "Le foie",
-     "L'intestin"
+     "masséter",
+     "biceps",
+     "mollet",
+     "fessier"
     ],
-    "a": 1
+    "a": "masséter"
    },
    {
-    "q": "Combien de litres de sang un adulte a-t-il en moyenne ?",
+    "q": "Quel organe du corps humain est le plus grand ? La ___ ?",
     "c": [
-     "Environ 5 litres",
-     "Environ 8 litres",
-     "Environ 2 litres",
-     "Environ 10 litres"
+     "peau",
+     "foie",
+     "rate",
+     "langue"
     ],
-    "a": 0
+    "a": "peau"
    },
    {
-    "q": "Le corps humain est composé d'environ quel pourcentage d'eau ?",
-    "c": [
-     "45 %",
-     "30 %",
-     "85 %",
-     "60 %"
-    ],
-    "a": 3
+    "q": "Combien de litres de sang, environ, circulent dans le corps d'un adulte ?",
+    "a": "5"
    },
    {
-    "q": "Combien de fois le cœur humain bat-il environ par jour ?",
+    "q": "Quel est le plus petit os du corps humain, situé dans l'oreille ? L'___ (étrier) ?",
     "c": [
-     "100 000",
-     "10 000",
-     "1 million",
-     "50 000"
+     "étrier",
+     "fémur",
+     "radius",
+     "tibia"
     ],
-    "a": 0
+    "a": "étrier"
    },
    {
-    "q": "Combien de cavités compte le cœur humain ?",
+    "q": "Combien de fois par jour, environ, le cœur humain bat-il (en milliers) ?",
     "c": [
-     "4",
-     "3",
-     "2",
-     "6"
+     "100",
+     "10",
+     "500",
+     "20"
     ],
-    "a": 0
+    "a": "100"
    },
    {
-    "q": "Quel organe humain peut se régénérer en grande partie ?",
+    "q": "Quelle est la seule partie du corps sans apport sanguin, nourrie par les larmes ? La ___ de l'œil ?",
     "c": [
-     "Le foie",
-     "Le cerveau",
-     "Les reins",
-     "Le cœur"
+     "cornée",
+     "rétine",
+     "pupille",
+     "iris"
     ],
-    "a": 0
+    "a": "cornée"
    },
    {
-    "q": "Quelle est la température interne normale du corps (°C) ?",
-    "c": [
-     "37",
-     "39",
-     "41",
-     "35"
-    ],
-    "a": 0
+    "q": "Combien de kilomètres, environ, mesureraient tous les vaisseaux sanguins d'un adulte mis bout à bout (en milliers) ?",
+    "a": "100000"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "insolite_102",
@@ -27663,85 +27646,74 @@ export const TTCQ_THEMES = [
   "levels": [
    {
     "q": "Combien de cœurs possède une pieuvre ?",
-    "c": [
-     "3",
-     "2",
-     "1",
-     "4"
-    ],
-    "a": 0
+    "a": "3"
    },
    {
-    "q": "De quelle couleur est le sang d'une pieuvre ?",
+    "q": "De quelle couleur est le sang de la pieuvre ?",
     "c": [
-     "Vert",
-     "Incolore",
-     "Bleu",
-     "Rouge"
+     "bleu",
+     "rouge",
+     "vert",
+     "jaune"
     ],
-    "a": 2
+    "a": "bleu"
    },
    {
-    "q": "Quel est l'animal terrestre le plus rapide ?",
+    "q": "Quel animal terrestre est le plus rapide du monde, à la course ? Le ___ ?",
     "c": [
-     "Le cheval",
-     "Le guépard",
-     "Le lion",
-     "L'antilope"
+     "guépard",
+     "lion",
+     "cheval",
+     "lévrier"
     ],
-    "a": 1
+    "a": "guépard"
    },
    {
-    "q": "Combien de compartiments l'estomac d'une vache possède-t-il ?",
+    "q": "Quel mammifère est le seul à pouvoir vraiment voler ? La ___ ?",
     "c": [
-     "6",
-     "1",
-     "4",
-     "2"
+     "chauve-souris",
+     "taupe",
+     "belette",
+     "musaraigne"
     ],
-    "a": 2
+    "a": "chauve-souris"
    },
    {
-    "q": "Quel est le plus grand animal ayant jamais existé ?",
+    "q": "Quel animal ne dort presque jamais et n'a jamais de sommeil profond comme nous ? Le ___ ? (dauphin dort un hémisphère à la fois)",
     "c": [
-     "Le diplodocus",
-     "L'éléphant",
-     "La baleine bleue",
-     "Le requin-baleine"
+     "dauphin",
+     "chat",
+     "ours",
+     "koala"
     ],
-    "a": 2
+    "a": "dauphin"
    },
    {
-    "q": "Quel animal est célèbre pour régénérer ses membres ?",
+    "q": "Quel petit animal peut survivre dans l'espace et à des conditions extrêmes ? Le ___ (ourson d'eau) ?",
     "c": [
-     "Le lapin",
-     "Le chat",
-     "L'axolotl",
-     "Le pigeon"
+     "tardigrade",
+     "moustique",
+     "cafard",
+     "ver"
     ],
-    "a": 2
+    "a": "tardigrade"
    },
    {
-    "q": "Les empreintes digitales de quel animal ressemblent le plus aux nôtres ?",
+    "q": "Quel oiseau peut voler à reculons ? Le ___-mouche (colibri) ?",
     "c": [
-     "Le gorille",
-     "Le chimpanzé",
-     "Le koala",
-     "Le raton laveur"
+     "colibri",
+     "moineau",
+     "aigle",
+     "hibou"
     ],
-    "a": 2
+    "a": "colibri"
    },
    {
-    "q": "Quel oiseau est capable de voler à reculons ?",
-    "c": [
-     "Le pingouin",
-     "L'aigle",
-     "Le moineau",
-     "Le colibri"
-    ],
-    "a": 3
+    "q": "Combien de kilomètres par heure, environ, un guépard peut-il atteindre en pointe ?",
+    "a": "110"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "insolite_103",
@@ -27752,84 +27724,79 @@ export const TTCQ_THEMES = [
    {
     "q": "Quelle planète est la plus proche du Soleil ?",
     "c": [
-     "La Terre",
      "Mercure",
      "Vénus",
-     "Mars"
+     "Mars",
+     "Terre"
     ],
-    "a": 1
+    "a": "Mercure"
    },
    {
-    "q": "Sur quelle planète un jour dure-t-il plus longtemps qu'une année ?",
+    "q": "Quelle planète est surnommée la « planète rouge » ?",
     "c": [
-     "Jupiter",
      "Mars",
+     "Vénus",
+     "Jupiter",
+     "Saturne"
+    ],
+    "a": "Mars"
+   },
+   {
+    "q": "Quelle planète possède de spectaculaires anneaux ?",
+    "c": [
      "Saturne",
-     "Vénus"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quelle est la planète la plus chaude du système solaire ?",
-    "c": [
      "Mars",
-     "Jupiter",
      "Vénus",
      "Mercure"
     ],
-    "a": 2
+    "a": "Saturne"
    },
    {
-    "q": "Combien de temps met la lumière du Soleil pour atteindre la Terre ?",
+    "q": "Quel astre éclaire nos nuits en reflétant la lumière du Soleil ? La ___ ?",
     "c": [
-     "8 secondes",
-     "1 minute",
-     "8 heures",
-     "8 minutes"
+     "Lune",
+     "Mars",
+     "Vénus",
+     "comète"
     ],
-    "a": 3
+    "a": "Lune"
    },
    {
     "q": "Quelle est la plus grande planète du système solaire ?",
     "c": [
+     "Jupiter",
      "Saturne",
-     "Neptune",
-     "La Terre",
-     "Jupiter"
+     "Terre",
+     "Neptune"
     ],
-    "a": 3
+    "a": "Jupiter"
    },
    {
-    "q": "Quel astre provoque principalement les marées sur Terre ?",
+    "q": "Comment appelle-t-on une étoile qui explose en fin de vie ? Une ___ ?",
     "c": [
-     "Le Soleil",
-     "La Lune",
-     "Vénus",
-     "Mars"
+     "supernova",
+     "comète",
+     "nébuleuse",
+     "météorite"
     ],
-    "a": 1
+    "a": "supernova"
    },
    {
-    "q": "De quelle couleur apparaît un coucher de soleil sur Mars ?",
+    "q": "Quelle galaxie abrite notre système solaire ? La Voie ___ ?",
     "c": [
-     "Rouge",
-     "Violet",
-     "Bleu",
-     "Vert"
+     "lactée",
+     "sombre",
+     "dorée",
+     "argentée"
     ],
-    "a": 2
+    "a": "lactée"
    },
    {
-    "q": "Quelle planète possède le système d'anneaux le plus visible ?",
-    "c": [
-     "Neptune",
-     "Saturne",
-     "Uranus",
-     "Jupiter"
-    ],
-    "a": 1
+    "q": "Combien de minutes, environ, met la lumière du Soleil pour atteindre la Terre ?",
+    "a": "8"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "insolite_104",
@@ -27838,86 +27805,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Le miel peut-il se périmer ?",
+    "q": "Le miel peut-il se conserver des milliers d'années sans se périmer ?",
     "c": [
-     "Non, jamais",
-     "Oui, en 5 ans",
-     "Oui, en 6 mois",
-     "Oui, en 1 an"
+     "oui",
+     "non",
+     "seulement au froid",
+     "seulement un an"
     ],
-    "a": 0
+    "a": "oui"
    },
    {
-    "q": "Botaniquement, la banane est…",
+    "q": "De quelle plante provient le chocolat ? Le ___ (cacaoyer) ?",
     "c": [
-     "une noix",
-     "un légume",
-     "une baie",
-     "une racine"
+     "cacao",
+     "café",
+     "canne",
+     "coco"
     ],
-    "a": 2
+    "a": "cacao"
    },
    {
-    "q": "Botaniquement, la tomate est…",
+    "q": "La carotte a-t-elle toujours été orange, ou était-elle violette à l'origine ?",
     "c": [
-     "un tubercule",
-     "une graine",
-     "un fruit",
-     "un légume"
+     "violette",
+     "orange",
+     "blanche",
+     "rouge"
     ],
-    "a": 2
+    "a": "violette"
    },
    {
-    "q": "De quelle plante provient le chocolat ?",
+    "q": "Quel fruit est techniquement une baie : la banane ou la fraise ? La ___ ?",
     "c": [
-     "Le caféier",
-     "Le cacaoyer",
-     "Le théier",
-     "La canne à sucre"
+     "banane",
+     "fraise",
+     "pomme",
+     "cerise"
     ],
-    "a": 1
+    "a": "banane"
    },
    {
-    "q": "Quelle épice est la plus chère au monde au poids ?",
+    "q": "De quel insecte provient le miel ? L'___ ?",
     "c": [
-     "Le safran",
-     "La vanille",
-     "Le poivre",
-     "La cannelle"
+     "abeille",
+     "guêpe",
+     "fourmi",
+     "mouche"
     ],
-    "a": 0
+    "a": "abeille"
    },
    {
-    "q": "La cacahuète est en réalité…",
+    "q": "Quelle épice, plus chère que l'or au poids, provient d'une fleur ? Le ___ ?",
     "c": [
-     "une légumineuse",
-     "un fruit à coque",
-     "une noix",
-     "une céréale"
+     "safran",
+     "poivre",
+     "sel",
+     "cumin"
     ],
-    "a": 0
+    "a": "safran"
    },
    {
-    "q": "Quel aliment est composé à environ 95 % d'eau ?",
+    "q": "Le piment pique-t-il à cause d'une molécule nommée ___ ?",
     "c": [
-     "La pomme",
-     "La carotte",
-     "Le pain",
-     "Le concombre"
+     "capsaïcine",
+     "caféine",
+     "nicotine",
+     "théine"
     ],
-    "a": 3
+    "a": "capsaïcine"
    },
    {
-    "q": "À quelle température l'eau bout-elle au niveau de la mer (°C) ?",
-    "c": [
-     "80",
-     "90",
-     "120",
-     "100"
-    ],
-    "a": 3
+    "q": "Combien de fèves de cacao, environ, faut-il pour faire 500 g de chocolat ?",
+    "a": "400"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "insolite_105",
@@ -27928,84 +27890,79 @@ export const TTCQ_THEMES = [
    {
     "q": "Quel est le plus haut sommet du monde ?",
     "c": [
-     "Le Kilimandjaro",
-     "Le K2",
-     "Le Mont Blanc",
-     "L'Everest"
+     "Everest",
+     "Mont Blanc",
+     "Kilimandjaro",
+     "K2"
     ],
-    "a": 3
+    "a": "Everest"
    },
    {
-    "q": "Quel est le plus grand océan du monde ?",
+    "q": "Quel est le plus long fleuve du monde (selon la mesure classique) ? Le ___ ?",
     "c": [
-     "L'Arctique",
-     "Le Pacifique",
-     "L'Indien",
-     "L'Atlantique"
+     "Nil",
+     "Amazone",
+     "Yangtsé",
+     "Mississippi"
     ],
-    "a": 1
+    "a": "Nil"
    },
    {
-    "q": "Quel est le plus grand désert chaud du monde ?",
+    "q": "Quel est le plus grand océan de la planète ? L'océan ___ ?",
     "c": [
-     "L'Atacama",
-     "Le Kalahari",
-     "Le Gobi",
-     "Le Sahara"
+     "Pacifique",
+     "Atlantique",
+     "Indien",
+     "Arctique"
     ],
-    "a": 3
+    "a": "Pacifique"
    },
    {
-    "q": "Quel est le plus grand pays du monde par superficie ?",
+    "q": "Quel est le plus grand pays du monde par sa superficie ?",
     "c": [
-     "La Chine",
-     "Les États-Unis",
-     "La Russie",
-     "Le Canada"
+     "Russie",
+     "Canada",
+     "Chine",
+     "États-Unis"
     ],
-    "a": 2
+    "a": "Russie"
    },
    {
-    "q": "Quel est le plus petit État du monde ?",
+    "q": "Quel désert chaud est le plus grand du monde ? Le ___ ?",
     "c": [
-     "Saint-Marin",
-     "Monaco",
-     "Nauru",
-     "Le Vatican"
+     "Sahara",
+     "Gobi",
+     "Kalahari",
+     "Atacama"
     ],
-    "a": 3
+    "a": "Sahara"
    },
    {
-    "q": "Quel animal atteint la plus grande vitesse en piqué ?",
+    "q": "Quel est l'animal le plus grand ayant jamais existé, encore vivant aujourd'hui ? La ___ bleue ?",
     "c": [
-     "Le faucon pèlerin",
-     "Le guépard",
-     "Le martinet",
-     "L'aigle royal"
+     "baleine",
+     "girafe",
+     "otarie",
+     "murène"
     ],
-    "a": 0
+    "a": "baleine"
    },
    {
-    "q": "Quel métal est liquide à température ambiante ?",
+    "q": "Quel lac est le plus profond du monde, en Sibérie ? Le lac ___ ?",
     "c": [
-     "Le mercure",
-     "L'étain",
-     "Le zinc",
-     "Le plomb"
+     "Baïkal",
+     "Victoria",
+     "Léman",
+     "Titicaca"
     ],
-    "a": 0
+    "a": "Baïkal"
    },
    {
-    "q": "Quel est l'os le plus long du corps humain ?",
-    "c": [
-     "Le tibia",
-     "L'humérus",
-     "Le fémur",
-     "Le radius"
-    ],
-    "a": 2
+    "q": "Quelle profondeur, en mètres, atteint la fosse des Mariannes, point le plus profond des océans ?",
+    "a": "11000"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "original_001",
