@@ -9788,86 +9788,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est l'unité de la tension électrique ?",
+    "q": "Dans quelle unité mesure-t-on la tension électrique ? Le ___ ?",
     "c": [
-     "Le watt",
-     "L'ampère",
-     "L'ohm",
-     "Le volt"
+     "volt",
+     "watt",
+     "gramme",
+     "mètre"
     ],
-    "a": 3
+    "a": "volt"
    },
    {
-    "q": "Qui a découvert l'électricité statique ?",
+    "q": "Quel phénomène électrique naturel zèbre le ciel pendant l'orage ? La ___ ?",
     "c": [
-     "Thomas Edison",
-     "Benjamin Franklin",
-     "Thalès de Milet",
-     "Nikola Tesla"
+     "foudre",
+     "pluie",
+     "grêle",
+     "brume"
     ],
-    "a": 2
+    "a": "foudre"
    },
    {
-    "q": "Quelle est la différence entre courant continu et alternatif ?",
+    "q": "Quel savant américain a fait voler un cerf-volant sous l'orage ? Benjamin ___ ?",
     "c": [
-     "Fréquence",
-     "Puissance",
-     "Direction du flux",
-     "Tension"
+     "Franklin",
+     "Edison",
+     "Tesla",
+     "Volta"
     ],
-    "a": 2
+    "a": "Franklin"
    },
    {
-    "q": "Qui a inventé la pile électrique ?",
+    "q": "Quel objet, inventé par Edison, a apporté la lumière électrique ? L'___ (à filament) ?",
     "c": [
-     "Luigi Galvani",
-     "Michael Faraday",
-     "André-Marie Ampère",
-     "Alessandro Volta"
+     "ampoule",
+     "bougie",
+     "lampe à huile",
+     "torche"
     ],
-    "a": 3
+    "a": "ampoule"
    },
    {
-    "q": "Combien de volts produit une prise domestique française ?",
+    "q": "Comment appelle-t-on une particule chargée négativement qui circule dans un fil ? L'___ ?",
     "c": [
-     "380 V",
-     "120 V",
-     "110 V",
-     "230 V"
+     "électron",
+     "proton",
+     "neutron",
+     "photon"
     ],
-    "a": 3
+    "a": "électron"
    },
    {
-    "q": "Quel métal est le meilleur conducteur d'électricité ?",
+    "q": "Quel inventeur serbo-américain a développé le courant alternatif ? Nikola ___ ?",
     "c": [
-     "L'argent",
-     "Le cuivre",
-     "L'or",
-     "L'aluminium"
+     "Tesla",
+     "Edison",
+     "Marconi",
+     "Bell"
     ],
-    "a": 0
+    "a": "Tesla"
    },
    {
-    "q": "Qui a développé le système de courant alternatif ?",
+    "q": "Comment appelle-t-on l'opposition au passage du courant, mesurée en ohms ? La ___ ?",
     "c": [
-     "James Watt",
-     "George Westinghouse",
-     "Nikola Tesla",
-     "Thomas Edison"
+     "résistance",
+     "puissance",
+     "tension",
+     "charge"
     ],
-    "a": 2
+    "a": "résistance"
    },
    {
-    "q": "Comment s'appelle la loi reliant tension, courant et résistance ?",
-    "c": [
-     "Loi de Coulomb",
-     "Loi d'Ohm",
-     "Loi de Kirchhoff",
-     "Loi de Faraday"
-    ],
-    "a": 1
+    "q": "Quelle est, en km/s, la vitesse de propagation approximative de l'électricité dans un fil (proche de la lumière) ?",
+    "a": "300000"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sciences_002",
@@ -9876,86 +9871,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a découvert la loi de la gravitation universelle ?",
+    "q": "Quelle force fait tomber les objets vers le sol ? La ___ ?",
     "c": [
-     "Edmond Halley",
-     "Isaac Newton",
-     "Albert Einstein",
-     "Galilée"
+     "gravité",
+     "lumière",
+     "chaleur",
+     "friction"
     ],
-    "a": 1
+    "a": "gravité"
    },
    {
-    "q": "Quelle est la constante d'accélération due à la gravité sur Terre ?",
+    "q": "Quel fruit serait tombé sur la tête de Newton selon la légende ? Une ___ ?",
     "c": [
-     "10 m/s²",
-     "9,8 m/s²",
-     "8,81 m/s²",
-     "9,81 m/s²"
+     "pomme",
+     "poire",
+     "cerise",
+     "orange"
     ],
-    "a": 3
+    "a": "pomme"
    },
    {
-    "q": "En quelle année Newton a-t-il publié ses lois ?",
+    "q": "Quel savant anglais a formulé la loi de la gravitation universelle ? Isaac ___ ?",
     "c": [
-     "1687",
-     "1666",
-     "1700",
-     "1650"
+     "Newton",
+     "Einstein",
+     "Galilée",
+     "Hooke"
     ],
-    "a": 0
+    "a": "Newton"
    },
    {
-    "q": "Qui a proposé la relativité générale pour expliquer la gravité ?",
+    "q": "Quel astre retient la Lune en orbite grâce à sa gravité ? La ___ ?",
     "c": [
-     "Niels Bohr",
-     "Albert Einstein",
-     "Max Planck",
-     "Werner Heisenberg"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Sur quel objet la gravité est-elle la plus faible dans notre système solaire ?",
-    "c": [
-     "Mercure",
-     "La Lune",
+     "Terre",
+     "Soleil",
      "Mars",
-     "Pluton"
+     "Vénus"
     ],
-    "a": 3
+    "a": "Terre"
    },
    {
-    "q": "Qu'est-ce qu'un trou noir ?",
+    "q": "Comment appelle-t-on l'état de flottement des astronautes, où la gravité semble absente ? L'___ ?",
     "c": [
-     "Un objet dont la gravité est si forte que rien n'en sort",
-     "Une étoile à neutrons",
-     "Un vortex spatial",
-     "Une étoile morte"
+     "apesanteur",
+     "lévitation",
+     "flottaison",
+     "gravitation"
     ],
-    "a": 0
+    "a": "apesanteur"
    },
    {
-    "q": "Comment s'appelle la force qui s'oppose à la gravité dans un avion ?",
+    "q": "Sur quel astre la gravité est-elle environ six fois plus faible que sur Terre ? La ___ ?",
     "c": [
-     "La portance",
-     "Le poids",
-     "La poussée",
-     "La traînée"
+     "Lune",
+     "Mars",
+     "Vénus",
+     "Jupiter"
     ],
-    "a": 0
+    "a": "Lune"
    },
    {
-    "q": "Qui a mesuré la constante gravitationnelle pour la première fois ?",
+    "q": "Quel savant italien aurait lâché des masses du haut de la tour de Pise ?",
     "c": [
-     "Henry Cavendish",
-     "Isaac Newton",
-     "John Michell",
-     "Pierre Bouguer"
+     "Galilée",
+     "Newton",
+     "Copernic",
+     "Kepler"
     ],
-    "a": 0
+    "a": "Galilée"
+   },
+   {
+    "q": "Quelle est, en m/s², la valeur approximative de l'accélération de la pesanteur sur Terre ?",
+    "a": "9.81"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sciences_003",
@@ -9964,86 +9954,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a proposé la théorie de l'évolution par sélection naturelle ?",
+    "q": "Quel naturaliste anglais a formulé la théorie de l'évolution ? Charles ___ ?",
     "c": [
-     "Charles Darwin",
-     "Alfred Russel Wallace",
-     "Gregor Mendel",
-     "Jean-Baptiste Lamarck"
+     "Darwin",
+     "Newton",
+     "Mendel",
+     "Lamarck"
     ],
-    "a": 0
+    "a": "Darwin"
    },
    {
-    "q": "En quelle année Darwin a-t-il publié 'L'Origine des espèces' ?",
+    "q": "Selon Darwin, de quel animal l'homme est-il un lointain cousin ? Le ___ ?",
     "c": [
-     "1859",
-     "1865",
-     "1845",
-     "1850"
+     "singe",
+     "chien",
+     "cheval",
+     "loup"
     ],
-    "a": 0
+    "a": "singe"
    },
    {
-    "q": "Quel archipel Darwin a-t-il étudié pour sa théorie ?",
+    "q": "Comment appelle-t-on la survie des mieux adaptés ? La ___ naturelle ?",
     "c": [
-     "Les Marquises",
-     "Les Hawaï",
-     "Les Fidji",
-     "Les Galápagos"
+     "sélection",
+     "création",
+     "génération",
+     "mutation"
     ],
-    "a": 3
+    "a": "sélection"
    },
    {
-    "q": "Qui a proposé une théorie de l'évolution avant Darwin ?",
+    "q": "Sur quel archipel Darwin a-t-il observé pinsons et tortues géantes ? Les ___ ?",
     "c": [
-     "Cuvier",
-     "Lamarck",
-     "Buffon",
-     "Malthus"
+     "Galápagos",
+     "Canaries",
+     "Açores",
+     "Baléares"
     ],
-    "a": 1
+    "a": "Galápagos"
    },
    {
-    "q": "Quelle est l'idée centrale de la sélection naturelle ?",
+    "q": "Sur quel bateau Darwin a-t-il fait son grand voyage d'exploration ? Le ___ ?",
     "c": [
-     "Mutation aléatoire",
-     "Usage et non-usage",
-     "Hérédité des caractères acquis",
-     "Survie du mieux adapté"
+     "Beagle",
+     "Endeavour",
+     "Victory",
+     "Bounty"
     ],
-    "a": 3
+    "a": "Beagle"
    },
    {
-    "q": "Quel nom porte la théorie de Darwin ?",
+    "q": "Comment appelle-t-on un changement aléatoire dans le matériel génétique, moteur de l'évolution ? Une ___ ?",
     "c": [
-     "Le darwinisme",
-     "Le mendélisme",
-     "Le lamarckisme",
-     "Le néo-darwinisme"
+     "mutation",
+     "sélection",
+     "adaptation",
+     "digestion"
     ],
-    "a": 3
+    "a": "mutation"
    },
    {
-    "q": "Quel oiseau des Galápagos est célèbre dans l'étude de Darwin ?",
+    "q": "Quel savant tchèque, avec ses pois, a fondé la génétique complétant Darwin ?",
     "c": [
-     "Le pinson",
-     "Le cormoran",
-     "L'iguane",
-     "La tortue"
+     "Mendel",
+     "Pasteur",
+     "Watson",
+     "Crick"
     ],
-    "a": 0
+    "a": "Mendel"
    },
    {
-    "q": "Qu'est-ce qu'une 'espèce' selon la biologie moderne ?",
-    "c": [
-     "Population vivant au même endroit",
-     "Groupe génétiquement identique",
-     "Population capable de se reproduire entre elle",
-     "Groupe d'animaux semblables"
-    ],
-    "a": 2
+    "q": "En quelle année Darwin a-t-il publié « L'Origine des espèces » ?",
+    "a": "1859"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sciences_004",
@@ -10052,86 +10037,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a découvert la radioactivité naturelle ?",
+    "q": "Quelle célèbre scientifique franco-polonaise a étudié la radioactivité ? Marie ___ ?",
     "c": [
-     "Marie Curie",
-     "Ernest Rutherford",
-     "Pierre Curie",
-     "Henri Becquerel"
+     "Curie",
+     "Lavoisier",
+     "Meitner",
+     "Joliot"
     ],
-    "a": 3
-   },
-   {
-    "q": "Quelle particule est émise lors de la désintégration alpha ?",
-    "c": [
-     "Noyau d'hélium",
-     "Électron",
-     "Proton",
-     "Neutron"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Qui a découvert le radium et le polonium ?",
-    "c": [
-     "Henri Becquerel",
-     "Marie et Pierre Curie",
-     "Frédéric Joliot",
-     "Irène Joliot-Curie"
-    ],
-    "a": 1
+    "a": "Curie"
    },
    {
     "q": "Combien de prix Nobel Marie Curie a-t-elle remportés ?",
-    "c": [
-     "3",
-     "2",
-     "4",
-     "1"
-    ],
-    "a": 1
+    "a": "2"
    },
    {
-    "q": "Qu'est-ce qu'un isotope radioactif ?",
+    "q": "Quel élément radioactif, découvert par Marie Curie, porte le nom de son pays natal ?",
     "c": [
-     "Atome instable qui se désintègre",
-     "Atome stable",
-     "Élément instable",
-     "Molécule radioactive"
+     "polonium",
+     "radium",
+     "uranium",
+     "césium"
     ],
-    "a": 0
+    "a": "polonium"
    },
    {
-    "q": "Quelle est l'unité de mesure de la radioactivité ?",
+    "q": "Quel autre élément radioactif Marie Curie a-t-elle découvert, qui brille dans le noir ?",
     "c": [
-     "Le becquerel",
-     "Le sievert",
-     "Le curie",
-     "Le gray"
+     "radium",
+     "plomb",
+     "fer",
+     "zinc"
     ],
-    "a": 0
+    "a": "radium"
    },
    {
-    "q": "Quel élément est utilisé dans les centrales nucléaires ?",
+    "q": "Quel combustible radioactif alimente les centrales nucléaires ? L'___ ?",
     "c": [
-     "L'uranium",
-     "Le radium",
-     "Le plutonium",
-     "Le thorium"
+     "uranium",
+     "charbon",
+     "pétrole",
+     "hydrogène"
     ],
-    "a": 0
+    "a": "uranium"
    },
    {
-    "q": "Comment s'appelle le processus de fission nucléaire ?",
+    "q": "Comment appelle-t-on le temps au bout duquel la radioactivité est divisée par deux ? La ___ (période) ?",
     "c": [
-     "Division du noyau d'un atome",
-     "Réaction en chaîne",
-     "Fusion de noyaux",
-     "Désintégration radioactive"
+     "demi-vie",
+     "durée",
+     "phase",
+     "constante"
     ],
-    "a": 0
+    "a": "demi-vie"
+   },
+   {
+    "q": "Quel physicien français a découvert la radioactivité naturelle avec l'uranium ? Henri ___ ?",
+    "c": [
+     "Becquerel",
+     "Ampère",
+     "Coulomb",
+     "Fresnel"
+    ],
+    "a": "Becquerel"
+   },
+   {
+    "q": "En quelle année, exactement, Henri Becquerel a-t-il découvert la radioactivité ?",
+    "a": "1896"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sciences_005",
@@ -10140,86 +10114,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qu'est-ce qu'un trou noir ?",
+    "q": "De quelle couleur, par définition, apparaît un trou noir ?",
     "c": [
-     "Étoile très dense",
-     "Portail interstellaire",
-     "Région de l'espace où la gravité est si forte que rien ne s'en échappe",
-     "Vortex cosmique"
+     "noir",
+     "blanc",
+     "rouge",
+     "bleu"
     ],
-    "a": 2
+    "a": "noir"
    },
    {
-    "q": "Qui a prédit l'existence des trous noirs avec la relativité générale ?",
+    "q": "Qu'est-ce qu'un trou noir absorbe et dont rien ne s'échappe, même la ___ ?",
     "c": [
-     "Stephen Hawking",
-     "Albert Einstein",
-     "John Wheeler",
-     "Karl Schwarzschild"
+     "lumière",
+     "chaleur",
+     "gravité",
+     "matière"
     ],
-    "a": 1
+    "a": "lumière"
    },
    {
-    "q": "Qu'est-ce que l'horizon des événements d'un trou noir ?",
+    "q": "Quel physicien britannique en fauteuil a théorisé le rayonnement des trous noirs ? Stephen ___ ?",
     "c": [
-     "La surface du trou noir",
-     "La singularité",
-     "Le centre du trou noir",
-     "Le point de non-retour"
+     "Hawking",
+     "Newton",
+     "Penrose",
+     "Thorne"
     ],
-    "a": 3
+    "a": "Hawking"
    },
    {
-    "q": "Comment s'appelle le centre d'un trou noir ?",
+    "q": "De la mort de quel type d'astre naît souvent un trou noir ? Une ___ massive ?",
     "c": [
-     "Le disque d'accrétion",
-     "La sphère de photons",
-     "La singularité",
-     "L'horizon"
+     "étoile",
+     "planète",
+     "comète",
+     "lune"
     ],
-    "a": 2
+    "a": "étoile"
    },
    {
-    "q": "Qui a inventé le terme 'trou noir' ?",
+    "q": "Comment appelle-t-on la frontière d'un trou noir, point de non-retour ? L'horizon des ___ ?",
     "c": [
-     "Stephen Hawking",
-     "John Wheeler",
-     "Albert Einstein",
-     "Karl Schwarzschild"
+     "événements",
+     "étoiles",
+     "temps",
+     "mondes"
     ],
-    "a": 1
+    "a": "événements"
    },
    {
-    "q": "Quel type de trou noir est le plus massif ?",
+    "q": "Quel trou noir supermassif se cache au centre de notre galaxie ? Sagittarius ___ ?",
     "c": [
-     "Le trou noir supermassif",
-     "Le trou noir primordial",
-     "Le mini trou noir",
-     "Le trou noir stellaire"
+     "A",
+     "B",
+     "X",
+     "Z"
     ],
-    "a": 0
+    "a": "A"
    },
    {
-    "q": "Quel est le trou noir le plus proche de la Terre ?",
+    "q": "Comment appelle-t-on le point central de densité infinie d'un trou noir ? La ___ ?",
     "c": [
-     "Cygnus X-1",
-     "Sagittarius A*",
-     "V616 Monocerotis",
-     "Gaia BH1"
+     "singularité",
+     "nébuleuse",
+     "supernova",
+     "galaxie"
     ],
-    "a": 3
+    "a": "singularité"
    },
    {
-    "q": "Que rayonnent les trous noirs selon Hawking ?",
-    "c": [
-     "Rayonnement de Hawking",
-     "Ondes gravitationnelles",
-     "Rayons X",
-     "Lumière"
-    ],
-    "a": 0
+    "q": "En quelle année a été publiée la toute première image d'un trou noir (M87) ?",
+    "a": "2019"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sciences_006",
@@ -10228,86 +10197,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel gaz les plantes absorbent-elles pendant la photosynthèse ?",
+    "q": "Quels êtres vivants pratiquent la photosynthèse ? Les ___ ?",
     "c": [
-     "L'hydrogène",
-     "L'azote",
-     "L'oxygène",
-     "Le dioxyde de carbone"
+     "plantes",
+     "animaux",
+     "champignons",
+     "virus"
     ],
-    "a": 3
+    "a": "plantes"
    },
    {
-    "q": "Quel pigment est responsable de la couleur verte des plantes ?",
+    "q": "Quel astre fournit l'énergie nécessaire à la photosynthèse ? Le ___ ?",
     "c": [
-     "L'anthocyane",
-     "La xanthophylle",
-     "Le carotène",
-     "La chlorophylle"
+     "Soleil",
+     "Lune",
+     "Mars",
+     "Vénus"
     ],
-    "a": 3
+    "a": "Soleil"
    },
    {
-    "q": "Quels sont les produits de la photosynthèse ?",
+    "q": "Quel gaz les plantes rejettent-elles grâce à la photosynthèse ? L'___ ?",
     "c": [
-     "CO2 et eau",
-     "Glucose et oxygène",
-     "Glucose et eau",
-     "Eau et oxygène"
+     "oxygène",
+     "hydrogène",
+     "azote",
+     "méthane"
     ],
-    "a": 1
+    "a": "oxygène"
    },
    {
-    "q": "Quelle énergie est utilisée dans la photosynthèse ?",
+    "q": "Quel pigment vert des feuilles capte la lumière ? La ___ ?",
     "c": [
-     "Électricité",
-     "Chaleur",
-     "Lumière solaire",
-     "Énergie chimique"
+     "chlorophylle",
+     "mélanine",
+     "kératine",
+     "hémoglobine"
     ],
-    "a": 2
+    "a": "chlorophylle"
    },
    {
-    "q": "Dans quelle partie de la plante la photosynthèse a-t-elle lieu ?",
+    "q": "Quel gaz, expiré par les humains, les plantes absorbent-elles ? Le dioxyde de ___ ?",
     "c": [
-     "Les fleurs",
-     "La tige",
-     "Les feuilles",
-     "Les racines"
+     "carbone",
+     "soufre",
+     "azote",
+     "chlore"
     ],
-    "a": 2
+    "a": "carbone"
    },
    {
-    "q": "Quel organite cellulaire réalise la photosynthèse ?",
+    "q": "Dans quelle partie de la plante se déroule surtout la photosynthèse ? Les ___ ?",
     "c": [
-     "Le noyau",
-     "Le chloroplaste",
-     "La mitochondrie",
-     "Le ribosome"
+     "feuilles",
+     "racines",
+     "graines",
+     "fleurs"
     ],
-    "a": 1
+    "a": "feuilles"
    },
    {
-    "q": "En quelle année la photosynthèse a-t-elle été découverte ?",
+    "q": "Quel sucre les plantes fabriquent-elles comme nourriture ? Le ___ (glucose) ?",
     "c": [
-     "1643 (Van Helmont)",
-     "1900",
-     "1804 (De Saussure)",
-     "1779 (Ingenhousz)"
+     "glucose",
+     "fructose",
+     "lactose",
+     "amidon"
     ],
-    "a": 3
+    "a": "glucose"
    },
    {
-    "q": "Quel scientifique a découvert que les plantes produisent de l'oxygène ?",
-    "c": [
-     "Antoine Lavoisier",
-     "Joseph Priestley",
-     "Jan Ingenhousz",
-     "Jean Senebier"
-    ],
-    "a": 1
+    "q": "Quel pourcentage, environ, de l'atmosphère terrestre est constitué d'oxygène issu (en partie) de la photosynthèse ?",
+    "a": "21"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sciences_007",
@@ -10316,86 +10280,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel physicien a développé la théorie de la relativité ?",
+    "q": "Quel physicien génial à la coiffure ébouriffée a créé la relativité ? Albert ___ ?",
     "c": [
-     "Max Planck",
-     "Niels Bohr",
-     "Albert Einstein",
-     "Isaac Newton"
+     "Einstein",
+     "Newton",
+     "Bohr",
+     "Planck"
     ],
-    "a": 2
+    "a": "Einstein"
    },
    {
-    "q": "En quelle année Einstein a-t-il publié la relativité restreinte ?",
+    "q": "Quelle célèbre équation d'Einstein relie énergie et masse ? E = m___ ? (c au carré)",
     "c": [
-     "1915",
-     "1900",
-     "1910",
-     "1905"
+     "c²",
+     "g²",
+     "v²",
+     "t²"
     ],
-    "a": 3
+    "a": "c²"
    },
    {
-    "q": "Quelle équation célèbre découle de la relativité restreinte ?",
+    "q": "Que représente le « c » dans la formule E=mc² ? La vitesse de la ___ ?",
     "c": [
-     "E=mc²",
-     "PV=nRT",
-     "E=hf",
-     "F=ma"
+     "lumière",
+     "gravité",
+     "chaleur",
+     "matière"
     ],
-    "a": 0
+    "a": "lumière"
    },
    {
-    "q": "En quelle année la relativité générale a-t-elle été publiée ?",
+    "q": "Selon Einstein, quelle grandeur peut se dilater si on va très vite ? Le ___ ?",
     "c": [
-     "1905",
-     "1920",
-     "1919",
-     "1915"
+     "temps",
+     "poids",
+     "volume",
+     "goût"
     ],
-    "a": 3
+    "a": "temps"
    },
    {
-    "q": "Qu'est-ce que la dilatation du temps ?",
+    "q": "Quelle vitesse est une limite infranchissable dans l'univers ? La vitesse de la ___ ?",
     "c": [
-     "Le temps ne change pas",
-     "Le temps s'arrête",
-     "Le temps passe plus lentement à grande vitesse",
-     "Le temps s'accélère"
+     "lumière",
+     "gravité",
+     "onde",
+     "pensée"
     ],
-    "a": 2
+    "a": "lumière"
    },
    {
-    "q": "Quelle expérience a confirmé la relativité générale en 1919 ?",
+    "q": "Selon la relativité générale, quel tissu la masse déforme-t-elle ? L'espace-___ ?",
     "c": [
-     "L'expérience Michelson-Morley",
-     "L'éclipse solaire et la déviation de la lumière",
-     "La mesure du décalage vers le rouge",
-     "L'expérience de Pound-Rebka"
+     "temps",
+     "matière",
+     "vide",
+     "champ"
     ],
-    "a": 1
+    "a": "temps"
    },
    {
-    "q": "Que prédit la relativité générale au sujet de la lumière près d'un objet massif ?",
+    "q": "En quelle pays Einstein a-t-il émigré fuyant les nazis ? Les ___-Unis ?",
     "c": [
-     "Elle accélère",
-     "Elle change de couleur",
-     "Elle est déviée",
-     "Elle s'arrête"
+     "États",
+     "Émirats",
+     "Pays",
+     "Provinces"
     ],
-    "a": 2
+    "a": "États"
    },
    {
-    "q": "Comment s'appelle le paradoxe célèbre de la relativité restreinte ?",
-    "c": [
-     "Le paradoxe des jumeaux",
-     "Le paradoxe du chat de Schrödinger",
-     "Le paradoxe d'Einstein-Podolsky-Rosen",
-     "Le paradoxe de l'information"
-    ],
-    "a": 0
+    "q": "En quelle année Einstein a-t-il publié sa théorie de la relativité restreinte ?",
+    "a": "1905"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sciences_008",
@@ -10404,86 +10363,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la structure de l'ADN ?",
+    "q": "Quelle forme géométrique célèbre a la molécule d'ADN ? La double ___ ?",
     "c": [
-     "Double hélice",
-     "Triple hélice",
-     "En boucle",
-     "Simple brin"
+     "hélice",
+     "spirale",
+     "boucle",
+     "vague"
     ],
-    "a": 0
+    "a": "hélice"
    },
    {
-    "q": "Qui a découvert la structure de l'ADN en 1953 ?",
+    "q": "Que porte l'ADN, transmis des parents aux enfants ? Les ___ (informations) ?",
     "c": [
-     "Mendel",
-     "Pauling",
-     "Watson et Crick",
-     "Darwin"
+     "gènes",
+     "cellules",
+     "organes",
+     "muscles"
     ],
-    "a": 2
+    "a": "gènes"
    },
    {
-    "q": "Quelles sont les quatre bases de l'ADN ?",
+    "q": "Dans quelle partie de la cellule l'ADN est-il rangé ? Le ___ ?",
     "c": [
-     "T, U, G, C",
-     "A, T, G, U",
-     "A, T, G, C",
-     "A, U, G, C"
+     "noyau",
+     "cytoplasme",
+     "membrane",
+     "ribosome"
     ],
-    "a": 2
+    "a": "noyau"
    },
    {
-    "q": "Combien de paires de chromosomes l'humain possède-t-il ?",
+    "q": "Combien de lettres (bases) composent l'alphabet de l'ADN : A, T, G et ___ ?",
     "c": [
-     "23",
-     "22",
-     "24",
-     "46"
+     "C",
+     "B",
+     "D",
+     "X"
     ],
-    "a": 0
+    "a": "C"
    },
    {
-    "q": "Qui a découvert l'ADN comme molécule de l'hérédité ?",
+    "q": "Quels deux savants ont décrit la structure de l'ADN en 1953 ? Watson et ___ ?",
     "c": [
-     "Avery, MacLeod, McCarty",
-     "Watson et Crick",
-     "Griffith",
-     "Mendel"
+     "Crick",
+     "Franklin",
+     "Wilkins",
+     "Pauling"
     ],
-    "a": 0
+    "a": "Crick"
    },
    {
-    "q": "Comment s'appelle le processus de copie de l'ADN ?",
+    "q": "À quoi sert l'analyse ADN en enquête criminelle ? À ___ une personne ?",
     "c": [
-     "La transcription",
-     "La mutation",
-     "La traduction",
-     "La réplication"
+     "identifier",
+     "soigner",
+     "nourrir",
+     "cacher"
     ],
-    "a": 3
+    "a": "identifier"
    },
    {
-    "q": "Qui a découvert les rayons X utilisés pour visualiser l'ADN ?",
+    "q": "Quelle scientifique, par ses clichés aux rayons X, a été clé dans la découverte de l'ADN ? Rosalind ___ ?",
     "c": [
-     "Rosalind Franklin",
-     "Maurice Wilkins",
-     "James Watson",
-     "Linus Pauling"
+     "Franklin",
+     "Curie",
+     "Meitner",
+     "Lovelace"
     ],
-    "a": 0
+    "a": "Franklin"
    },
    {
-    "q": "Quel pourcentage de l'ADN humain est identique à celui des chimpanzés ?",
-    "c": [
-     "Environ 90%",
-     "Environ 98%",
-     "Environ 99%",
-     "Environ 95%"
-    ],
-    "a": 1
+    "q": "Combien de paires de chromosomes possède une cellule humaine normale ?",
+    "a": "23"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sciences_009",
@@ -10492,86 +10446,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Comment s'appelle la roche en fusion à l'intérieur d'un volcan ?",
+    "q": "Quelle matière brûlante et liquide sort d'un volcan en éruption ? La ___ ?",
     "c": [
-     "La lave",
-     "La roche magmatique",
-     "Le magma",
-     "Le basalte"
+     "lave",
+     "boue",
+     "neige",
+     "sève"
     ],
-    "a": 2
+    "a": "lave"
    },
    {
-    "q": "Quel célèbre volcan italien a détruit Pompéi en 79 ap. J.-C. ?",
+    "q": "Comment appelle-t-on le trou au sommet d'un volcan ? Le ___ ?",
     "c": [
-     "Le Stromboli",
-     "L'Etna",
-     "Le Vulcano",
-     "Le Vésuve"
+     "cratère",
+     "tunnel",
+     "puits",
+     "gouffre"
     ],
-    "a": 3
+    "a": "cratère"
    },
    {
-    "q": "Quelle est la différence entre magma et lave ?",
+    "q": "Quelle poussière volcanique retombe du ciel après une éruption ? Les ___ ?",
     "c": [
-     "Le magma est sous terre, la lave en surface",
-     "Ce sont deux noms pour la même chose",
-     "Le magma est froid, la lave est chaude",
-     "La lave est sous terre, le magma en surface"
+     "cendres",
+     "flocons",
+     "graines",
+     "gouttes"
     ],
-    "a": 0
+    "a": "cendres"
    },
    {
-    "q": "Quel type de volcan a une forme conique ?",
+    "q": "Comment appelle-t-on la roche en fusion tant qu'elle est sous terre ? Le ___ ?",
     "c": [
-     "Le dôme de lave",
-     "Le cône de cendres",
-     "Le volcan bouclier",
-     "Le stratovolcan"
+     "magma",
+     "granit",
+     "basalte",
+     "silex"
     ],
-    "a": 3
+    "a": "magma"
    },
    {
-    "q": "Quel volcan hawaïen est le plus actif ?",
+    "q": "Quelle ville romaine a été ensevelie par le Vésuve en l'an 79 ?",
     "c": [
-     "Mauna Loa",
-     "Mauna Kea",
-     "Kilauea",
-     "Hualālai"
+     "Pompéi",
+     "Rome",
+     "Naples",
+     "Ostie"
     ],
-    "a": 2
+    "a": "Pompéi"
    },
    {
-    "q": "Qu'est-ce que la ceinture de feu du Pacifique ?",
+    "q": "Comment appelle-t-on un volcan qui n'est plus en activité ? Un volcan ___ ?",
     "c": [
-     "Région volcanique",
-     "Zone de forte activité volcanique et sismique",
-     "Chaîne de volcans",
-     "Zone de subduction"
+     "éteint",
+     "endormi",
+     "mort",
+     "gelé"
     ],
-    "a": 1
+    "a": "éteint"
    },
    {
-    "q": "Quel est le plus grand volcan du système solaire ?",
+    "q": "Dans quel océan se trouve la fameuse « ceinture de feu » aux nombreux volcans ? Le ___ ?",
     "c": [
-     "L'Etna",
-     "Olympus Mons sur Mars",
-     "Le Vésuve",
-     "Mauna Loa"
+     "Pacifique",
+     "Atlantique",
+     "Indien",
+     "Arctique"
     ],
-    "a": 1
+    "a": "Pacifique"
    },
    {
-    "q": "Quel volcan indonésien a causé l'éruption la plus meurtrière en 1815 ?",
-    "c": [
-     "Toba",
-     "Krakatoa",
-     "Tambora",
-     "Merapi"
-    ],
-    "a": 2
+    "q": "À quelle température, en degrés, environ, peut atteindre la lave la plus chaude ?",
+    "a": "1200"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sciences_010",
@@ -10580,86 +10529,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a proposé le concept de quantum d'énergie ?",
+    "q": "La mécanique quantique décrit le monde de l'infiniment ___ ?",
     "c": [
-     "Niels Bohr",
-     "Werner Heisenberg",
-     "Albert Einstein",
-     "Max Planck"
+     "petit",
+     "grand",
+     "chaud",
+     "vieux"
     ],
-    "a": 3
+    "a": "petit"
    },
    {
-    "q": "En quelle année Planck a-t-il introduit les quanta ?",
+    "q": "Quelle particule de lumière est étudiée en physique quantique ? Le ___ ?",
     "c": [
-     "1895",
-     "1900",
-     "1910",
-     "1905"
+     "photon",
+     "neutron",
+     "boson",
+     "gluon"
     ],
-    "a": 1
+    "a": "photon"
    },
    {
-    "q": "Quel est le principe d'incertitude d'Heisenberg ?",
+    "q": "Quel célèbre chat de pensée est à la fois mort et vivant ? Le chat de ___ ?",
     "c": [
-     "On ne peut connaître à la fois position et impulsion",
-     "L'énergie est quantifiée",
-     "Tout est incertain",
-     "La matière est une onde"
+     "Schrödinger",
+     "Einstein",
+     "Newton",
+     "Pavlov"
     ],
-    "a": 0
+    "a": "Schrödinger"
    },
    {
-    "q": "Qui a proposé la dualité onde-particule ?",
+    "q": "Comment appelle-t-on le fait qu'une particule soit à plusieurs états à la fois ? La ___ ?",
     "c": [
-     "Niels Bohr",
-     "Louis de Broglie",
-     "Albert Einstein",
-     "Erwin Schrödinger"
+     "superposition",
+     "gravitation",
+     "évaporation",
+     "condensation"
     ],
-    "a": 1
+    "a": "superposition"
    },
    {
-    "q": "Qu'est-ce que le chat de Schrödinger ?",
+    "q": "Quel physicien danois a modélisé l'atome avec ses orbites d'électrons ? Niels ___ ?",
     "c": [
-     "Un chat quantique",
-     "Un paradoxe quantique",
-     "Une expérience réelle",
-     "Un vrai chat"
+     "Bohr",
+     "Planck",
+     "Fermi",
+     "Dirac"
     ],
-    "a": 1
+    "a": "Bohr"
    },
    {
-    "q": "Qui a développé la mécanique quantique matricielle ?",
+    "q": "Quel principe d'Heisenberg dit qu'on ne peut tout connaître à la fois ? Le principe d'___ ?",
     "c": [
-     "Werner Heisenberg",
-     "Paul Dirac",
-     "Erwin Schrödinger",
-     "Max Born"
+     "incertitude",
+     "certitude",
+     "relativité",
+     "causalité"
     ],
-    "a": 0
+    "a": "incertitude"
    },
    {
-    "q": "Qu'est-ce que l'intrication quantique ?",
+    "q": "Comment appelle-t-on le lien mystérieux entre deux particules à distance ? L'___ quantique ?",
     "c": [
-     "Des particules enchevêtrées",
-     "Des particules liées",
-     "Des particules jumelles",
-     "Des particules corrélées instantanément"
+     "intrication",
+     "attraction",
+     "fusion",
+     "collision"
     ],
-    "a": 3
+    "a": "intrication"
    },
    {
-    "q": "Qui a remporté le prix Nobel pour l'effet photoélectrique ?",
-    "c": [
-     "Max Planck",
-     "Philipp Lenard",
-     "Niels Bohr",
-     "Albert Einstein"
-    ],
-    "a": 3
+    "q": "En quelle année Max Planck pose-t-il les bases de la théorie quantique ?",
+    "a": "1900"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sciences_011",
