@@ -18022,86 +18022,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qu'est-ce que la laïcité ?",
+    "q": "La laïcité sépare l'État et la ___ ?",
     "c": [
-     "Séparation de l'État et des religions",
-     "Athéisme d'État",
-     "Abolition des religions",
-     "Liberté religieuse"
+     "religion",
+     "musique",
+     "cuisine",
+     "météo"
     ],
-    "a": 0
+    "a": "religion"
    },
    {
-    "q": "Quelle loi française de 1905 a établi la laïcité ?",
+    "q": "En France, quelle loi de 1905 fonde la laïcité ? La séparation des Églises et de l'___ ?",
     "c": [
-     "Loi sur les associations",
-     "Loi sur l'école",
-     "Loi sur la liberté de conscience",
-     "Loi de séparation des Églises et de l'État"
+     "État",
+     "école",
+     "armée",
+     "usine"
     ],
-    "a": 3
+    "a": "État"
    },
    {
-    "q": "Quel pays a inventé la laïcité moderne ?",
+    "q": "La laïcité garantit à chacun la liberté de ___ (croire ou non) ?",
     "c": [
-     "États-Unis",
-     "Mexique",
-     "France",
-     "Turquie"
+     "conscience",
+     "circulation",
+     "commerce",
+     "réunion"
     ],
-    "a": 2
+    "a": "conscience"
    },
    {
-    "q": "Qu'est-ce que la liberté de conscience ?",
+    "q": "Dans quel lieu public la neutralité religieuse est-elle stricte en France ? L'___ ?",
     "c": [
-     "Droit d'expression",
-     "Droit de croire ou ne pas croire",
-     "Droit de vote",
-     "Droit de réunion"
+     "école",
+     "cinéma",
+     "stade",
+     "marché"
     ],
-    "a": 1
+    "a": "école"
    },
    {
-    "q": "En quelle année la laïcité a-t-elle été inscrite dans la Constitution française ?",
+    "q": "La laïcité traite-t-elle toutes les religions de façon égale ou en favorise-t-elle une ?",
     "c": [
-     "1789",
-     "1946 (IVe République)",
-     "1905",
-     "1958 (Ve République)"
+     "égale",
+     "une seule",
+     "aucune tolérée",
+     "deux"
     ],
-    "a": 1
+    "a": "égale"
    },
    {
-    "q": "Quel pays est un exemple de laïcité stricte ?",
+    "q": "Comment appelle-t-on le fait de ne privilégier aucune religion ? La ___ de l'État ?",
     "c": [
-     "France",
-     "Royaume-Uni",
-     "Italie",
-     "Allemagne"
+     "neutralité",
+     "richesse",
+     "hauteur",
+     "vitesse"
     ],
-    "a": 0
+    "a": "neutralité"
    },
    {
-    "q": "Qu'est-ce que le fait religieux dans l'espace public ?",
+    "q": "Quel principe de la République française figure sur les frontons avec Liberté et Fraternité et encadre la laïcité ? L'___ ?",
     "c": [
-     "Rite",
-     "Culte",
-     "Expression de croyances dans la sphère publique",
-     "Prière"
+     "Égalité",
+     "Sécurité",
+     "Prospérité",
+     "Autorité"
     ],
-    "a": 2
+    "a": "Égalité"
    },
    {
-    "q": "Quelle école publique française a été au cœur du débat sur le voile ?",
-    "c": [
-     "L'école laïque",
-     "L'école privée",
-     "L'école publique",
-     "L'école catholique"
-    ],
-    "a": 2
+    "q": "En quelle année a été votée la loi française de séparation des Églises et de l'État ?",
+    "a": "1905"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "voyage_002",
@@ -18110,86 +18105,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Combien de pays membres de l'Union européenne (2024) ?",
+    "q": "Quelle monnaie unique partagent de nombreux pays européens ?",
     "c": [
-     "30",
-     "27",
-     "25",
-     "28"
+     "euro",
+     "dollar",
+     "franc",
+     "livre"
     ],
-    "a": 1
+    "a": "euro"
    },
    {
-    "q": "Quelle est la capitale de l'Union européenne ?",
+    "q": "Dans quelle ville belge siègent de nombreuses institutions européennes ?",
     "c": [
      "Bruxelles",
-     "Francfort",
-     "Luxembourg",
-     "Strasbourg"
+     "Paris",
+     "Berlin",
+     "Rome"
     ],
-    "a": 0
+    "a": "Bruxelles"
    },
    {
-    "q": "En quelle année la CEE a-t-elle été fondée ?",
+    "q": "Quel massif montagneux sépare la France de l'Italie et de la Suisse ? Les ___ ?",
     "c": [
-     "1948",
-     "1960",
-     "1957",
-     "1950"
+     "Alpes",
+     "Andes",
+     "Rocheuses",
+     "Oural"
     ],
-    "a": 2
+    "a": "Alpes"
    },
    {
-    "q": "Qu'est-ce que Schengen ?",
+    "q": "Quel petit État, entouré par Rome, est le plus petit pays du monde ? Le ___ ?",
     "c": [
-     "Monnaie",
-     "Pays",
-     "Traité",
-     "Espace de libre circulation sans frontières intérieures"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Combien de pays font partie de l'espace Schengen ?",
-    "c": [
-     "22",
-     "30",
-     "27",
-     "25"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quelle monnaie utilise l'Union européenne ?",
-    "c": [
-     "L'euro",
-     "Le franc suisse",
-     "Le dollar",
-     "La livre"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Qu'est-ce que le Parlement européen ?",
-    "c": [
-     "Commission européenne",
-     "Conseil de l'UE",
-     "Cour de justice",
-     "Institution législative de l'UE élue au suffrage universel"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel pays n'est pas membre de l'UE mais utilise l'euro ?",
-    "c": [
-     "Suisse",
-     "Royaume-Uni",
+     "Vatican",
      "Monaco",
-     "Norvège"
+     "Andorre",
+     "Malte"
     ],
-    "a": 2
+    "a": "Vatican"
+   },
+   {
+    "q": "Combien d'États membres compte l'Union européenne depuis le Brexit ?",
+    "a": "27"
+   },
+   {
+    "q": "Quel fleuve traverse plusieurs capitales dont Vienne et Budapest ? Le ___ ?",
+    "c": [
+     "Danube",
+     "Rhin",
+     "Volga",
+     "Tage"
+    ],
+    "a": "Danube"
+   },
+   {
+    "q": "Quel pays européen a quitté l'UE lors du « Brexit » ? Le ___-Uni ?",
+    "c": [
+     "Royaume",
+     "Pays",
+     "États",
+     "Emirats"
+    ],
+    "a": "Royaume"
+   },
+   {
+    "q": "En quelle année le traité de Maastricht a-t-il fondé l'Union européenne ?",
+    "a": "1992"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "voyage_003",
@@ -18198,86 +18182,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Combien de pays compte l'Asie ?",
+    "q": "Quel est le continent le plus vaste et le plus peuplé du monde ?",
     "c": [
-     "50",
-     "48",
-     "40",
-     "30"
+     "Asie",
+     "Afrique",
+     "Europe",
+     "Océanie"
     ],
-    "a": 1
+    "a": "Asie"
    },
    {
-    "q": "Quel est le plus grand pays d'Asie ?",
+    "q": "Quel pays asiatique est le plus peuplé du monde (récemment devant la Chine) ?",
     "c": [
      "Inde",
-     "Chine",
-     "Kazakhstan",
-     "Russie (partie asiatique)"
+     "Japon",
+     "Vietnam",
+     "Corée"
     ],
-    "a": 3
+    "a": "Inde"
    },
    {
-    "q": "Quel est le plus haut sommet d'Asie ?",
+    "q": "Quelle plus haute montagne du monde se dresse entre le Népal et la Chine ? L'___ ?",
     "c": [
-     "Le K2",
-     "Le Lhotse",
-     "L'Everest (8 849 m)",
-     "L'Annapurna"
+     "Everest",
+     "Fuji",
+     "Kilimandjaro",
+     "Mont Blanc"
     ],
-    "a": 2
+    "a": "Everest"
    },
    {
-    "q": "Quelle est la plus grande ville d'Asie ?",
+    "q": "Quel long mur défensif traverse le nord de la Chine ? La Grande ___ ?",
     "c": [
-     "Tokyo",
-     "Shanghai",
-     "Mumbai",
-     "Pékin"
+     "Muraille",
+     "Digue",
+     "Route",
+     "Barrière"
     ],
-    "a": 0
+    "a": "Muraille"
    },
    {
-    "q": "Quel désert d'Asie est le plus grand ?",
+    "q": "Quel archipel japonais compte le mont Fuji comme symbole ? Le ___ ?",
     "c": [
-     "Le désert de Gobi",
-     "Le Taklamakan",
-     "Le Karakoum",
-     "Le Rub al-Khali"
+     "Japon",
+     "Népal",
+     "Bhoutan",
+     "Laos"
     ],
-    "a": 0
+    "a": "Japon"
    },
    {
-    "q": "Quel fleuve asiatique est le plus long ?",
+    "q": "Quel fleuve sacré traverse l'Inde du nord ? Le ___ ?",
     "c": [
-     "Le Yangtsé",
-     "L'Indus",
-     "Le Mékong",
-     "Le Gange"
+     "Gange",
+     "Nil",
+     "Amazone",
+     "Congo"
     ],
-    "a": 0
+    "a": "Gange"
    },
    {
-    "q": "Quel pays d'Asie du Sud-Est est un archipel de 17 000 îles ?",
-    "c": [
-     "Indonésie",
-     "Malaisie",
-     "Philippines",
-     "Japon"
-    ],
-    "a": 0
+    "q": "Quelle est la plus haute altitude, en mètres, du mont Everest, toit du monde ?",
+    "a": "8849"
    },
    {
-    "q": "Quelle est la religion la plus pratiquée en Asie ?",
-    "c": [
-     "Bouddhisme",
-     "Islam",
-     "Christianisme",
-     "Hindouisme"
-    ],
-    "a": 1
+    "q": "Combien de pays, environ, compte le continent asiatique ?",
+    "a": "48"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "voyage_004",
@@ -18286,86 +18259,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Combien de pays compte l'Afrique ?",
+    "q": "Quel plus grand désert chaud couvre le nord de l'Afrique ? Le ___ ?",
     "c": [
-     "50",
-     "52",
-     "54",
-     "48"
+     "Sahara",
+     "Gobi",
+     "Kalahari",
+     "Atacama"
     ],
-    "a": 2
+    "a": "Sahara"
    },
    {
-    "q": "Quel est le plus grand pays d'Afrique ?",
+    "q": "Quel long fleuve d'Afrique traverse l'Égypte ? Le ___ ?",
     "c": [
-     "République démocratique du Congo",
-     "Soudan",
-     "Algérie",
-     "Libye"
+     "Nil",
+     "Congo",
+     "Niger",
+     "Zambèze"
     ],
-    "a": 2
+    "a": "Nil"
    },
    {
-    "q": "Quel est le plus long fleuve d'Afrique ?",
+    "q": "Quel grand animal à long cou brun et jaune vit dans la savane africaine ? La ___ ?",
     "c": [
-     "Le Congo",
-     "Le Nil",
-     "Le Zambèze",
-     "Le Niger"
+     "girafe",
+     "vache",
+     "chèvre",
+     "brebis"
     ],
-    "a": 1
+    "a": "girafe"
    },
    {
-    "q": "Quelle est la plus haute montagne d'Afrique ?",
+    "q": "Quel plus haut sommet d'Afrique, enneigé, se dresse en Tanzanie ? Le ___ ?",
     "c": [
-     "Le Ras Dashan",
-     "Le mont Stanley",
-     "Le Kilimandjaro",
-     "Le mont Kenya"
+     "Kilimandjaro",
+     "Everest",
+     "Cervin",
+     "Mont Blanc"
     ],
-    "a": 2
+    "a": "Kilimandjaro"
    },
    {
-    "q": "Quelle est la plus grande ville d'Afrique ?",
+    "q": "Quelles célèbres chutes d'eau se trouvent entre la Zambie et le Zimbabwe ? Les chutes ___ ?",
     "c": [
-     "Johannesburg",
-     "Kinshasa",
-     "Lagos",
-     "Le Caire"
+     "Victoria",
+     "Niagara",
+     "Iguazú",
+     "Angel"
     ],
-    "a": 2
+    "a": "Victoria"
    },
    {
-    "q": "Quel désert couvre une grande partie de l'Afrique du Nord ?",
+    "q": "Comment appelle-t-on les cinq grands animaux emblématiques des safaris ? Les Big ___ ?",
     "c": [
-     "Le Désert du Sinaï",
-     "Le Kalahari",
-     "Le Sahara",
-     "Le Namib"
+     "Five",
+     "Four",
+     "Six",
+     "Ten"
     ],
-    "a": 2
+    "a": "Five"
    },
    {
-    "q": "Quel pays africain est le plus peuplé ?",
+    "q": "Quel pays d'Afrique du Nord est traversé par la vallée du Nil et abrite les pyramides ?",
     "c": [
-     "Éthiopie",
-     "République démocratique du Congo",
-     "Nigeria",
-     "Tanzanie"
+     "Égypte",
+     "Maroc",
+     "Libye",
+     "Tunisie"
     ],
-    "a": 2
+    "a": "Égypte"
    },
    {
-    "q": "Quel parc national africain est le plus célèbre pour les safaris ?",
-    "c": [
-     "Parc Kruger (Afrique du Sud)",
-     "Parc de Maasai Mara (Kenya)",
-     "Parc du Serengeti (Tanzanie)",
-     "Parc de Chobe (Botswana)"
-    ],
-    "a": 0
+    "q": "Combien de pays, environ, compte le continent africain ?",
+    "a": "54"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "voyage_005",
@@ -18374,86 +18342,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Combien de pays compte l'Amérique latine ?",
+    "q": "Quelle langue, avec le portugais, domine en Amérique latine ?",
     "c": [
-     "18",
-     "20",
-     "25",
-     "15"
+     "espagnol",
+     "anglais",
+     "français",
+     "allemand"
     ],
-    "a": 1
+    "a": "espagnol"
    },
    {
-    "q": "Quelle est la plus grande forêt du monde en Amérique latine ?",
+    "q": "Quelle célèbre cité inca perchée se visite au Pérou ? Le Machu ___ ?",
     "c": [
-     "La forêt des Andes",
-     "Le Mato Grosso",
-     "L'Amazonie",
-     "La forêt atlantique"
+     "Picchu",
+     "Pacha",
+     "Pichu",
+     "Pisco"
     ],
-    "a": 2
+    "a": "Picchu"
    },
    {
-    "q": "Quelle langue est la plus parlée en Amérique latine ?",
+    "q": "Quel plus grand fleuve du monde traverse l'Amérique du Sud ? L'___ ?",
     "c": [
-     "Anglais",
-     "Français",
-     "Portugais",
-     "Espagnol"
+     "Amazone",
+     "Nil",
+     "Mississippi",
+     "Congo"
     ],
-    "a": 3
+    "a": "Amazone"
    },
    {
-    "q": "Quel pays d'Amérique latine est le plus peuplé ?",
+    "q": "Quelle danse et carnaval font la fierté du Brésil ? La ___ ?",
     "c": [
-     "Colombie",
-     "Mexique",
-     "Brésil",
-     "Argentine"
+     "samba",
+     "valse",
+     "polka",
+     "gigue"
     ],
-    "a": 2
+    "a": "samba"
    },
    {
-    "q": "Quel site archéologique inca est le plus visité ?",
+    "q": "Quelle longue chaîne de montagnes borde l'ouest de l'Amérique du Sud ? La cordillère des ___ ?",
     "c": [
-     "Ollantaytambo",
-     "Choquequirao",
-     "Machu Picchu",
-     "Sacsayhuamán"
+     "Andes",
+     "Alpes",
+     "Rocheuses",
+     "Vosges"
     ],
-    "a": 2
+    "a": "Andes"
    },
    {
-    "q": "Quelle danse est emblématique de l'Amérique latine ?",
+    "q": "Quel peuple ancien a bâti un empire au Pérou avant les Espagnols ? Les ___ ?",
     "c": [
-     "La samba",
-     "La salsa",
-     "Le tango",
-     "La bachata"
+     "Incas",
+     "Vikings",
+     "Romains",
+     "Mongols"
     ],
-    "a": 1
+    "a": "Incas"
    },
    {
-    "q": "Quel désert d'Amérique latine est le plus aride du monde ?",
+    "q": "Quelle vaste forêt tropicale, poumon vert, couvre le nord du continent ? L'___ ?",
     "c": [
-     "Sechura (Pérou)",
-     "Atacama (Chili)",
-     "Sonora (Mexique)",
-     "Patagonie (Argentine)"
+     "Amazonie",
+     "Patagonie",
+     "Pampa",
+     "Sahel"
     ],
-    "a": 1
+    "a": "Amazonie"
    },
    {
-    "q": "Quel fleuve traverse l'Amazonie ?",
-    "c": [
-     "Le São Francisco",
-     "L'Amazone",
-     "Le Paraná",
-     "L'Orénoque"
-    ],
-    "a": 1
+    "q": "À quelle altitude, en mètres, se trouve le Machu Picchu ?",
+    "a": "2430"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "voyage_006",
@@ -18462,86 +18425,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Combien de pays compte l'Océanie ?",
+    "q": "Quel plus grand pays d'Océanie est aussi un continent ? L'___ ?",
     "c": [
-     "18",
-     "10",
-     "20",
-     "14"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel est le plus grand pays d'Océanie ?",
-    "c": [
-     "Fidji",
-     "Nouvelle-Zélande",
-     "Papouasie-Nouvelle-Guinée",
-     "Australie"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel est le plus petit pays d'Océanie ?",
-    "c": [
-     "Nauru",
-     "Palau",
-     "Vanuatu",
-     "Tuvalu"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quel peuple autochtone habite la Nouvelle-Zélande ?",
-    "c": [
-     "Mélanésiens",
-     "Maoris",
-     "Papous",
-     "Aborigènes"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quel peuple autochtone habite l'Australie ?",
-    "c": [
-     "Tasmaniens",
-     "Maoris",
-     "Insulaires du Détroit de Torres",
-     "Aborigènes"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel pays d'Océanie est un territoire français d'outre-mer ?",
-    "c": [
-     "Vanuatu",
-     "Samoa",
-     "Nouvelle-Calédonie",
-     "Fidji"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Où se trouve la Grande Barrière de Corail ?",
-    "c": [
-     "Indonésie",
-     "Papouasie",
      "Australie",
-     "Nouvelle-Zélande"
+     "Fidji",
+     "Samoa",
+     "Tonga"
     ],
-    "a": 2
+    "a": "Australie"
    },
    {
-    "q": "Quel animal emblématique d'Australie est marsupial ?",
+    "q": "Quel animal sauteur à poche est emblématique de l'Australie ? Le ___ ?",
     "c": [
-     "Diable de Tasmanie",
-     "Kangourou",
-     "Koala",
-     "Wombat"
+     "kangourou",
+     "lama",
+     "renne",
+     "bison"
     ],
-    "a": 1
+    "a": "kangourou"
+   },
+   {
+    "q": "Quel grand récif corallien borde la côte australienne ? La Grande ___ de corail ?",
+    "c": [
+     "Barrière",
+     "Muraille",
+     "Digue",
+     "Île"
+    ],
+    "a": "Barrière"
+   },
+   {
+    "q": "Quel peuple autochtone vit en Nouvelle-Zélande ? Les ___ ?",
+    "c": [
+     "Maoris",
+     "Inuits",
+     "Aztèques",
+     "Zoulous"
+    ],
+    "a": "Maoris"
+   },
+   {
+    "q": "Quel océan entoure les îles de l'Océanie ? L'océan ___ ?",
+    "c": [
+     "Pacifique",
+     "Atlantique",
+     "Indien",
+     "Arctique"
+    ],
+    "a": "Pacifique"
+   },
+   {
+    "q": "Quel petit animal grimpeur au régime d'eucalyptus vit en Australie ? Le ___ ?",
+    "c": [
+     "koala",
+     "panda",
+     "paresseux",
+     "lémurien"
+    ],
+    "a": "koala"
+   },
+   {
+    "q": "Quel grand rocher rouge sacré des Aborigènes se dresse au centre de l'Australie ?",
+    "c": [
+     "Uluru",
+     "Everest",
+     "Fuji",
+     "Etna"
+    ],
+    "a": "Uluru"
+   },
+   {
+    "q": "Combien d'îles, environ, compte l'Océanie au total (estimation) ? Plus de ___ mille ?",
+    "a": "10"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "voyage_007",
@@ -18550,86 +18508,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Combien de pays compte le Moyen-Orient ?",
+    "q": "Quelle ressource souterraine précieuse est abondante au Moyen-Orient ? Le ___ ?",
     "c": [
-     "17",
-     "15",
-     "12",
-     "20"
+     "pétrole",
+     "charbon",
+     "or",
+     "diamant"
     ],
-    "a": 0
+    "a": "pétrole"
    },
    {
-    "q": "Quel pays du Moyen-Orient est le plus peuplé ?",
+    "q": "Quel désert de sable couvre une grande partie de la péninsule arabique ? Le désert d'___ ?",
     "c": [
-     "Iran",
-     "Irak",
-     "Turquie",
-     "Arabie saoudite"
+     "Arabie",
+     "Gobi",
+     "Kalahari",
+     "Atacama"
     ],
-    "a": 0
+    "a": "Arabie"
    },
    {
-    "q": "Quelle est la capitale de l'Arabie saoudite ?",
+    "q": "Quelle ville sainte est vénérée par juifs, chrétiens et musulmans ?",
     "c": [
-     "Djeddah",
-     "Médine",
-     "La Mecque",
-     "Riyad"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel détroit relie la mer Méditerranée à la mer Rouge ?",
-    "c": [
-     "Le détroit d'Hormuz",
-     "Les Dardanelles",
-     "Le Bosphore",
-     "Le canal de Suez"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel fleuve traverse l'Irak ?",
-    "c": [
-     "L'Indus",
-     "Le Nil",
-     "Le Jourdain",
-     "Le Tigre et l'Euphrate"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel pays du Moyen-Orient est le plus grand producteur de pétrole ?",
-    "c": [
-     "Arabie saoudite",
-     "Iran",
-     "Émirats arabes unis",
-     "Irak"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quelle ville du Moyen-Orient est sacrée pour l'islam ?",
-    "c": [
-     "La Mecque",
-     "Médine",
      "Jérusalem",
-     "Toutes ces villes"
+     "Le Caire",
+     "Riyad",
+     "Amman"
     ],
-    "a": 3
+    "a": "Jérusalem"
    },
    {
-    "q": "Quel conflit historique oppose Israéliens et Palestiniens ?",
+    "q": "Quelle très haute tour de Dubaï est la plus haute du monde ? La Burj ___ ?",
     "c": [
-     "Conflit israélo-palestinien",
-     "Conflit sunnites-chiites",
-     "Guerre du Golfe",
-     "Guerre civile"
+     "Khalifa",
+     "Dubai",
+     "Arab",
+     "Al Waha"
     ],
-    "a": 0
+    "a": "Khalifa"
+   },
+   {
+    "q": "Quels deux grands fleuves entouraient la Mésopotamie antique ? Le Tigre et l'___ ?",
+    "c": [
+     "Euphrate",
+     "Nil",
+     "Jourdain",
+     "Oronte"
+    ],
+    "a": "Euphrate"
+   },
+   {
+    "q": "Vers quelle ville sainte les musulmans se tournent-ils pour prier ? La ___ ?",
+    "c": [
+     "Mecque",
+     "Médine",
+     "Bagdad",
+     "Damas"
+    ],
+    "a": "Mecque"
+   },
+   {
+    "q": "Quelle cité antique rose, taillée dans la roche, se visite en Jordanie ?",
+    "c": [
+     "Pétra",
+     "Babylone",
+     "Palmyre",
+     "Ninive"
+    ],
+    "a": "Pétra"
+   },
+   {
+    "q": "Quelle hauteur, en mètres, atteint la Burj Khalifa à Dubaï ?",
+    "a": "828"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "voyage_008",
@@ -18638,86 +18591,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Combien d'îles compte les Caraïbes ?",
+    "q": "Dans quelle mer chaude se trouvent les îles des Caraïbes ? La mer des ___ ?",
     "c": [
-     "Plus de 300",
-     "Plus de 1 000",
-     "Plus de 500",
-     "Plus de 700"
+     "Caraïbes",
+     "Baltique",
+     "Noire",
+     "Rouge"
     ],
-    "a": 3
+    "a": "Caraïbes"
    },
    {
-    "q": "Quel pays des Caraïbes est le plus visité ?",
+    "q": "Quel alcool de canne à sucre est typique des Caraïbes ? Le ___ ?",
+    "c": [
+     "rhum",
+     "whisky",
+     "vodka",
+     "saké"
+    ],
+    "a": "rhum"
+   },
+   {
+    "q": "Quelle grande île des Caraïbes a La Havane pour capitale ?",
+    "c": [
+     "Cuba",
+     "Jamaïque",
+     "Haïti",
+     "Barbade"
+    ],
+    "a": "Cuba"
+   },
+   {
+    "q": "Quelles plages de sable ___ font rêver dans les Caraïbes ?",
+    "c": [
+     "blanc",
+     "noir",
+     "rouge",
+     "vert"
+    ],
+    "a": "blanc"
+   },
+   {
+    "q": "Quelle musique jamaïcaine aux racines rasta est née dans les Caraïbes ? Le ___ ?",
+    "c": [
+     "reggae",
+     "flamenco",
+     "fado",
+     "tango"
+    ],
+    "a": "reggae"
+   },
+   {
+    "q": "Quels violents cyclones frappent parfois les Caraïbes ? Des ___ ?",
+    "c": [
+     "ouragans",
+     "blizzards",
+     "typhons",
+     "moussons"
+    ],
+    "a": "ouragans"
+   },
+   {
+    "q": "De quelle île des Caraïbes le chanteur Bob Marley est-il originaire ? La ___ ?",
     "c": [
      "Jamaïque",
-     "Porto Rico",
-     "République dominicaine",
-     "Cuba"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quelle île des Caraïbes est partagée entre Haïti et la République dominicaine ?",
-    "c": [
-     "Hispaniola",
-     "Porto Rico",
      "Cuba",
-     "Jamaïque"
+     "Haïti",
+     "Trinité"
     ],
-    "a": 0
+    "a": "Jamaïque"
    },
    {
-    "q": "Quelle boisson est originaire des Caraïbes ?",
-    "c": [
-     "La vodka",
-     "Le whisky",
-     "La tequila",
-     "Le rhum"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel est le plus petit pays des Caraïbes ?",
-    "c": [
-     "Antigua-et-Barbuda",
-     "Barbade",
-     "Grenade",
-     "Saint-Kitts-et-Nevis"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quelle île des Caraïbes est un département français ?",
-    "c": [
-     "Réunion",
-     "Guadeloupe",
-     "Guyane",
-     "Martinique"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quelle musique caribéenne est la plus célèbre ?",
-    "c": [
-     "La salsa",
-     "Le reggae",
-     "La soca",
-     "Le zouk"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quel phénomène météo menace régulièrement les Caraïbes ?",
-    "c": [
-     "Les tornades",
-     "Les tsunamis",
-     "Les cyclones",
-     "Les ouragans"
-    ],
-    "a": 3
+    "q": "Combien d'îles, environ, compte l'archipel des Caraïbes (îles et îlots) ? Plus de ___ mille ?",
+    "a": "7"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sexe_001",
