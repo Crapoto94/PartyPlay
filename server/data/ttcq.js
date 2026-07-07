@@ -18674,84 +18674,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Quels sont les organes génitaux internes de la femme ?",
+    "q": "La fellation est une pratique sexuelle dite ___ ? (par la bouche)",
     "c": [
-     "Reins, ovaires, utérus",
-     "Vessie, utérus, anus",
-     "Utérus, ovaires, trompes de Fallope, vagin",
-     "Vagin, clitoris, anus"
+     "orale",
+     "manuelle",
+     "visuelle",
+     "auditive"
     ],
-    "a": "Utérus, ovaires, trompes de Fallope, vagin"
+    "a": "orale"
    },
    {
-    "q": "Quel organe produit les ovules ?",
+    "q": "Quel principe fondamental doit précéder toute pratique sexuelle entre partenaires ? Le ___ ?",
     "c": [
-     "Les ovaires",
-     "Le vagin",
-     "L'utérus",
-     "Les trompes de Fallope"
+     "consentement",
+     "silence",
+     "paiement",
+     "hasard"
     ],
-    "a": "Les ovaires"
+    "a": "consentement"
    },
    {
-    "q": "Combien de trompes de Fallope une femme possède-t-elle ?",
+    "q": "Quel moyen de protection réduit le risque d'IST lors du sexe oral ? Le ___ ?",
     "c": [
-     "4",
-     "2",
-     "3",
-     "1"
+     "préservatif",
+     "gant de toilette",
+     "parapluie",
+     "bandeau"
     ],
-    "a": "2"
+    "a": "préservatif"
    },
    {
-    "q": "Quelle est la fonction du vagin ?",
+    "q": "Les IST peuvent-elles se transmettre lors de rapports oraux ? ___ ?",
     "c": [
-     "Conduit pour les rapports et l'accouchement",
-     "Produire des ovules",
-     "Abriter le foetus",
-     "Produire des hormones"
+     "oui",
+     "non",
+     "seulement l'hiver",
+     "seulement en couple"
     ],
-    "a": "Conduit pour les rapports et l'accouchement"
+    "a": "oui"
    },
    {
-    "q": "Où se trouve le clitoris ?",
+    "q": "Comment appelle-t-on la branche de la médecine qui traite la santé sexuelle ? La ___ ?",
     "c": [
-     "Sur les grandes lèvres",
-     "Sur le col de l'utérus",
-     "Partie supérieure de la vulve",
-     "À l'intérieur du vagin"
+     "sexologie",
+     "cardiologie",
+     "pédiatrie",
+     "radiologie"
     ],
-    "a": "Partie supérieure de la vulve"
+    "a": "sexologie"
    },
    {
-    "q": "Qu'est-ce que le col de l'utérus ?",
+    "q": "Quelle protection en latex peut être utilisée pour le sexe oral sur une vulve ? La digue ___ ?",
     "c": [
-     "L'entrée du vagin",
-     "Une trompe",
-     "Partie inférieure de l'utérus qui s'ouvre dans le vagin",
-     "Le fond de l'utérus"
+     "dentaire",
+     "buccale",
+     "murale",
+     "barrière"
     ],
-    "a": "Partie inférieure de l'utérus qui s'ouvre dans le vagin"
+    "a": "dentaire"
    },
    {
-    "q": "Quelle est la taille moyenne de l'utérus ?",
+    "q": "Le consentement doit pouvoir être retiré à tout moment : vrai ou faux ?",
     "c": [
-     "4-5 cm de long",
-     "10-12 cm de long",
-     "15-20 cm de long",
-     "7-8 cm de long"
+     "vrai",
+     "faux",
+     "seulement au début",
+     "seulement écrit"
     ],
-    "a": "7-8 cm de long"
+    "a": "vrai"
    },
    {
-    "q": "Combien d'ovocytes une femme a-t-elle à la naissance ?",
-    "c": [
-     "Environ 500 000",
-     "Environ 1 à 2 millions",
-     "Environ 10 millions",
-     "Environ 100 000"
-    ],
-    "a": "Environ 1 à 2 millions"
+    "q": "À quel âge, en France, la loi fixe-t-elle la majorité sexuelle (consentement) ?",
+    "a": "15"
    }
   ],
   "rw": true
@@ -18763,84 +18757,84 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Quels sont les principaux organes génitaux masculins ?",
+    "q": "Comme toute pratique sexuelle, la sodomie requiert avant tout le ___ des partenaires ?",
     "c": [
-     "Testicules, urètre, vessie",
-     "Reins, prostate, pénis",
-     "Vessie, testicules, pénis",
-     "Testicules, pénis, prostate"
+     "consentement",
+     "secret",
+     "argent",
+     "hasard"
     ],
-    "a": "Testicules, pénis, prostate"
+    "a": "consentement"
    },
    {
-    "q": "Quel organe produit les spermatozoïdes ?",
+    "q": "Quel moyen de protection est recommandé pour réduire le risque d'IST ? Le ___ ?",
     "c": [
-     "Les vésicules séminales",
-     "Les testicules",
-     "Le pénis",
-     "La prostate"
+     "préservatif",
+     "foulard",
+     "gant de jardin",
+     "chapeau"
     ],
-    "a": "Les testicules"
+    "a": "préservatif"
    },
    {
-    "q": "Où sont situés les testicules ?",
+    "q": "Pourquoi cette zone est-elle plus fragile, justifiant douceur et lubrifiant ? La muqueuse est ___ ?",
     "c": [
-     "Dans la prostate",
-     "Dans le scrotum",
-     "Dans le pénis",
-     "Dans l'abdomen"
+     "fine",
+     "épaisse",
+     "sèche par nature",
+     "insensible"
     ],
-    "a": "Dans le scrotum"
+    "a": "fine"
    },
    {
-    "q": "Quelle est la fonction de la prostate ?",
+    "q": "Quel produit réduit les frictions et les risques de micro-lésions ? Le ___ ?",
     "c": [
-     "Produire des hormones",
-     "Produire de l'urine",
-     "Produire des spermatozoïdes",
-     "Produire le liquide séminal"
+     "lubrifiant",
+     "vinaigre",
+     "savon abrasif",
+     "alcool"
     ],
-    "a": "Produire le liquide séminal"
+    "a": "lubrifiant"
    },
    {
-    "q": "Qu'est-ce que l'urètre masculin ?",
+    "q": "Avec quel type de lubrifiant NE faut-il PAS utiliser un préservatif en latex ? Un lubrifiant à base d'___ ?",
     "c": [
-     "Vaisseau sanguin",
-     "Canal qui conduit l'urine et le sperme",
-     "Nerf",
-     "Muscle"
+     "huile",
+     "eau",
+     "silicone médical",
+     "aloès pur"
     ],
-    "a": "Canal qui conduit l'urine et le sperme"
+    "a": "huile"
    },
    {
-    "q": "Combien de spermatozoïdes produit un homme par jour ?",
+    "q": "Quelle IST virale grave le préservatif aide-t-il à prévenir ? Le ___ ?",
     "c": [
-     "Plusieurs milliers",
-     "Plusieurs centaines",
-     "Plusieurs millions",
-     "Plusieurs milliards"
+     "VIH",
+     "rhume",
+     "tétanos",
+     "zona"
     ],
-    "a": "Plusieurs millions"
+    "a": "VIH"
    },
    {
-    "q": "Quel est le rôle du scrotum ?",
+    "q": "Quel muscle circulaire contrôle cette zone du corps ? Le ___ ?",
     "c": [
-     "Réguler la température des testicules",
-     "Produire des hormones",
-     "Stocker le sperme",
-     "Protéger le pénis"
+     "sphincter",
+     "biceps",
+     "mollet",
+     "trapèze"
     ],
-    "a": "Réguler la température des testicules"
+    "a": "sphincter"
    },
    {
-    "q": "Qu'est-ce que le prépuce ?",
+    "q": "Quel dépistage régulier est recommandé pour les personnes à risque d'IST ? Le ___ ?",
     "c": [
-     "Peau qui recouvre le gland du pénis",
-     "Partie interne du pénis",
-     "Frein du pénis",
-     "Base du pénis"
+     "dépistage",
+     "déménagement",
+     "bilan comptable",
+     "vaccin antigrippal seul"
     ],
-    "a": "Peau qui recouvre le gland du pénis"
+    "a": "dépistage"
    }
   ],
   "rw": true
@@ -18852,84 +18846,72 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que la contraception ?",
+    "q": "L'homosexualité désigne l'attirance envers une personne du ___ sexe ?",
     "c": [
-     "Moyen d'éviter une grossesse non désirée",
-     "Méthode pour tomber enceinte",
-     "Protection contre les MST",
-     "Traitement hormonal"
+     "même",
+     "opposé",
+     "aucun",
+     "troisième"
     ],
-    "a": "Moyen d'éviter une grossesse non désirée"
+    "a": "même"
    },
    {
-    "q": "Quelle est la méthode contraceptive la plus efficace ?",
+    "q": "Quel drapeau multicolore est le symbole des communautés LGBT ? Le drapeau ___ ?",
     "c": [
-     "L'implant et le stérilet",
-     "Le préservatif",
-     "La pilule",
-     "Le retrait"
+     "arc-en-ciel",
+     "noir",
+     "blanc",
+     "à damier"
     ],
-    "a": "L'implant et le stérilet"
+    "a": "arc-en-ciel"
    },
    {
-    "q": "Combien de méthodes contraceptives existent ?",
+    "q": "Comment appelle-t-on le fait d'annoncer publiquement son homosexualité ? Le coming ___ ?",
     "c": [
-     "5",
-     "10",
-     "Plus de 15",
-     "20"
+     "out",
+     "in",
+     "up",
+     "back"
     ],
-    "a": "Plus de 15"
+    "a": "out"
    },
    {
-    "q": "Qu'est-ce que la contraception d'urgence ?",
+    "q": "Que signifie la lettre « G » dans le sigle LGBT ? ___ ?",
     "c": [
-     "Stérilet",
-     "Implant",
-     "Pilule du lendemain à prendre après un rapport",
-     "Pilule quotidienne"
+     "gay",
+     "genre",
+     "groupe",
+     "gender-fluid"
     ],
-    "a": "Pilule du lendemain à prendre après un rapport"
+    "a": "gay"
    },
    {
-    "q": "Dans quel délai faut-il prendre la pilule du lendemain ?",
-    "c": [
-     "Jusqu'à 72 heures après le rapport",
-     "Jusqu'à une semaine",
-     "Jusqu'à 48 heures",
-     "Jusqu'à 24 heures"
-    ],
-    "a": "Jusqu'à 72 heures après le rapport"
+    "q": "En quelle année l'OMS a-t-elle retiré l'homosexualité de sa liste des maladies mentales ?",
+    "a": "1990"
    },
    {
-    "q": "Quelle méthode contraceptive est réversible ?",
+    "q": "Quelles émeutes de 1969 à New York ont lancé le mouvement des droits LGBT ? Les émeutes de ___ ?",
     "c": [
-     "Seule la pilule",
-     "Toutes les méthodes sauf la stérilisation",
-     "Aucune",
-     "La stérilisation"
+     "Stonewall",
+     "Central Park",
+     "Harlem",
+     "Brooklyn"
     ],
-    "a": "Toutes les méthodes sauf la stérilisation"
+    "a": "Stonewall"
    },
    {
-    "q": "Qu'est-ce que l'indice de Pearl ?",
+    "q": "Comment appelle-t-on la marche annuelle des fiertés LGBT ? La ___ ?",
     "c": [
-     "Taux d'échec d'une méthode contraceptive",
-     "Âge de fertilité",
-     "Nombre de grossesses",
-     "Taux de réussite"
+     "Pride",
+     "Fashion Week",
+     "Techno Parade",
+     "Fête des voisins"
     ],
-    "a": "Taux d'échec d'une méthode contraceptive"
+    "a": "Pride"
    },
    {
-    "q": "Quelle contraception nécessite une prescription médicale en France ?",
-    "c": [
-     "Spermicide",
-     "Retrait",
-     "Pilule, implant, stérilet, patch, anneau",
-     "Préservatif"
-    ],
-    "a": "Pilule, implant, stérilet, patch, anneau"
+    "q": "En quelle année la France a-t-elle dépénalisé l'homosexualité (égalité de la majorité sexuelle) ?",
+    "a": "1982"
    }
   ],
   "rw": true
@@ -18941,84 +18923,84 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "À quoi sert un préservatif ?",
+    "q": "De quel pays le Kamasutra est-il originaire ?",
     "c": [
-     "Protéger des IST et éviter une grossesse",
-     "Éviter uniquement une grossesse",
-     "Améliorer le plaisir",
-     "Protéger uniquement des IST"
+     "Inde",
+     "Chine",
+     "Japon",
+     "Grèce"
     ],
-    "a": "Protéger des IST et éviter une grossesse"
+    "a": "Inde"
    },
    {
-    "q": "Quel matériau est utilisé pour la plupart des préservatifs ?",
+    "q": "Le Kamasutra est avant tout un ancien ___ ? (texte)",
     "c": [
-     "Latex",
-     "Caoutchouc naturel",
-     "Silicone",
-     "Polyuréthane"
+     "traité",
+     "film",
+     "tableau",
+     "opéra"
     ],
-    "a": "Latex"
+    "a": "traité"
    },
    {
-    "q": "Quelle est la fiabilité du préservatif contre les grossesses ?",
+    "q": "Dans quelle langue ancienne le Kamasutra a-t-il été écrit ? Le ___ ?",
     "c": [
-     "Environ 98% en utilisation parfaite",
-     "Environ 90%",
-     "Environ 99,9%",
-     "Environ 85%"
+     "sanskrit",
+     "latin",
+     "grec",
+     "arabe"
     ],
-    "a": "Environ 98% en utilisation parfaite"
+    "a": "sanskrit"
    },
    {
-    "q": "Le préservatif protège-t-il contre toutes les IST ?",
+    "q": "Le Kamasutra traite-t-il uniquement de sexe, ou aussi de l'art de vivre et d'aimer ? De l'art de ___ ?",
     "c": [
-     "Non, seulement le VIH",
-     "Oui, à 100%",
-     "Non, certaines IST peuvent se transmettre par contact cutané",
-     "Oui, toutes"
+     "vivre",
+     "cuisiner",
+     "combattre",
+     "naviguer"
     ],
-    "a": "Non, certaines IST peuvent se transmettre par contact cutané"
+    "a": "vivre"
    },
    {
-    "q": "Comment conserver les préservatifs ?",
+    "q": "Quel sage indien est considéré comme l'auteur du Kamasutra ? ___ ?",
     "c": [
-     "Dans la voiture",
-     "Dans un endroit frais et sec",
-     "Au réfrigérateur",
-     "Dans la poche"
+     "Vatsyayana",
+     "Bouddha",
+     "Gandhi",
+     "Ashoka"
     ],
-    "a": "Dans un endroit frais et sec"
+    "a": "Vatsyayana"
    },
    {
-    "q": "Peut-on utiliser un préservatif deux fois ?",
+    "q": "Que signifie le mot « kama » en sanskrit, l'un des buts de la vie ? Le ___ ?",
     "c": [
-     "Non, jamais",
-     "Oui, après l'avoir lavé",
-     "Oui, une deuxième fois",
-     "Oui, une fois retourné"
+     "désir",
+     "travail",
+     "silence",
+     "sommeil"
     ],
-    "a": "Non, jamais"
+    "a": "désir"
    },
    {
-    "q": "Depuis quand le préservatif moderne existe-t-il ?",
+    "q": "Le Kamasutra décrit-il seulement des positions, ou aussi la séduction et le mariage ? Aussi le ___ ?",
     "c": [
-     "Années 1950",
-     "Début du XXe siècle (latex)",
-     "XIXe siècle",
-     "Années 1970"
+     "mariage",
+     "commerce",
+     "jardinage",
+     "voyage"
     ],
-    "a": "Début du XXe siècle (latex)"
+    "a": "mariage"
    },
    {
-    "q": "Quelle est la date de péremption typique d'un préservatif ?",
+    "q": "Vers quel siècle, environ, le Kamasutra a-t-il été rédigé ? Le ___e siècle apr. J.-C. ?",
     "c": [
-     "3 à 5 ans",
-     "2 ans",
-     "1 an",
-     "10 ans"
+     "3",
+     "12",
+     "18",
+     "1"
     ],
-    "a": "3 à 5 ans"
+    "a": "3"
    }
   ],
   "rw": true
@@ -19030,84 +19012,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que le cycle menstruel ?",
+    "q": "À quoi sert la contraception ? À éviter une ___ non désirée ?",
     "c": [
-     "Période des règles",
-     "Période de fertilité",
-     "Cycle hormonal",
-     "Période de préparation du corps à une éventuelle grossesse"
+     "grossesse",
+     "maladie osseuse",
+     "carie",
+     "insomnie"
     ],
-    "a": "Période de préparation du corps à une éventuelle grossesse"
+    "a": "grossesse"
    },
    {
-    "q": "Quelle est la durée moyenne d'un cycle menstruel ?",
+    "q": "Quelle contraception orale féminine se prend chaque jour ? La ___ ?",
     "c": [
-     "30 jours",
-     "28 jours",
-     "35 jours",
-     "21 jours"
+     "pilule",
+     "gélule de fer",
+     "vitamine",
+     "tisane"
     ],
-    "a": "28 jours"
+    "a": "pilule"
    },
    {
-    "q": "Qu'est-ce que l'ovulation ?",
+    "q": "Quel moyen protège à la fois d'une grossesse ET des IST ? Le ___ ?",
     "c": [
-     "Montée d'hormones",
-     "Fin du cycle",
-     "Libération d'un ovule par l'ovaire",
-     "Début des règles"
+     "préservatif",
+     "stérilet seul",
+     "pilule seule",
+     "patch"
     ],
-    "a": "Libération d'un ovule par l'ovaire"
+    "a": "préservatif"
    },
    {
-    "q": "Quand a lieu l'ovulation dans un cycle de 28 jours ?",
+    "q": "Quel petit dispositif en T est posé dans l'utérus ? Le ___ (DIU) ?",
     "c": [
-     "Autour du 14e jour",
-     "Autour du 7e jour",
-     "Autour du 21e jour",
-     "Au 1er jour"
+     "stérilet",
+     "pacemaker",
+     "plombage",
+     "implant auditif"
     ],
-    "a": "Autour du 14e jour"
+    "a": "stérilet"
    },
    {
-    "q": "Combien de temps durent les règles en moyenne ?",
+    "q": "Quelle contraception d'urgence se prend après un rapport à risque ? La pilule du ___ ?",
     "c": [
-     "3 à 7 jours",
-     "10 à 14 jours",
-     "1 à 2 jours",
-     "7 à 10 jours"
+     "lendemain",
+     "matin même",
+     "mois",
+     "hasard"
     ],
-    "a": "3 à 7 jours"
+    "a": "lendemain"
    },
    {
-    "q": "Quelles hormones régulent le cycle menstruel ?",
+    "q": "Quelle hormone est à la base de nombreuses pilules contraceptives ? Le ___ (et l'œstrogène) ?",
     "c": [
-     "Adrénaline et cortisol",
-     "LH et FSH uniquement",
-     "Testostérone et oestrogènes",
-     "Oestrogènes et progestérone"
+     "progestatif",
+     "insuline",
+     "adrénaline",
+     "cortisol"
     ],
-    "a": "Oestrogènes et progestérone"
+    "a": "progestatif"
    },
    {
-    "q": "Qu'est-ce que le syndrome prémenstruel (SPM) ?",
+    "q": "Quel petit bâtonnet posé sous la peau du bras diffuse une hormone contraceptive ? L'___ ?",
     "c": [
-     "Après les règles",
-     "Pendant les règles",
-     "Pendant l'ovulation",
-     "Ensemble de symptômes avant les règles"
+     "implant",
+     "aimant",
+     "capteur",
+     "tatouage"
     ],
-    "a": "Ensemble de symptômes avant les règles"
+    "a": "implant"
    },
    {
-    "q": "À quel âge survient la première menstruation ?",
-    "c": [
-     "Entre 18 et 20 ans",
-     "Entre 8 et 10 ans",
-     "Entre 15 et 17 ans",
-     "Entre 11 et 14 ans en moyenne"
-    ],
-    "a": "Entre 11 et 14 ans en moyenne"
+    "q": "En quelle année la pilule contraceptive a-t-elle été légalisée en France (loi Neuwirth) ?",
+    "a": "1967"
    }
   ],
   "rw": true
@@ -19119,84 +19095,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que la puberté ?",
+    "q": "Que signifie le sigle IST ? Infection ___ transmissible ?",
     "c": [
-     "Développement hormonal",
-     "Début de l'adolescence",
-     "Croissance",
-     "Période de transition entre l'enfance et l'âge adulte"
+     "sexuellement",
+     "socialement",
+     "spontanément",
+     "saisonnièrement"
     ],
-    "a": "Période de transition entre l'enfance et l'âge adulte"
+    "a": "sexuellement"
    },
    {
-    "q": "À quel âge commence la puberté chez les filles ?",
+    "q": "Quel moyen simple réduit fortement le risque d'attraper une IST ? Le ___ ?",
     "c": [
-     "Entre 8 et 13 ans",
-     "Entre 12 et 16 ans",
-     "Entre 6 et 10 ans",
-     "Entre 10 et 15 ans"
+     "préservatif",
+     "chapeau",
+     "gant",
+     "foulard"
     ],
-    "a": "Entre 8 et 13 ans"
+    "a": "préservatif"
    },
    {
-    "q": "À quel âge commence la puberté chez les garçons ?",
+    "q": "Quel test permet de savoir si l'on a une IST ? Le ___ ?",
     "c": [
-     "Entre 13 et 17 ans",
-     "Entre 9 et 14 ans",
-     "Entre 7 et 12 ans",
-     "Entre 11 et 16 ans"
+     "dépistage",
+     "sondage",
+     "casting",
+     "recensement"
     ],
-    "a": "Entre 9 et 14 ans"
+    "a": "dépistage"
    },
    {
-    "q": "Quel est le premier signe de la puberté chez les filles ?",
+    "q": "Quelle IST virale, autrefois mortelle, s'attaque au système immunitaire ? Le ___ ?",
     "c": [
-     "La pousse des poils",
-     "L'arrivée des règles",
-     "Le développement des seins",
-     "La croissance"
+     "VIH",
+     "rhume",
+     "grippe",
+     "varicelle"
     ],
-    "a": "Le développement des seins"
+    "a": "VIH"
    },
    {
-    "q": "Quel est le premier signe de la puberté chez les garçons ?",
+    "q": "Contre quelle IST responsable de cancers existe-t-il un vaccin (papillomavirus) ? Le ___ ?",
     "c": [
-     "L'érection",
-     "La mue de la voix",
-     "L'augmentation du volume des testicules",
-     "La pousse des poils"
+     "HPV",
+     "VIH",
+     "herpès",
+     "chlamydia"
     ],
-    "a": "L'augmentation du volume des testicules"
+    "a": "HPV"
    },
    {
-    "q": "Quelles hormones déclenchent la puberté ?",
+    "q": "Quel traitement préventif quotidien protège du VIH les personnes à risque ? La ___ ?",
     "c": [
-     "Les gonadotrophines (LH et FSH)",
-     "L'hormone de croissance",
-     "Les oestrogènes",
-     "La testostérone"
+     "PrEP",
+     "PMA",
+     "IVG",
+     "FIV"
     ],
-    "a": "Les gonadotrophines (LH et FSH)"
+    "a": "PrEP"
    },
    {
-    "q": "Combien de temps dure la puberté ?",
+    "q": "Beaucoup d'IST bactériennes se soignent avec quel type de médicament ? Des ___ ?",
     "c": [
-     "6 mois à 1 an",
-     "1 à 2 ans",
-     "5 à 7 ans",
-     "Environ 3 à 5 ans"
+     "antibiotiques",
+     "vitamines",
+     "vaccins",
+     "sirops sucrés"
     ],
-    "a": "Environ 3 à 5 ans"
+    "a": "antibiotiques"
    },
    {
-    "q": "Qu'est-ce que la poussée de croissance à la puberté ?",
-    "c": [
-     "Croissance des os",
-     "Prise de poids",
-     "Accélération de la taille sur 2-3 ans",
-     "Développement musculaire"
-    ],
-    "a": "Accélération de la taille sur 2-3 ans"
+    "q": "Combien de nouvelles IST curables, environ en millions, l'OMS recense-t-elle chaque jour dans le monde ?",
+    "a": "1"
    }
   ],
   "rw": true
@@ -19208,84 +19178,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Combien de temps dure une grossesse ?",
+    "q": "Comment appelle-t-on l'organe où se développe le bébé pendant la grossesse ? L'___ ?",
     "c": [
-     "9 mois (environ 40 semaines)",
-     "7 mois",
-     "8 mois",
-     "10 mois"
+     "utérus",
+     "estomac",
+     "foie",
+     "poumon"
     ],
-    "a": "9 mois (environ 40 semaines)"
+    "a": "utérus"
    },
    {
-    "q": "Comment s'appelle la période de la grossesse ?",
+    "q": "Comment appelle-t-on l'ensemble des organes génitaux externes féminins ? La ___ ?",
     "c": [
-     "La lactation",
-     "La parturition",
-     "La gestation",
-     "La fécondation"
+     "vulve",
+     "rotule",
+     "clavicule",
+     "trachée"
     ],
-    "a": "La gestation"
+    "a": "vulve"
    },
    {
-    "q": "Quels sont les trois trimestres de la grossesse ?",
+    "q": "Quelles glandes produisent les ovules chez la femme ? Les ___ ?",
     "c": [
-     "3 périodes de 2 mois",
-     "3 périodes égales",
-     "3 périodes de 3 mois chacune",
-     "3 périodes de 4 mois"
+     "ovaires",
+     "reins",
+     "surrénales",
+     "amygdales"
     ],
-    "a": "3 périodes de 3 mois chacune"
+    "a": "ovaires"
    },
    {
-    "q": "Qu'est-ce que la nidation ?",
+    "q": "Quel cycle féminin dure en moyenne 28 jours ? Le cycle ___ ?",
     "c": [
-     "Fécondation",
-     "Implantation de l'embryon dans l'utérus",
-     "Formation du foetus",
-     "Début du travail"
+     "menstruel",
+     "lunaire exact",
+     "circadien",
+     "solaire"
     ],
-    "a": "Implantation de l'embryon dans l'utérus"
+    "a": "menstruel"
    },
    {
-    "q": "Comment s'appelle le premier trimestre de la grossesse ?",
+    "q": "Quels conduits relient les ovaires à l'utérus ? Les trompes de ___ ?",
     "c": [
-     "Phase de croissance",
-     "Phase de nidation",
-     "Phase embryonnaire",
-     "Phase foetale"
+     "Fallope",
+     "Eustache",
+     "Botal",
+     "Henlé"
     ],
-    "a": "Phase embryonnaire"
+    "a": "Fallope"
    },
    {
-    "q": "Qu'est-ce qu'une échographie obstétricale ?",
+    "q": "Quel organe exclusivement dédié au plaisir féminin possède des milliers de terminaisons nerveuses ? Le ___ ?",
     "c": [
-     "Test urinaire",
-     "Examen pour visualiser le foetus",
-     "IRM",
-     "Analyse de sang"
+     "clitoris",
+     "coude",
+     "talon",
+     "lobe"
     ],
-    "a": "Examen pour visualiser le foetus"
+    "a": "clitoris"
    },
    {
-    "q": "Combien d'échographies sont recommandées en France ?",
+    "q": "Quelle hormone féminine principale est produite par les ovaires ? L'___ ?",
     "c": [
-     "2",
-     "4",
-     "3",
-     "5"
+     "œstrogène",
+     "testostérone seule",
+     "insuline",
+     "adrénaline"
     ],
-    "a": "3"
+    "a": "œstrogène"
    },
    {
-    "q": "Qu'est-ce que le congé maternité en France ?",
-    "c": [
-     "Congé pour le père",
-     "Arrêt maladie",
-     "Congé pour la mère avant et après l'accouchement",
-     "Congé parental"
-    ],
-    "a": "Congé pour la mère avant et après l'accouchement"
+    "q": "Combien d'ovules, environ, une femme possède-t-elle à la naissance (en milliers) ? Environ ___ mille ?",
+    "a": "1000"
    }
   ],
   "rw": true
@@ -19297,84 +19261,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Quels sont les trois phases de l'accouchement ?",
+    "q": "Quels organes produisent les spermatozoïdes chez l'homme ? Les ___ ?",
     "c": [
-     "Travail, expulsion, délivrance",
-     "Dilatation, naissance, allaitement",
-     "Travail, naissance, récupération",
-     "Contractions, poussée, repos"
+     "testicules",
+     "reins",
+     "poumons",
+     "amygdales"
     ],
-    "a": "Travail, expulsion, délivrance"
+    "a": "testicules"
    },
    {
-    "q": "Qu'est-ce que le travail lors de l'accouchement ?",
+    "q": "Dans quelle poche de peau se trouvent les testicules ? Le ___ ?",
     "c": [
-     "Les contractions qui dilatent le col de l'utérus",
-     "La sortie du bébé",
-     "La poussée",
-     "La délivrance du placenta"
+     "scrotum",
+     "sternum",
+     "tympan",
+     "diaphragme"
     ],
-    "a": "Les contractions qui dilatent le col de l'utérus"
+    "a": "scrotum"
    },
    {
-    "q": "Combien de temps dure le travail en moyenne ?",
+    "q": "Quel liquide, éjaculé, transporte les spermatozoïdes ? Le ___ ?",
     "c": [
-     "24 à 48 heures",
-     "12 à 24 heures",
-     "2 à 4 heures",
-     "8 à 12 heures pour un premier enfant"
+     "sperme",
+     "plasma sanguin",
+     "suc gastrique",
+     "mucus nasal"
     ],
-    "a": "8 à 12 heures pour un premier enfant"
+    "a": "sperme"
    },
    {
-    "q": "Qu'est-ce qu'une péridurale ?",
+    "q": "Quelle glande, sous la vessie, produit une partie du liquide séminal ? La ___ ?",
     "c": [
-     "Anesthésie locale pour accoucher sans douleur",
-     "Massage",
-     "Anesthésie générale",
-     "Piqûre de médicament"
+     "prostate",
+     "thyroïde",
+     "rate",
+     "hypophyse"
     ],
-    "a": "Anesthésie locale pour accoucher sans douleur"
+    "a": "prostate"
    },
    {
-    "q": "Comment s'appelle la sortie du bébé ?",
+    "q": "Quel conduit transporte l'urine et le sperme hors du corps ? L'___ ?",
     "c": [
-     "Le travail",
-     "La délivrance",
-     "La nidation",
-     "L'expulsion"
+     "urètre",
+     "uretère",
+     "œsophage",
+     "bronche"
     ],
-    "a": "L'expulsion"
+    "a": "urètre"
    },
    {
-    "q": "Qu'est-ce que la délivrance ?",
+    "q": "Quelle hormone masculine principale est produite par les testicules ? La ___ ?",
     "c": [
-     "La naissance du bébé",
-     "La fin des contractions",
-     "L'expulsion du placenta",
-     "La coupure du cordon"
+     "testostérone",
+     "œstrogène seul",
+     "insuline",
+     "mélatonine"
     ],
-    "a": "L'expulsion du placenta"
+    "a": "testostérone"
    },
    {
-    "q": "Qu'est-ce qu'une césarienne ?",
+    "q": "Pourquoi les testicules sont-ils situés à l'extérieur du corps ? Pour être plus au ___ (température) ?",
     "c": [
-     "Accouchement chirurgical par incision abdominale",
-     "Accouchement déclenché",
-     "Accouchement par voie basse",
-     "Accouchement sous eau"
+     "frais",
+     "chaud",
+     "sec",
+     "sombre"
     ],
-    "a": "Accouchement chirurgical par incision abdominale"
+    "a": "frais"
    },
    {
-    "q": "Quel pourcentage d'accouchements se fait par césarienne en France ?",
-    "c": [
-     "Environ 5%",
-     "Environ 10%",
-     "Environ 20%",
-     "Environ 30%"
-    ],
-    "a": "Environ 20%"
+    "q": "Combien de spermatozoïdes, environ en millions, un homme produit-il chaque jour ? Environ ___ millions ?",
+    "a": "100"
    }
   ],
   "rw": true
@@ -19386,84 +19344,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Quelle est la principale hormone sexuelle masculine ?",
+    "q": "La pornographie est un contenu réservé à un public ___ ? (âge)",
     "c": [
-     "La testostérone",
-     "Les oestrogènes",
-     "La LH",
-     "La progestérone"
+     "adulte",
+     "enfantin",
+     "familial",
+     "scolaire"
     ],
-    "a": "La testostérone"
+    "a": "adulte"
    },
    {
-    "q": "Quelles sont les principales hormones sexuelles féminines ?",
+    "q": "Quel type de contrôle les sites pornographiques doivent-ils légalement mettre en place ? La vérification de l'___ ?",
     "c": [
-     "Les oestrogènes et la progestérone",
-     "La LH et la FSH",
-     "L'adrénaline",
-     "La testostérone"
+     "âge",
+     "adresse",
+     "poids",
+     "taille"
     ],
-    "a": "Les oestrogènes et la progestérone"
+    "a": "âge"
    },
    {
-    "q": "Où est produite la testostérone chez l'homme ?",
+    "q": "La pornographie donne-t-elle une image réaliste ou déformée de la sexualité ? ___ ?",
     "c": [
-     "Dans les glandes surrénales",
-     "Dans les testicules",
-     "Dans la prostate",
-     "Dans le pénis"
+     "déformée",
+     "réaliste",
+     "scientifique",
+     "médicale"
     ],
-    "a": "Dans les testicules"
+    "a": "déformée"
    },
    {
-    "q": "Où sont produits les oestrogènes ?",
+    "q": "Quelle notion essentielle est souvent absente ou mal représentée dans le porno ? Le ___ ?",
     "c": [
-     "Dans les trompes",
-     "Dans l'utérus",
-     "Dans les ovaires",
-     "Dans le vagin"
+     "consentement",
+     "décor",
+     "éclairage",
+     "montage"
     ],
-    "a": "Dans les ovaires"
+    "a": "consentement"
    },
    {
-    "q": "Quelle hormone déclenche l'ovulation ?",
+    "q": "Quel type d'éducation aide les jeunes à décrypter ces images ? L'éducation à la ___ ?",
     "c": [
-     "La progestérone",
-     "Les oestrogènes",
-     "La LH (hormone lutéinisante)",
-     "La FSH"
+     "sexualité",
+     "conduite",
+     "musique",
+     "cuisine"
     ],
-    "a": "La LH (hormone lutéinisante)"
+    "a": "sexualité"
    },
    {
-    "q": "Quel est le rôle de la progestérone ?",
+    "q": "Comment appelle-t-on une dépendance excessive à la consommation de porno ? Une ___ ?",
     "c": [
-     "Préparer l'utérus à une grossesse",
-     "Provoquer les règles",
-     "Déclencher l'ovulation",
-     "Produire du lait"
+     "addiction",
+     "allergie",
+     "immunité",
+     "carence"
     ],
-    "a": "Préparer l'utérus à une grossesse"
+    "a": "addiction"
    },
    {
-    "q": "À quoi sert la FSH ?",
+    "q": "En France, montrer du contenu pornographique à un mineur est-il légal ou un délit ? Un ___ ?",
     "c": [
-     "Déclencher l'ovulation",
-     "Réguler les règles",
-     "Produire la testostérone",
-     "Stimuler la maturation des follicules ovariens"
+     "délit",
+     "droit",
+     "devoir",
+     "usage"
     ],
-    "a": "Stimuler la maturation des follicules ovariens"
+    "a": "délit"
    },
    {
-    "q": "Qu'est-ce qu'un dérèglement hormonal ?",
-    "c": [
-     "Excès de sucre",
-     "Maladie génétique",
-     "Arrêt des hormones",
-     "Production anormale d'hormones"
-    ],
-    "a": "Production anormale d'hormones"
+    "q": "En quelle année la loi française a-t-elle renforcé l'obligation de vérification d'âge sur les sites porno (loi SREN) ?",
+    "a": "2024"
    }
   ],
   "rw": true
@@ -19475,84 +19427,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Où sont produits les spermatozoïdes ?",
+    "q": "La virginité désigne le fait de n'avoir jamais eu de rapport ___ ?",
     "c": [
-     "Dans les testicules",
-     "Dans l'épididyme",
-     "Dans la prostate",
-     "Dans les vésicules séminales"
+     "sexuel",
+     "verbal",
+     "visuel",
+     "écrit"
     ],
-    "a": "Dans les testicules"
+    "a": "sexuel"
    },
    {
-    "q": "Combien de temps vit un spermatozoïde dans le corps féminin ?",
+    "q": "La « première fois » est une notion surtout ___ et personnelle ? (pas un état médical)",
     "c": [
-     "Jusqu'à 5 jours",
-     "Jusqu'à une semaine",
-     "Jusqu'à 24 heures",
-     "Jusqu'à 48 heures"
+     "culturelle",
+     "chimique",
+     "génétique",
+     "climatique"
     ],
-    "a": "Jusqu'à 5 jours"
+    "a": "culturelle"
    },
    {
-    "q": "Quelle est la taille d'un spermatozoïde ?",
+    "q": "Quelle fine membrane a longtemps été associée à tort à un « test » de virginité ? L'___ ?",
     "c": [
-     "Environ 1 micromètre",
-     "Environ 50 micromètres",
-     "Environ 100 micromètres",
-     "Environ 10 micromètres"
+     "hymen",
+     "tympan",
+     "rétine",
+     "cornée"
     ],
-    "a": "Environ 50 micromètres"
+    "a": "hymen"
    },
    {
-    "q": "De quoi est composé un spermatozoïde ?",
+    "q": "L'état de l'hymen est-il un indicateur fiable de virginité selon la médecine ? ___ ?",
     "c": [
-     "Tête, pièce intermédiaire et flagelle",
-     "Tête et corps",
-     "Noyau et membrane",
-     "Tête et queue"
+     "non",
+     "oui toujours",
+     "seulement chez l'homme",
+     "seulement à 18 ans"
     ],
-    "a": "Tête, pièce intermédiaire et flagelle"
+    "a": "non"
    },
    {
-    "q": "Qu'est-ce qu'un spermogramme ?",
+    "q": "Quelle organisation dénonce les « tests de virginité » comme non scientifiques et attentatoires ? L'___ ?",
     "c": [
-     "Analyse de sang",
-     "Analyse de la qualité du sperme",
-     "Test de fertilité féminine",
-     "Examen urinaire"
+     "OMS",
+     "OTAN",
+     "FMI",
+     "FIFA"
     ],
-    "a": "Analyse de la qualité du sperme"
+    "a": "OMS"
    },
    {
-    "q": "Combien de spermatozoïdes contient un éjaculat ?",
+    "q": "La virginité concerne-t-elle uniquement les femmes, ou tout le monde ? ___ ?",
     "c": [
-     "500 millions à 1 milliard",
-     "40 à 300 millions",
-     "10 à 40 millions",
-     "1 à 10 millions"
+     "tout le monde",
+     "les femmes",
+     "les hommes",
+     "personne"
     ],
-    "a": "40 à 300 millions"
+    "a": "tout le monde"
    },
    {
-    "q": "Qu'est-ce que l'azoospermie ?",
+    "q": "Quel principe rend la première fois valable et respectueuse ? Le ___ ?",
     "c": [
-     "Absence de spermatozoïdes dans le sperme",
-     "Spermatozoïdes anormaux",
-     "Trop de spermatozoïdes",
-     "Faible nombre de spermatozoïdes"
+     "consentement",
+     "hasard",
+     "secret",
+     "paiement"
     ],
-    "a": "Absence de spermatozoïdes dans le sperme"
+    "a": "consentement"
    },
    {
-    "q": "Quelle température affecte la production de spermatozoïdes ?",
-    "c": [
-     "La pression",
-     "Une température trop élevée (au-dessus de 35°C)",
-     "L'humidité",
-     "Le froid"
-    ],
-    "a": "Une température trop élevée (au-dessus de 35°C)"
+    "q": "En quelle année l'OMS a-t-elle appelé à l'interdiction mondiale des tests de virginité ?",
+    "a": "2018"
    }
   ],
   "rw": true
@@ -19564,84 +19510,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que l'ovulation ?",
+    "q": "Les phéromones sont des signaux ___ émis par le corps ? (odeur)",
     "c": [
-     "Fécondation",
-     "Début des règles",
-     "Nidation",
-     "Libération d'un ovule mature par l'ovaire"
+     "chimiques",
+     "sonores",
+     "lumineux",
+     "électriques"
     ],
-    "a": "Libération d'un ovule mature par l'ovaire"
+    "a": "chimiques"
    },
    {
-    "q": "Quand a lieu l'ovulation dans un cycle régulier de 28 jours ?",
+    "q": "Par quel sens perçoit-on essentiellement les phéromones ? L'___ ?",
     "c": [
-     "Au 7e jour",
-     "Au 21e jour",
-     "Au 1er jour",
-     "Au 14e jour environ"
+     "odorat",
+     "vue",
+     "ouïe",
+     "toucher"
     ],
-    "a": "Au 14e jour environ"
+    "a": "odorat"
    },
    {
-    "q": "Combien d'ovules sont libérés à chaque ovulation ?",
+    "q": "Chez les animaux, à quoi servent surtout les phéromones ? À la ___ ?",
     "c": [
-     "Plusieurs",
-     "Deux toujours",
-     "Aucun",
-     "Un seul en général"
+     "communication",
+     "digestion",
+     "respiration",
+     "vision"
     ],
-    "a": "Un seul en général"
+    "a": "communication"
    },
    {
-    "q": "Quelle hormone déclenche l'ovulation ?",
+    "q": "Quel insecte social utilise énormément les phéromones pour organiser sa colonie ? La ___ ?",
     "c": [
-     "La LH (hormone lutéinisante)",
-     "La progestérone",
-     "La FSH",
-     "Les oestrogènes"
+     "fourmi",
+     "girafe",
+     "baleine",
+     "truite"
     ],
-    "a": "La LH (hormone lutéinisante)"
+    "a": "fourmi"
    },
    {
-    "q": "Combien de temps l'ovule est-il viable après l'ovulation ?",
+    "q": "L'existence de vraies phéromones sexuelles humaines est-elle prouvée ou débattue ? ___ ?",
     "c": [
-     "48 à 72 heures",
-     "6 à 12 heures",
-     "2 à 3 jours",
-     "12 à 24 heures"
+     "débattue",
+     "prouvée",
+     "interdite",
+     "brevetée"
     ],
-    "a": "12 à 24 heures"
+    "a": "débattue"
    },
    {
-    "q": "Qu'est-ce qu'un test d'ovulation ?",
+    "q": "Quel organe nasal détecte les phéromones chez de nombreux animaux ? L'organe ___ (voméronasal) ?",
     "c": [
-     "Test qui détecte le pic de LH",
-     "Échographie",
-     "Test de grossesse",
-     "Prise de sang"
+     "voméronasal",
+     "olfactif seul",
+     "auditif",
+     "gustatif"
     ],
-    "a": "Test qui détecte le pic de LH"
+    "a": "voméronasal"
    },
    {
-    "q": "Peut-on ressentir l'ovulation ?",
+    "q": "Les phéromones sont souvent ajoutées, sans preuve d'efficacité, à quels produits ? Les ___ ?",
     "c": [
-     "Certaines femmes ressentent une douleur légère",
-     "Non, jamais",
-     "Uniquement en cas de problème",
-     "Oui, toujours"
+     "parfums",
+     "shampoings antipoux",
+     "dentifrices",
+     "lessives"
     ],
-    "a": "Certaines femmes ressentent une douleur légère"
+    "a": "parfums"
    },
    {
-    "q": "Qu'est-ce que la période fertile ?",
-    "c": [
-     "Uniquement le jour de l'ovulation",
-     "Tout le cycle",
-     "La semaine avant les règles",
-     "Fenêtre de quelques jours autour de l'ovulation"
-    ],
-    "a": "Fenêtre de quelques jours autour de l'ovulation"
+    "q": "En quelle année le mot « phéromone » a-t-il été proposé par des scientifiques ?",
+    "a": "1959"
    }
   ],
   "rw": true
@@ -19653,84 +19593,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que la fécondation ?",
+    "q": "L'orgasme est le point culminant du ___ sexuel ?",
     "c": [
-     "Union d'un spermatozoïde et d'un ovule",
-     "Division cellulaire",
-     "Début de la grossesse",
-     "Nidation"
+     "plaisir",
+     "sommeil",
+     "repas",
+     "sport"
     ],
-    "a": "Union d'un spermatozoïde et d'un ovule"
+    "a": "plaisir"
    },
    {
-    "q": "Où a lieu la fécondation ?",
+    "q": "Quelle hormone du bien-être et de l'attachement est libérée lors de l'orgasme ? L'___ ?",
     "c": [
-     "Dans les trompes de Fallope",
-     "Dans l'ovaire",
-     "Dans le vagin",
-     "Dans l'utérus"
+     "ocytocine",
+     "insuline",
+     "cortisol",
+     "adrénaline seule"
     ],
-    "a": "Dans les trompes de Fallope"
+    "a": "ocytocine"
    },
    {
-    "q": "Combien de spermatozoïdes atteignent l'ovule ?",
+    "q": "Quel phénomène musculaire rythmique accompagne l'orgasme ? Des ___ ?",
     "c": [
-     "Aucun",
-     "Un seul féconde l'ovule",
-     "Des centaines",
-     "Des milliers"
+     "contractions",
+     "fractures",
+     "crampes durables",
+     "paralysies"
     ],
-    "a": "Un seul féconde l'ovule"
+    "a": "contractions"
    },
    {
-    "q": "Que devient l'ovule après la fécondation ?",
+    "q": "Comment appelle-t-on l'absence de capacité à atteindre l'orgasme ? L'___ ?",
     "c": [
-     "Il reste dans la trompe",
-     "Il se divise en deux",
-     "Il devient un zygote",
-     "Il meurt"
+     "anorgasmie",
+     "amnésie",
+     "aphasie",
+     "apnée"
     ],
-    "a": "Il devient un zygote"
+    "a": "anorgasmie"
    },
    {
-    "q": "Combien de temps après la fécondation a lieu la nidation ?",
+    "q": "Les chercheurs Masters et ___ ont décrit les phases de la réponse sexuelle ? Johnson ou ___ ?",
     "c": [
-     "Immédiatement",
-     "Environ 6 à 10 jours",
-     "24 heures",
-     "2 à 3 semaines"
+     "Johnson",
+     "Kinsey",
+     "Freud",
+     "Pavlov"
     ],
-    "a": "Environ 6 à 10 jours"
+    "a": "Johnson"
    },
    {
-    "q": "Qu'est-ce qu'un zygote ?",
+    "q": "Quel neurotransmetteur du plaisir et de la récompense est impliqué dans l'orgasme ? La ___ ?",
     "c": [
-     "Cellule résultant de la fécondation",
-     "Embryon",
-     "Ovule fécondé",
-     "Foetus"
+     "dopamine",
+     "kératine",
+     "mélanine",
+     "insuline"
     ],
-    "a": "Cellule résultant de la fécondation"
+    "a": "dopamine"
    },
    {
-    "q": "Qu'est-ce que la conception ?",
+    "q": "Comment appelle-t-on la période de récupération après l'orgasme, surtout chez l'homme ? La période ___ ?",
     "c": [
-     "L'accouchement",
-     "Le moment de la fécondation",
-     "La nidation",
-     "La grossesse"
+     "réfractaire",
+     "réflexe",
+     "d'incubation",
+     "d'éveil"
     ],
-    "a": "Le moment de la fécondation"
+    "a": "réfractaire"
    },
    {
-    "q": "Combien de temps les spermatozoïdes mettent-ils pour atteindre l'ovule ?",
-    "c": [
-     "24 heures",
-     "Quelques minutes",
-     "Quelques heures",
-     "Quelques secondes"
-    ],
-    "a": "Quelques heures"
+    "q": "En combien de phases Masters et Johnson ont-ils décrit le cycle de la réponse sexuelle humaine ?",
+    "a": "4"
    }
   ],
   "rw": true
@@ -19742,84 +19676,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que la pilule contraceptive ?",
+    "q": "Le clitoris est un organe dédié principalement au ___ féminin ?",
     "c": [
-     "Médicament",
-     "Comprimé hormonal qui empêche l'ovulation",
-     "Comprimé qui tue les spermatozoïdes",
-     "Comprimé pour les règles"
+     "plaisir",
+     "digestion",
+     "équilibre",
+     "sommeil"
     ],
-    "a": "Comprimé hormonal qui empêche l'ovulation"
+    "a": "plaisir"
    },
    {
-    "q": "Quels hormones contient la pilule combinée ?",
+    "q": "Quelle est la seule fonction connue du clitoris ? Le ___ ?",
     "c": [
-     "Progestérone seule",
-     "Testostérone et oestrogènes",
-     "LH et FSH",
-     "Oestrogènes et progestérone"
+     "plaisir",
+     "la reproduction directe",
+     "la digestion",
+     "la respiration"
     ],
-    "a": "Oestrogènes et progestérone"
+    "a": "plaisir"
    },
    {
-    "q": "Comment agit la pilule contraceptive ?",
+    "q": "La partie visible du clitoris n'est qu'une petite portion : la majeure partie est-elle interne ou externe ? ___ ?",
     "c": [
-     "En bloquant les spermatozoïdes",
-     "En empêchant l'ovulation",
-     "En empêchant la nidation",
-     "En stérilisant temporairement"
+     "interne",
+     "externe",
+     "absente",
+     "osseuse"
     ],
-    "a": "En empêchant l'ovulation"
+    "a": "interne"
    },
    {
-    "q": "Quelle est l'efficacité de la pilule en utilisation parfaite ?",
+    "q": "Combien de terminaisons nerveuses, environ, compte le clitoris, plus que le gland masculin ? Plus de ___ mille ?",
     "c": [
-     "Environ 85%",
-     "Plus de 99%",
-     "Environ 90%",
-     "Environ 95%"
+     "8",
+     "1",
+     "100",
+     "500"
     ],
-    "a": "Plus de 99%"
+    "a": "8"
    },
    {
-    "q": "Faut-il une prescription pour la pilule en France ?",
+    "q": "Le clitoris et le pénis se développent-ils, chez l'embryon, à partir du même tissu d'origine ? ___ ?",
     "c": [
-     "Uniquement pour les mineures",
-     "Oui, une ordonnance est nécessaire",
-     "Non, en vente libre",
-     "Non, sauf la pilule d'urgence"
+     "oui",
+     "non",
+     "seulement le pénis",
+     "aucun des deux"
     ],
-    "a": "Oui, une ordonnance est nécessaire"
+    "a": "oui"
    },
    {
-    "q": "Qu'est-ce que la pilule progestative (micro-pilule) ?",
+    "q": "Comment appelle-t-on le petit repli de peau qui protège le clitoris ? Le ___ (prépuce clitoridien) ?",
     "c": [
-     "Pilule à double dose",
-     "Pilule sans oestrogènes",
-     "Pilule d'urgence",
-     "Pilule du lendemain"
+     "capuchon",
+     "casque",
+     "voile",
+     "bouclier"
     ],
-    "a": "Pilule sans oestrogènes"
+    "a": "capuchon"
    },
    {
-    "q": "Que faire si on oublie une pilule ?",
+    "q": "En quelle année une anatomiste australienne (Helen O'Connell) a-t-elle cartographié en détail le clitoris complet ? En ___ ?",
     "c": [
-     "Prendre deux le lendemain",
-     "Arrêter la plaquette",
-     "Ne rien faire",
-     "La prendre dès que possible et utiliser un préservatif"
+     "1998",
+     "1850",
+     "2020",
+     "1700"
     ],
-    "a": "La prendre dès que possible et utiliser un préservatif"
+    "a": "1998"
    },
    {
-    "q": "La pilule protège-t-elle des IST ?",
-    "c": [
-     "Oui, comme le préservatif",
-     "Non, elle ne protège pas des IST",
-     "Oui, totalement",
-     "Oui, partiellement"
-    ],
-    "a": "Non, elle ne protège pas des IST"
+    "q": "Combien de centimètres, environ, mesure le clitoris dans sa totalité (partie interne comprise) ?",
+    "a": "10"
    }
   ],
   "rw": true
