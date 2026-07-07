@@ -490,6 +490,12 @@
           </div>
 
           <div class="card">
+            <h2 style="margin:0 0 10px;font-size:15px">🌍 Univers supplémentaires</h2>
+            <p class="muted" style="font-size:13px;margin:0 0 12px">Cochez des univers pour ajouter leurs mots (100 mots chacun) aux mots de base.</p>
+            <div id="joUniverses" style="display:flex;gap:10px;flex-wrap:wrap"></div>
+          </div>
+
+          <div class="card">
             <div class="field"><label>Mots à deviner <span class="muted">(un mot ou petite expression par ligne)</span></label>
               <textarea id="joWords" rows="16" style="width:100%"></textarea>
             </div>
@@ -1347,9 +1353,11 @@ async function loadJustoneAdmin() {
   try {
     const r = await fetch('/api/admin/justone', { headers: headers() });
     if (!r.ok) { document.getElementById('joCount').textContent = 'Erreur ('+r.status+')'; return; }
-    JUSTONE_DATA = (await r.json()).justone || {};
+    const d = await r.json();
+    JUSTONE_DATA = d.justone || {};
     _joLevel = document.getElementById('joLevel').value;
     renderJustoneLevel(_joLevel);
+    renderJustoneUniverses(JUSTONE_DATA.universes || {}, d.universeDefs || {});
   } catch { document.getElementById('joCount').textContent = 'Erreur réseau'; }
 }
 function captureJustoneLevel(level) {
@@ -1361,6 +1369,24 @@ function renderJustoneLevel(level) {
   document.getElementById('joWords').value = words.join('\n');
   document.getElementById('joCount').textContent = words.length + ' mot(s)';
 }
+function renderJustoneUniverses(enabled, defs) {
+  const el = document.getElementById('joUniverses');
+  el.innerHTML = Object.keys(defs).map(key => {
+    const u = defs[key];
+    return `<label style="display:flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid rgba(255,255,255,.1);border-radius:10px;cursor:pointer;font-size:13px;font-weight:600;transition:background .15s">
+      <input type="checkbox" data-jo-universe="${key}" ${enabled[key] ? 'checked' : ''} onchange="onJoUniverseChange()" style="width:18px;height:18px;accent-color:#8b5cf6">
+      <span>${u.emoji || '🌍'} ${esc(u.label || key)}</span>
+      <span class="muted" style="font-weight:400">(${u.words ? u.words.length : '?'} mots)</span>
+    </label>`;
+  }).join('');
+}
+function onJoUniverseChange() {
+  if (!JUSTONE_DATA) JUSTONE_DATA = {};
+  if (!JUSTONE_DATA.universes) JUSTONE_DATA.universes = {};
+  document.querySelectorAll('#joUniverses input[data-jo-universe]').forEach(el => {
+    JUSTONE_DATA.universes[el.dataset.joUniverse] = el.checked;
+  });
+}
 // Changement de niveau : on mémorise les éventuelles modifs du niveau courant.
 function fillJustoneEditor() {
   captureJustoneLevel(_joLevel);
@@ -1368,6 +1394,7 @@ function fillJustoneEditor() {
   renderJustoneLevel(_joLevel);
 }
 async function saveJustoneAdmin() {
+  onJoUniverseChange(); // capte l'état des cases AVANT sauvegarde
   captureJustoneLevel(document.getElementById('joLevel').value);
   const r = await fetch('/api/admin/justone', { method:'POST', headers: headers(), body: JSON.stringify({ justone: JUSTONE_DATA }) });
   const d = await r.json();

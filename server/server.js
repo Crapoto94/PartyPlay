@@ -29,7 +29,7 @@ import { validatePromoCode, usePromoCode, listPromoCodes, addPromoCode, removePr
 import { PRIVACY_QUESTIONS, PRIVACY_LEVELS } from './data/privacy.js';
 import { getBlindtests, saveBlindtests, defaultPlaylistsMap } from './store/blindtests.js';
 import { getCarton, saveCarton, CARTON_LEVELS } from './store/carton.js';
-import { getJustone, saveJustone } from './store/justone.js';
+import { getJustone, saveJustone, getUniverseDefs } from './store/justone.js';
 import { getTtcq, saveTtcq, resetTtcq } from './store/ttcq.js';
 import { getQuiz, saveQuiz } from './store/quiz.js';
 import { getPhotos, savePhotos } from './store/photos.js';
@@ -521,7 +521,7 @@ app.post('/api/admin/carton', (req, res) => {
 // =====================================================================
 app.get('/api/admin/justone', (req, res) => {
   if (!requireAdmin(req, res)) return;
-  res.json({ justone: getJustone() });
+  res.json({ justone: getJustone(), universeDefs: getUniverseDefs() });
 });
 app.post('/api/admin/justone', (req, res) => {
   if (!requireAdmin(req, res)) return;
