@@ -395,6 +395,47 @@ app.post('/api/admin/email/send', async (req, res) => {
   } catch (e) { res.status(500).json({ error: e.message }); }
 });
 
+app.post('/api/admin/email/send-template', async (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  const { to, templateKey } = req.body || {};
+  if (!to || !templateKey) return res.status(400).json({ error: 'Destinataire et clé de template requis.' });
+
+  const lastEvent = listEvents()[0];
+  if (!lastEvent) return res.status(400).json({ error: 'Aucune fête existante pour remplir les variables.' });
+  const cfg = getConfig(lastEvent.id);
+  if (!cfg) return res.status(400).json({ error: 'Configuration introuvable.' });
+
+  const proto = req.get('x-forwarded-proto') || req.protocol;
+  const host = req.get('x-forwarded-host') || req.get('host');
+  const baseUrl = process.env.PUBLIC_URL || `${proto}://${host}`;
+  const templates = getEmailTemplates();
+  const tpl = templates[templateKey];
+  if (!tpl) return res.status(400).json({ error: 'Template inconnu.' });
+
+  const planInfo = (getPricing().plans || {})[cfg.plan] || {};
+  const vars = {
+    eventName: cfg.name || '',
+    eventId: cfg.id || '',
+    planLabel: planInfo.label || cfg.plan || '',
+    verifyUrl: `${baseUrl}/verify/${cfg.verificationToken || 'test'}`,
+    consoleUrl: `${baseUrl}/e/${cfg.id}/admin`,
+    borneUrl: `${baseUrl}/e/${cfg.id}/borne`,
+    joinUrl: `${baseUrl}/e/${cfg.id}/j/test`,
+    playerName: 'Test',
+    playerAvatar: '',
+    resultsUrl: `${baseUrl}/e/${cfg.id}/admin`,
+    baseUrl,
+  };
+  try {
+    await sendMail({
+      to,
+      subject: fillTemplate(tpl.subject, vars),
+      htmlContent: fillTemplate(tpl.html, vars),
+    });
+    res.json({ ok: true, eventId: cfg.id, eventName: cfg.name });
+  } catch (e) { res.status(500).json({ error: e.message }); }
+});
+
 app.post('/api/admin/email/test', async (req, res) => {
   if (!requireAdmin(req, res)) return;
   const { to } = req.body || {};
@@ -794,7 +835,7 @@ ev.post('/api/photo/upload', (req, res, next) => photoUpload.single('photo')(req
   if (!p) return res.status(403).json({ error: 'Token invalide.' });
   if (!req.file) return res.status(400).json({ error: 'Aucune image reçue.' });
   const missionIdx = parseInt(req.body.missionIdx || '0', 10);
-  const missions = req.game.photoMissions(p.avatar);
+  const missions = req.game.photoActiveChallenges();
   const mission = missions[missionIdx] || null;
   const photo = {
     id: `ph_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`,
@@ -806,7 +847,7 @@ ev.post('/api/photo/upload', (req, res, next) => photoUpload.single('photo')(req
   req.game.addPhoto(photo);
   res.json({ ok: true, photo });
 });
-ev.post('/api/photo/vote', (req, res) => { const p = requirePlayer(req, res); if (!p) return; res.json({ ok: req.game.castPhotoVote(p.id, req.body.photoId, req.body.category) }); });
+ev.post('/api/photo/vote', (req, res) => { const p = requirePlayer(req, res); if (!p) return; res.json({ ok: req.game.castPhotoVote(p.id, req.body.photoId, req.body.challengeIdx) }); });
 ev.post('/api/photo/openvote', (req, res) => { req.game.setPhotoPhase('vote'); res.json({ ok: true }); });
 
 // Blind-test dynamique (la borne collecte les titres)
@@ -1066,6 +1107,7 @@ ev.post('/api/admin/action', (req, res) => {
     case 'loseLife': g.loseLife(payload.playerId); break;
     case 'reset': g.reset(); break;
     case 'setPhotoPhase': g.setPhotoPhase(payload.phase ?? null); break;
+    case 'setPhotoChallenges': g.setPhotoChallenges(payload.challenges); break;
     case 'blindtestAsk': g.blindtestAsk(); break;
     case 'spotlightOpenVote': g.spotlightOpenVote(); break;
     case 'spotlightTally': g.spotlightTally(); break;

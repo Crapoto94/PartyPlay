@@ -86,6 +86,7 @@ function applyState(s){
   checkEnqHint(s);
   STATE = s; render();
   detectPianoDemo(s); // surligne mes touches si la borne (re)joue la mélodie
+  checkPhotoReminder(s); // relance « pense à tes photos » 1 h après le début de la fête
 }
 const es = new EventSource(API + '/events?token=' + encodeURIComponent(TOKEN));
 es.onmessage = (e) => { lastSse = Date.now(); applyState(JSON.parse(e.data)); };
@@ -1456,32 +1457,72 @@ function photoSection(me) {
 }
 
 function photoVoteView(me) {
-  const photos = (STATE.photos || []).filter(p => p.playerId !== me.id);
+  const challenges = STATE.photoChallenges || [];
+  const allPhotos = STATE.photos || [];
   const myVotes = me.myPhotoVotes || {};
-  if (!photos.length) return `<div class="card center"><div class="pill neon-yellow">📸 VOTE PHOTO</div><p>Pas encore de photos à voter…</p></div>`;
-  const items = photos.map(p => {
-    const bv = myVotes.belle === p.id, rv = myVotes.rigolote === p.id;
-    return `<div style="border:2px solid #ffffff22;border-radius:10px;padding:10px;margin:8px 0;background:#020a18">
-      <img src="${esc(p.url)}" style="width:100%;max-height:160px;object-fit:cover;border-radius:6px;margin-bottom:6px">
-      <div style="font-size:13px"><b>${esc(p.playerName)}</b> — <span class="muted">${esc(p.missionLabel)}</span></div>
-      <div class="row mt" style="gap:8px">
-        <button class="btn ${bv ? 'secondary' : ''}" style="flex:1;font-size:12px" onclick="photoVote('${p.id}','belle')">
-          ${bv ? '🏆 ✓' : '🏆 Belle'}
-        </button>
-        <button class="btn ${rv ? 'secondary' : ''}" style="flex:1;font-size:12px" onclick="photoVote('${p.id}','rigolote')">
-          ${rv ? '😂 ✓' : '😂 Rigolote'}
-        </button>
-      </div>
+  if (!allPhotos.length) return `<div class="card center"><div class="pill neon-yellow">📸 VOTE PHOTO</div><p>Pas encore de photos à voter…</p></div>`;
+  const blocks = challenges.map((ch, idx) => {
+    const photos = allPhotos.filter(p => p.missionIdx === idx && p.playerId !== me.id);
+    if (!photos.length) {
+      return `<div style="margin:14px 0">
+        <div class="pill neon-cyan">Défi ${idx + 1} : ${esc(ch.label)}</div>
+        <p class="muted" style="font-size:12px;margin:4px 0">Aucune autre photo à départager pour ce défi.</p>
+      </div>`;
+    }
+    const chosen = myVotes[idx];
+    const items = photos.map(p => {
+      const sel = chosen === p.id;
+      return `<div onclick="photoVote('${p.id}',${idx})" style="cursor:pointer;border:3px solid ${sel ? 'var(--ok)' : '#ffffff22'};border-radius:10px;padding:8px;background:#020a18;text-align:center">
+        <img src="${esc(p.url)}" style="width:100%;max-height:150px;object-fit:cover;border-radius:6px">
+        <div style="font-size:12px;margin-top:4px">${sel ? '✅ ' : ''}${esc(p.playerName)}</div>
+      </div>`;
+    }).join('');
+    return `<div style="margin:14px 0">
+      <div class="pill neon-cyan">Défi ${idx + 1} : ${esc(ch.label)}</div>
+      <p class="muted" style="font-size:12px;margin:4px 0">Vote pour la photo la plus proche du défi.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">${items}</div>
     </div>`;
   }).join('');
   return `<div class="card" style="border-color:var(--neon)">
     <div class="pill neon-yellow">📸 VOTE PHOTO</div>
-    <p class="muted" style="font-size:13px">Pas de vote pour tes propres photos !</p>
-    ${items}
+    <p class="muted" style="font-size:13px">Pour chaque défi, choisis la photo qui colle le mieux — pas la tienne !</p>
+    ${blocks}
   </div>`;
 }
-function photoVote(photoId, category) {
-  api('/api/photo/vote', { photoId, category }).then(poll);
+function photoVote(photoId, challengeIdx) {
+  api('/api/photo/vote', { photoId, challengeIdx }).then(poll);
+}
+
+// --- Relance photo : 1 h après le début de la fête, si des photos manquent ---
+let _photoRemindSnoozeUntil = 0;
+function checkPhotoReminder(s) {
+  const photoOn = !!(window.__EVENT__ && window.__EVENT__.activities && window.__EVENT__.activities.photo);
+  const me = s && s.me;
+  const started = s && s.partyStartAt;
+  const box = document.getElementById('photoRemind');
+  // Conditions pour montrer la relance
+  const missions = (me && me.photoMissions) || [];
+  const done = (me && me.myPhotos) || [];
+  const missing = missions.length - done.length;
+  const inVote = s && (s.photoPhase === 'vote' || s.photoPhase === 'results');
+  const due = photoOn && me && started && !inVote && missing > 0 && (Date.now() - started >= 3600000) && Date.now() >= _photoRemindSnoozeUntil;
+  if (!due) { if (box) box.remove(); return; }
+  if (box) return; // déjà affichée
+  const el = document.createElement('div');
+  el.id = 'photoRemind';
+  el.style.cssText = 'position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:9999;max-width:420px;width:calc(100% - 24px);background:linear-gradient(90deg,#7c2d12,#9d174d);color:#fff;border:1px solid #ffb020;border-radius:14px;padding:12px 14px;box-shadow:0 10px 30px rgba(0,0,0,.5);font-size:14px';
+  el.innerHTML = `<div style="display:flex;align-items:flex-start;gap:10px">
+      <div style="font-size:26px;line-height:1">📸</div>
+      <div style="flex:1">
+        <b>Il te reste ${missing} défi${missing > 1 ? 's' : ''} photo !</b>
+        <div style="font-size:12.5px;opacity:.9;margin-top:2px">La fête bat son plein — pense à prendre tes photos avant le vote. 😉</div>
+        <div style="margin-top:8px;display:flex;gap:8px">
+          <button class="btn" style="font-size:12px;padding:8px 12px" onclick="document.getElementById('photoRemind')?.remove();document.querySelector('#photo-btn-'+(${done.length}))?.scrollIntoView({block:'center'})">📸 J'y vais</button>
+          <button class="btn secondary" style="font-size:12px;padding:8px 12px" onclick="_photoRemindSnoozeUntil=Date.now()+20*60000;document.getElementById('photoRemind')?.remove()">Plus tard</button>
+        </div>
+      </div>
+    </div>`;
+  document.body.appendChild(el);
 }
 
 // --- Actions ---

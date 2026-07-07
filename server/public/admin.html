@@ -311,9 +311,10 @@
             <div id="etPreviewWrap" style="display:none;border-radius:8px;overflow:hidden;border:1px solid #ccc;background:#fff;height:400px">
               <iframe id="etPreview" style="width:100%;height:100%;border:none" sandbox="allow-same-origin"></iframe>
             </div>
-            <div class="inline mt">
+            <div class="inline mt" style="flex-wrap:wrap">
               <button class="btn" onclick="saveEmailTemplate()">💾 Enregistrer</button>
               <button class="btn secondary" onclick="resetEmailTemplate()">↺ Réinitialiser</button>
+              <button class="btn secondary" onclick="sendTestEmail()">📤 Envoyer un test</button>
               <span id="etSaved" class="muted" style="margin-left:8px;font-size:13px"></span>
             </div>
           </div>
@@ -1210,6 +1211,29 @@ async function resetEmailTemplate() {
   }
   setTimeout(() => { s.textContent = ''; s.style.color = ''; }, 3000);
   switchEmailTemplate(etCurrent);
+}
+
+async function sendTestEmail() {
+  const to = prompt('Adresse email pour recevoir le test :');
+  if (!to || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(to)) return;
+  const s = document.getElementById('etSaved');
+  s.textContent = 'Envoi…'; s.style.color = '';
+  try {
+    const r = await fetch('/api/admin/email/send-template', {
+      method: 'POST', headers: headers(),
+      body: JSON.stringify({ to, templateKey: etCurrent }),
+    });
+    const d = await r.json();
+    if (r.ok) {
+      s.textContent = '✓ Envoyé à ' + to + ' (fête : « ' + (d.eventName || '?') + ' »)';
+      s.style.color = 'var(--a-ok)';
+    } else {
+      s.textContent = '✗ ' + (d.error || 'Erreur'); s.style.color = 'var(--a-danger)';
+    }
+  } catch (e) {
+    s.textContent = '✗ Erreur réseau : ' + (e.message || ''); s.style.color = 'var(--a-danger)';
+  }
+  setTimeout(() => { s.textContent = ''; s.style.color = ''; }, 5000);
 }
 
 // Initialiser Quill au chargement de la section email
