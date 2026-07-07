@@ -11406,86 +11406,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel poète français a écrit 'Le Bateau ivre' ?",
+    "q": "Comment appelle-t-on les lignes qui composent un poème ? Des ___ ?",
     "c": [
-     "Charles Baudelaire",
-     "Paul Verlaine",
-     "Arthur Rimbaud",
-     "Stéphane Mallarmé"
+     "vers",
+     "notes",
+     "cases",
+     "pages"
     ],
-    "a": 2
+    "a": "vers"
    },
    {
-    "q": "Qui a écrit 'Les Fleurs du mal' ?",
+    "q": "Comment appelle-t-on la répétition de sons à la fin des vers ? La ___ ?",
     "c": [
-     "Victor Hugo",
-     "Paul Verlaine",
-     "Charles Baudelaire",
-     "Arthur Rimbaud"
+     "rime",
+     "note",
+     "clé",
+     "voix"
     ],
-    "a": 2
+    "a": "rime"
    },
    {
-    "q": "Quelle forme poétique japonaise a 17 syllabes ?",
+    "q": "Quel poème court japonais compte trois vers et 17 syllabes ? Le ___ ?",
     "c": [
-     "Le tanka",
-     "Le senryū",
-     "Le renga",
-     "Le haïku"
+     "haïku",
+     "sonnet",
+     "ode",
+     "fable"
     ],
-    "a": 3
+    "a": "haïku"
    },
    {
-    "q": "Qui est considéré comme le père de la poésie française ?",
+    "q": "Quel poète français, auteur des « Fleurs du mal », est célèbre ? Charles ___ ?",
     "c": [
-     "Pierre de Ronsard",
-     "Clément Marot",
-     "Joachim du Bellay",
-     "François de Malherbe"
+     "Baudelaire",
+     "Rimbaud",
+     "Verlaine",
+     "Hugo"
     ],
-    "a": 0
+    "a": "Baudelaire"
    },
    {
-    "q": "Quel poète a écrit 'Demain, dès l'aube' ?",
+    "q": "Quel vers de douze syllabes est le plus classique en poésie française ? L'___ ?",
     "c": [
-     "Charles Baudelaire",
-     "Victor Hugo",
-     "Arthur Rimbaud",
-     "Alphonse de Lamartine"
+     "alexandrin",
+     "octosyllabe",
+     "décasyllabe",
+     "hexamètre"
     ],
-    "a": 1
+    "a": "alexandrin"
    },
    {
-    "q": "Comment s'appelle un poème de 14 vers avec un schéma de rimes spécifique ?",
+    "q": "Quel poème à forme fixe compte 14 vers ? Le ___ ?",
     "c": [
-     "Le rondeau",
-     "La ballade",
-     "L'ode",
-     "Le sonnet"
+     "sonnet",
+     "haïku",
+     "rondeau",
+     "ballade"
     ],
-    "a": 3
+    "a": "sonnet"
    },
    {
-    "q": "Qui a écrit 'Le Pont Mirabeau' ?",
+    "q": "Quel jeune poète prodige a écrit « Le Bateau ivre » avant 20 ans ? Arthur ___ ?",
     "c": [
-     "Paul Éluard",
-     "André Breton",
-     "Louis Aragon",
-     "Guillaume Apollinaire"
+     "Rimbaud",
+     "Verlaine",
+     "Musset",
+     "Nerval"
     ],
-    "a": 3
+    "a": "Rimbaud"
    },
    {
-    "q": "Quel poète italien a écrit 'La Divine Comédie' ?",
-    "c": [
-     "Dante Alighieri",
-     "Boccace",
-     "Pétrarque",
-     "Arioste"
-    ],
-    "a": 0
+    "q": "Combien de syllabes compte, en tout, un haïku traditionnel ?",
+    "a": "17"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "arts_004",
@@ -11494,86 +11489,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a inventé la photographie en 1839 ?",
+    "q": "Avec quel appareil prend-on des photos ? Un appareil ___ ?",
     "c": [
-     "George Eastman",
-     "Louis Daguerre",
-     "Nicéphore Niépce",
-     "William Henry Fox Talbot"
+     "photo",
+     "radio",
+     "vidéo",
+     "audio"
     ],
-    "a": 1
+    "a": "photo"
    },
    {
-    "q": "Comment s'appelle la première photographie permanente ?",
+    "q": "Comment appelle-t-on la partie de l'appareil qui laisse entrer la lumière ? L'___ ?",
     "c": [
-     "Le calotype",
-     "La camera obscura",
-     "Le daguerréotype",
-     "Point de vue du Gras"
+     "objectif",
+     "écran",
+     "bouton",
+     "flash"
     ],
-    "a": 3
+    "a": "objectif"
    },
    {
-    "q": "Quel paramètre contrôle la luminosité d'une photo ?",
+    "q": "Quel dispositif éclaire une scène sombre lors d'une photo ? Le ___ ?",
     "c": [
-     "La vitesse d'obturation",
-     "L'ouverture",
-     "Tous ces paramètres",
-     "L'ISO"
+     "flash",
+     "zoom",
+     "filtre",
+     "trépied"
     ],
-    "a": 2
+    "a": "flash"
    },
    {
-    "q": "Qui a fondé l'agence Magnum Photos ?",
+    "q": "Sur quel support argentique les photos étaient-elles imprimées avant le numérique ? La ___ ?",
     "c": [
-     "David Seymour",
-     "Robert Capa",
-     "Henri Cartier-Bresson",
-     "Tous ces photographes"
+     "pellicule",
+     "toile",
+     "plaque",
+     "carte"
     ],
-    "a": 3
+    "a": "pellicule"
    },
    {
-    "q": "Qu'est-ce qu'un reflex numérique ?",
+    "q": "Quelle marque japonaise et « Kodak » sont célèbres pour la photo : citez Kodak ou ___ ?",
     "c": [
-     "Appareil télémétrique",
-     "Appareil moyen format",
-     "Appareil compact",
-     "Appareil avec miroir et viseur optique"
+     "Nikon",
+     "Sony",
+     "Apple",
+     "Bose"
     ],
-    "a": 3
+    "a": "Nikon"
    },
    {
-    "q": "Quel photographe est connu pour ses clichés de la guerre d'Espagne ?",
+    "q": "Comment appelle-t-on un autoportrait pris à bout de bras au smartphone ? Un ___ ?",
     "c": [
-     "Henri Cartier-Bresson",
-     "Robert Capa",
-     "Gerda Taro",
-     "David Seymour"
+     "selfie",
+     "portrait",
+     "cliché",
+     "flou"
     ],
-    "a": 1
+    "a": "selfie"
    },
    {
-    "q": "Comment s'appelle le rapport entre la distance focale et le capteur ?",
+    "q": "Comment appelle-t-on le temps pendant lequel le capteur reçoit la lumière ? Le temps de ___ ?",
     "c": [
-     "Le zoom",
-     "Le grand-angle",
-     "Le facteur de crop",
-     "Le téléobjectif"
+     "pose",
+     "vol",
+     "vie",
+     "jeu"
     ],
-    "a": 2
+    "a": "pose"
    },
    {
-    "q": "Quel procédé photographique ancien utilise un support en verre ?",
-    "c": [
-     "Le calotype",
-     "Le collodion humide",
-     "L'ambrotype",
-     "Le daguerréotype"
-    ],
-    "a": 1
+    "q": "En quelle année, environ, Nicéphore Niépce réalise-t-il la première photographie ?",
+    "a": "1826"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "arts_005",
@@ -11582,86 +11572,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a écrit 'Roméo et Juliette' ?",
+    "q": "Sur quoi les acteurs jouent-ils au théâtre ? La ___ ?",
     "c": [
-     "William Shakespeare",
+     "scène",
+     "toile",
+     "piste",
+     "arène"
+    ],
+    "a": "scène"
+   },
+   {
+    "q": "Comment appelle-t-on le texte qu'un acteur doit apprendre ? Son ___ ?",
+    "c": [
+     "rôle",
+     "chant",
+     "pas",
+     "trait"
+    ],
+    "a": "rôle"
+   },
+   {
+    "q": "Quel grand auteur de théâtre français a écrit « Le Malade imaginaire » ?",
+    "c": [
      "Molière",
-     "Jean Racine",
-     "Corneille"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quel dramaturge français a écrit 'Le Misanthrope' ?",
-    "c": [
-     "Marivaux",
-     "Corneille",
      "Racine",
-     "Molière"
+     "Corneille",
+     "Hugo"
     ],
-    "a": 3
+    "a": "Molière"
    },
    {
-    "q": "Comment s'appelle la partie surélevée où les acteurs jouent ?",
+    "q": "Quel genre théâtral cherche à faire rire ? La ___ ?",
     "c": [
-     "La scène",
-     "Le planche",
-     "L'avant-scène",
-     "Le plateau"
+     "comédie",
+     "tragédie",
+     "drame",
+     "farce"
     ],
-    "a": 0
+    "a": "comédie"
    },
    {
-    "q": "Qui a écrit 'Antigone' ?",
+    "q": "Quel dramaturge anglais a écrit « Roméo et Juliette » ? William ___ ?",
     "c": [
-     "Eschyle",
-     "Euripide",
-     "Sophocle",
-     "Aristophane"
+     "Shakespeare",
+     "Dickens",
+     "Wilde",
+     "Marlowe"
     ],
-    "a": 2
+    "a": "Shakespeare"
    },
    {
-    "q": "Quel type de pièce se termine par un dénouement heureux ?",
+    "q": "Quel tissu se lève et se baisse au début et à la fin d'une pièce ? Le ___ ?",
     "c": [
-     "La comédie",
-     "La tragédie",
-     "Le drame",
-     "Le vaudeville"
+     "rideau",
+     "drap",
+     "voile",
+     "store"
     ],
-    "a": 0
+    "a": "rideau"
    },
    {
-    "q": "Quel dramaturge norvégien a écrit 'Une maison de poupée' ?",
+    "q": "Quel mot crie-t-on aux acteurs pour leur souhaiter bonne chance ? ___ (au lieu de bonne chance) ?",
     "c": [
-     "August Strindberg",
-     "Henrik Ibsen",
-     "Anton Tchekhov",
-     "Georges Feydeau"
+     "merde",
+     "bravo",
+     "chut",
+     "encore"
     ],
-    "a": 1
+    "a": "merde"
    },
    {
-    "q": "Comment s'appelle le rideau de scène ?",
-    "c": [
-     "La toile",
-     "Le rideau",
-     "Le velours",
-     "Le cyclorama"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quel théâtre parisien est le plus célèbre ?",
-    "c": [
-     "Le Théâtre du Châtelet",
-     "La Comédie-Française",
-     "Le Théâtre Mogador",
-     "Le Théâtre de l'Odéon"
-    ],
-    "a": 1
+    "q": "En quelle année est mort Molière, sur scène en jouant « Le Malade imaginaire » ?",
+    "a": "1673"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "arts_006",
@@ -11670,86 +11655,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel est le plus haut building du monde ?",
+    "q": "Quel professionnel conçoit les plans des bâtiments ? L'___ ?",
     "c": [
-     "Shanghai Tower",
-     "Burj Khalifa",
-     "One World Trade Center",
-     "Tour CN"
+     "architecte",
+     "maçon",
+     "peintre",
+     "notaire"
     ],
-    "a": 1
+    "a": "architecte"
    },
    {
-    "q": "Qui a conçu la tour Eiffel ?",
+    "q": "Quel style médiéval présente de hautes voûtes et vitraux, comme Notre-Dame ? Le ___ ?",
     "c": [
-     "Gustave Eiffel",
-     "Gustave Alexandre Eiffel",
-     "Charles Eiffel",
-     "Jean Eiffel"
+     "gothique",
+     "roman",
+     "baroque",
+     "moderne"
     ],
-    "a": 0
+    "a": "gothique"
    },
    {
-    "q": "Quel style architectural est caractérisé par les arcs-boutants ?",
+    "q": "Quelle célèbre tour de fer domine Paris ? La tour ___ ?",
     "c": [
-     "Le roman",
-     "Le baroque",
-     "Le gothique",
-     "Le classique"
+     "Eiffel",
+     "Montparnasse",
+     "Pise",
+     "Babel"
     ],
-    "a": 2
+    "a": "Eiffel"
    },
    {
-    "q": "En quelle année la tour Eiffel a-t-elle été inaugurée ?",
+    "q": "Quelle partie triangulaire couvre le sommet d'une maison ? Le ___ ?",
     "c": [
-     "1891",
-     "1889",
-     "1887",
-     "1900"
+     "toit",
+     "sol",
+     "mur",
+     "seuil"
     ],
-    "a": 1
+    "a": "toit"
    },
    {
-    "q": "Quel architecte a conçu la Sagrada Familia ?",
+    "q": "Quel architecte suisse-français, pionnier du modernisme, a conçu la Cité radieuse ? Le ___ ?",
     "c": [
-     "Le Corbusier",
-     "Josep Puig i Cadafalch",
-     "Antoni Gaudí",
-     "Lluís Domènech i Montaner"
+     "Corbusier",
+     "Niemeyer",
+     "Gaudí",
+     "Wright"
     ],
-    "a": 2
+    "a": "Corbusier"
    },
    {
-    "q": "Qu'est-ce qu'un architecte ?",
+    "q": "Quel élément courbe soutient les ponts et portes anciennes ? L'___ ?",
     "c": [
-     "Un professionnel qui conçoit des bâtiments",
-     "Un ingénieur",
-     "Un constructeur",
-     "Un designer"
+     "arc",
+     "pilier",
+     "poutre",
+     "dalle"
     ],
-    "a": 0
+    "a": "arc"
    },
    {
-    "q": "Quel architecte français a révolutionné l'architecture moderne ?",
+    "q": "Quel style aux colonnes et symétrie s'inspire de la Grèce antique ? Le style ___ ?",
     "c": [
-     "Renzo Piano",
-     "Christian de Portzamparc",
-     "Le Corbusier",
-     "Jean Nouvel"
+     "classique",
+     "gothique",
+     "roman",
+     "art déco"
     ],
-    "a": 2
+    "a": "classique"
    },
    {
-    "q": "Quel musée parisien est une pyramide de verre à son entrée ?",
-    "c": [
-     "Le Louvre",
-     "Orsay",
-     "Le Quai Branly",
-     "Beaubourg"
-    ],
-    "a": 0
+    "q": "Combien de mètres de haut fait, environ, la tour Eiffel (avec antennes) ?",
+    "a": "330"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "arts_007",
@@ -11758,86 +11738,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel personnage de BD est un petit garçon à la houppe blonde ?",
+    "q": "Comment appelle-t-on chaque petite image d'une BD ? Une ___ ?",
     "c": [
-     "Astérix",
-     "Lucky Luke",
+     "case",
+     "page",
+     "ligne",
+     "boîte"
+    ],
+    "a": "case"
+   },
+   {
+    "q": "Dans quoi sont écrites les paroles des personnages de BD ? Une ___ ?",
+    "c": [
+     "bulle",
+     "flèche",
+     "étoile",
+     "note"
+    ],
+    "a": "bulle"
+   },
+   {
+    "q": "Quel reporter belge à la houppette, créé par Hergé, voyage avec son chien ?",
+    "c": [
      "Tintin",
-     "Spirou"
+     "Spirou",
+     "Gaston",
+     "Astérix"
     ],
-    "a": 2
+    "a": "Tintin"
    },
    {
-    "q": "Qui a créé les Schtroumpfs ?",
-    "c": [
-     "Franquin",
-     "Goscinny",
-     "Morris",
-     "Peyo"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel dessinateur belge a créé Tintin ?",
-    "c": [
-     "Franquin",
-     "Jacques Martin",
-     "Hergé",
-     "Edgar P. Jacobs"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quel Gaulois est le héros de la BD créée par Goscinny et Uderzo ?",
+    "q": "Quel petit Gaulois de Goscinny et Uderzo boit une potion magique ?",
     "c": [
      "Astérix",
      "Obélix",
-     "Idéfix",
-     "Panoramix"
+     "Tintin",
+     "Idéfix"
     ],
-    "a": 0
+    "a": "Astérix"
    },
    {
-    "q": "Quel cow-boy solitaire est dessiné par Morris ?",
+    "q": "Comment appelle-t-on la BD japonaise ? Le ___ ?",
     "c": [
-     "Jerry Spring",
-     "Blueberry",
-     "Lucky Luke",
-     "Comanche"
+     "manga",
+     "comic",
+     "strip",
+     "toon"
     ],
-    "a": 2
+    "a": "manga"
    },
    {
-    "q": "Quel est le nom de la série de bande dessinée japonais ?",
+    "q": "Quel gros compagnon d'Astérix livre des menhirs ?",
     "c": [
-     "Manhwa",
-     "Comic",
-     "Manga",
-     "Manhua"
+     "Obélix",
+     "Panoramix",
+     "Assurancetourix",
+     "Idéfix"
     ],
-    "a": 2
+    "a": "Obélix"
    },
    {
-    "q": "Qui a créé 'Les Aventures de Tintin' ?",
+    "q": "Quel super-héros de comics américain vient de la planète Krypton ?",
     "c": [
-     "Hergé",
-     "Alexandre Dumas",
-     "Edgar P. Jacobs",
-     "Jules Verne"
+     "Superman",
+     "Batman",
+     "Spider-Man",
+     "Hulk"
     ],
-    "a": 0
+    "a": "Superman"
    },
    {
-    "q": "Quel festival de BD est le plus important en France ?",
-    "c": [
-     "Paris",
-     "Angoulême",
-     "Bruxelles",
-     "Lyon"
-    ],
-    "a": 1
+    "q": "En quelle année est apparu Tintin pour la première fois dans un journal ?",
+    "a": "1929"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "arts_008",
@@ -11846,86 +11821,87 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qu'est-ce que la calligraphie ?",
+    "q": "La calligraphie est l'art de la belle ___ ?",
     "c": [
-     "L'art de la belle écriture",
-     "L'art de l'impression",
-     "L'art du dessin",
-     "L'art de la peinture"
+     "écriture",
+     "peinture",
+     "musique",
+     "danse"
     ],
-    "a": 0
+    "a": "écriture"
    },
    {
-    "q": "Quel pays a une tradition de calligraphie à l'encre de Chine ?",
+    "q": "Avec quel outil traditionnel, trempé dans l'encre, calligraphie-t-on ? Une ___ ?",
     "c": [
-     "Tous ces pays",
-     "Le Japon",
-     "La Corée",
-     "La Chine"
+     "plume",
+     "brosse",
+     "craie",
+     "gomme"
     ],
-    "a": 0
+    "a": "plume"
    },
    {
-    "q": "Quel instrument traditionnel est utilisé dans la calligraphie arabe ?",
+    "q": "Quel liquide noir sert à écrire en calligraphie ? L'___ ?",
     "c": [
-     "La plume",
-     "Le pinceau",
-     "Le calame",
-     "Le roseau"
+     "encre",
+     "eau",
+     "huile",
+     "lait"
     ],
-    "a": 2
+    "a": "encre"
    },
    {
-    "q": "Quel style d'écriture européen est associé à la calligraphie médiévale ?",
+    "q": "Dans quelle culture asiatique la calligraphie au pinceau est-elle un art majeur ? La ___ ?",
     "c": [
-     "L'onciale",
-     "La gothique",
-     "La romaine",
-     "La caroline"
+     "chinoise",
+     "russe",
+     "grecque",
+     "romaine"
     ],
-    "a": 1
+    "a": "chinoise"
    },
    {
-    "q": "Qui a inventé l'imprimerie à caractères mobiles ?",
+    "q": "Quels moines du Moyen Âge copiaient et enluminaient les manuscrits ? Les ___ ?",
     "c": [
-     "Gutenberg",
-     "Alde Manuce",
-     "Caxton",
-     "Bi Sheng"
+     "moines",
+     "chevaliers",
+     "rois",
+     "marchands"
     ],
-    "a": 0
+    "a": "moines"
    },
    {
-    "q": "Quel est le nom du système d'écriture japonais le plus ancien ?",
+    "q": "Quelle écriture arabe est célèbre pour ses courbes calligraphiées ? L'écriture ___ ?",
     "c": [
-     "Le rōmaji",
-     "Le kanji",
-     "Le katakana",
-     "Le hiragana"
+     "arabe",
+     "latine",
+     "cyrillique",
+     "grecque"
     ],
-    "a": 1
+    "a": "arabe"
    },
    {
-    "q": "Quel calligraphe chinois est le plus célèbre ?",
+    "q": "Quelle voie japonaise de la calligraphie porte le nom de « shodo » ? La voie de l'___ ?",
     "c": [
-     "Liu Gongquan",
-     "Yan Zhenqing",
-     "Wang Xizhi",
-     "Ouyang Xun"
+     "écriture",
+     "épée",
+     "thé",
+     "fleur"
     ],
-    "a": 2
+    "a": "écriture"
    },
    {
-    "q": "Qu'est-ce que l'enluminure au Moyen Âge ?",
+    "q": "En quel siècle l'imprimerie de Gutenberg a-t-elle concurrencé la calligraphie manuscrite ? Au ___e siècle ?",
     "c": [
-     "Calligraphie",
-     "Décoration des manuscrits avec des couleurs et des dorures",
-     "Peinture",
-     "Gravure"
+     "15",
+     "10",
+     "18",
+     "20"
     ],
-    "a": 1
+    "a": "15"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "arts_009",
@@ -11934,86 +11910,87 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle danse classique raconte une histoire sans paroles ?",
+    "q": "Sur quoi danse-t-on généralement ? La ___ ?",
     "c": [
-     "La danse contemporaine",
-     "Le ballet",
-     "Les claquettes",
-     "Le modern jazz"
+     "musique",
+     "peinture",
+     "sculpture",
+     "photo"
     ],
-    "a": 1
+    "a": "musique"
    },
    {
-    "q": "Qui a composé 'Le Lac des cygnes' ?",
+    "q": "Quelle danse classique se pratique sur les pointes en tutu ? Le ___ ?",
     "c": [
-     "Stravinsky",
-     "Prokofiev",
-     "Tchaïkovski",
-     "Moussorgski"
+     "ballet",
+     "hip-hop",
+     "tango",
+     "flamenco"
     ],
-    "a": 2
+    "a": "ballet"
    },
    {
-    "q": "Quelle danse cubaine est devenue populaire dans le monde ?",
+    "q": "Quelles chaussures à bout rigide portent les danseuses classiques ? Des ___ ?",
     "c": [
-     "Le flamenco",
-     "La salsa",
-     "Le tango",
-     "La rumba"
+     "pointes",
+     "claquettes",
+     "sabots",
+     "tongs"
     ],
-    "a": 1
+    "a": "pointes"
    },
    {
-    "q": "Quel danseur français est connu pour son rôle dans 'Billy Elliot' ?",
+    "q": "Quelle danse de rue née dans le hip-hop se pratique au sol ? Le break___ ?",
     "c": [
-     "Mikhail Barychnikov",
-     "Fred Astaire",
-     "Michaël Jackson",
-     "Rudolf Noureev"
+     "dance",
+     "beat",
+     "step",
+     "move"
     ],
-    "a": 3
+    "a": "dance"
    },
    {
-    "q": "Comment s'appelle la position où le danseur tourne sur lui-même ?",
+    "q": "Quelle danse de couple argentine est très sensuelle ?",
     "c": [
-     "Le saut",
-     "L'arabesque",
-     "La pirouette",
-     "Le plié"
+     "tango",
+     "valse",
+     "salsa",
+     "rumba"
     ],
-    "a": 2
+    "a": "tango"
    },
    {
-    "q": "Quelle danse brésilienne est associée au carnaval ?",
+    "q": "Quel ballet de Tchaïkovski met en scène un cygne ? Le Lac des ___ ?",
     "c": [
-     "La samba",
-     "Le frevo",
-     "Le forró",
-     "La bossa nova"
+     "Cygnes",
+     "Fées",
+     "Roses",
+     "Ombres"
     ],
-    "a": 0
+    "a": "Cygnes"
    },
    {
-    "q": "Quel chorégraphe français contemporain est célèbre ?",
+    "q": "Comment appelle-t-on la personne qui crée les mouvements d'un ballet ? Le ___ ?",
     "c": [
-     "Pina Bausch",
-     "Rudolf Noureev",
-     "Serge Lifar",
-     "Maurice Béjart"
+     "chorégraphe",
+     "danseur",
+     "musicien",
+     "metteur"
     ],
-    "a": 3
+    "a": "chorégraphe"
    },
    {
-    "q": "En quelle année le breakdance devient-il olympique ?",
+    "q": "En quel pays le ballet classique s'est-il codifié à la cour du Roi-Soleil ? La ___ ?",
     "c": [
-     "2028",
-     "2032",
-     "2020",
-     "2024"
+     "France",
+     "Russie",
+     "Italie",
+     "Espagne"
     ],
-    "a": 3
+    "a": "France"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "arts_010",
@@ -12022,86 +11999,87 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel compositeur a écrit 'La Traviata' ?",
+    "q": "À l'opéra, les artistes racontent l'histoire en ___ (plutôt qu'en parlant) ?",
     "c": [
-     "Richard Wagner",
-     "Giacomo Puccini",
-     "Wolfgang Amadeus Mozart",
-     "Giuseppe Verdi"
+     "chantant",
+     "dansant",
+     "peignant",
+     "sifflant"
     ],
-    "a": 3
+    "a": "chantant"
    },
    {
-    "q": "Qu'est-ce qu'un ténor ?",
+    "q": "Quelle est la voix féminine la plus aiguë à l'opéra ? La ___ ?",
     "c": [
-     "Une voix grave",
-     "Une voix masculine aiguë",
-     "Une voix de femme",
-     "Une voix moyenne"
+     "soprano",
+     "basse",
+     "ténor",
+     "alto"
     ],
-    "a": 1
+    "a": "soprano"
    },
    {
-    "q": "Quelle salle d'opéra parisienne est la plus célèbre ?",
+    "q": "Quelle est la voix masculine la plus haute à l'opéra ? Le ___ ?",
     "c": [
-     "Le Châtelet",
-     "L'Opéra Garnier",
-     "L'Opéra Bastille",
-     "La Scala"
+     "ténor",
+     "basse",
+     "soprano",
+     "alto"
     ],
-    "a": 1
+    "a": "ténor"
    },
    {
-    "q": "Qui a composé 'Les Noces de Figaro' ?",
+    "q": "Comment appelle-t-on un chant solo célèbre d'un opéra ? Une ___ ?",
     "c": [
-     "Donizetti",
-     "Mozart",
+     "aria",
+     "strophe",
+     "gamme",
+     "octave"
+    ],
+    "a": "aria"
+   },
+   {
+    "q": "Quel opéra de Bizet met en scène une gitane à Séville ?",
+    "c": [
+     "Carmen",
+     "Aïda",
+     "Tosca",
+     "Norma"
+    ],
+    "a": "Carmen"
+   },
+   {
+    "q": "Quel célèbre opéra de Milan, à la façade néoclassique, est un temple du genre ? La ___ ?",
+    "c": [
+     "Scala",
+     "Fenice",
+     "Bastille",
+     "Garnier"
+    ],
+    "a": "Scala"
+   },
+   {
+    "q": "Quel compositeur italien a écrit « La Traviata » et « Aïda » ?",
+    "c": [
      "Verdi",
-     "Rossini"
+     "Puccini",
+     "Rossini",
+     "Bellini"
     ],
-    "a": 1
+    "a": "Verdi"
    },
    {
-    "q": "Quel mot désigne le texte d'un opéra ?",
+    "q": "Dans quel opéra parisien, coiffé d'un dôme doré, se déroule « Le Fantôme de l'Opéra » ? L'Opéra ___ ?",
     "c": [
-     "Le livret",
-     "Le script",
-     "Le scénario",
-     "Le libretto"
+     "Garnier",
+     "Bastille",
+     "Comique",
+     "Royal"
     ],
-    "a": 0
-   },
-   {
-    "q": "Quel ténor italien est le plus célèbre du XXe siècle ?",
-    "c": [
-     "Luciano Pavarotti",
-     "José Carreras",
-     "Plácido Domingo",
-     "Enrico Caruso"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Qui a composé 'Carmen' ?",
-    "c": [
-     "Georges Bizet",
-     "Giuseppe Verdi",
-     "Giacomo Puccini",
-     "Charles Gounod"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quel compositeur allemand a créé l'opéra 'L'Anneau du Nibelung' ?",
-    "c": [
-     "Johann Strauss",
-     "Richard Wagner",
-     "Richard Strauss",
-     "Ludwig van Beethoven"
-    ],
-    "a": 1
+    "a": "Garnier"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "arts_011",
@@ -12110,86 +12088,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui est le roi du burlesque au cinéma muet ?",
+    "q": "Que manquait-il aux films de cinéma muet ? Le ___ ?",
     "c": [
-     "Harold Lloyd",
-     "Charlie Chaplin",
-     "Mack Sennett",
-     "Buster Keaton"
+     "son",
+     "couleur",
+     "écran",
+     "public"
     ],
-    "a": 1
+    "a": "son"
    },
    {
-    "q": "En quelle année le cinéma sonore est-il apparu ?",
+    "q": "Quel acteur à moustache et canne, « Charlot », est la star du muet ? Charlie ___ ?",
     "c": [
-     "1930",
-     "1927",
-     "1925",
-     "1923"
+     "Chaplin",
+     "Keaton",
+     "Laurel",
+     "Lloyd"
     ],
-    "a": 1
+    "a": "Chaplin"
    },
    {
-    "q": "Quel est le premier film de Charlie Chaplin ?",
+    "q": "De quelle couleur générale étaient les films muets ? En noir et ___ ?",
     "c": [
-     "La Ruée vers l'or",
-     "Le Kid",
-     "Charlot est content de lui",
-     "Les Temps modernes"
+     "blanc",
+     "bleu",
+     "rouge",
+     "or"
     ],
-    "a": 2
+    "a": "blanc"
    },
    {
-    "q": "Quelle actrice du muet était surnommée 'La Petite fiancée de l'Amérique' ?",
+    "q": "Comment appelle-t-on les textes affichés à l'écran pour les dialogues ? Des carton___ ?",
     "c": [
-     "Lillian Gish",
-     "Gloria Swanson",
-     "Clara Bow",
-     "Mary Pickford"
+     "s",
+     "nages",
+     "pâtes",
+     "neige"
     ],
-    "a": 3
+    "a": "s"
    },
    {
-    "q": "Quel réalisateur français a fait des films muets comme 'Napoléon' ?",
+    "q": "Quel acteur au visage impassible, roi du burlesque muet, s'appelait Buster ___ ?",
     "c": [
-     "Louis Feuillade",
-     "Jean Renoir",
-     "Georges Méliès",
-     "Abel Gance"
+     "Keaton",
+     "Chaplin",
+     "Lloyd",
+     "Arbuckle"
     ],
-    "a": 3
+    "a": "Keaton"
    },
    {
-    "q": "Quel film muet allemand est un chef-d'œuvre expressionniste ?",
+    "q": "Quel instrument accompagnait souvent les projections de films muets en salle ? Le ___ ?",
     "c": [
-     "Le Cabinet du docteur Caligari",
-     "M le Maudit",
-     "Nosferatu",
-     "Metropolis"
+     "piano",
+     "violon",
+     "tambour",
+     "orgue"
     ],
-    "a": 0
+    "a": "piano"
    },
    {
-    "q": "Qu'est-ce que le slapstick ?",
+    "q": "Quel film de 2011, en noir et blanc et muet, a rendu hommage à cette époque et gagné l'Oscar ? The ___ ?",
     "c": [
-     "Un genre de drame",
-     "Un style de musique",
-     "Une technique de caméra",
-     "Un type de comédie physique et burlesque"
+     "Artist",
+     "Silence",
+     "Star",
+     "Mute"
     ],
-    "a": 3
+    "a": "Artist"
    },
    {
-    "q": "Qui a réalisé 'Le Cuirassé Potemkine' ?",
-    "c": [
-     "Sergueï Eisenstein",
-     "Alexandre Dovjenko",
-     "Dziga Vertov",
-     "Vsevolod Poudovkine"
-    ],
-    "a": 0
+    "q": "En quelle année sort « Le Chanteur de jazz », premier film parlant qui met fin au muet ?",
+    "a": "1927"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "arts_012",
@@ -12198,86 +12171,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qu'est-ce que la céramique ?",
+    "q": "Quelle matière modelée puis cuite sert à faire des poteries ? La ___ ?",
     "c": [
-     "L'art de la sculpture",
-     "L'art de créer des objets en argile cuite",
-     "L'art du verre",
-     "L'art de la poterie"
+     "argile",
+     "laine",
+     "cire",
+     "paille"
     ],
-    "a": 1
+    "a": "argile"
    },
    {
-    "q": "Quel type de céramique chinoise est le plus célèbre ?",
+    "q": "Sur quel outil rotatif le potier façonne-t-il ses pots ? Le tour de ___ ?",
     "c": [
-     "La porcelaine",
-     "Le grès",
-     "Le biscuit",
-     "La faïence"
+     "potier",
+     "force",
+     "France",
+     "magie"
     ],
-    "a": 0
+    "a": "potier"
    },
    {
-    "q": "Quelle est la température de cuisson de la porcelaine ?",
+    "q": "Dans quel four très chaud cuit-on la céramique ? Un ___ ?",
     "c": [
-     "800-1000 °C",
-     "1000-1200 °C",
-     "600-800 °C",
-     "1200-1400 °C"
+     "four",
+     "frigo",
+     "moule",
+     "bain"
     ],
-    "a": 3
+    "a": "four"
    },
    {
-    "q": "Qui a découvert la porcelaine en Europe ?",
+    "q": "Quel vernis brillant recouvre et imperméabilise la céramique ? L'___ ?",
     "c": [
-     "Johann Friedrich Böttger",
-     "Josiah Wedgwood",
-     "Bernard Palissy",
-     "Augustus the Strong"
+     "émail",
+     "cire",
+     "huile",
+     "colle"
     ],
-    "a": 0
+    "a": "émail"
    },
    {
-    "q": "Comment s'appelle l'argile utilisée pour la poterie ?",
+    "q": "Quelle céramique fine et blanche, translucide, vient de Chine ? La ___ ?",
     "c": [
-     "La porcelaine",
-     "Le grès",
-     "La terre cuite",
-     "La faïence"
+     "porcelaine",
+     "faïence",
+     "terre cuite",
+     "brique"
     ],
-    "a": 2
+    "a": "porcelaine"
    },
    {
-    "q": "Quelle technique consiste à vernir la céramique ?",
+    "q": "Quelle ville française de la Haute-Vienne est célèbre pour sa porcelaine ?",
     "c": [
-     "La peinture",
-     "La glaçure",
-     "La cuisson",
-     "L'émaillage"
+     "Limoges",
+     "Sèvres",
+     "Vallauris",
+     "Nevers"
     ],
-    "a": 3
+    "a": "Limoges"
    },
    {
-    "q": "Quel céramiste français est célèbre pour ses œuvres Art nouveau ?",
+    "q": "Quel art japonais répare la céramique cassée avec de l'or ? Le ___ ?",
     "c": [
-     "Émile Gallé",
-     "Théodore Deck",
-     "Auguste Delaherche",
-     "Jean Carriès"
+     "kintsugi",
+     "origami",
+     "ikebana",
+     "bonsaï"
     ],
-    "a": 0
+    "a": "kintsugi"
    },
    {
-    "q": "Comment s'appelle le four utilisé pour cuire la céramique ?",
-    "c": [
-     "Le four de cuisson",
-     "Le four de potier",
-     "Le four à céramique",
-     "Le four"
-    ],
-    "a": 3
+    "q": "En quel millénaire, avant J.-C., apparaissent les plus anciennes poteries connues (Asie de l'Est) ? Environ -___ 000 ?",
+    "a": "18"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "arts_013",
