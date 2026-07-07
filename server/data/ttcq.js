@@ -4176,86 +4176,63 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel pays a gagné le plus de Coupes du Monde en Football ?",
-    "c": [
-     "France",
-     "Brésil",
-     "Allemagne",
-     "Argentine"
-    ],
-    "a": 1
+    "q": "Combien de joueurs compte une équipe de football sur le terrain ?",
+    "a": "11"
    },
    {
-    "q": "Combien de joueurs par équipe en Football ?",
-    "c": [
-     "7",
-     "11",
-     "9",
-     "5"
-    ],
-    "a": 1
+    "q": "Comment appelle-t-on le fait de marquer dans le but adverse ? Un ___ ?",
+    "a": "But"
    },
    {
-    "q": "Quel joueur a remporté le Ballon d'Or en 2022 ?",
+    "q": "De quelle couleur est le carton qui exclut un joueur ?",
     "c": [
-     "Kylian Mbappé",
-     "Lionel Messi",
-     "Karim Benzema",
-     "Cristiano Ronaldo"
+     "Rouge",
+     "Jaune",
+     "Vert",
+     "Bleu"
     ],
-    "a": 2
+    "a": "Rouge"
    },
    {
-    "q": "Quel club a gagné la Ligue des Champions en 2020 ?",
+    "q": "Quel joueur argentin au numéro 10 a remporté la Coupe du monde 2022 ?",
     "c": [
-     "Bayern Munich",
-     "PSG",
-     "Real Madrid",
-     "Liverpool"
+     "Messi",
+     "Maradona",
+     "Ronaldo",
+     "Neymar"
     ],
-    "a": 0
+    "a": "Messi"
    },
    {
-    "q": "Quel pays a remporté l'Euro 2024 ?",
-    "c": [
-     "France",
-     "Espagne",
-     "Angleterre",
-     "Allemagne"
-    ],
-    "a": 1
+    "q": "Tous les combien d'années a lieu la Coupe du monde de football ?",
+    "a": "4"
    },
    {
-    "q": "Combien de Coupes du Monde la France a-t-elle gagnées ?",
+    "q": "Quel club espagnol de Lionel Messi a dominé l'Europe dans les années 2010 ? Le FC ___ ?",
     "c": [
-     "1",
-     "0",
-     "2",
-     "3"
+     "Barcelone",
+     "Madrid",
+     "Séville",
+     "Valence"
     ],
-    "a": 2
+    "a": "Barcelone"
    },
    {
-    "q": "Qui est le meilleur buteur de l'histoire du Real Madrid ?",
+    "q": "Quel joueur brésilien surnommé « O Rei » a gagné 3 Coupes du monde ?",
     "c": [
-     "Raúl",
-     "Karim Benzema",
-     "Cristiano Ronaldo",
-     "Alfredo Di Stéfano"
+     "Pelé",
+     "Ronaldo",
+     "Zico",
+     "Garrincha"
     ],
-    "a": 2
+    "a": "Pelé"
    },
    {
-    "q": "En quelle année le premier championnat du monde de football a-t-il eu lieu ?",
-    "c": [
-     "1920",
-     "1930",
-     "1950",
-     "1934"
-    ],
-    "a": 1
+    "q": "En quelle année, avant J.-C., un jeu de balle au pied ancêtre du football, le cuju, est-il attesté en Chine ?",
+    "a": "206"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sport_002",
@@ -4264,86 +4241,69 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel pays a gagné le plus de Coupes du Monde en Tennis ?",
+    "q": "Sur quel type de terrain se joue le tournoi de Roland-Garros ? La ___ battue ?",
     "c": [
-     "Suisse",
-     "Serbie",
-     "États-Unis",
-     "Australie"
+     "terre",
+     "herbe",
+     "dure",
+     "moquette"
     ],
-    "a": 2
+    "a": "terre"
    },
    {
-    "q": "Combien de joueurs par équipe en Tennis ?",
-    "c": [
-     "3",
-     "2",
-     "1",
-     "4"
-    ],
-    "a": 2
+    "q": "Combien de points valent le premier point marqué dans un jeu ? On dit ___ ?",
+    "a": "15"
    },
    {
-    "q": "Quel joueur a le plus de titres du Grand Chelem en simple messieurs ?",
+    "q": "Comment dit-on qu'un joueur a zéro point au tennis ? On dit ___ ?",
     "c": [
-     "Pete Sampras",
-     "Roger Federer",
-     "Novak Djokovic",
-     "Rafael Nadal"
+     "zéro",
+     "nul",
+     "rien",
+     "blanc"
     ],
-    "a": 2
+    "a": "zéro"
    },
    {
-    "q": "Combien de tournois du Grand Chelem existent ?",
-    "c": [
-     "6",
-     "3",
-     "4",
-     "5"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quelle joueuse a le plus de titres du Grand Chelem ?",
-    "c": [
-     "Steffi Graf",
-     "Margaret Court",
-     "Martina Navratilova",
-     "Serena Williams"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Sur quelle surface se joue Roland-Garros ?",
-    "c": [
-     "Moquette",
-     "Dur",
-     "Gazon",
-     "Terre battue"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel tournoi se joue sur gazon ?",
+    "q": "Quel tournoi anglais sur gazon est le plus prestigieux du tennis ?",
     "c": [
      "Wimbledon",
      "US Open",
-     "Australian Open",
-     "Roland-Garros"
+     "Roland-Garros",
+     "Melbourne"
     ],
-    "a": 0
+    "a": "Wimbledon"
    },
    {
-    "q": "En quelle année le tennis est-il devenu professionnel ?",
+    "q": "Quel joueur suisse élégant détient un record de titres du Grand Chelem ? Roger ___ ?",
     "c": [
-     "1950",
-     "1926",
-     "1972",
-     "1968"
+     "Federer",
+     "Nadal",
+     "Djokovic",
+     "Wawrinka"
     ],
-    "a": 3
+    "a": "Federer"
+   },
+   {
+    "q": "Comment appelle-t-on un service gagnant que l'adversaire ne touche pas ? Un ___ ?",
+    "a": "Ace"
+   },
+   {
+    "q": "Quel joueur espagnol surnommé « le taureau de Manacor » domine sur terre battue ?",
+    "c": [
+     "Nadal",
+     "Federer",
+     "Alcaraz",
+     "Ferrer"
+    ],
+    "a": "Nadal"
+   },
+   {
+    "q": "En quelle année a eu lieu la première édition du tournoi de Wimbledon ?",
+    "a": "1877"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sport_003",
@@ -4352,86 +4312,63 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel pays a gagné le plus de Coupes du Monde en Basket-ball ?",
-    "c": [
-     "Argentine",
-     "Yougoslavie",
-     "États-Unis",
-     "Espagne"
-    ],
-    "a": 2
+    "q": "Combien de points vaut un panier marqué juste sous le cercle (hors lancers) ?",
+    "a": "2"
    },
    {
-    "q": "Combien de joueurs par équipe sur le terrain en basket-ball ?",
-    "c": [
-     "7",
-     "9",
-     "11",
-     "5"
-    ],
-    "a": 3
+    "q": "Combien de joueurs d'une même équipe sont sur le terrain au basket ?",
+    "a": "5"
    },
    {
-    "q": "Quel joueur NBA est considéré comme le meilleur de tous les temps ?",
+    "q": "Comment appelle-t-on l'action de faire rebondir le ballon en avançant ? Le ___ ?",
     "c": [
-     "Michael Jordan",
-     "Magic Johnson",
-     "Kobe Bryant",
-     "LeBron James"
+     "dribble",
+     "smash",
+     "service",
+     "shoot"
     ],
-    "a": 0
+    "a": "dribble"
    },
    {
-    "q": "Combien de quart-temps dure un match NBA ?",
+    "q": "Quelle grande ligue professionnelle de basket domine aux États-Unis ?",
     "c": [
-     "5",
-     "3",
-     "4",
-     "2"
+     "NBA",
+     "NFL",
+     "MLB",
+     "NHL"
     ],
-    "a": 2
+    "a": "NBA"
    },
    {
-    "q": "Quelle équipe NBA a le plus de titres ?",
+    "q": "Quel joueur des Chicago Bulls, numéro 23, est une légende mondiale ? Michael ___ ?",
     "c": [
-     "Boston Celtics",
-     "Los Angeles Lakers",
-     "Chicago Bulls",
-     "Golden State Warriors"
+     "Jordan",
+     "James",
+     "Bryant",
+     "O'Neal"
     ],
-    "a": 0
+    "a": "Jordan"
    },
    {
-    "q": "Quelle est la distance du tir à 3 points en NBA ?",
-    "c": [
-     "8 m",
-     "7,24 m",
-     "6,75 m",
-     "6,25 m"
-    ],
-    "a": 1
+    "q": "Combien de points vaut un panier marqué au-delà de la ligne à trois points ?",
+    "a": "3"
    },
    {
-    "q": "Qui a inventé le basket-ball ?",
+    "q": "Quel spectaculaire geste consiste à mettre le ballon dans le panier en sautant ? Un ___ ?",
     "c": [
-     "William Morgan",
-     "John McLendon",
-     "James Naismith",
-     "Luther Gulick"
+     "dunk",
+     "lay-up",
+     "fadeaway",
+     "floater"
     ],
-    "a": 2
+    "a": "dunk"
    },
    {
-    "q": "En quelle année la NBA a-t-elle été fondée ?",
-    "c": [
-     "1960",
-     "1946",
-     "1950",
-     "1937"
-    ],
-    "a": 1
+    "q": "En quelle année James Naismith a-t-il inventé le basket-ball ?",
+    "a": "1891"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sport_004",
@@ -4440,86 +4377,63 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel pays a gagné le plus de Coupes du Monde en Rugby ?",
+    "q": "Quelle est la forme du ballon de rugby ?",
     "c": [
-     "France",
-     "Afrique Sud",
+     "Ovale",
+     "Ronde",
+     "Carrée",
+     "Plate"
+    ],
+    "a": "Ovale"
+   },
+   {
+    "q": "Comment appelle-t-on le fait d'aplatir le ballon dans l'en-but ? Un ___ ?",
+    "a": "Essai"
+   },
+   {
+    "q": "Combien de points vaut un essai au rugby à XV ?",
+    "a": "5"
+   },
+   {
+    "q": "Combien de joueurs compose une équipe de rugby à XV ?",
+    "a": "15"
+   },
+   {
+    "q": "Quelle mêlée regroupe les avants poussant les uns contre les autres ? La ___ ?",
+    "c": [
+     "mêlée",
+     "touche",
+     "ruck",
+     "maul"
+    ],
+    "a": "mêlée"
+   },
+   {
+    "q": "Quel pays de l'hémisphère sud, aux All Blacks, domine le rugby mondial ?",
+    "c": [
      "Nouvelle-Zélande",
-     "Angleterre"
+     "Australie",
+     "Afrique du Sud",
+     "Argentine"
     ],
-    "a": 2
+    "a": "Nouvelle-Zélande"
    },
    {
-    "q": "Combien de joueurs par équipe en Rugby ?",
+    "q": "Comment appelle-t-on le coup de pied qui envoie le ballon entre les poteaux ? Un ___ ?",
     "c": [
-     "7",
-     "11",
-     "15",
-     "13"
+     "drop",
+     "punt",
+     "grubber",
+     "chandelle"
     ],
-    "a": 2
+    "a": "drop"
    },
    {
-    "q": "Combien de joueurs par équipe au rugby à XV ?",
-    "c": [
-     "11",
-     "14",
-     "13",
-     "15"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel pays a remporté le plus de Coupes du Monde de rugby ?",
-    "c": [
-     "Angleterre",
-     "France",
-     "Nouvelle-Zélande",
-     "Afrique du Sud"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quelle compétition annuelle oppose les nations du Tournoi ?",
-    "c": [
-     "Le Rugby Championship",
-     "La Coupe du Monde",
-     "Le Tournoi des Six Nations",
-     "Le Tri-Nations"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Comment s'appelle un essai transformé ?",
-    "c": [
-     "Transformation",
-     "Essai transformé",
-     "Pénalité",
-     "Drop"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Qui a inventé le rugby ?",
-    "c": [
-     "Thomas Arnold",
-     "Pierre de Coubertin",
-     "William Webb Ellis",
-     "James Naismith"
-    ],
-    "a": 2
-   },
-   {
-    "q": "En quelle année la Coupe du Monde de rugby a-t-elle eu lieu pour la première fois ?",
-    "c": [
-     "1983",
-     "1995",
-     "1991",
-     "1987"
-    ],
-    "a": 3
+    "q": "En quelle année, selon la légende, William Webb Ellis a-t-il inventé le rugby en prenant le ballon à la main ?",
+    "a": "1823"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sport_005",
@@ -4528,86 +4442,69 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel pays a gagné le plus de Coupes du Monde en Cyclisme ?",
-    "c": [
-     "France",
-     "Pays-Bas",
-     "Italie",
-     "Belgique"
-    ],
-    "a": 0
+    "q": "Quelle grande course cycliste française de trois semaines a lieu chaque été ? Le Tour de ___ ?",
+    "a": "France"
    },
    {
-    "q": "Combien de joueurs par équipe en Cyclisme ?",
+    "q": "De quelle couleur est le maillot du leader du Tour de France ? Le maillot ___ ?",
     "c": [
-     "5",
-     "4",
-     "3",
-     "1"
+     "jaune",
+     "vert",
+     "rouge",
+     "blanc"
     ],
-    "a": 3
+    "a": "jaune"
    },
    {
-    "q": "Quel coureur a le plus de victoires sur le Tour de France ?",
-    "c": [
-     "Bernard Hinault",
-     "Jacques Anquetil",
-     "Miguel Indurain",
-     "Eddy Merckx"
-    ],
-    "a": 3
+    "q": "Combien de roues compte un vélo de course classique ?",
+    "a": "2"
    },
    {
-    "q": "Combien de victoires a Eddy Merckx sur le Tour ?",
+    "q": "Quel maillot à pois récompense le meilleur grimpeur du Tour ? Le maillot à ___ ?",
     "c": [
-     "7",
-     "3",
-     "4",
-     "5"
+     "pois",
+     "rayures",
+     "étoiles",
+     "carreaux"
     ],
-    "a": 3
+    "a": "pois"
    },
    {
-    "q": "Quel maillot distingue le meilleur grimpeur du Tour de France ?",
+    "q": "Quel coureur belge, recordman de victoires d'étapes, a gagné 5 Tours de France ? Eddy ___ ?",
     "c": [
-     "Le maillot jaune",
-     "Le maillot vert",
-     "Le maillot à pois",
-     "Le maillot blanc"
+     "Merckx",
+     "Hinault",
+     "Anquetil",
+     "Indurain"
     ],
-    "a": 2
+    "a": "Merckx"
    },
    {
-    "q": "Quel pays a organisé le premier Tour de France en 1903 ?",
+    "q": "Sur quelle avenue parisienne s'achève traditionnellement le Tour de France ? Les Champs-___ ?",
     "c": [
-     "Italie",
-     "France",
-     "Suisse",
-     "Belgique"
+     "Élysées",
+     "Ternes",
+     "Batignolles",
+     "Invalides"
     ],
-    "a": 1
+    "a": "Élysées"
    },
    {
-    "q": "Qui a remporté le Tour de France 2024 ?",
+    "q": "Quel maillot vert récompense le coureur le plus rapide au sprint ? Le maillot du meilleur ___ ?",
     "c": [
-     "Remco Evenepoel",
-     "Jonas Vingegaard",
-     "Primož Roglič",
-     "Tadej Pogačar"
+     "sprinteur",
+     "grimpeur",
+     "rouleur",
+     "jeune"
     ],
-    "a": 3
+    "a": "sprinteur"
    },
    {
-    "q": "Qu'est-ce qu'un 'grand tour' en cyclisme ?",
-    "c": [
-     "Paris-Nice, Dauphiné, Suisse",
-     "Giro, Tour, Championnat du Monde",
-     "Tour de France, Paris-Roubaix, Milan-San Remo",
-     "Tour de France, Giro, Vuelta"
-    ],
-    "a": 3
+    "q": "En quelle année a eu lieu le tout premier Tour de France ?",
+    "a": "1903"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sport_006",
@@ -4616,86 +4513,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel pays a gagné le plus de Coupes du Monde en Natation ?",
+    "q": "Quelle nage se pratique sur le dos, dans l'eau ? La nage sur le ___ ?",
     "c": [
-     "Russie",
-     "Australie",
-     "États-Unis",
-     "Chine"
+     "dos",
+     "ventre",
+     "côté",
+     "flanc"
     ],
-    "a": 2
+    "a": "dos"
    },
    {
-    "q": "Combien de joueurs par équipe en Natation ?",
+    "q": "Quelle nage imite le mouvement d'une grenouille ? La ___ ?",
     "c": [
-     "3",
-     "1",
-     "4",
-     "2"
+     "brasse",
+     "papillon",
+     "crawl",
+     "dos"
     ],
-    "a": 1
+    "a": "brasse"
    },
    {
-    "q": "Quel nageur détient le plus de médailles olympiques ?",
+    "q": "Quelle est la nage la plus rapide, sur le ventre, bras alternés ? Le ___ ?",
     "c": [
-     "Caeleb Dressel",
-     "Mark Spitz",
-     "Ryan Lochte",
-     "Michael Phelps"
+     "crawl",
+     "brasse",
+     "papillon",
+     "dos"
     ],
-    "a": 3
+    "a": "crawl"
    },
    {
-    "q": "Combien de médailles d'or Michael Phelps a-t-il aux JO ?",
-    "c": [
-     "28",
-     "18",
-     "23",
-     "13"
-    ],
-    "a": 2
+    "q": "Quelle est la longueur, en mètres, d'un grand bassin olympique ?",
+    "a": "50"
    },
    {
-    "q": "Quelles sont les quatre nages de la natation ?",
+    "q": "Quel nageur américain a remporté 23 médailles d'or olympiques ? Michael ___ ?",
     "c": [
-     "Crawl, brasse, papillon, nage libre",
-     "Crawl, dos, brasse, papillon",
-     "Brasse, dos, crawl, nage indienne",
-     "Crawl, dos, brasse, nage libre"
+     "Phelps",
+     "Spitz",
+     "Lochte",
+     "Thorpe"
     ],
-    "a": 1
+    "a": "Phelps"
    },
    {
-    "q": "Quelle est la distance d'un 50 mètres ?",
+    "q": "Quelle nage spectaculaire fait sortir les deux bras de l'eau ensemble ? Le ___ ?",
     "c": [
-     "Une longueur de bassin",
-     "Deux longueurs",
-     "10 mètres",
-     "Un aller-retour"
+     "papillon",
+     "crawl",
+     "brasse",
+     "dos"
     ],
-    "a": 0
+    "a": "papillon"
    },
    {
-    "q": "En quelle année la natation a-t-elle été introduite aux JO modernes ?",
+    "q": "Comment appelle-t-on le fait de se retourner contre le mur pour repartir ? Le ___ ?",
     "c": [
-     "1900",
-     "1896",
-     "1912",
-     "1904"
+     "virage",
+     "plongeon",
+     "départ",
+     "relais"
     ],
-    "a": 1
+    "a": "virage"
    },
    {
-    "q": "Quel nageur français est surnommé 'le Phénomène' ?",
-    "c": [
-     "Camille Lacourt",
-     "Florent Manaudou",
-     "Alain Bernard",
-     "Léon Marchand"
-    ],
-    "a": 3
+    "q": "En quelle année la natation est-elle apparue aux Jeux olympiques modernes ?",
+    "a": "1896"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sport_007",
@@ -4704,86 +4590,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel pays a gagné le plus de Coupes du Monde en Athlétisme ?",
-    "c": [
-     "Grande-Bretagne",
-     "États-Unis",
-     "Kenya",
-     "Jamaïque"
-    ],
-    "a": 1
+    "q": "Quelle épreuve reine consiste à courir 100 mètres le plus vite possible ? Le ___ mètres ?",
+    "a": "100"
    },
    {
-    "q": "Combien de joueurs par équipe en Athlétisme ?",
+    "q": "Quelle épreuve consiste à sauter le plus loin possible ? Le saut en ___ ?",
+    "c": [
+     "longueur",
+     "hauteur",
+     "perche",
+     "triple"
+    ],
+    "a": "longueur"
+   },
+   {
+    "q": "Combien de mètres mesure la distance d'un marathon (arrondi) ?",
+    "c": [
+     "42",
+     "26",
+     "50",
+     "21"
+    ],
+    "a": "42"
+   },
+   {
+    "q": "Quel Jamaïcain surnommé « la Foudre » détient le record du 100 m ? Usain ___ ?",
+    "c": [
+     "Bolt",
+     "Blake",
+     "Powell",
+     "Gatlin"
+    ],
+    "a": "Bolt"
+   },
+   {
+    "q": "Quelle épreuve consiste à lancer un disque le plus loin possible ? Le lancer du ___ ?",
+    "c": [
+     "disque",
+     "poids",
+     "javelot",
+     "marteau"
+    ],
+    "a": "disque"
+   },
+   {
+    "q": "Combien de tours de piste de 400 m faut-il courir pour faire 1500 m ? Environ ___ tours ?",
     "c": [
      "4",
      "3",
-     "2",
-     "1"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Qui est le détenteur du record du monde du 100m ?",
-    "c": [
-     "Usain Bolt",
-     "Carl Lewis",
-     "Ben Johnson",
-     "Gatlin"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quel record du monde Bolt détient-il ?",
-    "c": [
-     "9,63 s",
-     "9,58 s",
-     "9,72 s",
-     "9,69 s"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Combien de médailles d'or olympiques Bolt a-t-il ?",
-    "c": [
-     "8",
-     "4",
-     "10",
+     "5",
      "6"
     ],
-    "a": 0
+    "a": "4"
    },
    {
-    "q": "Quelle épreuve combine 10 disciplines ?",
+    "q": "Quelle épreuve combine course, saut et lancers sur deux jours, en dix disciplines ? Le ___ ?",
     "c": [
-     "Le triathlon",
-     "L'heptathlon",
-     "Le décathlon",
-     "Le pentathlon"
+     "décathlon",
+     "pentathlon",
+     "triathlon",
+     "heptathlon"
     ],
-    "a": 2
+    "a": "décathlon"
    },
    {
-    "q": "En quelle année le marathon a-t-il été standardisé à 42,195 km ?",
-    "c": [
-     "1921",
-     "1908",
-     "1912",
-     "1896"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Qui est la femme la plus rapide de l'histoire ?",
-    "c": [
-     "Elaine Thompson-Herah",
-     "Shelly-Ann Fraser-Pryce",
-     "Marion Jones",
-     "Florence Griffith-Joyner"
-    ],
-    "a": 3
+    "q": "Quel est le record du monde du 100 m d'Usain Bolt, en secondes (2009) ?",
+    "a": "9.58"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sport_008",
@@ -4792,86 +4667,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel pays a gagné le plus de Coupes du Monde en Boxe ?",
+    "q": "Sur quelle surface carrée entourée de cordes se déroule un combat de boxe ? Le ___ ?",
     "c": [
-     "États-Unis",
-     "Cuba",
-     "Philippines",
-     "Mexique"
+     "ring",
+     "tatami",
+     "court",
+     "octogone"
     ],
-    "a": 0
+    "a": "ring"
    },
    {
-    "q": "Combien de joueurs par équipe en Boxe ?",
+    "q": "Comment appelle-t-on la mise à terre décisive de l'adversaire ? Un K.-___ ?",
     "c": [
-     "4",
-     "3",
-     "2",
-     "1"
+     "O",
+     "X",
+     "P",
+     "T"
     ],
-    "a": 3
+    "a": "O"
    },
    {
-    "q": "Quel boxeur est surnommé 'The Greatest' ?",
+    "q": "Que portent les boxeurs aux mains pour se protéger ? Des ___ ?",
     "c": [
-     "Muhammad Ali",
-     "Joe Frazier",
-     "Mike Tyson",
-     "George Foreman"
+     "gants",
+     "bandes",
+     "mitaines",
+     "protections"
     ],
-    "a": 0
+    "a": "gants"
    },
    {
-    "q": "Combien de rounds dure un combat de championnat professionnel ?",
+    "q": "Quel boxeur américain se surnommait lui-même « The Greatest » ? Mohamed ___ ?",
     "c": [
-     "15",
-     "8",
-     "10",
-     "12"
+     "Ali",
+     "Tyson",
+     "Frazier",
+     "Foreman"
     ],
-    "a": 3
+    "a": "Ali"
    },
    {
-    "q": "Quelles sont les catégories de poids ?",
-    "c": [
-     "Poids lourds, poids moyens, poids légers",
-     "Lourds, mi-lourds, moyens, welters, légers, plumes, coqs, mouches",
-     "Lourds, mi-lourds, légers",
-     "Lourds, moyens, légers"
-    ],
-    "a": 1
+    "q": "Combien de minutes dure généralement un round de boxe professionnelle ?",
+    "a": "3"
    },
    {
-    "q": "Qui a été le dernier boxeur à détenir le titre poids lourd unifié ?",
+    "q": "Quel boxeur américain, surnommé « Iron Mike », a mordu l'oreille de Holyfield ?",
     "c": [
-     "Evander Holyfield",
-     "George Foreman",
-     "Lennox Lewis",
-     "Mike Tyson"
+     "Tyson",
+     "Ali",
+     "Lewis",
+     "Holmes"
     ],
-    "a": 2
+    "a": "Tyson"
    },
    {
-    "q": "En quelle année la boxe est-elle devenue olympique ?",
+    "q": "Quel coup de poing remontant vertical vise le menton ? L'___ ?",
     "c": [
-     "1908",
-     "1904",
-     "1912",
-     "1896"
+     "uppercut",
+     "jab",
+     "crochet",
+     "direct"
     ],
-    "a": 1
+    "a": "uppercut"
    },
    {
-    "q": "Quel célèbre combat est connu sous le nom de 'Rumble in the Jungle' ?",
-    "c": [
-     "Ali vs Foreman 1974",
-     "Ali vs Frazier 1975",
-     "Louis vs Schmeling 1938",
-     "Tyson vs Holyfield 1996"
-    ],
-    "a": 0
+    "q": "En quelle année ont été rédigées les règles modernes de la boxe (règles du marquis de Queensberry) ?",
+    "a": "1867"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sport_009",
@@ -4880,86 +4744,69 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel pays a gagné le plus de Coupes du Monde en Ski ?",
-    "c": [
-     "Suède",
-     "Canada",
-     "Norvège",
-     "Autriche"
-    ],
-    "a": 2
+    "q": "Sur quelle surface blanche et froide pratique-t-on le ski ? La ___ ?",
+    "a": "Neige"
    },
    {
-    "q": "Combien de joueurs par équipe en Ski ?",
-    "c": [
-     "4",
-     "3",
-     "1",
-     "2"
-    ],
-    "a": 2
+    "q": "Combien de skis chausse un skieur alpin classique ?",
+    "a": "2"
    },
    {
-    "q": "Quelle discipline de ski consiste à descendre le plus vite possible ?",
+    "q": "Comment appelle-t-on les bâtons plantés à contourner dans une course de slalom ? Des ___ ?",
     "c": [
-     "Le slalom géant",
-     "La descente",
-     "Le super-G",
-     "Le slalom"
+     "piquets",
+     "poteaux",
+     "plots",
+     "drapeaux"
     ],
-    "a": 1
+    "a": "piquets"
    },
    {
-    "q": "Quel skieur français a remporté le plus de médailles olympiques ?",
+    "q": "Quelle discipline consiste à descendre le plus vite possible une pente raide ? La ___ ?",
     "c": [
-     "Luc Alphand",
-     "Alexis Pinturault",
-     "Alain Prost",
-     "Jean-Claude Killy"
+     "descente",
+     "montée",
+     "traversée",
+     "boucle"
     ],
-    "a": 3
+    "a": "descente"
    },
    {
-    "q": "Quelle est la piste la plus célèbre de la Coupe du monde ?",
+    "q": "Quel engin mécanique remonte les skieurs en haut des pistes ? Le télé___ ?",
     "c": [
-     "Le Lauberhorn",
-     "Le Kandahar",
-     "La Face de Bellevarde",
-     "La Streif à Kitzbühel"
+     "siège",
+     "phone",
+     "vision",
+     "gramme"
     ],
-    "a": 3
+    "a": "siège"
    },
    {
-    "q": "Combien de disciplines composent le ski alpin ?",
+    "q": "Quelle discipline mêle ski de fond et tir à la carabine ?",
     "c": [
-     "4",
-     "6",
-     "3",
-     "5"
+     "biathlon",
+     "combiné",
+     "slalom",
+     "saut"
     ],
-    "a": 3
+    "a": "biathlon"
    },
    {
-    "q": "Quelle skieuse autrichienne détient le record de victoires en Coupe du monde ?",
+    "q": "Quel sport de glisse sur une seule planche large est proche du ski ? Le ___ ?",
     "c": [
-     "Lindsey Vonn",
-     "Mikaela Shiffrin",
-     "Marlies Schild",
-     "Annemarie Moser-Pröll"
+     "snowboard",
+     "skateboard",
+     "surf",
+     "monoski"
     ],
-    "a": 0
+    "a": "snowboard"
    },
    {
-    "q": "En quelle année le ski alpin a-t-il fait ses débuts olympiques ?",
-    "c": [
-     "1928",
-     "1936",
-     "1948",
-     "1952"
-    ],
-    "a": 1
+    "q": "En quelle année ont eu lieu les premiers Jeux olympiques d'hiver, à Chamonix ?",
+    "a": "1924"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sport_010",
@@ -4968,86 +4815,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel pays a gagné le plus de Coupes du Monde en Formule 1 ?",
-    "c": [
-     "Grande-Bretagne",
-     "France",
-     "Italie",
-     "Allemagne"
-    ],
-    "a": 0
+    "q": "Combien de roues compte une monoplace de Formule 1 ?",
+    "a": "4"
    },
    {
-    "q": "Combien de joueurs par équipe en Formule 1 ?",
+    "q": "Quel drapeau agité annonce la fin de la course ? Le drapeau à ___ ?",
     "c": [
-     "1",
-     "3",
-     "2",
-     "4"
+     "damier",
+     "pois",
+     "rayures",
+     "croix"
     ],
-    "a": 0
+    "a": "damier"
    },
    {
-    "q": "Quel pilote a le plus de championnats du monde de F1 ?",
+    "q": "Quelle écurie italienne rouge, la plus mythique, court en F1 depuis les débuts ?",
     "c": [
-     "Alain Prost",
-     "Juan Manuel Fangio",
-     "Lewis Hamilton et Michael Schumacher",
-     "Max Verstappen"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Combien de championnats Hamilton et Schumacher ont-ils ?",
-    "c": [
-     "5",
-     "7",
-     "6",
-     "8"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quel constructeur a le plus de titres en F1 ?",
-    "c": [
+     "Ferrari",
      "McLaren",
      "Williams",
-     "Ferrari",
-     "Mercedes"
-    ],
-    "a": 2
-   },
-   {
-    "q": "En quelle année le premier championnat de F1 a-t-il eu lieu ?",
-    "c": [
-     "1950",
-     "1955",
-     "1960",
-     "1947"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quelle équipe française a participé à la F1 ?",
-    "c": [
-     "Toutes les trois",
-     "Peugeot",
-     "Alpine",
      "Renault"
     ],
-    "a": 2
+    "a": "Ferrari"
    },
    {
-    "q": "Quel pilote est surnommé 'Le Professeur' ?",
+    "q": "Comment appelle-t-on l'arrêt au stand pour changer les pneus ? Le pit-___ ?",
     "c": [
-     "Alain Prost",
-     "Stirling Moss",
-     "Niki Lauda",
-     "Jackie Stewart"
+     "stop",
+     "lane",
+     "wall",
+     "box"
     ],
-    "a": 0
+    "a": "stop"
+   },
+   {
+    "q": "Quel pilote allemand et quel pilote britannique détiennent 7 titres ? Schumacher et Lewis ___ ?",
+    "c": [
+     "Hamilton",
+     "Button",
+     "Russell",
+     "Hill"
+    ],
+    "a": "Hamilton"
+   },
+   {
+    "q": "En quelle position sur la grille de départ part le pilote en « pole position » ?",
+    "c": [
+     "1re",
+     "2e",
+     "3e",
+     "dernière"
+    ],
+    "a": "1re"
+   },
+   {
+    "q": "Quel jeune pilote néerlandais champion du monde court chez Red Bull ? Max ___ ?",
+    "c": [
+     "Verstappen",
+     "Pérez",
+     "Norris",
+     "Leclerc"
+    ],
+    "a": "Verstappen"
+   },
+   {
+    "q": "En quelle année a eu lieu le premier championnat du monde de Formule 1 ?",
+    "a": "1950"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sport_011",
