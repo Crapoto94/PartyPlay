@@ -2589,6 +2589,8 @@ export class GameState {
       eventId: this.eventId,
       eventName: this.cfg?.name || '',
       theme: this.cfg?.theme || 'retro',
+      adultParty: !!this.cfg?.adultParty,
+      adultVerified: !!this.cfg?.adultVerified,
       closed: !!this.cfg?.closed,
       partyDate: this.cfg?.partyDate || '',
       feedbackCount: (this.cfg?.feedback || []).length,

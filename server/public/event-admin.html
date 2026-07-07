@@ -24,13 +24,18 @@
 
     <!-- Bannière : email en attente de vérification -->
     <div id="verifyBanner" style="display:none;background:#fef3c7;border:1px solid #f59e0b;border-radius:10px;padding:14px 16px;margin-bottom:16px">
-      <strong>📧 Email non vérifié</strong>
-      <p class="muted" style="margin:6px 0">Un lien de confirmation a été envoyé à <strong id="verifyEmailAddr"></strong>. Cliquez dessus pour activer votre fête.</p>
-      <p class="muted" style="font-size:12.5px;margin:0 0 10px">⚠️ Le démarrage de la soirée est bloqué jusqu'à la confirmation (la 🧪 Simulation reste disponible pour découvrir la console).</p>
-      <div class="inline">
-        <button class="btn secondary" style="width:auto" onclick="resendVerification(this)">Renvoyer l'email</button>
-        <span id="resendStatus" style="font-size:13px"></span>
-      </div>
+      <strong>📧 Vérification de l'email</strong><br>
+      Un email a été envoyé à <span id="verifyEmailAddr"></span>.
+      <a href="#" onclick="resendVerification(this);return false">Renvoyer</a>
+      <span id="resendStatus"></span>
+    </div>
+    <div id="adultBanner" style="display:none;background:rgba(255,80,80,.12);border:1px solid rgba(255,80,80,.4);border-radius:10px;padding:14px 16px;margin-bottom:16px">
+      <strong>🔞 Fête 18+ — paiement requis</strong><br>
+      Les contenus 18+ (Sans Filtre hard, Bouche-Trou 18+, TTCQ 18+, Un Seul Mot 18+)
+      sont verrouillés. Un paiement de <strong>0,99 €</strong> est nécessaire pour valider
+      que l'organisateur est adulte.
+      <span id="adultPayBtns"></span>
+    </div>
     </div>
 
     <div class="card" id="loginCard" style="display:none">
@@ -80,10 +85,10 @@
             <button class="btn" data-cat="spotlight" onclick="launch('spotlight',{})">🔦 Spotlight</button>
             <button class="btn" data-cat="draw" onclick="launch('draw',{})">🎨 Dessine-moi</button>
           </div>
-          <div class="field" data-cat="privacy" style="margin-top:10px"><label>🤫 Sans Filtre !? — confessions anonymes (Intime = normal · 18+ = vrai 18+)</label>
+          <div class="field" data-cat="privacy" style="margin-top:10px"><label>🤫 Sans Filtre !? — confessions anonymes (Intime = normal · 18+ = vrai 18+, nécessite validation)</label>
             <div class="row">
               <button class="btn" onclick="launch('privacy',{level:'intime',count:privacyCount()})">🔞 Intime</button>
-              <button class="btn" onclick="launch('privacy',{level:'trash',count:privacyCount()})">🌶️ 18+</button>
+              <button class="btn" id="btnPrivacyHard" onclick="launch('privacy',{level:'trash',count:privacyCount()})">🌶️ 18+</button>
               <select id="privacyCount" style="width:auto">
                 <option value="5">5 questions</option>
                 <option value="10" selected>10 questions</option>
@@ -95,7 +100,7 @@
           <div class="field" data-cat="carton" style="margin-top:10px"><label>🃏 Bouche-Trou !? — questions à trou + cartes-réponses</label>
             <div class="row">
               <button class="btn" onclick="launch('carton',{level:'classique',rounds:cartonRounds()})">🎉 Classique</button>
-              <button class="btn" onclick="launch('carton',{level:'adulte',rounds:cartonRounds()})">🔞 Version 18+</button>
+              <button class="btn" id="btnCartonAdult" onclick="launch('carton',{level:'adulte',rounds:cartonRounds()})">🔞 Version 18+</button>
               <select id="cartonRounds" style="width:auto">
                 <option value="5">5 manches</option>
                 <option value="8" selected>8 manches</option>
@@ -107,7 +112,7 @@
           <div class="field" data-cat="ttcq" style="margin-top:10px"><label>🎯 TTCQ — Tu Te Cotes Combien ? — plateau, pari, questions</label>
             <div class="row" style="margin-bottom:6px">
               <button class="btn" onclick="ttcqLaunch('classique')">🎉 Classique</button>
-              <button class="btn" onclick="ttcqLaunch('adulte')">🔞 18+</button>
+              <button class="btn" id="btnTtcqAdult" onclick="ttcqLaunch('adulte')">🔞 18+</button>
               <button class="btn secondary" onclick="ttcqLaunch('classique',true)">📋 Mes questionnaires</button>
               <select id="ttcqRounds" style="width:auto">
                 <option value="5">5 manches</option>
@@ -121,7 +126,7 @@
           <div class="field" data-cat="justone" style="margin-top:10px"><label>🧠 Un Seul Mot !? — un indice, un seul mot, en équipe</label>
             <div class="row">
               <button class="btn" onclick="launch('justone',{level:'classique',rounds:justoneRounds()})">🎉 Classique</button>
-              <button class="btn" onclick="launch('justone',{level:'adulte',rounds:justoneRounds()})">🔞 Version 18+</button>
+              <button class="btn" id="btnJustoneAdult" onclick="launch('justone',{level:'adulte',rounds:justoneRounds()})">🔞 Version 18+</button>
               <select id="justoneRounds" style="width:auto">
                 <option value="5">5 manches</option>
                 <option value="8" selected>8 manches</option>
@@ -424,6 +429,8 @@ async function loadConfig(){
     document.getElementById('closedBanner').style.display = 'block';
     fillLaunchers(true);
   }
+  // Bannière 18+ non payée
+  gateAdultContent();
   await loadEqzDefaults(); eqzDefLoaded=true;
   fillGeneral(); fillPlayers(); fillActivities(); fillContent(); fillLaunchers();
   ttcqInitCats();
@@ -479,6 +486,37 @@ function fillGeneral(){
     }
   }
 }
+function gateAdultContent(){
+  const adultBtns = [
+    document.getElementById('btnPrivacyHard'),
+    document.getElementById('btnCartonAdult'),
+    document.getElementById('btnTtcqAdult'),
+    document.getElementById('btnJustoneAdult'),
+  ].filter(Boolean);
+  const verified = META.adultParty && META.adultVerified;
+  adultBtns.forEach(btn => {
+    btn.disabled = !verified;
+    btn.style.opacity = verified ? '1' : '.4';
+    btn.title = verified ? '' : '🔞 Paiement 18+ requis (0,99 €) — voir bandeau ci-dessus';
+  });
+  const banner = document.getElementById('adultBanner');
+  if (META.adultParty && !META.adultVerified) {
+    banner.style.display = 'block';
+    const btnsEl = document.getElementById('adultPayBtns');
+    let html = '';
+    const ppId = 'appc-' + Math.random().toString(36).slice(2,8);
+    if (META.adultPayLink)
+      html += `<a class="btn secondary" style="display:inline-block;width:auto;padding:4px 12px;font-size:12px;margin-left:8px" href="${esc(META.adultPayLink)}" target="_blank" rel="noopener">💳 Payer 0,99 € par carte</a>`;
+    if (META.adultPaypalButtonId && META.paypalClientId){
+      html += `<div id="${ppId}" style="display:inline-block;max-width:200px;vertical-align:middle;margin-left:6px"></div>`;
+      setTimeout(() => renderHostedButton('#'+ppId, META.adultPaypalButtonId, META.paypalClientId, META.currency), 100);
+    }
+    btnsEl.innerHTML = html;
+  } else {
+    banner.style.display = 'none';
+  }
+}
+
 async function saveGeneral(){
   const patch={ name:g_name.value, theme:g_theme.value, publicUrl:g_url.value, partyDate:g_date.value || '', adminPassword:g_pwd.value,
     settings:{ ...CFG.settings, deadlineLabel:g_deadline.value, ambianceYoutube:g_amb.value } };

@@ -706,6 +706,11 @@ async function loadEvents() {
         ? '<span class="tag" style="background:#fdeecf;color:#a06a00">à payer</span>' : '';
     const payBtn = e.paymentStatus === 'pending'
       ? `<button class="btn secondary" style="width:auto" onclick="markPaid('${e.id}')">Marquer payé</button>` : '';
+    const adultTag = e.adultParty
+      ? (e.adultVerified
+        ? '<span class="tag" style="background:#f3e8ff;color:#7c3aed">🔞 18+ validé</span>'
+        : '<span class="tag" style="background:#fef3c7;color:#a06a00">🔞 18+ en attente</span>')
+      : '';
     const verifiedTag = e.emailVerified
       ? (e.verificationMethod === 'google'
         ? '<span class="tag" style="background:#e8f7ee;color:#1f9d57">✓ Google</span>'
@@ -718,7 +723,7 @@ async function loadEvents() {
       <td>
         <strong>${esc(e.name)}</strong><br>
         <span class="tag">${themeLabel[e.theme]||e.theme}</span>
-        <span class="tag">${esc(planLabel(e.plan))}</span> ${pay}
+        <span class="tag">${esc(planLabel(e.plan))}</span> ${pay} ${adultTag}
         <span class="muted" style="font-size:12px">/e/${e.id}</span><br>
         <span style="font-size:12.5px">
           🔑 <code style="background:#eef2ff;padding:1px 7px;border-radius:5px;font-size:12px">${esc(e.adminPassword||'(libre)')}</code>
@@ -729,6 +734,7 @@ async function loadEvents() {
       </td>
       <td class="inline" style="justify-content:flex-end">
         ${payBtn}
+        ${e.adultParty && !e.adultVerified ? `<button class="btn secondary" style="width:auto" onclick="markAdultPaid('${e.id}')">🔞 Valider 18+</button>` : ''}
         <button class="btn secondary" style="width:auto" onclick="toggleIpDetails('${e.id}')">🌐 IPs</button>
         <a class="btn" style="width:auto" href="/e/${e.id}/borne" target="_blank">Borne</a>
         <a class="btn secondary" style="width:auto" href="/e/${e.id}/admin" target="_blank">Console</a>
@@ -807,6 +813,11 @@ async function forceVerify(id, name) {
 
 async function markPaid(id) {
   await fetch('/api/admin/events/' + id + '/payment', { method:'POST', headers: headers(), body: JSON.stringify({ status:'paid' }) });
+  await loadEvents();
+}
+
+async function markAdultPaid(id) {
+  await fetch('/api/admin/events/' + id + '/adult-payment', { method:'POST', headers: headers(), body: JSON.stringify({ status:'paid' }) });
   await loadEvents();
 }
 

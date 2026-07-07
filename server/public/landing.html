@@ -599,7 +599,28 @@
           </div>
         </div>
 
-        <button class="btn" style="font-size:16px;padding:15px 34px;margin-top:8px" onclick="createParty()">🎉 Créer ma fête</button>
+        <div class="field" style="border-top:1px solid var(--neon4);padding-top:14px;margin-top:4px">
+          <label style="display:flex;align-items:center;gap:8px;cursor:pointer">
+            <input type="checkbox" id="cAdultParty" style="width:auto;transform:scale(1.3)" onchange="toggleAdult()">
+            <span style="font-size:15px">🔞 Faire une <strong>fête 18+</strong> (questions et défis réservés aux adultes)</span>
+          </label>
+        </div>
+        <div id="adultWarning" style="display:none;background:rgba(255,80,80,.1);border:1px solid rgba(255,80,80,.3);border-radius:10px;padding:12px 16px;margin-top:6px">
+          <p style="margin:0 0 8px;font-size:14px;color:var(--neon-danger,var(--danger))">
+            ⚠️ Les jeux suivants inclus des thématiques 18+ : Sans Filtre !?, Bouche-Trou, TTCQ, Un Seul Mot.
+            Le contenu peut être explicite (sexualité, drogues, alcool…).
+          </p>
+          <label style="display:flex;align-items:flex-start;gap:8px;cursor:pointer;font-size:13.5px">
+            <input type="checkbox" id="cAdultConfirm" style="width:auto;margin-top:2px;transform:scale(1.2)" onchange="toggleAdult()">
+            <span>Je confirme que <strong>tous les participants seront majeurs</strong> (18 ans ou plus).</span>
+          </label>
+          <p style="margin:8px 0 0;font-size:12.5px;color:var(--muted)">
+            💳 Un paiement de <strong>0,99 €</strong> sera demandé après la création pour garantir que l'organisateur est bien adulte.
+            Ce montant symbolique valide définitivement les contenus 18+ dans la console.
+          </p>
+        </div>
+
+        <button class="btn" style="font-size:16px;padding:15px 34px;margin-top:8px" onclick="createParty()" id="createBtn">🎉 Créer ma fête</button>
         <div id="createErr" style="margin-top:12px;color:var(--danger);font-size:14px"></div>
       </div>
     </section>
@@ -772,12 +793,22 @@ function renderCoffeeButton(){
   else a.style.display = 'none';
 }
 
+function toggleAdult(){
+  const checked = document.getElementById('cAdultParty').checked;
+  document.getElementById('adultWarning').style.display = checked ? 'block' : 'none';
+  document.getElementById('createBtn').disabled = checked && !document.getElementById('cAdultConfirm').checked;
+}
+
 async function createParty(){
   const errEl = document.getElementById('createErr');
   errEl.textContent = '';
   const name  = document.getElementById('cName').value.trim();
   const email = document.getElementById('cEmail').value.trim();
   if (!name)  { errEl.textContent = 'Donne un nom à ta fête.'; return; }
+  const adultParty = document.getElementById('cAdultParty').checked;
+  if (adultParty && !document.getElementById('cAdultConfirm').checked) {
+    errEl.textContent = 'Confirme que tous les participants seront majeurs.'; return;
+  }
   if (!GOOGLE_CRED) {
     if (!email) { errEl.textContent = 'Saisis ton email, ou connecte-toi avec Google.'; return; }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { errEl.textContent = 'Adresse email invalide.'; return; }
@@ -790,6 +821,7 @@ async function createParty(){
     adminPassword: document.getElementById('cPwd').value.trim(),
     partyDate: document.getElementById('cDate').value || null,
     seed: 'default',
+    adultParty,
   };
   if (GOOGLE_CRED) body.googleCredential = GOOGLE_CRED;
   let d;
@@ -822,6 +854,29 @@ async function createParty(){
       : `<p class="muted" style="font-size:12.5px">Formule payante — le paiement sera proposé prochainement.</p>`;
   }
 
+  // Paiement 18+ (0,99 €) si la fête a été créée en mode 18+
+  let adultPayHtml = '';
+  const adultPpId = 'app-' + Math.random().toString(36).slice(2,8);
+  if (d.event.adultParty && d.event.adultPaymentStatus !== 'paid') {
+    const link = PRICING.adultPayLink;
+    const btnId = PRICING.adultPaypalButtonId;
+    let btns = '';
+    if (link)
+      btns += `<p><a class="btn" style="display:inline-block;width:auto" href="${esc(link)}" target="_blank" rel="noopener">💳 Payer 0,99 € par carte</a></p>`;
+    if (btnId && PRICING.paypalClientId)
+      btns += `<div id="${adultPpId}" style="max-width:320px;margin-top:8px"></div>`;
+    if (!btns) btns = '<p class="muted" style="font-size:12.5px">Paiement 18+ disponible prochainement.</p>';
+    adultPayHtml = `<div class="pay-block" style="margin-top:10px;border-color:rgba(255,80,80,.3)">
+      <p style="font-size:13px;margin:0 0 6px"><strong>🔞 Validation 18+</strong> — 0,99 € pour garantir que l\'organisateur est adulte.</p>
+      ${btns}
+      <p class="muted" style="font-size:12px;margin-top:4px">Sans ce paiement, les contenus 18+ resteront verrouillés dans la console.</p>
+    </div>`;
+  }
+
+  // Ajoute le lien SumUp / PayPal à la fin de la modale pour le paiement 18+
+  const adultPayBlock = (adultPayHtml && d.event.adultParty && d.event.adultPaymentStatus !== 'paid')
+    ? adultPayHtml : '';
+
   const verifyNotice = d.event.emailVerified
     ? `<div style="background:rgba(74,222,128,.12);border:1px solid rgba(74,222,128,.5);border-radius:9px;padding:12px 14px;margin-bottom:14px;font-size:13.5px;color:#166534">
         <strong>✅ Email vérifié</strong> — ta fête est <strong>active immédiatement</strong>, aucune confirmation à cliquer.
@@ -847,11 +902,17 @@ async function createParty(){
       <a class="btn secondary" href="/e/${d.event.id}/borne" target="_blank">📺 Ouvrir la borne</a>
     </div>
     ${payHtml}
+    ${adultPayBlock}
     <p class="modal-note">⚠️ Conserve bien ce mot de passe — il est la seule clé d'accès à ta console d'administration.</p>
   `;
 
   const needPP = d.event.paymentStatus === 'pending' && !PRICING.freeMode && plan.paypalButtonId && PRICING.paypalClientId;
-  openModal(modalHtml, needPP ? () => renderHostedButton('#'+ppId, plan.paypalButtonId, PRICING.paypalClientId, PRICING.currency) : null);
+  const needAdultPP = d.event.adultParty && d.event.adultPaymentStatus !== 'paid' && PRICING.adultPaypalButtonId && PRICING.paypalClientId;
+  const afterOpen = needPP || needAdultPP ? () => {
+    if (needPP) renderHostedButton('#'+ppId, plan.paypalButtonId, PRICING.paypalClientId, PRICING.currency);
+    if (needAdultPP) renderHostedButton('#'+adultPpId, PRICING.adultPaypalButtonId, PRICING.paypalClientId, PRICING.currency);
+  } : null;
+  openModal(modalHtml, afterOpen);
 }
 
 let qrStream = null;

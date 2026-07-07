@@ -26,6 +26,8 @@ export function defaultPricing() {
     currency: 'EUR',
     freeMode: true,       // Mode bêta : tout gratuit, aucune limite, aucun paiement demandé
     coffeeLink: '',       // Lien PayPal "offre un café" (vide = bouton masqué)
+    adultPayLink: '',     // Paiement 0.99€ pour validation 18+
+    adultPaypalButtonId: '',
     // Client-id PUBLIC du SDK PayPal (boutons hébergés) — commun à toutes les formules.
     paypalClientId: 'BAA_GeyiQBhixTJkBdublBYuTB6Pi2uvxexEh9DGqD2myYGv_kQ36N4cdyyB_a_wwXl7kXq_Gc1b3v4JXc',
     plans: {

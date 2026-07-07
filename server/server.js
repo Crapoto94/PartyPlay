@@ -164,7 +164,7 @@ app.post('/api/promo/validate', (req, res) => {
 });
 
 app.post('/api/parties', async (req, res) => {
-  const { name, theme, plan, adminPassword, publicUrl, seed, contactEmail, promoCode, googleCredential, partyDate } = req.body || {};
+  const { name, theme, plan, adminPassword, publicUrl, seed, contactEmail, promoCode, googleCredential, partyDate, adultParty } = req.body || {};
   if (!name || !name.trim()) return res.status(400).json({ error: 'Nom de la fête requis.' });
 
   // Connexion Google : si un jeton est fourni, on le vérifie côté serveur et on
@@ -184,7 +184,7 @@ app.post('/api/parties', async (req, res) => {
   const planName = promo ? promo.plan : (planExists(plan) ? plan : 'free');
   // Mot de passe console : fourni, sinon généré.
   const pwd = (adminPassword && adminPassword.trim()) || ('p' + Math.random().toString(36).slice(2, 8));
-  const cfg = createEvent({ name: name.trim(), theme, plan: planName, adminPassword: pwd, publicUrl, seed: seed || 'default', contactEmail: finalEmail, partyDate });
+  const cfg = createEvent({ name: name.trim(), theme, plan: planName, adminPassword: pwd, publicUrl, seed: seed || 'default', contactEmail: finalEmail, partyDate, adultParty: !!adultParty });
   cfg.avatars = DEFAULT_AVATARS;
   cfg.creatorIp = clientIp(req) || 'unknown';
   cfg.creatorOs = detectOs(req.get('user-agent'));
@@ -228,7 +228,7 @@ app.post('/api/parties', async (req, res) => {
       htmlContent: fillTemplate(tpl.html, { eventName: cfg.name, eventId: cfg.id, verifyUrl, consoleUrl, borneUrl, planLabel: planInfo.label || cfg.plan }),
     }).catch(() => {});
   }
-  res.json({ ok: true, event: { id: cfg.id, name: cfg.name, theme: cfg.theme, plan: cfg.plan, paymentStatus: cfg.paymentStatus, emailVerified: cfg.emailVerified !== false, contactEmail: cfg.contactEmail || '', partyDate: cfg.partyDate || '' }, adminPassword: pwd });
+  res.json({ ok: true, event: { id: cfg.id, name: cfg.name, theme: cfg.theme, plan: cfg.plan, paymentStatus: cfg.paymentStatus, emailVerified: cfg.emailVerified !== false, contactEmail: cfg.contactEmail || '', partyDate: cfg.partyDate || '', adultParty: !!cfg.adultParty, adultVerified: !!cfg.adultVerified }, adminPassword: pwd });
 });
 
 // Résout un token joueur → l'événement qui le contient (rejoindre par code).
@@ -295,6 +295,8 @@ app.get('/api/admin/events', (req, res) => {
       verificationMethod: cfg.emailVerified ? (cfg.authMethod || (cfg.verificationToken ? 'email' : 'google')) : null,
       creatorIp: cfg.creatorIp || '',
       creatorOs: cfg.creatorOs || '',
+      adultParty: !!cfg.adultParty,
+      adultVerified: !!cfg.adultVerified,
       playerCount: (cfg.players || []).length,
     };
   });
@@ -469,6 +471,18 @@ app.post('/api/admin/events/:id/payment', (req, res) => {
   saveConfig(cfg);
   reloadConfig(cfg.id);
   res.json({ ok: true, paymentStatus: cfg.paymentStatus });
+});
+
+// Marquer le paiement 18+ validé (super-admin).
+app.post('/api/admin/events/:id/adult-payment', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  const cfg = getConfig(req.params.id);
+  if (!cfg) return res.status(404).json({ error: 'Événement inconnu.' });
+  cfg.adultPaymentStatus = req.body.status === 'paid' ? 'paid' : 'pending';
+  cfg.adultVerified = cfg.adultPaymentStatus === 'paid';
+  saveConfig(cfg);
+  reloadConfig(cfg.id);
+  res.json({ ok: true, adultPaymentStatus: cfg.adultPaymentStatus, adultVerified: cfg.adultVerified });
 });
 
 // =====================================================================
@@ -952,6 +966,11 @@ ev.get('/api/admin/meta', (req, res) => {
     planPrice: plan.price || 0, payLink: plan.payLink || '', currency: getPricing().currency || 'EUR',
     paypalButtonId: plan.paypalButtonId || '', paypalClientId: getPricing().paypalClientId || '',
     paymentStatus: req.cfg.paymentStatus || 'free',
+    adultParty: !!req.cfg.adultParty,
+    adultPaymentStatus: req.cfg.adultPaymentStatus || 'none',
+    adultVerified: !!req.cfg.adultVerified,
+    adultPayLink: getPricing().adultPayLink || '',
+    adultPaypalButtonId: getPricing().adultPaypalButtonId || '',
     emailVerified: req.cfg.emailVerified !== false,
     contactEmail: req.cfg.contactEmail || '',
   });

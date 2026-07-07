@@ -82,7 +82,7 @@ export function findEventByVerificationToken(token) {
   return null;
 }
 
-export function createEvent({ name, theme = 'retro', adminPassword = '', publicUrl = '', seed = 'default', plan = 'free', contactEmail = '', bypassVerification = false, partyDate = '' }) {
+export function createEvent({ name, theme = 'retro', adminPassword = '', publicUrl = '', seed = 'default', plan = 'free', contactEmail = '', bypassVerification = false, partyDate = '', adultParty = false }) {
   ensureRoot();
   const id = slugify(name);
   fs.mkdirSync(uploadsDir(id), { recursive: true });
@@ -101,6 +101,9 @@ export function createEvent({ name, theme = 'retro', adminPassword = '', publicU
     verificationToken: needsVerification ? randomBytes(32).toString('hex') : null,
     createdAt: Date.now(),
     partyDate: partyDate || '',
+    adultParty: !!adultParty,
+    adultPaymentStatus: adultParty ? 'pending' : 'none',
+    adultVerified: false,
     closed: false,
     closedAt: null,
     feedback: [],
