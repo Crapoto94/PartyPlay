@@ -36,6 +36,24 @@
       que l'organisateur est adulte.
       <span id="adultPayBtns"></span>
     </div>
+
+    <!-- Popup 18+ -->
+    <div id="adultPopup" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:9999;align-items:center;justify-content:center" onclick="if(event.target===this)closeAdultPopup()">
+      <div style="background:var(--bg2);border:2px solid rgba(255,80,80,.5);border-radius:16px;padding:28px 32px;max-width:480px;width:90%;text-align:center">
+        <div style="font-size:48px;margin-bottom:8px">🔞</div>
+        <h2 style="margin:0 0 10px;font-size:18px">Contenu réservé aux adultes</h2>
+        <p style="margin:0 0 14px;font-size:14px;line-height:1.5">
+          Les jeux en version <strong>18+</strong> (Sans Filtre hard, Bouche-Trou 18+, TTCQ 18+, Un Seul Mot 18+)
+          contiennent des questions et défis explicites réservés aux adultes.
+        </p>
+        <p style="margin:0 0 18px;font-size:13.5px;line-height:1.5">
+          Pour débloquer ces contenus, crée une <strong>fête 18+</strong> depuis la page d'accueil
+          et effectue le paiement symbolique de <strong>0,99 €</strong> qui garantit que
+          l'organisateur est bien majeur.
+        </p>
+        <button class="btn" onclick="closeAdultPopup()">Fermer</button>
+      </div>
+    </div>
     </div>
 
     <div class="card" id="loginCard" style="display:none">
@@ -88,7 +106,7 @@
           <div class="field" data-cat="privacy" style="margin-top:10px"><label>🤫 Sans Filtre !? — confessions anonymes (Intime = normal · 18+ = vrai 18+, nécessite validation)</label>
             <div class="row">
               <button class="btn" onclick="launch('privacy',{level:'intime',count:privacyCount()})">🔞 Intime</button>
-              <button class="btn" id="btnPrivacyHard" onclick="launch('privacy',{level:'trash',count:privacyCount()})">🌶️ 18+</button>
+              <button class="btn" id="btnPrivacyHard">🌶️ 18+</button>
               <select id="privacyCount" style="width:auto">
                 <option value="5">5 questions</option>
                 <option value="10" selected>10 questions</option>
@@ -100,7 +118,7 @@
           <div class="field" data-cat="carton" style="margin-top:10px"><label>🃏 Bouche-Trou !? — questions à trou + cartes-réponses</label>
             <div class="row">
               <button class="btn" onclick="launch('carton',{level:'classique',rounds:cartonRounds()})">🎉 Classique</button>
-              <button class="btn" id="btnCartonAdult" onclick="launch('carton',{level:'adulte',rounds:cartonRounds()})">🔞 Version 18+</button>
+              <button class="btn" id="btnCartonAdult">🔞 Version 18+</button>
               <select id="cartonRounds" style="width:auto">
                 <option value="5">5 manches</option>
                 <option value="8" selected>8 manches</option>
@@ -112,7 +130,7 @@
           <div class="field" data-cat="ttcq" style="margin-top:10px"><label>🎯 TTCQ — Tu Te Cotes Combien ? — plateau, pari, questions</label>
             <div class="row" style="margin-bottom:6px">
               <button class="btn" onclick="ttcqLaunch('classique')">🎉 Classique</button>
-              <button class="btn" id="btnTtcqAdult" onclick="ttcqLaunch('adulte')">🔞 18+</button>
+              <button class="btn" id="btnTtcqAdult">🔞 18+</button>
               <button class="btn secondary" onclick="ttcqLaunch('classique',true)">📋 Mes questionnaires</button>
               <select id="ttcqRounds" style="width:auto">
                 <option value="5">5 manches</option>
@@ -126,7 +144,7 @@
           <div class="field" data-cat="justone" style="margin-top:10px"><label>🧠 Un Seul Mot !? — un indice, un seul mot, en équipe</label>
             <div class="row">
               <button class="btn" onclick="launch('justone',{level:'classique',rounds:justoneRounds()})">🎉 Classique</button>
-              <button class="btn" id="btnJustoneAdult" onclick="launch('justone',{level:'adulte',rounds:justoneRounds()})">🔞 Version 18+</button>
+              <button class="btn" id="btnJustoneAdult">🔞 Version 18+</button>
               <select id="justoneRounds" style="width:auto">
                 <option value="5">5 manches</option>
                 <option value="8" selected>8 manches</option>
@@ -486,18 +504,24 @@ function fillGeneral(){
     }
   }
 }
+const ADULT_BTN_IDS = ['btnPrivacyHard','btnCartonAdult','btnTtcqAdult','btnJustoneAdult'];
+
 function gateAdultContent(){
-  const adultBtns = [
-    document.getElementById('btnPrivacyHard'),
-    document.getElementById('btnCartonAdult'),
-    document.getElementById('btnTtcqAdult'),
-    document.getElementById('btnJustoneAdult'),
-  ].filter(Boolean);
-  const verified = META.adultParty && META.adultVerified;
+  const adultBtns = ADULT_BTN_IDS.map(id => document.getElementById(id)).filter(Boolean);
+  const canPlay = META.adultParty && META.adultVerified;
+
   adultBtns.forEach(btn => {
-    btn.disabled = !verified;
-    btn.title = verified ? '' : '🔞 Paiement 18+ requis (0,99 €)';
+    btn.disabled = !canPlay;
+    btn._adultCanPlay = canPlay;
+    // Remplacer l'onclick pour intercepter les clics sur les boutons désactivés
+    const origClick = btn._origClick || btn.onclick;
+    if (!btn._origClick) btn._origClick = origClick;
+    btn.onclick = (e) => {
+      if (btn._adultCanPlay && btn._origClick) { btn._origClick.call(btn, e); return; }
+      showAdultPopup();
+    };
   });
+
   const banner = document.getElementById('adultBanner');
   if (META.adultParty && !META.adultVerified) {
     banner.style.display = 'block';
@@ -518,6 +542,16 @@ function gateAdultContent(){
     banner.style.display = 'none';
   }
 }
+
+function showAdultPopup(){
+  const overlay = document.getElementById('adultPopup');
+  if (overlay) overlay.style.display = 'flex';
+}
+function closeAdultPopup(){
+  const overlay = document.getElementById('adultPopup');
+  if (overlay) overlay.style.display = 'none';
+}
+
 async function markAdultPaid(btn){
   if (!confirm('Confirmer le paiement 0,99 € pour valider les contenus 18+ ?')) return;
   btn.disabled = true; btn.textContent = 'Validation…';
