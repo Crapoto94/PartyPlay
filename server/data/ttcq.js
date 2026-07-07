@@ -13718,7 +13718,7 @@ export const TTCQ_THEMES = [
     "a": "escargots"
    },
    {
-    "q": "Quel mets de fête, spécialité du Sud-Ouest, se prépare avec un foie d'oie ou de canard engraissé ? Le ___ gras ?",
+    "q": "Quel mets de fête du Sud-Ouest, préparé à partir du canard ou de l'oie gavé, se tartine à Noël ? Le ___ gras ?",
     "c": [
      "foie",
      "cœur",
@@ -16305,7 +16305,7 @@ export const TTCQ_THEMES = [
     "a": "Crown"
    },
    {
-    "q": "Quelle série française sur un gentleman cambrioleur inspiré d'Arsène Lupin a cartonné en 2021 ?",
+    "q": "Quelle série française de 2021, avec Omar Sy en gentleman cambrioleur, a cartonné sur Netflix ?",
     "c": [
      "Lupin",
      "Arsène",
@@ -17046,7 +17046,7 @@ export const TTCQ_THEMES = [
     "a": "Maguy"
    },
    {
-    "q": "Quel bruitage de public hilare est ajouté après les blagues des sitcoms ? Les ___ enregistrés ?",
+    "q": "Quel faux bruitage de public rieur ponctue les blagues des sitcoms ? Les ___ ?",
     "c": [
      "rires enregistrés",
      "sirènes",
@@ -26424,7 +26424,7 @@ export const TTCQ_THEMES = [
     "a": "calvados"
    },
    {
-    "q": "De quel fruit à pépins, cousin de la pomme, fait-on le « poiré » ?",
+    "q": "De quel fruit à pépins, cousin de la pomme, fait-on une boisson fermentée proche du cidre ? La ___ ?",
     "c": [
      "poire",
      "pêche",
@@ -26633,7 +26633,7 @@ export const TTCQ_THEMES = [
     "a": "du Portugal"
    },
    {
-    "q": "Le porto est un vin muté, c'est-à-dire enrichi en ___ ? (alcool ajouté)",
+    "q": "Le porto est un vin « muté » : sa fermentation est stoppée en le renforçant avec un ingrédient. Lequel ? L'___ ?",
     "c": [
      "alcool",
      "sucre",
@@ -28976,7 +28976,7 @@ export const TTCQ_THEMES = [
     "a": "antistress"
    },
    {
-    "q": "En 1957, pour quel usage décoratif mural le film à bulles avait-il d'abord été inventé ? Un ___ peint ?",
+    "q": "En 1957, le film à bulles avait d'abord été imaginé comme un revêtement décoratif pour les murs. Lequel ? Un ___ ?",
     "c": [
      "papier peint",
      "tapis",
