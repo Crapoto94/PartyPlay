@@ -1093,14 +1093,20 @@ function switchEmailTemplate(key) {
   // Afficher les placeholders
   const ph = ET_PLACEHOLDERS[key] || [];
   document.getElementById('etPlaceholders').innerHTML = 'Variables disponibles : ' + ph.map(p => '<code>' + esc(p) + '</code>').join(' ');
-  // Mettre à jour Quill
-  if (etQuill) {
-    etQuill.root.innerHTML = '';
-    if (tpl.html) etQuill.clipboard.dangerouslyPasteHTML(tpl.html, 'silent');
-  }
-  // Mettre à jour l'éditeur code
+  // Mettre à jour l'éditeur code (TOUJOURS en premier — backup du HTML brut)
   const codeEl = document.getElementById('etCodeEditor');
   if (codeEl) codeEl.value = tpl.html || '';
+  // Mettre à jour Quill (try/catch pour éviter qu'un HTML complexe casse tout l'éditeur)
+  if (etQuill) {
+    try {
+      etQuill.root.innerHTML = '';
+      if (tpl.html) etQuill.clipboard.dangerouslyPasteHTML(tpl.html, 'silent');
+    } catch (e) {
+      console.warn('Quill paste error for', key, e);
+      // Si Quill a planté (ex: table complexe), on bascule automatiquement en mode code
+      if (etMode === 'visual') switchEtMode('code', true);
+    }
+  }
   // Mettre à jour l'aperçu
   updatePreview(tpl.html);
   // Synchroniser le mode

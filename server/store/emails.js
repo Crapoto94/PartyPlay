@@ -16,14 +16,12 @@ const DEFAULT_TEMPLATES = {
   <div style="background:#fff;border:1px solid #e2e5ea;border-top:none;border-radius:0 0 12px 12px;padding:28px">
     <p style="margin:0 0 6px">Bonjour,</p>
     <p style="margin:0 0 20px">La fête <strong>« {{eventName}} »</strong> a bien été créée. Voici toutes vos informations :</p>
-    <table style="width:100%;border-collapse:collapse;background:#f8f9fb;border-radius:9px;padding:4px 4px 4px 12px;margin-bottom:20px">
-      <tbody>
-        <tr><td style="padding:6px 12px 6px 0;color:#6b7280;white-space:nowrap;vertical-align:top;font-size:13.5px">Identifiant</td><td style="padding:6px 0;font-weight:600;color:#1f2430;word-break:break-all;font-size:13.5px"><code style="background:#e8ebf0;padding:2px 6px;border-radius:4px;font-size:13px">{{eventId}}</code></td></tr>
-        <tr><td style="padding:6px 12px 6px 0;color:#6b7280;white-space:nowrap;vertical-align:top;font-size:13.5px">Formule</td><td style="padding:6px 0;font-weight:600;color:#1f2430;word-break:break-all;font-size:13.5px">{{planLabel}}</td></tr>
-        <tr><td style="padding:6px 12px 6px 0;color:#6b7280;white-space:nowrap;vertical-align:top;font-size:13.5px">Console admin</td><td style="padding:6px 0;font-weight:600;color:#1f2430;word-break:break-all;font-size:13.5px"><a href="{{consoleUrl}}" style="color:#3b6ef5">{{consoleUrl}}</a></td></tr>
-        <tr><td style="padding:6px 12px 6px 0;color:#6b7280;white-space:nowrap;vertical-align:top;font-size:13.5px">Borne joueurs</td><td style="padding:6px 0;font-weight:600;color:#1f2430;word-break:break-all;font-size:13.5px"><a href="{{borneUrl}}" style="color:#3b6ef5">{{borneUrl}}</a></td></tr>
-      </tbody>
-    </table>
+    <div style="background:#f8f9fb;border-radius:9px;padding:12px;margin-bottom:20px">
+      <div style="padding:4px 0;display:flex;gap:12px"><span style="color:#6b7280;white-space:nowrap;font-size:13.5px">Identifiant</span><span style="font-weight:600;word-break:break-all;font-size:13.5px"><code style="background:#e8ebf0;padding:2px 6px;border-radius:4px;font-size:13px">{{eventId}}</code></span></div>
+      <div style="padding:4px 0;display:flex;gap:12px"><span style="color:#6b7280;white-space:nowrap;font-size:13.5px">Formule</span><span style="font-weight:600;word-break:break-all;font-size:13.5px">{{planLabel}}</span></div>
+      <div style="padding:4px 0;display:flex;gap:12px"><span style="color:#6b7280;white-space:nowrap;font-size:13.5px">Console admin</span><span style="font-weight:600;word-break:break-all;font-size:13.5px"><a href="{{consoleUrl}}" style="color:#3b6ef5">{{consoleUrl}}</a></span></div>
+      <div style="padding:4px 0;display:flex;gap:12px"><span style="color:#6b7280;white-space:nowrap;font-size:13.5px">Borne joueurs</span><span style="font-weight:600;word-break:break-all;font-size:13.5px"><a href="{{borneUrl}}" style="color:#3b6ef5">{{borneUrl}}</a></span></div>
+    </div>
     <p style="margin:0 0 8px;font-weight:600">📧 Confirmez votre email pour activer la fête</p>
     <p style="margin:0 0 20px;font-size:13.5px;color:#555">Le démarrage est bloqué jusqu'à confirmation :</p>
     <p style="text-align:center;margin:0 0 20px">
