@@ -2546,86 +2546,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a réalisé Pulp Fiction ?",
+    "q": "Quel réalisateur, adepte des dialogues cultes, a réalisé Pulp Fiction ? Quentin ___ ?",
     "c": [
      "Tarantino",
-     "Stone",
-     "Rodriguez",
-     "Scott"
+     "Scorsese",
+     "Fincher",
+     "Coen"
     ],
-    "a": 0
+    "a": "Tarantino"
    },
    {
-    "q": "Pulp Fiction se distingue par une narration :",
+    "q": "Quel acteur joue le tueur Vincent Vega ? John ___ ?",
     "c": [
-     "Non linéaire (l'histoire n'est pas racontée dans l'ordre chronologique)",
-     "Entièrement muette",
-     "En noir et blanc",
-     "Racontée uniquement en flash-back au ralenti"
+     "Travolta",
+     "Jackson",
+     "Willis",
+     "Roth"
     ],
-    "a": 0
+    "a": "Travolta"
    },
    {
-    "q": "En quelle année Pulp Fiction est-il sorti ?",
+    "q": "Quel type de danse Vincent et Mia exécutent-ils dans le restaurant ? Le ___ ?",
     "c": [
-     "1992",
-     "1993",
-     "1994",
-     "1995"
+     "Twist",
+     "Rock",
+     "Charleston",
+     "Madison"
     ],
-    "a": 2
+    "a": "Twist"
    },
    {
-    "q": "Quel acteur joue Vincent Vega ?",
+    "q": "Que contient la mystérieuse mallette qui brille dans le film ?",
     "c": [
-     "Tim Roth",
-     "Samuel L. Jackson",
-     "John Travolta",
-     "Bruce Willis"
+     "Inconnu",
+     "Or",
+     "Argent",
+     "Diamants"
     ],
-    "a": 2
+    "a": "Inconnu"
    },
    {
-    "q": "Quelle danse célèbre John Travolta interprète-t-il ?",
+    "q": "Quel acteur incarne le tueur biblique Jules Winnfield ? Samuel L. ___ ?",
     "c": [
-     "Le Tango",
-     "Le Hustle",
-     "Le Twist",
-     "Le Rock"
+     "Jackson",
+     "Travolta",
+     "Willis",
+     "Rhames"
     ],
-    "a": 2
+    "a": "Jackson"
    },
    {
-    "q": "Quelle est la célèbre phrase biblique citée par Jules ?",
+    "q": "Quel boxeur, joué par Bruce Willis, refuse de perdre son combat ?",
     "c": [
-     "Job 14:1",
-     "Psaumes 23:4",
-     "Ézéchiel 25:17",
-     "Proverbes 15:3"
+     "Butch",
+     "Marsellus",
+     "Vincent",
+     "Jules"
     ],
-    "a": 2
+    "a": "Butch"
    },
    {
-    "q": "Quel prix Pulp Fiction a-t-il remporté à Cannes ?",
+    "q": "Quel personnage « nettoyeur » vient régler les problèmes ? Monsieur ___ ? (The Wolf)",
     "c": [
-     "Le Prix de la Mise en Scène",
-     "La Palme d'Or",
-     "Le Prix du Jury",
-     "Le Grand Prix"
+     "Wolf",
+     "Fox",
+     "Bear",
+     "Lion"
     ],
-    "a": 1
+    "a": "Wolf"
    },
    {
-    "q": "Comment s'appelle la mallette mystérieuse ?",
-    "c": [
-     "Le paquet",
-     "La mallette",
-     "Le trésor",
-     "Le dossier"
-    ],
-    "a": 1
+    "q": "En quelle année Pulp Fiction a-t-il remporté la Palme d'or à Cannes ?",
+    "a": "1994"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cinema_012",
@@ -2634,86 +2629,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a réalisé Inception ?",
+    "q": "Dans quel état, propice aux rêves, se déroule l'essentiel du film ?",
     "c": [
-     "Denis Villeneuve",
-     "David Fincher",
-     "Christopher Nolan",
-     "Ridley Scott"
+     "Sommeil",
+     "Coma",
+     "Transe",
+     "Hypnose"
     ],
-    "a": 2
+    "a": "Sommeil"
    },
    {
-    "q": "Christopher Nolan aurait mis plusieurs années à écrire le scénario d'Inception avant de le tourner. Vrai ou faux ?",
+    "q": "Quel réalisateur d'Interstellar a réalisé Inception ? Christopher ___ ?",
     "c": [
-     "Vrai",
-     "Faux, il l'a écrit en une nuit",
-     "Faux, c'est un autre scénariste qui l'a écrit",
-     "Le scénario n'a jamais été écrit, tout était improvisé"
+     "Nolan",
+     "Villeneuve",
+     "Fincher",
+     "Scott"
     ],
-    "a": 0
+    "a": "Nolan"
    },
    {
-    "q": "Quel acteur joue Dom Cobb ?",
+    "q": "Quel acteur incarne l'extracteur de rêves Dom Cobb ? Leonardo ___ ?",
     "c": [
-     "Joseph Gordon-Levitt",
-     "Tom Hardy",
-     "Leonardo DiCaprio",
-     "Cillian Murphy"
+     "DiCaprio",
+     "Pitt",
+     "Damon",
+     "Gosling"
     ],
-    "a": 2
+    "a": "DiCaprio"
    },
    {
-    "q": "En quelle année est sorti Inception ?",
+    "q": "Quel petit objet Cobb fait-il tourner pour savoir s'il rêve ? Une ___ ?",
     "c": [
-     "2008",
-     "2010",
-     "2012",
-     "2009"
+     "toupie",
+     "montre",
+     "pièce",
+     "clé"
     ],
-    "a": 1
+    "a": "toupie"
    },
    {
-    "q": "Quel objet permet de savoir si on est dans un rêve ?",
+    "q": "Comment nomme-t-on l'action d'implanter une idée dans un rêve, le titre du film ?",
     "c": [
-     "Un dé",
-     "Un miroir",
-     "Une toupie",
-     "Un bracelet"
+     "Inception",
+     "Extraction",
+     "Projection",
+     "Diversion"
     ],
-    "a": 2
+    "a": "Inception"
    },
    {
-    "q": "Combien de niveaux de rêves compte le film ?",
-    "c": [
-     "3",
-     "4",
-     "2",
-     "5"
-    ],
-    "a": 1
+    "q": "Combien de niveaux de rêve emboîtés l'équipe explore-t-elle en profondeur ?",
+    "a": "3"
    },
    {
-    "q": "Quelle est la profession de Cobb ?",
+    "q": "Comment nomme-t-on les rêves imbriqués dans d'autres rêves ? Un rêve dans un ___ ?",
     "c": [
-     "Architecte",
-     "Extracteur",
-     "Forger",
-     "Chimiste"
+     "rêve",
+     "songe",
+     "coma",
+     "monde"
     ],
-    "a": 1
+    "a": "rêve"
    },
    {
-    "q": "Que signifie le titre Inception en français ?",
-    "c": [
-     "L'insertion",
-     "La création",
-     "Le début",
-     "L'inception"
-    ],
-    "a": 3
+    "q": "Quelle est la durée, en minutes, du film Inception (2010) ?",
+    "a": "148"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cinema_013",
@@ -2722,86 +2706,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a réalisé Matrix ?",
+    "q": "De quelle couleur est la pilule que Neo choisit pour connaître la vérité ?",
     "c": [
-     "Wachowski",
-     "Spielberg",
-     "Reeves",
-     "Cronenberg"
+     "Rouge",
+     "Bleue",
+     "Verte",
+     "Jaune"
     ],
-    "a": 0
+    "a": "Rouge"
    },
    {
-    "q": "Matrix est notamment connu pour avoir popularisé l'effet visuel appelé :",
-    "c": [
-     "Le « bullet time » (ralenti à 360°)",
-     "La 3D relief",
-     "L'animation en pâte à modeler (stop-motion)",
-     "Le noir et blanc numérique"
-    ],
-    "a": 0
+    "q": "Quel personnage élu est joué par Keanu Reeves ?",
+    "a": "Neo"
    },
    {
-    "q": "Quel acteur joue Neo ?",
+    "q": "Quel mentor en lunettes noires guide Neo ?",
     "c": [
-     "Keanu Reeves",
-     "Hugo Weaving",
-     "Laurence Fishburne",
-     "Carrie-Anne Moss"
+     "Morpheus",
+     "Trinity",
+     "Cypher",
+     "Tank"
     ],
-    "a": 0
+    "a": "Morpheus"
    },
    {
-    "q": "En quelle année le premier Matrix est-il sorti ?",
+    "q": "Quel agent en costume et lunettes traque Neo dans la Matrice ? L'agent ___ ?",
     "c": [
-     "2001",
-     "2000",
-     "1997",
-     "1999"
+     "Smith",
+     "Brown",
+     "Jones",
+     "White"
     ],
-    "a": 3
+    "a": "Smith"
    },
    {
-    "q": "Quelle célèbre phrase est dite par Morpheus ?",
+    "q": "Quelle simulation informatique tient les humains prisonniers ? La ___ ?",
     "c": [
-     "La matrice est un système, Neo",
-     "Suis le lapin blanc",
-     "Il n'y a pas de cuillère",
-     "Tu es l'Élu"
+     "Matrice",
+     "Grille",
+     "Toile",
+     "Sphère"
     ],
-    "a": 3
+    "a": "Matrice"
    },
    {
-    "q": "Quelle est la couleur de la pilule choisie par Neo ?",
+    "q": "Quel effet visuel culte fige l'action et tourne la caméra ? Le ___ time ?",
     "c": [
-     "La pilule jaune",
-     "La pilule bleue",
-     "La pilule rouge",
-     "La pilule verte"
+     "Bullet",
+     "Slow",
+     "Freeze",
+     "Stop"
     ],
-    "a": 2
+    "a": "Bullet"
    },
    {
-    "q": "Comment s'appelle l'agent principal de la Matrice ?",
+    "q": "Quelle héroïne en cuir noir, alliée de Neo, tombe amoureuse de lui ?",
     "c": [
-     "Agent Smith",
-     "Agent Johnson",
-     "Agent Jones",
-     "Agent Brown"
+     "Trinity",
+     "Niobe",
+     "Switch",
+     "Sati"
     ],
-    "a": 0
+    "a": "Trinity"
    },
    {
-    "q": "Combien de films principaux compte la saga Matrix ?",
-    "c": [
-     "3",
-     "4",
-     "2",
-     "5"
-    ],
-    "a": 1
+    "q": "En quelle année est sorti le premier film Matrix ?",
+    "a": "1999"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cinema_014",
@@ -2810,86 +2783,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a réalisé Fight Club ?",
+    "q": "Quelle est la première règle du Fight Club ? Il est interdit d'en ___ ?",
     "c": [
-     "Aronofsky",
-     "Mann",
+     "parler",
+     "sortir",
+     "rire",
+     "partir"
+    ],
+    "a": "parler"
+   },
+   {
+    "q": "Quel acteur au corps sculpté incarne Tyler Durden ? Brad ___ ?",
+    "c": [
+     "Pitt",
+     "Norton",
+     "Cruise",
+     "Damon"
+    ],
+    "a": "Pitt"
+   },
+   {
+    "q": "Quel réalisateur de Seven a réalisé Fight Club ? David ___ ?",
+    "c": [
      "Fincher",
-     "Cuarón"
+     "Nolan",
+     "Aronofsky",
+     "Scott"
     ],
-    "a": 2
+    "a": "Fincher"
    },
    {
-    "q": "Fight Club est adapté d'un roman écrit par :",
+    "q": "Que fabrique et vend Tyler Durden à partir de graisse humaine ? Du ___ ?",
     "c": [
-     "Chuck Palahniuk",
-     "Bret Easton Ellis",
-     "Stephen King",
-     "Cormac McCarthy"
+     "savon",
+     "parfum",
+     "beurre",
+     "cirage"
     ],
-    "a": 0
+    "a": "savon"
    },
    {
-    "q": "Quel acteur joue le narrateur ?",
+    "q": "Quelle est la nature de la relation entre le narrateur et Tyler Durden ? La même ___ ?",
     "c": [
-     "Meat Loaf",
-     "Jared Leto",
-     "Brad Pitt",
-     "Edward Norton"
+     "personne",
+     "famille",
+     "équipe",
+     "prison"
     ],
-    "a": 3
+    "a": "personne"
    },
    {
-    "q": "En quelle année Fight Club est-il sorti ?",
+    "q": "Quel prénom féminin porte la femme perturbée que fréquente le narrateur ?",
     "c": [
-     "2001",
-     "2000",
-     "1999",
-     "1997"
+     "Marla",
+     "Helena",
+     "Sarah",
+     "Chloe"
     ],
-    "a": 2
+    "a": "Marla"
    },
    {
-    "q": "Quelle est la première règle du Fight Club ?",
+    "q": "Quel est le nom du projet final visant à détruire les immeubles ? Projet ___ ? (Chaos)",
     "c": [
-     "On ne parle pas du Fight Club",
-     "Toujours frapper en premier",
-     "Le combat dure 3 rounds",
-     "Pas de chaussures"
+     "Mayhem",
+     "Chaos",
+     "Zero",
+     "Alpha"
     ],
-    "a": 0
+    "a": "Mayhem"
    },
    {
-    "q": "Quel est le nom du personnage de Brad Pitt ?",
-    "c": [
-     "Le narrateur",
-     "Marla Singer",
-     "Tyler Durden",
-     "Robert Paulson"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quelle est la révélation choquante à la fin du film ?",
-    "c": [
-     "Tyler et le narrateur sont la même personne",
-     "Tout était un rêve",
-     "Marla est morte",
-     "Le narrateur est en prison"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Qui joue Marla Singer ?",
-    "c": [
-     "Helena Bonham Carter",
-     "Carrie-Anne Moss",
-     "Angelina Jolie",
-     "Catherine Keener"
-    ],
-    "a": 0
+    "q": "En quelle année est sorti le film Fight Club ?",
+    "a": "1999"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cinema_015",
@@ -2898,86 +2866,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a réalisé Les Dents de la Mer ?",
-    "c": [
-     "Dante",
-     "Columbus",
-     "Besson",
-     "Spielberg"
-    ],
-    "a": 3
+    "q": "Quel grand poisson prédateur terrorise les baigneurs dans le film ?",
+    "a": "Requin"
    },
    {
-    "q": "Les Dents de la Mer est souvent considéré comme :",
+    "q": "Quel réalisateur de Jurassic Park a réalisé Les Dents de la Mer ?",
     "c": [
-     "Le tout premier grand blockbuster estival du cinéma",
-     "Le premier film parlant de l'histoire",
-     "Le premier film en couleur",
-     "Un film resté inédit en salles"
+     "Spielberg",
+     "Cameron",
+     "Scott",
+     "Lucas"
     ],
-    "a": 0
+    "a": "Spielberg"
    },
    {
-    "q": "En quelle année le film est-il sorti ?",
+    "q": "Sur quelle sorte de lieu balnéaire les attaques ont-elles lieu ? Une ___ ?",
     "c": [
-     "1980",
-     "1975",
-     "1977",
-     "1973"
+     "plage",
+     "piscine",
+     "rivière",
+     "port"
     ],
-    "a": 1
+    "a": "plage"
    },
    {
-    "q": "Quel acteur joue le chef Brody ?",
+    "q": "Quel métier exerce Brody, le héros qui traque le requin ? Chef de la ___ ?",
     "c": [
-     "Robert Shaw",
-     "Roy Scheider",
-     "Larry Vaughn",
-     "Richard Dreyfuss"
+     "police",
+     "plage",
+     "mairie",
+     "marine"
     ],
-    "a": 1
+    "a": "police"
    },
    {
-    "q": "Quelle est la célèbre réplique de Brody voyant le requin ?",
+    "q": "Quel instrument à deux notes annonce l'arrivée du requin dans la musique culte ?",
     "c": [
-     "On le tue",
-     "C'est un grand blanc",
-     "Il est énorme",
-     "On va avoir besoin d'un plus gros bateau"
+     "Contrebasse",
+     "Violon",
+     "Piano",
+     "Trompette"
     ],
-    "a": 3
+    "a": "Contrebasse"
    },
    {
-    "q": "Quelle musique emblématique annonce l'arrivée du requin ?",
+    "q": "Quel vieux marin bourru part chasser le requin sur son bateau ? Quint aussi appelé le ___ ?",
     "c": [
-     "Une note",
-     "Deux notes (fa-mi)",
-     "Trois notes",
-     "Quatre notes"
+     "pêcheur",
+     "capitaine",
+     "marin",
+     "chasseur"
     ],
-    "a": 1
+    "a": "pêcheur"
    },
    {
-    "q": "Quel océanographe joue dans le film ?",
+    "q": "Sur quelle île fictive de Nouvelle-Angleterre se déroule le film ?",
     "c": [
-     "Brody",
-     "Hooper",
-     "Quint",
-     "Vaughn"
+     "Amity",
+     "Nantucket",
+     "Martha",
+     "Cape Cod"
     ],
-    "a": 1
+    "a": "Amity"
    },
    {
-    "q": "Combien de suites Les Dents de la Mer comptent-elles ?",
-    "c": [
-     "4",
-     "3",
-     "2",
-     "5"
-    ],
-    "a": 1
+    "q": "En quelle année est sorti Les Dents de la Mer, considéré comme le premier blockbuster ?",
+    "a": "1975"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cinema_016",
@@ -2986,86 +2943,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a réalisé E.T. ?",
+    "q": "Quel genre de créature est E.T., le héros du film ?",
     "c": [
-     "Burton",
+     "Extraterrestre",
+     "Robot",
+     "Fantôme",
+     "Mutant"
+    ],
+    "a": "Extraterrestre"
+   },
+   {
+    "q": "Que veut faire E.T. tout au long du film ? Téléphoner ___ ?",
+    "c": [
+     "maison",
+     "papa",
+     "vaisseau",
+     "école"
+    ],
+    "a": "maison"
+   },
+   {
+    "q": "Quel réalisateur de Jurassic Park a réalisé E.T. en 1982 ?",
+    "c": [
      "Spielberg",
-     "Dante",
-     "Columbus"
+     "Lucas",
+     "Zemeckis",
+     "Cameron"
     ],
-    "a": 1
+    "a": "Spielberg"
    },
    {
-    "q": "E.T. a rendu célèbre une friandise offerte au petit extraterrestre, la marque :",
+    "q": "Quel jeune garçon recueille E.T. et s'en occupe ?",
     "c": [
-     "Reese's Pieces",
-     "M&M's",
-     "Kit Kat",
-     "Skittles"
+     "Elliott",
+     "Michael",
+     "Gertie",
+     "Steve"
     ],
-    "a": 0
+    "a": "Elliott"
    },
    {
-    "q": "En quelle année E.T. est-il sorti ?",
+    "q": "Quelle friandise chocolatée sert à attirer E.T. hors de sa cachette ?",
     "c": [
-     "1982",
-     "1979",
-     "1984",
-     "1980"
+     "Bonbons",
+     "Chips",
+     "Frites",
+     "Popcorn"
     ],
-    "a": 0
+    "a": "Bonbons"
    },
    {
-    "q": "Quel acteur joue Elliott ?",
+    "q": "Quel effet marquant fait s'envoler les vélos devant la lune ? Ils ___ ?",
     "c": [
-     "Robert MacNaughton",
-     "Drew Barrymore",
-     "Henry Thomas",
-     "Peter Coyote"
+     "volent",
+     "roulent",
+     "sautent",
+     "flottent"
     ],
-    "a": 2
+    "a": "volent"
    },
    {
-    "q": "Quel cri célèbre pousse E.T. vers la fin du film ?",
+    "q": "De quelle couleur devient le doigt lumineux d'E.T. quand il guérit ?",
     "c": [
-     "E.T. est fatigué",
-     "E.T. téléphone maison",
-     "E.T. ami",
-     "E.T. veut rentrer"
+     "Rouge",
+     "Bleu",
+     "Vert",
+     "Jaune"
     ],
-    "a": 1
+    "a": "Rouge"
    },
    {
-    "q": "Comment E.T. communique-t-il avec Elliott ?",
-    "c": [
-     "Par des gestes",
-     "Par une machine",
-     "Via un lien télépathique",
-     "Par la parole"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quelle est la boisson préférée d'E.T. ?",
-    "c": [
-     "Le Coca-Cola",
-     "Le jus d'orange",
-     "Le lait",
-     "La bière"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Qui a composé la musique emblématique du film ?",
-    "c": [
-     "James Horner",
-     "Alan Silvestri",
-     "Danny Elfman",
-     "John Williams"
-    ],
-    "a": 3
+    "q": "Quelle est la durée, en minutes, du film E.T. l'extra-terrestre (1982) ?",
+    "a": "115"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cinema_017",
@@ -3074,86 +3026,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a réalisé Alien ?",
+    "q": "Quel genre de créature hostile menace l'équipage du vaisseau ?",
+    "c": [
+     "Extraterrestre",
+     "Robot",
+     "Zombie",
+     "Fantôme"
+    ],
+    "a": "Extraterrestre"
+   },
+   {
+    "q": "Quelle héroïne courageuse, jouée par Sigourney Weaver, survit à la créature ?",
+    "c": [
+     "Ripley",
+     "Sarah",
+     "Leia",
+     "Trinity"
+    ],
+    "a": "Ripley"
+   },
+   {
+    "q": "Par quelle partie du corps le bébé alien fait-il une sortie sanglante et culte ?",
+    "c": [
+     "Ventre",
+     "Tête",
+     "Dos",
+     "Bras"
+    ],
+    "a": "Ventre"
+   },
+   {
+    "q": "Quel réalisateur de Blade Runner a réalisé le premier Alien ? Ridley ___ ?",
     "c": [
      "Scott",
-     "Jeunet",
+     "Cameron",
      "Carpenter",
-     "O'Bannon"
+     "Fincher"
     ],
-    "a": 0
+    "a": "Scott"
    },
    {
-    "q": "Qui a réalisé Alien (1979) ?",
+    "q": "Quel est le nom du vaisseau spatial du premier film ?",
     "c": [
-     "David Fincher",
-     "Ridley Scott",
-     "Jean-Pierre Jeunet",
-     "James Cameron"
+     "Nostromo",
+     "Sulaco",
+     "Prometheus",
+     "Covenant"
     ],
-    "a": 1
+    "a": "Nostromo"
    },
    {
-    "q": "Quelle actrice joue Ellen Ripley ?",
+    "q": "Quel type de sang très corrosif coule dans les veines de l'alien ? De l'___ ?",
     "c": [
-     "Linda Hamilton",
-     "Carrie Fisher",
-     "Jamie Lee Curtis",
-     "Sigourney Weaver"
+     "acide",
+     "eau",
+     "huile",
+     "mercure"
     ],
-    "a": 3
+    "a": "acide"
    },
    {
-    "q": "En quelle année Alien est-il sorti ?",
+    "q": "Quel animal de compagnie Ripley sauve-t-elle du vaisseau ? Un ___ ?",
     "c": [
-     "1977",
-     "1980",
-     "1982",
-     "1979"
+     "chat",
+     "chien",
+     "oiseau",
+     "rat"
     ],
-    "a": 3
+    "a": "chat"
    },
    {
-    "q": "Comment s'appelle le vaisseau spatial dans Alien ?",
-    "c": [
-     "Le Nostromo",
-     "Le Covenant",
-     "Le Sulaco",
-     "Le Prometheus"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quelle phrase célèbre Ripley prononce-t-elle dans Aliens ?",
-    "c": [
-     "Ils arrivent",
-     "Faites-les éclater",
-     "Dégagez de son chemin, salope !",
-     "On se casse"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quel est le cycle de vie du Xenomorphe ?",
-    "c": [
-     "Spores, parasite, hôte, prédateur",
-     "Œuf, facehugger, chestburster, xénomorphe",
-     "Œuf, larve, nymphe, adulte",
-     "Œuf, chenille, pupe, adulte"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Combien de films principaux compte la saga Alien ?",
-    "c": [
-     "6",
-     "5",
-     "4",
-     "3"
-    ],
-    "a": 2
+    "q": "En quelle année est sorti le premier film Alien ?",
+    "a": "1979"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cinema_018",
@@ -3162,86 +3109,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a réalisé le premier Terminator (1984) ?",
+    "q": "Quel type de machine tueuse venue du futur est le Terminator ?",
     "c": [
-     "John McTiernan",
-     "George Miller",
-     "Ridley Scott",
-     "James Cameron"
+     "Robot",
+     "Extraterrestre",
+     "Fantôme",
+     "Mutant"
     ],
-    "a": 3
+    "a": "Robot"
    },
    {
-    "q": "Qui a réalisé le premier Terminator ?",
+    "q": "Quel acteur musclé incarne le Terminator ? Arnold ___ ?",
     "c": [
-     "James Cameron",
-     "Jonathan Mostow",
-     "David Nutter",
-     "John McTiernan"
+     "Schwarzenegger",
+     "Stallone",
+     "Van Damme",
+     "Norris"
     ],
-    "a": 0
+    "a": "Schwarzenegger"
    },
    {
-    "q": "Quel acteur joue le Terminator ?",
+    "q": "Quelle phrase culte le Terminator prononce-t-il ? « I'll be ___ » ?",
     "c": [
-     "Sylvester Stallone",
-     "Bruce Willis",
-     "Arnold Schwarzenegger",
-     "Jean-Claude Van Damme"
+     "back",
+     "here",
+     "there",
+     "home"
     ],
-    "a": 2
+    "a": "back"
    },
    {
-    "q": "En quelle année le film est-il sorti ?",
+    "q": "Quelle femme le Terminator est-il envoyé tuer ? Sarah ___ ?",
     "c": [
-     "1987",
-     "1986",
-     "1984",
-     "1982"
+     "Connor",
+     "Reese",
+     "Ripley",
+     "Weaver"
     ],
-    "a": 2
+    "a": "Connor"
    },
    {
-    "q": "Quelle est la célèbre réplique du Terminator ?",
+    "q": "Quelle intelligence artificielle militaire déclenche l'apocalypse ?",
     "c": [
-     "I'll be back",
-     "Hasta la vista, baby",
-     "Fuck you, asshole",
-     "Come with me"
+     "Skynet",
+     "HAL",
+     "Matrix",
+     "Ultron"
     ],
-    "a": 0
+    "a": "Skynet"
    },
    {
-    "q": "Quel acteur joue John Connor dans Terminator 2 ?",
+    "q": "En quel métal liquide est fait le T-1000 du deuxième film ?",
     "c": [
-     "Nick Stahl",
-     "Edward Furlong",
-     "Jai Courtney",
-     "Christian Bale"
+     "Métal",
+     "Verre",
+     "Plastique",
+     "Bois"
     ],
-    "a": 1
+    "a": "Métal"
    },
    {
-    "q": "Comment s'appelle le système d'IA qui déclenche la guerre ?",
+    "q": "Quel réalisateur de Titanic a créé Terminator ? James ___ ?",
     "c": [
-     "Colossus",
-     "AM",
-     "Ultron",
-     "Skynet"
+     "Cameron",
+     "Spielberg",
+     "Scott",
+     "Bay"
     ],
-    "a": 3
+    "a": "Cameron"
    },
    {
-    "q": "De quelle année vient le Terminator ?",
-    "c": [
-     "2029",
-     "1984",
-     "1997",
-     "2045"
-    ],
-    "a": 0
+    "q": "En quelle année est sorti le premier Terminator ?",
+    "a": "1984"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cinema_019",
@@ -3250,86 +3192,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a réalisé Gladiator ?",
+    "q": "Dans quelle grande arène de Rome les gladiateurs combattaient-ils ?",
     "c": [
-     "Mann",
-     "Scott",
-     "Jackson",
-     "Ridley Scott"
+     "Colisée",
+     "Forum",
+     "Panthéon",
+     "Cirque"
     ],
-    "a": 1
+    "a": "Colisée"
    },
    {
-    "q": "Le succès de Gladiator est souvent crédité d'avoir relancé la mode des grandes fresques historiques (« péplums ») à Hollywood. Vrai ou faux ?",
+    "q": "Quel acteur incarne le général devenu gladiateur Maximus ? Russell ___ ?",
     "c": [
-     "Vrai",
-     "Faux, le genre était déjà au sommet de sa popularité",
-     "Faux, le film est un échec commercial",
-     "Le film n'a aucun lien avec l'Antiquité"
+     "Crowe",
+     "Bale",
+     "Butler",
+     "Gibson"
     ],
-    "a": 0
+    "a": "Crowe"
    },
    {
-    "q": "Quel acteur joue Maximus ?",
+    "q": "Quel empereur cruel, joué par Joaquin Phoenix, est l'ennemi de Maximus ?",
     "c": [
-     "Richard Harris",
-     "Oliver Reed",
-     "Russell Crowe",
-     "Joaquin Phoenix"
-    ],
-    "a": 2
-   },
-   {
-    "q": "En quelle année Gladiator est-il sorti ?",
-    "c": [
-     "2000",
-     "2001",
-     "1999",
-     "2002"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quel empereur romain est le méchant du film ?",
-    "c": [
+     "Commode",
      "Néron",
      "Caligula",
-     "Marc Aurèle",
-     "Commode"
+     "César"
     ],
-    "a": 3
+    "a": "Commode"
    },
    {
-    "q": "Combien d'Oscars a remporté Gladiator ?",
+    "q": "Quel geste du pouce décidait du sort du gladiateur vaincu ? Le pouce vers le ___ ?",
     "c": [
-     "5",
-     "4",
-     "3",
-     "6"
+     "bas",
+     "haut",
+     "côté",
+     "ciel"
     ],
-    "a": 0
+    "a": "bas"
    },
    {
-    "q": "Quelle phrase répète Maximus à ses soldats ?",
+    "q": "Quel réalisateur d'Alien a réalisé Gladiator ? Ridley ___ ?",
     "c": [
-     "Nous nous retrouverons",
-     "Pour la gloire de Rome",
-     "Je vengerai ma famille",
-     "Unis sous un même nom"
+     "Scott",
+     "Nolan",
+     "Cameron",
+     "Spielberg"
     ],
-    "a": 3
+    "a": "Scott"
    },
    {
-    "q": "Qui a composé la musique du film ?",
+    "q": "Quelle phrase Maximus lance-t-il ? « Êtes-vous pas ___ ? » (divertis)",
     "c": [
-     "John Williams",
-     "Hans Zimmer",
-     "James Horner",
-     "Ennio Morricone"
+     "divertis",
+     "contents",
+     "prêts",
+     "fiers"
     ],
-    "a": 1
+    "a": "divertis"
+   },
+   {
+    "q": "Dans quel empire antique se déroule le film Gladiator ?",
+    "c": [
+     "Romain",
+     "Grec",
+     "Égyptien",
+     "Perse"
+    ],
+    "a": "Romain"
+   },
+   {
+    "q": "Combien d'Oscars le film Gladiator a-t-il remportés en 2001 ?",
+    "a": "5"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cinema_020",
@@ -3338,86 +3275,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a réalisé Avatar ?",
+    "q": "De quelle couleur sont les Na'vi, habitants de la planète Pandora ?",
     "c": [
-     "Peter Jackson",
-     "Robert Rodriguez",
-     "James Cameron",
-     "Steven Spielberg"
+     "Bleus",
+     "Verts",
+     "Rouges",
+     "Jaunes"
     ],
-    "a": 2
+    "a": "Bleus"
    },
    {
-    "q": "Avatar est notamment connu pour avoir fait progresser les technologies de :",
+    "q": "Sur quelle lune luxuriante se déroule le film Avatar ?",
     "c": [
-     "Capture de mouvement et de 3D au cinéma",
-     "Animation en pâte à modeler",
-     "Doublage automatique par intelligence artificielle",
-     "Projection en noir et blanc"
-    ],
-    "a": 0
-   },
-   {
-    "q": "En quelle année le premier Avatar est-il sorti ?",
-    "c": [
-     "2009",
-     "2011",
-     "2010",
-     "2007"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quel acteur joue Jake Sully ?",
-    "c": [
-     "Stephen Lang",
-     "Sam Worthington",
-     "Zoe Saldaña",
-     "Sigourney Weaver"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Comment s'appelle la planète dans Avatar ?",
-    "c": [
-     "Endor",
-     "Arrakis",
      "Pandora",
-     "Tatooine"
+     "Endor",
+     "Naboo",
+     "Krypton"
     ],
-    "a": 2
+    "a": "Pandora"
    },
    {
-    "q": "Quel est le nom du peuple autochtone de Pandora ?",
+    "q": "Quel réalisateur de Titanic a réalisé Avatar ? James ___ ?",
     "c": [
-     "Les Na'vis",
-     "Les Pan-doriens",
-     "Les Avatars",
-     "Les Omaticayas"
+     "Cameron",
+     "Spielberg",
+     "Lucas",
+     "Scott"
     ],
-    "a": 0
+    "a": "Cameron"
    },
    {
-    "q": "Quel film a dépassé Avatar au box-office mondial ?",
+    "q": "De quel handicap physique souffre Jake Sully au début du film ? Il est ___ ?",
     "c": [
-     "Avatar 2",
-     "Titanic",
-     "Star Wars",
-     "Avengers: Endgame"
+     "paralysé",
+     "aveugle",
+     "sourd",
+     "muet"
     ],
-    "a": 3
+    "a": "paralysé"
    },
    {
-    "q": "Combien de suites Avatar sont prévues ?",
+    "q": "Comment nomme-t-on les corps hybrides pilotés à distance par les humains ? Des ___ ?",
     "c": [
-     "4",
-     "1",
-     "2",
-     "3"
+     "avatars",
+     "clones",
+     "robots",
+     "hologrammes"
     ],
-    "a": 3
+    "a": "avatars"
+   },
+   {
+    "q": "Quel ancien militaire en fauteuil est le héros ? Jake ___ ?",
+    "c": [
+     "Sully",
+     "Quaritch",
+     "Norm",
+     "Grace"
+    ],
+    "a": "Sully"
+   },
+   {
+    "q": "Quels grands arbres sacrés les Na'vi vénèrent-ils sur Pandora ? L'arbre-___ ?",
+    "c": [
+     "maison",
+     "mère",
+     "âmes",
+     "vie"
+    ],
+    "a": "maison"
+   },
+   {
+    "q": "En quelle année est sorti le premier film Avatar, longtemps plus gros succès du cinéma ?",
+    "a": "2009"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cinema_021",
