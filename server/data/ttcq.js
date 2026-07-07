@@ -2010,18 +2010,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel genre d'animaux disparus sont ramenés à la vie dans Jurassic Park ?",
-    "a": "Dinosaure"
+    "q": "« Jurassic Park », c'est : un film, un fromage, un légume ou un appareil ménager ?",
+    "c": [
+     "un film",
+     "un fromage",
+     "un légume",
+     "un appareil ménager"
+    ],
+    "a": "un film"
    },
    {
-    "q": "Quel réalisateur de E.T. a réalisé Jurassic Park en 1993 ?",
+    "q": "Dans Jurassic Park, on voit surtout des : dinosaures, licornes, robots ou fantômes ?",
     "c": [
-     "Spielberg",
-     "Cameron",
-     "Lucas",
-     "Scott"
+     "dinosaures",
+     "licornes",
+     "robots",
+     "fantômes"
     ],
-    "a": "Spielberg"
+    "a": "dinosaures"
    },
    {
     "q": "Quel grand carnivore aux petits bras est la star du parc ? Le T-___ ?",
@@ -2081,12 +2087,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle arme laser au manche est l'arme emblématique des Jedi ? Le ___ laser ?",
-    "a": "Sabre"
+    "q": "« Star Wars », c'est : un film, un fromage, un légume ou un appareil ménager ?",
+    "c": [
+     "un film",
+     "un fromage",
+     "un légume",
+     "un appareil ménager"
+    ],
+    "a": "un film"
    },
    {
-    "q": "Comment s'appelle le petit robot bleu et blanc qui siffle ? R2-___ ?",
-    "a": "D2"
+    "q": "Star Wars se passe : dans l'espace, à la piscine, au supermarché ou à la ferme ?",
+    "c": [
+     "dans l'espace",
+     "à la piscine",
+     "au supermarché",
+     "à la ferme"
+    ],
+    "a": "dans l'espace"
    },
    {
     "q": "Quel méchant respirant fort porte un masque et une cape noire ? Dark ___ ?",
@@ -2146,18 +2164,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel jeune sorcier à lunettes et cicatrice est le héros de la saga ?",
-    "a": "Harry"
+    "q": "« Harry Potter », c'est : un film, un fromage, un légume ou un appareil ménager ?",
+    "c": [
+     "un film",
+     "un fromage",
+     "un légume",
+     "un appareil ménager"
+    ],
+    "a": "un film"
    },
    {
-    "q": "Comment s'appelle l'école de sorcellerie où étudie Harry ?",
+    "q": "Harry Potter est un jeune : sorcier, plombier, cuisinier ou pompiste ?",
     "c": [
-     "Poudlard",
-     "Beauxbâtons",
-     "Durmstrang",
-     "Salem"
+     "sorcier",
+     "plombier",
+     "cuisinier",
+     "pompiste"
     ],
-    "a": "Poudlard"
+    "a": "sorcier"
    },
    {
     "q": "Quelle amie brillante et frisée aide Harry ? Hermione ___ ?",
@@ -2217,18 +2241,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel petit être aux pieds poilus est le héros ? Un ___ ?",
+    "q": "« Le Seigneur des Anneaux », c'est : un film, un fromage, un légume ou un appareil ménager ?",
     "c": [
-     "Hobbit",
-     "Elfe",
-     "Nain",
-     "Orc"
+     "un film",
+     "un fromage",
+     "un légume",
+     "un appareil ménager"
     ],
-    "a": "Hobbit"
+    "a": "un film"
    },
    {
-    "q": "Quel objet doré et magique doit être détruit dans le film ? L'___ unique ?",
-    "a": "Anneau"
+    "q": "Dans ce film, le héros doit détruire un : anneau, grille-pain, parapluie ou ballon ?",
+    "c": [
+     "anneau",
+     "grille-pain",
+     "parapluie",
+     "ballon"
+    ],
+    "a": "anneau"
    },
    {
     "q": "Quel hobbit porteur de l'anneau est le héros ? Frodon ___ ?",
@@ -2294,18 +2324,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel milliardaire en armure de fer est joué par Robert Downey Jr ? Iron ___ ?",
-    "a": "Man"
+    "q": "« les films Marvel », c'est : un film, un fromage, un légume ou un appareil ménager ?",
+    "c": [
+     "un film",
+     "un fromage",
+     "un légume",
+     "un appareil ménager"
+    ],
+    "a": "un film"
    },
    {
-    "q": "Quel super-héros lance des toiles et grimpe aux murs ? ___-Man ?",
+    "q": "Les films Marvel racontent des : super-héros, recettes de cuisine, bulletins météo ou tutos jardinage ?",
     "c": [
-     "Spider",
-     "Ant",
-     "Iron",
-     "Aqua"
+     "super-héros",
+     "recettes de cuisine",
+     "bulletins météo",
+     "tutos jardinage"
     ],
-    "a": "Spider"
+    "a": "super-héros"
    },
    {
     "q": "Quel dieu nordique du tonnerre porte un marteau chez Marvel ?",
@@ -2365,12 +2401,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel grand paquebot insubmersible coule dans le film ?",
-    "a": "Titanic"
+    "q": "« Titanic », c'est : un film, un fromage, un légume ou un appareil ménager ?",
+    "c": [
+     "un film",
+     "un fromage",
+     "un légume",
+     "un appareil ménager"
+    ],
+    "a": "un film"
    },
    {
-    "q": "Quel jeune héros pauvre est joué par Leonardo DiCaprio ?",
-    "a": "Jack"
+    "q": "Titanic raconte l'histoire d'un grand : paquebot, tracteur, vélo ou avion en papier ?",
+    "c": [
+     "paquebot",
+     "tracteur",
+     "vélo",
+     "avion en papier"
+    ],
+    "a": "paquebot"
    },
    {
     "q": "Quelle jeune femme de la haute société tombe amoureuse de Jack ?",
@@ -2430,18 +2478,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel type de machine à voyager dans le temps est faite à partir d'une voiture ?",
-    "a": "DeLorean"
+    "q": "« Retour vers le futur », c'est : un film, un fromage, un légume ou un appareil ménager ?",
+    "c": [
+     "un film",
+     "un fromage",
+     "un légume",
+     "un appareil ménager"
+    ],
+    "a": "un film"
    },
    {
-    "q": "Quel adolescent voyage dans le temps ? Marty ___ ?",
+    "q": "Dans ce film, on voyage dans le : temps, métro, ascenseur ou toboggan ?",
     "c": [
-     "McFly",
-     "Brown",
-     "Tannen",
-     "Parker"
+     "temps",
+     "métro",
+     "ascenseur",
+     "toboggan"
     ],
-    "a": "McFly"
+    "a": "temps"
    },
    {
     "q": "Quel savant excentrique aux cheveux blancs a inventé la machine ? Doc ___ ?",
@@ -2495,18 +2549,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel accessoire en cuir Indiana Jones manie-t-il comme une arme ?",
-    "a": "Fouet"
+    "q": "« Indiana Jones », c'est : un film, un fromage, un légume ou un appareil ménager ?",
+    "c": [
+     "un film",
+     "un fromage",
+     "un légume",
+     "un appareil ménager"
+    ],
+    "a": "un film"
    },
    {
-    "q": "Quel type de couvre-chef en feutre porte toujours Indiana Jones ?",
+    "q": "Indiana Jones est un : aventurier, boulanger, banquier ou dentiste ?",
     "c": [
-     "Chapeau",
-     "Casquette",
-     "Béret",
-     "Bonnet"
+     "aventurier",
+     "boulanger",
+     "banquier",
+     "dentiste"
     ],
-    "a": "Chapeau"
+    "a": "aventurier"
    },
    {
     "q": "Quel acteur de Star Wars incarne Indiana Jones ? Harrison ___ ?",
@@ -2572,24 +2632,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle friandise Forrest compare-t-il à la vie ? La vie est une boîte de ___ ?",
+    "q": "« Forrest Gump », c'est : un film, un fromage, un légume ou un appareil ménager ?",
     "c": [
-     "chocolats",
-     "bonbons",
-     "biscuits",
-     "caramels"
+     "un film",
+     "un fromage",
+     "un légume",
+     "un appareil ménager"
     ],
-    "a": "chocolats"
+    "a": "un film"
    },
    {
-    "q": "Quel acteur, deux fois oscarisé, incarne Forrest Gump ? Tom ___ ?",
+    "q": "Forrest Gump aime beaucoup : courir, dormir, repasser ou bricoler ?",
     "c": [
-     "Hanks",
-     "Cruise",
-     "Hopkins",
-     "Cage"
+     "courir",
+     "dormir",
+     "repasser",
+     "bricoler"
     ],
-    "a": "Hanks"
+    "a": "courir"
    },
    {
     "q": "Quel sport de raquette Forrest pratique-t-il pour la Chine ? Le ping-___ ?",
@@ -2649,18 +2709,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle organisation criminelle italo-américaine est au cœur du film ?",
-    "a": "Mafia"
+    "q": "« Le Parrain », c'est : un film, un fromage, un légume ou un appareil ménager ?",
+    "c": [
+     "un film",
+     "un fromage",
+     "un légume",
+     "un appareil ménager"
+    ],
+    "a": "un film"
    },
    {
-    "q": "Quel est le nom de la famille mafieuse du film ? Les ___ ?",
+    "q": "Le Parrain parle de la : mafia, boulangerie, chorale ou piscine municipale ?",
     "c": [
-     "Corleone",
-     "Soprano",
-     "Gambino",
-     "Barzini"
+     "mafia",
+     "boulangerie",
+     "chorale",
+     "piscine municipale"
     ],
-    "a": "Corleone"
+    "a": "mafia"
    },
    {
     "q": "Quel acteur légendaire joue le parrain Vito Corleone ? Marlon ___ ?",
@@ -2726,24 +2792,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel réalisateur, adepte des dialogues cultes, a réalisé Pulp Fiction ? Quentin ___ ?",
+    "q": "« Pulp Fiction », c'est : un film, un fromage, un légume ou un appareil ménager ?",
     "c": [
-     "Tarantino",
-     "Scorsese",
-     "Fincher",
-     "Coen"
+     "un film",
+     "un fromage",
+     "un légume",
+     "un appareil ménager"
     ],
-    "a": "Tarantino"
+    "a": "un film"
    },
    {
-    "q": "Quel acteur joue le tueur Vincent Vega ? John ___ ?",
+    "q": "Pulp Fiction est un film plutôt : violent et culte, pour bébés, muet ou en dessin animé ?",
     "c": [
-     "Travolta",
-     "Jackson",
-     "Willis",
-     "Roth"
+     "violent et culte",
+     "pour bébés",
+     "muet",
+     "en dessin animé"
     ],
-    "a": "Travolta"
+    "a": "violent et culte"
    },
    {
     "q": "Quel type de danse Vincent et Mia exécutent-ils dans le restaurant ? Le ___ ?",
@@ -2809,24 +2875,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Dans quel état, propice aux rêves, se déroule l'essentiel du film ?",
+    "q": "« Inception », c'est : un film, un fromage, un légume ou un appareil ménager ?",
     "c": [
-     "Sommeil",
-     "Coma",
-     "Transe",
-     "Hypnose"
+     "un film",
+     "un fromage",
+     "un légume",
+     "un appareil ménager"
     ],
-    "a": "Sommeil"
+    "a": "un film"
    },
    {
-    "q": "Quel réalisateur d'Interstellar a réalisé Inception ? Christopher ___ ?",
+    "q": "Inception se passe dans les : rêves, embouteillages, supermarchés ou toilettes ?",
     "c": [
-     "Nolan",
-     "Villeneuve",
-     "Fincher",
-     "Scott"
+     "rêves",
+     "embouteillages",
+     "supermarchés",
+     "toilettes"
     ],
-    "a": "Nolan"
+    "a": "rêves"
    },
    {
     "q": "Quel acteur incarne l'extracteur de rêves Dom Cobb ? Leonardo ___ ?",
@@ -2886,18 +2952,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "De quelle couleur est la pilule que Neo choisit pour connaître la vérité ?",
+    "q": "« Matrix », c'est : un film, un fromage, un légume ou un appareil ménager ?",
     "c": [
-     "Rouge",
-     "Bleue",
-     "Verte",
-     "Jaune"
+     "un film",
+     "un fromage",
+     "un légume",
+     "un appareil ménager"
     ],
-    "a": "Rouge"
+    "a": "un film"
    },
    {
-    "q": "Quel personnage élu est joué par Keanu Reeves ?",
-    "a": "Neo"
+    "q": "Dans Matrix, le héros choisit une : pilule, pizza, chaussette ou brosse à dents ?",
+    "c": [
+     "pilule",
+     "pizza",
+     "chaussette",
+     "brosse à dents"
+    ],
+    "a": "pilule"
    },
    {
     "q": "Quel mentor en lunettes noires guide Neo ?",
@@ -2963,24 +3035,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la première règle du Fight Club ? Il est interdit d'en ___ ?",
+    "q": "« Fight Club », c'est : un film, un fromage, un légume ou un appareil ménager ?",
     "c": [
-     "parler",
-     "sortir",
-     "rire",
-     "partir"
+     "un film",
+     "un fromage",
+     "un légume",
+     "un appareil ménager"
     ],
-    "a": "parler"
+    "a": "un film"
    },
    {
-    "q": "Quel acteur au corps sculpté incarne Tyler Durden ? Brad ___ ?",
+    "q": "Fight Club parle d'un club de : combat, tricot, échecs ou pâtisserie ?",
     "c": [
-     "Pitt",
-     "Norton",
-     "Cruise",
-     "Damon"
+     "combat",
+     "tricot",
+     "échecs",
+     "pâtisserie"
     ],
-    "a": "Pitt"
+    "a": "combat"
    },
    {
     "q": "Quel réalisateur de Seven a réalisé Fight Club ? David ___ ?",
@@ -3046,18 +3118,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel grand poisson prédateur terrorise les baigneurs dans le film ?",
-    "a": "Requin"
+    "q": "« Les Dents de la Mer », c'est : un film, un fromage, un légume ou un appareil ménager ?",
+    "c": [
+     "un film",
+     "un fromage",
+     "un légume",
+     "un appareil ménager"
+    ],
+    "a": "un film"
    },
    {
-    "q": "Quel réalisateur de Jurassic Park a réalisé Les Dents de la Mer ?",
+    "q": "Le danger, dans ce film, est un grand : requin, lapin, escargot ou pigeon ?",
     "c": [
-     "Spielberg",
-     "Cameron",
-     "Scott",
-     "Lucas"
+     "requin",
+     "lapin",
+     "escargot",
+     "pigeon"
     ],
-    "a": "Spielberg"
+    "a": "requin"
    },
    {
     "q": "Sur quelle sorte de lieu balnéaire les attaques ont-elles lieu ? Une ___ ?",
@@ -3123,24 +3201,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel genre de créature est E.T., le héros du film ?",
+    "q": "« E.T. », c'est : un film, un fromage, un légume ou un appareil ménager ?",
     "c": [
-     "Extraterrestre",
-     "Robot",
-     "Fantôme",
-     "Mutant"
+     "un film",
+     "un fromage",
+     "un légume",
+     "un appareil ménager"
     ],
-    "a": "Extraterrestre"
+    "a": "un film"
    },
    {
-    "q": "Que veut faire E.T. tout au long du film ? Téléphoner ___ ?",
+    "q": "E.T. est un : extraterrestre, boulanger, chien ou robot aspirateur ?",
     "c": [
-     "maison",
-     "papa",
-     "vaisseau",
-     "école"
+     "extraterrestre",
+     "boulanger",
+     "chien",
+     "robot aspirateur"
     ],
-    "a": "maison"
+    "a": "extraterrestre"
    },
    {
     "q": "Quel réalisateur de Jurassic Park a réalisé E.T. en 1982 ?",
@@ -3206,24 +3284,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel genre de créature hostile menace l'équipage du vaisseau ?",
+    "q": "« Alien », c'est : un film, un fromage, un légume ou un appareil ménager ?",
     "c": [
-     "Extraterrestre",
-     "Robot",
-     "Zombie",
-     "Fantôme"
+     "un film",
+     "un fromage",
+     "un légume",
+     "un appareil ménager"
     ],
-    "a": "Extraterrestre"
+    "a": "un film"
    },
    {
-    "q": "Quelle héroïne courageuse, jouée par Sigourney Weaver, survit à la créature ?",
+    "q": "Alien fait peur avec une créature venue de : l'espace, la cave, la cuisine ou la piscine ?",
     "c": [
-     "Ripley",
-     "Sarah",
-     "Leia",
-     "Trinity"
+     "l'espace",
+     "la cave",
+     "la cuisine",
+     "la piscine"
     ],
-    "a": "Ripley"
+    "a": "l'espace"
    },
    {
     "q": "Par quelle partie du corps le bébé alien fait-il une sortie sanglante et culte ?",
@@ -3289,24 +3367,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel type de machine tueuse venue du futur est le Terminator ?",
+    "q": "« Terminator », c'est : un film, un fromage, un légume ou un appareil ménager ?",
     "c": [
-     "Robot",
-     "Extraterrestre",
-     "Fantôme",
-     "Mutant"
+     "un film",
+     "un fromage",
+     "un légume",
+     "un appareil ménager"
     ],
-    "a": "Robot"
+    "a": "un film"
    },
    {
-    "q": "Quel acteur musclé incarne le Terminator ? Arnold ___ ?",
+    "q": "Le Terminator est un : robot, boulanger, facteur ou professeur de yoga ?",
     "c": [
-     "Schwarzenegger",
-     "Stallone",
-     "Van Damme",
-     "Norris"
+     "robot",
+     "boulanger",
+     "facteur",
+     "professeur de yoga"
     ],
-    "a": "Schwarzenegger"
+    "a": "robot"
    },
    {
     "q": "Quelle phrase culte le Terminator prononce-t-il ? « I'll be ___ » ?",
@@ -3372,24 +3450,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Dans quelle grande arène de Rome les gladiateurs combattaient-ils ?",
+    "q": "« Gladiator », c'est : un film, un fromage, un légume ou un appareil ménager ?",
     "c": [
-     "Colisée",
-     "Forum",
-     "Panthéon",
-     "Cirque"
+     "un film",
+     "un fromage",
+     "un légume",
+     "un appareil ménager"
     ],
-    "a": "Colisée"
+    "a": "un film"
    },
    {
-    "q": "Quel acteur incarne le général devenu gladiateur Maximus ? Russell ___ ?",
+    "q": "Gladiator se passe dans la : Rome antique, station spatiale, jungle ou banquise ?",
     "c": [
-     "Crowe",
-     "Bale",
-     "Butler",
-     "Gibson"
+     "Rome antique",
+     "station spatiale",
+     "jungle",
+     "banquise"
     ],
-    "a": "Crowe"
+    "a": "Rome antique"
    },
    {
     "q": "Quel empereur cruel, joué par Joaquin Phoenix, est l'ennemi de Maximus ?",
@@ -3455,24 +3533,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "De quelle couleur sont les Na'vi, habitants de la planète Pandora ?",
+    "q": "« Avatar », c'est : un film, un fromage, un légume ou un appareil ménager ?",
     "c": [
-     "Bleus",
-     "Verts",
-     "Rouges",
-     "Jaunes"
+     "un film",
+     "un fromage",
+     "un légume",
+     "un appareil ménager"
     ],
-    "a": "Bleus"
+    "a": "un film"
    },
    {
-    "q": "Sur quelle lune luxuriante se déroule le film Avatar ?",
+    "q": "Dans Avatar, les habitants de Pandora sont : bleus, à carreaux, transparents ou en bois ?",
     "c": [
-     "Pandora",
-     "Endor",
-     "Naboo",
-     "Krypton"
+     "bleus",
+     "à carreaux",
+     "transparents",
+     "en bois"
     ],
-    "a": "Pandora"
+    "a": "bleus"
    },
    {
     "q": "Quel réalisateur de Titanic a réalisé Avatar ? James ___ ?",
@@ -3538,24 +3616,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "À travers quel objet cosmique les héros voyagent-ils vers d'autres galaxies ? Un trou ___ ?",
+    "q": "« Interstellar », c'est : un film, un fromage, un légume ou un appareil ménager ?",
     "c": [
-     "ver",
-     "noir",
-     "blanc",
-     "bleu"
+     "un film",
+     "un fromage",
+     "un légume",
+     "un appareil ménager"
     ],
-    "a": "ver"
+    "a": "un film"
    },
    {
-    "q": "Quel réalisateur d'Inception a réalisé Interstellar ? Christopher ___ ?",
+    "q": "Interstellar parle surtout de voyages dans : l'espace, le métro, la forêt ou la piscine ?",
     "c": [
-     "Nolan",
-     "Villeneuve",
-     "Scott",
-     "Cuarón"
+     "l'espace",
+     "le métro",
+     "la forêt",
+     "la piscine"
     ],
-    "a": "Nolan"
+    "a": "l'espace"
    },
    {
     "q": "Quel acteur incarne l'astronaute Cooper ? Matthew ___ ?",
@@ -3627,18 +3705,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Dans quelle ville du Maroc se déroule ce film culte de 1942 ?",
-    "a": "Casablanca"
+    "q": "« Casablanca », c'est : un film, un fromage, un légume ou un appareil ménager ?",
+    "c": [
+     "un film",
+     "un fromage",
+     "un légume",
+     "un appareil ménager"
+    ],
+    "a": "un film"
    },
    {
-    "q": "Quel acteur légendaire incarne Rick, le tenancier du café ? Humphrey ___ ?",
+    "q": "Casablanca est un film : ancien et en noir et blanc, en 3D, muet et récent ou en dessin animé ?",
     "c": [
-     "Bogart",
-     "Grant",
-     "Gable",
-     "Cooper"
+     "ancien et en noir et blanc",
+     "en 3D",
+     "muet et récent",
+     "en dessin animé"
     ],
-    "a": "Bogart"
+    "a": "ancien et en noir et blanc"
    },
    {
     "q": "Comment s'appelle le bar tenu par Rick ? Le ___'s Café Américain ?",
@@ -3704,24 +3788,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Dans quelle pièce d'eau a lieu le meurtre le plus célèbre du film ? La ___ ?",
+    "q": "« Psychose », c'est : un film, un fromage, un légume ou un appareil ménager ?",
     "c": [
-     "douche",
-     "baignoire",
-     "piscine",
-     "cuisine"
+     "un film",
+     "un fromage",
+     "un légume",
+     "un appareil ménager"
     ],
-    "a": "douche"
+    "a": "un film"
    },
    {
-    "q": "Quel maître du suspense britannique a réalisé Psychose ? Alfred ___ ?",
+    "q": "Psychose est un film qui fait : peur, rire aux éclats, dormir ou danser ?",
     "c": [
-     "Hitchcock",
-     "Kubrick",
-     "Welles",
-     "Lang"
+     "peur",
+     "rire aux éclats",
+     "dormir",
+     "danser"
     ],
-    "a": "Hitchcock"
+    "a": "peur"
    },
    {
     "q": "Quel type d'établissement tient le personnage de Norman Bates ? Un ___ ?",
@@ -3787,18 +3871,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Combien de péchés capitaux structurent les meurtres du film ?",
-    "a": "7"
+    "q": "« Seven », c'est : un film, un fromage, un légume ou un appareil ménager ?",
+    "c": [
+     "un film",
+     "un fromage",
+     "un légume",
+     "un appareil ménager"
+    ],
+    "a": "un film"
    },
    {
-    "q": "Quel réalisateur de Fight Club a réalisé Seven ? David ___ ?",
+    "q": "Seven est un film policier avec un : tueur en série, clown gentil, chef cuisinier ou magicien ?",
     "c": [
-     "Fincher",
-     "Nolan",
-     "Scott",
-     "Aronofsky"
+     "tueur en série",
+     "clown gentil",
+     "chef cuisinier",
+     "magicien"
     ],
-    "a": "Fincher"
+    "a": "tueur en série"
    },
    {
     "q": "Quel jeune inspecteur, joué par Brad Pitt, enquête ? L'inspecteur ___ ?",
@@ -3864,24 +3954,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel jeune fermier de Tatooine devient un puissant Jedi ? Luke ___ ?",
+    "q": "« La Guerre des Étoiles », c'est : un film, un fromage, un légume ou un appareil ménager ?",
     "c": [
-     "Skywalker",
-     "Solo",
-     "Kenobi",
-     "Antilles"
+     "un film",
+     "un fromage",
+     "un légume",
+     "un appareil ménager"
     ],
-    "a": "Skywalker"
+    "a": "un film"
    },
    {
-    "q": "Comment s'appelle le grand vaisseau-station capable de détruire une planète ? L'Étoile ___ ?",
+    "q": "La Guerre des Étoiles se passe : dans l'espace, dans un jardin, à la mer ou au bureau ?",
     "c": [
-     "Noire",
-     "de la Mort",
-     "Rouge",
-     "Impériale"
+     "dans l'espace",
+     "dans un jardin",
+     "à la mer",
+     "au bureau"
     ],
-    "a": "Noire"
+    "a": "dans l'espace"
    },
    {
     "q": "Quel grand humanoïde poilu est le copilote de Han Solo ?",
@@ -3947,24 +4037,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Dans quelle ville sombre et corrompue Batman veille-t-il ? ___ City ?",
+    "q": "« Batman », c'est : un film, un fromage, un légume ou un appareil ménager ?",
     "c": [
-     "Gotham",
-     "Metropolis",
-     "Star",
-     "Central"
+     "un film",
+     "un fromage",
+     "un légume",
+     "un appareil ménager"
     ],
-    "a": "Gotham"
+    "a": "un film"
    },
    {
-    "q": "Quel animal nocturne inspire le costume du héros ? Une chauve-___ ?",
+    "q": "Batman s'habille en : chauve-souris, poule, girafe ou coccinelle ?",
     "c": [
-     "souris",
-     "araignée",
-     "chatte",
-     "grenouille"
+     "chauve-souris",
+     "poule",
+     "girafe",
+     "coccinelle"
     ],
-    "a": "souris"
+    "a": "chauve-souris"
    },
    {
     "q": "Quel est le véritable nom de Batman ? Bruce ___ ?",
@@ -4030,24 +4120,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel numéro de matricule d'agent secret porte James Bond ? ___ ?",
+    "q": "« James Bond », c'est : un film, un fromage, un légume ou un appareil ménager ?",
     "c": [
-     "007",
-     "008",
-     "001",
-     "009"
+     "un film",
+     "un fromage",
+     "un légume",
+     "un appareil ménager"
     ],
-    "a": "007"
+    "a": "un film"
    },
    {
-    "q": "Quel cocktail Bond commande-t-il « au shaker, pas à la cuillère » ? Un ___ Martini ?",
+    "q": "James Bond est un : espion, jardinier, pompier ou boulanger ?",
     "c": [
-     "Vodka",
-     "Gin",
-     "Rhum",
-     "Dry"
+     "espion",
+     "jardinier",
+     "pompier",
+     "boulanger"
     ],
-    "a": "Vodka"
+    "a": "espion"
    },
    {
     "q": "Pour quel service secret britannique travaille James Bond ?",
@@ -4113,24 +4203,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "De quel type d'objets, qui prennent vie, parle le film ? Des ___ ?",
+    "q": "« Toy Story », c'est : un film, un fromage, un légume ou un appareil ménager ?",
     "c": [
-     "jouets",
-     "robots",
-     "poupées",
-     "peluches"
+     "un film",
+     "un fromage",
+     "un légume",
+     "un appareil ménager"
     ],
-    "a": "jouets"
+    "a": "un film"
    },
    {
-    "q": "Quel cow-boy à ficelle est le jouet préféré d'Andy ?",
+    "q": "Toy Story raconte la vie de : jouets, casseroles, chaussettes ou stylos ?",
     "c": [
-     "Woody",
-     "Buzz",
-     "Rex",
-     "Slinky"
+     "jouets",
+     "casseroles",
+     "chaussettes",
+     "stylos"
     ],
-    "a": "Woody"
+    "a": "jouets"
    },
    {
     "q": "Quel ranger de l'espace au cri « Vers l'infini et au-delà » rejoint la bande ? Buzz l'___ ?",
@@ -4196,18 +4286,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Combien de nains accueillent Blanche-Neige dans leur maison ?",
-    "a": "7"
+    "q": "« Blanche-Neige », c'est : un film, un fromage, un légume ou un appareil ménager ?",
+    "c": [
+     "un film",
+     "un fromage",
+     "un légume",
+     "un appareil ménager"
+    ],
+    "a": "un film"
    },
    {
-    "q": "Quel fruit empoisonné la sorcière offre-t-elle à Blanche-Neige ? Une ___ ?",
+    "q": "Blanche-Neige vit avec sept : nains, girafes, robots ou pingouins ?",
     "c": [
-     "pomme",
-     "poire",
-     "cerise",
-     "prune"
+     "nains",
+     "girafes",
+     "robots",
+     "pingouins"
     ],
-    "a": "pomme"
+    "a": "nains"
    },
    {
     "q": "Quel studio a produit ce premier long-métrage animé en 1937 ?",
@@ -4273,24 +4369,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel genre de créature verte et grognon est le héros du film ?",
+    "q": "« Shrek », c'est : un film, un fromage, un légume ou un appareil ménager ?",
     "c": [
-     "Ogre",
-     "Troll",
-     "Géant",
-     "Gobelin"
+     "un film",
+     "un fromage",
+     "un légume",
+     "un appareil ménager"
     ],
-    "a": "Ogre"
+    "a": "un film"
    },
    {
-    "q": "Quel âne bavard accompagne Shrek dans son aventure ?",
+    "q": "Shrek est un : ogre vert, prince charmant, robot ou poisson ?",
     "c": [
-     "Âne",
-     "Chat",
-     "Dragon",
-     "Cheval"
+     "ogre vert",
+     "prince charmant",
+     "robot",
+     "poisson"
     ],
-    "a": "Âne"
+    "a": "ogre vert"
    },
    {
     "q": "Quelle princesse Shrek doit-il d'abord aller délivrer ?",
