@@ -23124,84 +23124,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Quelle est la substance active principale du cannabis ?",
+    "q": "De quelle plante provient le cannabis ? Le ___ ?",
     "c": [
-     "Le THC (tétrahydrocannabinol)",
-     "L'alcool",
-     "La caféine",
-     "La nicotine"
+     "chanvre",
+     "pavot",
+     "coca",
+     "tabac"
     ],
-    "a": "Le THC (tétrahydrocannabinol)"
+    "a": "chanvre"
    },
    {
-    "q": "Le cannabis est-il légal en France ?",
+    "q": "Comment fume-t-on couramment le cannabis, roulé avec du tabac ? Un ___ ?",
     "c": [
-     "Oui, à usage médical uniquement",
-     "Oui, à usage récréatif",
-     "Oui, totalement",
-     "Non, c'est interdit"
+     "joint",
+     "cigare",
+     "narguilé",
+     "pipe à eau seule"
     ],
-    "a": "Non, c'est interdit"
+    "a": "joint"
    },
    {
-    "q": "Quels sont les effets à court terme du cannabis ?",
+    "q": "Quelle molécule psychoactive principale du cannabis provoque le « planant » ? Le ___ ?",
     "c": [
-     "Hyperactivité",
-     "Euphorie, relaxation, altération des perceptions",
-     "Somnolence",
-     "Agitation"
+     "THC",
+     "CBD",
+     "LSD",
+     "GHB"
     ],
-    "a": "Euphorie, relaxation, altération des perceptions"
+    "a": "THC"
    },
    {
-    "q": "Qu'est-ce que le CBD ?",
+    "q": "Quelle molécule du cannabis, non planante, est vendue légalement en France ? Le ___ ?",
     "c": [
-     "Héroïne",
-     "Drogue dure",
-     "THC synthétique",
-     "Cannabidiol, une molécule non psychotrope du cannabis"
+     "CBD",
+     "THC",
+     "MDMA",
+     "DMT"
     ],
-    "a": "Cannabidiol, une molécule non psychotrope du cannabis"
+    "a": "CBD"
    },
    {
-    "q": "Le cannabis peut-il créer une dépendance ?",
+    "q": "Quelle forme résineuse et compacte du cannabis est appelée ___ ?",
     "c": [
-     "Rarement",
-     "Uniquement physique",
-     "Non, aucune dépendance",
-     "Oui, une dépendance psychique peut se développer"
+     "haschich",
+     "buvard",
+     "cristal",
+     "champignon"
     ],
-    "a": "Oui, une dépendance psychique peut se développer"
+    "a": "haschich"
    },
    {
-    "q": "Quels sont les risques du cannabis sur la santé mentale ?",
+    "q": "Dans quel usage médical encadré le cannabis est-il parfois prescrit ? Contre la ___ ?",
     "c": [
-     "Aucun risque",
-     "Bienfaits",
-     "Anxiété, dépression, psychose chez les prédisposés",
-     "Uniquement physique"
+     "douleur",
+     "fièvre",
+     "carie",
+     "myopie"
     ],
-    "a": "Anxiété, dépression, psychose chez les prédisposés"
+    "a": "douleur"
    },
    {
-    "q": "Dans quels pays le cannabis est-il légalisé ?",
+    "q": "Quel système de récepteurs du corps humain le THC active-t-il ? Le système ___ ?",
     "c": [
-     "Tous les pays",
-     "Canada, Uruguay, certains états USA, Allemagne",
-     "Uniquement en Amérique",
-     "Aucun"
+     "endocannabinoïde",
+     "digestif",
+     "lymphatique",
+     "osseux"
     ],
-    "a": "Canada, Uruguay, certains états USA, Allemagne"
+    "a": "endocannabinoïde"
    },
    {
-    "q": "Le cannabis a-t-il des usages médicinaux ?",
-    "c": [
-     "Non, aucun",
-     "Oui, contre la douleur, les nausées, certaines maladies",
-     "Uniquement en oncologie",
-     "Oui, mais inefficace"
-    ],
-    "a": "Oui, contre la douleur, les nausées, certaines maladies"
+    "q": "En quelle année l'Uruguay est-il devenu le premier pays à légaliser totalement le cannabis récréatif ?",
+    "a": "2013"
    }
   ],
   "rw": true
@@ -23213,84 +23207,84 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "D'où provient la cocaïne ?",
+    "q": "De quelle plante d'Amérique du Sud la cocaïne est-elle extraite ? La ___ ?",
     "c": [
-     "Du pavot à opium",
-     "Du chanvre",
-     "Des feuilles de coca cultivées en Amérique du Sud",
-     "Des champignons"
+     "coca",
+     "canne",
+     "vigne",
+     "menthe"
     ],
-    "a": "Des feuilles de coca cultivées en Amérique du Sud"
+    "a": "coca"
    },
    {
-    "q": "Comment se présente la cocaïne ?",
+    "q": "Sous quelle forme la cocaïne se présente-t-elle souvent ? Une ___ blanche ?",
     "c": [
-     "Comprimé",
-     "Liquide",
-     "Poudre blanche cristalline",
-     "Herbe séchée"
+     "poudre",
+     "gélule",
+     "feuille verte",
+     "huile"
     ],
-    "a": "Poudre blanche cristalline"
+    "a": "poudre"
    },
    {
-    "q": "Quels sont les effets de la cocaïne ?",
+    "q": "Quel type d'effet stimulant la cocaïne produit-elle sur le système nerveux ? Un effet ___ ?",
     "c": [
-     "Excitation, euphorie, augmentation de l'énergie",
-     "Relaxation",
-     "Somnolence",
-     "Sédation"
+     "excitant",
+     "calmant",
+     "endormant",
+     "anesthésiant total"
     ],
-    "a": "Excitation, euphorie, augmentation de l'énergie"
+    "a": "excitant"
    },
    {
-    "q": "Qu'est-ce que le crack ?",
+    "q": "Quel organe la cocaïne met-elle gravement en danger par son action stimulante ? Le ___ ?",
     "c": [
-     "Cocaïne transformée pour être fumée",
-     "Cocaïne pure",
-     "Cocaïne diluée",
-     "Cocaïne injectable"
+     "cœur",
+     "genou",
+     "coude",
+     "cheveu"
     ],
-    "a": "Cocaïne transformée pour être fumée"
+    "a": "cœur"
    },
    {
-    "q": "La cocaïne crée-t-elle une dépendance rapide ?",
+    "q": "Quel neurotransmetteur du plaisir la cocaïne fait-elle massivement augmenter ? La ___ ?",
     "c": [
-     "Uniquement physique",
-     "Aucune dépendance",
-     "Oui, une dépendance psychique peut s'installer très vite",
-     "Non, lentement"
+     "dopamine",
+     "insuline",
+     "mélatonine",
+     "kératine"
     ],
-    "a": "Oui, une dépendance psychique peut s'installer très vite"
+    "a": "dopamine"
    },
    {
-    "q": "Quels sont les risques cardiovasculaires de la cocaïne ?",
+    "q": "Dans quel massif montagneux d'Amérique du Sud la coca est-elle cultivée traditionnellement ? Les ___ ?",
     "c": [
-     "Hypotension",
-     "Infarctus, AVC, hypertension, arythmies",
-     "Uniquement tachycardie",
-     "Aucun"
+     "Andes",
+     "Alpes",
+     "Rocheuses",
+     "Oural"
     ],
-    "a": "Infarctus, AVC, hypertension, arythmies"
+    "a": "Andes"
    },
    {
-    "q": "Comment la cocaïne est-elle consommée ?",
+    "q": "Comment appelle-t-on l'état de manque et de besoin irrépressible d'une drogue ? La ___ ?",
     "c": [
-     "Uniquement sniffée",
-     "Sniffée, fumée, injectée",
-     "Uniquement fumée",
-     "Uniquement en comprimé"
+     "dépendance",
+     "guérison",
+     "immunité",
+     "tolérance seule"
     ],
-    "a": "Sniffée, fumée, injectée"
+    "a": "dépendance"
    },
    {
-    "q": "Qu'il est le trafic de cocaïne dans le monde ?",
+    "q": "Vers quel siècle la cocaïne a-t-elle été isolée pour la première fois par un chimiste ? Le XIX___ ?",
     "c": [
-     "Un des trafics les plus lucratifs, plusieurs milliards de dollars",
-     "Local",
-     "Régional",
-     "Faible"
+     "e",
+     "Ier",
+     "IIe",
+     "IIIe"
     ],
-    "a": "Un des trafics les plus lucratifs, plusieurs milliards de dollars"
+    "a": "e"
    }
   ],
   "rw": true
@@ -23302,84 +23296,84 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "De quoi dérive l'héroïne ?",
+    "q": "De quelle fleur, le pavot, l'héroïne est-elle dérivée ? Le pavot à ___ ?",
     "c": [
-     "De la morphine, extraite du pavot à opium",
-     "Des champignons",
-     "Du cannabis",
-     "De la coca"
+     "opium",
+     "parfum",
+     "graines seules",
+     "huile"
     ],
-    "a": "De la morphine, extraite du pavot à opium"
+    "a": "opium"
    },
    {
-    "q": "Comment se présente l'héroïne ?",
+    "q": "À quelle famille de drogues très addictives l'héroïne appartient-elle ? Les ___ ?",
     "c": [
-     "Comprimé",
-     "Feuilles séchées",
-     "Liquide",
-     "Poudre blanche ou brune"
+     "opiacés",
+     "stimulants",
+     "psychédéliques",
+     "solvants"
     ],
-    "a": "Poudre blanche ou brune"
+    "a": "opiacés"
    },
    {
-    "q": "Quels sont les effets de l'héroïne ?",
+    "q": "Quel mode d'usage de l'héroïne présente le plus de risques infectieux ? L'___ ?",
     "c": [
-     "Hyperactivité",
-     "Excitation",
-     "Hallucinations",
-     "Euphorie, sédation, bien-être intense"
+     "injection",
+     "inhalation seule",
+     "ingestion",
+     "application"
     ],
-    "a": "Euphorie, sédation, bien-être intense"
+    "a": "injection"
    },
    {
-    "q": "Pourquoi l'héroïne est-elle particulièrement dangereuse ?",
+    "q": "Quel médicament d'urgence peut inverser une overdose d'opiacés ? La ___ ?",
     "c": [
-     "Peu d'overdose",
-     "Faible dépendance",
-     "Risque élevé de dépendance et d'overdose mortelle",
-     "Effets bénins"
+     "naloxone",
+     "aspirine",
+     "insuline",
+     "cortisone"
     ],
-    "a": "Risque élevé de dépendance et d'overdose mortelle"
+    "a": "naloxone"
    },
    {
-    "q": "Qu'est-ce qu'un traitement de substitution aux opiacés ?",
+    "q": "Quelle fonction vitale une overdose d'héroïne ralentit-elle dangereusement ? La ___ ?",
     "c": [
-     "Méthadone ou buprénorphine prescrits aux dépendants",
-     "Antidouleurs",
-     "Antidépresseurs",
-     "Antibiotiques"
+     "respiration",
+     "digestion",
+     "vue",
+     "audition"
     ],
-    "a": "Méthadone ou buprénorphine prescrits aux dépendants"
+    "a": "respiration"
    },
    {
-    "q": "Comment l'héroïne est-elle généralement consommée ?",
+    "q": "Quel traitement de substitution est prescrit aux personnes dépendantes aux opiacés ? La ___ ?",
     "c": [
-     "Uniquement injectée",
-     "En comprimé",
-     "Uniquement sniffée",
-     "Injection intraveineuse, sniffée, fumée"
+     "méthadone",
+     "caféine",
+     "nicotine",
+     "mélatonine"
     ],
-    "a": "Injection intraveineuse, sniffée, fumée"
+    "a": "méthadone"
    },
    {
-    "q": "Quels sont les symptômes de sevrage à l'héroïne ?",
+    "q": "Quel virus l'usage d'aiguilles partagées peut-il transmettre, d'où le rôle des programmes d'échange ? Le ___ ?",
     "c": [
-     "Légers",
-     "Aucun",
-     "Uniquement psychologiques",
-     "Douleurs, anxiété, insomnie, diarrhée"
+     "VIH",
+     "rhume",
+     "tétanos seul",
+     "zona"
     ],
-    "a": "Douleurs, anxiété, insomnie, diarrhée"
+    "a": "VIH"
    },
    {
-    "q": "Qu'est-ce que la naloxone ?",
+    "q": "Vers quelle fin de siècle l'héroïne a-t-elle d'abord été commercialisée comme médicament par Bayer ? Le XIX___ ?",
     "c": [
-     "Vaccin",
-     "Antibiotique",
-     "Antidote qui réverse une overdose d'opiacés",
-     "Traitement de substitution"
+     "e",
+     "Ier",
+     "IIe",
+     "IIIe"
     ],
-    "a": "Antidote qui réverse une overdose d'opiacés"
+    "a": "e"
    }
   ],
   "rw": true
@@ -23391,84 +23385,84 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que la MDMA ?",
+    "q": "Sous quelle forme colorée l'ecstasy se présente-t-elle souvent ? Un ___ ?",
     "c": [
-     "Molécule psychoactive de la famille des amphétamines",
-     "Opiacé",
-     "Hallucinogène naturel",
-     "Cannabinoïde"
+     "comprimé",
+     "liquide vert",
+     "spray",
+     "patch"
     ],
-    "a": "Molécule psychoactive de la famille des amphétamines"
+    "a": "comprimé"
    },
    {
-    "q": "Comment se présente l'ecstasy ?",
+    "q": "Dans quel milieu festif l'ecstasy est-elle surtout consommée ? Les soirées ___ ?",
     "c": [
-     "Comprimés, gélules, poudre",
-     "Liquide",
-     "Poudre blanche",
-     "Herbe"
+     "techno",
+     "classiques",
+     "littéraires",
+     "sportives"
     ],
-    "a": "Comprimés, gélules, poudre"
+    "a": "techno"
    },
    {
-    "q": "Quels sont les effets de la MDMA ?",
+    "q": "Quelle molécule active se cache principalement dans l'ecstasy ? La ___ ?",
     "c": [
-     "Empathie, euphorie, énergie, perception sensorielle accrue",
-     "Anxiété",
-     "Tristesse",
-     "Sédation"
+     "MDMA",
+     "THC",
+     "LSD",
+     "GHB"
     ],
-    "a": "Empathie, euphorie, énergie, perception sensorielle accrue"
+    "a": "MDMA"
    },
    {
-    "q": "Quels sont les risques immédiats de la MDMA ?",
+    "q": "Quel effet émotionnel « d'amour » l'ecstasy provoque-t-elle, la rendant dangereuse socialement ? Un effet ___ ?",
     "c": [
-     "Hyperthermie, déshydratation, hyponatrémie",
-     "AVC",
-     "Infarctus",
-     "Coma"
+     "empathogène",
+     "anesthésiant",
+     "somnifère",
+     "laxatif"
     ],
-    "a": "Hyperthermie, déshydratation, hyponatrémie"
+    "a": "empathogène"
    },
    {
-    "q": "La MDMA crée-t-elle une dépendance ?",
+    "q": "Quel danger grave l'ecstasy provoque-t-elle en soirée surchauffée, faute d'hydratation ? L'___ (coup de chaleur) ?",
     "c": [
-     "Dépendance immédiate",
-     "Aucune dépendance",
-     "Principalement psychique, moins physique que l'héroïne",
-     "Forte dépendance physique"
+     "hyperthermie",
+     "hypothermie",
+     "myopie",
+     "surdité"
     ],
-    "a": "Principalement psychique, moins physique que l'héroïne"
+    "a": "hyperthermie"
    },
    {
-    "q": "Qu'est-ce que la 'descente' après MDMA ?",
+    "q": "Quel neurotransmetteur du bonheur la MDMA libère-t-elle massivement, provoquant un contrecoup ? La ___ ?",
     "c": [
-     "Sevrage",
-     "Overdose",
-     "Période de fatigue et dépression après les effets",
-     "Retour des effets"
+     "sérotonine",
+     "insuline",
+     "adrénaline seule",
+     "histamine"
     ],
-    "a": "Période de fatigue et dépression après les effets"
+    "a": "sérotonine"
    },
    {
-    "q": "Où la MDMA est-elle principalement consommée ?",
+    "q": "Comment appelle-t-on l'analyse d'un comprimé pour connaître sa composition, en réduction des risques ? Le ___ (drug checking) ?",
     "c": [
-     "En soirée, festivals, free parties",
-     "À l'école",
-     "Au travail",
-     "À la maison"
+     "testing",
+     "dosage médical",
+     "recyclage",
+     "compostage"
     ],
-    "a": "En soirée, festivals, free parties"
+    "a": "testing"
    },
    {
-    "q": "La MDMA est-elle neurotoxique ?",
+    "q": "Dans quelle décennie l'ecstasy est-elle devenue emblématique de la culture rave ? Les années ___ ?",
     "c": [
-     "Oui, toujours",
-     "Aucun effet sur le cerveau",
-     "Non, sans danger",
-     "Des études suggèrent des dommages aux neurones sérotoninergiques"
+     "1990",
+     "1950",
+     "2010",
+     "1930"
     ],
-    "a": "Des études suggèrent des dommages aux neurones sérotoninergiques"
+    "a": "1990"
    }
   ],
   "rw": true
@@ -23480,84 +23474,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que le LSD ?",
+    "q": "À quelle grande famille d'effets le LSD appartient-il ? Les ___ (hallucinogènes) ?",
     "c": [
-     "Cannabinoïde",
-     "Hallucinogène semi-synthétique dérivé de l'ergot de seigle",
-     "Opiacé",
-     "Amphétamine"
+     "psychédéliques",
+     "stimulants",
+     "opiacés",
+     "sédatifs"
     ],
-    "a": "Hallucinogène semi-synthétique dérivé de l'ergot de seigle"
+    "a": "psychédéliques"
    },
    {
-    "q": "Comment se présente le LSD ?",
+    "q": "Sur quel petit support en papier le LSD est-il souvent déposé ? Un ___ ?",
     "c": [
-     "Liquide coloré",
-     "Petits papiers buvards, gouttes, gélules",
-     "Poudre",
-     "Herbe"
+     "buvard",
+     "comprimé lourd",
+     "sachet de poudre",
+     "flacon"
     ],
-    "a": "Petits papiers buvards, gouttes, gélules"
+    "a": "buvard"
    },
    {
-    "q": "Quels sont les effets du LSD ?",
+    "q": "Quel type de perceptions déformées le LSD provoque-t-il ? Des ___ ?",
     "c": [
-     "Hallucinations visuelles, altération de la perception, introspection",
-     "Hyperactivité",
-     "Sédation",
-     "Euphorie physique"
+     "hallucinations",
+     "fractures",
+     "brûlures",
+     "carences"
     ],
-    "a": "Hallucinations visuelles, altération de la perception, introspection"
+    "a": "hallucinations"
    },
    {
-    "q": "Qu'est-ce qu'un 'bad trip' sous LSD ?",
+    "q": "Comment appelle-t-on une expérience très angoissante sous LSD ? Un bad ___ ?",
     "c": [
-     "Expérience psychotique angoissante et désagréable",
-     "Overdose",
-     "Effet secondaire",
-     "Crise d'épilepsie"
+     "trip",
+     "day",
+     "dream",
+     "mood"
     ],
-    "a": "Expérience psychotique angoissante et désagréable"
+    "a": "trip"
    },
    {
-    "q": "Le LSD crée-t-il une dépendance physique ?",
+    "q": "Quel chimiste suisse a découvert le LSD par accident en 1943 ? Albert ___ ?",
     "c": [
-     "Oui, très fort",
-     "Dépendance immédiate",
-     "Non, pas de dépendance physique documentée",
-     "Oui comme l'héroïne"
+     "Hofmann",
+     "Sandoz",
+     "Leary",
+     "Huxley"
     ],
-    "a": "Non, pas de dépendance physique documentée"
+    "a": "Hofmann"
    },
    {
-    "q": "Combien de temps durent les effets du LSD ?",
+    "q": "De quel champignon parasite du seigle le LSD est-il dérivé ? L'___ ?",
     "c": [
-     "1 à 2 heures",
-     "24 heures",
-     "8 à 12 heures",
-     "4 à 6 heures"
+     "ergot",
+     "bolet",
+     "amanite",
+     "truffe"
     ],
-    "a": "8 à 12 heures"
+    "a": "ergot"
    },
    {
-    "q": "Qu'est-ce que la microdose de LSD ?",
+    "q": "Quel phénomène de « retour » d'hallucinations peut survenir longtemps après la prise ? Un ___ (flashback) ?",
     "c": [
-     "Dose létale",
-     "Dose normale",
-     "Surdose",
-     "Prise de très petites doses à des fins thérapeutiques ou cognitives"
+     "flashback",
+     "blackout",
+     "burnout",
+     "comeback"
     ],
-    "a": "Prise de très petites doses à des fins thérapeutiques ou cognitives"
+    "a": "flashback"
    },
    {
-    "q": "Le LSD a-t-il été utilisé en psychothérapie ?",
-    "c": [
-     "Oui, dans les années 1950-1960, et aujourd'hui en recherche",
-     "Oui, très courant",
-     "Uniquement dans les années 2000",
-     "Non, jamais"
-    ],
-    "a": "Oui, dans les années 1950-1960, et aujourd'hui en recherche"
+    "q": "En quelle année Albert Hofmann a-t-il synthétisé pour la première fois le LSD ?",
+    "a": "1938"
    }
   ],
   "rw": true
@@ -23569,84 +23557,84 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que les amphétamines ?",
+    "q": "Sous quelle forme naturelle ces champignons se consomment-ils ? Ils sont ___ ?",
     "c": [
-     "Sédatifs",
-     "Opiacés",
-     "Stimulants du système nerveux central",
-     "Hallucinogènes"
+     "cueillis",
+     "distillés",
+     "fumés en résine",
+     "injectés"
     ],
-    "a": "Stimulants du système nerveux central"
+    "a": "cueillis"
    },
    {
-    "q": "Comment se présentent les amphétamines ?",
+    "q": "Quel type d'effets ces champignons provoquent-ils comme le LSD ? Des effets ___ ?",
     "c": [
-     "Herbe",
-     "Liquide",
-     "Comprimés, gélules, poudre",
-     "Patch"
+     "psychédéliques",
+     "stimulants",
+     "sédatifs",
+     "opiacés"
     ],
-    "a": "Comprimés, gélules, poudre"
+    "a": "psychédéliques"
    },
    {
-    "q": "Quels sont les effets des amphétamines ?",
+    "q": "Quelle molécule active contiennent les champignons hallucinogènes ? La ___ ?",
     "c": [
-     "Augmentation de l'énergie, vigilance, diminution de l'appétit",
-     "Somnolence",
-     "Relaxation",
-     "Sédation"
+     "psilocybine",
+     "caféine",
+     "nicotine",
+     "morphine"
     ],
-    "a": "Augmentation de l'énergie, vigilance, diminution de l'appétit"
+    "a": "psilocybine"
    },
    {
-    "q": "Qu'est-ce que la méthamphétamine ?",
+    "q": "Comment appelle-t-on couramment ces champignons en argot anglais ? Les magic ___ ?",
     "c": [
-     "Opiacé",
-     "Hallucinogène",
-     "Cannabinoïde",
-     "Amphétamine très puissante et très addictive"
+     "mushrooms",
+     "beans",
+     "leaves",
+     "seeds"
     ],
-    "a": "Amphétamine très puissante et très addictive"
+    "a": "mushrooms"
    },
    {
-    "q": "Quels sont les risques des amphétamines ?",
+    "q": "Quel grand danger existe lors de la cueillette de ces champignons ? La ___ avec une espèce mortelle ?",
     "c": [
-     "Légers",
-     "Dépendance, problèmes cardiaques, psychose",
-     "Uniquement insomniaques",
-     "Aucun risque"
+     "confusion",
+     "cuisson",
+     "congélation",
+     "hydratation"
     ],
-    "a": "Dépendance, problèmes cardiaques, psychose"
+    "a": "confusion"
    },
    {
-    "q": "À quoi sert le Ritalin (méthylphénidate) ?",
+    "q": "Pour quel trouble la psilocybine est-elle étudiée en recherche médicale encadrée ? La ___ ?",
     "c": [
-     "Drogue récréative",
-     "Antidouleur",
-     "Antidépresseur",
-     "Traitement du TDAH, c'est une amphétamine légale"
+     "dépression",
+     "myopie",
+     "carie",
+     "fracture"
     ],
-    "a": "Traitement du TDAH, c'est une amphétamine légale"
+    "a": "dépression"
    },
    {
-    "q": "Qu'est-ce que la 'speed' ?",
+    "q": "Quel genre de champignon regroupe la plupart des espèces à psilocybine ? Le genre ___ ?",
     "c": [
-     "LSD",
-     "Cocaïne",
-     "Amphétamine de rue sous forme de poudre",
-     "Héroïne"
+     "Psilocybe",
+     "Amanita",
+     "Boletus",
+     "Cantharellus"
     ],
-    "a": "Amphétamine de rue sous forme de poudre"
+    "a": "Psilocybe"
    },
    {
-    "q": "Les amphétamines sont-elles utilisées en médecine ?",
+    "q": "Depuis quel millénaire, environ, av. J.-C., certaines cultures utilisent-elles ces champignons rituellement ? Le ___e ?",
     "c": [
-     "Oui, pour le TDAH et la narcolepsie",
-     "Non, jamais",
-     "Uniquement en psychiatrie",
-     "Uniquement aux USA"
+     "au moins 1000 av. J.-C.",
+     "1990",
+     "1800",
+     "500 apr."
     ],
-    "a": "Oui, pour le TDAH et la narcolepsie"
+    "a": "au moins 1000 av. J.-C."
    }
   ],
   "rw": true
@@ -23658,84 +23646,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que le crack ?",
+    "q": "Quel type d'effet général les amphétamines produisent-elles ? Un effet ___ ?",
     "c": [
-     "Cocaïne transformée chimiquement pour être fumée",
-     "Héroïne pure",
-     "Cannabis concentré",
-     "Amphétamine"
+     "stimulant",
+     "calmant",
+     "hallucinogène",
+     "anesthésiant"
     ],
-    "a": "Cocaïne transformée chimiquement pour être fumée"
+    "a": "stimulant"
    },
    {
-    "q": "Pourquoi le crack est-il particulièrement dangereux ?",
+    "q": "Sur quel besoin fondamental les amphétamines agissent-elles en le supprimant ? Le ___ ?",
     "c": [
-     "Faible dépendance",
-     "Dépendance extrêmement rapide et violente",
-     "Peu d'effets",
-     "Longue durée d'action"
+     "sommeil",
+     "toucher",
+     "goût",
+     "équilibre"
     ],
-    "a": "Dépendance extrêmement rapide et violente"
+    "a": "sommeil"
    },
    {
-    "q": "Comment se consomme le crack ?",
+    "q": "Dans quel contexte militaire les amphétamines ont-elles été distribuées pour tenir éveillé ? La ___ ?",
     "c": [
-     "Fumé dans une pipe",
-     "Injecté",
-     "Avale",
-     "Sniffé"
+     "guerre",
+     "paix",
+     "récréation",
+     "école"
     ],
-    "a": "Fumé dans une pipe"
+    "a": "guerre"
    },
    {
-    "q": "Quels sont les effets immédiats du crack ?",
+    "q": "Quel trouble de l'attention certaines amphétamines encadrées traitent-elles médicalement ? Le ___ ?",
     "c": [
-     "Hallucinations",
-     "Sédation",
-     "Euphorie intense mais très brève (5-10 minutes)",
-     "Euphorie longue (heures)"
+     "TDAH",
+     "diabète",
+     "asthme",
+     "eczéma"
     ],
-    "a": "Euphorie intense mais très brève (5-10 minutes)"
+    "a": "TDAH"
    },
    {
-    "q": "Qu'est-ce que le 'craving' dans l'addiction au crack ?",
+    "q": "Quel effet secondaire cardiaque dangereux les amphétamines provoquent-elles ? Une accélération du ___ ?",
     "c": [
-     "Nostalgie",
-     "Plaisir",
-     "Besoin irrépressible et urgent de consommer",
-     "Petite dose"
+     "cœur",
+     "foie",
+     "rein",
+     "poumon au repos"
     ],
-    "a": "Besoin irrépressible et urgent de consommer"
+    "a": "cœur"
    },
    {
-    "q": "Quelles sont les conséquences sociales du crack ?",
+    "q": "Quel surnom d'argent, « ___ », désignait les amphétamines chez les étudiants et routiers ? Les speed ?",
     "c": [
-     "Exclusion, précarité, délinquance",
-     "Intégration sociale",
-     "Santé améliorée",
-     "Réussite professionnelle"
+     "speed",
+     "slow",
+     "cool",
+     "chill"
     ],
-    "a": "Exclusion, précarité, délinquance"
+    "a": "speed"
    },
    {
-    "q": "Où le crack est-il le plus consommé dans le monde ?",
+    "q": "Quel neurotransmetteur les amphétamines libèrent-elles massivement, comme la cocaïne ? La ___ ?",
     "c": [
-     "Afrique",
-     "États-Unis, Brésil, Europe de l'Ouest",
-     "Asie",
-     "Australie"
+     "dopamine",
+     "insuline",
+     "mélatonine",
+     "kératine"
     ],
-    "a": "États-Unis, Brésil, Europe de l'Ouest"
+    "a": "dopamine"
    },
    {
-    "q": "Existe-t-il un traitement pour l'addiction au crack ?",
-    "c": [
-     "Médicaments spécifiques",
-     "Oui, thérapie et accompagnement social",
-     "Aucun traitement",
-     "Substitution comme l'héroïne"
-    ],
-    "a": "Oui, thérapie et accompagnement social"
+    "q": "En quelle année, environ, l'amphétamine a-t-elle été synthétisée pour la première fois (fin XIXe) ?",
+    "a": "1887"
    }
   ],
   "rw": true
@@ -23747,84 +23729,84 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que la méthamphétamine ?",
+    "q": "À quelle famille de drogues la méthamphétamine appartient-elle ? Les ___ ?",
     "c": [
-     "Opiacé",
-     "Stimulant très puissant et très addictif dérivé des amphétamines",
-     "Cannabinoïde",
-     "Hallucinogène"
+     "stimulants",
+     "opiacés",
+     "psychédéliques",
+     "sédatifs"
     ],
-    "a": "Stimulant très puissant et très addictif dérivé des amphétamines"
+    "a": "stimulants"
    },
    {
-    "q": "Comment se présente la méthamphétamine ?",
+    "q": "Quelle série TV américaine culte a pour héros un professeur fabriquant de la méthamphétamine ? Breaking ___ ?",
     "c": [
-     "Cristaux, poudre, comprimés",
-     "Liquide",
-     "Papiers",
-     "Herbe"
+     "Bad",
+     "News",
+     "Point",
+     "Dawn"
     ],
-    "a": "Cristaux, poudre, comprimés"
+    "a": "Bad"
    },
    {
-    "q": "Comment se consomme la méthamphétamine ?",
+    "q": "Sous quelle forme cristalline la méthamphétamine est-elle connue ? Le crystal ___ ?",
     "c": [
-     "Uniquement fumée",
-     "Uniquement avalée",
-     "Fumée, sniffée, injectée, avalée",
-     "Uniquement injectée"
+     "meth",
+     "salt",
+     "ice cube",
+     "sugar"
     ],
-    "a": "Fumée, sniffée, injectée, avalée"
+    "a": "meth"
    },
    {
-    "q": "Quels sont les effets de la méthamphétamine ?",
+    "q": "Quel effet dévastateur la méthamphétamine a-t-elle sur les dents des usagers ? La « meth ___ » ?",
     "c": [
-     "Sédation",
-     "Euphorie intense, hyperactivité, perte d'appétit",
-     "Relaxation",
-     "Somnolence"
+     "mouth",
+     "hand",
+     "eye",
+     "foot"
     ],
-    "a": "Euphorie intense, hyperactivité, perte d'appétit"
+    "a": "mouth"
    },
    {
-    "q": "Pourquoi la méthamphétamine est-elle si destructrice ?",
+    "q": "Quelle très forte propriété rend la méthamphétamine particulièrement dangereuse ? Une forte ___ ?",
     "c": [
-     "Dépendance rapide, dommages dentaires, cérébraux, psychose",
-     "Bien tolérée",
-     "Peu d'effets",
-     "Guérison rapide"
+     "dépendance",
+     "immunité",
+     "guérison",
+     "nutrition"
     ],
-    "a": "Dépendance rapide, dommages dentaires, cérébraux, psychose"
+    "a": "dépendance"
    },
    {
-    "q": "Qu'est-ce que le 'meth mouth' ?",
+    "q": "Combien de temps, en heures, peuvent durer les effets stimulants de la méthamphétamine, très longs ?",
     "c": [
-     "Coloration des dents",
-     "Détérioration dentaire sévère due à la méthamphétamine",
-     "Mauvaise haleine",
-     "Carie simple"
+     "12",
+     "1",
+     "48 exact",
+     "3"
     ],
-    "a": "Détérioration dentaire sévère due à la méthamphétamine"
+    "a": "12"
    },
    {
-    "q": "Dans quels pays la méthamphétamine est-elle un problème majeur ?",
+    "q": "Quel organe, en plus du cœur, la consommation chronique de méthamphétamine endommage-t-elle gravement ? Le ___ ?",
     "c": [
-     "États-Unis, Asie du Sud-Est, Australie",
-     "Brésil",
-     "France",
-     "Afrique"
+     "cerveau",
+     "genou",
+     "coude",
+     "ongle"
     ],
-    "a": "États-Unis, Asie du Sud-Est, Australie"
+    "a": "cerveau"
    },
    {
-    "q": "Quel est le nom de rue le plus courant pour la méthamphétamine ?",
+    "q": "Dans quel pays d'Asie la méthamphétamine (« yaba ») circule-t-elle massivement, région du Triangle d'or ? Non : dans quelle région ? Le Triangle d'___ ?",
     "c": [
-     "Coke, snow",
-     "Meth, crystal, ice",
-     "Speed",
-     "Weed, pot"
+     "or",
+     "argent",
+     "feu",
+     "sable"
     ],
-    "a": "Meth, crystal, ice"
+    "a": "or"
    }
   ],
   "rw": true
@@ -23836,84 +23818,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que les opioïdes ?",
+    "q": "Dans quelle boisson chaude très courante trouve-t-on de la caféine ? Le ___ ?",
     "c": [
-     "Substances qui agissent sur les récepteurs opioïdes du cerveau",
-     "Cannabinoïdes",
-     "Hallucinogènes",
-     "Stimulants"
+     "café",
+     "lait",
+     "eau",
+     "jus"
     ],
-    "a": "Substances qui agissent sur les récepteurs opioïdes du cerveau"
+    "a": "café"
    },
    {
-    "q": "Quels sont les opioïdes légaux ?",
+    "q": "Quel effet la caféine produit-elle sur la vigilance ? Elle rend plus ___ ?",
     "c": [
-     "Fentanyl de rue",
-     "Héroïne",
-     "Morphine, codéine, tramadol, oxycodone",
-     "LSD"
+     "éveillé",
+     "endormi",
+     "triste",
+     "affamé"
     ],
-    "a": "Morphine, codéine, tramadol, oxycodone"
+    "a": "éveillé"
    },
    {
-    "q": "À quoi servent les opioïdes en médecine ?",
+    "q": "Dans quelle autre boisson chaude, faite de feuilles, trouve-t-on aussi de la caféine ? Le ___ ?",
     "c": [
-     "Antibiotiques",
-     "Anti-inflammatoires",
-     "Antidouleurs puissants",
-     "Antidépresseurs"
+     "thé",
+     "bouillon",
+     "sirop",
+     "cidre"
     ],
-    "a": "Antidouleurs puissants"
+    "a": "thé"
    },
    {
-    "q": "Qu'est-ce que la crise des opioïdes aux États-Unis ?",
+    "q": "Quelles boissons sucrées « énergisantes » contiennent beaucoup de caféine ? Les ___ drinks ?",
     "c": [
-     "Nouveau traitement",
-     "Pénurie de médicaments",
-     "Épidémie de dépendance et d'overdose aux opioïdes prescrits",
-     "Réforme de santé"
+     "energy",
+     "soft",
+     "milk",
+     "still"
     ],
-    "a": "Épidémie de dépendance et d'overdose aux opioïdes prescrits"
+    "a": "energy"
    },
    {
-    "q": "Quels sont les risques des opioïdes ?",
+    "q": "La caféine est-elle une substance légale ou illégale ?",
     "c": [
-     "Légers",
-     "Aucun risque",
-     "Allergies",
-     "Dépendance, accoutumance, dépression respiratoire"
+     "légale",
+     "illégale",
+     "sur ordonnance",
+     "interdite aux adultes"
     ],
-    "a": "Dépendance, accoutumance, dépression respiratoire"
+    "a": "légale"
    },
    {
-    "q": "Qu'est-ce que le fentanyl ?",
+    "q": "Quel neurotransmetteur du sommeil la caféine bloque-t-elle dans le cerveau ? L'___ ?",
     "c": [
-     "Antibiotique",
-     "Anti-inflammatoire",
-     "Antidépresseur",
-     "Opioïde synthétique 50 à 100 fois plus puissant que la morphine"
+     "adénosine",
+     "dopamine",
+     "insuline",
+     "sérotonine"
     ],
-    "a": "Opioïde synthétique 50 à 100 fois plus puissant que la morphine"
+    "a": "adénosine"
    },
    {
-    "q": "Comment prévenir une overdose aux opioïdes ?",
+    "q": "Comment appelle-t-on le mal de tête ressenti quand un grand consommateur arrête le café ? Le ___ ?",
     "c": [
-     "Manger",
-     "Boire de l'eau",
-     "Se reposer",
-     "Avoir de la naloxone à disposition"
+     "sevrage",
+     "surdosage",
+     "réveil",
+     "jeûne"
     ],
-    "a": "Avoir de la naloxone à disposition"
+    "a": "sevrage"
    },
    {
-    "q": "Combien de personnes meurent d'overdose d'opioïdes par an dans le monde ?",
-    "c": [
-     "Environ 500 000",
-     "Environ 50 000",
-     "Plus de 100 000",
-     "Environ 10 000"
-    ],
-    "a": "Plus de 100 000"
+    "q": "Combien de milligrammes de caféine, environ, contient une tasse de café filtre ?",
+    "a": "95"
    }
   ],
   "rw": true
@@ -23925,84 +23901,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Quelle est la substance active addictive du tabac ?",
+    "q": "Sous quelle forme roulée fume-t-on le plus souvent le tabac ? Une ___ ?",
     "c": [
-     "Le monoxyde de carbone",
-     "La nicotine",
-     "Le benzène",
-     "Le goudron"
+     "cigarette",
+     "bougie",
+     "paille",
+     "allumette"
     ],
-    "a": "La nicotine"
+    "a": "cigarette"
    },
    {
-    "q": "Combien de substances chimiques contient la fumée de cigarette ?",
+    "q": "Quelle substance du tabac rend fortement dépendant ? La ___ ?",
     "c": [
-     "Environ 500",
-     "Plus de 7 000",
-     "Plus de 10 000",
-     "Environ 1 000"
+     "nicotine",
+     "caféine",
+     "vitamine C",
+     "insuline"
     ],
-    "a": "Plus de 7 000"
+    "a": "nicotine"
    },
    {
-    "q": "Combien de cancers sont causés par le tabac ?",
+    "q": "Quelle grave maladie le tabac est-il le premier facteur de risque de provoquer ? Le ___ du poumon ?",
     "c": [
-     "Le tabac est lié à 17 types de cancers",
-     "Aucun",
-     "Uniquement le cancer du poumon",
-     "2 types de cancers"
+     "cancer",
+     "rhume",
+     "torticolis",
+     "hoquet"
     ],
-    "a": "Le tabac est lié à 17 types de cancers"
+    "a": "cancer"
    },
    {
-    "q": "Combien de fumeurs meurent chaque année à cause du tabac ?",
+    "q": "Quel dispositif électronique est présenté comme alternative à la cigarette ? La ___ ?",
     "c": [
-     "500 000",
-     "5 millions",
-     "Plus de 8 millions dans le monde",
-     "1 million"
+     "cigarette électronique",
+     "montre",
+     "radio",
+     "lampe"
     ],
-    "a": "Plus de 8 millions dans le monde"
+    "a": "cigarette électronique"
    },
    {
-    "q": "Qu'est-ce que la cigarette électronique (vapotage) ?",
+    "q": "Quel gaz toxique mortel la fumée de cigarette contient-elle ? Le monoxyde de ___ ?",
     "c": [
-     "Cigarette classique",
-     "Tabac chauffé",
-     "Dispositif qui chauffe un liquide contenant de la nicotine",
-     "Patch"
+     "carbone",
+     "silicium",
+     "calcium",
+     "sodium"
     ],
-    "a": "Dispositif qui chauffe un liquide contenant de la nicotine"
+    "a": "carbone"
    },
    {
-    "q": "Combien de temps faut-il pour que les poumons commencent à se régénérer après l'arrêt ?",
+    "q": "Quel substitut, en patch ou gomme, aide à l'arrêt du tabac ? La ___ de substitution ?",
     "c": [
-     "1 jour",
-     "1 mois",
-     "1 an",
-     "Quelques semaines"
+     "nicotine",
+     "morphine",
+     "caféine",
+     "adrénaline"
     ],
-    "a": "Quelques semaines"
+    "a": "nicotine"
    },
    {
-    "q": "Qu'est-ce que le sevrage tabagique ?",
+    "q": "Quelle substance résineuse et cancérigène se dépose dans les poumons des fumeurs ? Le ___ ?",
     "c": [
-     "Réduction du tabac",
-     "Alternative au tabac",
-     "Processus d'arrêt de la consommation de tabac",
-     "Traitement médical"
+     "goudron",
+     "plâtre",
+     "ciment",
+     "vernis"
     ],
-    "a": "Processus d'arrêt de la consommation de tabac"
+    "a": "goudron"
    },
    {
-    "q": "Quel est le pourcentage de fumeurs en France ?",
-    "c": [
-     "Environ 40%",
-     "Environ 10%",
-     "Environ 50%",
-     "Environ 25% de la population"
-    ],
-    "a": "Environ 25% de la population"
+    "q": "Combien de millions de décès, environ, le tabac cause-t-il chaque année dans le monde (OMS) ?",
+    "a": "8"
    }
   ],
   "rw": true
@@ -24014,84 +23984,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Dans quelles boissons trouve-t-on naturellement de la caféine ?",
+    "q": "De quelle drogue festive en comprimé la MDMA est-elle le principe actif ? L'___ ?",
     "c": [
-     "Uniquement le café",
-     "Jus de fruits",
-     "Uniquement le thé",
-     "Café, thé, guarana, maté"
+     "ecstasy",
+     "héroïne",
+     "cocaïne",
+     "cannabis"
     ],
-    "a": "Café, thé, guarana, maté"
+    "a": "ecstasy"
    },
    {
-    "q": "Quel est l'effet principal de la caféine ?",
+    "q": "Quel type d'effet « d'ouverture aux autres » la MDMA provoque-t-elle ? Un effet ___ ?",
     "c": [
-     "Hallucinogène",
-     "Stimulant du système nerveux central (réduction de la fatigue)",
-     "Sédatif",
-     "Anxiolytique"
+     "empathogène",
+     "sédatif",
+     "anesthésiant",
+     "laxatif"
     ],
-    "a": "Stimulant du système nerveux central (réduction de la fatigue)"
+    "a": "empathogène"
    },
    {
-    "q": "Combien de caféine contient une tasse de café filtre ?",
+    "q": "Sous quelle forme, autre que le comprimé, trouve-t-on la MDMA ? En ___ (cristaux) ?",
     "c": [
-     "200 à 300 mg",
-     "10 à 30 mg",
-     "300 à 500 mg",
-     "80 à 120 mg"
+     "cristal",
+     "spray",
+     "patch",
+     "gaz"
     ],
-    "a": "80 à 120 mg"
+    "a": "cristal"
    },
    {
-    "q": "Quelle est la dose quotidienne recommandée de caféine ?",
+    "q": "Quel neurotransmetteur du bien-être la MDMA vide-t-elle, causant la « descente » les jours suivants ? La ___ ?",
     "c": [
-     "Jusqu'à 800 mg",
-     "Jusqu'à 1 g",
-     "Jusqu'à 200 mg",
-     "Jusqu'à 400 mg par jour (environ 3-4 tasses)"
+     "sérotonine",
+     "insuline",
+     "adrénaline",
+     "histamine"
     ],
-    "a": "Jusqu'à 400 mg par jour (environ 3-4 tasses)"
+    "a": "sérotonine"
    },
    {
-    "q": "Quels sont les symptômes du surdosage en caféine ?",
+    "q": "Quel danger vital menace en cas de forte chaleur et de déshydratation sous MDMA ? L'___ ?",
     "c": [
-     "Somnolence",
-     "Hypotension",
-     "Ralentissement cardiaque",
-     "Insomnie, palpitations, anxiété, tremblements"
+     "hyperthermie",
+     "hypothermie",
+     "myopie",
+     "surdité"
     ],
-    "a": "Insomnie, palpitations, anxiété, tremblements"
+    "a": "hyperthermie"
    },
    {
-    "q": "La caféine crée-t-elle une dépendance ?",
+    "q": "En réduction des risques, que conseille-t-on de boire régulièrement mais sans excès sous MDMA ? De l'___ ?",
     "c": [
-     "Forte dépendance physique",
-     "Non, aucune",
-     "Oui, une dépendance psychique légère à modérée",
-     "Aucun effet"
+     "eau",
+     "alcool fort",
+     "café",
+     "soda sucré"
     ],
-    "a": "Oui, une dépendance psychique légère à modérée"
+    "a": "eau"
    },
    {
-    "q": "Qu'est-ce que le sevrage à la caféine ?",
+    "q": "Pour quel trouble post-traumatique la MDMA est-elle étudiée en thérapie encadrée ? Le ___ ?",
     "c": [
-     "Aucun symptôme",
-     "Maux de tête, fatigue, irritabilité pendant quelques jours",
-     "Délire",
-     "Symptômes sévères"
+     "stress post-traumatique",
+     "diabète",
+     "asthme",
+     "eczéma"
     ],
-    "a": "Maux de tête, fatigue, irritabilité pendant quelques jours"
+    "a": "stress post-traumatique"
    },
    {
-    "q": "La caféine est-elle considérée comme une drogue ?",
-    "c": [
-     "Non, c'est une boisson",
-     "Oui, c'est un psychoactif stimulant légal",
-     "Oui, comme l'héroïne",
-     "Non, c'est un aliment"
-    ],
-    "a": "Oui, c'est un psychoactif stimulant légal"
+    "q": "En quelle année la MDMA a-t-elle été synthétisée pour la première fois par le laboratoire Merck ?",
+    "a": "1912"
    }
   ],
   "rw": true
@@ -24103,84 +24067,84 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que l'addiction (dépendance) ?",
+    "q": "Sous quelle forme le GHB se présente-t-il le plus souvent ? Un ___ incolore ?",
     "c": [
-     "Simple habitude",
-     "Maladie chronique caractérisée par la recherche compulsive d'une substance ou d'un comportement",
-     "Choix délibéré",
-     "Manque de volonté"
+     "liquide",
+     "comprimé",
+     "poudre rouge",
+     "gaz"
     ],
-    "a": "Maladie chronique caractérisée par la recherche compulsive d'une substance ou d'un comportement"
+    "a": "liquide"
    },
    {
-    "q": "Quels sont les trois critères de l'addiction ?",
+    "q": "Quel effet sédatif le GHB a-t-il à forte dose ? Il ___ (endort) ?",
     "c": [
-     "Dose, effet, temps",
-     "Perte de contrôle, craving, poursuite malgré les conséquences",
-     "Usage régulier, plaisir, prix",
-     "Occasionnel, modéré, excessif"
+     "endort",
+     "réveille",
+     "excite",
+     "affame"
     ],
-    "a": "Perte de contrôle, craving, poursuite malgré les conséquences"
+    "a": "endort"
    },
    {
-    "q": "Qu'est-ce que la dépendance physique ?",
+    "q": "Pour quel usage criminel le GHB est-il tristement surnommé « drogue du ___ » ?",
     "c": [
-     "Envie passagère",
-     "Simple habitude",
-     "Besoin psychologique",
-     "Adaptation du corps à une substance, avec syndrome de sevrage"
+     "violeur",
+     "sommeil paisible",
+     "rire",
+     "génie"
     ],
-    "a": "Adaptation du corps à une substance, avec syndrome de sevrage"
+    "a": "violeur"
    },
    {
-    "q": "Qu'est-ce que la dépendance psychique ?",
+    "q": "Pourquoi le GHB est-il particulièrement dangereux mélangé à l'alcool ? Le risque de ___ ?",
     "c": [
-     "Addiction comportementale",
-     "Besoin compulsif de consommer pour obtenir du plaisir ou éviter le malaise",
-     "Dépendance physique",
-     "Accoutumance"
+     "coma",
+     "rhume",
+     "acné",
+     "crampe"
     ],
-    "a": "Besoin compulsif de consommer pour obtenir du plaisir ou éviter le malaise"
+    "a": "coma"
    },
    {
-    "q": "Qu'est-ce que le craving ?",
+    "q": "Quelle est la marge très étroite entre la dose active et la dose dangereuse du GHB ? Une faible marge de ___ ?",
     "c": [
-     "Souvenir",
-     "Plaisir mesuré",
-     "Petite quantité",
-     "Désir intense et irrépressible de consommer"
+     "sécurité",
+     "prix",
+     "goût",
+     "couleur"
     ],
-    "a": "Désir intense et irrépressible de consommer"
+    "a": "sécurité"
    },
    {
-    "q": "Qu'est-ce que la tolérance ?",
+    "q": "Comment se protéger d'un GHB versé à son insu en soirée ? Surveiller son ___ ?",
     "c": [
-     "Diminution de l'effet",
-     "Résistance",
-     "Allergie",
-     "Nécessité d'augmenter les doses pour obtenir le même effet"
+     "verre",
+     "téléphone",
+     "manteau",
+     "sac seul"
     ],
-    "a": "Nécessité d'augmenter les doses pour obtenir le même effet"
+    "a": "verre"
    },
    {
-    "q": "Quels traitements existent pour l'addiction ?",
+    "q": "Quel goût quasi imperceptible rend le GHB difficile à détecter dans un verre ? Un goût presque ___ ?",
     "c": [
-     "Aucun traitement",
-     "Thérapie cognitivo-comportementale, traitements de substitution, groupes de parole",
-     "Uniquement les médicaments",
-     "Uniquement l'hospitalisation"
+     "neutre",
+     "sucré fort",
+     "piquant",
+     "amer intense"
     ],
-    "a": "Thérapie cognitivo-comportementale, traitements de substitution, groupes de parole"
+    "a": "neutre"
    },
    {
-    "q": "L'addiction est-elle reconnue comme une maladie par l'OMS ?",
+    "q": "Le GHB est-il naturellement présent en infime quantité dans le corps humain, vrai ou faux ?",
     "c": [
-     "Non, c'est un trouble du comportement",
-     "Non, c'est un vice",
-     "Oui, c'est une maladie chronique du cerveau",
-     "Oui, mais mal classée"
+     "vrai",
+     "faux",
+     "seulement chez l'animal",
+     "seulement synthétique"
     ],
-    "a": "Oui, c'est une maladie chronique du cerveau"
+    "a": "vrai"
    }
   ],
   "rw": true
@@ -24192,84 +24156,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que le sevrage ?",
+    "q": "À l'origine, dans quel domaine médical la kétamine est-elle utilisée ? Comme ___ ?",
     "c": [
-     "Traitement médical",
-     "Désintoxication forcée",
-     "Remplacement par une autre substance",
-     "Arrêt ou réduction de la consommation d'une substance addictive"
+     "anesthésique",
+     "vaccin",
+     "antibiotique",
+     "vitamine"
     ],
-    "a": "Arrêt ou réduction de la consommation d'une substance addictive"
+    "a": "anesthésique"
    },
    {
-    "q": "Quels sont les symptômes du sevrage ?",
+    "q": "Sur quels patients, en plus des humains, la kétamine est-elle employée en médecine ? Les ___ ?",
     "c": [
-     "Bien-être",
-     "Euphorie",
-     "Aucun symptôme",
-     "Anxiété, irritabilité, insomnie, sueurs, douleurs"
+     "animaux",
+     "robots",
+     "plantes",
+     "poissons seuls"
     ],
-    "a": "Anxiété, irritabilité, insomnie, sueurs, douleurs"
+    "a": "animaux"
    },
    {
-    "q": "Combien de temps dure un sevrage aigu ?",
+    "q": "Quel état de déconnexion la kétamine provoque-t-elle à dose récréative ? Un état ___ ?",
     "c": [
-     "Quelques jours à quelques semaines selon la substance",
-     "24 heures",
-     "Plusieurs mois",
-     "1 an"
+     "dissociatif",
+     "euphorique simple",
+     "somnifère pur",
+     "stimulant pur"
     ],
-    "a": "Quelques jours à quelques semaines selon la substance"
+    "a": "dissociatif"
    },
    {
-    "q": "Qu'est-ce que le syndrome de sevrage alcoolique ?",
+    "q": "Comment appelle-t-on l'expérience de coupure totale de la réalité sous forte kétamine ? Le « K-___ » ?",
     "c": [
-     "Simple gueule de bois",
-     "Fatigue",
-     "Nostalgie",
-     "Ensemble de symptômes après arrêt de l'alcool (parfois mortel)"
+     "hole",
+     "trip",
+     "boom",
+     "shot"
     ],
-    "a": "Ensemble de symptômes après arrêt de l'alcool (parfois mortel)"
+    "a": "hole"
    },
    {
-    "q": "Qu'est-ce qu'un sevrage médicalisé ?",
+    "q": "Pour quel trouble psychiatrique la kétamine est-elle étudiée comme traitement innovant ? La ___ résistante ?",
     "c": [
-     "Sevrage à domicile",
-     "Sevrage supervisé par des professionnels de santé",
-     "Auto-sevrage",
-     "Sevrage brutal"
+     "dépression",
+     "myopie",
+     "surdité",
+     "carie"
     ],
-    "a": "Sevrage supervisé par des professionnels de santé"
+    "a": "dépression"
    },
    {
-    "q": "Le sevrage peut-il être dangereux ?",
+    "q": "Quel organe l'usage chronique de kétamine peut-il gravement endommager ? La ___ (cystite) ?",
     "c": [
-     "Oui, pour l'alcool et les benzodiazépines, il peut être mortel",
-     "Non, jamais",
-     "Seulement psychologiquement",
-     "Légèrement"
+     "vessie",
+     "rate",
+     "langue",
+     "rétine"
     ],
-    "a": "Oui, pour l'alcool et les benzodiazépines, il peut être mortel"
+    "a": "vessie"
    },
    {
-    "q": "Qu'est-ce que la cure de désintoxication ?",
+    "q": "Sous quelle forme la kétamine de rue se sniffe-t-elle souvent ? Une ___ ?",
     "c": [
-     "Hospitalisation courte",
-     "Programme intensif pour arrêter une addiction en milieu spécialisé",
-     "Médicaments",
-     "Traitement à domicile"
+     "poudre",
+     "feuille",
+     "résine",
+     "gaz"
     ],
-    "a": "Programme intensif pour arrêter une addiction en milieu spécialisé"
+    "a": "poudre"
    },
    {
-    "q": "Quelle est la première étape d'un sevrage réussi ?",
-    "c": [
-     "L'arrêt brutal",
-     "L'isolement",
-     "Le traitement médical",
-     "La reconnaissance du problème et la demande d'aide"
-    ],
-    "a": "La reconnaissance du problème et la demande d'aide"
+    "q": "En quelle année la kétamine a-t-elle été synthétisée pour la première fois ?",
+    "a": "1962"
    }
   ],
   "rw": true
