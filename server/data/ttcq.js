@@ -902,7 +902,7 @@ export const TTCQ_THEMES = [
     "a": "Alpes"
    },
    {
-    "q": "Quelle organisation humanitaire fondée à Genève a une croix rouge pour emblème ?",
+    "q": "Quelle organisation humanitaire, fondée à Genève par Henry Dunant, secourt blessés et sinistrés ?",
     "c": [
      "Croix-Rouge",
      "MSF",
@@ -1058,7 +1058,7 @@ export const TTCQ_THEMES = [
     "a": "Edam"
    },
    {
-    "q": "Comment appelle-t-on les digues et polders qui protègent le pays de la mer ?",
+    "q": "Comment appelle-t-on les terres asséchées et gagnées sur la mer, typiques des Pays-Bas ?",
     "c": [
      "Polders",
      "Fjords",
@@ -1271,7 +1271,7 @@ export const TTCQ_THEMES = [
     "a": "Vasco de Gama"
    },
    {
-    "q": "Quel tremblement de terre a dévasté Lisbonne le 1er novembre 1755 ? On retient l'année : ?",
+    "q": "En quelle année un séisme dévastateur, un 1er novembre, a-t-il rasé Lisbonne ?",
     "a": "1755"
    },
    {
@@ -1336,7 +1336,7 @@ export const TTCQ_THEMES = [
     "a": "Mate"
    },
    {
-    "q": "Quelle première dame argentine, épouse de Perón, est surnommée « Evita » ?",
+    "q": "Quelle épouse d'un président argentin, actrice devenue icône populaire, est surnommée « Evita » ?",
     "c": [
      "Eva Perón",
      "Isabel Perón",
@@ -1586,7 +1586,7 @@ export const TTCQ_THEMES = [
     "a": "en Asie"
    },
    {
-    "q": "Quel plat thaï de nouilles de riz sautées est un incontournable ? Pad ___ ?",
+    "q": "Comment se nomme le plat de nouilles de riz sautées vendu dans les rues de Bangkok ? Pad ___ ?",
     "a": "Thai"
    },
    {
@@ -1906,7 +1906,7 @@ export const TTCQ_THEMES = [
     "a": "Nokia"
    },
    {
-    "q": "Comment surnomme-t-on la Finlande à cause de ses innombrables lacs ? Le pays des mille ___ ?",
+    "q": "Comment surnomme-t-on la Finlande, qui en compte des dizaines de milliers ? Le pays des mille ___ ?",
     "a": "Lacs"
    },
    {
@@ -2512,7 +2512,7 @@ export const TTCQ_THEMES = [
     "a": "88"
    },
    {
-    "q": "Quel appareil permet le voyage temporel ? Le convecteur ___ ?",
+    "q": "Quel appareil installé dans la DeLorean rend possible le voyage dans le temps ? Le convecteur ___ ?",
     "c": [
      "temporel",
      "spatial",
@@ -2609,7 +2609,7 @@ export const TTCQ_THEMES = [
     "a": "Spielberg"
    },
    {
-    "q": "Quels insectes remplissent le temple dans le Temple maudit ?",
+    "q": "De quelles petites bêtes rampantes grouille le temple dans « le Temple maudit » ?",
     "c": [
      "Insectes",
      "Serpents",
@@ -2852,7 +2852,7 @@ export const TTCQ_THEMES = [
     "a": "Butch"
    },
    {
-    "q": "Quel personnage « nettoyeur » vient régler les problèmes ? Monsieur ___ ? (The Wolf)",
+    "q": "Quel personnage « nettoyeur » vient régler les problèmes en un temps record ? Monsieur ___ ?",
     "c": [
      "Wolf",
      "Fox",
@@ -2929,7 +2929,7 @@ export const TTCQ_THEMES = [
     "a": "3"
    },
    {
-    "q": "Comment nomme-t-on les rêves imbriqués dans d'autres rêves ? Un rêve dans un ___ ?",
+    "q": "Comment nomme-t-on, dans Inception, un songe emboîté dans un autre songe ? Un ___ dans un ___ ?",
     "c": [
      "rêve",
      "songe",
@@ -3417,7 +3417,7 @@ export const TTCQ_THEMES = [
     "a": "Skynet"
    },
    {
-    "q": "En quel métal liquide est fait le T-1000 du deuxième film ?",
+    "q": "De quelle matière liquide et brillante est fait le T-1000 dans Terminator 2 ?",
     "c": [
      "Métal",
      "Verre",
@@ -3500,7 +3500,7 @@ export const TTCQ_THEMES = [
     "a": "Scott"
    },
    {
-    "q": "Quelle phrase Maximus lance-t-il ? « Êtes-vous pas ___ ? » (divertis)",
+    "q": "Quel mot complète la réplique de Maximus dans l'arène : « N'êtes-vous pas ___ ? »",
     "c": [
      "divertis",
      "contents",
@@ -3725,7 +3725,7 @@ export const TTCQ_THEMES = [
     "a": "ancien et en noir et blanc"
    },
    {
-    "q": "Comment s'appelle le bar tenu par Rick ? Le ___'s Café Américain ?",
+    "q": "Quel est le prénom du héros qui tient le café américain de Casablanca ? ___ ?",
     "c": [
      "Rick",
      "Sam",
@@ -3994,7 +3994,7 @@ export const TTCQ_THEMES = [
     "a": "Kenobi"
    },
    {
-    "q": "Quelle force mystique lie tous les êtres vivants dans la saga ? La ___ ?",
+    "q": "Quel pouvoir mystique les Jedi apprennent à maîtriser dans Star Wars ? La ___ ?",
     "c": [
      "Force",
      "Foi",
@@ -4326,7 +4326,7 @@ export const TTCQ_THEMES = [
     "a": "belle"
    },
    {
-    "q": "Quel nain grincheux est nommé d'après son mauvais caractère ?",
+    "q": "Quel nain de Blanche-Neige porte un nom qui décrit son caractère ronchon et râleur ?",
     "c": [
      "Grincheux",
      "Joyeux",
@@ -4549,7 +4549,7 @@ export const TTCQ_THEMES = [
     "a": "une raquette"
    },
    {
-    "q": "Comment dit-on qu'un joueur a zéro point au tennis ? On dit ___ ?",
+    "q": "Comment annonce-t-on qu'un joueur n'a marqué aucun point au tennis ? On dit ___ ?",
     "c": [
      "zéro",
      "nul",
@@ -4711,7 +4711,7 @@ export const TTCQ_THEMES = [
     "a": "15"
    },
    {
-    "q": "Quelle mêlée regroupe les avants poussant les uns contre les autres ? La ___ ?",
+    "q": "Comment appelle-t-on la phase où les avants se poussent, épaule contre épaule, autour du ballon ? La ___ ?",
     "c": [
      "mêlée",
      "touche",
@@ -4778,7 +4778,7 @@ export const TTCQ_THEMES = [
     "a": "2"
    },
    {
-    "q": "Quel maillot à pois récompense le meilleur grimpeur du Tour ? Le maillot à ___ ?",
+    "q": "Quel maillot récompense le meilleur grimpeur du Tour de France ? Le maillot à ___ ?",
     "c": [
      "pois",
      "rayures",
@@ -4948,7 +4948,7 @@ export const TTCQ_THEMES = [
     "a": "Bolt"
    },
    {
-    "q": "Quelle épreuve consiste à lancer un disque le plus loin possible ? Le lancer du ___ ?",
+    "q": "Quelle épreuve d'athlétisme consiste à lancer le plus loin un palet plat et rond ? Le lancer du ___ ?",
     "c": [
      "disque",
      "poids",
@@ -5537,7 +5537,7 @@ export const TTCQ_THEMES = [
     "a": "7"
    },
    {
-    "q": "Quel joueur planté au centre de la défense adverse est le pivot : vrai poste ? Le ___ ?",
+    "q": "Quel poste de handball désigne le joueur posté au cœur de la défense adverse ? Le ___ ?",
     "c": [
      "pivot",
      "libéro",
@@ -5843,7 +5843,7 @@ export const TTCQ_THEMES = [
     "a": "étranglement"
    },
    {
-    "q": "Comment abandonne-t-on un combat quand on est en difficulté ? On ___ (tape au sol) ?",
+    "q": "Comment un combattant de MMA signale-t-il qu'il abandonne ? Il ___ plusieurs fois au sol ?",
     "c": [
      "tape",
      "crie",
@@ -6033,7 +6033,7 @@ export const TTCQ_THEMES = [
     "a": "éliminé"
    },
    {
-    "q": "En quelle année a eu lieu la première partie officielle de baseball à règles modernes (1846) ?",
+    "q": "En quelle année a eu lieu la première partie de baseball aux règles modernes ?",
     "a": "1846"
    }
   ],
@@ -6246,7 +6246,7 @@ export const TTCQ_THEMES = [
     "a": "chouette"
    },
    {
-    "q": "Quel minuscule oiseau bat des ailes très vite et butine les fleurs ? Le ___-mouche ?",
+    "q": "Quel minuscule volatile bat des ailes très vite et butine les fleurs en vol sur place ? Le ___-mouche ?",
     "c": [
      "oiseau",
      "colibri",
@@ -6319,7 +6319,7 @@ export const TTCQ_THEMES = [
     "a": "écailles"
    },
    {
-    "q": "Quel poisson rouge est le plus commun des animaux de compagnie aquatiques ? Le poisson ___ ?",
+    "q": "Quel petit poisson d'ornement, souvent en bocal, est l'animal aquatique le plus courant ? Le poisson ___ ?",
     "c": [
      "rouge",
      "bleu",
@@ -6349,7 +6349,7 @@ export const TTCQ_THEMES = [
     "a": "baleine"
    },
    {
-    "q": "Quel poisson électrique d'Amazonie peut envoyer des décharges ? L'anguille ___ ?",
+    "q": "Quel poisson d'Amazonie peut envoyer de fortes décharges ? L'anguille ___ ?",
     "c": [
      "électrique",
      "géante",
@@ -6422,7 +6422,7 @@ export const TTCQ_THEMES = [
     "a": "fer"
    },
    {
-    "q": "Quelle allure la plus rapide du cheval précède le trot dans le galop ? Le ___ ?",
+    "q": "Quelle allure du cheval, la plus rapide, vient après le pas et le trot ? Le ___ ?",
     "c": [
      "galop",
      "pas",
@@ -6495,7 +6495,7 @@ export const TTCQ_THEMES = [
     "a": "location"
    },
    {
-    "q": "Quelle grande espèce de dauphin, joueur et souriant, est la plus connue ? Le grand ___ ?",
+    "q": "Quelle espèce de cétacé joueur, la plus connue de son genre, a l'air de sourire ? Le grand ___ ?",
     "c": [
      "dauphin",
      "cachalot",
@@ -6635,7 +6635,7 @@ export const TTCQ_THEMES = [
     "a": "rampant"
    },
    {
-    "q": "Comment appelle-t-on le venin injecté par certains serpents lors d'une morsure ? Du ___ ?",
+    "q": "Comment appelle-t-on le liquide toxique injecté par certains serpents lors d'une morsure ? Du ___ ?",
     "c": [
      "venin",
      "poison",
@@ -6795,7 +6795,7 @@ export const TTCQ_THEMES = [
     "a": "la mer"
    },
    {
-    "q": "Quel grand requin blanc est le plus célèbre et le plus redouté ? Le grand requin ___ ?",
+    "q": "Quel requin célèbre et redouté, star des « Dents de la mer », porte un nom de couleur ? Le grand requin ___ ?",
     "c": [
      "blanc",
      "bleu",
@@ -7157,7 +7157,7 @@ export const TTCQ_THEMES = [
     "a": "ABBA"
    },
    {
-    "q": "Quelle danse-signature accompagne le tube « Thriller » de Michael Jackson ? Le ___ (moonwalk) ?",
+    "q": "Quelle danse-signature de Michael Jackson donne l'illusion de glisser en arrière ?",
     "c": [
      "moonwalk",
      "twist",
@@ -7572,7 +7572,7 @@ export const TTCQ_THEMES = [
     "a": "mosh"
    },
    {
-    "q": "Quel chanteur d'Iron Maiden ou plutôt : quel groupe anglais a pour mascotte le squelette « Eddie » ?",
+    "q": "Quel groupe de heavy metal britannique a pour mascotte un squelette nommé « Eddie » ?",
     "c": [
      "Iron Maiden",
      "Judas Priest",
@@ -7625,7 +7625,7 @@ export const TTCQ_THEMES = [
     "a": "rebelle et rapide"
    },
    {
-    "q": "Quelle coiffure dressée en crête est typique des punks ? La ___ ?",
+    "q": "Quelle coiffure dressée en pointes sur le crâne est typique des punks ? La ___ ?",
     "c": [
      "crête",
      "banane",
@@ -7997,7 +7997,7 @@ export const TTCQ_THEMES = [
     "a": "Cash"
    },
    {
-    "q": "Quel instrument à cordes frottées, appelé aussi violon, est central en country ? Le ___ (fiddle) ?",
+    "q": "Quel instrument à cordes frottées, appelé « fiddle » en country, se joue à l'archet ? Le ___ ?",
     "c": [
      "violon",
      "violoncelle",
@@ -8080,7 +8080,7 @@ export const TTCQ_THEMES = [
     "a": "Peppers"
    },
    {
-    "q": "Comment appelle-t-on la technique de basse claquée si typique du funk ? Le ___ (slap) ?",
+    "q": "Comment appelle-t-on la technique de basse claquée si typique du funk ?",
     "c": [
      "slap",
      "tap",
@@ -8206,7 +8206,7 @@ export const TTCQ_THEMES = [
     "a": "l'église"
    },
    {
-    "q": "Comment appelle-t-on le groupe de chanteurs qui interprète le gospel ? La ___ (chorale) ?",
+    "q": "Comment appelle-t-on le groupe de chanteurs qui interprète le gospel ensemble ?",
     "c": [
      "chorale",
      "fanfare",
@@ -8216,7 +8216,7 @@ export const TTCQ_THEMES = [
     "a": "chorale"
    },
    {
-    "q": "De quelle communauté américaine le gospel est-il issu ? La communauté ___ ?",
+    "q": "De quelle communauté, née de l'esclavage, le gospel est-il issu ? La communauté ___ ?",
     "c": [
      "afro-américaine",
      "amérindienne",
@@ -8236,7 +8236,7 @@ export const TTCQ_THEMES = [
     "a": "Grace"
    },
    {
-    "q": "De quel genre profane, né du gospel, la soul est-elle proche ? Le gospel a donné la ___ ?",
+    "q": "Quel genre musical profane est directement issu du gospel ? Le gospel a donné la ___ ?",
     "c": [
      "soul",
      "techno",
@@ -8315,7 +8315,7 @@ export const TTCQ_THEMES = [
     "a": "castagnettes"
    },
    {
-    "q": "Comment appelle-t-on les frappes de pieds rythmées des danseurs ? Le ___ (zapateado) ?",
+    "q": "Comment appelle-t-on les frappes de pieds rythmées des danseurs de flamenco ?",
     "c": [
      "zapateado",
      "moonwalk",
@@ -8325,7 +8325,7 @@ export const TTCQ_THEMES = [
     "a": "zapateado"
    },
    {
-    "q": "Quel peuple, présent en Andalousie, a profondément influencé le flamenco ? Les ___ (gitans) ?",
+    "q": "Quel peuple, présent en Andalousie, a profondément marqué le flamenco ? Les ___ ?",
     "c": [
      "gitans",
      "vikings",
@@ -8428,7 +8428,7 @@ export const TTCQ_THEMES = [
     "a": "sauce"
    },
    {
-    "q": "En quelle année, environ, le mot « salsa » s'impose-t-il pour ce genre (années 1970) ?",
+    "q": "En quelle année, environ, le mot « salsa » s'est-il imposé pour désigner ce genre ?",
     "a": "1970"
    }
   ],
@@ -8570,7 +8570,7 @@ export const TTCQ_THEMES = [
     "a": "moissons"
    },
    {
-    "q": "Avec quelle musique occidentale le bhangra moderne fusionne-t-il souvent ? Le ___ (hip-hop/électro) ?",
+    "q": "Avec quelle musique urbaine occidentale le bhangra moderne fusionne-t-il souvent ?",
     "c": [
      "hip-hop",
      "jazz",
@@ -8845,7 +8845,7 @@ export const TTCQ_THEMES = [
     "a": "Auguste"
    },
    {
-    "q": "Quelles longues voies pavées les Romains ont-ils construites à travers l'empire ? Des ___ (routes) ?",
+    "q": "Quelles longues chaussées pavées les Romains ont-ils construites à travers l'empire ? Des ___ romaines ?",
     "c": [
      "voies",
      "canaux",
@@ -9343,7 +9343,7 @@ export const TTCQ_THEMES = [
     "a": "Gaulle"
    },
    {
-    "q": "Comment nomme-t-on le génocide des Juifs par les nazis ? La ___ (Shoah) ?",
+    "q": "Comment nomme-t-on le génocide des Juifs perpétré par les nazis ?",
     "c": [
      "Shoah",
      "purge",
@@ -9748,7 +9748,7 @@ export const TTCQ_THEMES = [
     "a": "Templiers"
    },
    {
-    "q": "Quel roi de France, deux fois croisé et canonisé, est mort à Tunis ? ___ IX (Saint Louis) ?",
+    "q": "Quel roi de France, parti deux fois en croisade et devenu saint, est mort à Tunis ? ___ IX ?",
     "c": [
      "Louis",
      "Charles",
@@ -9805,7 +9805,7 @@ export const TTCQ_THEMES = [
     "a": "Arc"
    },
    {
-    "q": "Quelle arme anglaise, tirée à distance, a fait des ravages à Azincourt ? L'arc ___ (long) ?",
+    "q": "Quelle arme anglaise, tirée à distance, a décimé les chevaliers français à Azincourt ? L'arc ___ ?",
     "c": [
      "long",
      "court",
@@ -10665,7 +10665,7 @@ export const TTCQ_THEMES = [
     "a": "feuilles"
    },
    {
-    "q": "Quel sucre les plantes fabriquent-elles comme nourriture ? Le ___ (glucose) ?",
+    "q": "Quel sucre les plantes fabriquent-elles comme réserve d'énergie ?",
     "c": [
      "glucose",
      "fructose",
@@ -12287,7 +12287,7 @@ export const TTCQ_THEMES = [
     "a": "chinoise"
    },
    {
-    "q": "Quels moines du Moyen Âge copiaient et enluminaient les manuscrits ? Les ___ ?",
+    "q": "Quels hommes d'Église, au Moyen Âge, recopiaient les manuscrits dans les monastères ? Les ___ ?",
     "c": [
      "moines",
      "chevaliers",
@@ -12297,7 +12297,7 @@ export const TTCQ_THEMES = [
     "a": "moines"
    },
    {
-    "q": "Quelle écriture arabe est célèbre pour ses courbes calligraphiées ? L'écriture ___ ?",
+    "q": "Quelle écriture d'Orient est célèbre pour ses courbes calligraphiées élégantes ? L'écriture ___ ?",
     "c": [
      "arabe",
      "latine",
@@ -12617,7 +12617,7 @@ export const TTCQ_THEMES = [
     "a": "argile"
    },
    {
-    "q": "Dans quel four très chaud cuit-on la céramique ? Un ___ ?",
+    "q": "Dans quel appareil très chaud, dépassant 1000 °C, cuit-on la poterie ? Un ___ ?",
     "c": [
      "four",
      "frigo",
@@ -12809,7 +12809,7 @@ export const TTCQ_THEMES = [
     "a": "tag"
    },
    {
-    "q": "Quel pochoir permet de reproduire vite un motif au mur ? Le ___ (stencil) ?",
+    "q": "Quel outil découpé permet de reproduire vite un même motif à la bombe sur un mur ? Le ___ ?",
     "c": [
      "pochoir",
      "rouleau",
@@ -13084,7 +13084,7 @@ export const TTCQ_THEMES = [
     "a": "persillé"
    },
    {
-    "q": "Quel morceau de lait caillé sépare-t-on du petit-lait pour faire le fromage ? Le ___ ?",
+    "q": "Quelle partie solide du lait, séparée du petit-lait, sert à faire le fromage ? Le ___ ?",
     "c": [
      "caillé",
      "beurre",
@@ -13333,7 +13333,7 @@ export const TTCQ_THEMES = [
     "a": "mie"
    },
    {
-    "q": "Quel levain naturel, sans levure industrielle, fait aussi lever le pain ? Le ___ ?",
+    "q": "Quel ferment naturel de farine et d'eau fait lever le pain sans levure industrielle ? Le ___ ?",
     "c": [
      "levain",
      "sucre",
@@ -13386,7 +13386,7 @@ export const TTCQ_THEMES = [
     "a": "sushi"
    },
    {
-    "q": "Quelle sauce brune et salée, à base de soja, assaisonne les plats asiatiques ? La sauce ___ ?",
+    "q": "Quelle sauce brune et salée, faite de fèves fermentées, assaisonne les plats asiatiques ? La sauce ___ ?",
     "c": [
      "soja",
      "tomate",
@@ -13542,7 +13542,7 @@ export const TTCQ_THEMES = [
     "a": "d'Italie"
    },
    {
-    "q": "Quelle sauce rouge à base de tomate accompagne souvent les pâtes ? La sauce ___ ?",
+    "q": "Quelle sauce rouge, mijotée à partir d'un légume-fruit d'été, accompagne souvent les pâtes ? La sauce ___ ?",
     "c": [
      "tomate",
      "blanche",
@@ -13625,7 +13625,7 @@ export const TTCQ_THEMES = [
     "a": "orge"
    },
    {
-    "q": "Quelle mousse blanche se forme au sommet d'un verre de bière ? La ___ ?",
+    "q": "Quelle couche blanche et crémeuse se forme au sommet d'un verre de bière ? La ___ ?",
     "c": [
      "mousse",
      "crème",
@@ -13718,7 +13718,7 @@ export const TTCQ_THEMES = [
     "a": "escargots"
    },
    {
-    "q": "Quel foie d'oie ou de canard engraissé est un mets de fête ? Le ___ gras ?",
+    "q": "Quel mets de fête, spécialité du Sud-Ouest, se prépare avec un foie d'oie ou de canard engraissé ? Le ___ gras ?",
     "c": [
      "foie",
      "cœur",
@@ -13738,7 +13738,7 @@ export const TTCQ_THEMES = [
     "a": "365"
    },
    {
-    "q": "Quel plat mijoté bourguignon associe bœuf et vin rouge ? Le bœuf ___ ?",
+    "q": "Quel plat mijoté associe des morceaux de bœuf au vin rouge de Bourgogne ? Le bœuf ___ ?",
     "c": [
      "bourguignon",
      "wellington",
@@ -13748,7 +13748,7 @@ export const TTCQ_THEMES = [
     "a": "bourguignon"
    },
    {
-    "q": "Dans quelle liste de l'UNESCO le repas gastronomique des Français est-il inscrit depuis 2010 ? Le patrimoine de l'___ ?",
+    "q": "Quelle organisation de l'ONU a inscrit le repas gastronomique des Français à son patrimoine en 2010 ? L'___ ?",
     "c": [
      "UNESCO",
      "OMS",
@@ -13831,7 +13831,7 @@ export const TTCQ_THEMES = [
     "a": "gingembre"
    },
    {
-    "q": "Par quelle grande route commerciale antique les épices arrivaient-elles d'Orient ? La route des ___ ?",
+    "q": "Par quelle grande route commerciale antique poivres et safrans arrivaient-ils d'Orient ? La route des ___ ?",
     "c": [
      "épices",
      "soies",
@@ -15631,7 +15631,7 @@ export const TTCQ_THEMES = [
     "a": "arrière"
    },
    {
-    "q": "Avec quel levier change-t-on les vitesses à la main ? Le levier de ___ ?",
+    "q": "Avec quel levier le conducteur change-t-il manuellement de rapport ? Le levier de ___ ?",
     "c": [
      "vitesses",
      "frein",
@@ -15714,7 +15714,7 @@ export const TTCQ_THEMES = [
     "a": "Paris"
    },
    {
-    "q": "Sur quelle surface glissante de terre se court souvent le rallye ? La ___ ?",
+    "q": "Sur quelle surface meuble, poussiéreuse et glissante, se courent beaucoup de spéciales de rallye ? La ___ ?",
     "c": [
      "terre",
      "glace",
@@ -16109,7 +16109,7 @@ export const TTCQ_THEMES = [
     "a": "4 roues"
    },
    {
-    "q": "Quel drapeau à damier marque la fin d'un Grand Prix ?",
+    "q": "Quel drapeau à cases noires et blanches marque la fin d'un Grand Prix ?",
     "c": [
      "damier",
      "rouge",
@@ -16398,7 +16398,7 @@ export const TTCQ_THEMES = [
     "a": "sujet"
    },
    {
-    "q": "Quel bandeau défilant en bas de l'écran affiche des infos brèves en continu ? Le ___ ?",
+    "q": "Quel ruban de texte défilant en bas de l'écran affiche des infos brèves en continu ? Le ___ ?",
     "c": [
      "bandeau",
      "titre",
@@ -16445,7 +16445,7 @@ export const TTCQ_THEMES = [
     "a": "3"
    },
    {
-    "q": "Quel jeu fait deviner un mot en faisant tourner une roue et acheter des voyelles ? La ___ de la fortune ?",
+    "q": "Dans quel jeu télévisé achète-t-on des voyelles en tournant un grand cercle cranté ? La ___ de la fortune ?",
     "c": [
      "roue",
      "roulette",
@@ -16475,7 +16475,7 @@ export const TTCQ_THEMES = [
     "a": "Lepers"
    },
    {
-    "q": "Comment appelle-t-on la question finale à gros gain d'un jeu télé ? La question ___ ?",
+    "q": "Comment appelle-t-on l'ultime question à gros gain d'un jeu télévisé ? La question ___ ?",
     "c": [
      "finale",
      "bonus",
@@ -16943,7 +16943,7 @@ export const TTCQ_THEMES = [
     "a": "empreinte"
    },
    {
-    "q": "Quelle série américaine sur la police scientifique de Las Vegas a lancé la mode des experts ? Les ___ ?",
+    "q": "Quelle série américaine sur la police scientifique de Las Vegas (CSI) a lancé la mode du genre ? Les ___ ?",
     "c": [
      "Experts",
      "Génies",
@@ -16953,7 +16953,7 @@ export const TTCQ_THEMES = [
     "a": "Experts"
    },
    {
-    "q": "Quel lieu de crime les enquêteurs bouclent-ils avec un ruban jaune ? La scène de ___ ?",
+    "q": "Quel lieu les enquêteurs bouclent-ils avec un ruban jaune après un meurtre ? La scène de ___ ?",
     "c": [
      "crime",
      "ménage",
@@ -16973,7 +16973,7 @@ export const TTCQ_THEMES = [
     "a": "Columbo"
    },
    {
-    "q": "Comment appelle-t-on l'analyse scientifique des indices d'un crime ? La police ___ ?",
+    "q": "Comment appelle-t-on l'analyse des indices matériels d'un délit en laboratoire ? La police ___ ?",
     "c": [
      "scientifique",
      "municipale",
@@ -17046,7 +17046,7 @@ export const TTCQ_THEMES = [
     "a": "Maguy"
    },
    {
-    "q": "Quel bruitage accompagne les blagues des sitcoms enregistrées ? Les ___ (rires) ?",
+    "q": "Quel bruitage de public hilare est ajouté après les blagues des sitcoms ? Les ___ enregistrés ?",
     "c": [
      "rires enregistrés",
      "sirènes",
@@ -17129,7 +17129,7 @@ export const TTCQ_THEMES = [
     "a": "grêle"
    },
    {
-    "q": "Sur quelle échelle mesure-t-on la puissance des tornades ? L'échelle de ___ ? (Fujita)",
+    "q": "Sur quelle échelle mesure-t-on la puissance des tornades ?",
     "c": [
      "Fujita",
      "Richter",
@@ -17348,7 +17348,7 @@ export const TTCQ_THEMES = [
     "a": "Guinness"
    },
    {
-    "q": "Quelle partie du corps l'homme aux ongles les plus longs n'a-t-il jamais coupée ? Les ___ ?",
+    "q": "Quelle partie du corps l'homme au record du monde n'a jamais coupée depuis des décennies ? Les ___ ?",
     "c": [
      "ongles",
      "cheveux",
@@ -17368,7 +17368,7 @@ export const TTCQ_THEMES = [
     "a": "baleine"
    },
    {
-    "q": "Quelle est la partie du corps mesurée pour le record de la plus longue barbe ? La ___ ?",
+    "q": "Quel attribut pileux du visage, mesuré en longueur, fait l'objet d'un record du monde ? La plus longue ___ ?",
     "c": [
      "barbe",
      "moustache",
@@ -17631,7 +17631,7 @@ export const TTCQ_THEMES = [
     "a": "Tussauds"
    },
    {
-    "q": "Dans quel musée insolite de Suède expose-t-on des aliments à l'odeur repoussante ? Le musée du ___ dégoûtant ?",
+    "q": "Dans quel musée insolite de Suède expose-t-on des aliments à l'odeur repoussante ? Le musée du ___ ?",
     "c": [
      "dégoûtant",
      "délicieux",
@@ -17684,7 +17684,7 @@ export const TTCQ_THEMES = [
     "a": "épouse"
    },
    {
-    "q": "Dans quelle ville anglaise dévale-t-on une colline en poursuivant un fromage ? La course au ___ ?",
+    "q": "Dans quelle ville anglaise dévale-t-on une colline en poursuivant une meule ronde qui roule ? La course au ___ ?",
     "c": [
      "fromage",
      "tonneau",
@@ -17767,7 +17767,7 @@ export const TTCQ_THEMES = [
     "a": "télékinésie"
    },
    {
-    "q": "Comment appelle-t-on une maison hantée par des esprits ? Une maison ___ ?",
+    "q": "Comment appelle-t-on une maison où des esprits, dit-on, se manifestent ? Une maison ___ ?",
     "c": [
      "hantée",
      "chantée",
@@ -17777,7 +17777,7 @@ export const TTCQ_THEMES = [
     "a": "hantée"
    },
    {
-    "q": "Quel objet à lettres et planchette sert prétendument à parler aux esprits ? La planche de ___ ? (Ouija)",
+    "q": "Quel objet à lettres et planchette est censé permettre de parler aux esprits ?",
     "c": [
      "Ouija",
      "Scrabble",
@@ -17933,7 +17933,7 @@ export const TTCQ_THEMES = [
     "a": "Athènes"
    },
    {
-    "q": "Comment appelle-t-on l'urne dans laquelle on glisse son bulletin ? L'___ ?",
+    "q": "Dans quel réceptacle glisse-t-on son bulletin de vote ? L'___ ?",
     "c": [
      "urne",
      "boîte aux lettres",
@@ -27560,7 +27560,7 @@ export const TTCQ_THEMES = [
     "a": "5"
    },
    {
-    "q": "Quel est le plus petit os du corps humain, situé dans l'oreille ? L'___ (étrier) ?",
+    "q": "Quel est le plus petit os du corps humain, logé dans l'oreille ?",
     "c": [
      "étrier",
      "fémur",
@@ -27643,7 +27643,7 @@ export const TTCQ_THEMES = [
     "a": "chauve-souris"
    },
    {
-    "q": "Quel animal ne dort presque jamais et n'a jamais de sommeil profond comme nous ? Le ___ ? (dauphin dort un hémisphère à la fois)",
+    "q": "Quel animal marin ne dort jamais totalement, un hémisphère de son cerveau restant éveillé ? Le ___ ?",
     "c": [
      "dauphin",
      "chat",
@@ -27663,7 +27663,7 @@ export const TTCQ_THEMES = [
     "a": "tardigrade"
    },
    {
-    "q": "Quel oiseau peut voler à reculons ? Le ___-mouche (colibri) ?",
+    "q": "Quel oiseau minuscule est le seul à pouvoir voler à reculons ? Le ___-mouche ?",
     "c": [
      "colibri",
      "moineau",
