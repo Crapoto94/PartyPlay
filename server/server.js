@@ -187,6 +187,7 @@ app.post('/api/parties', async (req, res) => {
   const cfg = createEvent({ name: name.trim(), theme, plan: planName, adminPassword: pwd, publicUrl, seed: seed || 'default', contactEmail: finalEmail, partyDate });
   cfg.avatars = DEFAULT_AVATARS;
   cfg.creatorIp = clientIp(req) || 'unknown';
+  cfg.creatorOs = detectOs(req.get('user-agent'));
   // Email vérifié par Google → fête activée immédiatement, envoi d'un email de bienvenue.
   if (googleEmail) {
     cfg.emailVerified = true; cfg.verificationToken = null; cfg.authMethod = 'google';
@@ -255,6 +256,16 @@ function clientIp(req) {
   return (req.get('x-forwarded-for') || '').split(',')[0].trim() || req.ip || '';
 }
 
+function detectOs(ua) {
+  if (!ua) return 'other';
+  const s = ua.toLowerCase();
+  if (s.includes('android')) return 'android';
+  if (s.includes('iphone') || s.includes('ipad') || s.includes('ipod')) return 'ios';
+  if (s.includes('windows')) return 'windows';
+  if (s.includes('macintosh') || s.includes('mac os')) return 'mac';
+  return 'other';
+}
+
 function requireAdmin(req, res) {
   if (!ADMIN_PASSWORD) return true; // pas de mot de passe configuré = accès libre
   const pwd = req.body?.password || req.query?.password || req.get('x-admin-password');
@@ -283,6 +294,7 @@ app.get('/api/admin/events', (req, res) => {
       emailVerified: cfg.emailVerified !== false,
       verificationMethod: cfg.emailVerified ? (cfg.authMethod || (cfg.verificationToken ? 'email' : 'google')) : null,
       creatorIp: cfg.creatorIp || '',
+      creatorOs: cfg.creatorOs || '',
       playerCount: (cfg.players || []).length,
     };
   });
