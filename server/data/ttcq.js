@@ -1150,86 +1150,63 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de L'Argentine ?",
-    "c": [
-     "Londres",
-     "Vienne",
-     "Paris",
-     "Buenos Aires"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel est le plat typique de L'Argentine ?",
-    "c": [
-     "Empanada",
-     "Chimichurri",
-     "Dulce leche",
-     "Asado"
-    ],
-    "a": 3
-   },
-   {
     "q": "Quelle est la capitale de l'Argentine ?",
     "c": [
-     "Rosario",
-     "Mendoza",
+     "Buenos Aires",
      "Córdoba",
-     "Buenos Aires"
+     "Rosario",
+     "Mendoza"
     ],
-    "a": 3
+    "a": "Buenos Aires"
    },
    {
-    "q": "Quel sport est emblématique de l'Argentine ?",
-    "c": [
-     "Le rugby",
-     "Le polo",
-     "Le tennis",
-     "Le football"
-    ],
-    "a": 3
+    "q": "Quelle danse sensuelle est née dans les faubourgs de Buenos Aires ?",
+    "a": "Tango"
    },
    {
-    "q": "Quelle est la danse traditionnelle argentine ?",
+    "q": "Quel footballeur argentin, champion du monde 2022, joue avec le numéro 10 ?",
     "c": [
-     "La samba",
-     "Le tango",
-     "Le flamenco",
-     "La salsa"
+     "Messi",
+     "Maradona",
+     "Di María",
+     "Agüero"
     ],
-    "a": 1
+    "a": "Messi"
    },
    {
-    "q": "Quelle est la plus haute montagne des Amériques située en Argentine ?",
+    "q": "Quelle viande grillée au feu de bois est un plat national argentin ?",
     "c": [
-     "L'Aconcagua",
-     "Le Cerro Bonete",
-     "Le Monte Pissis",
-     "L'Ojos del Salado"
+     "Asado",
+     "Ceviche",
+     "Feijoada",
+     "Chili"
     ],
-    "a": 0
+    "a": "Asado"
    },
    {
-    "q": "Qui était la première dame d'Argentine la plus célèbre ?",
+    "q": "Quelle immense plaine herbeuse couvre le centre de l'Argentine ?",
+    "a": "Pampa"
+   },
+   {
+    "q": "Quelle infusion d'herbe se boit dans une calebasse avec une paille métallique ?",
+    "a": "Mate"
+   },
+   {
+    "q": "Quelle première dame argentine, épouse de Perón, est surnommée « Evita » ?",
     "c": [
-     "Cristina Kirchner",
+     "Eva Perón",
      "Isabel Perón",
-     "Mabel Collins",
-     "Eva Perón"
+     "Cristina Kirchner",
+     "Mirtha Legrand"
     ],
-    "a": 3
+    "a": "Eva Perón"
    },
    {
-    "q": "En quelle année la guerre des Malouines a-t-elle eu lieu ?",
-    "c": [
-     "1980",
-     "1982",
-     "1985",
-     "1978"
-    ],
-    "a": 1
+    "q": "Quelle est la hauteur, en mètres, de l'Aconcagua, plus haut sommet des Amériques ?",
+    "a": "6961"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "culture_022",
@@ -1238,86 +1215,69 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de La Corée du Sud ?",
-    "c": [
-     "Londres",
-     "Vienne",
-     "Paris",
-     "Séoul"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel est le plat typique de La Corée du Sud ?",
-    "c": [
-     "Japchae",
-     "Kimchi",
-     "Bulgogi",
-     "Bibimbap"
-    ],
-    "a": 3
-   },
-   {
     "q": "Quelle est la capitale de la Corée du Sud ?",
     "c": [
      "Séoul",
-     "Daegu",
      "Busan",
-     "Incheon"
+     "Incheon",
+     "Daegu"
     ],
-    "a": 0
+    "a": "Séoul"
    },
    {
-    "q": "Quel groupe de K-pop a connu un succès mondial avec 'Gangnam Style' ?",
-    "c": [
-     "Big Bang",
-     "Blackpink",
-     "BTS",
-     "PSY"
-    ],
-    "a": 3
+    "q": "Quel genre musical coréen a explosé avec le tube Gangnam Style ?",
+    "a": "Kpop"
    },
    {
-    "q": "Quel plat coréen est du chou fermenté épicé ?",
-    "c": [
-     "Le bibimbap",
-     "Le japchae",
-     "Le kimchi",
-     "Le bulgogi"
-    ],
-    "a": 2
+    "q": "Quel plat coréen de chou fermenté et pimenté accompagne chaque repas ?",
+    "a": "Kimchi"
    },
    {
-    "q": "En quelle année la guerre de Corée a-t-elle commencé ?",
+    "q": "Quelle marque coréenne fabrique smartphones Galaxy et téléviseurs ?",
     "c": [
-     "1950",
-     "1953",
-     "1955",
-     "1948"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quelle marque coréenne est le plus grand fabricant de téléviseurs au monde ?",
-    "c": [
-     "LG",
      "Samsung",
-     "Hyundai",
-     "SK"
+     "Sony",
+     "Huawei",
+     "Xiaomi"
     ],
-    "a": 1
+    "a": "Samsung"
    },
    {
-    "q": "Qui a inventé l'imprimerie à caractères mobiles en métal en Corée ?",
+    "q": "Quelle série Netflix coréenne de 2021, avec des jeux mortels, a battu des records ?",
     "c": [
-     "Sejong le Grand",
-     "Kim Si-seup",
-     "Jang Yeong-sil",
-     "Choe Yun-ui"
+     "Squid Game",
+     "Kingdom",
+     "Sweet Home",
+     "Vincenzo"
     ],
-    "a": 3
+    "a": "Squid Game"
+   },
+   {
+    "q": "Quel groupe de K-pop masculin en sept membres est le plus célèbre au monde ?",
+    "c": [
+     "BTS",
+     "EXO",
+     "NCT",
+     "Seventeen"
+    ],
+    "a": "BTS"
+   },
+   {
+    "q": "Quel art martial coréen olympique est basé sur les coups de pied ?",
+    "c": [
+     "Taekwondo",
+     "Judo",
+     "Karaté",
+     "Aïkido"
+    ],
+    "a": "Taekwondo"
+   },
+   {
+    "q": "Le long de quel parallèle passe la frontière entre les deux Corées ? Le ___e parallèle ?",
+    "a": "38"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "culture_023",
@@ -1326,86 +1286,63 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de L'Afrique du Sud ?",
-    "c": [
-     "Vienne",
-     "Paris",
-     "Londres",
-     "Pretoria"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel est le plat typique de L'Afrique du Sud ?",
-    "c": [
-     "Bobotie",
-     "Braai",
-     "Biltong",
-     "Potjiekos"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Combien de capitales compte l'Afrique du Sud ?",
-    "c": [
-     "1",
-     "2",
-     "3",
-     "4"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quel célèbre prisonnier politique est devenu président ?",
-    "c": [
-     "Oliver Tambo",
-     "Desmond Tutu",
-     "Nelson Mandela",
-     "F. W. de Klerk"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quel est le plus grand parc national d'Afrique du Sud ?",
-    "c": [
-     "Le parc Kruger",
-     "Le parc Pilanesberg",
-     "Le parc Addo",
-     "Le parc Hluhluwe"
-    ],
-    "a": 0
-   },
-   {
-    "q": "En quelle année l'apartheid a-t-il pris fin ?",
-    "c": [
-     "1996",
-     "1990",
-     "1992",
-     "1994"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quelle est la plus grande ville d'Afrique du Sud ?",
+    "q": "Quelle ville sud-africaine, au bord de l'océan, est dominée par la montagne de la Table ?",
     "c": [
      "Le Cap",
      "Johannesburg",
-     "Pretoria",
-     "Durban"
+     "Durban",
+     "Pretoria"
     ],
-    "a": 1
+    "a": "Le Cap"
    },
    {
-    "q": "Quel écrivain sud-africain a remporté le prix Nobel en 1991 ?",
+    "q": "Quel militant a mis fin à l'apartheid et est devenu président en 1994 ?",
     "c": [
-     "J. M. Coetzee",
-     "Breyten Breytenbach",
-     "Alan Paton",
-     "Nadine Gordimer"
+     "Mandela",
+     "Tutu",
+     "Biko",
+     "Sisulu"
     ],
-    "a": 3
+    "a": "Mandela"
+   },
+   {
+    "q": "Comment nomme-t-on le régime de ségrégation raciale aboli en Afrique du Sud ?",
+    "a": "Apartheid"
+   },
+   {
+    "q": "Quel métal précieux jaune fait la richesse minière de Johannesburg ?",
+    "a": "Or"
+   },
+   {
+    "q": "Quelle réserve célèbre permet d'observer les Big Five ? Le parc ___ ?",
+    "c": [
+     "Kruger",
+     "Serengeti",
+     "Etosha",
+     "Chobe"
+    ],
+    "a": "Kruger"
+   },
+   {
+    "q": "Quel sport, dont l'Afrique du Sud est plusieurs fois championne du monde, se joue avec un ballon ovale ?",
+    "c": [
+     "Rugby",
+     "Cricket",
+     "Football",
+     "Hockey"
+    ],
+    "a": "Rugby"
+   },
+   {
+    "q": "Combien de langues officielles l'Afrique du Sud reconnaît-elle ?",
+    "a": "11"
+   },
+   {
+    "q": "En quelle année le premier cœur humain a-t-il été greffé au Cap par le Dr Barnard ?",
+    "a": "1967"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "culture_024",
@@ -1414,86 +1351,57 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de Le Maroc ?",
-    "c": [
-     "Paris",
-     "Vienne",
-     "Rabat",
-     "Londres"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quel est le plat typique de Le Maroc ?",
-    "c": [
-     "Pastilla",
-     "Merguez",
-     "Tajine",
-     "Couscous"
-    ],
-    "a": 3
-   },
-   {
     "q": "Quelle est la capitale du Maroc ?",
     "c": [
-     "Marrakech",
      "Rabat",
-     "Fès",
-     "Casablanca"
+     "Casablanca",
+     "Marrakech",
+     "Fès"
     ],
-    "a": 1
+    "a": "Rabat"
    },
    {
-    "q": "Quelle chaîne de montagnes traverse le Maroc ?",
-    "c": [
-     "L'Anti-Atlas",
-     "Le Rif",
-     "Le Moyen Atlas",
-     "Le Haut Atlas"
-    ],
-    "a": 3
+    "q": "Quel plat marocain mijoté tient son nom de son plat en terre à couvercle conique ?",
+    "a": "Tajine"
    },
    {
-    "q": "Quel plat marocain est cuit dans un tajine ?",
-    "c": [
-     "Le couscous",
-     "Le tajine",
-     "Le harira",
-     "La pastilla"
-    ],
-    "a": 1
+    "q": "Quelle semoule de blé roulée est la base d'un plat national marocain ?",
+    "a": "Couscous"
    },
    {
-    "q": "Quelle est la plus ancienne université du monde située à Fès ?",
-    "c": [
-     "L'université Al-Azhar",
-     "L'université de Paris",
-     "L'université Al Quaraouiyine",
-     "L'université de Bologne"
-    ],
-    "a": 2
+    "q": "Quel thé parfumé, sucré et servi de haut, est un rituel marocain ? Thé à la ___ ?",
+    "a": "Menthe"
    },
    {
-    "q": "Qui était le roi du Maroc pendant la lutte pour l'indépendance ?",
+    "q": "Quelle chaîne de montagnes traverse le Maroc ? L'___ ?",
     "c": [
-     "Hassan II",
-     "Mohammed V",
-     "Mohammed VI",
-     "Moulay Ismail"
+     "Atlas",
+     "Rif",
+     "Alpes",
+     "Andes"
     ],
-    "a": 1
+    "a": "Atlas"
    },
    {
-    "q": "En quelle année le Maroc a-t-il recouvré son indépendance ?",
+    "q": "Comment nomme-t-on la médina, le vieux quartier commerçant à ruelles étroites ?",
     "c": [
-     "1962",
-     "1956",
-     "1960",
-     "1953"
+     "Souk",
+     "Bazar",
+     "Kasbah",
+     "Riad"
     ],
-    "a": 1
+    "a": "Souk"
+   },
+   {
+    "q": "Quel désert de sable borde le sud-est du Maroc ?",
+    "a": "Sahara"
+   },
+   {
+    "q": "En quelle année le Maroc a-t-il obtenu son indépendance de la France ?",
+    "a": "1956"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "culture_025",
@@ -1502,86 +1410,63 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de La Thaïlande ?",
-    "c": [
-     "Bangkok",
-     "Londres",
-     "Vienne",
-     "Paris"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quel est le plat typique de La Thaïlande ?",
-    "c": [
-     "Pad thaï",
-     "Som tam",
-     "Khao soi",
-     "Larb"
-    ],
-    "a": 0
-   },
-   {
     "q": "Quelle est la capitale de la Thaïlande ?",
     "c": [
-     "Pattaya",
-     "Chiang Mai",
      "Bangkok",
-     "Phuket"
+     "Phuket",
+     "Chiang Mai",
+     "Pattaya"
     ],
-    "a": 2
+    "a": "Bangkok"
    },
    {
-    "q": "Quel est le plat national thaïlandais ?",
-    "c": [
-     "Le pad thaï",
-     "Le tom yum",
-     "Le curry vert",
-     "Le som tam"
-    ],
-    "a": 0
+    "q": "Quelle soupe thaï épicée aux crevettes et à la citronnelle est célèbre ? Tom ___ ?",
+    "a": "Yum"
    },
    {
-    "q": "Quel animal sacré est vénéré en Thaïlande ?",
-    "c": [
-     "Le tigre",
-     "Le cobra",
-     "L'éléphant",
-     "Le singe"
-    ],
-    "a": 2
+    "q": "Quel plat thaï de nouilles de riz sautées est un incontournable ? Pad ___ ?",
+    "a": "Thai"
    },
    {
-    "q": "Quel roi thaïlandais a régné le plus longtemps dans l'histoire ?",
+    "q": "Quelle religion majoritaire en Thaïlande vénère un homme atteignant l'Éveil ?",
     "c": [
-     "Rama IX (Bhumibol)",
-     "Rama V (Chulalongkorn)",
-     "Rama IV (Mongkut)",
-     "Rama I"
+     "Bouddhisme",
+     "Hindouisme",
+     "Islam",
+     "Taoïsme"
     ],
-    "a": 0
+    "a": "Bouddhisme"
    },
    {
-    "q": "Comment s'appelle le boxe traditionnelle thaïlandaise ?",
+    "q": "Quel art martial thaïlandais utilise poings, coudes, genoux et tibias ? La boxe ___ ?",
     "c": [
-     "Le silat",
-     "Le kick-boxing",
-     "Le krav maga",
-     "Le muay-thaï"
+     "thaï",
+     "birmane",
+     "khmère",
+     "lao"
     ],
-    "a": 3
+    "a": "thaï"
    },
    {
-    "q": "En quelle année la Thaïlande a-t-elle adopté son nom actuel ?",
+    "q": "Quel grand animal gris à trompe est un symbole national de la Thaïlande ?",
+    "a": "Elephant"
+   },
+   {
+    "q": "Quelle était l'ancienne appellation de la Thaïlande avant 1939 ?",
     "c": [
-     "1949",
-     "1939",
-     "1925",
-     "1912"
+     "Siam",
+     "Birmanie",
+     "Annam",
+     "Laos"
     ],
-    "a": 1
+    "a": "Siam"
+   },
+   {
+    "q": "Combien de temples bouddhistes (wats) compte environ la Thaïlande ?",
+    "a": "40000"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "culture_026",
@@ -1590,86 +1475,63 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de Nouvelle-Zélande ?",
-    "c": [
-     "Paris",
-     "Londres",
-     "Vienne",
-     "Wellington"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel est le plat typique de Nouvelle-Zélande ?",
-    "c": [
-     "Kumara",
-     "Whitebait",
-     "Hangi",
-     "Pavlova"
-    ],
-    "a": 2
-   },
-   {
     "q": "Quelle est la capitale de la Nouvelle-Zélande ?",
     "c": [
-     "Christchurch",
      "Wellington",
      "Auckland",
+     "Christchurch",
      "Hamilton"
     ],
-    "a": 1
+    "a": "Wellington"
    },
    {
-    "q": "Quel oiseau emblématique de Nouvelle-Zélande ne vole pas ?",
+    "q": "Quel peuple autochtone polynésien vivait en Nouvelle-Zélande avant les Européens ?",
     "c": [
-     "Le kakapo",
-     "Le kiwi",
-     "Le moa",
-     "Le weka"
+     "Maoris",
+     "Aborigènes",
+     "Inuits",
+     "Aztèques"
     ],
-    "a": 1
+    "a": "Maoris"
    },
    {
-    "q": "Quel peuple autochtone habite la Nouvelle-Zélande ?",
-    "c": [
-     "Les Maoris",
-     "Les Aborigènes",
-     "Les Papous",
-     "Les Mélanésiens"
-    ],
-    "a": 0
+    "q": "Quel petit oiseau nocturne sans ailes est l'emblème du pays et surnom des habitants ?",
+    "a": "Kiwi"
    },
    {
-    "q": "Quel film célèbre a été tourné en Nouvelle-Zélande ?",
-    "c": [
-     "Le Seigneur des Anneaux",
-     "Avatar",
-     "Le Dernier Samouraï",
-     "King Kong"
-    ],
-    "a": 0
+    "q": "Quelle danse guerrière maorie exécutent les rugbymen néo-zélandais avant les matchs ?",
+    "a": "Haka"
    },
    {
-    "q": "Quel sport national est pratiqué en Nouvelle-Zélande avec un ballon ovale ?",
-    "c": [
-     "Le cricket",
-     "Le football australien",
-     "Le netball",
-     "Le rugby"
-    ],
-    "a": 3
+    "q": "Quelle saga de films de Peter Jackson a été tournée en Nouvelle-Zélande ? Le Seigneur des ___ ?",
+    "a": "Anneaux"
    },
    {
-    "q": "En quelle année les femmes ont-elles obtenu le droit de vote en Nouvelle-Zélande ?",
+    "q": "Comment surnomme-t-on l'équipe nationale de rugby de Nouvelle-Zélande ? Les All ___ ?",
     "c": [
-     "1901",
-     "1886",
-     "1910",
-     "1893"
+     "Blacks",
+     "Whites",
+     "Reds",
+     "Greens"
     ],
-    "a": 3
+    "a": "Blacks"
+   },
+   {
+    "q": "Quel animal, très nombreux dans le pays, dépasse largement en nombre la population humaine ?",
+    "c": [
+     "Mouton",
+     "Vache",
+     "Chèvre",
+     "Cheval"
+    ],
+    "a": "Mouton"
+   },
+   {
+    "q": "Environ combien de moutons compte la Nouvelle-Zélande (en millions) ?",
+    "a": "26"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "culture_027",
@@ -1678,86 +1540,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de Le Chili ?",
-    "c": [
-     "Santiago",
-     "Paris",
-     "Vienne",
-     "Londres"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quel est le plat typique de Le Chili ?",
-    "c": [
-     "Porotos",
-     "Pastel choclo",
-     "Cazuela",
-     "Empanada"
-    ],
-    "a": 1
-   },
-   {
     "q": "Quelle est la capitale du Chili ?",
     "c": [
-     "Concepción",
+     "Santiago",
      "Valparaíso",
-     "La Serena",
-     "Santiago"
+     "Concepción",
+     "Antofagasta"
     ],
-    "a": 3
+    "a": "Santiago"
    },
    {
-    "q": "Quel désert au Chili est le plus aride du monde ?",
-    "c": [
-     "Le désert de la Puna",
-     "Le désert de la Valle de la Luna",
-     "Le désert d'Atacama",
-     "Le désert de la Patagonie"
-    ],
-    "a": 2
+    "q": "Quelle très longue chaîne de montagnes borde le Chili à l'est ?",
+    "a": "Andes"
    },
    {
-    "q": "Quelle est la principale île chilienne dans le Pacifique ?",
+    "q": "Quel désert du nord du Chili est le plus aride du monde ?",
     "c": [
-     "La Terre de Feu",
-     "L'archipel Juan Fernández",
-     "L'île de Chiloé",
-     "L'île de Pâques"
+     "Atacama",
+     "Sahara",
+     "Gobi",
+     "Kalahari"
     ],
-    "a": 3
+    "a": "Atacama"
    },
    {
-    "q": "Quel poète chilien a remporté le prix Nobel de littérature en 1971 ?",
+    "q": "Quelle île chilienne isolée est célèbre pour ses statues géantes (moaï) ? L'île de ___ ?",
     "c": [
-     "Vicente Huidobro",
-     "Nicanor Parra",
-     "Gabriela Mistral",
-     "Pablo Neruda"
+     "Pâques",
+     "Robinson",
+     "Chiloé",
+     "Juan Fernández"
     ],
-    "a": 3
+    "a": "Pâques"
    },
    {
-    "q": "En quelle année le Chili a-t-il retrouvé la démocratie après Pinochet ?",
+    "q": "Quel poète chilien, prix Nobel, a écrit les Vingt poèmes d'amour ?",
     "c": [
-     "1985",
-     "1990",
-     "1988",
-     "1993"
+     "Neruda",
+     "Mistral",
+     "Borges",
+     "Paz"
     ],
-    "a": 1
+    "a": "Neruda"
    },
    {
-    "q": "Quelle est la plus longue chaîne de montagnes traversant le Chili ?",
+    "q": "Quel général a dirigé une dictature au Chili de 1973 à 1990 ?",
     "c": [
-     "La Sierra Nevada",
-     "La Cordillère des Andes",
-     "La chaîne côtière",
-     "La Patagonie"
+     "Pinochet",
+     "Allende",
+     "Videla",
+     "Stroessner"
     ],
-    "a": 1
+    "a": "Pinochet"
+   },
+   {
+    "q": "Quelle est la forme géographique très particulière du Chili, long et étroit ? Une ___ de terre ?",
+    "c": [
+     "bande",
+     "boule",
+     "spirale",
+     "étoile"
+    ],
+    "a": "bande"
+   },
+   {
+    "q": "Sur combien de kilomètres, environ, s'étire le Chili du nord au sud ?",
+    "a": "4300"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "culture_028",
@@ -1766,86 +1617,69 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de Danemark ?",
-    "c": [
-     "Londres",
-     "Vienne",
-     "Paris",
-     "Copenhague"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel est le plat typique de Danemark ?",
-    "c": [
-     "Smørrebrød",
-     "Rugbrød",
-     "Æbleskiver",
-     "Sild"
-    ],
-    "a": 0
-   },
-   {
     "q": "Quelle est la capitale du Danemark ?",
     "c": [
+     "Copenhague",
      "Aarhus",
      "Odense",
-     "Aalborg",
-     "Copenhague"
+     "Aalborg"
     ],
-    "a": 3
+    "a": "Copenhague"
    },
    {
-    "q": "Quel écrivain danois est célèbre pour ses contes ?",
-    "c": [
-     "Søren Kierkegaard",
-     "Karen Blixen",
-     "Hans Christian Andersen",
-     "Ludvig Holberg"
-    ],
-    "a": 2
+    "q": "Quelle statue de bronze inspirée d'un conte accueille les bateaux à Copenhague ? La petite ___ ?",
+    "a": "Sirene"
    },
    {
-    "q": "Quel est le nom du drapeau danois ?",
+    "q": "Quel écrivain danois est l'auteur de La Petite Sirène et du Vilain Petit Canard ?",
     "c": [
-     "Le Svendborg",
-     "Le Dannebrog",
-     "Le Norden",
-     "Le Korsflag"
+     "Andersen",
+     "Grimm",
+     "Perrault",
+     "Tolkien"
     ],
-    "a": 1
+    "a": "Andersen"
    },
    {
-    "q": "Quelle est la plus grande île du Danemark ?",
-    "c": [
-     "Sjaelland",
-     "Bornholm",
-     "Lolland",
-     "Fionie"
-    ],
-    "a": 0
+    "q": "Quelle célèbre marque de briques de construction à emboîter est danoise ?",
+    "a": "Lego"
    },
    {
-    "q": "En quelle année le Danemark a-t-il adopté la Constitution ?",
+    "q": "Quel concept danois de confort douillet et chaleureux est à la mode ?",
     "c": [
-     "1864",
-     "1849",
-     "1830",
-     "1901"
+     "Hygge",
+     "Lagom",
+     "Fika",
+     "Ikigai"
     ],
-    "a": 1
+    "a": "Hygge"
    },
    {
-    "q": "Quel pasteur et philosophe danois est considéré comme le père de l'existentialisme ?",
+    "q": "Quelle viennoiserie feuilletée porte le nom de ce pays en anglais ? Un ___ ?",
     "c": [
-     "Søren Kierkegaard",
-     "Georg Brandes",
-     "N.F.S. Grundtvig",
-     "Hans Lassen Martensen"
+     "Danish",
+     "Croissant",
+     "Bagel",
+     "Muffin"
     ],
-    "a": 0
+    "a": "Danish"
+   },
+   {
+    "q": "Quel grand territoire arctique, plus vaste que le pays lui-même, appartient au Danemark ?",
+    "c": [
+     "Groenland",
+     "Islande",
+     "Svalbard",
+     "Féroé"
+    ],
+    "a": "Groenland"
+   },
+   {
+    "q": "En quelle année a été inauguré le parc d'attractions de Tivoli, à Copenhague ?",
+    "a": "1843"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "culture_029",
@@ -1854,86 +1688,63 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de Finlande ?",
-    "c": [
-     "Helsinki",
-     "Vienne",
-     "Paris",
-     "Londres"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quel est le plat typique de Finlande ?",
-    "c": [
-     "Lohikeitto",
-     "Mustikkapiirakka",
-     "Mämmi",
-     "Karjalanpiirakka"
-    ],
-    "a": 3
-   },
-   {
     "q": "Quelle est la capitale de la Finlande ?",
     "c": [
      "Helsinki",
-     "Turku",
      "Tampere",
+     "Turku",
      "Oulu"
     ],
-    "a": 0
+    "a": "Helsinki"
    },
    {
-    "q": "Quel phénomène naturel peut-on voir en Laponie finlandaise ?",
-    "c": [
-     "Tout ce qui précède",
-     "Les aurores boréales",
-     "Le soleil de minuit",
-     "Les nuits polaires"
-    ],
-    "a": 0
+    "q": "Quel bain de chaleur sec, invention finlandaise, est pratiqué dans tout le pays ?",
+    "a": "Sauna"
    },
    {
-    "q": "Quel est le sport national finlandais ?",
-    "c": [
-     "Le sauna",
-     "Le hockey sur glace",
-     "Le ski de fond",
-     "Le pesäpallo"
-    ],
-    "a": 1
+    "q": "Quel personnage rouge et blanc de Laponie finlandaise distribue les cadeaux ? Le père ___ ?",
+    "a": "Noel"
    },
    {
-    "q": "En quelle année la Finlande a-t-elle déclaré son indépendance ?",
+    "q": "Quels personnages blancs en forme d'hippopotames, créés en Finlande, sont célèbres ?",
     "c": [
-     "1917",
-     "1918",
-     "1920",
-     "1919"
+     "Moomins",
+     "Barbapapa",
+     "Schtroumpfs",
+     "Teletubbies"
     ],
-    "a": 0
+    "a": "Moomins"
    },
    {
-    "q": "Quel compositeur finlandais a écrit 'Finlandia' ?",
+    "q": "Quelle marque de téléphones a longtemps été le fleuron industriel finlandais ?",
     "c": [
-     "Einojuhani Rautavaara",
-     "Kaija Saariaho",
-     "Jean Sibelius",
-     "Magnus Lindberg"
+     "Nokia",
+     "Ericsson",
+     "Sony",
+     "Motorola"
     ],
-    "a": 2
+    "a": "Nokia"
    },
    {
-    "q": "Combien de lacs compte la Finlande ?",
+    "q": "Comment surnomme-t-on la Finlande à cause de ses innombrables lacs ? Le pays des mille ___ ?",
+    "a": "Lacs"
+   },
+   {
+    "q": "Quelle région du nord de la Finlande, terre du père Noël, chevauche le cercle polaire ?",
     "c": [
-     "Environ 300 000",
-     "Environ 50 000",
-     "Environ 188 000",
-     "Environ 100 000"
+     "Laponie",
+     "Carélie",
+     "Ostrobotnie",
+     "Savonie"
     ],
-    "a": 2
+    "a": "Laponie"
+   },
+   {
+    "q": "Combien de lacs, environ, compte réellement la Finlande ?",
+    "a": "188000"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "culture_030",
@@ -1942,86 +1753,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de Irlande ?",
-    "c": [
-     "Vienne",
-     "Paris",
-     "Londres",
-     "Dublin"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel est le plat typique de Irlande ?",
-    "c": [
-     "Colcannon",
-     "Boxty",
-     "Coddle",
-     "Irish stew"
-    ],
-    "a": 3
-   },
-   {
     "q": "Quelle est la capitale de l'Irlande ?",
     "c": [
      "Dublin",
+     "Cork",
      "Galway",
-     "Limerick",
-     "Cork"
+     "Limerick"
     ],
-    "a": 0
+    "a": "Dublin"
    },
    {
-    "q": "Quel est le symbole national de l'Irlande ?",
+    "q": "Quelle bière brune irlandaise à mousse crémeuse est mondialement connue ?",
     "c": [
-     "La harpe",
-     "Le trèfle",
-     "Le chardon",
-     "Le leprechaun"
+     "Guinness",
+     "Heineken",
+     "Kilkenny",
+     "Murphy's"
     ],
-    "a": 0
+    "a": "Guinness"
    },
    {
-    "q": "Quel écrivain irlandais a écrit 'Ulysse' ?",
-    "c": [
-     "W.B. Yeats",
-     "Oscar Wilde",
-     "James Joyce",
-     "Samuel Beckett"
-    ],
-    "a": 2
+    "q": "Quelle plante à trois feuilles est le symbole national de l'Irlande ?",
+    "a": "Trefle"
    },
    {
-    "q": "Quelle bière irlandaise est la plus célèbre ?",
+    "q": "Quel petit lutin roux du folklore irlandais garde un chaudron d'or ?",
     "c": [
-     "La Murphy's",
-     "La Smithwick's",
-     "La Guinness",
-     "La Kilkenny"
+     "Leprechaun",
+     "Troll",
+     "Gnome",
+     "Farfadet"
     ],
-    "a": 2
+    "a": "Leprechaun"
    },
    {
-    "q": "En quelle année l'Irlande est-elle devenue une république indépendante ?",
+    "q": "Quelle fête irlandaise du 17 mars se célèbre en vert dans le monde entier ? La Saint-___ ?",
     "c": [
-     "1948",
-     "1949",
-     "1922",
-     "1937"
+     "Patrick",
+     "Brendan",
+     "Kevin",
+     "Colomba"
     ],
-    "a": 1
+    "a": "Patrick"
    },
    {
-    "q": "Quel saint est le patron de l'Irlande ?",
+    "q": "Quel instrument à cordes, symbole de l'Irlande, figure sur ses pièces d'euro ?",
     "c": [
-     "Saint Brendan",
-     "Saint Columba",
-     "Saint Kevin",
-     "Saint Patrick"
+     "Harpe",
+     "Violon",
+     "Cornemuse",
+     "Luth"
     ],
-    "a": 3
+    "a": "Harpe"
+   },
+   {
+    "q": "Quel groupe de rock irlandais est mené par le chanteur Bono ?",
+    "c": [
+     "U2",
+     "Coldplay",
+     "Oasis",
+     "The Cranberries"
+    ],
+    "a": "U2"
+   },
+   {
+    "q": "En quelle année l'État libre d'Irlande a-t-il été proclamé, indépendant du Royaume-Uni ?",
+    "a": "1922"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "cinema_001",
