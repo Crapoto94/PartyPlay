@@ -15556,86 +15556,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qu'est-ce que les 24 Heures du Mans ?",
-    "c": [
-     "Course de Formule 1",
-     "Rallye",
-     "Course de vitesse",
-     "Course d'endurance automobile de 24 heures"
-    ],
-    "a": 3
+    "q": "Combien d'heures dure la mythique course d'endurance du Mans ?",
+    "a": "24"
    },
    {
-    "q": "En quelle année la première course du Mans a-t-elle eu lieu ?",
+    "q": "Dans quelle ville française se court cette course d'endurance ?",
     "c": [
-     "1923",
-     "1930",
-     "1910",
-     "1920"
+     "Le Mans",
+     "Reims",
+     "Lyon",
+     "Nice"
     ],
-    "a": 0
+    "a": "Le Mans"
    },
    {
-    "q": "Quel constructeur a le plus de victoires au Mans ?",
+    "q": "Quel type d'épreuve automobile sont les 24 Heures du Mans ? Une course d'___ ?",
     "c": [
-     "Toyota",
-     "Porsche",
-     "Audi",
-     "Ferrari"
+     "endurance",
+     "sprint",
+     "côte",
+     "drift"
     ],
-    "a": 1
+    "a": "endurance"
    },
    {
-    "q": "Combien de kilomètres parcourt la voiture gagnante ?",
+    "q": "Combien de pilotes, minimum, se relaient par voiture au Mans ?",
     "c": [
-     "Environ 5 000 km",
-     "Environ 4 000 km",
-     "Environ 3 000 km",
-     "Environ 6 000 km"
+     "3",
+     "1",
+     "2",
+     "5"
     ],
-    "a": 0
+    "a": "3"
    },
    {
-    "q": "Comment s'appelle le célèbre virage du circuit du Mans ?",
+    "q": "Sur quel circuit, en partie sur routes, se court la course ? Le circuit de la ___ ?",
     "c": [
-     "Indianapolis",
-     "Les Hunaudières",
-     "Le Tertre Rouge",
-     "Mulsanne"
+     "Sarthe",
+     "Loire",
+     "Marne",
+     "Somme"
     ],
-    "a": 1
+    "a": "Sarthe"
    },
    {
-    "q": "Quel pilote français a gagné le Mans ?",
+    "q": "Quelle marque française a longtemps dominé Le Mans dans les années 1970-80 et 2010 ? (aussi berlines) ___ ?",
     "c": [
-     "Romain Dumas",
-     "Sébastien Bourdais",
-     "Yannick Dalmas",
-     "Henri Pescarolo"
+     "Peugeot",
+     "Renault",
+     "Citroën",
+     "Bugatti"
     ],
-    "a": 3
+    "a": "Peugeot"
    },
    {
-    "q": "Qu'est-ce que la ligne droite des Hunaudières ?",
+    "q": "Quel départ spectaculaire, où les pilotes couraient vers leur voiture, a rendu Le Mans célèbre ? Le départ en ___ ?",
     "c": [
-     "Virage",
-     "Stand",
-     "Chicane",
-     "Longue ligne droite de 6 km"
+     "épi",
+     "ligne",
+     "grille",
+     "cercle"
     ],
-    "a": 3
+    "a": "épi"
    },
    {
-    "q": "En quelle année les voitures hybrides ont-elles gagné le Mans pour la première fois ?",
-    "c": [
-     "2010",
-     "2014",
-     "2008",
-     "2012"
-    ],
-    "a": 3
+    "q": "En quelle année a eu lieu la toute première édition des 24 Heures du Mans ?",
+    "a": "1923"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "auto_010",
@@ -15644,174 +15633,158 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel pilote a le plus de championnats du monde de F1 ?",
-    "c": [
-     "Juan Manuel Fangio",
-     "Max Verstappen",
-     "Alain Prost",
-     "Lewis Hamilton et Michael Schumacher"
-    ],
-    "a": 3
+    "q": "Combien de roues a une monoplace de Formule 1 ?",
+    "a": "4"
    },
    {
-    "q": "Combien de titres ont Hamilton et Schumacher ?",
+    "q": "Quelle écurie italienne rouge est la plus mythique de la F1 ?",
     "c": [
-     "7",
-     "5",
-     "8",
-     "6"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quel constructeur a le plus de titres en F1 ?",
-    "c": [
-     "Mercedes",
+     "Ferrari",
      "McLaren",
      "Williams",
-     "Ferrari"
+     "Renault"
     ],
-    "a": 3
+    "a": "Ferrari"
    },
    {
-    "q": "En quelle année le premier championnat de F1 a-t-il eu lieu ?",
+    "q": "Quel drapeau à damier marque la fin d'un Grand Prix ?",
     "c": [
-     "1960",
-     "1955",
-     "1947",
-     "1950"
+     "damier",
+     "rouge",
+     "jaune",
+     "vert"
     ],
-    "a": 3
+    "a": "damier"
    },
    {
-    "q": "Quel pilote français est quadruple champion du monde de F1 ?",
+    "q": "Comment appelle-t-on la première place sur la grille de départ ? La ___ position ?",
     "c": [
-     "Niki Lauda",
-     "Jackie Stewart",
-     "Alain Prost",
-     "Jim Clark"
+     "pole",
+     "top",
+     "super",
+     "first"
     ],
-    "a": 2
+    "a": "pole"
    },
    {
-    "q": "Quel est le circuit le plus célèbre de F1 ?",
+    "q": "Quel arrêt technique permet de changer les pneus en course ? Le ___ ?",
     "c": [
-     "Monaco",
-     "Monza",
-     "Spa-Francorchamps",
-     "Silverstone"
+     "pit-stop",
+     "check-up",
+     "warm-up",
+     "time-out"
     ],
-    "a": 0
+    "a": "pit-stop"
    },
    {
-    "q": "Combien de moteurs V6 turbo hybride une F1 utilise-t-elle par saison ?",
+    "q": "Quel pilote allemand détient 7 titres, record égalé par Hamilton ? Michael ___ ?",
     "c": [
-     "4",
-     "6",
-     "5",
-     "3"
+     "Schumacher",
+     "Vettel",
+     "Rosberg",
+     "Massa"
     ],
-    "a": 0
+    "a": "Schumacher"
    },
    {
-    "q": "Qui est le plus jeune champion du monde de F1 ?",
+    "q": "Quel jeune pilote monégasque court pour Ferrari ? Charles ___ ?",
     "c": [
-     "Fernando Alonso",
-     "Sebastian Vettel",
-     "Lewis Hamilton",
-     "Max Verstappen"
+     "Leclerc",
+     "Gasly",
+     "Ocon",
+     "Alonso"
     ],
-    "a": 1
+    "a": "Leclerc"
+   },
+   {
+    "q": "En quelle année a eu lieu le premier championnat du monde de Formule 1 ?",
+    "a": "1950"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "tv_001",
   "cat": "tv",
-  "name": "Le Mans",
+  "name": "Les séries télé françaises",
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle série policière française est la plus ancienne ?",
+    "q": "Sur quel type d'écran regarde-t-on une série télé ? La ___ ?",
     "c": [
-     "Les Cinq Dernières Minutes",
-     "Commissaire Moulin",
-     "Inspecteur Leclerc",
-     "Les Brigades du Tigre"
+     "télévision",
+     "radio",
+     "montre",
+     "boussole"
     ],
-    "a": 0
+    "a": "télévision"
    },
    {
-    "q": "Quel acteur joue le commissaire Maigret ?",
+    "q": "Quelle série policière française suit l'équipe du « 36 » avec le capitaine Berthaud ? ___ ?",
     "c": [
-     "Pierre Renoir",
-     "Tous ces acteurs",
-     "Jean Richard",
-     "Bruno Cremer"
+     "Engrenages",
+     "Braquo",
+     "Profilage",
+     "Section"
     ],
-    "a": 1
+    "a": "Engrenages"
    },
    {
-    "q": "Quelle série policière américaine a eu le plus de saisons ?",
+    "q": "Quelle longue série quotidienne suit les habitants d'un quartier de Marseille (France 3) ? Plus belle la ___ ?",
     "c": [
-     "CSI",
-     "NCIS",
-     "Law & Order",
-     "Criminal Minds"
+     "vie",
+     "ville",
+     "rue",
+     "mer"
     ],
-    "a": 2
+    "a": "vie"
    },
    {
-    "q": "Quelle série française met en scène une brigade de police marseillaise ?",
+    "q": "Quelle série d'espionnage française primée met en scène la DGSE ? Le Bureau des ___ ?",
     "c": [
-     "Section de recherches",
-     "Plus belle la vie",
-     "Commissaire Magellan",
-     "Julie Lescaut"
+     "Légendes",
+     "Secrets",
+     "Ombres",
+     "Espions"
     ],
-    "a": 0
+    "a": "Légendes"
    },
    {
-    "q": "Quel acteur joue Navarro ?",
+    "q": "Quelle série humoristique médiévale de Alexandre Astier met en scène le roi Arthur ?",
     "c": [
-     "Bruno Cremer",
-     "Pierre Mondy",
-     "André Dussollier",
-     "Roger Hanin"
+     "Kaamelott",
+     "Hero Corp",
+     "Off Prime",
+     "Platane"
     ],
-    "a": 3
+    "a": "Kaamelott"
    },
    {
-    "q": "Comment s'appelle l'inspecteur dans 'Les Cordier, juge et flic' ?",
+    "q": "Quelle série de zombies française, primée à l'international, se déroule dans un village de montagne ?",
     "c": [
-     "Boullier",
-     "Cordier",
-     "Navarro",
-     "Maigret"
+     "Les Revenants",
+     "Zone Blanche",
+     "Marianne",
+     "Vampires"
     ],
-    "a": 1
+    "a": "Les Revenants"
    },
    {
-    "q": "Quelle série policière britannique met en scène Sherlock Holmes moderne ?",
+    "q": "Quelle chaîne cryptée française a produit de nombreuses séries primées (Engrenages, Le Bureau) ?",
     "c": [
-     "Vera",
-     "Inspector Morse",
-     "Sherlock",
-     "Midsomer Murders"
+     "Canal+",
+     "TF1",
+     "M6",
+     "Arte"
     ],
-    "a": 2
+    "a": "Canal+"
    },
    {
-    "q": "Qu'est-ce qu'un 'cold case' dans une série policière ?",
-    "c": [
-     "Meurtre",
-     "Affaire classée non résolue",
-     "Enquête",
-     "Procès"
-    ],
-    "a": 1
+    "q": "En quelle année la série « Plus belle la vie » a-t-elle été diffusée pour la première fois ?",
+    "a": "2004"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "tv_002",
@@ -15820,86 +15793,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la série la plus regardée sur Netflix en anglais ?",
+    "q": "Sur quelle plateforme de streaming au logo rouge regarde-t-on ces séries ?",
     "c": [
-     "Stranger Things",
-     "Squid Game",
-     "The Crown",
-     "Bridgerton"
+     "Netflix",
+     "YouTube",
+     "Twitch",
+     "Spotify"
     ],
-    "a": 0
+    "a": "Netflix"
    },
    {
-    "q": "En quelle année Netflix a-t-il lancé ses premières séries originales ?",
+    "q": "Quelle série espagnole de braqueurs en combinaison rouge et masque de Dalí a cartonné ? La Casa de ___ ?",
     "c": [
-     "2017",
-     "2013",
-     "2015",
-     "2011"
+     "Papel",
+     "Campo",
+     "Sol",
+     "Mar"
     ],
-    "a": 1
+    "a": "Papel"
    },
    {
-    "q": "Quelle série française Netflix a connu un succès mondial ?",
+    "q": "Quelle série coréenne de jeux mortels pour de l'argent a battu tous les records en 2021 ? ___ Game ?",
     "c": [
-     "Le Bazar de la Charité",
+     "Squid",
+     "Money",
+     "Death",
+     "Kill"
+    ],
+    "a": "Squid"
+   },
+   {
+    "q": "Quelle série de science-fiction des années 80 avec des enfants et un « Upside Down » est culte ? ___ Things ?",
+    "c": [
+     "Stranger",
+     "Weird",
+     "Dark",
+     "Odd"
+    ],
+    "a": "Stranger"
+   },
+   {
+    "q": "Quelle série britannique sur la royauté raconte la vie d'Elizabeth II ? The ___ ?",
+    "c": [
+     "Crown",
+     "Queen",
+     "King",
+     "Throne"
+    ],
+    "a": "Crown"
+   },
+   {
+    "q": "Quelle série française sur un gentleman cambrioleur inspiré d'Arsène Lupin a cartonné en 2021 ?",
+    "c": [
      "Lupin",
-     "Family Business",
-     "Dix pour cent"
+     "Arsène",
+     "Voleur",
+     "Masque"
     ],
-    "a": 1
+    "a": "Lupin"
    },
    {
-    "q": "Qui joue le rôle d'Assane Diop dans Lupin ?",
+    "q": "Comment appelle-t-on le fait de regarder plusieurs épisodes d'affilée sur Netflix ? Le ___-watching ?",
     "c": [
-     "Omar Sy",
-     "Jean Dujardin",
-     "Vincent Cassel",
-     "Reda Kateb"
+     "binge",
+     "speed",
+     "night",
+     "power"
     ],
-    "a": 0
+    "a": "binge"
    },
    {
-    "q": "Quelle série sud-coréenne Netflix a battu tous les records en 2021 ?",
-    "c": [
-     "The Glory",
-     "All of Us Are Dead",
-     "Squid Game",
-     "Hellbound"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Combien de saisons compte 'Stranger Things' (2024) ?",
-    "c": [
-     "2",
-     "4",
-     "3",
-     "5"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quel acteur joue le Prince Philip dans The Crown ?",
-    "c": [
-     "Jonathan Pryce",
-     "Tobias Menzies",
-     "Matt Smith",
-     "Tous"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quelle série Netflix raconte l'histoire de la reine Elizabeth II ?",
-    "c": [
-     "Windsor",
-     "The Crown",
-     "The Queen",
-     "Royalty"
-    ],
-    "a": 1
+    "q": "En quelle année Netflix a-t-il lancé son service de streaming vidéo par abonnement ?",
+    "a": "2007"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "tv_003",
@@ -15908,86 +15876,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel est le premier journal télévisé français ?",
+    "q": "À quelle heure du soir est diffusé le grand JT en France ? À ___ heures ?",
     "c": [
-     "La Une",
-     "JT de 20h",
-     "Actualités télévisées",
-     "Le journal télévisé"
+     "20",
+     "12",
+     "18",
+     "22"
     ],
-    "a": 1
+    "a": "20"
    },
    {
-    "q": "Qui a présenté le JT de 20h le plus longtemps sur TF1 ?",
+    "q": "Qui présente et lit les informations à la télévision ? Le ___ ?",
     "c": [
-     "Claire Chazal",
-     "Jean-Pierre Pernaut",
-     "Gilles Bouleau",
-     "Patrick Poivre d'Arvor"
+     "présentateur",
+     "acteur",
+     "chanteur",
+     "arbitre"
     ],
-    "a": 1
+    "a": "présentateur"
    },
    {
-    "q": "Quelle chaîne a le JT de 20h le plus regardé en France ?",
+    "q": "Comment appelle-t-on l'ensemble des informations du jour présentées ? Les ___ ?",
     "c": [
-     "France 2",
-     "CNews",
-     "M6",
-     "TF1"
+     "actualités",
+     "publicités",
+     "chansons",
+     "recettes"
     ],
-    "a": 3
+    "a": "actualités"
    },
    {
-    "q": "En quelle année le premier JT a-t-il été diffusé en France ?",
+    "q": "Sur quel meuble le présentateur du JT est-il généralement assis ? Un ___ ?",
     "c": [
-     "1949",
-     "1960",
-     "1955",
-     "1945"
+     "bureau",
+     "canapé",
+     "tabouret",
+     "lit"
     ],
-    "a": 0
+    "a": "bureau"
    },
    {
-    "q": "Qu'est-ce qu'un duplex en journalisme ?",
+    "q": "Comment appelle-t-on le journaliste envoyé filmer sur le terrain ? L'envoyé ___ ?",
     "c": [
-     "Liaison en direct avec un reporter",
-     "Reportage",
-     "Interview",
-     "Plateau"
+     "spécial",
+     "royal",
+     "secret",
+     "national"
     ],
-    "a": 0
+    "a": "spécial"
    },
    {
-    "q": "Qui a présenté le JT de France 2 pendant 20 ans ?",
+    "q": "Quelle rubrique clôt souvent le JT sur une note légère ou insolite ? Le ___ de la fin ?",
     "c": [
-     "Béatrice Schönberg",
-     "Marie Drucker",
-     "Laurent Delahousse",
-     "David Pujadas"
+     "sujet",
+     "cri",
+     "buzz",
+     "mot"
     ],
-    "a": 3
+    "a": "sujet"
    },
    {
-    "q": "Qu'est-ce qu'un 'flash info' ?",
+    "q": "Quel bandeau défilant en bas de l'écran affiche des infos brèves en continu ? Le ___ ?",
     "c": [
-     "Brève interruption pour une information urgente",
-     "Journal du soir",
-     "Bulletin complet",
-     "Revue de presse"
+     "bandeau",
+     "titre",
+     "logo",
+     "cadre"
     ],
-    "a": 0
+    "a": "bandeau"
    },
    {
-    "q": "Quelle chaîne d'info en continu a été lancée en 2017 ?",
-    "c": [
-     "LCI",
-     "Franceinfo",
-     "BFMTV",
-     "CNews"
-    ],
-    "a": 3
+    "q": "En quelle année le premier journal télévisé a-t-il été diffusé en France (RTF) ?",
+    "a": "1949"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "tv_004",
@@ -15996,86 +15959,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel jeu télévisé français est le plus ancien ?",
+    "q": "Que gagne-t-on souvent en participant à un jeu télévisé ? De l'___ ?",
     "c": [
-     "Questions pour un champion",
-     "Des chiffres et des lettres",
-     "Le mot le plus long",
-     "Jeopardy"
+     "argent",
+     "eau",
+     "air",
+     "temps"
     ],
-    "a": 1
+    "a": "argent"
    },
    {
-    "q": "Qui présente 'Questions pour un champion' ?",
+    "q": "Quel jeu de lettres et chiffres de France 2 est un classique de l'après-midi ? Des chiffres et des ___ ?",
     "c": [
-     "Michel Drucker",
-     "Julien Lepers",
-     "Samuel Étienne",
-     "Laurent Ruquier"
+     "lettres",
+     "mots",
+     "sons",
+     "nombres"
     ],
-    "a": 2
+    "a": "lettres"
    },
    {
-    "q": "Quel jeu animé par Nagui est diffusé sur France 2 ?",
-    "c": [
-     "Motus",
-     "Fort Boyard",
-     "Tout le monde veut prendre sa place",
-     "N'oubliez pas les paroles"
-    ],
-    "a": 3
+    "q": "Dans « Qui veut gagner des millions », combien de jokers le candidat a-t-il au départ ?",
+    "a": "3"
    },
    {
-    "q": "Quelle émission de TF1 animée par Jean-Pierre Foucault ?",
+    "q": "Quel jeu fait deviner un mot en faisant tourner une roue et acheter des voyelles ? La ___ de la fortune ?",
     "c": [
-     "Une famille en or",
-     "La Roue de la fortune",
-     "Le Juste Prix",
-     "Qui veut gagner des millions ?"
+     "roue",
+     "roulette",
+     "toupie",
+     "boule"
     ],
-    "a": 3
+    "a": "roue"
    },
    {
-    "q": "Combien de questions faut-il répondre pour gagner à 'Qui veut gagner des millions ?'",
+    "q": "Dans « Une famille en or », les candidats doivent deviner les réponses d'un ___ ?",
     "c": [
-     "20",
-     "12",
-     "15",
-     "10"
+     "sondage",
+     "livre",
+     "juré",
+     "expert"
     ],
-    "a": 2
+    "a": "sondage"
    },
    {
-    "q": "Quel jeu télévisé se déroule dans un fort en Charente-Maritime ?",
+    "q": "Quel présentateur emblématique a longtemps animé « Questions pour un champion » ? Julien ___ ?",
     "c": [
-     "Le Maillon faible",
-     "La Carte aux trésors",
-     "Fort Boyard",
-     "Les Jeux de 20 heures"
+     "Lepers",
+     "Foucault",
+     "Sébastien",
+     "Drucker"
     ],
-    "a": 2
+    "a": "Lepers"
    },
    {
-    "q": "Qui présente 'Fort Boyard' depuis 2022 ?",
+    "q": "Comment appelle-t-on la question finale à gros gain d'un jeu télé ? La question ___ ?",
     "c": [
-     "Patrice Laffont",
-     "Olivier Minne",
-     "Nagui",
-     "Yann Barthès"
+     "finale",
+     "bonus",
+     "surprise",
+     "cachée"
     ],
-    "a": 1
+    "a": "finale"
    },
    {
-    "q": "Quel jeu télévisé britannique est adapté dans plus de 100 pays ?",
-    "c": [
-     "The Weakest Link",
-     "Jeopardy",
-     "Family Feud",
-     "Who Wants to Be a Millionaire ?"
-    ],
-    "a": 3
+    "q": "En quelle année « Questions pour un champion » a-t-il débuté sur Antenne 2 / France 3 ?",
+    "a": "1988"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "tv_005",
@@ -16084,86 +16036,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel talk-show français est le plus ancien ?",
+    "q": "Autour de quoi les invités d'un talk-show discutent-ils ? Ils ___ ?",
     "c": [
-     "Rendez-vous avec Michel Drucker",
-     "Le Grand Échiquier",
-     "On n'est pas couché",
-     "Tout le monde en parle"
+     "parlent",
+     "dorment",
+     "courent",
+     "nagent"
     ],
-    "a": 1
+    "a": "parlent"
    },
    {
-    "q": "Qui anime 'Le Grand Échiquier' dans les années 1970-1990 ?",
+    "q": "Qui mène la discussion et pose les questions dans un talk-show ? L'___ ?",
     "c": [
-     "Philippe Gildas",
-     "Jacques Chancel",
-     "Bernard Pivot",
-     "Michel Drucker"
+     "animateur",
+     "cameraman",
+     "figurant",
+     "spectateur"
     ],
-    "a": 1
+    "a": "animateur"
    },
    {
-    "q": "Quel talk-show américain est le plus célèbre ?",
+    "q": "Comment appelle-t-on les gens assis dans le studio qui applaudissent ? Le ___ ?",
     "c": [
-     "Late Show",
-     "The Tonight Show",
-     "The Oprah Winfrey Show",
-     "Jimmy Kimmel Live"
+     "public",
+     "jury",
+     "casting",
+     "conseil"
     ],
-    "a": 1
+    "a": "public"
    },
    {
-    "q": "Qui anime 'Quotidien' sur TMC ?",
+    "q": "Quel talk-show de fin de soirée américain est animé par Jimmy ___ ? (The Tonight Show)",
     "c": [
-     "Laurent Ruquier",
-     "Yann Barthès",
-     "Nikos Aliagas",
-     "Cyril Hanouna"
+     "Fallon",
+     "Kimmel",
+     "Corden",
+     "Meyers"
     ],
-    "a": 1
+    "a": "Fallon"
    },
    {
-    "q": "Qui anime 'Touche pas à mon poste' sur C8 ?",
+    "q": "Sur quel meuble confortable s'assoient souvent les invités d'un talk-show ? Un ___ ?",
     "c": [
-     "Arthur",
-     "Yann Barthès",
-     "Michel Drucker",
-     "Cyril Hanouna"
+     "canapé",
+     "tabouret",
+     "trône",
+     "hamac"
     ],
-    "a": 3
+    "a": "canapé"
    },
    {
-    "q": "Quel animateur français présente 'Les Grosses Têtes' ?",
+    "q": "Quelle animatrice américaine mythique a eu le talk-show le plus regardé, avec son club de lecture ? Oprah ___ ?",
     "c": [
-     "Nagui",
-     "Philippe Bouvard",
-     "Michel Drucker",
-     "Laurent Ruquier"
+     "Winfrey",
+     "Williams",
+     "DeGeneres",
+     "Ripa"
     ],
-    "a": 1
+    "a": "Winfrey"
    },
    {
-    "q": "Quelle émission de télévision est un talk-show politique ?",
+    "q": "Quel petit orchestre accompagne souvent les talk-shows américains en direct ? Le ___ (house band) ?",
     "c": [
-     "Les Terriens du samedi",
-     "C à vous",
-     "On n'est pas couché",
-     "L'Émission politique"
+     "groupe",
+     "chœur",
+     "quatuor",
+     "DJ"
     ],
-    "a": 3
+    "a": "groupe"
    },
    {
-    "q": "Qui anime 'C à vous' sur France 5 ?",
-    "c": [
-     "Agathe Lecaron",
-     "Alessandra Sublet",
-     "Anne-Élisabeth Lemoine",
-     "Maya Bazouni"
-    ],
-    "a": 2
+    "q": "Pendant combien d'années, environ, l'émission d'Oprah Winfrey a-t-elle été diffusée (record) ?",
+    "a": "25"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "tv_006",
@@ -16172,86 +16119,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle série animée japonaise est la plus célèbre ?",
+    "q": "Sous quelle forme dessinée sont faites les séries animées ? Des ___ animés ?",
+    "c": [
+     "dessins",
+     "photos",
+     "sculptures",
+     "collages"
+    ],
+    "a": "dessins"
+   },
+   {
+    "q": "Quelle famille jaune de Springfield est la plus célèbre des séries animées ? Les ___ ?",
+    "c": [
+     "Simpson",
+     "Griffin",
+     "Smith",
+     "Belcher"
+    ],
+    "a": "Simpson"
+   },
+   {
+    "q": "De quel pays viennent les séries animées appelées « animes » ?",
+    "c": [
+     "Japon",
+     "Chine",
+     "Corée",
+     "France"
+    ],
+    "a": "Japon"
+   },
+   {
+    "q": "Quel garçon de South Park porte un bonnet à pompon et « meurt » souvent ? ___ ?",
+    "c": [
+     "Kenny",
+     "Cartman",
+     "Stan",
+     "Kyle"
+    ],
+    "a": "Kenny"
+   },
+   {
+    "q": "Quel anime met en scène des ninjas et un héros blond au chakra du renard ?",
     "c": [
      "Naruto",
+     "Bleach",
      "One Piece",
-     "Dragon Ball",
-     "Pokémon"
+     "Dragon Ball"
     ],
-    "a": 2
+    "a": "Naruto"
    },
    {
-    "q": "Quel studio d'animation japonais est mondialement connu ?",
+    "q": "Quel duo père-fils scientifique voyage entre les dimensions dans une série adulte ? ___ and Morty ?",
     "c": [
-     "Madhouse",
-     "Kyoto Animation",
-     "Toei Animation",
-     "Studio Ghibli"
+     "Rick",
+     "Bob",
+     "Tom",
+     "Jack"
     ],
-    "a": 3
+    "a": "Rick"
    },
    {
-    "q": "Qui a créé Dragon Ball ?",
+    "q": "Quel studio japonais de Miyazaki est célèbre pour ses films et l'esprit anime ? Studio ___ ?",
     "c": [
-     "Osamu Tezuka",
-     "Eiichiro Oda",
-     "Akira Toriyama",
-     "Masashi Kishimoto"
+     "Ghibli",
+     "Pixar",
+     "Toei",
+     "Madhouse"
     ],
-    "a": 2
+    "a": "Ghibli"
    },
    {
-    "q": "Quelle série animée française est diffusée internationalement ?",
-    "c": [
-     "Il était une fois...",
-     "Les Mystérieuses Cités d'or",
-     "Totally Spies",
-     "Miraculous Ladybug"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Combien d'épisodes compte One Piece (2024) ?",
-    "c": [
-     "Plus de 1 000",
-     "Plus de 1 200",
-     "Plus de 800",
-     "Plus de 500"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quelle série animée américaine est la plus longue ?",
-    "c": [
-     "South Park",
-     "Bob's Burgers",
-     "Family Guy",
-     "Les Simpson"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Combien de saisons Les Simpson comptent-ils (2024) ?",
-    "c": [
-     "25",
-     "34",
-     "36",
-     "30"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quel manga est le plus vendu de l'histoire ?",
-    "c": [
-     "Naruto",
-     "Death Note",
-     "Dragon Ball",
-     "One Piece"
-    ],
-    "a": 3
+    "q": "En quelle année la série animée « Les Simpson » a-t-elle démarré en tant que série à part entière ?",
+    "a": "1989"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "tv_007",
@@ -16260,86 +16202,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la première émission de téléréalité moderne ?",
+    "q": "Que filment en continu les caméras de téléréalité ? La ___ des candidats ?",
     "c": [
-     "Star Academy (2001)",
-     "Loft Story (2001)",
-     "Koh-Lanta (2001)",
-     "Big Brother (1999)"
+     "vie",
+     "voiture",
+     "maison vide",
+     "télé"
     ],
-    "a": 3
+    "a": "vie"
    },
    {
-    "q": "Quel concept de téléréalité met en scène des candidats sur une île ?",
+    "q": "Dans quel type de lieu clos les candidats de « Loft Story » vivaient-ils enfermés ? Un ___ ?",
     "c": [
-     "Secret Story",
-     "Les Marseillais",
-     "Loft Story",
-     "Koh-Lanta"
+     "loft",
+     "château",
+     "bateau",
+     "train"
     ],
-    "a": 3
+    "a": "loft"
    },
    {
-    "q": "Qui présente 'Koh-Lanta' sur TF1 ?",
+    "q": "Comment sort-on un candidat de téléréalité que le public n'aime plus ? On l'___ ?",
     "c": [
-     "Christophe Dechavanne",
-     "Jean-Pierre Foucault",
-     "Arthur",
-     "Denis Brogniart"
+     "élimine",
+     "recrute",
+     "engage",
+     "félicite"
     ],
-    "a": 3
+    "a": "élimine"
    },
    {
-    "q": "Quelle émission de TF1 cherche le meilleur chanteur amateur ?",
+    "q": "Quelle émission suit des célibataires cherchant l'amour dans une villa au soleil ? Les Marseillais / L'île de la ___ ?",
     "c": [
-     "The Voice",
-     "Nouvelle Star",
-     "La France a un incroyable talent",
-     "Star Academy"
+     "tentation",
+     "chance",
+     "beauté",
+     "musique"
     ],
-    "a": 0
+    "a": "tentation"
    },
    {
-    "q": "Quelle émission de rencontres est la plus célèbre ?",
+    "q": "Par quel moyen le public soutient-il son candidat préféré ? Il ___ ?",
     "c": [
-     "The Bachelor",
-     "Les princes de l'amour",
-     "Mariés au premier regard",
-     "L'amour est aveugle"
+     "vote",
+     "chante",
+     "cuisine",
+     "dort"
     ],
-    "a": 3
+    "a": "vote"
    },
    {
-    "q": "Combien d'aventuriers commencent Koh-Lanta chaque saison ?",
+    "q": "Quel télé-crochet de chant fait tourner les fauteuils des jurés dos aux candidats ? The ___ ?",
     "c": [
-     "16",
-     "18",
-     "20",
-     "24"
+     "Voice",
+     "Star",
+     "Song",
+     "Idol"
     ],
-    "a": 2
+    "a": "Voice"
    },
    {
-    "q": "Quelle émission de relooking est célèbre ?",
+    "q": "Comment appelle-t-on la pièce où les candidats se confient seuls face caméra ? Le ___ ?",
     "c": [
-     "C'est mon choix",
-     "Les Reines du shopping",
-     "Ma vie est un enfer",
-     "Incroyable transformation"
+     "confessionnal",
+     "salon",
+     "grenier",
+     "jardin"
     ],
-    "a": 1
+    "a": "confessionnal"
    },
    {
-    "q": "Qui gagne la Star Academy ?",
-    "c": [
-     "Le jury",
-     "Les professeurs",
-     "Le candidat avec le plus de votes",
-     "Le public"
-    ],
-    "a": 2
+    "q": "En quelle année « Loft Story », première grande téléréalité française, a-t-elle été diffusée ?",
+    "a": "2001"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "tv_008",
@@ -16348,86 +16285,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qu'est-ce qu'un documentaire ?",
+    "q": "Un documentaire montre-t-il des faits réels ou de la fiction ?",
     "c": [
-     "Film de fiction",
-     "Film non-fictif qui présente des faits réels",
-     "Journal télévisé",
-     "Reportage"
+     "réels",
+     "inventés",
+     "magiques",
+     "faux"
     ],
-    "a": 1
+    "a": "réels"
    },
    {
-    "q": "Quelle chaîne française est spécialisée dans les documentaires ?",
+    "q": "Quel type de documentaire filme les lions, éléphants et autres bêtes sauvages ? Un docu ___ ?",
     "c": [
-     "NRJ12",
-     "TF1",
-     "M6",
-     "Arte"
+     "animalier",
+     "culinaire",
+     "sportif",
+     "musical"
     ],
-    "a": 3
+    "a": "animalier"
    },
    {
-    "q": "Quel réalisateur a tourné 'Le Peuple Migrateur' ?",
+    "q": "Comment appelle-t-on la voix qui commente un documentaire sans être vue ? La voix ___ ?",
     "c": [
-     "Yann Arthus-Bertrand",
-     "Claude Lelouch",
-     "Nicolas Vanier",
-     "Jacques Perrin"
+     "off",
+     "haute",
+     "basse",
+     "double"
     ],
-    "a": 3
+    "a": "off"
    },
    {
-    "q": "Quel documentaire de Al Gore sur le climat a eu un impact mondial ?",
+    "q": "Quelle chaîne américaine est spécialisée dans les documentaires animaliers et nature ? National ___ ?",
     "c": [
-     "Supersize Me",
-     "The Cove",
+     "Geographic",
+     "History",
+     "Science",
+     "Nature"
+    ],
+    "a": "Geographic"
+   },
+   {
+    "q": "Quel présentateur-naturaliste britannique légendaire narre les docus de la BBC ? David ___ ?",
+    "c": [
+     "Attenborough",
+     "Beckham",
+     "Bowie",
+     "Bean"
+    ],
+    "a": "Attenborough"
+   },
+   {
+    "q": "Comment appelle-t-on un documentaire qui suit un sujet sur une très longue durée ? Un docu au long ___ ?",
+    "c": [
+     "cours",
+     "métrage",
+     "terme",
+     "temps"
+    ],
+    "a": "cours"
+   },
+   {
+    "q": "Quelle série documentaire phare de la BBC filme la planète sous toutes ses facettes ? Planet ___ ?",
+    "c": [
      "Earth",
-     "An Inconvenient Truth"
+     "Blue",
+     "Life",
+     "Green"
     ],
-    "a": 3
+    "a": "Earth"
    },
    {
-    "q": "Qu'est-ce qu'un documentaire animalier ?",
-    "c": [
-     "Film de fiction animalier",
-     "Série animée",
-     "Documentaire sur les animaux et la nature",
-     "Reportage sportif"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quel documentaire a popularisé le réchauffement climatique ?",
-    "c": [
-     "Our Planet",
-     "Before the Flood",
-     "The 11th Hour",
-     "An Inconvenient Truth"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel réalisateur français est connu pour ses documentaires marins ?",
-    "c": [
-     "Jean-Michel Cousteau",
-     "Jacques Cousteau",
-     "Nicolas Hulot",
-     "François Sarano"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Combien d'épisodes compte la série documentaire 'Planète Terre' ?",
-    "c": [
-     "9",
-     "8",
-     "11",
-     "12"
-    ],
-    "a": 2
+    "q": "En quelle année est sorti « Nanouk l'Esquimau », souvent cité comme premier grand documentaire ?",
+    "a": "1922"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "tv_009",
