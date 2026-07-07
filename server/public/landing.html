@@ -610,26 +610,6 @@
       </div>
     </div>
 
-    <!-- ⭐ Avis sur l'application -->
-    <div id="feedbackSection" style="margin:40px auto;max-width:540px;text-align:center">
-      <div style="background:rgba(139,92,246,.1);border:1px solid rgba(139,92,246,.3);border-radius:20px;padding:24px 28px">
-        <div style="font-size:32px;margin-bottom:8px">⭐</div>
-        <h3 style="font-family:var(--font-display);font-size:18px;font-weight:700;margin:0 0 6px">Donne ton avis sur PartyPlay</h3>
-        <p class="muted" style="font-size:14px;margin:0 0 14px">Sans inscription, sans mot de passe.</p>
-        <div id="fbStars" style="margin-bottom:10px">
-          <span style="font-size:28px;cursor:pointer;transition:opacity .15s" onmouseenter="fbHover(1)" onclick="fbPick(1)" id="fbS1">☆</span>
-          <span style="font-size:28px;cursor:pointer;transition:opacity .15s" onmouseenter="fbHover(2)" onclick="fbPick(2)" id="fbS2">☆</span>
-          <span style="font-size:28px;cursor:pointer;transition:opacity .15s" onmouseenter="fbHover(3)" onclick="fbPick(3)" id="fbS3">☆</span>
-          <span style="font-size:28px;cursor:pointer;transition:opacity .15s" onmouseenter="fbHover(4)" onclick="fbPick(4)" id="fbS4">☆</span>
-          <span style="font-size:28px;cursor:pointer;transition:opacity .15s" onmouseenter="fbHover(5)" onclick="fbPick(5)" id="fbS5">☆</span>
-        </div>
-        <input type="text" id="fbEventId" placeholder="Code de ta fête (ex. anniv-lea) — optionnel" style="width:100%;padding:10px 14px;border-radius:10px;border:1px solid var(--border);background:rgba(255,255,255,.055);color:var(--ink);font-size:14px;margin-bottom:8px">
-        <textarea id="fbComment" placeholder="Un commentaire ? (optionnel)" style="width:100%;padding:10px 14px;border-radius:10px;border:1px solid var(--border);background:rgba(255,255,255,.055);color:var(--ink);font-size:14px;min-height:60px;resize:vertical;margin-bottom:10px;font-family:var(--font)"></textarea>
-        <button class="btn" style="width:100%" onclick="submitPublicFeedback()">💬 Envoyer mon avis</button>
-        <p id="fbStatus" class="muted" style="font-size:13px;margin:8px 0 0"></p>
-      </div>
-    </div>
-
     <footer>
       <a href="/contact">Contact</a>
       <a href="/rgpd">Confidentialité (RGPD)</a>
@@ -915,36 +895,6 @@ function goConsole(){
   const code = document.getElementById('adminCode').value.trim().toLowerCase();
   if (!code) return;
   location.href = '/e/'+encodeURIComponent(code)+'/admin';
-}
-
-// ---- Feedback public ----
-let fbPickValue = 0;
-function fbHover(n) {
-  for (let i = 1; i <= 5; i++) document.getElementById('fbS' + i).textContent = i <= n ? '⭐' : '☆';
-}
-function fbPick(n) {
-  fbPickValue = n;
-  for (let i = 1; i <= 5; i++) document.getElementById('fbS' + i).textContent = i <= n ? '⭐' : '☆';
-}
-async function submitPublicFeedback() {
-  const st = document.getElementById('fbStatus');
-  if (!fbPickValue) { st.textContent = 'Choisis une note.'; return; }
-  st.textContent = 'Envoi…';
-  try {
-    const r = await fetch('/api/public-feedback', {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        rating: fbPickValue,
-        comment: document.getElementById('fbComment').value.trim(),
-        eventId: document.getElementById('fbEventId').value.trim() || 'landing',
-      }),
-    });
-    const d = await r.json();
-    if (!r.ok) { st.textContent = d.error || 'Erreur'; return; }
-    st.textContent = '✓ Merci pour ton avis ! 🎉';
-    document.getElementById('fbComment').value = '';
-    document.getElementById('fbEventId').value = '';
-  } catch (e) { st.textContent = 'Erreur réseau.'; }
 }
 
 boot();
