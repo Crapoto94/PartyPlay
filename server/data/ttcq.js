@@ -16368,86 +16368,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qu'est-ce qu'une publicité télévisée ?",
+    "q": "Que cherche à faire vendre une publicité ? Un ___ ?",
     "c": [
-     "Sponsoring",
-     "Message promotionnel diffusé à la télévision",
-     "Placement de produit",
-     "Film"
+     "produit",
+     "secret",
+     "nuage",
+     "silence"
     ],
-    "a": 1
+    "a": "produit"
    },
    {
-    "q": "Quel est le spot publicitaire le plus cher de l'histoire ?",
+    "q": "Comment appelle-t-on la petite phrase accrocheuse qui résume une pub ? Un ___ ?",
     "c": [
-     "Coupe du monde",
-     "Super Bowl",
-     "Cérémonie des Oscars",
-     "Jeux olympiques"
+     "slogan",
+     "roman",
+     "sermon",
+     "dossier"
     ],
-    "a": 1
+    "a": "slogan"
    },
    {
-    "q": "Combien coûte un spot de 30 secondes au Super Bowl ?",
+    "q": "Quand diffuse-t-on des publicités pendant un film à la télé ? Pendant la ___ de pub ?",
     "c": [
-     "Plusieurs millions de dollars",
-     "Quelques centaines de milliers",
-     "1 million",
-     "Un milliard"
+     "coupure",
+     "fin",
+     "musique",
+     "sieste"
     ],
-    "a": 0
+    "a": "coupure"
    },
    {
-    "q": "Qu'est-ce que le matraquage publicitaire ?",
+    "q": "Comment appelle-t-on une chanson courte et entêtante créée pour une pub ? Un ___ ?",
     "c": [
-     "Campagne ciblée",
-     "Répétition excessive d'une publicité",
-     "Publicité comparative",
-     "Publicité créative"
+     "jingle",
+     "opéra",
+     "requiem",
+     "prélude"
     ],
-    "a": 1
+    "a": "jingle"
    },
    {
-    "q": "Quel est le slogan publicitaire le plus connu ?",
+    "q": "Lors de quel grand match américain les pubs coûtent-elles une fortune ? Le Super ___ ?",
     "c": [
-     "Tous ces slogans",
-     "Think Different (Apple)",
-     "Just Do It (Nike)",
-     "I'm Lovin' It (McDonald's)"
+     "Bowl",
+     "Ball",
+     "Cup",
+     "Star"
     ],
-    "a": 0
+    "a": "Bowl"
    },
    {
-    "q": "Qu'est-ce qu'un pubard en France ?",
+    "q": "Quelle célébrité rémunérée vante un produit dans une pub ? Un ___ (ambassadeur) ?",
     "c": [
-     "Publicité",
-     "Spot",
-     "Annonceur",
-     "Acteur de publicité"
+     "égérie",
+     "figurant",
+     "spectateur",
+     "arbitre"
     ],
-    "a": 3
+    "a": "égérie"
    },
    {
-    "q": "Quelle marque a le plus gros budget publicitaire mondial ?",
+    "q": "Comment appelle-t-on la courte publicité vidéo avant une vidéo YouTube ? Un ___ ?",
     "c": [
-     "Amazon",
-     "Procter & Gamble",
-     "McDonald's",
-     "Coca-Cola"
+     "spot",
+     "clip",
+     "trailer",
+     "teaser"
     ],
-    "a": 0
+    "a": "spot"
    },
    {
-    "q": "En quelle année la première pub TV a-t-elle été diffusée en France ?",
-    "c": [
-     "1970",
-     "1960",
-     "1965",
-     "1968"
-    ],
-    "a": 3
+    "q": "Combien coûte, en millions de dollars environ, un spot de 30 s au Super Bowl (récent) ?",
+    "a": "7"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "tv_010",
@@ -16456,86 +16451,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle série policière française est la plus longue ?",
+    "q": "Qui, dans une série policière, cherche à résoudre les crimes ? Un ___ ?",
     "c": [
-     "Plus belle la vie",
-     "Commissaire Moulin",
-     "Julie Lescaut",
-     "Les Cinq Dernières Minutes"
+     "enquêteur",
+     "boulanger",
+     "jardinier",
+     "pilote"
     ],
-    "a": 3
+    "a": "enquêteur"
    },
    {
-    "q": "Quelle série américaine met en scène des experts du FBI à Quantico ?",
+    "q": "Que cherche-t-on à identifier dans une série policière ? Le ___ ?",
     "c": [
-     "NCIS",
-     "L'Agence tous risques",
-     "CSI",
-     "Criminal Minds"
+     "coupable",
+     "cuisinier",
+     "facteur",
+     "voisin"
     ],
-    "a": 3
+    "a": "coupable"
    },
    {
-    "q": "Quelle série française se déroule à la PJ de Paris ?",
+    "q": "Quel indice, laissé sur les lieux, trahit le criminel ? Une ___ (digitale) ?",
     "c": [
-     "Le Bureau des légendes",
-     "Engrenages",
-     "Les Hommes de l'ombre",
-     "Spiral"
+     "empreinte",
+     "chanson",
+     "recette",
+     "photo de vacances"
     ],
-    "a": 1
+    "a": "empreinte"
    },
    {
-    "q": "Quel acteur joue Columbo ?",
+    "q": "Quelle série américaine sur la police scientifique de Las Vegas a lancé la mode des experts ? Les ___ ?",
     "c": [
-     "Telly Savalas",
-     "Peter Falk",
-     "Dennis Weaver",
-     "Tony Musante"
+     "Experts",
+     "Génies",
+     "Savants",
+     "Pros"
     ],
-    "a": 1
+    "a": "Experts"
    },
    {
-    "q": "Combien de saisons compte 'New York Police Judiciaire' ?",
+    "q": "Quel lieu de crime les enquêteurs bouclent-ils avec un ruban jaune ? La scène de ___ ?",
     "c": [
-     "15",
-     "10",
-     "Plus de 20",
-     "25"
+     "crime",
+     "ménage",
+     "vie",
+     "théâtre"
     ],
-    "a": 2
+    "a": "crime"
    },
    {
-    "q": "Quelle série allemande est un succès mondial ?",
+    "q": "Quel détective en imperméable, à la 2CV, dit toujours « Juste une dernière question » ? ___ ?",
     "c": [
-     "Le Renard",
-     "Alarm für Cobra 11",
-     "Derrick",
-     "Inspecteur Derrick"
+     "Columbo",
+     "Poirot",
+     "Maigret",
+     "Derrick"
     ],
-    "a": 3
+    "a": "Columbo"
    },
    {
-    "q": "Qu'est-ce qu'un 'polar' ?",
+    "q": "Comment appelle-t-on l'analyse scientifique des indices d'un crime ? La police ___ ?",
     "c": [
-     "Enquête",
-     "Genre littéraire",
-     "Roman ou film policier",
-     "Série policière"
+     "scientifique",
+     "municipale",
+     "montée",
+     "secrète"
     ],
-    "a": 2
+    "a": "scientifique"
    },
    {
-    "q": "Quel acteur joue l'inspecteur Barnaby dans 'Inspecteur Barnaby' ?",
-    "c": [
-     "John Nettles",
-     "Neil Dudgeon",
-     "David Jason",
-     "John Thaw"
-    ],
-    "a": 0
+    "q": "En quelle année la série « Les Experts » (CSI) a-t-elle démarré aux États-Unis ?",
+    "a": "2000"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "insolite_001",
@@ -16544,86 +16534,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la sitcom française la plus célèbre ?",
+    "q": "Que cherche à provoquer une sitcom chez le spectateur ? Le ___ ?",
     "c": [
-     "Caméra Café",
-     "H",
-     "Un gars, une fille",
-     "Kaamelott"
+     "rire",
+     "sommeil",
+     "pleur",
+     "silence"
     ],
-    "a": 1
+    "a": "rire"
    },
    {
-    "q": "Quelle sitcom américaine a duré 10 saisons et 236 épisodes ?",
+    "q": "Que signifie « sitcom » : comédie de ___ ? (situation comedy)",
     "c": [
-     "Seinfeld",
+     "situation",
+     "salon",
+     "science",
+     "société"
+    ],
+    "a": "situation"
+   },
+   {
+    "q": "Quelle sitcom américaine culte suit 6 amis dans un café à New York ?",
+    "c": [
      "Friends",
-     "The Big Bang Theory",
-     "How I Met Your Mother"
+     "Cheers",
+     "Frasier",
+     "Seinfeld"
     ],
-    "a": 1
+    "a": "Friends"
    },
    {
-    "q": "Qui a créé 'Friends' ?",
+    "q": "Quel café-restaurant est le lieu de rendez-vous des amis de « Friends » ? Le Central ___ ?",
     "c": [
-     "Larry David",
-     "Tous",
-     "David Crane et Marta Kauffman",
-     "James Burrows"
+     "Perk",
+     "Park",
+     "Perch",
+     "Point"
     ],
-    "a": 2
+    "a": "Perk"
    },
    {
-    "q": "Comment s'appelle le café dans Friends ?",
+    "q": "Quelle sitcom française culte se passe dans un immeuble avec Huguette et Raymond ? ___ contre M. ?",
     "c": [
-     "Central Park",
-     "Java Joe's",
-     "Coffee House",
-     "Central Perk"
+     "Maguy",
+     "Marc",
+     "Salut",
+     "Voisins"
     ],
-    "a": 3
+    "a": "Maguy"
    },
    {
-    "q": "Quelle sitcom française met en scène des personnages dans un open space ?",
+    "q": "Quel bruitage accompagne les blagues des sitcoms enregistrées ? Les ___ (rires) ?",
     "c": [
-     "Kaamelott",
-     "Les Cordier",
-     "H",
-     "Caméra Café"
+     "rires enregistrés",
+     "sirènes",
+     "cloches",
+     "tambours"
     ],
-    "a": 3
+    "a": "rires enregistrés"
    },
    {
-    "q": "Quelle sitcom américaine a pour personnage principal Sheldon Cooper ?",
+    "q": "Quelle sitcom suit le scientifique Sheldon Cooper et ses amis geeks ? The Big Bang ___ ?",
     "c": [
-     "The Big Bang Theory",
-     "Young Sheldon",
-     "Seinfeld",
-     "Friends"
+     "Theory",
+     "Show",
+     "Story",
+     "Club"
     ],
-    "a": 0
+    "a": "Theory"
    },
    {
-    "q": "Combien de saisons compte 'The Office (US)' ?",
-    "c": [
-     "7",
-     "10",
-     "8",
-     "9"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel acteur joue Michael Scott dans The Office US ?",
-    "c": [
-     "Jenna Fischer",
-     "John Krasinski",
-     "Steve Carell",
-     "Rainn Wilson"
-    ],
-    "a": 2
+    "q": "Pendant combien de saisons la sitcom « Friends » a-t-elle été diffusée ?",
+    "a": "10"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "insolite_002",
@@ -16632,86 +16617,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel est l'endroit le plus froid habité sur Terre ?",
+    "q": "Comment appelle-t-on une tempête tournante en entonnoir qui touche le sol ? Une ___ ?",
     "c": [
-     "Yellowknife (Canada)",
-     "Barrow (Alaska)",
-     "Oïmiakon (Sibérie)",
-     "Vostok (Antarctique)"
+     "tornade",
+     "brise",
+     "rosée",
+     "éclaircie"
     ],
-    "a": 2
+    "a": "tornade"
    },
    {
-    "q": "Quelle température record a été enregistrée à Oïmiakon ?",
+    "q": "Quel phénomène électrique frappe le sol pendant un orage ? La ___ ?",
     "c": [
-     "-70 °C",
-     "-60 °C",
-     "-67,7 °C",
-     "-50 °C"
+     "foudre",
+     "pluie",
+     "neige",
+     "brume"
     ],
-    "a": 2
+    "a": "foudre"
    },
    {
-    "q": "Quel est l'endroit le plus chaud sur Terre ?",
+    "q": "Comment appelle-t-on un violent cyclone tropical de l'Atlantique ? Un ___ ?",
     "c": [
-     "Vallée de la Mort (USA)",
-     "Dallol (Éthiopie)",
-     "Désert de Libye",
-     "Awash (Éthiopie)"
+     "ouragan",
+     "zéphyr",
+     "alizé",
+     "mistral"
     ],
-    "a": 0
+    "a": "ouragan"
    },
    {
-    "q": "Qu'est-ce qu'un ouragan de catégorie 5 ?",
+    "q": "Quel désert est célèbre pour être l'endroit le plus chaud et sec ? La Vallée de la ___ ?",
     "c": [
-     "Ouragan léger",
-     "Tempête tropicale",
-     "Cyclone",
-     "Ouragan avec vents > 252 km/h"
+     "Mort",
+     "Lune",
+     "Soif",
+     "Fin"
     ],
-    "a": 3
+    "a": "Mort"
    },
    {
-    "q": "Quel pays a connu le plus de tornades ?",
+    "q": "Quelles billes de glace tombent parfois violemment du ciel ? La ___ ?",
     "c": [
-     "Chine",
-     "Inde",
-     "États-Unis",
-     "Australie"
+     "grêle",
+     "rosée",
+     "bruine",
+     "buée"
     ],
-    "a": 2
+    "a": "grêle"
    },
    {
-    "q": "Qu'est-ce que le phénomène El Niño ?",
+    "q": "Sur quelle échelle mesure-t-on la puissance des tornades ? L'échelle de ___ ? (Fujita)",
     "c": [
-     "Réchauffement anormal du Pacifique",
-     "Vent",
-     "Refroidissement",
-     "Courant marin"
+     "Fujita",
+     "Richter",
+     "Beaufort",
+     "Celsius"
     ],
-    "a": 0
+    "a": "Fujita"
    },
    {
-    "q": "Quel désert reçoit le plus de précipitations ?",
+    "q": "Quel phénomène de vent glacial descend des Alpes vers le sud de la France ? Le ___ ?",
     "c": [
-     "Gobi",
-     "Kalahari",
-     "Désert d'Atacama",
-     "Sahara"
+     "mistral",
+     "sirocco",
+     "foehn",
+     "harmattan"
     ],
-    "a": 2
+    "a": "mistral"
    },
    {
-    "q": "Quelle est la plus haute vague jamais surfée ?",
-    "c": [
-     "Plus de 20 mètres",
-     "Plus de 25 mètres",
-     "Plus de 30 mètres",
-     "Plus de 35 mètres"
-    ],
-    "a": 2
+    "q": "Quelle température record, en degrés, a été mesurée dans la Vallée de la Mort en 1913 ?",
+    "a": "56"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "insolite_003",
@@ -16720,86 +16700,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qu'est-ce qu'une coïncidence ?",
+    "q": "Une coïncidence est un hasard qui semble avoir un ___ ? (mais n'en a pas)",
     "c": [
-     "Une prédiction",
-     "Un signe",
-     "Deux événements qui se produisent en même temps par hasard",
-     "Un miracle"
+     "sens",
+     "prix",
+     "poids",
+     "goût"
     ],
-    "a": 2
+    "a": "sens"
    },
    {
-    "q": "Quelle célèbre coïncidence implique Lincoln et Kennedy ?",
+    "q": "Quelle explication rationnelle rend compte des coïncidences ? Le ___ ?",
     "c": [
-     "Même âge",
-     "Morts le même jour",
-     "Noms similaires",
-     "Élus en 1846 et 1960"
+     "hasard",
+     "destin",
+     "complot",
+     "miracle"
     ],
-    "a": 3
+    "a": "hasard"
    },
    {
-    "q": "Comment s'appelle le phénomène de coïncidence significative ?",
+    "q": "Combien de personnes suffisent, dans une pièce, pour avoir 50 % de chances que deux aient le même anniversaire ? Le paradoxe des ___ ?",
     "c": [
-     "Hasard",
-     "Destin",
-     "Sérendipité",
-     "Synchronicité"
+     "anniversaires",
+     "prénoms",
+     "tailles",
+     "âges"
     ],
-    "a": 3
+    "a": "anniversaires"
    },
    {
-    "q": "Qui a inventé le terme 'synchronicité' ?",
+    "q": "Quelle tendance de l'esprit humain nous fait voir des motifs partout ? La ___ ?",
     "c": [
-     "Sigmund Freud",
-     "Albert Einstein",
-     "Wolfgang Pauli",
-     "Carl Jung"
+     "paréidolie",
+     "amnésie",
+     "insomnie",
+     "euphorie"
     ],
-    "a": 3
+    "a": "paréidolie"
    },
    {
-    "q": "Qu'est-ce que l'effet Barnum ?",
+    "q": "Deux présidents américains, Lincoln et Kennedy, partagent d'étranges coïncidences : ils furent tous deux ___ ?",
     "c": [
-     "Hasard",
-     "Prédiction",
-     "Descriptions vagues acceptées comme personnelles",
-     "Coïncidence"
+     "assassinés",
+     "réélus",
+     "acquittés",
+     "exilés"
     ],
-    "a": 2
+    "a": "assassinés"
    },
    {
-    "q": "Quelle est la probabilité de gagner au Loto ?",
+    "q": "Comment appelle-t-on notre tendance à ne retenir que ce qui confirme nos idées ? Le biais de ___ ?",
     "c": [
-     "1 sur 19 millions",
-     "1 sur 10 millions",
-     "1 sur 50 millions",
-     "1 sur 5 millions"
+     "confirmation",
+     "négation",
+     "sélection",
+     "répétition"
     ],
-    "a": 0
+    "a": "confirmation"
    },
    {
-    "q": "Comment s'appelle la loi des séries ?",
-    "c": [
-     "Loi des séries",
-     "Loi de la probabilité",
-     "Loi de Murphy",
-     "Loi du hasard"
-    ],
-    "a": 0
+    "q": "Combien de personnes suffisent pour dépasser 99 % de chances de partager un anniversaire ?",
+    "a": "57"
    },
    {
-    "q": "Qu'est-ce que la loi de Murphy ?",
-    "c": [
-     "Loi du hasard",
-     "Coïncidence",
-     "Prédiction",
-     "Tout ce qui peut mal tourner va mal tourner"
-    ],
-    "a": 3
+    "q": "Dans le paradoxe des anniversaires, à partir de combien de personnes la probabilité dépasse-t-elle 50 % ?",
+    "a": "23"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "insolite_004",
@@ -16808,86 +16777,87 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel nombre est considéré comme porte-bonheur dans la culture occidentale ?",
+    "q": "Quel chiffre porte malheur dans beaucoup de cultures occidentales ?",
     "c": [
      "13",
      "7",
-     "4",
-     "17"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quel nombre est considéré comme malchanceux ?",
-    "c": [
-     "8",
-     "7",
      "3",
-     "13"
+     "9"
     ],
-    "a": 3
+    "a": "13"
    },
    {
-    "q": "Quel geste conjure le mauvais sort en France ?",
+    "q": "Quel animal noir traversant la route porte malheur, dit-on ? Le ___ noir ?",
     "c": [
-     "Toucher du bois",
-     "Croiser les doigts",
-     "Jeter du sel",
-     "Faire un signe de croix"
+     "chat",
+     "chien",
+     "cheval",
+     "corbeau"
     ],
-    "a": 0
+    "a": "chat"
    },
    {
-    "q": "Quel animal noir est associé à la malchance ?",
+    "q": "Sous quel objet passer porterait malheur, selon la superstition ? Une ___ ?",
     "c": [
-     "Chat noir",
-     "Hibou",
-     "Corbeau",
-     "Chauve-souris"
+     "échelle",
+     "porte",
+     "arche",
+     "fenêtre"
     ],
-    "a": 0
+    "a": "échelle"
    },
    {
-    "q": "Quel objet cassé apporte 7 ans de malheur ?",
+    "q": "Quel objet en verre cassé annoncerait 7 ans de malheur ? Un ___ ?",
     "c": [
-     "Un verre",
-     "Une assiette",
-     "Un miroir",
-     "Une vitre"
+     "miroir",
+     "verre",
+     "vase",
+     "bocal"
     ],
-    "a": 2
+    "a": "miroir"
    },
    {
-    "q": "Dans quelle culture le chiffre 4 est-il considéré comme malchanceux ?",
+    "q": "Quelle plante à quatre feuilles porte bonheur ? Le ___ à quatre feuilles ?",
     "c": [
-     "Japonaise",
-     "Occidentale",
-     "Indienne",
-     "Afrique"
+     "trèfle",
+     "chêne",
+     "lierre",
+     "muguet"
     ],
-    "a": 0
+    "a": "trèfle"
    },
    {
-    "q": "Quelle superstition est associée au parapluie ?",
+    "q": "Quel geste fait-on sur du bois pour conjurer le mauvais sort ? On ___ du bois ?",
     "c": [
-     "Ouvrir un parapluie à l'intérieur porte malheur",
-     "Acheter un parapluie",
-     "Perdre son parapluie",
-     "Prêter son parapluie"
+     "touche",
+     "brûle",
+     "mange",
+     "peint"
     ],
-    "a": 0
+    "a": "touche"
    },
    {
-    "q": "Quel jour est considéré comme particulièrement malchanceux ?",
+    "q": "Quelle peur porte le nom savant de la crainte du chiffre 13 ? La triskaïdéka___ ?",
     "c": [
-     "Mardi 13",
-     "Vendredi 13",
-     "Lundi 13",
-     "Jeudi 13"
+     "phobie",
+     "manie",
+     "philie",
+     "pathie"
     ],
-    "a": 1
+    "a": "phobie"
+   },
+   {
+    "q": "Quel vendredi, associé au chiffre 13, est réputé porter malheur ? Le vendredi ___ ?",
+    "c": [
+     "13",
+     "31",
+     "7",
+     "3"
+    ],
+    "a": "13"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "insolite_005",
@@ -16896,86 +16866,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel est l'homme le plus grand de l'histoire ?",
+    "q": "Quel célèbre livre recense les records du monde ? Le livre ___ des records ?",
     "c": [
-     "Sultan Kösen (2,51 m)",
-     "John Rogan (2,68 m)",
-     "Robert Wadlow (2,72 m)",
-     "Angus MacAskill (2,36 m)"
+     "Guinness",
+     "Michelin",
+     "Rouge",
+     "Vert"
     ],
-    "a": 2
+    "a": "Guinness"
    },
    {
-    "q": "Quelle est la femme la plus grande du monde ?",
+    "q": "Quel record cherche-t-on quand on veut être le plus ___ du monde ?",
     "c": [
-     "Uljana Semjonova (2,13 m)",
-     "Yao Defen (2,34 m)",
-     "Sandy Allen (2,32 m)",
-     "Zeng Jinlian (2,46 m)"
+     "grand",
+     "moyen",
+     "banal",
+     "normal"
     ],
-    "a": 3
+    "a": "grand"
    },
    {
-    "q": "Quelle est la plus longue chanson jamais enregistrée ?",
+    "q": "Quelle partie du corps l'homme aux ongles les plus longs n'a-t-il jamais coupée ? Les ___ ?",
     "c": [
-     "Thru These Walls",
-     "4'33\"",
-     "In C",
-     "The Rise and Fall of Bossanova"
+     "ongles",
+     "cheveux",
+     "dents",
+     "cils"
     ],
-    "a": 3
+    "a": "ongles"
    },
    {
-    "q": "Quel est le record du plus long nom de famille ?",
+    "q": "Quel animal détient le record de l'être vivant le plus grand ? La ___ bleue ?",
     "c": [
-     "Williams",
-     "Smith",
-     "Jones",
-     "Hubert Blaine Wolfeschlegelsteinhausenbergerdorff..."
+     "baleine",
+     "girafe",
+     "otarie",
+     "murène"
     ],
-    "a": 3
+    "a": "baleine"
    },
    {
-    "q": "Combien de records du monde le Guinness World Records compte-t-il ?",
+    "q": "Quelle est la partie du corps mesurée pour le record de la plus longue barbe ? La ___ ?",
     "c": [
-     "Plus de 20 000",
-     "Plus de 40 000",
-     "Plus de 60 000",
-     "Plus de 10 000"
+     "barbe",
+     "moustache",
+     "frange",
+     "natte"
     ],
-    "a": 1
+    "a": "barbe"
    },
    {
-    "q": "Quelle est la durée du plus long baiser ?",
+    "q": "Combien de secondes environ tient le record d'apnée statique (retenir sa respiration), soit plus de 11 ___ ?",
     "c": [
-     "Plus de 48 heures",
-     "Plus de 12 heures",
-     "Plus de 24 heures",
-     "Plus de 58 heures"
+     "minutes",
+     "heures",
+     "jours",
+     "secondes"
     ],
-    "a": 3
+    "a": "minutes"
    },
    {
-    "q": "Qui détient le record du plus grand nombre de tatouages ?",
-    "c": [
-     "Tom Leppard",
-     "Ethan Franklin",
-     "Lucky Diamond Rich",
-     "Gregory McLaren"
-    ],
-    "a": 2
+    "q": "En quelle année le premier « Livre Guinness des records » a-t-il été publié ?",
+    "a": "1955"
    },
    {
-    "q": "Quel est le record du monde de jonglage avec le plus d'objets ?",
-    "c": [
-     "15 balles",
-     "14 anneaux",
-     "10 balles",
-     "12 massues"
-    ],
-    "a": 1
+    "q": "Quelle taille, en centimètres, mesurait Robert Wadlow, l'homme le plus grand de l'histoire ?",
+    "a": "272"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "insolite_006",
@@ -16984,86 +16943,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel mystère entoure le Triangle des Bermudes ?",
+    "q": "Quelle zone de l'Atlantique est réputée pour d'étranges disparitions ? Le triangle des ___ ?",
     "c": [
-     "Disparitions inexpliquées de navires et d'avions",
-     "Monstre marin",
-     "Trésor caché",
-     "Portail temporel"
+     "Bermudes",
+     "Açores",
+     "Canaries",
+     "Baléares"
     ],
-    "a": 0
+    "a": "Bermudes"
    },
    {
-    "q": "Qu'est-ce que le monstre du Loch Ness ?",
+    "q": "Quelles immenses lignes tracées au sol, au Pérou, restent mystérieuses ? Les lignes de ___ ?",
     "c": [
-     "Serpent de mer",
-     "Poisson géant",
-     "Dinosaure",
-     "Créature légendaire dans un lac écossais"
+     "Nazca",
+     "Cuzco",
+     "Lima",
+     "Ica"
     ],
-    "a": 3
+    "a": "Nazca"
    },
    {
-    "q": "Où se trouve le Triangle des Bermudes ?",
+    "q": "Quel monument préhistorique de pierres dressées, en Angleterre, intrigue toujours ?",
     "c": [
-     "Entre Floride, Bermudes et Porto Rico",
-     "Pacifique",
-     "Caraïbes",
-     "Atlantique Nord"
+     "Stonehenge",
+     "Carnac",
+     "Avebury",
+     "Newgrange"
     ],
-    "a": 0
+    "a": "Stonehenge"
    },
    {
-    "q": "Qu'est-ce que le Yeti ?",
+    "q": "Quel monstre légendaire hanterait un lac d'Écosse ? Le monstre du ___ Ness ?",
     "c": [
-     "Créature légendaire de l'Himalaya",
-     "Homme des neiges",
-     "Singe",
-     "Ours"
+     "Loch",
+     "Lake",
+     "Sea",
+     "Fjord"
     ],
-    "a": 0
+    "a": "Loch"
    },
    {
-    "q": "Qu'est-ce que les lignes de Nazca au Pérou ?",
+    "q": "Quelle base militaire américaine secrète alimente les théories sur les extraterrestres ? La zone ___ ?",
     "c": [
-     "Tombeaux",
-     "Canaux",
-     "Routes",
-     "Géoglyphes anciens dans le désert"
+     "51",
+     "42",
+     "7",
+     "13"
     ],
-    "a": 3
+    "a": "51"
    },
    {
-    "q": "Quelle civilisation a construit les lignes de Nazca ?",
+    "q": "Quel homme des neiges velu hanterait l'Himalaya ? Le ___ ?",
     "c": [
-     "Les Incas",
-     "Les Paracas",
-     "La culture Nazca",
-     "Les Mayas"
+     "yéti",
+     "kraken",
+     "griffon",
+     "minotaure"
     ],
-    "a": 2
+    "a": "yéti"
    },
    {
-    "q": "Qu'est-ce que le mystère de Stonehenge ?",
+    "q": "Quelle civilisation engloutie, décrite par Platon, reste un mystère ? L'___ ?",
     "c": [
-     "Observatoire",
-     "Cercle de pierres préhistorique dont la fonction est inconnue",
-     "Temple",
-     "Tombeau"
+     "Atlantide",
+     "Lémurie",
+     "Mu",
+     "Avalon"
     ],
-    "a": 1
+    "a": "Atlantide"
    },
    {
-    "q": "Où se trouve Stonehenge ?",
-    "c": [
-     "Irlande",
-     "Angleterre",
-     "France",
-     "Écosse"
-    ],
-    "a": 1
+    "q": "Combien de pierres dressées (mégalithes) compte environ le site principal de Stonehenge à l'origine ?",
+    "a": "30"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "insolite_007",
@@ -17072,86 +17026,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle fête espagnole consiste à lancer des tomates ?",
+    "q": "Dans quelle fête espagnole se lance-t-on des tomates à Buñol ? La ___ ?",
     "c": [
-     "La Tomatina",
-     "La Feria",
-     "Les Fallas",
-     "La San Fermín"
+     "Tomatina",
+     "Fallas",
+     "Feria",
+     "Sanfermines"
     ],
-    "a": 0
+    "a": "Tomatina"
    },
    {
-    "q": "Où a lieu la Tomatina ?",
+    "q": "Quel légume-projectile est lancé pendant la Tomatina ? La ___ ?",
     "c": [
-     "Buñol (Espagne)",
-     "Barcelone",
-     "Valence",
-     "Madrid"
+     "tomate",
+     "patate",
+     "courge",
+     "carotte"
     ],
-    "a": 0
+    "a": "tomate"
    },
    {
-    "q": "Quelle fête thaïlandaise consiste à asperger d'eau les passants ?",
+    "q": "Dans quelle ville espagnole lâche-t-on des taureaux dans les rues ? À ___ (San Fermín) ?",
     "c": [
-     "Yi Peng",
-     "Songkran (Nouvel An thaï)",
-     "Phi Ta Khon",
-     "Loy Krathong"
+     "Pampelune",
+     "Madrid",
+     "Séville",
+     "Valence"
     ],
-    "a": 1
+    "a": "Pampelune"
    },
    {
-    "q": "Quelle fête britannique célèbre l'échec du complot des poudres ?",
+    "q": "Quelle fête hindoue voit les gens se couvrir de poudres colorées ? La fête des ___ ? (Holi)",
     "c": [
-     "May Day",
-     "Boxing Day",
-     "Guy Fawkes Night (Bonfire Night)",
-     "Halloween"
+     "couleurs",
+     "lumières",
+     "eaux",
+     "fleurs"
     ],
-    "a": 2
+    "a": "couleurs"
    },
    {
-    "q": "En quelle année la conspiration des poudres a-t-elle eu lieu ?",
+    "q": "Dans quel pays fête-t-on la fête des morts avec des squelettes colorés ? Le ___ ? (Día de Muertos)",
     "c": [
-     "1605",
-     "1599",
-     "1610",
-     "1600"
+     "Mexique",
+     "Japon",
+     "Inde",
+     "Brésil"
     ],
-    "a": 0
+    "a": "Mexique"
    },
    {
-    "q": "Quelle fête allemande dure plusieurs jours et célèbre la bière ?",
+    "q": "Quelle grande fête de la bière a lieu à Munich chaque automne ?",
     "c": [
+     "Oktoberfest",
      "Carnaval",
-     "Weihnachten",
-     "Fête de la bière",
-     "Oktoberfest"
+     "Fallas",
+     "Diwali"
     ],
-    "a": 3
+    "a": "Oktoberfest"
    },
    {
-    "q": "Où se déroule l'Oktoberfest ?",
+    "q": "Quelle fête irlandaise, tout en vert, célèbre un saint le 17 mars ? La Saint-___ ?",
     "c": [
-     "Francfort",
-     "Hambourg",
-     "Munich",
-     "Berlin"
+     "Patrick",
+     "Georges",
+     "Nicolas",
+     "Valentin"
     ],
-    "a": 2
+    "a": "Patrick"
    },
    {
-    "q": "Quelle fête japonaise honore les ancêtres avec des danses ?",
-    "c": [
-     "Matsuri",
-     "Hanami",
-     "Obon",
-     "Shogatsu"
-    ],
-    "a": 2
+    "q": "Combien de tonnes de tomates, environ, sont lancées chaque année à la Tomatina ?",
+    "a": "150"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "insolite_008",
@@ -17160,86 +17109,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Où se trouve le Musée des Égouts de Paris ?",
+    "q": "Que trouve-t-on principalement dans un musée ? Des ___ ?",
     "c": [
-     "Bordeaux",
-     "Marseille",
-     "Lyon",
-     "Paris"
+     "objets",
+     "voitures",
+     "clients",
+     "élèves"
     ],
-    "a": 3
+    "a": "objets"
    },
    {
-    "q": "Quel musée étrange existe au Japon ?",
+    "q": "Quel musée parisien de cire présente des célébrités en statues ? Le musée ___ ?",
     "c": [
-     "Musée du pain",
-     "Musée de l'eau",
-     "Musée du fromage",
-     "Musée du caca (Unko Museum)"
+     "Grévin",
+     "Rodin",
+     "Orsay",
+     "Cluny"
     ],
-    "a": 3
+    "a": "Grévin"
    },
    {
-    "q": "Où se trouve le Musée de la Moutarde ?",
+    "q": "De quelle matière sont faites les statues du musée Grévin et de Madame Tussauds ? La ___ ?",
     "c": [
-     "Dijon",
-     "Bordeaux",
-     "Paris",
-     "Lyon"
+     "cire",
+     "pierre",
+     "glace",
+     "bois"
     ],
-    "a": 0
+    "a": "cire"
    },
    {
-    "q": "Qu'est-ce que le Musée des Momies de Guanajuato ?",
+    "q": "Quel musée insolite de Zagreb expose des objets de relations amoureuses terminées ? Le musée des relations ___ ?",
     "c": [
-     "Musée présentant des corps momifiés naturellement",
-     "Musée d'histoire",
-     "Musée de cire",
-     "Musée d'art"
+     "rompues",
+     "réussies",
+     "cachées",
+     "royales"
     ],
-    "a": 0
+    "a": "rompues"
    },
    {
-    "q": "Où se trouve le Musée du Faux (de faux tableaux) ?",
+    "q": "Quel aliment sucré a son musée à plusieurs endroits, dont Cologne ? Le musée du ___ ?",
     "c": [
-     "Londres",
-     "Paris",
-     "New York",
-     "Bruxelles"
+     "chocolat",
+     "sel",
+     "pain",
+     "vinaigre"
     ],
-    "a": 1
+    "a": "chocolat"
    },
    {
-    "q": "Quel musée insolite se trouve à Zagreb en Croatie ?",
+    "q": "Quelle célèbre chaîne de musées de cire porte le nom de Madame ___ ?",
     "c": [
-     "Musée du cœur",
-     "Musée de l'amour",
-     "Musée des Relations Brisées",
-     "Musée du divorce"
+     "Tussauds",
+     "Grévin",
+     "Bovary",
+     "Curie"
     ],
-    "a": 2
+    "a": "Tussauds"
    },
    {
-    "q": "Qu'est-ce que le Museum of Jurassic Technology à Los Angeles ?",
+    "q": "Dans quel musée insolite de Suède expose-t-on des aliments à l'odeur repoussante ? Le musée du ___ dégoûtant ?",
     "c": [
-     "Musée d'histoire naturelle",
-     "Musée éclectique et absurde",
-     "Musée de la technologie",
-     "Musée d'art"
+     "dégoûtant",
+     "délicieux",
+     "rare",
+     "ancien"
     ],
-    "a": 1
+    "a": "dégoûtant"
    },
    {
-    "q": "Où se trouve le Musée du Freesbee ?",
-    "c": [
-     "Massachusetts (USA)",
-     "Californie",
-     "New York",
-     "Floride"
-    ],
-    "a": 0
+    "q": "En quelle année le musée Grévin a-t-il ouvert ses portes à Paris ?",
+    "a": "1882"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "insolite_009",
