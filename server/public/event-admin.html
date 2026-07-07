@@ -149,8 +149,9 @@
         </div>
         <div class="card" id="liveCtl"></div>
         <div class="card" data-cat="photo">
-          <h3>Photos</h3>
-          <div class="row">
+          <h3>📸 Défi photo</h3>
+          <div id="photoCtl"></div>
+          <div class="row" style="margin-top:10px">
             <button class="btn" onclick="act('setPhotoPhase',{phase:'vote'})">📸 Ouvrir le vote</button>
             <button class="btn" onclick="act('setPhotoPhase',{phase:'results'})">🏆 Résultats</button>
             <button class="btn" onclick="act('setPhotoPhase',{phase:null})">✕ Fermer</button>
@@ -310,8 +311,8 @@
 
         <!-- Défis photo -->
         <div class="card">
-          <h3 class="neon-yellow">📸 Défis photo — missions par avatar</h3>
-          <p class="muted">Ajoute/modifie les missions photo pour chaque avatar.</p>
+          <h3 class="neon-yellow">📸 Défis photo — banque de défis</h3>
+          <p class="muted">Enrichis la <b>banque</b> de défis (regroupés en listes). Le jour J, choisis-en 3 <b>communs à tous</b> dans l'onglet 🎬 Piloter (ou laisse le tirage au hasard).</p>
           <div class="row" style="margin-bottom:10px">
             <button class="btn" onclick="ephAddAvatar()">➕ Ajouter un avatar</button>
             <button class="btn secondary" onclick="savePhotosCustom()">💾 Enregistrer</button>
@@ -1261,6 +1262,30 @@ function render(st){
   document.getElementById('connCount').textContent=(st.players||[]).filter(p=>p.connected).length+' connecté(s)';
   document.getElementById('log').innerHTML=(st.log||[]).map(l=>`<div>${esc(l.msg)}</div>`).join('');
   liveControls(st);
+  photoCtl(st);
+}
+// Choix des 3 défis photo COMMUNS à tous les joueurs (ou tirage au hasard).
+function photoCtl(st){
+  const box=document.getElementById('photoCtl'); if(!box) return;
+  const active=st.photoChallenges||[]; const pool=st.photoPool||[];
+  const activeLabels=new Set(active.map(c=>c.label));
+  const opts=pool.map(m=>`<label style="display:flex;gap:8px;align-items:flex-start;font-size:13px;padding:3px 0;cursor:pointer">
+      <input type="checkbox" class="pc-def" value="${esc(m.label)}" ${activeLabels.has(m.label)?'checked':''} style="margin-top:3px">
+      <span><b>${esc(m.label)}</b> <span class="muted">— ${esc(m.desc)}</span></span></label>`).join('');
+  box.innerHTML=`
+    <p class="muted" style="font-size:12.5px;margin:0 0 6px">3 défis <b>communs à tous les joueurs</b> (plus juste). Cochez-en 3, ou tirez-les au hasard.</p>
+    <div style="font-size:13px;margin-bottom:6px">Défis actuels : <b>${active.map(c=>esc(c.label)).join(' · ')||'—'}</b></div>
+    <div style="max-height:180px;overflow:auto;border:1px solid #ffffff22;border-radius:8px;padding:6px 8px;margin-bottom:8px">${opts||'<span class="muted">Aucun défi dans la banque (onglet 📚 Contenu).</span>'}</div>
+    <div class="row">
+      <button class="btn" onclick="applyPhotoChallenges()">✅ Appliquer les défis cochés</button>
+      <button class="btn secondary" onclick="if(confirm('Tirer 3 défis au hasard ? Les photos déjà prises seront réinitialisées.'))act('setPhotoChallenges',{challenges:null})">🎲 3 au hasard</button>
+    </div>`;
+}
+function applyPhotoChallenges(){
+  const checked=[...document.querySelectorAll('#photoCtl .pc-def:checked')].map(c=>c.value).slice(0,3);
+  if(!checked.length){ alert('Cochez au moins un défi (ou utilisez « 3 au hasard »).'); return; }
+  if(!confirm('Appliquer ces défis ? Les photos déjà prises seront réinitialisées.')) return;
+  act('setPhotoChallenges',{challenges:checked});
 }
 function liveControls(st){
   const a=st.activity, box=document.getElementById('liveCtl'); if(!a){ box.innerHTML='<span class="muted">Aucune activité en cours.</span>'; return; }
