@@ -18674,78 +18674,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "La fellation est une pratique sexuelle dite ___ ? (par la bouche)",
+    "q": "La fellation est : une pratique sexuelle, une pâtisserie, une rivière ou une marque de voiture ?",
     "c": [
-     "orale",
-     "manuelle",
-     "visuelle",
-     "auditive"
+     "une pratique sexuelle",
+     "une pâtisserie",
+     "une rivière",
+     "une marque de voiture"
     ],
-    "a": "orale"
+    "a": "une pratique sexuelle"
    },
    {
-    "q": "Quel principe fondamental doit précéder toute pratique sexuelle entre partenaires ? Le ___ ?",
+    "q": "La fellation est une stimulation par : la bouche, le coude, l'oreille ou le talon ?",
     "c": [
-     "consentement",
-     "silence",
-     "paiement",
-     "hasard"
+     "la bouche",
+     "le coude",
+     "l'oreille",
+     "le talon"
     ],
-    "a": "consentement"
+    "a": "la bouche"
    },
    {
-    "q": "Quel moyen de protection réduit le risque d'IST lors du sexe oral ? Le ___ ?",
+    "q": "Sur quel organe la fellation se pratique-t-elle ? Le ___ ?",
+    "c": [
+     "pénis",
+     "genou",
+     "nez",
+     "poignet"
+    ],
+    "a": "pénis"
+   },
+   {
+    "q": "Quel réflexe naturel du fond de la gorge peut se déclencher ? Le réflexe ___ ?",
+    "c": [
+     "nauséeux",
+     "rotulien",
+     "de sursaut",
+     "de succion"
+    ],
+    "a": "nauséeux"
+   },
+   {
+    "q": "De quel verbe latin signifiant « sucer » vient le mot « fellation » ? ___ ?",
+    "c": [
+     "fellare",
+     "dormire",
+     "currere",
+     "cantare"
+    ],
+    "a": "fellare"
+   },
+   {
+    "q": "Quelle IST peut se transmettre lors d'une fellation non protégée ? La ___ ?",
+    "c": [
+     "gonorrhée",
+     "varicelle",
+     "rougeole",
+     "otite"
+    ],
+    "a": "gonorrhée"
+   },
+   {
+    "q": "Quelle protection en latex réduit les risques lors d'une fellation ? Le ___ ?",
     "c": [
      "préservatif",
-     "gant de toilette",
-     "parapluie",
-     "bandeau"
+     "gant de four",
+     "bonnet",
+     "foulard"
     ],
     "a": "préservatif"
    },
    {
-    "q": "Les IST peuvent-elles se transmettre lors de rapports oraux ? ___ ?",
-    "c": [
-     "oui",
-     "non",
-     "seulement l'hiver",
-     "seulement en couple"
-    ],
-    "a": "oui"
-   },
-   {
-    "q": "Comment appelle-t-on la branche de la médecine qui traite la santé sexuelle ? La ___ ?",
-    "c": [
-     "sexologie",
-     "cardiologie",
-     "pédiatrie",
-     "radiologie"
-    ],
-    "a": "sexologie"
-   },
-   {
-    "q": "Quelle protection en latex peut être utilisée pour le sexe oral sur une vulve ? La digue ___ ?",
-    "c": [
-     "dentaire",
-     "buccale",
-     "murale",
-     "barrière"
-    ],
-    "a": "dentaire"
-   },
-   {
-    "q": "Le consentement doit pouvoir être retiré à tout moment : vrai ou faux ?",
-    "c": [
-     "vrai",
-     "faux",
-     "seulement au début",
-     "seulement écrit"
-    ],
-    "a": "vrai"
-   },
-   {
-    "q": "À quel âge, en France, la loi fixe-t-elle la majorité sexuelle (consentement) ?",
-    "a": "15"
+    "q": "Quel volume moyen, en millilitres, représente une éjaculation masculine ?",
+    "a": "3"
    }
   ],
   "rw": true
@@ -18757,67 +18757,57 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Comme toute pratique sexuelle, la sodomie requiert avant tout le ___ des partenaires ?",
+    "q": "La sodomie est : une pratique sexuelle, une ville de vacances, un fromage ou un sport collectif ?",
     "c": [
-     "consentement",
-     "secret",
-     "argent",
-     "hasard"
+     "une pratique sexuelle",
+     "une ville de vacances",
+     "un fromage",
+     "un sport collectif"
     ],
-    "a": "consentement"
+    "a": "une pratique sexuelle"
    },
    {
-    "q": "Quel moyen de protection est recommandé pour réduire le risque d'IST ? Le ___ ?",
+    "q": "La sodomie désigne une pénétration : anale, nasale, auriculaire ou de la main ?",
     "c": [
-     "préservatif",
-     "foulard",
-     "gant de jardin",
-     "chapeau"
+     "anale",
+     "nasale",
+     "auriculaire",
+     "de la main"
     ],
-    "a": "préservatif"
+    "a": "anale"
    },
    {
-    "q": "Pourquoi cette zone est-elle plus fragile, justifiant douceur et lubrifiant ? La muqueuse est ___ ?",
+    "q": "Quelle partie du corps est concernée par la sodomie ? L'___ ?",
     "c": [
-     "fine",
-     "épaisse",
-     "sèche par nature",
-     "insensible"
+     "anus",
+     "oreille",
+     "coude",
+     "talon"
     ],
-    "a": "fine"
+    "a": "anus"
    },
    {
-    "q": "Quel produit réduit les frictions et les risques de micro-lésions ? Le ___ ?",
+    "q": "De quelle ville biblique détruite le mot « sodomie » tire-t-il son nom ? ___ ?",
+    "c": [
+     "Sodome",
+     "Rome",
+     "Babylone",
+     "Athènes"
+    ],
+    "a": "Sodome"
+   },
+   {
+    "q": "Quel produit est vivement recommandé, cette zone ne lubrifiant pas naturellement ? Le ___ ?",
     "c": [
      "lubrifiant",
      "vinaigre",
-     "savon abrasif",
-     "alcool"
+     "sel",
+     "sable"
     ],
     "a": "lubrifiant"
    },
    {
-    "q": "Avec quel type de lubrifiant NE faut-il PAS utiliser un préservatif en latex ? Un lubrifiant à base d'___ ?",
-    "c": [
-     "huile",
-     "eau",
-     "silicone médical",
-     "aloès pur"
-    ],
-    "a": "huile"
-   },
-   {
-    "q": "Quelle IST virale grave le préservatif aide-t-il à prévenir ? Le ___ ?",
-    "c": [
-     "VIH",
-     "rhume",
-     "tétanos",
-     "zona"
-    ],
-    "a": "VIH"
-   },
-   {
-    "q": "Quel muscle circulaire contrôle cette zone du corps ? Le ___ ?",
+    "q": "Quel muscle circulaire contrôle cette région du corps ? Le ___ ?",
     "c": [
      "sphincter",
      "biceps",
@@ -18827,14 +18817,18 @@ export const TTCQ_THEMES = [
     "a": "sphincter"
    },
    {
-    "q": "Quel dépistage régulier est recommandé pour les personnes à risque d'IST ? Le ___ ?",
+    "q": "La sodomie est-elle une pratique de toutes les orientations, ou d'une seule ? De ___ ?",
     "c": [
-     "dépistage",
-     "déménagement",
-     "bilan comptable",
-     "vaccin antigrippal seul"
+     "toutes",
+     "une seule",
+     "aucune",
+     "deux imposées"
     ],
-    "a": "dépistage"
+    "a": "toutes"
+   },
+   {
+    "q": "En quelle année la Révolution française a-t-elle dépénalisé la sodomie (fin du crime) ?",
+    "a": "1791"
    }
   ],
   "rw": true
@@ -21953,84 +21947,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que le viol ?",
+    "q": "Les hormones sexuelles sont : des messagers chimiques du corps, une marque de vélo, une danse ou un légume ?",
     "c": [
-     "Relation forcée",
-     "Rapport non désiré",
-     "Acte sexuel imposé sans consentement",
-     "Tous ces éléments"
+     "des messagers chimiques du corps",
+     "une marque de vélo",
+     "une danse",
+     "un légume"
     ],
-    "a": "Tous ces éléments"
+    "a": "des messagers chimiques du corps"
    },
    {
-    "q": "Comment la loi française définit-elle le viol ?",
+    "q": "Les hormones circulent dans le corps par : le sang, le Wi-Fi, les fils électriques ou la poste ?",
     "c": [
-     "Rapport non consenti",
-     "Baiser forcé",
-     "Attouchement",
-     "Tout acte de pénétration sexuelle imposé par violence ou contrainte"
+     "le sang",
+     "le Wi-Fi",
+     "les fils électriques",
+     "la poste"
     ],
-    "a": "Tout acte de pénétration sexuelle imposé par violence ou contrainte"
+    "a": "le sang"
    },
    {
-    "q": "Quelle est la peine maximale pour viol en France ?",
+    "q": "Quelle hormone est dite « masculine » ? La ___ ?",
     "c": [
-     "10 ans",
-     "5 ans",
-     "20 ans",
-     "15 ans de réclusion criminelle"
+     "testostérone",
+     "chlorophylle",
+     "caféine",
+     "kératine"
     ],
-    "a": "15 ans de réclusion criminelle"
+    "a": "testostérone"
    },
    {
-    "q": "Qui peut être victime de viol ?",
+    "q": "Quelle hormone est dite « féminine » ? L'___ ?",
     "c": [
-     "Uniquement les femmes",
-     "Toute personne, quel que soit son âge, sexe ou genre",
-     "Uniquement les hommes",
-     "Uniquement les enfants"
+     "œstrogène",
+     "adrénaline seule",
+     "nicotine",
+     "insuline"
     ],
-    "a": "Toute personne, quel que soit son âge, sexe ou genre"
+    "a": "œstrogène"
    },
    {
-    "q": "Que faire en cas de viol ?",
+    "q": "Quelle glande du cerveau pilote la production hormonale ? L'___ ?",
     "c": [
-     "Dormir",
-     "Prendre une douche",
-     "Appeler les urgences, ne pas se laver, porter plainte",
-     "Oublier"
+     "hypophyse",
+     "rate",
+     "appendice",
+     "amygdale"
     ],
-    "a": "Appeler les urgences, ne pas se laver, porter plainte"
+    "a": "hypophyse"
    },
    {
-    "q": "Qu'est-ce que la prescription pour viol en France ?",
+    "q": "Quelle hormone de l'attachement est libérée lors des câlins et de l'orgasme ? L'___ ?",
     "c": [
-     "30 ans",
-     "20 ans après la majorité de la victime",
-     "10 ans",
-     "5 ans"
+     "ocytocine",
+     "cholestérol",
+     "glucose",
+     "collagène"
     ],
-    "a": "20 ans après la majorité de la victime"
+    "a": "ocytocine"
    },
    {
-    "q": "Quel est le pourcentage de plaintes pour viol classées sans suite ?",
+    "q": "Comment appelle-t-on les glandes (ovaires, testicules) qui sécrètent des hormones ? Des glandes ___ ?",
     "c": [
-     "Environ 50%",
-     "Environ 80%",
-     "Environ 30%",
-     "Environ 10%"
+     "endocrines",
+     "salivaires",
+     "sudoripares",
+     "lacrymales"
     ],
-    "a": "Environ 80%"
+    "a": "endocrines"
    },
    {
-    "q": "Qu'est-ce qu'une agression sexuelle ?",
-    "c": [
-     "Harcèlement",
-     "Atteinte sexuelle sans pénétration",
-     "Viol",
-     "Inceste"
-    ],
-    "a": "Atteinte sexuelle sans pénétration"
+    "q": "Combien de fois plus de testostérone, environ, un homme produit-il par rapport à une femme ?",
+    "a": "15"
    }
   ],
   "rw": true
@@ -22042,84 +22030,72 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que l'éducation à la sexualité ?",
+    "q": "Le sperme est : un liquide biologique, une pierre précieuse, une planète ou un instrument ?",
     "c": [
-     "Apprentissage sur le corps, les relations et la vie affective",
-     "Information médicale",
-     "Cours de biologie",
-     "Apprentissage des techniques sexuelles"
+     "un liquide biologique",
+     "une pierre précieuse",
+     "une planète",
+     "un instrument"
     ],
-    "a": "Apprentissage sur le corps, les relations et la vie affective"
+    "a": "un liquide biologique"
    },
    {
-    "q": "Depuis quand l'éducation sexuelle est-elle obligatoire à l'école en France ?",
+    "q": "Le sperme transporte les : spermatozoïdes, spaghettis, sardines ou étincelles ?",
     "c": [
-     "Depuis 1990",
-     "Depuis 1970",
-     "Depuis 2010",
-     "Depuis 2001 (loi relative à la régulation des naissances)"
+     "spermatozoïdes",
+     "spaghettis",
+     "sardines",
+     "étincelles"
     ],
-    "a": "Depuis 2001 (loi relative à la régulation des naissances)"
+    "a": "spermatozoïdes"
    },
    {
-    "q": "Combien de séances d'éducation sexuelle sont prévues par an ?",
+    "q": "Quels organes produisent les spermatozoïdes ? Les ___ ?",
     "c": [
-     "Au moins 3 séances",
-     "1 séance",
-     "5 séances",
-     "Aucune"
+     "testicules",
+     "reins",
+     "poumons",
+     "amygdales"
     ],
-    "a": "Au moins 3 séances"
+    "a": "testicules"
    },
    {
-    "q": "À quel âge commence l'éducation sexuelle à l'école ?",
+    "q": "Quelle est la forme caractéristique d'un spermatozoïde ? Il a une tête et une ___ ?",
     "c": [
-     "À la maternelle",
-     "À l'école primaire (cycle 3)",
-     "Au collège",
-     "Au lycée"
+     "queue",
+     "aile",
+     "patte",
+     "corne"
     ],
-    "a": "À l'école primaire (cycle 3)"
+    "a": "queue"
    },
    {
-    "q": "Quels sujets sont abordés dans l'éducation sexuelle ?",
+    "q": "Quelle cellule le spermatozoïde doit-il rencontrer pour féconder ? L'___ ?",
     "c": [
-     "Uniquement la contraception",
-     "Uniquement la biologie",
-     "Uniquement les IST",
-     "Consentement, contraception, IST, relations"
+     "ovule",
+     "neurone",
+     "globule blanc",
+     "plaquette"
     ],
-    "a": "Consentement, contraception, IST, relations"
+    "a": "ovule"
    },
    {
-    "q": "Qui dispense les séances d'éducation sexuelle ?",
+    "q": "Quelle glande, sous la vessie, produit une part du liquide séminal ? La ___ ?",
     "c": [
-     "Uniquement les infirmières",
-     "Uniquement les parents",
-     "Enseignants et intervenants extérieurs spécialisés",
-     "Uniquement les médecins"
+     "prostate",
+     "thyroïde",
+     "rate",
+     "hypophyse"
     ],
-    "a": "Enseignants et intervenants extérieurs spécialisés"
+    "a": "prostate"
    },
    {
-    "q": "L'éducation sexuelle réduit-elle les grossesses précoces ?",
-    "c": [
-     "Oui, c'est démontré",
-     "Non, elle les augmente",
-     "Effet variable",
-     "Non, aucun effet"
-    ],
-    "a": "Oui, c'est démontré"
+    "q": "Combien de chromosomes un spermatozoïde humain porte-t-il ?",
+    "a": "23"
    },
    {
-    "q": "Quel pays a l'un des meilleurs programmes d'éducation sexuelle ?",
-    "c": [
-     "France",
-     "Pays-Bas",
-     "Japon",
-     "États-Unis"
-    ],
-    "a": "Pays-Bas"
+    "q": "Combien de spermatozoïdes, environ en millions, contient une éjaculation moyenne ?",
+    "a": "200"
    }
   ],
   "rw": true
@@ -22131,84 +22107,72 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que la mutilation génitale féminine (MGF) ?",
+    "q": "L'ovule est : une cellule reproductrice, une pâte à tartiner, une montagne ou un logiciel ?",
     "c": [
-     "Ablation partielle ou totale des organes génitaux externes",
-     "Rituel",
-     "Opération esthétique",
-     "Circoncision"
+     "une cellule reproductrice",
+     "une pâte à tartiner",
+     "une montagne",
+     "un logiciel"
     ],
-    "a": "Ablation partielle ou totale des organes génitaux externes"
+    "a": "une cellule reproductrice"
    },
    {
-    "q": "Combien de femmes ont subi des MGF dans le monde ?",
+    "q": "L'ovule est produit par la : femme, girafe uniquement, machine ou plante ?",
     "c": [
-     "Environ 100 millions",
-     "Environ 50 millions",
-     "Plus de 200 millions",
-     "Environ 1 milliard"
+     "femme",
+     "girafe uniquement",
+     "machine",
+     "plante"
     ],
-    "a": "Plus de 200 millions"
+    "a": "femme"
    },
    {
-    "q": "Dans quelles régions les MGF sont-elles pratiquées ?",
+    "q": "Quels organes féminins produisent les ovules ? Les ___ ?",
     "c": [
-     "Partout dans le monde",
-     "Afrique subsaharienne, Moyen-Orient, Asie",
-     "Uniquement au Moyen-Orient",
-     "Uniquement en Afrique"
+     "ovaires",
+     "poumons",
+     "reins",
+     "genoux"
     ],
-    "a": "Afrique subsaharienne, Moyen-Orient, Asie"
+    "a": "ovaires"
    },
    {
-    "q": "Les MGF sont-elles illégales en France ?",
+    "q": "Comment appelle-t-on la libération d'un ovule chaque mois ? L'___ ?",
     "c": [
-     "Non, autorisées",
-     "Uniquement pour les mineures",
-     "Autorisées avec consentement",
-     "Oui, interdites et sévèrement punies"
+     "ovulation",
+     "respiration",
+     "digestion",
+     "sudation"
     ],
-    "a": "Oui, interdites et sévèrement punies"
+    "a": "ovulation"
    },
    {
-    "q": "Quelles sont les conséquences des MGF sur la santé ?",
+    "q": "Par quels conduits l'ovule voyage-t-il vers l'utérus ? Les trompes de ___ ?",
     "c": [
-     "Bénéfiques pour la santé",
-     "Douleur, infections, complications obstétricales",
-     "Esthétiques",
-     "Aucunes"
+     "Fallope",
+     "Eustache",
+     "Botal",
+     "Henlé"
     ],
-    "a": "Douleur, infections, complications obstétricales"
+    "a": "Fallope"
    },
    {
-    "q": "Pourquoi les MGF sont-elles pratiquées ?",
+    "q": "L'ovule est-il la plus grosse ou la plus petite cellule du corps humain ? La plus ___ ?",
     "c": [
-     "Raisons médicales",
-     "Esthétique",
-     "Hygiène",
-     "Traditions culturelles et croyances religieuses"
+     "grosse",
+     "petite",
+     "rapide",
+     "plate"
     ],
-    "a": "Traditions culturelles et croyances religieuses"
+    "a": "grosse"
    },
    {
-    "q": "Qu'est-ce que l'excision ?",
-    "c": [
-     "Rituel religieux",
-     "Ablation du clitoris et parfois des petites lèvres",
-     "Circoncision",
-     "Opération chirurgicale"
-    ],
-    "a": "Ablation du clitoris et parfois des petites lèvres"
+    "q": "Combien de chromosomes un ovule humain porte-t-il ?",
+    "a": "23"
    },
    {
-    "q": "Quelle organisation lutte contre les MGF ?",
-    "c": [
-     "Amnesty International",
-     "UNICEF, OMS, ONU",
-     "Croix-Rouge",
-     "Toutes ces organisations"
-    ],
-    "a": "Toutes ces organisations"
+    "q": "Combien d'ovules, environ, une femme libère-t-elle réellement au cours de toute sa vie ?",
+    "a": "400"
    }
   ],
   "rw": true
@@ -22220,84 +22184,72 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que le Planning familial ?",
+    "q": "La fécondation, c'est : la rencontre de deux cellules, une recette de cuisine, une saison ou un métier ?",
     "c": [
-     "Méthode de planning",
-     "Calendrier",
-     "Structure médicale",
-     "Association qui informe sur la contraception et la sexualité"
+     "la rencontre de deux cellules",
+     "une recette de cuisine",
+     "une saison",
+     "un métier"
     ],
-    "a": "Association qui informe sur la contraception et la sexualité"
+    "a": "la rencontre de deux cellules"
    },
    {
-    "q": "En quelle année le Planning familial a-t-il été créé en France ?",
+    "q": "La fécondation unit un spermatozoïde et un : ovule, caillou, nuage ou bonbon ?",
     "c": [
-     "1956",
-     "1970",
-     "1960",
-     "1980"
+     "ovule",
+     "caillou",
+     "nuage",
+     "bonbon"
     ],
-    "a": "1956"
+    "a": "ovule"
    },
    {
-    "q": "Quels services propose le Planning familial ?",
+    "q": "Que forme la rencontre du spermatozoïde et de l'ovule ? Un ___ (œuf) ?",
     "c": [
-     "Consultations contraceptives, IST, IVG, informations",
-     "Uniquement les tests IST",
-     "Uniquement la contraception",
-     "Uniquement les informations"
+     "zygote",
+     "yaourt",
+     "cristal",
+     "gaz"
     ],
-    "a": "Consultations contraceptives, IST, IVG, informations"
+    "a": "zygote"
    },
    {
-    "q": "Les consultations au Planning familial sont-elles gratuites ?",
+    "q": "Où a lieu, le plus souvent, la fécondation naturelle ? Dans les trompes de ___ ?",
     "c": [
-     "Uniquement pour les étudiants",
-     "Oui, et anonymes pour les mineurs",
-     "Uniquement pour les adultes",
-     "Non, payantes"
+     "Fallope",
+     "Eustache",
+     "Botal",
+     "Henlé"
     ],
-    "a": "Oui, et anonymes pour les mineurs"
+    "a": "Fallope"
    },
    {
-    "q": "Qui peut consulter le Planning familial ?",
+    "q": "Comment appelle-t-on la fécondation réalisée en laboratoire ? La ___ (FIV) ?",
     "c": [
-     "Uniquement les couples",
-     "Toute personne, sans condition",
-     "Uniquement les jeunes",
-     "Uniquement les femmes"
+     "fécondation in vitro",
+     "photosynthèse",
+     "pasteurisation",
+     "distillation"
     ],
-    "a": "Toute personne, sans condition"
+    "a": "fécondation in vitro"
    },
    {
-    "q": "Qu'est-ce que l'IVG au Planning familial ?",
-    "c": [
-     "Information",
-     "Contraception",
-     "Examen",
-     "Interruption Volontaire de Grossesse"
-    ],
-    "a": "Interruption Volontaire de Grossesse"
+    "q": "Combien de spermatozoïdes féconderont finalement un ovule ?",
+    "a": "1"
    },
    {
-    "q": "Depuis quand la contraception est-elle autorisée en France ?",
+    "q": "Quel scientifique a permis la naissance du premier « bébé-éprouvette » (prix Nobel) ? Robert ___ ?",
     "c": [
-     "1975",
-     "1970",
-     "1967 (loi Neuwirth)",
-     "1960"
+     "Edwards",
+     "Einstein",
+     "Pasteur",
+     "Darwin"
     ],
-    "a": "1967 (loi Neuwirth)"
+    "a": "Edwards"
    },
    {
-    "q": "Depuis quand l'IVG est-elle légale en France ?",
-    "c": [
-     "1970",
-     "1975 (loi Veil)",
-     "1967",
-     "1980"
-    ],
-    "a": "1975 (loi Veil)"
+    "q": "En quelle année est né Louise Brown, premier bébé conçu par FIV ?",
+    "a": "1978"
    }
   ],
   "rw": true
@@ -22309,84 +22261,72 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que la transition de genre ?",
+    "q": "La grossesse, c'est quand une personne : attend un bébé, repeint sa maison, part en vacances ou change de voiture ?",
     "c": [
-     "Changement de nom",
-     "Traitement hormonal",
-     "Opération chirurgicale",
-     "Processus pour aligner son apparence et son identité de genre"
+     "attend un bébé",
+     "repeint sa maison",
+     "part en vacances",
+     "change de voiture"
     ],
-    "a": "Processus pour aligner son apparence et son identité de genre"
+    "a": "attend un bébé"
    },
    {
-    "q": "Qu'est-ce qu'une personne transgenre ?",
+    "q": "Une grossesse dure environ : 9 mois, 9 jours, 9 ans ou 9 heures ?",
     "c": [
-     "Personne dont l'identité de genre diffère du sexe assigné",
-     "Travesti",
-     "Homosexuel",
-     "Personne qui change de sexe"
+     "9 mois",
+     "9 jours",
+     "9 ans",
+     "9 heures"
     ],
-    "a": "Personne dont l'identité de genre diffère du sexe assigné"
+    "a": "9 mois"
    },
    {
-    "q": "Qu'est-ce que le parcours de transition médicale ?",
+    "q": "Dans quel organe le bébé se développe-t-il ? L'___ ?",
     "c": [
-     "Opération unique",
-     "Suivi par des spécialistes avec traitements possibles",
-     "Simple changement administratif",
-     "Traitement obligatoire"
+     "utérus",
+     "estomac",
+     "foie",
+     "poumon"
     ],
-    "a": "Suivi par des spécialistes avec traitements possibles"
+    "a": "utérus"
    },
    {
-    "q": "Quels traitements peuvent être suivis lors d'une transition ?",
+    "q": "Comment appelle-t-on l'organe qui nourrit le bébé pendant la grossesse ? Le ___ ?",
     "c": [
-     "Aucun traitement",
-     "Hormones et/ou chirurgies",
-     "Uniquement les hormones",
-     "Uniquement la chirurgie"
+     "placenta",
+     "pancréas",
+     "diaphragme",
+     "tympan"
     ],
-    "a": "Hormones et/ou chirurgies"
+    "a": "placenta"
    },
    {
-    "q": "Depuis quand le changement de sexe à l'état civil est-il possible en France ?",
+    "q": "Quel cordon relie le bébé au placenta ? Le cordon ___ ?",
     "c": [
-     "Depuis 2020",
-     "Depuis 2016 (loi de modernisation de la justice)",
-     "Depuis 2010",
-     "Depuis 2000"
+     "ombilical",
+     "vocal",
+     "spinal",
+     "tendineux"
     ],
-    "a": "Depuis 2016 (loi de modernisation de la justice)"
+    "a": "ombilical"
    },
    {
-    "q": "Qu'est-ce que la dysphorie de genre ?",
-    "c": [
-     "Préférence personnelle",
-     "Maladie mentale",
-     "Malaise lié à la discordance entre identité de genre et sexe assigné",
-     "Simple insatisfaction"
-    ],
-    "a": "Malaise lié à la discordance entre identité de genre et sexe assigné"
+    "q": "En combien de trimestres divise-t-on la grossesse ?",
+    "a": "3"
    },
    {
-    "q": "La transidentité est-elle une maladie mentale ?",
+    "q": "Quel examen à ultrasons permet de voir le bébé pendant la grossesse ? L'___ ?",
     "c": [
-     "Oui, c'est un trouble",
-     "Oui, depuis 2018",
-     "Non, mais autrefois",
-     "Non, l'OMS ne la considère plus comme telle"
+     "échographie",
+     "radiographie",
+     "endoscopie",
+     "coloscopie"
     ],
-    "a": "Non, l'OMS ne la considère plus comme telle"
+    "a": "échographie"
    },
    {
-    "q": "Qu'est-ce que le coming out trans ?",
-    "c": [
-     "Changement de nom",
-     "Transition médicale",
-     "Révélation de son identité de genre à son entourage",
-     "Sortir d'une boîte"
-    ],
-    "a": "Révélation de son identité de genre à son entourage"
+    "q": "Combien de semaines d'aménorrhée dure en moyenne une grossesse à terme ?",
+    "a": "41"
    }
   ],
   "rw": true
@@ -22398,84 +22338,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que l'identité de genre ?",
+    "q": "L'accouchement, c'est : la naissance du bébé, une fête foraine, un plat ou une chanson ?",
     "c": [
-     "Sexe biologique",
-     "Rôle social",
-     "Orientation sexuelle",
-     "Sentiment intime et personnel d'appartenir à un genre"
+     "la naissance du bébé",
+     "une fête foraine",
+     "un plat",
+     "une chanson"
     ],
-    "a": "Sentiment intime et personnel d'appartenir à un genre"
+    "a": "la naissance du bébé"
    },
    {
-    "q": "Quelle est la différence entre sexe et genre ?",
+    "q": "L'accouchement a lieu à la : fin de la grossesse, plage, montagne ou banque ?",
     "c": [
-     "Le sexe est biologique, le genre est social et identitaire",
-     "Le sexe est social",
-     "Identiques",
-     "Le genre est biologique"
+     "fin de la grossesse",
+     "plage",
+     "montagne",
+     "banque"
     ],
-    "a": "Le sexe est biologique, le genre est social et identitaire"
+    "a": "fin de la grossesse"
    },
    {
-    "q": "Qu'est-ce que la cisidentité ?",
+    "q": "Comment appelle-t-on les contractions qui annoncent l'accouchement ? Le ___ ?",
     "c": [
-     "Personne dont l'identité de genre correspond au sexe assigné",
-     "Personne trans",
-     "Homosexuel",
-     "Personne non-binaire"
+     "travail",
+     "repos",
+     "sommeil",
+     "goûter"
     ],
-    "a": "Personne dont l'identité de genre correspond au sexe assigné"
+    "a": "travail"
    },
    {
-    "q": "Qu'est-ce qu'une personne non-binaire ?",
+    "q": "Quelle opération chirurgicale permet de sortir le bébé par le ventre ? La ___ ?",
     "c": [
-     "Personne cis",
-     "Personne trans",
-     "Personne qui ne se reconnaît pas dans la binarité homme/femme",
-     "Personne androgyne"
+     "césarienne",
+     "appendicite",
+     "liposuccion",
+     "trépanation"
     ],
-    "a": "Personne qui ne se reconnaît pas dans la binarité homme/femme"
+    "a": "césarienne"
    },
    {
-    "q": "L'identité de genre est-elle liée à l'orientation sexuelle ?",
+    "q": "Quel professionnel de santé accompagne classiquement les accouchements ? La ___ ?",
     "c": [
-     "Uniquement chez les trans",
-     "Oui, directement liés",
-     "Non, ce sont des concepts distincts",
-     "Parfois"
+     "sage-femme",
+     "boulangère",
+     "avocate",
+     "pilote"
     ],
-    "a": "Non, ce sont des concepts distincts"
+    "a": "sage-femme"
    },
    {
-    "q": "Qu'est-ce que l'expression de genre ?",
+    "q": "Quelle anesthésie locale soulage la douleur pendant l'accouchement ? La ___ ?",
     "c": [
-     "Orientation",
-     "Sexe biologique",
-     "Identité de genre",
-     "Façon dont une personne exprime son genre (vêtements, comportement)"
+     "péridurale",
+     "générale seule",
+     "locale du bras",
+     "dentaire"
     ],
-    "a": "Façon dont une personne exprime son genre (vêtements, comportement)"
+    "a": "péridurale"
    },
    {
-    "q": "Quels sont les pronoms utilisés pour les personnes non-binaires ?",
+    "q": "Comment mesure-t-on l'état du nouveau-né juste après la naissance ? Le score d'___ ?",
     "c": [
-     "Uniquement le prénom",
-     "Iel, al, ol (ou autres selon la personne)",
-     "Aucun pronom",
-     "Il ou elle uniquement"
+     "Apgar",
+     "Richter",
+     "QI",
+     "IMC"
     ],
-    "a": "Iel, al, ol (ou autres selon la personne)"
+    "a": "Apgar"
    },
    {
-    "q": "L'identité de genre est-elle choisie ?",
-    "c": [
-     "Non, elle est ressentie et personnelle",
-     "Parfois",
-     "Oui, on la choisit",
-     "Oui, comme un vêtement"
-    ],
-    "a": "Non, elle est ressentie et personnelle"
+    "q": "Combien de centimètres, environ, le col de l'utérus doit-il atteindre en dilatation pour l'accouchement ?",
+    "a": "10"
    }
   ],
   "rw": true
@@ -22487,84 +22421,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que le transsexualisme (transidentité) ?",
+    "q": "L'allaitement, c'est : nourrir un bébé au sein, laver une voiture, tondre le gazon ou peindre ?",
     "c": [
-     "Attirance pour le même sexe",
-     "Identité de genre différente du sexe assigné à la naissance",
-     "Choix de vie",
-     "Maladie"
+     "nourrir un bébé au sein",
+     "laver une voiture",
+     "tondre le gazon",
+     "peindre"
     ],
-    "a": "Identité de genre différente du sexe assigné à la naissance"
+    "a": "nourrir un bébé au sein"
    },
    {
-    "q": "Quel est le terme médical utilisé dans les classifications internationales ?",
+    "q": "L'allaitement donne au bébé du : lait, jus d'orange, café ou soda ?",
     "c": [
-     "Trouble de l'identité de genre",
-     "Transidentité",
-     "Transsexualisme",
-     "Dysphorie de genre"
+     "lait",
+     "jus d'orange",
+     "café",
+     "soda"
     ],
-    "a": "Dysphorie de genre"
+    "a": "lait"
    },
    {
-    "q": "À quel âge une personne peut-elle ressentir une dysphorie de genre ?",
+    "q": "Quel premier lait, très riche en anticorps, est produit juste après la naissance ? Le ___ ?",
     "c": [
-     "Dès l'enfance",
-     "Uniquement à l'âge adulte",
-     "Uniquement à l'adolescence",
-     "Après 30 ans"
+     "colostrum",
+     "petit-lait",
+     "lait ribot",
+     "lactosérum"
     ],
-    "a": "Dès l'enfance"
+    "a": "colostrum"
    },
    {
-    "q": "Quels sont les traitements possibles pour la dysphorie de genre ?",
+    "q": "Quelle hormone déclenche la production de lait maternel ? La ___ ?",
     "c": [
-     "Uniquement la chirurgie",
-     "Uniquement les hormones",
-     "THS, chirurgies, accompagnement psychologique",
-     "Aucun traitement"
+     "prolactine",
+     "adrénaline",
+     "insuline",
+     "mélatonine"
     ],
-    "a": "THS, chirurgies, accompagnement psychologique"
+    "a": "prolactine"
    },
    {
-    "q": "Qu'est-ce que le traitement hormonal substitutif (THS) dans la transition ?",
+    "q": "Quelle hormone provoque l'éjection du lait lors de la tétée ? L'___ ?",
     "c": [
-     "Traitement contre la dépression",
-     "Antibiotiques",
-     "Médicaments",
-     "Hormones pour développer les caractères du genre souhaité"
+     "ocytocine",
+     "testostérone",
+     "cortisol",
+     "kératine"
     ],
-    "a": "Hormones pour développer les caractères du genre souhaité"
+    "a": "ocytocine"
    },
    {
-    "q": "Qu'est-ce que la chirurgie de réassignation sexuelle ?",
+    "q": "Que contient le lait maternel pour protéger le bébé des maladies ? Des ___ ?",
     "c": [
-     "Opérations chirurgicales pour modifier les caractéristiques sexuelles",
-     "Chirurgie esthétique",
-     "Chirurgie mammaire",
-     "Lipoaspiration"
+     "anticorps",
+     "cailloux",
+     "colorants",
+     "conservateurs"
     ],
-    "a": "Opérations chirurgicales pour modifier les caractéristiques sexuelles"
+    "a": "anticorps"
    },
    {
-    "q": "Depuis quand la France rembourse-t-elle les opérations de changement de sexe ?",
+    "q": "Quelle alternative existe si l'allaitement n'est pas possible ? Le lait ___ (infantile) ?",
     "c": [
-     "Jamais",
-     "Depuis les années 2000 (ALD)",
-     "Depuis 1990",
-     "Depuis 2010"
+     "artificiel",
+     "de coco seul",
+     "d'amande seul",
+     "de riz seul"
     ],
-    "a": "Depuis les années 2000 (ALD)"
+    "a": "artificiel"
    },
    {
-    "q": "La transidentité est-elle reconnue comme une affection de longue durée (ALD) ?",
-    "c": [
-     "Oui, dans certains cas",
-     "Uniquement pour les opérations",
-     "Non, jamais",
-     "Oui, systématiquement"
-    ],
-    "a": "Oui, dans certains cas"
+    "q": "Jusqu'à quel âge, en mois, l'OMS recommande-t-elle l'allaitement exclusif ?",
+    "a": "6"
    }
   ],
   "rw": true
@@ -22576,84 +22504,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que l'homoparentalité ?",
+    "q": "Le post-partum, c'est la période : après l'accouchement, avant la naissance, des vacances ou de la retraite ?",
     "c": [
-     "Parent isolé",
-     "Adoption",
-     "Parents de même sexe qui élèvent des enfants",
-     "Famille nombreuse"
+     "après l'accouchement",
+     "avant la naissance",
+     "des vacances",
+     "de la retraite"
     ],
-    "a": "Parents de même sexe qui élèvent des enfants"
+    "a": "après l'accouchement"
    },
    {
-    "q": "Qu'est-ce que la PMA pour les couples de femmes en France ?",
+    "q": "Le post-partum concerne surtout la : jeune maman, voiture, maison ou météo ?",
     "c": [
-     "Adoption",
-     "FIV",
-     "Gestation pour autrui",
-     "Procréation Médicalement Assistée pour couples lesbiens"
+     "jeune maman",
+     "voiture",
+     "maison",
+     "météo"
     ],
-    "a": "Procréation Médicalement Assistée pour couples lesbiens"
+    "a": "jeune maman"
    },
    {
-    "q": "Depuis quand la PMA est-elle ouverte à toutes les femmes en France ?",
+    "q": "Comment appelle-t-on la déprime passagère fréquente les jours suivant l'accouchement ? Le baby ___ ?",
     "c": [
-     "2021 (loi bioéthique)",
-     "2015",
-     "2023",
-     "2013"
+     "blues",
+     "shower",
+     "boom",
+     "sitting"
     ],
-    "a": "2021 (loi bioéthique)"
+    "a": "blues"
    },
    {
-    "q": "Qu'est-ce que l'adoption homoparentale ?",
+    "q": "Quelle forme plus grave de trouble de l'humeur peut survenir après la naissance ? La dépression ___ ?",
     "c": [
-     "Adoption simple",
-     "Adoption plénière",
-     "Adoption d'un enfant par un couple de même sexe",
-     "Famille d'accueil"
+     "post-partum",
+     "saisonnière",
+     "chronique ancienne",
+     "hivernale"
     ],
-    "a": "Adoption d'un enfant par un couple de même sexe"
+    "a": "post-partum"
    },
    {
-    "q": "Qu'est-ce que l'adoption de l'enfant du conjoint ?",
+    "q": "Quelles pertes de sang normales suivent l'accouchement pendant quelques semaines ? Les ___ ?",
     "c": [
-     "Adoption internationale",
-     "Adoption de l'enfant du partenaire par le beau-parent",
-     "Adoption simple",
-     "Adoption plénière"
+     "lochies",
+     "larmes",
+     "sueurs froides",
+     "crampes"
     ],
-    "a": "Adoption de l'enfant du partenaire par le beau-parent"
+    "a": "lochies"
    },
    {
-    "q": "Combien d'enfants vivent dans une famille homoparentale en France ?",
+    "q": "Quelle rééducation est souvent proposée après l'accouchement ? La rééducation du ___ ?",
     "c": [
-     "Environ 50 000",
-     "Environ 1 million",
-     "Environ 500 000",
-     "Environ 200 000 à 300 000"
+     "périnée",
+     "coude",
+     "poignet",
+     "cou"
     ],
-    "a": "Environ 200 000 à 300 000"
+    "a": "périnée"
    },
    {
-    "q": "Comment les enfants de familles homoparentales se développent-ils ?",
+    "q": "Quel bouleversement, en plus du corps, marque le post-partum ? Le bouleversement ___ ?",
     "c": [
-     "Mieux",
-     "Aussi bien que les autres enfants",
-     "Cela dépend de l'orientation des parents",
-     "Moins bien"
+     "hormonal",
+     "météorologique",
+     "boursier",
+     "routier"
     ],
-    "a": "Aussi bien que les autres enfants"
+    "a": "hormonal"
    },
    {
-    "q": "Quelle est la différence entre homoparentalité et parent seul ?",
-    "c": [
-     "Homoparentalité = couple hétéro",
-     "Homoparentalité = couple de même sexe, parent seul = célibataire",
-     "Parent seul = couple homosexuel",
-     "C'est la même chose"
-    ],
-    "a": "Homoparentalité = couple de même sexe, parent seul = célibataire"
+    "q": "Combien de semaines dure classiquement le « quatrième trimestre » (post-partum immédiat) ?",
+    "a": "12"
    }
   ],
   "rw": true
@@ -22665,84 +22587,84 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Que signifie PMA ?",
+    "q": "La libido désigne : le désir sexuel, une marque de yaourt, une rivière ou un outil ?",
     "c": [
-     "Procréation Médicalement Assistée",
-     "Paternité et Maternité Assistée",
-     "Préparation Médicale à l'Accouchement",
-     "Prémédication Assistée"
+     "le désir sexuel",
+     "une marque de yaourt",
+     "une rivière",
+     "un outil"
     ],
-    "a": "Procréation Médicalement Assistée"
+    "a": "le désir sexuel"
    },
    {
-    "q": "Quelles techniques inclut la PMA ?",
+    "q": "La libido peut être : plus ou moins forte selon les gens, toujours identique, mesurée en litres ou en kilos ?",
     "c": [
-     "Uniquement la FIV",
-     "Uniquement l'insémination",
-     "Insémination, FIV, ICSI",
-     "La chirurgie"
+     "plus ou moins forte selon les gens",
+     "toujours identique",
+     "mesurée en litres",
+     "mesurée en kilos"
     ],
-    "a": "Insémination, FIV, ICSI"
+    "a": "plus ou moins forte selon les gens"
    },
    {
-    "q": "À qui s'adresse la PMA en France ?",
+    "q": "Quelle hormone influence beaucoup la libido chez les deux sexes ? La ___ ?",
     "c": [
-     "Uniquement couples hétéros",
-     "Couples hétérosexuels, couples de femmes et femmes seules",
-     "Uniquement couples de femmes",
-     "Uniquement couples mariés"
+     "testostérone",
+     "chlorophylle",
+     "kératine",
+     "caféine"
     ],
-    "a": "Couples hétérosexuels, couples de femmes et femmes seules"
+    "a": "testostérone"
    },
    {
-    "q": "Qu'est-ce que l'insémination artificielle (IAC) ?",
+    "q": "Quel facteur du quotidien fait souvent baisser la libido ? Le ___ ?",
     "c": [
-     "Dépôt de sperme directement dans l'utérus",
-     "Injection de spermatozoïdes",
-     "Fécondation in vitro",
-     "Transfert d'embryon"
+     "stress",
+     "sourire",
+     "repos",
+     "rire"
     ],
-    "a": "Dépôt de sperme directement dans l'utérus"
+    "a": "stress"
    },
    {
-    "q": "Quel est l'âge limite pour la PMA en France ?",
+    "q": "Quel psychanalyste a popularisé le concept de libido ? Sigmund ___ ?",
     "c": [
-     "45 ans",
-     "40 ans",
-     "50 ans",
-     "43 ans pour la femme"
+     "Freud",
+     "Jung isolé",
+     "Pavlov",
+     "Skinner"
     ],
-    "a": "43 ans pour la femme"
+    "a": "Freud"
    },
    {
-    "q": "Combien de tentatives de PMA sont remboursées en France ?",
+    "q": "La fatigue et le manque de sommeil ont-ils un effet sur la libido ? ___ ?",
     "c": [
-     "8 inséminations et 6 FIV",
-     "6 inséminations et 4 FIV",
-     "4 inséminations et 2 FIV",
-     "Tentatives illimitées"
+     "oui",
+     "non",
+     "seulement l'été",
+     "seulement le lundi"
     ],
-    "a": "6 inséminations et 4 FIV"
+    "a": "oui"
    },
    {
-    "q": "Qu'est-ce que la conservation des ovocytes ?",
+    "q": "Comment appelle-t-on une baisse durable et gênante du désir sexuel ? Un trouble du ___ ?",
     "c": [
-     "Fécondation",
-     "Conservation du sperme",
-     "Stockage d'embryons",
-     "Congélation des ovules pour préserver la fertilité"
+     "désir",
+     "sommeil seul",
+     "goût",
+     "langage"
     ],
-    "a": "Congélation des ovules pour préserver la fertilité"
+    "a": "désir"
    },
    {
-    "q": "Depuis quand les femmes peuvent-elles conserver leurs ovocytes sans raison médicale en France ?",
+    "q": "De quel mot latin signifiant « désir, envie » vient le mot « libido » ? ___ ?",
     "c": [
-     "Depuis 2015",
-     "Depuis 2010",
-     "Ce n'est pas autorisé",
-     "Depuis 2021"
+     "libido",
+     "labor",
+     "liber",
+     "ludus"
     ],
-    "a": "Depuis 2021"
+    "a": "libido"
    }
   ],
   "rw": true
@@ -22754,84 +22676,84 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Que signifie GPA ?",
+    "q": "Un aphrodisiaque est censé stimuler : le désir sexuel, la pousse des cheveux, la mémoire des dates ou la vue ?",
     "c": [
-     "Gynécologie et Procréation Assistée",
-     "Gestation Pour Autrui (mère porteuse)",
-     "Grossesse à Procréation Assistée",
-     "Grossesse Pour Autrui"
+     "le désir sexuel",
+     "la pousse des cheveux",
+     "la mémoire des dates",
+     "la vue"
     ],
-    "a": "Gestation Pour Autrui (mère porteuse)"
+    "a": "le désir sexuel"
    },
    {
-    "q": "La GPA est-elle autorisée en France ?",
+    "q": "De quelle déesse grecque de l'amour vient le mot « aphrodisiaque » ? ___ ?",
     "c": [
-     "Oui, autorisée",
-     "Autorisée sous conditions",
-     "Uniquement pour les couples hétéros",
-     "Non, interdite en France"
+     "Aphrodite",
+     "Athéna",
+     "Héra",
+     "Artémis"
     ],
-    "a": "Non, interdite en France"
+    "a": "Aphrodite"
    },
    {
-    "q": "Pourquoi la GPA est-elle interdite en France ?",
+    "q": "Quel mollusque est un aphrodisiaque réputé (souvent à tort) ? L'___ ?",
     "c": [
-     "Pour des raisons médicales",
-     "Pour des raisons éthiques et juridiques",
-     "Pour des raisons religieuses",
-     "Pour des raisons économiques"
+     "huître",
+     "escargot",
+     "moule seule",
+     "palourde"
     ],
-    "a": "Pour des raisons éthiques et juridiques"
+    "a": "huître"
    },
    {
-    "q": "Dans quels pays la GPA est-elle autorisée ?",
+    "q": "Quel aliment brun et sucré est traditionnellement associé à l'amour ? Le ___ ?",
     "c": [
-     "Canada, Royaume-Uni, Belgique, Grèce, USA (certains états)",
-     "Uniquement aux USA",
-     "Partout dans le monde",
-     "Uniquement en Europe"
+     "chocolat",
+     "pain",
+     "riz",
+     "sel"
     ],
-    "a": "Canada, Royaume-Uni, Belgique, Grèce, USA (certains états)"
+    "a": "chocolat"
    },
    {
-    "q": "Qu'est-ce que la GPA ?",
+    "q": "Quelle épice rare et chère est un aphrodisiaque réputé ? Le ___ ?",
     "c": [
-     "Adoption",
-     "FIV",
-     "Insémination",
-     "Une femme porte un enfant pour un couple ou une personne"
+     "safran",
+     "sel",
+     "farine",
+     "sucre"
     ],
-    "a": "Une femme porte un enfant pour un couple ou une personne"
+    "a": "safran"
    },
    {
-    "q": "Comment les parents d'intention récupèrent-ils la filiation ?",
+    "q": "L'efficacité de la plupart des aphrodisiaques est-elle prouvée ou surtout un effet placebo ? Surtout un effet ___ ?",
     "c": [
-     "Par déclaration",
-     "Par procédure judiciaire dans leur pays",
-     "Automatiquement",
-     "Par contrat"
+     "placebo",
+     "magnétique",
+     "chimique prouvé",
+     "gravitationnel"
     ],
-    "a": "Par procédure judiciaire dans leur pays"
+    "a": "placebo"
    },
    {
-    "q": "Quels sont les principaux débats éthiques autour de la GPA ?",
+    "q": "Quelle plante-racine asiatique est vantée comme tonifiante et aphrodisiaque ? Le ___ ?",
     "c": [
-     "Économiques",
-     "Marchandisation du corps, exploitation, filiation",
-     "Religieux",
-     "Médicaux"
+     "ginseng",
+     "poireau",
+     "navet",
+     "radis"
     ],
-    "a": "Marchandisation du corps, exploitation, filiation"
+    "a": "ginseng"
    },
    {
-    "q": "La GPA est-elle autorisée en Belgique ?",
+    "q": "Quelle corne d'animal, hélas braconné, est vendue à tort comme aphrodisiaque ? La corne de ___ ?",
     "c": [
-     "Oui, strictement encadrée",
-     "Oui, payante",
-     "Oui, mais non encadrée légalement",
-     "Non"
+     "rhinocéros",
+     "vache",
+     "chèvre",
+     "cerf"
     ],
-    "a": "Oui, mais non encadrée légalement"
+    "a": "rhinocéros"
    }
   ],
   "rw": true
@@ -22843,84 +22765,78 @@ export const TTCQ_THEMES = [
   "level": "adulte",
   "levels": [
    {
-    "q": "Qu'est-ce que l'accouchement sous X ?",
+    "q": "La sexologie est : l'étude de la sexualité, une danse, un sport de combat ou une pâtisserie ?",
     "c": [
-     "Accouchement à domicile",
-     "Césarienne",
-     "Accouchement sans douleur",
-     "Accouchement dans l'anonymat à l'hôpital"
+     "l'étude de la sexualité",
+     "une danse",
+     "un sport de combat",
+     "une pâtisserie"
     ],
-    "a": "Accouchement dans l'anonymat à l'hôpital"
+    "a": "l'étude de la sexualité"
    },
    {
-    "q": "Depuis quand l'accouchement sous X existe-t-il en France ?",
+    "q": "Un sexologue est un : professionnel de santé, cuisinier, pilote ou jardinier ?",
     "c": [
-     "Depuis 1960",
-     "Depuis 1941 (loi de 1941)",
-     "Depuis 1970",
-     "Depuis 1900"
+     "professionnel de santé",
+     "cuisinier",
+     "pilote",
+     "jardinier"
     ],
-    "a": "Depuis 1941 (loi de 1941)"
+    "a": "professionnel de santé"
    },
    {
-    "q": "Quel est le but de l'accouchement sous X ?",
+    "q": "Quel type de difficulté un sexologue aide-t-il à résoudre ? Les troubles ___ ?",
     "c": [
-     "Éviter les frais",
-     "Éviter les abandons dangereux et les infanticides",
-     "Cacher la naissance",
-     "Simplifier l'adoption"
+     "sexuels",
+     "de la vue",
+     "de l'audition",
+     "osseux"
     ],
-    "a": "Éviter les abandons dangereux et les infanticides"
+    "a": "sexuels"
    },
    {
-    "q": "La mère a-t-elle accès à un suivi médical ?",
+    "q": "Quels chercheurs américains ont fondé l'étude scientifique moderne de la sexualité ? Masters et ___ ?",
     "c": [
-     "Oui, elle bénéficie des mêmes soins",
-     "Oui, mais payant",
-     "Uniquement un suivi minimal",
-     "Non, aucun"
+     "Johnson",
+     "Freud",
+     "Pavlov",
+     "Darwin"
     ],
-    "a": "Oui, elle bénéficie des mêmes soins"
+    "a": "Johnson"
    },
    {
-    "q": "L'enfant né sous X peut-il retrouver ses origines ?",
+    "q": "Quel biologiste américain a publié de célèbres rapports sur la sexualité humaine ? Alfred ___ ?",
     "c": [
-     "Oui, immédiatement",
-     "Oui, à 16 ans",
-     "Oui, à sa majorité via le CNAOP",
-     "Non, jamais"
+     "Kinsey",
+     "Kelvin",
+     "Edison",
+     "Newton"
     ],
-    "a": "Oui, à sa majorité via le CNAOP"
+    "a": "Kinsey"
    },
    {
-    "q": "Qu'est-ce que le CNAOP ?",
+    "q": "La sexologie aborde-t-elle aussi la dimension psychologique et relationnelle ? ___ ?",
     "c": [
-     "Organisme de suivi",
-     "Hôpital",
-     "Conseil National pour l'Accès aux Origines Personnelles",
-     "Centre d'adoption"
+     "oui",
+     "non",
+     "seulement biologique",
+     "seulement juridique"
     ],
-    "a": "Conseil National pour l'Accès aux Origines Personnelles"
+    "a": "oui"
    },
    {
-    "q": "Combien d'accouchements sous X par an en France ?",
+    "q": "Sur quel pilier essentiel des relations la sexologie moderne insiste-t-elle ? Le ___ ?",
     "c": [
-     "Environ 2 000",
-     "Environ 100",
-     "Environ 5 000",
-     "Environ 600 à 700"
+     "consentement",
+     "chronomètre",
+     "classement",
+     "budget"
     ],
-    "a": "Environ 600 à 700"
+    "a": "consentement"
    },
    {
-    "q": "La mère peut-elle revenir sur sa décision ?",
-    "c": [
-     "Oui, pendant 2 mois après la naissance",
-     "Oui, pendant 1 an",
-     "Oui, jusqu'à la majorité de l'enfant",
-     "Non, c'est définitif"
-    ],
-    "a": "Oui, pendant 2 mois après la naissance"
+    "q": "En quelle année est paru le premier rapport Kinsey sur la sexualité masculine ?",
+    "a": "1948"
    }
   ],
   "rw": true
