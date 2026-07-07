@@ -13932,86 +13932,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qu'est-ce que la réalité virtuelle (VR) ?",
+    "q": "Que met-on sur les yeux pour plonger en réalité virtuelle ? Un ___ (VR) ?",
     "c": [
-     "Jeu vidéo",
-     "Film 3D",
-     "Réalité augmentée",
-     "Environnement simulé immersif"
+     "casque",
+     "chapeau",
+     "masque à gaz",
+     "bandeau"
     ],
-    "a": 3
+    "a": "casque"
    },
    {
-    "q": "Qui a créé le premier casque VR moderne ?",
+    "q": "Que signifie le sigle VR (anglais) ? Virtual ___ ?",
     "c": [
-     "Sony",
-     "Valve",
-     "HTC",
-     "Palmer Luckey (Oculus)"
+     "Reality",
+     "Room",
+     "Racing",
+     "Robot"
     ],
-    "a": 3
+    "a": "Reality"
    },
    {
-    "q": "En quelle année Oculus VR a-t-il été fondé ?",
+    "q": "Comment appelle-t-on un monde numérique où l'on s'immerge, popularisé par Meta ? Le ___ ?",
     "c": [
-     "2010",
-     "2012",
-     "2008",
-     "2014"
+     "métavers",
+     "cyberspace",
+     "internet",
+     "cloud"
     ],
-    "a": 1
+    "a": "métavers"
    },
    {
-    "q": "Qu'est-ce que la réalité augmentée (AR) ?",
+    "q": "Quelle entreprise, ex-Facebook, a racheté le fabricant de casques Oculus ?",
     "c": [
-     "Film 3D",
-     "Superposition d'éléments virtuels sur le monde réel",
-     "VR",
-     "Simulation"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quel jeu mobile a popularisé la réalité augmentée ?",
-    "c": [
-     "Harry Potter Wizards Unite",
-     "Pokémon Go",
-     "Ingress",
-     "Minecraft Earth"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quel casque VR est autonome (sans fil) ?",
-    "c": [
-     "PlayStation VR",
-     "Valve Index",
-     "Oculus Quest 2",
-     "HTC Vive"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quelle différence entre VR et AR ?",
-    "c": [
-     "VR utilise un casque",
-     "VR crée un monde virtuel, AR superpose au réel",
-     "AR est moins cher",
-     "AR est plus réaliste"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quelle entreprise a racheté Oculus en 2014 ?",
-    "c": [
-     "Microsoft",
+     "Meta",
      "Google",
-     "Facebook (Meta)",
-     "Apple"
+     "Apple",
+     "Sony"
     ],
-    "a": 2
+    "a": "Meta"
+   },
+   {
+    "q": "Comment appelle-t-on la réalité qui superpose des éléments virtuels au monde réel ? La réalité ___ ?",
+    "c": [
+     "augmentée",
+     "diminuée",
+     "parallèle",
+     "inversée"
+    ],
+    "a": "augmentée"
+   },
+   {
+    "q": "Quel jeu mobile de 2016 a fait chercher des créatures en réalité augmentée ? Pokémon ___ ?",
+    "c": [
+     "Go",
+     "Red",
+     "Sun",
+     "Arena"
+    ],
+    "a": "Go"
+   },
+   {
+    "q": "Quel casque de réalité mixte Apple a-t-il lancé en 2024 ? L'Apple Vision ___ ?",
+    "c": [
+     "Pro",
+     "Max",
+     "Air",
+     "One"
+    ],
+    "a": "Pro"
+   },
+   {
+    "q": "En quelle année le terme « réalité virtuelle » a-t-il été popularisé par Jaron Lanier ?",
+    "a": "1987"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "tech_006",
@@ -14020,86 +14015,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel est le plus grand réseau social du monde ?",
+    "q": "Sur quel réseau social, à l'oiseau bleu à l'origine, publie-t-on de courts messages ? X (ex-___) ?",
     "c": [
-     "Facebook",
+     "Twitter",
+     "Skype",
+     "MSN",
+     "Yahoo"
+    ],
+    "a": "Twitter"
+   },
+   {
+    "q": "Quel réseau social de partage de photos appartient à Meta ?",
+    "c": [
      "Instagram",
-     "YouTube",
-     "TikTok"
+     "LinkedIn",
+     "Pinterest",
+     "Reddit"
     ],
-    "a": 0
+    "a": "Instagram"
    },
    {
-    "q": "En quelle année Facebook a-t-il été créé ?",
+    "q": "Comment appelle-t-on un mot-clé précédé d'un dièse sur les réseaux ? Un ___ ?",
     "c": [
-     "2003",
-     "2005",
-     "2006",
-     "2004"
+     "hashtag",
+     "tweet",
+     "post",
+     "like"
     ],
-    "a": 3
+    "a": "hashtag"
    },
    {
-    "q": "Qui a fondé Facebook ?",
+    "q": "Quelle appli chinoise de vidéos courtes et virales cartonne chez les jeunes ?",
     "c": [
-     "Eduardo Saverin",
-     "Dustin Moskovitz",
-     "Mark Zuckerberg",
-     "Andrew McCollum"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quel réseau social est basé sur des messages éphémères ?",
-    "c": [
+     "TikTok",
      "Snapchat",
-     "Instagram",
-     "TikTok",
-     "Twitter"
+     "Vine",
+     "Triller"
     ],
-    "a": 0
+    "a": "TikTok"
    },
    {
-    "q": "Quel réseau social a été racheté par Elon Musk en 2022 ?",
+    "q": "Comment appelle-t-on le bouton pour approuver une publication ? Un ___ (j'aime) ?",
     "c": [
-     "Instagram",
-     "Twitter (devenu X)",
-     "LinkedIn",
-     "Snapchat"
+     "like",
+     "share",
+     "poke",
+     "tag"
     ],
-    "a": 1
+    "a": "like"
    },
    {
-    "q": "Quel réseau social est principalement professionnel ?",
+    "q": "Qui a cofondé Facebook dans sa chambre d'étudiant à Harvard ? Mark ___ ?",
     "c": [
-     "LinkedIn",
-     "Instagram",
-     "TikTok",
-     "Facebook"
+     "Zuckerberg",
+     "Dorsey",
+     "Musk",
+     "Bezos"
     ],
-    "a": 0
+    "a": "Zuckerberg"
    },
    {
-    "q": "Combien d'utilisateurs actifs Facebook a-t-il ?",
+    "q": "Comment appelle-t-on une personne très suivie qui fait la promotion de produits ? Un ___ ?",
     "c": [
-     "Environ 3 milliards",
-     "Environ 4 milliards",
-     "Environ 2 milliards",
-     "Environ 1,5 milliard"
+     "influenceur",
+     "abonné",
+     "modérateur",
+     "administrateur"
     ],
-    "a": 0
+    "a": "influenceur"
    },
    {
-    "q": "Quel pays a banni Facebook en 2009 ?",
-    "c": [
-     "Russie",
-     "Iran",
-     "Chine",
-     "Corée du Nord"
-    ],
-    "a": 2
+    "q": "En quelle année Facebook a-t-il été créé par Mark Zuckerberg ?",
+    "a": "2004"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "tech_007",
@@ -14108,86 +14098,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Que signifie le mot 'robot' ?",
+    "q": "Comment appelle-t-on une machine programmable qui exécute des tâches ? Un ___ ?",
     "c": [
-     "Machine automatique",
-     "Automate",
-     "Androïde",
-     "Travail forcé en tchèque"
+     "robot",
+     "moteur",
+     "capteur",
+     "câble"
     ],
-    "a": 3
+    "a": "robot"
    },
    {
-    "q": "Qui a inventé le mot 'robot' ?",
+    "q": "Quel robot aspirateur autonome nettoie les sols tout seul ?",
     "c": [
-     "Joseph Engelberger",
-     "Alan Turing",
-     "Karel Čapek",
-     "Isaac Asimov"
+     "aspirateur",
+     "grille-pain",
+     "réveil",
+     "ventilateur"
     ],
-    "a": 2
+    "a": "aspirateur"
    },
    {
-    "q": "Qui a créé les trois lois de la robotique ?",
+    "q": "Comment appelle-t-on un robot à l'apparence humaine ? Un ___ ?",
     "c": [
-     "George Devol",
-     "Alan Turing",
-     "Karel Čapek",
-     "Isaac Asimov"
+     "androïde",
+     "cyborg",
+     "avatar",
+     "clone"
     ],
-    "a": 3
+    "a": "androïde"
    },
    {
-    "q": "Quel robot industriel a été le premier ?",
+    "q": "Dans quel secteur des usines les bras robotisés assemblent-ils les voitures ? L'___ ?",
     "c": [
-     "Roomba",
-     "ASIMO",
-     "Unimate",
-     "Atlas"
+     "industrie",
+     "agriculture",
+     "médecine",
+     "école"
     ],
-    "a": 2
+    "a": "industrie"
    },
    {
-    "q": "En quelle année Unimate a-t-il été introduit ?",
+    "q": "Quel écrivain a énoncé les trois lois de la robotique ? Isaac ___ ?",
     "c": [
-     "1961",
-     "1950",
-     "1970",
-     "1980"
+     "Asimov",
+     "Verne",
+     "Orwell",
+     "Dick"
     ],
-    "a": 0
+    "a": "Asimov"
    },
    {
-    "q": "Quel robot humanoïde est fabriqué par Boston Dynamics ?",
+    "q": "Quelle entreprise américaine est célèbre pour ses robots chien et humanoïdes ? Boston ___ ?",
     "c": [
-     "Atlas",
-     "ASIMO",
-     "Nao",
-     "Pepper"
+     "Dynamics",
+     "Robotics",
+     "Motors",
+     "Systems"
     ],
-    "a": 0
+    "a": "Dynamics"
    },
    {
-    "q": "Qu'est-ce qu'un cobot ?",
+    "q": "Comment appelle-t-on la vallée du malaise face à un robot presque humain ? La vallée de l'___ ?",
     "c": [
-     "Robot collaboratif travaillant avec les humains",
-     "Robot industriel",
-     "Robot autonome",
-     "Robot médical"
+     "étrange",
+     "mort",
+     "silence",
+     "oubli"
     ],
-    "a": 0
+    "a": "étrange"
    },
    {
-    "q": "Dans quel secteur la robotique progresse-t-elle le plus ?",
-    "c": [
-     "Industrie manufacturière",
-     "Services",
-     "Agriculture",
-     "Médecine"
-    ],
-    "a": 0
+    "q": "En quelle année le mot « robot » est-il apparu, dans la pièce R.U.R. de Karel Čapek ?",
+    "a": "1920"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "tech_008",
@@ -14196,86 +14181,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Que signifie le 'cloud' en informatique ?",
+    "q": "Que signifie « cloud » en anglais, ce mot désignant le stockage en ligne ? Le ___ ?",
     "c": [
-     "Serveur local",
-     "Stockage et services via Internet",
-     "Logiciel",
-     "Réseau"
+     "nuage",
+     "ciel",
+     "brouillard",
+     "orage"
     ],
-    "a": 1
+    "a": "nuage"
    },
    {
-    "q": "Quels sont les trois principaux fournisseurs de cloud ?",
+    "q": "Où sont réellement stockées les données du cloud ? Dans des ___ (data centers) ?",
     "c": [
-     "Google, IBM, Oracle",
-     "Salesforce, SAP, Adobe",
-     "Amazon, Microsoft, Apple",
-     "AWS, Azure, Google Cloud"
+     "serveurs",
+     "nuages",
+     "satellites",
+     "clés USB"
     ],
-    "a": 3
+    "a": "serveurs"
    },
    {
-    "q": "Qu'est-ce que le SaaS ?",
+    "q": "Quel service Google permet de stocker fichiers et documents en ligne ? Google ___ ?",
     "c": [
-     "Plateforme cloud",
-     "Logiciel en tant que service",
-     "Serveur virtuel",
-     "Stockage en ligne"
+     "Drive",
+     "Cloud",
+     "Box",
+     "Store"
     ],
-    "a": 1
+    "a": "Drive"
    },
    {
-    "q": "Quelle entreprise domine le marché du cloud ?",
+    "q": "Quel géant du e-commerce est aussi le n°1 du cloud avec AWS ?",
     "c": [
-     "Alibaba Cloud",
-     "Microsoft Azure",
-     "Google Cloud",
-     "Amazon Web Services (AWS)"
+     "Amazon",
+     "Google",
+     "Microsoft",
+     "IBM"
     ],
-    "a": 3
+    "a": "Amazon"
    },
    {
-    "q": "Qu'est-ce que l'IaaS ?",
+    "q": "Comment accède-t-on à ses données dans le cloud, de n'importe où ? Via ___ ?",
     "c": [
-     "Internet en tant que service",
-     "Plateforme en tant que service",
-     "Logiciel en tant que service",
-     "Infrastructure en tant que service"
+     "Internet",
+     "le courrier",
+     "la radio",
+     "le fax"
     ],
-    "a": 3
+    "a": "Internet"
    },
    {
-    "q": "En quelle année AWS a-t-il été lancé ?",
+    "q": "Quel service de Microsoft est le concurrent cloud d'Amazon AWS ? Microsoft ___ ?",
     "c": [
-     "2008",
-     "2004",
-     "2010",
-     "2006"
+     "Azure",
+     "Cloud",
+     "One",
+     "Sky"
     ],
-    "a": 3
+    "a": "Azure"
    },
    {
-    "q": "Qu'est-ce que le stockage cloud ?",
+    "q": "Comment appelle-t-on le modèle où un logiciel est loué en ligne par abonnement ? Le ___ (Software as a Service) ?",
     "c": [
-     "Disque dur externe",
-     "Stockage de données sur des serveurs distants",
-     "Stockage local",
-     "Mémoire vive"
+     "SaaS",
+     "PaaS",
+     "IaaS",
+     "DaaS"
     ],
-    "a": 1
+    "a": "SaaS"
    },
    {
-    "q": "Quel service cloud est utilisé pour le streaming vidéo ?",
-    "c": [
-     "Google Drive",
-     "Netflix",
-     "AWS",
-     "Azure"
-    ],
-    "a": 1
+    "q": "Quel pourcentage, environ, du marché mondial du cloud AWS détient-il (leader) ?",
+    "a": "31"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "tech_009",
@@ -14284,86 +14264,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qu'est-ce que la cryptographie ?",
+    "q": "À quoi sert la cryptographie ? À ___ des messages ?",
     "c": [
-     "Science du codage secret des informations",
-     "Étude des codes",
-     "Mathématiques",
-     "Programmation sécurisée"
+     "chiffrer",
+     "afficher",
+     "imprimer",
+     "traduire"
     ],
-    "a": 0
+    "a": "chiffrer"
    },
    {
-    "q": "Quel type de cryptographie utilise la même clé pour chiffrer et déchiffrer ?",
+    "q": "Comment appelle-t-on un message rendu illisible par chiffrement ? Un message ___ ?",
     "c": [
-     "Cryptographie symétrique",
-     "Chiffrement par bloc",
-     "Chiffrement par flux",
-     "Cryptographie asymétrique"
+     "crypté",
+     "clair",
+     "public",
+     "ouvert"
     ],
-    "a": 0
+    "a": "crypté"
    },
    {
-    "q": "Qui a inventé la machine Enigma ?",
+    "q": "Quelle machine allemande de chiffrement de la 2e Guerre mondiale a été cassée par les Alliés ?",
     "c": [
-     "Alan Turing",
-     "Gordon Welchman",
-     "Marian Rejewski",
-     "Arthur Scherbius"
+     "Enigma",
+     "Colossus",
+     "Bombe",
+     "Lorenz"
     ],
-    "a": 3
+    "a": "Enigma"
    },
    {
-    "q": "Qu'est-ce que le chiffrement RSA ?",
-    "c": [
-     "Protocole",
-     "Algorithme à clé publique",
-     "Algorithme symétrique",
-     "Fonction de hachage"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Qui a inventé le RSA ?",
+    "q": "Quel mathématicien britannique a cassé le code Enigma ? Alan ___ ?",
     "c": [
      "Turing",
-     "Rivest, Shamir, Adleman",
-     "Diffie et Hellman",
-     "Shannon"
+     "Newton",
+     "Babbage",
+     "Lovelace"
     ],
-    "a": 1
+    "a": "Turing"
    },
    {
-    "q": "Qu'est-ce que la blockchain ?",
+    "q": "Quelle monnaie numérique repose sur la cryptographie et la blockchain ? Le ___ ?",
     "c": [
-     "Registre",
-     "Contrat intelligent",
-     "Cryptomonnaie",
-     "Base de données distribuée et sécurisée"
+     "bitcoin",
+     "dollar",
+     "euro",
+     "franc"
     ],
-    "a": 3
+    "a": "bitcoin"
    },
    {
-    "q": "Qu'est-ce qu'une fonction de hachage ?",
+    "q": "Comment appelle-t-on la « clé » secrète qui permet de déchiffrer un message ? La ___ ?",
     "c": [
-     "Fonction qui transforme des données en empreinte",
-     "Code secret",
-     "Algorithme de chiffrement",
-     "Clé cryptographique"
+     "clé",
+     "porte",
+     "serrure",
+     "carte"
     ],
-    "a": 0
+    "a": "clé"
    },
    {
-    "q": "Quelle cryptomonnaie a été créée en 2009 ?",
+    "q": "Comment appelle-t-on le registre décentralisé et infalsifiable des cryptomonnaies ? La ___ ?",
     "c": [
-     "Ethereum",
-     "Bitcoin",
-     "Ripple",
-     "Litecoin"
+     "blockchain",
+     "cloud",
+     "database",
+     "mainframe"
     ],
-    "a": 1
+    "a": "blockchain"
+   },
+   {
+    "q": "En quelle année le bitcoin, première cryptomonnaie, a-t-il été créé par Satoshi Nakamoto ?",
+    "a": "2009"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "tech_010",
@@ -14372,86 +14347,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qu'est-ce qu'un drone ?",
+    "q": "Dans quel milieu se déplace principalement un drone ? Dans les ___ ?",
     "c": [
-     "Quadricoptère",
-     "Avion téléguidé",
-     "Véhicule aérien sans pilote",
-     "Hélicoptère miniature"
+     "airs",
+     "mers",
+     "tunnels",
+     "égouts"
     ],
-    "a": 2
+    "a": "airs"
    },
    {
-    "q": "Quel pays utilise le plus de drones militaires ?",
-    "c": [
-     "Chine",
-     "Russie",
-     "États-Unis",
-     "Israël"
-    ],
-    "a": 2
+    "q": "Combien d'hélices possède un « quadricoptère », le drone grand public typique ?",
+    "a": "4"
    },
    {
-    "q": "Quelle entreprise domine le marché des drones civils ?",
+    "q": "À quoi sert souvent la caméra embarquée sous un drone de loisir ? À ___ ?",
     "c": [
-     "Parrot",
+     "filmer",
+     "cuisiner",
+     "chauffer",
+     "peser"
+    ],
+    "a": "filmer"
+   },
+   {
+    "q": "Comment pilote-t-on un drone à distance ? Avec une ___ ?",
+    "c": [
+     "télécommande",
+     "manivelle",
+     "pédale",
+     "clé"
+    ],
+    "a": "télécommande"
+   },
+   {
+    "q": "Quelle entreprise chinoise est le leader mondial des drones grand public ?",
+    "c": [
      "DJI",
-     "Autel",
-     "Syma"
+     "Parrot",
+     "GoPro",
+     "Yuneec"
     ],
-    "a": 1
+    "a": "DJI"
    },
    {
-    "q": "Comment s'appelle le pilote d'un drone ?",
+    "q": "Dans quel domaine militaire les drones sont-ils très utilisés ? La ___ ?",
     "c": [
-     "Pilote",
-     "Opérateur",
-     "Télépilote",
-     "Navigateur"
+     "surveillance",
+     "cuisine",
+     "musique",
+     "peinture"
     ],
-    "a": 2
+    "a": "surveillance"
    },
    {
-    "q": "Quelle est la réglementation pour les drones en France ?",
+    "q": "Quel projet d'Amazon vise à livrer des colis par drone ? Prime ___ ?",
     "c": [
-     "Déclaration obligatoire",
-     "Interdit",
-     "Aucune restriction",
-     "Permis requis"
+     "Air",
+     "Now",
+     "Fly",
+     "Sky"
     ],
-    "a": 0
+    "a": "Air"
    },
    {
-    "q": "Quel type de drone est utilisé pour les livraisons ?",
-    "c": [
-     "Drone miniature",
-     "Drone multirotor",
-     "Drone à voilure fixe",
-     "Drone VTOL"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Qu'est-ce qu'un drone FPV ?",
-    "c": [
-     "Drone de course",
-     "Drone piloté en vue subjective (First Person View)",
-     "Drone caméra",
-     "Drone professionnel"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Combien de moteurs un quadricoptère a-t-il ?",
-    "c": [
-     "3",
-     "4",
-     "8",
-     "6"
-    ],
-    "a": 1
+    "q": "À quelle altitude maximale, en mètres, un drone de loisir peut-il légalement voler en France ?",
+    "a": "120"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "tech_011",
@@ -14460,86 +14424,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qu'est-ce que l'impression 3D ?",
-    "c": [
-     "Fraisage",
-     "Fabrication additive par couches",
-     "Impression classique",
-     "Moulage"
-    ],
-    "a": 1
+    "q": "En combien de dimensions une imprimante 3D crée-t-elle un objet ?",
+    "a": "3"
    },
    {
-    "q": "Quel matériau est le plus utilisé en impression 3D domestique ?",
+    "q": "Quelle matière l'imprimante 3D grand public fait-elle fondre couche par couche ? Le ___ ?",
     "c": [
-     "PLA (plastique biodégradable)",
-     "Métal",
-     "Résine",
-     "ABS"
+     "plastique",
+     "verre",
+     "papier",
+     "tissu"
     ],
-    "a": 0
+    "a": "plastique"
    },
    {
-    "q": "En quelle année la première imprimante 3D a-t-elle été inventée ?",
+    "q": "Comment appelle-t-on la superposition successive de fines couches en impression 3D ? La fabrication ___ ?",
     "c": [
-     "1978",
-     "1990",
-     "1985",
-     "1983"
+     "additive",
+     "soustractive",
+     "massive",
+     "négative"
     ],
-    "a": 3
+    "a": "additive"
    },
    {
-    "q": "Qui a inventé l'impression 3D ?",
+    "q": "Quel fichier de conception, réalisé sur ordinateur, l'imprimante 3D lit-elle ? Un modèle ___ ?",
     "c": [
-     "Carl Deckard",
-     "S. Scott Crump",
-     "Scott Crump",
-     "Chuck Hull"
+     "3D",
+     "2D",
+     "PDF",
+     "MP3"
     ],
-    "a": 3
+    "a": "3D"
    },
    {
-    "q": "Quel acronyme désigne la technique FDM ?",
+    "q": "Sous quelle forme le plastique arrive-t-il dans l'imprimante 3D grand public ? En ___ (fil) ?",
     "c": [
-     "Fused Deposition Modeling",
-     "3D Printing",
-     "Stereolithography",
-     "Selective Laser Sintering"
+     "bobine",
+     "poudre",
+     "bloc",
+     "liquide"
     ],
-    "a": 0
+    "a": "bobine"
    },
    {
-    "q": "Quel secteur utilise le plus l'impression 3D ?",
+    "q": "Dans quel domaine médical imprime-t-on prothèses et modèles d'organes ? La ___ ?",
     "c": [
-     "Aérospatial",
-     "Automobile",
-     "Prototypage",
-     "Médical"
+     "médecine",
+     "cuisine",
+     "musique",
+     "mode"
     ],
-    "a": 2
+    "a": "médecine"
    },
    {
-    "q": "Qu'est-ce qu'un fichier STL ?",
+    "q": "Quel matériau peut-on imprimer en 3D pour construire des maisons entières ? Le ___ ?",
     "c": [
-     "Format texte",
-     "Format de fichier pour l'impression 3D",
-     "Format image",
-     "Format vidéo"
+     "béton",
+     "bois",
+     "verre",
+     "cuir"
     ],
-    "a": 1
+    "a": "béton"
    },
    {
-    "q": "Combien de couches une impression 3D peut-elle avoir ?",
-    "c": [
-     "Une dizaine",
-     "Quelques centaines",
-     "Des milliers",
-     "Une centaine"
-    ],
-    "a": 2
+    "q": "En quelle année le premier brevet d'impression 3D (stéréolithographie) a-t-il été déposé ?",
+    "a": "1984"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "tech_012",
@@ -14548,86 +14501,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel type de batterie est le plus utilisé dans les appareils électroniques ?",
+    "q": "À quoi sert une batterie ? À stocker de l'___ ?",
     "c": [
-     "Plomb-acide",
-     "Nickel-cadmium",
-     "Nickel-hydrure métallique",
-     "Lithium-ion"
+     "énergie",
+     "eau",
+     "air",
+     "lumière"
     ],
-    "a": 3
+    "a": "énergie"
    },
    {
-    "q": "Qui a inventé la batterie lithium-ion ?",
+    "q": "Quel métal léger équipe la plupart des batteries de smartphones ? Le ___ ?",
     "c": [
-     "Akira Yoshino",
-     "Tous les trois (prix Nobel 2019)",
-     "John B. Goodenough",
-     "Stanley Whittingham"
+     "lithium",
+     "plomb",
+     "fer",
+     "or"
     ],
-    "a": 1
+    "a": "lithium"
    },
    {
-    "q": "Quelle est la capacité typique d'une batterie de smartphone ?",
+    "q": "Comment appelle-t-on l'action de redonner de l'énergie à une batterie ? La ___ ?",
     "c": [
-     "1000-2000 mAh",
-     "4000-5000 mAh",
-     "6000-7000 mAh",
-     "2000-3000 mAh"
+     "recharge",
+     "décharge",
+     "vidange",
+     "fusion"
     ],
-    "a": 1
+    "a": "recharge"
    },
    {
-    "q": "Qu'est-ce que le temps de charge ?",
+    "q": "Quelles bornes une pile possède-t-elle : une positive et une ___ ?",
     "c": [
-     "Durée de vie",
-     "Cycle de charge",
-     "Temps de décharge",
-     "Temps pour recharger complètement"
+     "négative",
+     "neutre",
+     "double",
+     "verte"
     ],
-    "a": 3
+    "a": "négative"
    },
    {
-    "q": "Combien de cycles peut supporter une batterie lithium-ion ?",
+    "q": "Quel savant italien a inventé la première pile électrique ? Alessandro ___ ?",
     "c": [
-     "500-1000 cycles",
-     "1000-2000 cycles",
-     "100-200 cycles",
-     "300-500 cycles"
+     "Volta",
+     "Galvani",
+     "Fermi",
+     "Marconi"
     ],
-    "a": 3
+    "a": "Volta"
    },
    {
-    "q": "Quel matériau est utilisé dans les batteries des voitures électriques ?",
+    "q": "Quel type de véhicule dépend surtout de grosses batteries lithium ? La voiture ___ ?",
     "c": [
-     "Sodium-ion",
-     "Nickel-cadmium",
-     "Lithium-ion",
-     "Plomb-acide"
+     "électrique",
+     "diesel",
+     "essence",
+     "hybride"
     ],
-    "a": 2
+    "a": "électrique"
    },
    {
-    "q": "Qu'est-ce que la recharge sans fil ?",
+    "q": "En quelle unité mesure-t-on la capacité d'une batterie de smartphone ? Le ___ (mAh) ?",
     "c": [
-     "Transfert d'énergie par induction",
-     "Charge par USB",
-     "Charge par câble",
-     "Charge solaire"
+     "milliampère-heure",
+     "watt",
+     "volt",
+     "joule"
     ],
-    "a": 0
+    "a": "milliampère-heure"
    },
    {
-    "q": "Quelle entreprise produit le plus de batteries lithium-ion ?",
-    "c": [
-     "LG Energy Solution",
-     "CATL (Chine)",
-     "Panasonic",
-     "Samsung SDI"
-    ],
-    "a": 1
+    "q": "En quelle année Alessandro Volta a-t-il inventé la pile électrique ?",
+    "a": "1800"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "tech_013",
@@ -14636,86 +14584,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Que signifie LED ?",
+    "q": "Que produit principalement une LED ? De la ___ ?",
     "c": [
-     "Diode lumineuse",
-     "Lumière électrique",
-     "Diode électroluminescente",
-     "Diode émettrice de lumière"
+     "lumière",
+     "chaleur",
+     "eau",
+     "fumée"
     ],
-    "a": 2
+    "a": "lumière"
    },
    {
-    "q": "Qui a inventé la LED bleue (prix Nobel 2014) ?",
+    "q": "Que signifie le sigle LED : Diode Électro___ ? (Light Emitting Diode)",
     "c": [
-     "Nikola Tesla",
-     "Thomas Edison",
-     "James Watt",
-     "Isamu Akasaki, Hiroshi Amano, Shuji Nakamura"
+     "luminescente",
+     "magnétique",
+     "statique",
+     "thermique"
     ],
-    "a": 3
+    "a": "luminescente"
    },
    {
-    "q": "Quelle est la couleur de la première LED ?",
+    "q": "Quel gros avantage la LED a-t-elle face à l'ampoule classique ? Elle consomme ___ ?",
     "c": [
-     "Jaune",
-     "Rouge",
-     "Bleue",
-     "Verte"
+     "peu",
+     "beaucoup",
+     "de l'eau",
+     "du gaz"
     ],
-    "a": 1
+    "a": "peu"
    },
    {
-    "q": "En quelle année la première LED rouge a-t-elle été inventée ?",
+    "q": "Quel composant électronique la LED est-elle ? Une ___ ?",
     "c": [
-     "1970",
-     "1962",
-     "1955",
-     "1980"
+     "diode",
+     "résistance",
+     "pile",
+     "bobine"
     ],
-    "a": 1
+    "a": "diode"
    },
    {
-    "q": "Quel avantage ont les LED par rapport aux ampoules classiques ?",
+    "q": "Quelle couleur de LED fut la plus difficile à inventer, récompensée par un Nobel ? La ___ ?",
     "c": [
-     "Plus lumineuses",
-     "Efficacité énergétique et longue durée",
-     "Plus légères",
-     "Moins chères"
+     "bleue",
+     "rouge",
+     "verte",
+     "jaune"
     ],
-    "a": 1
+    "a": "bleue"
    },
    {
-    "q": "Qu'est-ce que l'OLED ?",
+    "q": "Dans quels grands écrans plats les LED servent-elles de rétroéclairage ? Les ___ ?",
     "c": [
-     "LED rouge",
-     "LED organique",
-     "LED classique",
-     "LED bleue"
+     "télévisions",
+     "livres",
+     "montres",
+     "radios"
     ],
-    "a": 1
+    "a": "télévisions"
    },
    {
-    "q": "Combien de temps dure une LED en moyenne ?",
+    "q": "Combien d'heures, environ en milliers, une LED peut-elle fonctionner (durée de vie) ?",
     "c": [
-     "50 000-100 000 heures",
-     "5 000-10 000 heures",
-     "25 000-50 000 heures",
-     "10 000-20 000 heures"
+     "50",
+     "5",
+     "500",
+     "1"
     ],
-    "a": 2
+    "a": "50"
    },
    {
-    "q": "Dans quel type d'écran utilise-t-on des LED ?",
-    "c": [
-     "Écrans à tubes",
-     "Écrans CRT",
-     "Écrans plasma",
-     "Écrans LCD, OLED, QLED"
-    ],
-    "a": 3
+    "q": "En quelle année la LED rouge, première LED visible, a-t-elle été inventée par Nick Holonyak ?",
+    "a": "1962"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "tech_014",
@@ -14724,86 +14667,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qu'est-ce qu'un panneau solaire photovoltaïque ?",
+    "q": "Quelle source d'énergie les panneaux solaires captent-ils ? Le ___ ?",
     "c": [
-     "Capteur thermique",
-     "Batterie",
-     "Chauffe-eau",
-     "Dispositif qui convertit la lumière en électricité"
+     "soleil",
+     "vent",
+     "charbon",
+     "gaz"
     ],
-    "a": 3
+    "a": "soleil"
    },
    {
-    "q": "Quel matériau est le plus utilisé dans les panneaux solaires ?",
+    "q": "En quoi les panneaux solaires transforment-ils la lumière ? En ___ ?",
     "c": [
-     "Cuivre",
-     "Aluminium",
-     "Verre",
-     "Silicium"
+     "électricité",
+     "eau",
+     "essence",
+     "chaleur"
     ],
-    "a": 3
+    "a": "électricité"
    },
    {
-    "q": "Qui a inventé la cellule photovoltaïque ?",
+    "q": "Comment appelle-t-on la technologie qui transforme la lumière en courant ? Le ___ ?",
     "c": [
-     "Charles Fritts",
-     "Russell Ohl",
-     "Albert Einstein",
-     "Alexander Becquerel"
+     "photovoltaïque",
+     "hydraulique",
+     "thermique",
+     "nucléaire"
     ],
-    "a": 3
+    "a": "photovoltaïque"
    },
    {
-    "q": "En quelle année la première cellule solaire a-t-elle été fabriquée ?",
+    "q": "Quel matériau semi-conducteur compose la plupart des panneaux solaires ? Le ___ ?",
     "c": [
-     "1960",
-     "1900",
-     "1883",
-     "1950"
+     "silicium",
+     "cuivre",
+     "plomb",
+     "zinc"
     ],
-    "a": 2
+    "a": "silicium"
    },
    {
-    "q": "Quelle est l'efficacité d'un panneau solaire standard ?",
+    "q": "Sur quelle partie de la maison installe-t-on souvent les panneaux ? Le ___ ?",
     "c": [
-     "30-40%",
-     "50-60%",
-     "15-22%",
-     "10-15%"
+     "toit",
+     "sous-sol",
+     "garage",
+     "jardin"
     ],
-    "a": 2
+    "a": "toit"
    },
    {
-    "q": "Quel pays est le plus grand producteur d'énergie solaire ?",
+    "q": "L'énergie solaire est-elle renouvelable ou fossile ?",
+    "c": [
+     "renouvelable",
+     "fossile",
+     "nucléaire",
+     "chimique"
+    ],
+    "a": "renouvelable"
+   },
+   {
+    "q": "Quel pays est le plus grand producteur d'énergie solaire au monde ?",
     "c": [
      "Chine",
-     "États-Unis",
-     "Allemagne",
-     "Inde"
+     "France",
+     "Brésil",
+     "Canada"
     ],
-    "a": 0
+    "a": "Chine"
    },
    {
-    "q": "Qu'est-ce qu'un onduleur solaire ?",
-    "c": [
-     "Panneau",
-     "Convertit le courant continu en courant alternatif",
-     "Régulateur de tension",
-     "Batterie"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Combien de panneaux faut-il pour alimenter une maison française moyenne ?",
-    "c": [
-     "4-6 panneaux",
-     "2-4 panneaux",
-     "8-12 panneaux",
-     "15-20 panneaux"
-    ],
-    "a": 2
+    "q": "Quel pourcentage, environ, de rendement atteint un bon panneau solaire domestique récent ?",
+    "a": "22"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "tech_015",
