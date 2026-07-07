@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Administration — PartyPlay</title>
   <link rel="stylesheet" href="/static/admin.css?v=2">
+  <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.min.js"></script>
   <script src="/static/version-badge.js" defer></script>
   <style>
     .ttcq-cat { border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.2); transition: box-shadow .25s; }
@@ -260,7 +262,7 @@
               </div>
               <div class="field" style="flex:none">
                 <label>Modèle prédéfini</label>
-                <select id="eTemplate" onchange="fillTemplate(this.value)">
+                <select id="eTemplate" onchange="fillComposerTemplate(this.value)">
                   <option value="custom">— Vierge —</option>
                   <option value="invite">Invitation à une fête</option>
                   <option value="reminder">Rappel soirée</option>
@@ -276,6 +278,31 @@
             <div class="inline mt">
               <button class="btn" id="btnSend" onclick="sendEmail()">Envoyer</button>
               <span id="sendErr" style="font-size:13.5px;min-height:1.4em"></span>
+            </div>
+          </div>
+
+          <!-- Templates éditoriaux -->
+          <div class="card">
+            <h2>📝 Templates d'emails</h2>
+            <p class="muted" style="font-size:13px;margin:0 0 14px">
+              Personnalisez les emails automatiques envoyés par PartyPlay. Utilisez les variables <code>{{placeholder}}</code> dans le texte ou le HTML.
+            </p>
+            <div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:16px" id="etTabs">
+              <button class="btn secondary" data-et="verify" onclick="switchEmailTemplate('verify')">✅ Vérification</button>
+              <button class="btn secondary" data-et="welcome" onclick="switchEmailTemplate('welcome')">🎊 Bienvenue</button>
+              <button class="btn secondary" data-et="invite" onclick="switchEmailTemplate('invite')">📨 Invitation</button>
+              <button class="btn secondary" data-et="recap" onclick="switchEmailTemplate('recap')">📬 Clôture</button>
+            </div>
+            <div class="field">
+              <label>Objet <span class="muted">(variables autorisées)</span></label>
+              <input type="text" id="etSubject" placeholder="Objet de l'email" style="font-weight:600">
+            </div>
+            <div id="etPlaceholders" style="margin-bottom:10px;font-size:12px;color:var(--a-muted,#888)"></div>
+            <div id="etEditor" style="height:340px;border-radius:8px;overflow:hidden"></div>
+            <div class="inline mt">
+              <button class="btn" onclick="saveEmailTemplate()">💾 Enregistrer</button>
+              <button class="btn secondary" onclick="resetEmailTemplate()">↺ Réinitialiser</button>
+              <span id="etSaved" class="muted" style="margin-left:8px;font-size:13px"></span>
             </div>
           </div>
         </section>
@@ -586,7 +613,7 @@ function showSection(name) {
   document.querySelectorAll('.nav-item[data-sec]').forEach(el =>
     el.classList.toggle('active', el.dataset.sec === name));
   closeSidebar();
-  if (name === 'email' && !_emailLoaded) { _emailLoaded = true; loadBrevoConfig(); }
+  if (name === 'email' && !_emailLoaded) { _emailLoaded = true; loadBrevoConfig(); initEmailEditor(); }
   if (name === 'legal' && !_legalLoaded) { _legalLoaded = true; loadLegalContent(); }
   if (name === 'promos' && !_promosLoaded) { _promosLoaded = true; loadPromos(); }
   if (name === 'privacy' && !_privacyLoaded) { _privacyLoaded = true; loadPrivacyQuestions(); }
@@ -974,7 +1001,7 @@ const EMAIL_TEMPLATES = {
   },
 };
 
-function fillTemplate(key) {
+function fillComposerTemplate(key) {
   const tpl = EMAIL_TEMPLATES[key] || EMAIL_TEMPLATES.custom;
   document.getElementById('eSubject').value = tpl.subject;
   document.getElementById('eBody').value = tpl.html;
@@ -998,6 +1025,106 @@ async function sendEmail() {
     else { errEl.textContent = '✗ '+(d.error||'Erreur d\'envoi'); errEl.style.color = 'var(--a-danger)'; }
   } catch { errEl.textContent = '✗ Erreur réseau'; errEl.style.color = 'var(--a-danger)'; }
   btn.disabled = false; btn.textContent = 'Envoyer';
+}
+
+// ---- Templates d'emails (éditeur WYSIWYG) ----
+const ET_PLACEHOLDERS = {
+  verify: [
+    '{{eventName}}', '{{eventId}}', '{{verifyUrl}}', '{{consoleUrl}}', '{{borneUrl}}', '{{planLabel}}',
+  ],
+  welcome: [
+    '{{eventName}}', '{{eventId}}', '{{consoleUrl}}', '{{borneUrl}}', '{{planLabel}}',
+  ],
+  invite: [
+    '{{eventName}}', '{{playerName}}', '{{playerAvatar}}', '{{joinUrl}}',
+  ],
+  recap: [
+    '{{eventName}}', '{{playerName}}', '{{resultsUrl}}', '{{baseUrl}}',
+  ],
+};
+
+let etQuill = null;
+let etCurrent = 'verify';
+let etTemplates = {};
+
+async function loadEmailTemplates() {
+  try {
+    const r = await fetch('/api/admin/email-templates', { headers: headers() });
+    if (!r.ok) return;
+    const d = await r.json();
+    etTemplates = d.templates || {};
+  } catch {}
+}
+
+function switchEmailTemplate(key) {
+  etCurrent = key;
+  document.querySelectorAll('#etTabs [data-et]').forEach(b => {
+    b.style.opacity = b.dataset.et === key ? '1' : '0.5';
+  });
+  const tpl = etTemplates[key] || { subject: '', html: '' };
+  document.getElementById('etSubject').value = tpl.subject || '';
+  // Afficher les placeholders
+  const ph = ET_PLACEHOLDERS[key] || [];
+  document.getElementById('etPlaceholders').innerHTML = 'Variables disponibles : ' + ph.map(p => '<code>' + esc(p) + '</code>').join(' ');
+  // Mettre à jour Quill
+  if (etQuill) {
+    etQuill.root.innerHTML = tpl.html || '';
+  }
+}
+
+async function saveEmailTemplate() {
+  const subject = document.getElementById('etSubject').value.trim();
+  const html = etQuill ? etQuill.root.innerHTML : '';
+  etTemplates[etCurrent] = { subject, html };
+  const s = document.getElementById('etSaved'); s.textContent = 'Enregistrement…';
+  try {
+    const r = await fetch('/api/admin/email-templates', {
+      method: 'POST', headers: headers(),
+      body: JSON.stringify({ templates: etTemplates }),
+    });
+    const d = await r.json();
+    if (r.ok) {
+      etTemplates = d.templates || etTemplates;
+      s.textContent = '✓ Enregistré'; s.style.color = 'var(--a-ok)';
+    } else {
+      s.textContent = '✗ ' + (d.error || 'Erreur'); s.style.color = 'var(--a-danger)';
+    }
+  } catch {
+    s.textContent = '✗ Erreur réseau'; s.style.color = 'var(--a-danger)';
+  }
+  setTimeout(() => { s.textContent = ''; s.style.color = ''; }, 3000);
+}
+
+async function resetEmailTemplate() {
+  if (!confirm('Réinitialiser ce template aux valeurs par défaut ?')) return;
+  delete etTemplates[etCurrent];
+  await saveEmailTemplate();
+  switchEmailTemplate(etCurrent);
+}
+
+// Initialiser Quill au chargement de la section email
+function initEmailEditor() {
+  if (etQuill) return;
+  const container = document.getElementById('etEditor');
+  if (!container) return;
+  etQuill = new Quill(container, {
+    theme: 'snow',
+    modules: {
+      toolbar: [
+        [{ header: [1, 2, 3, false] }],
+        ['bold', 'italic', 'underline', 'strike'],
+        [{ color: [] }, { background: [] }],
+        [{ list: 'ordered' }, { list: 'bullet' }],
+        ['blockquote', 'code-block'],
+        [{ align: [] }],
+        ['link'],
+        ['clean'],
+      ],
+    },
+    placeholder: 'Rédigez votre email ici…',
+  });
+  // Charger et afficher le premier template
+  loadEmailTemplates().then(() => switchEmailTemplate(etCurrent));
 }
 
 // ---- Sans Filtre !? : listing des questions ----

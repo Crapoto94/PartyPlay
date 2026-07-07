@@ -35,6 +35,7 @@ import { getQuiz, saveQuiz } from './store/quiz.js';
 import { getPhotos, savePhotos } from './store/photos.js';
 import { getSpotlight, saveSpotlight } from './store/spotlight.js';
 import { getGoogleConfig, googleClientId, googleEnabled, saveGoogleConfig } from './store/google.js';
+import { getEmailTemplates, saveEmailTemplates, fillTemplate } from './store/emails.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC = path.join(__dirname, 'public');
@@ -186,8 +187,22 @@ app.post('/api/parties', async (req, res) => {
   const cfg = createEvent({ name: name.trim(), theme, plan: planName, adminPassword: pwd, publicUrl, seed: seed || 'default', contactEmail: finalEmail, partyDate });
   cfg.avatars = DEFAULT_AVATARS;
   cfg.creatorIp = clientIp(req) || 'unknown';
-  // Email vérifié par Google → fête activée immédiatement, aucun email envoyé.
-  if (googleEmail) { cfg.emailVerified = true; cfg.verificationToken = null; }
+  // Email vérifié par Google → fête activée immédiatement, envoi d'un email de bienvenue.
+  if (googleEmail) {
+    cfg.emailVerified = true; cfg.verificationToken = null;
+    const proto = req.get('x-forwarded-proto') || req.protocol;
+    const host = req.get('x-forwarded-host') || req.get('host');
+    const baseUrl = process.env.PUBLIC_URL || `${proto}://${host}`;
+    const consoleUrl = `${baseUrl}/e/${cfg.id}/admin`;
+    const borneUrl = `${baseUrl}/e/${cfg.id}/borne`;
+    const planInfo = (getPricing().plans || {})[cfg.plan] || {};
+    const tpl = getEmailTemplates().welcome;
+    sendMail({
+      to: cfg.contactEmail,
+      subject: fillTemplate(tpl.subject, { eventName: cfg.name }),
+      htmlContent: fillTemplate(tpl.html, { eventName: cfg.name, eventId: cfg.id, planLabel: planInfo.label || cfg.plan, consoleUrl, borneUrl }),
+    }).catch(() => {});
+  }
   if (promo) {
     cfg.paymentStatus = 'free';
     cfg.promoCode = promoCode.toUpperCase().trim();
@@ -205,10 +220,11 @@ app.post('/api/parties', async (req, res) => {
     const consoleUrl = `${baseUrl}/e/${cfg.id}/admin`;
     const borneUrl = `${baseUrl}/e/${cfg.id}/borne`;
     const planInfo = (getPricing().plans || {})[cfg.plan] || {};
+    const tpl = getEmailTemplates().verify;
     sendMail({
       to: cfg.contactEmail,
-      subject: `Votre fête « ${cfg.name} » sur PartyPlay — confirmez votre email`,
-      htmlContent: buildVerifyEmail(cfg, verifyUrl, consoleUrl, borneUrl, planInfo),
+      subject: fillTemplate(tpl.subject, { eventName: cfg.name }),
+      htmlContent: fillTemplate(tpl.html, { eventName: cfg.name, eventId: cfg.id, verifyUrl, consoleUrl, borneUrl, planLabel: planInfo.label || cfg.plan }),
     }).catch(() => {});
   }
   res.json({ ok: true, event: { id: cfg.id, name: cfg.name, theme: cfg.theme, plan: cfg.plan, paymentStatus: cfg.paymentStatus, emailVerified: cfg.emailVerified !== false, contactEmail: cfg.contactEmail || '', partyDate: cfg.partyDate || '' }, adminPassword: pwd });
@@ -374,6 +390,20 @@ app.post('/api/admin/email/test', async (req, res) => {
     await sendMail({ to, subject: 'Test PartyPlay ✓', htmlContent: '<h2 style="color:#3b6ef5">Test réussi ! 🎉</h2><p>Votre configuration Brevo fonctionne correctement.</p><p>— L\'équipe PartyPlay</p>' });
     res.json({ ok: true });
   } catch (e) { res.status(500).json({ error: e.message }); }
+});
+
+// --- Templates d'emails (éditables via /admin) ---
+app.get('/api/admin/email-templates', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  res.json({ templates: getEmailTemplates() });
+});
+
+app.post('/api/admin/email-templates', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  const { templates } = req.body || {};
+  if (!templates) return res.status(400).json({ error: 'Templates requis.' });
+  const saved = saveEmailTemplates(templates);
+  res.json({ ok: true, templates: saved });
 });
 
 // Marquer le paiement d'une fête (en attendant PayPal/SumUp) : super-admin.
@@ -927,33 +957,14 @@ ev.post('/api/admin/anecdote-upload', (req, res, next) => anecUpload.single('vid
   res.json({ ok: true, url: `/e/${req.eventId}/uploads/anecdotes/${req.file.filename}` });
 });
 
-// --- Invitations joueurs --------------------------------------------
-function buildInviteEmail(cfg, player, joinUrl) {
+// --- Construction du bloc avatar pour les emails d'invitation ---
+function buildAvatarHtml(cfg, player) {
   const av = (cfg.avatars || {})[player.avatar] || {};
-  const avatarDisplay = av.img
+  let html = av.img
     ? `<img src="${av.img}" style="width:64px;height:64px;border-radius:12px;object-fit:cover;vertical-align:middle;margin-right:8px">`
     : (av.emoji ? `<span style="font-size:40px">${av.emoji}</span>` : '🎮');
-  return `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:520px;margin:0 auto;color:#1f2430">
-  <div style="background:#3b6ef5;border-radius:12px 12px 0 0;padding:28px 28px 20px;text-align:center">
-    <p style="color:#c7d7ff;font-size:13px;margin:0 0 6px;text-transform:uppercase;letter-spacing:.05em">PartyPlay</p>
-    <h1 style="color:#fff;margin:0;font-size:22px;font-weight:800">Tu es invité(e) à jouer ! 🎉</h1>
-  </div>
-  <div style="background:#fff;border:1px solid #e2e5ea;border-top:none;border-radius:0 0 12px 12px;padding:28px">
-    <p>Bonjour <strong>${player.name}</strong>,</p>
-    <p>Tu as été ajouté(e) à la fête <strong>« ${cfg.name} »</strong> sur PartyPlay.</p>
-    <div style="text-align:center;margin:16px 0">${avatarDisplay}
-      ${av.name ? `<p style="margin:6px 0;font-weight:700;font-size:16px">${av.name}</p>` : ''}
-    </div>
-    <p>Clique sur le bouton ci-dessous pour rejoindre depuis ton téléphone :</p>
-    <p style="text-align:center;margin:24px 0">
-      <a href="${joinUrl}" style="display:inline-block;background:#3b6ef5;color:#fff;padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:700;font-size:16px">🎮 Rejoindre la fête</a>
-    </p>
-    <p style="font-size:12px;color:#9ca3af;margin:0 0 4px">Lien de connexion :</p>
-    <p style="font-size:12px;margin:0"><a href="${joinUrl}" style="color:#3b6ef5;word-break:break-all">${joinUrl}</a></p>
-    <hr style="border:none;border-top:1px solid #e2e5ea;margin:20px 0">
-    <p style="font-size:12px;color:#9ca3af;margin:0">Ce lien est personnel — ne le partage pas avec d'autres joueurs.</p>
-  </div>
-</div>`;
+  if (av.name) html += `<p style="margin:6px 0;font-weight:700;font-size:16px">${av.name}</p>`;
+  return html;
 }
 
 ev.post('/api/admin/send-invite', async (req, res) => {
@@ -967,8 +978,14 @@ ev.post('/api/admin/send-invite', async (req, res) => {
   const host = req.get('x-forwarded-host') || req.get('host');
   const baseUrl = process.env.PUBLIC_URL || `${proto}://${host}`;
   const joinUrl = `${baseUrl}/e/${cfg.id}/j/${player.token}`;
+  const itpl = getEmailTemplates().invite;
+  const avatarHtml = buildAvatarHtml(cfg, player);
   try {
-    await sendMail({ to: player.email, subject: `Tu es invité(e) à « ${cfg.name} » — ton lien de jeu`, htmlContent: buildInviteEmail(cfg, player, joinUrl) });
+    await sendMail({
+      to: player.email,
+      subject: fillTemplate(itpl.subject, { eventName: cfg.name }),
+      htmlContent: fillTemplate(itpl.html, { eventName: cfg.name, playerName: player.name, playerAvatar: avatarHtml, joinUrl }),
+    });
     res.json({ ok: true });
   } catch (e) { res.status(500).json({ error: e.message }); }
 });
@@ -981,11 +998,17 @@ ev.post('/api/admin/send-invites-all', async (req, res) => {
   const baseUrl = process.env.PUBLIC_URL || `${proto}://${host}`;
   const players = (cfg.players || []).filter(p => p.email);
   const noEmail = (cfg.players || []).length - players.length;
+  const itpl = getEmailTemplates().invite;
   let sent = 0, errors = 0;
   for (const player of players) {
     const joinUrl = `${baseUrl}/e/${cfg.id}/j/${player.token}`;
+    const avatarHtml = buildAvatarHtml(cfg, player);
     try {
-      await sendMail({ to: player.email, subject: `Tu es invité(e) à « ${cfg.name} » — ton lien de jeu`, htmlContent: buildInviteEmail(cfg, player, joinUrl) });
+      await sendMail({
+        to: player.email,
+        subject: fillTemplate(itpl.subject, { eventName: cfg.name }),
+        htmlContent: fillTemplate(itpl.html, { eventName: cfg.name, playerName: player.name, playerAvatar: avatarHtml, joinUrl }),
+      });
       sent++;
     } catch { errors++; }
   }
@@ -1030,8 +1053,13 @@ ev.post('/api/admin/resend-verification', async (req, res) => {
   const consoleUrl = `${baseUrl}/e/${cfg.id}/admin`;
   const borneUrl = `${baseUrl}/e/${cfg.id}/borne`;
   const planInfo = (getPricing().plans || {})[cfg.plan] || {};
+  const tpl = getEmailTemplates().verify;
   try {
-    await sendMail({ to: cfg.contactEmail, subject: `Votre fête « ${cfg.name} » sur PartyPlay — confirmez votre email`, htmlContent: buildVerifyEmail(cfg, verifyUrl, consoleUrl, borneUrl, planInfo) });
+    await sendMail({
+      to: cfg.contactEmail,
+      subject: fillTemplate(tpl.subject, { eventName: cfg.name }),
+      htmlContent: fillTemplate(tpl.html, { eventName: cfg.name, eventId: cfg.id, verifyUrl, consoleUrl, borneUrl, planLabel: planInfo.label || cfg.plan }),
+    });
     res.json({ ok: true });
   } catch (e) { res.status(500).json({ error: e.message }); }
 });
@@ -1161,21 +1189,13 @@ function closeExpiredParties() {
       const players = (cfg.players || []).filter(p => p.email);
       if (players.length) {
         const base = cfg.publicUrl || `http://localhost:${PORT}`;
-        const consoleUrl = `${base}/e/${cfg.id}/admin`;
+        const rtpl = getEmailTemplates().recap;
         for (const p of players) {
           const resultsUrl = `${base}/e/${cfg.id}/j/${p.token}#resultats`;
           sendMail({
             to: p.email,
-            subject: `Merci d'avoir joué à « ${cfg.name} » ! 🎉`,
-            htmlContent: `<div style="font-family:sans-serif;max-width:560px;margin:auto;padding:20px">
-<h2 style="color:#8b5cf6">${cfg.name.replace(/[&<>"]/g,c=>'&#'+c.charCodeAt(0)+';')} — la fête est finie ! 🎉</h2>
-<p>Merci à tous d'avoir joué à <strong>PartyPlay</strong> !</p>
-<p>📸 <a href="${resultsUrl}">Voir les photos et les résultats</a></p>
-<p>💬 <a href="${resultsUrl}">Revoir les anecdotes</a></p>
-<p>⭐ <a href="${resultsUrl}">Donner ton avis et noter l'application</a></p>
-<hr style="margin:20px 0;border:none;border-top:1px solid #eee">
-<p style="color:#888">Tu aussi peux organiser une fête gratuitement sur <a href="${base}">PartyPlay</a> !</p>
-</div>`,
+            subject: fillTemplate(rtpl.subject, { eventName: cfg.name }),
+            htmlContent: fillTemplate(rtpl.html, { eventName: cfg.name, playerName: p.name, resultsUrl, baseUrl: base }),
           }).catch(() => {});
         }
       }
