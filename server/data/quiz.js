@@ -149,66 +149,6 @@ export const QUESTIONS = {
       choices: ['Naruto', 'One Piece', 'Dragon Ball', 'Détective Conan'], answer: 1, points: 300, media: null },
   ],
 
-  // ---- QUIZ « CULTURE T » — fonction publique territoriale --------
-  //  Contexte organisationnel & réglementaire des mairies (on est tous
-  //  fonctionnaires territoriaux !). Crescendo, avec quelques pièges.
-  cultureT: [
-    { prompt: 'Combien de versants compte la fonction publique française ?',
-      choices: ['2', '3', '4', '5'], answer: 1, points: 50, media: null },
-    { prompt: 'Les trois versants sont : l’État, l’Hospitalière et…',
-      choices: ['la Militaire', 'la Territoriale', 'la Parlementaire', 'l’Associative'], answer: 1, points: 75, media: null },
-    { prompt: 'Combien de catégories hiérarchiques (A, B, C) existe-t-il dans la FPT ?',
-      choices: ['2', '3', '4', '5'], answer: 1, points: 75, media: null },
-    { prompt: 'Que signifie le sigle CNFPT ?',
-      choices: ['Conseil National de la FP Territoriale', 'Centre National de la Fonction Publique Territoriale', 'Caisse Nationale…', 'Comité National…'], answer: 1, points: 100, media: null },
-    { prompt: 'La durée annuelle légale de travail d’un agent territorial est de…',
-      choices: ['1 500 h', '1 547 h', '1 607 h', '1 700 h'], answer: 2, points: 125, media: null },
-    { prompt: 'Un lauréat d’un concours territorial est-il automatiquement recruté ?',
-      choices: ['Oui, immédiatement', 'Non : inscrit sur liste d’aptitude, il doit trouver un poste', 'Oui, après 6 mois', 'Non, il repasse un oral'], answer: 1, points: 150, media: null },
-    { prompt: 'Qui exerce le « contrôle de légalité » des délibérations d’une commune ?',
-      choices: ['Le maire', 'Le préfet', 'La Cour des comptes', 'Le procureur'], answer: 1, points: 150, media: null },
-    { prompt: 'Pour quelle mission le maire agit-il « au nom de l’État » (et non de la commune) ?',
-      choices: ['Le budget', 'L’état civil (mariages, etc.)', 'Les écoles', 'La voirie'], answer: 1, points: 175, media: null },
-    { prompt: 'Quelle instance a remplacé en 2022 le Comité Technique (CT) et le CHSCT ?',
-      choices: ['Le CSE', 'Le Comité Social Territorial (CST)', 'La CAP', 'Le CCAS'], answer: 1, points: 200, media: null },
-    { prompt: 'En cas de partage ÉGAL des voix au conseil municipal (hors scrutin secret)…',
-      choices: ['on revote', 'la voix du maire est prépondérante', 'le doyen tranche', 'on tire au sort'], answer: 1, points: 200, media: null },
-    { prompt: 'Le régime indemnitaire de référence dans la FPT depuis 2014 s’appelle…',
-      choices: ['la NBI', 'le RIFSEEP', 'le SFT', 'la GIPA'], answer: 1, points: 200, media: null },
-    { prompt: 'Combien d’agents compte, environ, la fonction publique territoriale ?',
-      choices: ['~600 000', '~1,9 million', '~3,5 millions', '~5 millions'], answer: 1, points: 225, media: null },
-    { prompt: 'Le principe qui interdit au maire (ordonnateur) d’être aussi le comptable s’appelle…',
-      choices: ['la règle d’or', 'la séparation ordonnateur-comptable', 'l’unité de caisse', 'la fongibilité'], answer: 1, points: 250, media: null },
-    { prompt: 'Depuis le 1ᵉʳ janvier 2024, la nomenclature comptable des communes est généralisée sous le nom…',
-      choices: ['M14', 'M52', 'M57', 'M4'], answer: 2, points: 275, media: null },
-    { prompt: 'La France compte ~35 000 communes : cela représente, dans l’Union européenne…',
-      choices: ['environ 5 %', 'près de 40 % de toutes les communes de l’UE', 'la moitié', 'les trois quarts'], answer: 1, points: 300, media: null },
-  ],
-
-
-  // ---- BLIND-TEST — CLASSIC ROCK (inchangé) -----------------------
-  blindtest: [
-    { prompt: '🎸 EXTRAIT #1 — Quel groupe ?', play: 'AC/DC — Highway to Hell',
-      choices: ['AC/DC', 'Led Zeppelin', 'Deep Purple', 'The Who'], answer: 0, points: 100, media: 'audio', yt: '', start: 0 },
-    { prompt: '🎸 EXTRAIT #2 — Quel titre ?', play: 'Queen — Bohemian Rhapsody',
-      choices: ['We Will Rock You', 'Bohemian Rhapsody', 'Don’t Stop Me Now', 'Somebody to Love'], answer: 1, points: 100, media: 'audio', yt: '', start: 0 },
-    { prompt: '🎸 EXTRAIT #3 — Quel titre ?', play: 'Survivor — Eye of the Tiger',
-      choices: ['Eye of the Tiger', 'The Final Countdown', 'Jump', 'Livin’ on a Prayer'], answer: 0, points: 100, media: 'audio', yt: '', start: 0 },
-    { prompt: '🎸 EXTRAIT #4 — Quel groupe ?', play: 'Deep Purple — Smoke on the Water (riff)',
-      choices: ['Black Sabbath', 'Deep Purple', 'Cream', 'Rainbow'], answer: 1, points: 100, media: 'audio', yt: '', start: 0 },
-    { prompt: '🎸 EXTRAIT #5 — Quel groupe ?', play: 'The Beatles — Hey Jude',
-      choices: ['The Rolling Stones', 'The Beatles', 'The Kinks', 'The Beach Boys'], answer: 1, points: 100, media: 'audio', yt: '', start: 0 },
-    { prompt: '🎸 EXTRAIT #6 — Quel titre ?', play: 'Eagles — Hotel California',
-      choices: ['Hotel California', 'Sweet Home Alabama', 'Free Bird', 'More Than a Feeling'], answer: 0, points: 150, media: 'audio', yt: '', start: 0 },
-    { prompt: '🎸 EXTRAIT #7 — Quel groupe ?', play: 'The Rolling Stones — (I Can’t Get No) Satisfaction',
-      choices: ['The Doors', 'The Rolling Stones', 'The Animals', 'Creedence'], answer: 1, points: 100, media: 'audio', yt: '', start: 0 },
-    { prompt: '🎸 EXTRAIT #8 — Quel titre ?', play: 'Bon Jovi — Livin’ on a Prayer',
-      choices: ['You Give Love a Bad Name', 'Livin’ on a Prayer', 'It’s My Life', 'Always'], answer: 1, points: 150, media: 'audio', yt: '', start: 0 },
-    { prompt: '🎸 EXTRAIT #9 — Quel titre ?', play: 'Toto — Africa',
-      choices: ['Africa', 'Rosanna', 'Hold the Line', 'Carrie'], answer: 0, points: 100, media: 'audio', yt: '', start: 0 },
-    { prompt: '🎸 EXTRAIT #10 — Quel groupe ?', play: 'Dire Straits — Sultans of Swing',
-      choices: ['Dire Straits', 'Fleetwood Mac', 'Supertramp', 'Pink Floyd'], answer: 0, points: 150, media: 'audio', yt: '', start: 0 },
-  ],
 };
 
 export function deckLength(deck) {
