@@ -8970,86 +8970,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle était la cité-État la plus puissante de Grèce antique ?",
+    "q": "Quelle cité grecque, célèbre pour sa démocratie, était rivale de Sparte ?",
     "c": [
+     "Athènes",
+     "Thèbes",
      "Corinthe",
+     "Argos"
+    ],
+    "a": "Athènes"
+   },
+   {
+    "q": "Quelle cité grecque était réputée pour ses guerriers redoutables ?",
+    "c": [
      "Sparte",
      "Athènes",
-     "Thèbes"
+     "Delphes",
+     "Milet"
     ],
-    "a": 2
+    "a": "Sparte"
    },
    {
-    "q": "Quel philosophe grec a été condamné à boire la ciguë ?",
+    "q": "Quel régime politique, « pouvoir du peuple », est né à Athènes ? La ___ ?",
     "c": [
-     "Aristote",
+     "démocratie",
+     "monarchie",
+     "tyrannie",
+     "oligarchie"
+    ],
+    "a": "démocratie"
+   },
+   {
+    "q": "Quel philosophe grec buvait la ciguë et enseignait par le questionnement ?",
+    "c": [
+     "Socrate",
      "Platon",
-     "Pythagore",
-     "Socrate"
+     "Aristote",
+     "Thalès"
     ],
-    "a": 3
+    "a": "Socrate"
    },
    {
-    "q": "Qui a conquis la Grèce au IVe siècle av. J.-C. ?",
+    "q": "Quel jeune roi macédonien a conquis un immense empire jusqu'en Inde ? ___ le Grand ?",
     "c": [
-     "Philippe II de Macédoine",
-     "Alexandre le Grand",
-     "Xerxès",
-     "Darius"
+     "Alexandre",
+     "Philippe",
+     "Léonidas",
+     "Périclès"
     ],
-    "a": 0
+    "a": "Alexandre"
    },
    {
-    "q": "Quel temple athénien est dédié à Athéna ?",
+    "q": "Quel poète aveugle aurait composé l'Iliade et l'Odyssée ?",
     "c": [
-     "Le temple d'Héphaïstos",
-     "L'Érechthéion",
-     "Le Parthénon",
-     "Le temple de Zeus"
+     "Homère",
+     "Hésiode",
+     "Sophocle",
+     "Eschyle"
     ],
-    "a": 2
+    "a": "Homère"
    },
    {
-    "q": "Quelle bataille a opposé les Grecs aux Perses en 490 av. J.-C. ?",
+    "q": "Quelle bataille de 480 av. J.-C. vit 300 Spartiates résister aux Perses ? Les ___ ?",
     "c": [
-     "Platées",
+     "Thermopyles",
      "Marathon",
      "Salamine",
-     "Thermopyles"
+     "Platées"
     ],
-    "a": 1
+    "a": "Thermopyles"
    },
    {
-    "q": "Quel historien grec est considéré comme le père de l'histoire ?",
-    "c": [
-     "Thucydide",
-     "Plutarque",
-     "Hérodote",
-     "Xénophon"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quelles sont les trois ordres architecturaux grecs ?",
-    "c": [
-     "Ionique, corinthien, roman",
-     "Dorique, ionique, corinthien",
-     "Dorique, toscan, composite",
-     "Dorique, gothique, roman"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quel médecin grec est le père de la médecine ?",
-    "c": [
-     "Erasistrate",
-     "Galien",
-     "Hippocrate",
-     "Aristote"
-    ],
-    "a": 2
+    "q": "En quelle année, avant J.-C., eut lieu la bataille de Marathon contre les Perses ? En -___ ?",
+    "a": "490"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "histoire_010",
@@ -9058,86 +9053,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle était la capitale de l'Empire byzantin ?",
+    "q": "Quelle ville était la capitale de l'Empire byzantin ?",
     "c": [
-     "Jérusalem",
-     "Antioche",
-     "Alexandrie",
-     "Constantinople"
+     "Constantinople",
+     "Rome",
+     "Athènes",
+     "Antioche"
     ],
-    "a": 3
+    "a": "Constantinople"
    },
    {
-    "q": "Quel empereur byzantin a construit Sainte-Sophie ?",
+    "q": "De quel empire l'Empire byzantin est-il l'héritier oriental ? L'Empire ___ ?",
     "c": [
-     "Basile II",
+     "romain",
+     "grec",
+     "perse",
+     "ottoman"
+    ],
+    "a": "romain"
+   },
+   {
+    "q": "Quelle immense église-basilique était le joyau de Constantinople ? Sainte-___ ?",
+    "c": [
+     "Sophie",
+     "Marie",
+     "Anne",
+     "Croix"
+    ],
+    "a": "Sophie"
+   },
+   {
+    "q": "Quel grand empereur byzantin a fait rédiger un célèbre code de lois ?",
+    "c": [
+     "Justinien",
      "Constantin",
-     "Héraclius",
-     "Justinien"
+     "Basile",
+     "Héraclius"
     ],
-    "a": 3
+    "a": "Justinien"
    },
    {
-    "q": "En quelle année Constantinople est-elle tombée aux mains des Ottomans ?",
+    "q": "Quel nom portait Constantinople avant de devenir la capitale byzantine ?",
     "c": [
-     "1444",
-     "1402",
-     "1453",
-     "1460"
+     "Byzance",
+     "Nicée",
+     "Éphèse",
+     "Smyrne"
     ],
-    "a": 2
+    "a": "Byzance"
    },
    {
-    "q": "Quelle était la religion officielle de l'Empire byzantin ?",
+    "q": "Quelle arme incendiaire secrète les Byzantins utilisaient-ils en mer ? Le feu ___ ?",
     "c": [
-     "Le catholicisme",
-     "L'orthodoxie orientale",
-     "Le christianisme",
-     "Le christianisme orthodoxe"
+     "grégeois",
+     "sacré",
+     "noir",
+     "royal"
     ],
-    "a": 3
+    "a": "grégeois"
    },
    {
-    "q": "Quel code de lois Justinien a-t-il compilé ?",
+    "q": "Quel peuple a pris Constantinople en 1453, mettant fin à l'Empire ? Les ___ ?",
     "c": [
-     "Le Digeste",
-     "Le Corpus juris civilis",
-     "Le Code Justinien",
-     "Les Institutes"
+     "Ottomans",
+     "Perses",
+     "Arabes",
+     "Mongols"
     ],
-    "a": 1
+    "a": "Ottomans"
    },
    {
-    "q": "Quel sultan ottoman a conquis Constantinople ?",
-    "c": [
-     "Bayezid II",
-     "Mehmed II",
-     "Mehmed I",
-     "Soliman le Magnifique"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quelle langue était parlée à Byzance ?",
-    "c": [
-     "Le grec",
-     "Le latin",
-     "Le turc",
-     "L'arménien"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quel empereur byzantin a repoussé les Arabes au VIIIe siècle ?",
-    "c": [
-     "Maurice",
-     "Constantin V",
-     "Héraclius",
-     "Léon III l'Isaurien"
-    ],
-    "a": 3
+    "q": "En quelle année exacte Constantinople est-elle tombée, marquant la fin de l'Empire byzantin ?",
+    "a": "1453"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "histoire_011",
@@ -9146,86 +9136,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "En quelle année la guerre du Vietnam a-t-elle commencé ?",
+    "q": "Dans quel pays d'Asie du Sud-Est s'est déroulée cette guerre ?",
     "c": [
-     "1955",
-     "1965",
-     "1970",
-     "1960"
+     "Vietnam",
+     "Corée",
+     "Laos",
+     "Cambodge"
     ],
-    "a": 0
+    "a": "Vietnam"
    },
    {
-    "q": "Quel pays soutenait le Vietnam du Nord ?",
+    "q": "Quelle grande puissance occidentale s'est enlisée dans la guerre du Vietnam ? Les ___-Unis ?",
     "c": [
-     "L'URSS et la Chine",
-     "La France",
-     "La Corée du Nord",
-     "Les États-Unis"
+     "États",
+     "Émirats",
+     "Provinces",
+     "Pays"
     ],
-    "a": 0
+    "a": "États"
    },
    {
-    "q": "Qui était le leader communiste du Vietnam ?",
+    "q": "En deux camps, le Nord communiste affrontait le ___ soutenu par les USA ?",
     "c": [
-     "Vo Nguyen Giap",
-     "Pham Van Dong",
-     "Ngo Dinh Diem",
-     "Hô Chi Minh"
+     "Sud",
+     "Est",
+     "Ouest",
+     "Centre"
     ],
-    "a": 3
+    "a": "Sud"
    },
    {
-    "q": "En quelle année les derniers soldats américains ont-ils quitté le Vietnam ?",
+    "q": "Quel produit chimique défoliant les Américains ont-ils massivement répandu ? L'agent ___ ?",
     "c": [
-     "1972",
-     "1975",
-     "1971",
-     "1973"
+     "orange",
+     "bleu",
+     "vert",
+     "rouge"
     ],
-    "a": 3
+    "a": "orange"
    },
    {
-    "q": "Quelle était la célèbre piste d'approvisionnement nord-vietnamienne ?",
+    "q": "Quel leader communiste vietnamien a donné son nom à l'ex-Saïgon ? Hô Chi ___ ?",
     "c": [
-     "La route de la Soie",
-     "La route mandarine",
-     "La piste Hô Chi Minh",
-     "La piste des Volontaires"
+     "Minh",
+     "Long",
+     "Van",
+     "Duc"
     ],
-    "a": 2
+    "a": "Minh"
    },
    {
-    "q": "Quel président américain a intensifié la guerre ?",
+    "q": "Quelle offensive surprise du Têt en 1968 a marqué un tournant ? L'offensive du ___ ?",
     "c": [
-     "John F. Kennedy",
-     "Richard Nixon",
-     "Lyndon B. Johnson",
-     "Dwight D. Eisenhower"
+     "Têt",
+     "Nord",
+     "Dragon",
+     "Fleuve"
     ],
-    "a": 2
+    "a": "Têt"
    },
    {
-    "q": "Quelle arme chimique les Américains ont-ils utilisée ?",
+    "q": "Dans quelle ancienne capitale du Sud, tombée en 1975, la guerre s'est-elle achevée ?",
     "c": [
-     "Le napalm",
-     "Le phosphore blanc",
-     "L'agent orange",
-     "Le gaz moutarde"
+     "Saïgon",
+     "Hanoï",
+     "Hué",
+     "Da Nang"
     ],
-    "a": 2
+    "a": "Saïgon"
    },
    {
-    "q": "Combien de civils vietnamiens sont morts pendant la guerre ?",
-    "c": [
-     "Environ 5 millions",
-     "Environ 1 million",
-     "Environ 2 millions",
-     "Environ 500 000"
-    ],
-    "a": 2
+    "q": "En quelle année exacte la chute de Saïgon a-t-elle mis fin à la guerre du Vietnam ?",
+    "a": "1975"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "histoire_012",
@@ -9234,86 +9219,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Dans quel pays la révolution industrielle a-t-elle commencé ?",
+    "q": "Dans quel pays européen la Révolution industrielle a-t-elle commencé ? Le ___-Uni ?",
     "c": [
-     "France",
-     "États-Unis",
-     "Angleterre",
-     "Allemagne"
+     "Royaume",
+     "États",
+     "Pays",
+     "Émirats"
     ],
-    "a": 2
+    "a": "Royaume"
    },
    {
-    "q": "Quelle invention a marqué le début de la révolution industrielle ?",
+    "q": "Quelle machine, alimentée au charbon, a été le moteur de cette révolution ? La machine à ___ ?",
     "c": [
-     "La locomotive",
-     "Le coton",
-     "Le métier à tisser",
-     "La machine à vapeur"
+     "vapeur",
+     "eau",
+     "vent",
+     "air"
     ],
-    "a": 3
+    "a": "vapeur"
    },
    {
-    "q": "Qui a amélioré la machine à vapeur ?",
+    "q": "Quel combustible noir extrait des mines a alimenté l'industrie ? Le ___ ?",
     "c": [
-     "Richard Arkwright",
-     "James Watt",
-     "George Stephenson",
-     "Thomas Newcomen"
+     "charbon",
+     "pétrole",
+     "gaz",
+     "bois"
     ],
-    "a": 1
+    "a": "charbon"
    },
    {
-    "q": "En quelle année la révolution industrielle a-t-elle commencé ?",
+    "q": "Quel nouveau moyen de transport sur rails a explosé au XIXe siècle ? Le ___ ?",
     "c": [
-     "Vers 1800",
-     "Vers 1700",
-     "Vers 1760",
-     "Vers 1750"
+     "train",
+     "avion",
+     "métro",
+     "tramway"
     ],
-    "a": 2
+    "a": "train"
    },
    {
-    "q": "Quel matériau était essentiel à la révolution industrielle ?",
+    "q": "Où travaillaient désormais des milliers d'ouvriers, dans de grands bâtiments ? Des ___ ?",
     "c": [
-     "Le bois",
-     "Le fer",
-     "Le coton",
-     "Le charbon"
+     "usines",
+     "fermes",
+     "églises",
+     "châteaux"
     ],
-    "a": 3
+    "a": "usines"
    },
    {
-    "q": "Quel transport a révolutionné les déplacements au XIXe siècle ?",
+    "q": "Quel ingénieur écossais a grandement amélioré la machine à vapeur ? James ___ ?",
     "c": [
-     "La voiture",
-     "Le chemin de fer",
-     "Le bateau à vapeur",
-     "Le dirigeable"
+     "Watt",
+     "Ford",
+     "Bell",
+     "Morse"
     ],
-    "a": 1
+    "a": "Watt"
    },
    {
-    "q": "Quelle classe sociale est née de la révolution industrielle ?",
+    "q": "Vers quelles villes, offrant du travail en usine, les populations ont-elles massivement migré ? L'___ (exode rural) ?",
     "c": [
-     "La bourgeoisie",
-     "Le prolétariat",
-     "Les paysans",
-     "Les artisans"
+     "ville",
+     "campagne",
+     "mer",
+     "montagne"
     ],
-    "a": 1
+    "a": "ville"
    },
    {
-    "q": "Quel mouvement ouvrier a émergé pendant cette période ?",
-    "c": [
-     "Le socialisme",
-     "Le syndicalisme",
-     "Le communisme",
-     "Le luddisme"
-    ],
-    "a": 3
+    "q": "En quelle année, environ, James Watt brevète-t-il sa machine à vapeur améliorée ?",
+    "a": "1769"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "histoire_013",
@@ -9322,86 +9302,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel était le but des croisades ?",
+    "q": "Vers quelle ville sainte les croisés cherchaient-ils à marcher ?",
     "c": [
-     "Conquérir l'Orient",
-     "Protéger les pèlerins",
-     "Convertir les infidèles",
-     "Reprendre Jérusalem aux musulmans"
+     "Jérusalem",
+     "Rome",
+     "La Mecque",
+     "Constantinople"
     ],
-    "a": 3
+    "a": "Jérusalem"
    },
    {
-    "q": "Qui a appelé à la première croisade en 1095 ?",
+    "q": "Quel symbole religieux les croisés portaient-ils sur leurs vêtements ? Une ___ ?",
     "c": [
-     "L'empereur byzantin",
-     "Le pape Urbain II",
-     "Pierre l'Ermite",
-     "Le pape Grégoire VII"
+     "croix",
+     "étoile",
+     "lune",
+     "colombe"
     ],
-    "a": 1
+    "a": "croix"
    },
    {
-    "q": "Combien de croisades principales ont eu lieu ?",
+    "q": "Quelle autorité religieuse a lancé la première croisade en 1095 ? Le ___ ?",
     "c": [
-     "8",
-     "5",
-     "6",
-     "10"
+     "pape",
+     "roi",
+     "empereur",
+     "sultan"
     ],
-    "a": 0
+    "a": "pape"
    },
    {
-    "q": "En quelle année Jérusalem a-t-elle été prise lors de la première croisade ?",
+    "q": "Quel sultan musulman a repris Jérusalem aux croisés en 1187 ?",
     "c": [
-     "1100",
-     "1097",
-     "1099",
-     "1085"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Qui a mené la troisième croisade ?",
-    "c": [
-     "Louis IX",
-     "Frédéric Barberousse",
-     "Philippe Auguste",
-     "Richard Cœur de Lion"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel sultan musulman a repris Jérusalem en 1187 ?",
-    "c": [
+     "Saladin",
+     "Soliman",
      "Baybars",
-     "Al-Kamil",
-     "Nur ad-Din",
-     "Saladin"
+     "Nour ad-Din"
     ],
-    "a": 3
+    "a": "Saladin"
    },
    {
-    "q": "Quelle croisade est connue comme la 'croisade des enfants' ?",
+    "q": "Quel ordre de moines-soldats protégeait les pèlerins ? Les ___ ?",
     "c": [
-     "La cinquième croisade",
-     "La sixième croisade",
-     "La quatrième croisade",
-     "La croisade des enfants de 1212"
+     "Templiers",
+     "Bénédictins",
+     "Franciscains",
+     "Jésuites"
     ],
-    "a": 3
+    "a": "Templiers"
    },
    {
-    "q": "Quel roi de France est mort lors de la huitième croisade ?",
+    "q": "Quel roi de France, deux fois croisé et canonisé, est mort à Tunis ? ___ IX (Saint Louis) ?",
     "c": [
-     "Philippe Auguste",
-     "Louis VII",
-     "Louis IX (Saint Louis)",
-     "Charles VIII"
+     "Louis",
+     "Charles",
+     "Philippe",
+     "Henri"
     ],
-    "a": 2
+    "a": "Louis"
+   },
+   {
+    "q": "Combien de grandes croisades vers la Terre sainte compte-t-on traditionnellement ?",
+    "a": "8"
+   },
+   {
+    "q": "En quelle année le pape Urbain II a-t-il appelé à la première croisade au concile de Clermont ?",
+    "a": "1095"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "histoire_014",
@@ -9410,86 +9379,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quels deux royaumes s'affrontaient dans la guerre de Cent Ans ?",
+    "q": "Quels deux royaumes s'affrontaient pendant la guerre de Cent Ans ? La France et l'___ ?",
     "c": [
-     "Angleterre et Écosse",
-     "France et Espagne",
-     "France et Bourgogne",
-     "France et Angleterre"
+     "Angleterre",
+     "Espagne",
+     "Écosse",
+     "Bourgogne"
     ],
-    "a": 3
+    "a": "Angleterre"
    },
    {
-    "q": "En quelle année la guerre de Cent Ans a-t-elle commencé ?",
+    "q": "Environ combien d'années a réellement duré ce long conflit ?",
     "c": [
-     "1350",
-     "1314",
-     "1380",
-     "1337"
+     "116",
+     "100",
+     "50",
+     "200"
     ],
-    "a": 3
+    "a": "116"
    },
    {
-    "q": "Qui a mené les Français à la victoire à Orléans ?",
+    "q": "Quelle jeune héroïne française a bouté les Anglais hors d'Orléans ? Jeanne d'___ ?",
     "c": [
-     "Du Guesclin",
-     "Charles VII",
-     "Jeanne d'Arc",
-     "Philippe VI"
+     "Arc",
+     "Albret",
+     "Anjou",
+     "Aragon"
     ],
-    "a": 2
+    "a": "Arc"
    },
    {
-    "q": "Combien d'années a duré la guerre ?",
+    "q": "Quelle arme anglaise, tirée à distance, a fait des ravages à Azincourt ? L'arc ___ (long) ?",
     "c": [
-     "115 ans",
-     "116 ans",
-     "100 ans",
-     "120 ans"
+     "long",
+     "court",
+     "double",
+     "royal"
     ],
-    "a": 1
+    "a": "long"
    },
    {
-    "q": "Quelle bataille a vu la défaite française en 1346 ?",
+    "q": "Dans quelle ville Jeanne d'Arc a-t-elle été brûlée vive en 1431 ?",
     "c": [
-     "Crécy",
-     "Calais",
-     "Azincourt",
-     "Poitiers"
+     "Rouen",
+     "Orléans",
+     "Reims",
+     "Paris"
     ],
-    "a": 0
+    "a": "Rouen"
    },
    {
-    "q": "Quel roi anglais a revendiqué le trône de France ?",
+    "q": "Quel supplice Jeanne d'Arc a-t-elle subi, condamnée pour hérésie ? Le ___ ?",
     "c": [
-     "Henri V",
-     "Édouard III",
-     "Richard II",
-     "Jean sans Terre"
+     "bûcher",
+     "gibet",
+     "cachot",
+     "exil"
     ],
-    "a": 1
+    "a": "bûcher"
    },
    {
-    "q": "En quelle année Jeanne d'Arc a-t-elle été brûlée ?",
+    "q": "Dans quelle ville les rois de France étaient-ils sacrés, dont Charles VII grâce à Jeanne ?",
     "c": [
-     "1431",
-     "1435",
-     "1430",
-     "1429"
+     "Reims",
+     "Paris",
+     "Lyon",
+     "Tours"
     ],
-    "a": 0
+    "a": "Reims"
    },
    {
-    "q": "Quel roi de France est mort en 1380 pendant la guerre ?",
-    "c": [
-     "Charles VI",
-     "Jean II",
-     "Philippe VI",
-     "Charles V"
-    ],
-    "a": 3
+    "q": "En quelle année a débuté la guerre de Cent Ans ?",
+    "a": "1337"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "histoire_015",
@@ -9498,86 +9462,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
+    "q": "Quel mur séparait Berlin en deux jusqu'en 1989 ? Le mur de ___ ?",
+    "c": [
+     "Berlin",
+     "Prague",
+     "Fer",
+     "Chine"
+    ],
+    "a": "Berlin"
+   },
+   {
     "q": "En quelle année le mur de Berlin est-il tombé ?",
-    "c": [
-     "1990",
-     "1987",
-     "1989",
-     "1991"
-    ],
-    "a": 2
+    "a": "1989"
    },
    {
-    "q": "En quelle année le mur a-t-il été construit ?",
+    "q": "Quelle ville allemande était coupée en deux par ce mur ?",
     "c": [
-     "1961",
-     "1958",
-     "1960",
-     "1963"
+     "Berlin",
+     "Munich",
+     "Hambourg",
+     "Cologne"
     ],
-    "a": 0
+    "a": "Berlin"
    },
    {
-    "q": "Comment s'appelait l'acte de franchir le mur ?",
+    "q": "Berlin-Ouest était capitaliste, Berlin-Est était ___ ?",
     "c": [
-     "La traversée",
-     "La fuite",
-     "L'évasion",
-     "La défection"
+     "communiste",
+     "royaliste",
+     "fasciste",
+     "neutre"
     ],
-    "a": 0
+    "a": "communiste"
    },
    {
-    "q": "Combien de temps le mur est-il resté debout ?",
+    "q": "Quel célèbre point de passage entre les deux Berlins était surveillé ? Checkpoint ___ ?",
     "c": [
-     "25 ans",
-     "20 ans",
-     "28 ans",
-     "30 ans"
+     "Charlie",
+     "Bravo",
+     "Delta",
+     "Alpha"
     ],
-    "a": 2
+    "a": "Charlie"
    },
    {
-    "q": "Quel dirigeant soviétique était au pouvoir lors de la chute ?",
+    "q": "Quelle porte monumentale, symbole de Berlin, s'est retrouvée près du mur ? La porte de ___ ?",
     "c": [
-     "Youri Andropov",
-     "Mikhaïl Gorbatchev",
-     "Konstantin Tchernenko",
-     "Leonid Brejnev"
+     "Brandebourg",
+     "Berlin",
+     "Prusse",
+     "Saxe"
     ],
-    "a": 1
+    "a": "Brandebourg"
    },
    {
-    "q": "Combien de personnes ont réussi à fuir par-dessus le mur ?",
+    "q": "Quel dirigeant soviétique réformateur a laissé faire l'ouverture du mur ?",
     "c": [
-     "Environ 500",
-     "Environ 5 000",
-     "Environ 1 000",
-     "Environ 10 000"
+     "Gorbatchev",
+     "Brejnev",
+     "Andropov",
+     "Eltsine"
     ],
-    "a": 1
+    "a": "Gorbatchev"
    },
    {
-    "q": "Quelle porte de Berlin est devenue un symbole de la chute du mur ?",
-    "c": [
-     "La porte de Friedrich",
-     "La porte de Checkpoint Charlie",
-     "La porte de Brandebourg",
-     "La porte de Karl"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Combien de personnes sont mortes en tentant de traverser le mur ?",
-    "c": [
-     "Au moins 140",
-     "Environ 50",
-     "Environ 100",
-     "Plus de 500"
-    ],
-    "a": 0
+    "q": "En quelle année, un an après la chute du mur, l'Allemagne a-t-elle été officiellement réunifiée ?",
+    "a": "1990"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "histoire_016",
@@ -9586,86 +9539,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a été le premier homme dans l'espace ?",
+    "q": "Quel est le premier astre visité par l'homme, en 1969 ? La ___ ?",
     "c": [
-     "Youri Gagarine",
-     "John Glenn",
-     "Alan Shepard",
-     "Neil Armstrong"
+     "Lune",
+     "Mars",
+     "Vénus",
+     "Terre"
     ],
-    "a": 0
+    "a": "Lune"
    },
    {
-    "q": "En quelle année Gagarine a-t-il volé ?",
+    "q": "Quel astronaute américain a marché le premier sur la Lune ? Neil ___ ?",
     "c": [
-     "1963",
-     "1961",
-     "1962",
-     "1960"
+     "Armstrong",
+     "Aldrin",
+     "Glenn",
+     "Collins"
     ],
-    "a": 1
+    "a": "Armstrong"
    },
    {
-    "q": "Qui a marché sur la Lune en premier ?",
+    "q": "Quel premier satellite artificiel, soviétique, a été lancé en 1957 ?",
     "c": [
-     "John Young",
-     "Buzz Aldrin",
-     "Michael Collins",
-     "Neil Armstrong"
-    ],
-    "a": 3
-   },
-   {
-    "q": "En quelle année l'homme a-t-il marché sur la Lune ?",
-    "c": [
-     "1970",
-     "1967",
-     "1968",
-     "1969"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quelle phrase célèbre a prononcée Armstrong ?",
-    "c": [
-     "Houston, on a un problème",
-     "Le ciel est la limite",
-     "Nous venons en paix",
-     "Un petit pas pour l'homme"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel programme spatial américain a envoyé l'homme sur la Lune ?",
-    "c": [
-     "Space Shuttle",
+     "Spoutnik",
      "Apollo",
+     "Vostok",
+     "Mir"
+    ],
+    "a": "Spoutnik"
+   },
+   {
+    "q": "Quel cosmonaute soviétique fut le premier homme dans l'espace en 1961 ? Youri ___ ?",
+    "c": [
+     "Gagarine",
+     "Leonov",
+     "Titov",
+     "Komarov"
+    ],
+    "a": "Gagarine"
+   },
+   {
+    "q": "Quel programme spatial américain a permis d'aller sur la Lune ? Le programme ___ ?",
+    "c": [
+     "Apollo",
+     "Gemini",
      "Mercury",
-     "Gemini"
+     "Artemis"
     ],
-    "a": 1
+    "a": "Apollo"
    },
    {
-    "q": "Quel pays a envoyé le premier satellite artificiel ?",
+    "q": "Quelle agence spatiale américaine a organisé les missions lunaires ?",
     "c": [
-     "États-Unis",
-     "Chine",
-     "France",
-     "URSS"
+     "NASA",
+     "ESA",
+     "CNES",
+     "JAXA"
     ],
-    "a": 3
+    "a": "NASA"
    },
    {
-    "q": "Comment s'appelait le premier satellite ?",
+    "q": "Quel numéro portait la mission Apollo du premier alunissage ? Apollo ___ ?",
     "c": [
-     "Explorer 1",
-     "Cosmos 1",
-     "Spoutnik 1",
-     "Vanguard 1"
+     "11",
+     "13",
+     "1",
+     "17"
     ],
-    "a": 2
+    "a": "11"
+   },
+   {
+    "q": "En quelle année exacte l'homme a-t-il marché sur la Lune pour la première fois ?",
+    "a": "1969"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "histoire_017",
@@ -9674,86 +9622,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Où se trouvait l'Empire aztèque ?",
+    "q": "Sur le territoire de quel pays actuel se trouvait l'Empire aztèque ?",
     "c": [
+     "Mexique",
      "Pérou",
-     "Colombie",
-     "Guatemala",
-     "Mexique"
+     "Chili",
+     "Brésil"
     ],
-    "a": 3
+    "a": "Mexique"
    },
    {
-    "q": "Quelle était la capitale aztèque ?",
+    "q": "Comment s'appelait la capitale aztèque, bâtie sur un lac ?",
     "c": [
-     "Chichén Itzá",
+     "Tenochtitlan",
      "Cuzco",
-     "Teotihuacán",
-     "Tenochtitlan"
+     "Tikal",
+     "Chichén"
     ],
-    "a": 3
+    "a": "Tenochtitlan"
    },
    {
-    "q": "Quel conquistador a renversé l'Empire aztèque ?",
+    "q": "Quel conquistador espagnol a détruit l'Empire aztèque ? Hernán ___ ?",
     "c": [
-     "Hernán Cortés",
-     "Hernando de Soto",
-     "Vasco Núñez de Balboa",
-     "Francisco Pizarro"
+     "Cortés",
+     "Pizarro",
+     "Colomb",
+     "Balboa"
     ],
-    "a": 0
+    "a": "Cortés"
    },
    {
-    "q": "En quelle année Tenochtitlan est-elle tombée ?",
+    "q": "Quel dernier empereur aztèque a été vaincu par les Espagnols ?",
     "c": [
-     "1500",
-     "1519",
-     "1521",
-     "1532"
+     "Moctezuma",
+     "Atahualpa",
+     "Cuauhtémoc",
+     "Nezahualcoyotl"
     ],
-    "a": 2
+    "a": "Moctezuma"
    },
    {
-    "q": "Quel empereur aztèque a accueilli Cortés ?",
+    "q": "Quelle boisson sacrée, ancêtre du chocolat, les Aztèques appréciaient-ils ? Le ___ ?",
     "c": [
-     "Cuitláhuac",
-     "Moctezuma II",
-     "Ahuitzotl",
-     "Cuauhtémoc"
+     "cacao",
+     "café",
+     "thé",
+     "maté"
     ],
-    "a": 1
+    "a": "cacao"
    },
    {
-    "q": "Quelle était la religion des Aztèques ?",
+    "q": "Quels rituels sanglants les Aztèques pratiquaient-ils pour leurs dieux ? Des ___ humains ?",
     "c": [
-     "Monothéiste",
-     "Animiste",
-     "Polythéiste",
-     "Panthéiste"
+     "sacrifices",
+     "mariages",
+     "banquets",
+     "jeux"
     ],
-    "a": 2
+    "a": "sacrifices"
    },
    {
-    "q": "Quel dieu aztèque était le dieu du soleil ?",
+    "q": "Quel dieu-serpent à plumes était vénéré par les Aztèques ?",
     "c": [
-     "Tlaloc",
      "Quetzalcóatl",
-     "Tezcatlipoca",
-     "Huitzilopochtli"
+     "Huitzilopochtli",
+     "Tlaloc",
+     "Xipe"
     ],
-    "a": 3
+    "a": "Quetzalcóatl"
    },
    {
-    "q": "Quelle écriture utilisaient les Aztèques ?",
-    "c": [
-     "Les pictogrammes",
-     "Les hiéroglyphes",
-     "Les idéogrammes",
-     "L'alphabet latin"
-    ],
-    "a": 0
+    "q": "En quelle année Cortés a-t-il pris Tenochtitlan, achevant l'Empire aztèque ?",
+    "a": "1521"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "histoire_018",
@@ -9762,86 +9705,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "En quelle année la révolution d'Octobre a-t-elle eu lieu ?",
+    "q": "Dans quel pays s'est déroulée la révolution de 1917 ?",
     "c": [
-     "1905",
-     "1918",
-     "1921",
-     "1917"
+     "Russie",
+     "Chine",
+     "Allemagne",
+     "Pologne"
     ],
-    "a": 3
+    "a": "Russie"
    },
    {
-    "q": "Qui a dirigé les bolcheviks pendant la révolution ?",
+    "q": "Quel parti révolutionnaire, mené par Lénine, a pris le pouvoir ? Les ___ ?",
     "c": [
-     "Trotsky",
-     "Kerensky",
+     "bolcheviks",
+     "girondins",
+     "jacobins",
+     "mencheviks"
+    ],
+    "a": "bolcheviks"
+   },
+   {
+    "q": "Quelle couleur symbolisait les révolutionnaires communistes ? Le ___ ?",
+    "c": [
+     "rouge",
+     "bleu",
+     "blanc",
+     "vert"
+    ],
+    "a": "rouge"
+   },
+   {
+    "q": "Quel dernier tsar de Russie a été renversé puis exécuté ? Nicolas ___ ?",
+    "c": [
+     "II",
+     "Ier",
+     "III",
+     "IV"
+    ],
+    "a": "II"
+   },
+   {
+    "q": "Quel révolutionnaire a dirigé la prise du pouvoir bolchevique en octobre 1917 ?",
+    "c": [
+     "Lénine",
      "Staline",
-     "Lénine"
+     "Trotski",
+     "Kerenski"
     ],
-    "a": 3
+    "a": "Lénine"
    },
    {
-    "q": "Qui était le dernier tsar de Russie ?",
+    "q": "Quel nouvel État est né de cette révolution en 1922 ? L'___ ?",
     "c": [
-     "Nicolas II",
-     "Catherine la Grande",
-     "Pierre le Grand",
-     "Alexandre III"
+     "URSS",
+     "CEI",
+     "RDA",
+     "OTAN"
     ],
-    "a": 0
+    "a": "URSS"
    },
    {
-    "q": "Quel était le nom du parti de Lénine ?",
+    "q": "Dans quelle ville, alors capitale, la révolution d'Octobre a-t-elle éclaté ? ___ (ex-Saint-Pétersbourg) ?",
     "c": [
-     "Les mencheviks",
-     "Les bolcheviks",
-     "Les cadets",
-     "Les socialistes révolutionnaires"
+     "Petrograd",
+     "Moscou",
+     "Kiev",
+     "Kazan"
     ],
-    "a": 1
+    "a": "Petrograd"
    },
    {
-    "q": "En quelle année l'URSS a-t-elle été officiellement créée ?",
-    "c": [
-     "1918",
-     "1930",
-     "1922",
-     "1924"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quelle était l'idéologie des bolcheviks ?",
-    "c": [
-     "Le communisme",
-     "Le marxisme-léninisme",
-     "Le trotskisme",
-     "Le socialisme"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quel palais a été pris d'assaut lors de la révolution d'Octobre ?",
-    "c": [
-     "Le palais d'Hiver",
-     "Le palais de Catherine",
-     "Le Kremlin",
-     "Le palais Peterhof"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Qui a été le premier leader de l'URSS ?",
-    "c": [
-     "Trotsky",
-     "Boukharine",
-     "Staline",
-     "Lénine"
-    ],
-    "a": 3
+    "q": "En quelle année exacte a eu lieu la révolution d'Octobre en Russie ?",
+    "a": "1917"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "sciences_001",
