@@ -1,7 +1,7 @@
 // =====================================================================
 //  TTCQ — « Tu Te Cotes Combien ? » — banque de thèmes/questions.
-//  343 thèmes, 8 questions progressives par thème (niveaux 1 à 8).
-//  Réponse libre (saisie smartphone) : un mot court ou un nombre.
+//  353 thèmes, 8 questions progressives par thème (niveaux 1 à 8).
+//  Réponse libre (saisie smartphone) OU QCM selon la question.
 // =====================================================================
 
 export const TTCQ_THEMES = [
@@ -28310,6 +28310,830 @@ export const TTCQ_THEMES = [
      "Le radius"
     ],
     "a": 2
+   }
+  ]
+ },
+ {
+  "id": "original_001",
+  "cat": "insolite",
+  "name": "Les essuie-glaces",
+  "level": "classique",
+  "rw": true,
+  "levels": [
+   {
+    "q": "Contre quoi les essuie-glaces protègent-ils la visibilité du conducteur ? La ___ ?",
+    "c": [
+     "pluie",
+     "neige",
+     "boue",
+     "grêle"
+    ],
+    "a": "pluie"
+   },
+   {
+    "q": "Sur quelle partie de la voiture les essuie-glaces balaient-ils ? Le ___ ?",
+    "c": [
+     "pare-brise",
+     "capot",
+     "toit",
+     "coffre"
+    ],
+    "a": "pare-brise"
+   },
+   {
+    "q": "Combien d'essuie-glaces trouve-t-on généralement à l'avant d'une voiture ?",
+    "a": "2"
+   },
+   {
+    "q": "Quelle partie souple en caoutchouc racle l'eau sur la vitre ? La ___ ?",
+    "c": [
+     "lame",
+     "brosse",
+     "raclette",
+     "éponge"
+    ],
+    "a": "lame"
+   },
+   {
+    "q": "Quel liquide, projeté sur le pare-brise, aide au nettoyage ? Le lave-___ ?",
+    "c": [
+     "glace",
+     "vitre",
+     "phare",
+     "moteur"
+    ],
+    "a": "glace"
+   },
+   {
+    "q": "Comment appelle-t-on le rythme lent des essuie-glaces sous une pluie fine ? Le mode ___ ?",
+    "c": [
+     "intermittent",
+     "continu",
+     "rapide",
+     "turbo"
+    ],
+    "a": "intermittent"
+   },
+   {
+    "q": "Quel inventeur américain a breveté l'essuie-glace en 1903 ? Mary ___ ? (Anderson)",
+    "c": [
+     "Anderson",
+     "Ford",
+     "Benz",
+     "Edison"
+    ],
+    "a": "Anderson"
+   },
+   {
+    "q": "En quelle année exacte Mary Anderson a-t-elle breveté le premier essuie-glace ?",
+    "a": "1903"
+   }
+  ]
+ },
+ {
+  "id": "original_002",
+  "cat": "insolite",
+  "name": "Jean-Jacques Goldman",
+  "level": "classique",
+  "rw": true,
+  "levels": [
+   {
+    "q": "Quel métier exerce Jean-Jacques Goldman ? Il est chanteur et ___ ?",
+    "c": [
+     "compositeur",
+     "acteur",
+     "peintre",
+     "danseur"
+    ],
+    "a": "compositeur"
+   },
+   {
+    "q": "De quelle nationalité est Jean-Jacques Goldman ?",
+    "c": [
+     "française",
+     "belge",
+     "suisse",
+     "anglaise"
+    ],
+    "a": "française"
+   },
+   {
+    "q": "Quel tube de Goldman évoque « il changeait la vie » sur un artisan ? « Il ___ la vie » ?",
+    "c": [
+     "changeait",
+     "aimait",
+     "rêvait",
+     "gagnait"
+    ],
+    "a": "changeait"
+   },
+   {
+    "q": "Quel trio Goldman a-t-il formé, avec Fredericks et Jones, dans les années 90 ?",
+    "c": [
+     "Fredericks Goldman Jones",
+     "Téléphone",
+     "Gold",
+     "Indochine"
+    ],
+    "a": "Fredericks Goldman Jones"
+   },
+   {
+    "q": "Pour quelle chanteuse québécoise Goldman a-t-il écrit « D'eux » ? Céline ___ ?",
+    "c": [
+     "Dion",
+     "Farmer",
+     "Fabian",
+     "Cardin"
+    ],
+    "a": "Dion"
+   },
+   {
+    "q": "Quelle chanson de Goldman commence par « Et si j'étais né en 17 à ___ » ?",
+    "c": [
+     "Leidenstadt",
+     "Berlin",
+     "Paris",
+     "Varsovie"
+    ],
+    "a": "Leidenstadt"
+   },
+   {
+    "q": "Quel spectacle caritatif Goldman a-t-il longtemps soutenu en écrivant sa chanson-hymne ? Les ___ du cœur ?",
+    "c": [
+     "Restos",
+     "Amis",
+     "Voix",
+     "Enfants"
+    ],
+    "a": "Restos"
+   },
+   {
+    "q": "En quelle année Jean-Jacques Goldman est-il né, à Paris ?",
+    "a": "1951"
+   }
+  ]
+ },
+ {
+  "id": "original_003",
+  "cat": "insolite",
+  "name": "La langue (l'organe)",
+  "level": "classique",
+  "rw": true,
+  "levels": [
+   {
+    "q": "Dans quelle partie du corps se trouve la langue ? La ___ ?",
+    "c": [
+     "bouche",
+     "main",
+     "oreille",
+     "narine"
+    ],
+    "a": "bouche"
+   },
+   {
+    "q": "Quel sens principal la langue permet-elle grâce à ses papilles ? Le ___ ?",
+    "c": [
+     "goût",
+     "toucher",
+     "odorat",
+     "ouïe"
+    ],
+    "a": "goût"
+   },
+   {
+    "q": "Comment appelle-t-on les petites bosses sur la langue qui détectent les saveurs ? Les ___ ?",
+    "c": [
+     "papilles",
+     "villosités",
+     "alvéoles",
+     "cellules"
+    ],
+    "a": "papilles"
+   },
+   {
+    "q": "Combien de saveurs de base la langue distingue-t-elle traditionnellement (sucré, salé, acide, amer) ?",
+    "a": "4"
+   },
+   {
+    "q": "Quelle cinquième saveur, japonaise, s'ajoute aux quatre classiques ? L'___ ?",
+    "c": [
+     "umami",
+     "wasabi",
+     "yuzu",
+     "dashi"
+    ],
+    "a": "umami"
+   },
+   {
+    "q": "De quoi la langue est-elle essentiellement constituée, ce qui la rend très mobile ? De ___ ?",
+    "c": [
+     "muscles",
+     "os",
+     "cartilage",
+     "graisse"
+    ],
+    "a": "muscles"
+   },
+   {
+    "q": "Comme les empreintes digitales, quelle particularité l'empreinte de la langue possède-t-elle ? Elle est ___ ?",
+    "c": [
+     "unique",
+     "lisse",
+     "plate",
+     "double"
+    ],
+    "a": "unique"
+   },
+   {
+    "q": "De combien de muscles, environ, est composée la langue humaine ?",
+    "a": "17"
+   }
+  ]
+ },
+ {
+  "id": "original_004",
+  "cat": "insolite",
+  "name": "Les ronds-points",
+  "level": "classique",
+  "rw": true,
+  "levels": [
+   {
+    "q": "À quel type de croisement le rond-point sert-il d'alternative ? Le ___ ?",
+    "c": [
+     "carrefour",
+     "tunnel",
+     "pont",
+     "péage"
+    ],
+    "a": "carrefour"
+   },
+   {
+    "q": "Dans quel sens tourne-t-on sur un rond-point en France ?",
+    "c": [
+     "antihoraire",
+     "horaire",
+     "aléatoire",
+     "reculons"
+    ],
+    "a": "antihoraire"
+   },
+   {
+    "q": "Qui est prioritaire sur un rond-point français : ceux qui ___ ou ceux qui entrent ?",
+    "c": [
+     "y sont",
+     "entrent",
+     "attendent",
+     "klaxonnent"
+    ],
+    "a": "y sont"
+   },
+   {
+    "q": "Quel pays est célèbre pour avoir le plus de ronds-points au monde par habitant ?",
+    "c": [
+     "France",
+     "Allemagne",
+     "Italie",
+     "Espagne"
+    ],
+    "a": "France"
+   },
+   {
+    "q": "Quel mouvement social de 2018 a occupé les ronds-points français ? Les gilets ___ ?",
+    "c": [
+     "jaunes",
+     "rouges",
+     "verts",
+     "bleus"
+    ],
+    "a": "jaunes"
+   },
+   {
+    "q": "Comment appelle-t-on l'îlot central, souvent décoré, d'un rond-point ? Le terre-___ ?",
+    "c": [
+     "plein",
+     "sol",
+     "herbe",
+     "fleur"
+    ],
+    "a": "plein"
+   },
+   {
+    "q": "Dans quel pays la règle moderne du giratoire (priorité à l'anneau) a-t-elle été codifiée en 1966 ? Le ___-Uni ?",
+    "c": [
+     "Royaume",
+     "États",
+     "Pays",
+     "Emirats"
+    ],
+    "a": "Royaume"
+   },
+   {
+    "q": "Combien de ronds-points, environ, compte la France, championne du monde en la matière ?",
+    "a": "50000"
+   }
+  ]
+ },
+ {
+  "id": "original_005",
+  "cat": "insolite",
+  "name": "Le papier toilette",
+  "level": "classique",
+  "rw": true,
+  "levels": [
+   {
+    "q": "Dans quelle pièce de la maison utilise-t-on surtout le papier toilette ? Les ___ ?",
+    "c": [
+     "toilettes",
+     "cuisine",
+     "chambre",
+     "garage"
+    ],
+    "a": "toilettes"
+   },
+   {
+    "q": "Sous quelle forme le papier toilette est-il vendu ? En ___ ?",
+    "c": [
+     "rouleaux",
+     "feuilles",
+     "boîtes",
+     "tubes"
+    ],
+    "a": "rouleaux"
+   },
+   {
+    "q": "Quel débat oppose les gens : le sens du rouleau, feuille devant ou ___ ?",
+    "c": [
+     "derrière",
+     "dessus",
+     "dessous",
+     "côté"
+    ],
+    "a": "derrière"
+   },
+   {
+    "q": "Quel pays asiatique a inventé le papier, puis le papier hygiénique ? La ___ ?",
+    "c": [
+     "Chine",
+     "Inde",
+     "Japon",
+     "Corée"
+    ],
+    "a": "Chine"
+   },
+   {
+    "q": "Quel équipement japonais high-tech remplace parfois le papier toilette ? Les toilettes à jet d'___ ?",
+    "c": [
+     "eau",
+     "air",
+     "mousse",
+     "vapeur"
+    ],
+    "a": "eau"
+   },
+   {
+    "q": "Quel événement mondial de 2020 a provoqué une pénurie et des ruées sur le papier toilette ? La ___ ?",
+    "c": [
+     "pandémie",
+     "guerre",
+     "canicule",
+     "grève"
+    ],
+    "a": "pandémie"
+   },
+   {
+    "q": "Comment appelle-t-on le nombre de couches superposées d'un papier toilette ? Le nombre d'___ ?",
+    "c": [
+     "épaisseurs",
+     "plis",
+     "bandes",
+     "carrés"
+    ],
+    "a": "épaisseurs"
+   },
+   {
+    "q": "Combien de feuilles, environ, une personne utilise-t-elle en moyenne par jour ?",
+    "a": "57"
+   }
+  ]
+ },
+ {
+  "id": "original_006",
+  "cat": "insolite",
+  "name": "Les moustaches",
+  "level": "classique",
+  "rw": true,
+  "levels": [
+   {
+    "q": "Sur quelle partie du visage pousse la moustache ? Au-dessus de la ___ ?",
+    "c": [
+     "bouche",
+     "oreille",
+     "joue",
+     "paupière"
+    ],
+    "a": "bouche"
+   },
+   {
+    "q": "Avec quel outil taille-t-on une moustache ? Un ___ ?",
+    "c": [
+     "rasoir",
+     "peigne",
+     "ciseau à bois",
+     "couteau"
+    ],
+    "a": "rasoir"
+   },
+   {
+    "q": "Quel mois de sensibilisation à la santé masculine invite à porter la moustache ?",
+    "c": [
+     "Movember",
+     "Noël",
+     "Octobre",
+     "Janvier"
+    ],
+    "a": "Movember"
+   },
+   {
+    "q": "Quel dictateur allemand est tristement associé à une petite moustache carrée ?",
+    "c": [
+     "Hitler",
+     "Staline",
+     "Franco",
+     "Mussolini"
+    ],
+    "a": "Hitler"
+   },
+   {
+    "q": "Quel personnage de jeu vidéo plombier italien arbore une célèbre moustache ?",
+    "c": [
+     "Mario",
+     "Sonic",
+     "Link",
+     "Kirby"
+    ],
+    "a": "Mario"
+   },
+   {
+    "q": "Quel style de moustache est cirée et recourbée vers le haut aux extrémités ? La moustache à la ___ ? (Dalí)",
+    "c": [
+     "Dalí",
+     "César",
+     "gauloise",
+     "hongroise"
+    ],
+    "a": "Dalí"
+   },
+   {
+    "q": "Quel détective belge d'Agatha Christie est fier de sa moustache impeccable ?",
+    "c": [
+     "Poirot",
+     "Holmes",
+     "Maigret",
+     "Columbo"
+    ],
+    "a": "Poirot"
+   },
+   {
+    "q": "Combien de poils, environ, compte une moustache humaine masculine bien fournie ?",
+    "a": "600"
+   }
+  ]
+ },
+ {
+  "id": "original_007",
+  "cat": "insolite",
+  "name": "La sieste",
+  "level": "classique",
+  "rw": true,
+  "levels": [
+   {
+    "q": "À quel moment de la journée fait-on généralement la sieste ? L'après-___ ?",
+    "c": [
+     "midi",
+     "soir",
+     "aube",
+     "nuit"
+    ],
+    "a": "midi"
+   },
+   {
+    "q": "Quelle activité principale fait-on pendant une sieste ? On ___ ?",
+    "c": [
+     "dort",
+     "court",
+     "mange",
+     "travaille"
+    ],
+    "a": "dort"
+   },
+   {
+    "q": "Dans quel pays méditerranéen la sieste est-elle une tradition culturelle ?",
+    "c": [
+     "Espagne",
+     "Suède",
+     "Norvège",
+     "Islande"
+    ],
+    "a": "Espagne"
+   },
+   {
+    "q": "Comment appelle-t-on la sieste espagnole traditionnelle ? La ___ ?",
+    "c": [
+     "siesta",
+     "pausa",
+     "dormida",
+     "reposo"
+    ],
+    "a": "siesta"
+   },
+   {
+    "q": "Combien de minutes dure idéalement une « micro-sieste » réparatrice ?",
+    "c": [
+     "20",
+     "90",
+     "5",
+     "120"
+    ],
+    "a": "20"
+   },
+   {
+    "q": "Quel repas précède souvent la sieste, favorisant la somnolence ? Le ___ ?",
+    "c": [
+     "déjeuner",
+     "petit-déjeuner",
+     "dîner",
+     "goûter"
+    ],
+    "a": "déjeuner"
+   },
+   {
+    "q": "Quelle phase de sommeil profond faut-il éviter d'atteindre en sieste pour ne pas être groggy ? Le sommeil ___ ?",
+    "c": [
+     "profond",
+     "léger",
+     "paradoxal",
+     "lent"
+    ],
+    "a": "profond"
+   },
+   {
+    "q": "De combien de minutes, au maximum, une sieste dite « flash » ne doit-elle pas dépasser ?",
+    "a": "10"
+   }
+  ]
+ },
+ {
+  "id": "original_008",
+  "cat": "insolite",
+  "name": "Le Nutella",
+  "level": "classique",
+  "rw": true,
+  "levels": [
+   {
+    "q": "Quelle est la couleur de la pâte à tartiner Nutella ?",
+    "c": [
+     "marron",
+     "jaune",
+     "rouge",
+     "vert"
+    ],
+    "a": "marron"
+   },
+   {
+    "q": "Quel fruit sec est l'un des ingrédients phares du Nutella ? La ___ ?",
+    "c": [
+     "noisette",
+     "amande",
+     "cacahuète",
+     "noix"
+    ],
+    "a": "noisette"
+   },
+   {
+    "q": "Sur quoi étale-t-on classiquement le Nutella au petit-déjeuner ? Une ___ ?",
+    "c": [
+     "tartine",
+     "salade",
+     "pizza",
+     "soupe"
+    ],
+    "a": "tartine"
+   },
+   {
+    "q": "De quel pays européen la marque Nutella est-elle originaire ?",
+    "c": [
+     "Italie",
+     "France",
+     "Belgique",
+     "Suisse"
+    ],
+    "a": "Italie"
+   },
+   {
+    "q": "Quelle entreprise italienne fabrique le Nutella ?",
+    "c": [
+     "Ferrero",
+     "Barilla",
+     "Lavazza",
+     "Nestlé"
+    ],
+    "a": "Ferrero"
+   },
+   {
+    "q": "Quelle autre saveur, avec la noisette, domine le goût du Nutella ? Le ___ ?",
+    "c": [
+     "cacao",
+     "café",
+     "caramel",
+     "vanille"
+    ],
+    "a": "cacao"
+   },
+   {
+    "q": "Quelle journée mondiale, non officielle, célèbre le Nutella chaque 5 février ? Le World Nutella ___ ?",
+    "c": [
+     "Day",
+     "Time",
+     "Fest",
+     "Week"
+    ],
+    "a": "Day"
+   },
+   {
+    "q": "En quelle année le Nutella, sous ce nom, a-t-il été commercialisé pour la première fois ?",
+    "a": "1964"
+   }
+  ]
+ },
+ {
+  "id": "original_009",
+  "cat": "insolite",
+  "name": "Les licornes",
+  "level": "classique",
+  "rw": true,
+  "levels": [
+   {
+    "q": "Quel attribut unique la licorne porte-t-elle sur le front ? Une ___ ?",
+    "c": [
+     "corne",
+     "plume",
+     "crête",
+     "antenne"
+    ],
+    "a": "corne"
+   },
+   {
+    "q": "À quel animal ressemble le corps de la licorne ? Un ___ ?",
+    "c": [
+     "cheval",
+     "cerf",
+     "lion",
+     "âne"
+    ],
+    "a": "cheval"
+   },
+   {
+    "q": "De quelle couleur pure la licorne est-elle traditionnellement représentée ?",
+    "c": [
+     "blanche",
+     "noire",
+     "rouge",
+     "verte"
+    ],
+    "a": "blanche"
+   },
+   {
+    "q": "La licorne est un animal réel ou imaginaire ?",
+    "c": [
+     "imaginaire",
+     "réel",
+     "disparu",
+     "microscopique"
+    ],
+    "a": "imaginaire"
+   },
+   {
+    "q": "Sur le drapeau et les armoiries de quel pays figure une licorne ? L'___ ?",
+    "c": [
+     "Écosse",
+     "Irlande",
+     "Pays de Galles",
+     "Angleterre"
+    ],
+    "a": "Écosse"
+   },
+   {
+    "q": "Quel symbole moderne, arc-en-ciel et licorne, la licorne est-elle devenue ? Un symbole ___ (magie/positivité) ?",
+    "c": [
+     "féérique",
+     "militaire",
+     "religieux",
+     "sportif"
+    ],
+    "a": "féérique"
+   },
+   {
+    "q": "En économie, quel nom donne-t-on à une start-up valorisée à plus d'un milliard de dollars ? Une ___ ?",
+    "c": [
+     "licorne",
+     "baleine",
+     "gazelle",
+     "panthère"
+    ],
+    "a": "licorne"
+   },
+   {
+    "q": "À quel animal marin à longue défense torsadée la légende de la licorne serait-elle en partie liée ? Le ___ ?",
+    "c": [
+     "narval",
+     "dauphin",
+     "requin",
+     "espadon"
+    ],
+    "a": "narval"
+   }
+  ]
+ },
+ {
+  "id": "original_010",
+  "cat": "insolite",
+  "name": "La raclette",
+  "level": "classique",
+  "rw": true,
+  "levels": [
+   {
+    "q": "Quel aliment principal fait-on fondre pour une raclette ? Le ___ ?",
+    "c": [
+     "fromage",
+     "chocolat",
+     "beurre",
+     "pain"
+    ],
+    "a": "fromage"
+   },
+   {
+    "q": "Quel féculent accompagne traditionnellement la raclette ? La pomme de ___ ?",
+    "c": [
+     "terre",
+     "pin",
+     "reinette",
+     "air"
+    ],
+    "a": "terre"
+   },
+   {
+    "q": "Dans quel appareil fait-on fondre le fromage à raclette ? L'appareil à ___ ?",
+    "c": [
+     "raclette",
+     "fondue",
+     "gaufre",
+     "croque"
+    ],
+    "a": "raclette"
+   },
+   {
+    "q": "De quel pays alpin la raclette est-elle originaire ?",
+    "c": [
+     "Suisse",
+     "Italie",
+     "Autriche",
+     "Allemagne"
+    ],
+    "a": "Suisse"
+   },
+   {
+    "q": "De quel canton suisse vient le fromage à raclette traditionnel ? Le ___ ?",
+    "c": [
+     "Valais",
+     "Vaud",
+     "Berne",
+     "Zurich"
+    ],
+    "a": "Valais"
+   },
+   {
+    "q": "Quelle charcuterie accompagne souvent la raclette ? La ___ ?",
+    "c": [
+     "charcuterie",
+     "confiture",
+     "moutarde",
+     "salade"
+    ],
+    "a": "charcuterie"
+   },
+   {
+    "q": "En quelle saison la raclette est-elle le plus appréciée ? L'___ ?",
+    "c": [
+     "hiver",
+     "été",
+     "printemps",
+     "automne"
+    ],
+    "a": "hiver"
+   },
+   {
+    "q": "À quelle température, en degrés, le fromage à raclette commence-t-il idéalement à fondre ?",
+    "a": "55"
    }
   ]
  }
