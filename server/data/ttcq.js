@@ -1,7 +1,7 @@
 // =====================================================================
 //  TTCQ — « Tu Te Cotes Combien ? » — banque de thèmes/questions.
-//  343 thèmes, 8 questions progressives par thème (niveaux 1 à 8).
-//  Réponse libre (saisie smartphone) : un mot court ou un nombre.
+//  363 thèmes, 8 questions progressives par thème (niveaux 1 à 8).
+//  Réponse libre (saisie smartphone) OU QCM selon la question.
 // =====================================================================
 
 export const TTCQ_THEMES = [
@@ -28954,6 +28954,830 @@ export const TTCQ_THEMES = [
    {
     "q": "À quelle température, en degrés, le fromage à raclette commence-t-il idéalement à fondre ?",
     "a": "55"
+   }
+  ]
+ },
+ {
+  "id": "original_011",
+  "cat": "insolite",
+  "name": "Les chaussettes",
+  "level": "classique",
+  "rw": true,
+  "levels": [
+   {
+    "q": "Sur quelle partie du corps enfile-t-on des chaussettes ? Les ___ ?",
+    "c": [
+     "pieds",
+     "mains",
+     "oreilles",
+     "genoux"
+    ],
+    "a": "pieds"
+   },
+   {
+    "q": "Comment appelle-t-on deux chaussettes identiques portées ensemble ? Une ___ ?",
+    "c": [
+     "paire",
+     "botte",
+     "meute",
+     "grappe"
+    ],
+    "a": "paire"
+   },
+   {
+    "q": "Dans quel appareil les chaussettes disparaissent-elles mystérieusement, dit-on ? La machine à ___ ?",
+    "c": [
+     "laver",
+     "coudre",
+     "café",
+     "pain"
+    ],
+    "a": "laver"
+   },
+   {
+    "q": "Quelle faute de goût consiste à porter des chaussettes dans des sandales ? Chaussettes-___ ?",
+    "c": [
+     "sandales",
+     "bottes",
+     "talons",
+     "patins"
+    ],
+    "a": "sandales"
+   },
+   {
+    "q": "Quelle matière naturelle et chaude sert souvent à tricoter des chaussettes d'hiver ? La ___ ?",
+    "c": [
+     "laine",
+     "soie",
+     "paille",
+     "plume"
+    ],
+    "a": "laine"
+   },
+   {
+    "q": "Quelles chaussettes hautes, montant au-dessus du genou, sont dites « chaussettes ___ » ?",
+    "c": [
+     "hautes",
+     "basses",
+     "plates",
+     "rondes"
+    ],
+    "a": "hautes"
+   },
+   {
+    "q": "Quel objet, autrefois, glissait-on dans la chaussette pour la repriser ? Un œuf à ___ ?",
+    "c": [
+     "repriser",
+     "cuire",
+     "peindre",
+     "casser"
+    ],
+    "a": "repriser"
+   },
+   {
+    "q": "Combien de chaussettes, environ, une personne perdrait-elle au cours de sa vie, selon une étude ?",
+    "a": "1264"
+   }
+  ]
+ },
+ {
+  "id": "original_012",
+  "cat": "insolite",
+  "name": "Les emojis",
+  "level": "classique",
+  "rw": true,
+  "levels": [
+   {
+    "q": "Sur quel appareil utilise-t-on le plus les emojis ? Le ___ ?",
+    "c": [
+     "smartphone",
+     "grille-pain",
+     "réveil",
+     "aspirateur"
+    ],
+    "a": "smartphone"
+   },
+   {
+    "q": "Que représente le plus souvent un emoji ? Une ___ ?",
+    "c": [
+     "émotion",
+     "recette",
+     "adresse",
+     "facture"
+    ],
+    "a": "émotion"
+   },
+   {
+    "q": "Quel emoji jaune tout rond exprime la joie ? Le smiley qui ___ ?",
+    "c": [
+     "sourit",
+     "pleure",
+     "dort",
+     "crie"
+    ],
+    "a": "sourit"
+   },
+   {
+    "q": "De quel pays le mot et les premiers emojis sont-ils originaires ?",
+    "c": [
+     "Japon",
+     "États-Unis",
+     "Corée",
+     "Chine"
+    ],
+    "a": "Japon"
+   },
+   {
+    "q": "Quel emoji, élu mot de l'année 2015 par Oxford, montre un visage riant aux larmes ? Le rire aux ___ ?",
+    "c": [
+     "larmes",
+     "éclats",
+     "anges",
+     "genoux"
+    ],
+    "a": "larmes"
+   },
+   {
+    "q": "Quel organisme normalise officiellement les emojis pour tous les appareils ? Le consortium ___ ?",
+    "c": [
+     "Unicode",
+     "Bluetooth",
+     "Wi-Fi",
+     "USB"
+    ],
+    "a": "Unicode"
+   },
+   {
+    "q": "Que signifie littéralement « emoji » en japonais ? Image + ___ (caractère) ?",
+    "c": [
+     "lettre",
+     "son",
+     "chiffre",
+     "code"
+    ],
+    "a": "lettre"
+   },
+   {
+    "q": "En quelle année le tout premier jeu d'emojis a-t-il été créé au Japon par Shigetaka Kurita ?",
+    "a": "1999"
+   }
+  ]
+ },
+ {
+  "id": "original_013",
+  "cat": "insolite",
+  "name": "Le papier bulle",
+  "level": "classique",
+  "rw": true,
+  "levels": [
+   {
+    "q": "Quel geste irrésistible fait-on avec les bulles du papier bulle ? On les ___ ?",
+    "c": [
+     "éclate",
+     "mange",
+     "peint",
+     "coud"
+    ],
+    "a": "éclate"
+   },
+   {
+    "q": "À quoi sert principalement le papier bulle ? À ___ les objets fragiles ?",
+    "c": [
+     "protéger",
+     "peser",
+     "salir",
+     "cuire"
+    ],
+    "a": "protéger"
+   },
+   {
+    "q": "Que contiennent les petites bulles du papier bulle ? De l'___ ?",
+    "c": [
+     "air",
+     "eau",
+     "gaz toxique",
+     "mousse"
+    ],
+    "a": "air"
+   },
+   {
+    "q": "Dans quel type d'envoi utilise-t-on beaucoup de papier bulle ? Les ___ (paquets) ?",
+    "c": [
+     "colis",
+     "lettres",
+     "mails",
+     "SMS"
+    ],
+    "a": "colis"
+   },
+   {
+    "q": "Quel effet apaisant beaucoup trouvent-ils à éclater du papier bulle ? Un effet ___ (déstressant) ?",
+    "c": [
+     "antistress",
+     "grossissant",
+     "chauffant",
+     "collant"
+    ],
+    "a": "antistress"
+   },
+   {
+    "q": "À l'origine, en 1957, pour quel usage inattendu le papier bulle avait-il été conçu ? Un ___ mural ?",
+    "c": [
+     "papier peint",
+     "tapis",
+     "rideau",
+     "matelas"
+    ],
+    "a": "papier peint"
+   },
+   {
+    "q": "Quelle journée insolite célèbre le papier bulle chaque dernier lundi de janvier ? Le Bubble Wrap ___ Day ?",
+    "c": [
+     "Appreciation",
+     "Popping",
+     "Cleaning",
+     "Saving"
+    ],
+    "a": "Appreciation"
+   },
+   {
+    "q": "En quelle année le papier bulle a-t-il été inventé par Fielding et Chavannes ?",
+    "a": "1957"
+   }
+  ]
+ },
+ {
+  "id": "original_014",
+  "cat": "insolite",
+  "name": "Le hoquet",
+  "level": "classique",
+  "rw": true,
+  "levels": [
+   {
+    "q": "Quel petit bruit involontaire caractérise le hoquet ? Un « ___ » répété ?",
+    "c": [
+     "hic",
+     "toc",
+     "boum",
+     "clac"
+    ],
+    "a": "hic"
+   },
+   {
+    "q": "Quel muscle de la respiration se contracte brusquement lors du hoquet ? Le ___ ?",
+    "c": [
+     "diaphragme",
+     "biceps",
+     "mollet",
+     "cœur"
+    ],
+    "a": "diaphragme"
+   },
+   {
+    "q": "Quel remède populaire consiste à retenir sa ___ pour arrêter le hoquet ?",
+    "c": [
+     "respiration",
+     "salive",
+     "langue",
+     "main"
+    ],
+    "a": "respiration"
+   },
+   {
+    "q": "Que boit-on souvent, lentement, pour tenter de stopper le hoquet ? De l'___ ?",
+    "c": [
+     "eau",
+     "huile",
+     "vinaigre",
+     "essence"
+    ],
+    "a": "eau"
+   },
+   {
+    "q": "Le hoquet est-il un phénomène volontaire ou involontaire ?",
+    "c": [
+     "involontaire",
+     "volontaire",
+     "musical",
+     "digestif seulement"
+    ],
+    "a": "involontaire"
+   },
+   {
+    "q": "Quelle émotion ou surprise, dit-on, peut parfois faire cesser le hoquet ? La ___ ?",
+    "c": [
+     "peur",
+     "joie",
+     "faim",
+     "colère"
+    ],
+    "a": "peur"
+   },
+   {
+    "q": "Manger trop vite ou boire des boissons ___ favorise le hoquet ?",
+    "c": [
+     "gazeuses",
+     "chaudes",
+     "salées",
+     "amères"
+    ],
+    "a": "gazeuses"
+   },
+   {
+    "q": "Combien d'années a duré le plus long hoquet du monde, record de Charles Osborne ?",
+    "a": "68"
+   }
+  ]
+ },
+ {
+  "id": "original_015",
+  "cat": "insolite",
+  "name": "La barbe à papa",
+  "level": "classique",
+  "rw": true,
+  "levels": [
+   {
+    "q": "De quel ingrédient sucré la barbe à papa est-elle entièrement faite ? Le ___ ?",
+    "c": [
+     "sucre",
+     "sel",
+     "beurre",
+     "miel"
+    ],
+    "a": "sucre"
+   },
+   {
+    "q": "Dans quel lieu de fête achète-t-on typiquement une barbe à papa ? La ___ ?",
+    "c": [
+     "fête foraine",
+     "banque",
+     "pharmacie",
+     "gare"
+    ],
+    "a": "fête foraine"
+   },
+   {
+    "q": "Sur quel support en bois enroule-t-on la barbe à papa ? Un ___ ?",
+    "c": [
+     "bâton",
+     "couteau",
+     "verre",
+     "bol"
+    ],
+    "a": "bâton"
+   },
+   {
+    "q": "De quelle couleur est la barbe à papa la plus classique ?",
+    "c": [
+     "rose",
+     "verte",
+     "noire",
+     "bleue"
+    ],
+    "a": "rose"
+   },
+   {
+    "q": "Quel aspect aérien et léger a la barbe à papa ? Elle est comme un ___ ?",
+    "c": [
+     "nuage",
+     "caillou",
+     "mur",
+     "bloc"
+    ],
+    "a": "nuage"
+   },
+   {
+    "q": "Dans quelle machine tournante fabrique-t-on la barbe à papa ? Une machine à ___ ?",
+    "c": [
+     "filer",
+     "coudre",
+     "laver",
+     "café"
+    ],
+    "a": "filer"
+   },
+   {
+    "q": "Comment le sucre devient-il des fils si fins dans la machine ? Il est ___ puis projeté ?",
+    "c": [
+     "fondu",
+     "gelé",
+     "broyé",
+     "séché"
+    ],
+    "a": "fondu"
+   },
+   {
+    "q": "En quelle année la machine à barbe à papa moderne a-t-elle été brevetée aux États-Unis ?",
+    "a": "1899"
+   }
+  ]
+ },
+ {
+  "id": "original_016",
+  "cat": "insolite",
+  "name": "Le four à micro-ondes",
+  "level": "classique",
+  "rw": true,
+  "levels": [
+   {
+    "q": "À quoi sert surtout un four à micro-ondes ? À ___ les plats ?",
+    "c": [
+     "réchauffer",
+     "peindre",
+     "laver",
+     "peser"
+    ],
+    "a": "réchauffer"
+   },
+   {
+    "q": "Quel type d'ondes chauffe les aliments dans l'appareil ? Des micro-___ ?",
+    "c": [
+     "ondes",
+     "billes",
+     "vagues",
+     "bulles"
+    ],
+    "a": "ondes"
+   },
+   {
+    "q": "Quel matériau NE faut-il jamais mettre au micro-ondes ? Le ___ ?",
+    "c": [
+     "métal",
+     "verre",
+     "plastique adapté",
+     "carton"
+    ],
+    "a": "métal"
+   },
+   {
+    "q": "Quel encas gonflé prépare-t-on en sachet au micro-ondes ? Le ___ ?",
+    "c": [
+     "popcorn",
+     "steak",
+     "gâteau",
+     "gratin"
+    ],
+    "a": "popcorn"
+   },
+   {
+    "q": "Quelle molécule des aliments les micro-ondes font-elles surtout vibrer pour chauffer ? L'___ (eau) ?",
+    "c": [
+     "eau",
+     "sel",
+     "sucre",
+     "huile"
+    ],
+    "a": "eau"
+   },
+   {
+    "q": "Quel ingénieur a découvert par hasard le principe du micro-ondes en faisant fondre une barre chocolatée ? Percy ___ ?",
+    "c": [
+     "Spencer",
+     "Edison",
+     "Tesla",
+     "Franklin"
+    ],
+    "a": "Spencer"
+   },
+   {
+    "q": "Le micro-ondes chauffe-t-il les aliments de l'intérieur ou par agitation des molécules ? Par ___ des molécules ?",
+    "c": [
+     "agitation",
+     "flamme",
+     "vapeur",
+     "friction externe"
+    ],
+    "a": "agitation"
+   },
+   {
+    "q": "En quelle année Percy Spencer a-t-il déposé le brevet du four à micro-ondes ?",
+    "a": "1945"
+   }
+  ]
+ },
+ {
+  "id": "original_017",
+  "cat": "insolite",
+  "name": "Le canard de bain",
+  "level": "classique",
+  "rw": true,
+  "levels": [
+   {
+    "q": "Dans quelle pièce joue-t-on avec un canard de bain ? La salle de ___ ?",
+    "c": [
+     "bain",
+     "sport",
+     "classe",
+     "réunion"
+    ],
+    "a": "bain"
+   },
+   {
+    "q": "De quelle couleur est le canard de bain classique ?",
+    "c": [
+     "jaune",
+     "rouge",
+     "vert",
+     "noir"
+    ],
+    "a": "jaune"
+   },
+   {
+    "q": "En quelle matière est fait le canard de bain ? Le ___ ?",
+    "c": [
+     "plastique",
+     "bois",
+     "métal",
+     "verre"
+    ],
+    "a": "plastique"
+   },
+   {
+    "q": "Que fait le canard de bain posé sur l'eau ? Il ___ ?",
+    "c": [
+     "flotte",
+     "coule",
+     "fond",
+     "explose"
+    ],
+    "a": "flotte"
+   },
+   {
+    "q": "Quel bruit fait un canard de bain quand on le presse ? Un ___ ?",
+    "c": [
+     "couic",
+     "boum",
+     "tic",
+     "vroum"
+    ],
+    "a": "couic"
+   },
+   {
+    "q": "Dans quelle célèbre émission pour enfants Ernie chante-t-il pour son canard ? ___ Street ?",
+    "c": [
+     "Sesame",
+     "Baker",
+     "Wall",
+     "Main"
+    ],
+    "a": "Sesame"
+   },
+   {
+    "q": "Quel géant gonflable de l'artiste Florentijn Hofman a voyagé dans les ports du monde ? Le Rubber ___ ?",
+    "c": [
+     "Duck",
+     "Boat",
+     "Ball",
+     "Fish"
+    ],
+    "a": "Duck"
+   },
+   {
+    "q": "Combien de canards en plastique, tombés d'un cargo en 1992, ont dérivé sur les océans ?",
+    "a": "28000"
+   }
+  ]
+ },
+ {
+  "id": "original_018",
+  "cat": "insolite",
+  "name": "Les cotons-tiges",
+  "level": "classique",
+  "rw": true,
+  "levels": [
+   {
+    "q": "Pour nettoyer quelle partie du corps utilise-t-on (à tort) les cotons-tiges ? Les ___ ?",
+    "c": [
+     "oreilles",
+     "yeux",
+     "pieds",
+     "cheveux"
+    ],
+    "a": "oreilles"
+   },
+   {
+    "q": "Quelle matière douce se trouve aux deux bouts d'un coton-tige ? Le ___ ?",
+    "c": [
+     "coton",
+     "papier",
+     "plastique",
+     "cuir"
+    ],
+    "a": "coton"
+   },
+   {
+    "q": "Combien d'extrémités ouatées possède un coton-tige classique ?",
+    "a": "2"
+   },
+   {
+    "q": "Pourquoi les médecins déconseillent-ils le coton-tige dans l'oreille ? Il pousse le ___ au fond ?",
+    "c": [
+     "cérumen",
+     "sang",
+     "eau",
+     "sel"
+    ],
+    "a": "cérumen"
+   },
+   {
+    "q": "Pour des raisons écologiques, par quelle matière le bâtonnet plastique a-t-il été remplacé ? Le ___ ?",
+    "c": [
+     "papier",
+     "métal",
+     "verre",
+     "os"
+    ],
+    "a": "papier"
+   },
+   {
+    "q": "Dans quelle activité artistique et de maquillage les cotons-tiges sont-ils aussi utilisés ? Le ___ ?",
+    "c": [
+     "maquillage",
+     "jardinage",
+     "bricolage lourd",
+     "cuisine"
+    ],
+    "a": "maquillage"
+   },
+   {
+    "q": "Dans quelle union le coton-tige en plastique jetable est-il interdit à la vente depuis 2020 ? L'Union ___ ?",
+    "c": [
+     "européenne",
+     "africaine",
+     "asiatique",
+     "américaine"
+    ],
+    "a": "européenne"
+   },
+   {
+    "q": "En quelle année Leo Gerstenzang a-t-il inventé le coton-tige (Q-tips) ?",
+    "a": "1923"
+   }
+  ]
+ },
+ {
+  "id": "original_019",
+  "cat": "insolite",
+  "name": "Le Velcro",
+  "level": "classique",
+  "rw": true,
+  "levels": [
+   {
+    "q": "Quel bruit caractéristique fait-on en ouvrant une bande Velcro ? Un ___ ?",
+    "c": [
+     "scratch",
+     "clic",
+     "pouf",
+     "ding"
+    ],
+    "a": "scratch"
+   },
+   {
+    "q": "À quoi sert le Velcro sur des chaussures d'enfant ? À les ___ sans lacets ?",
+    "c": [
+     "fermer",
+     "peindre",
+     "laver",
+     "peser"
+    ],
+    "a": "fermer"
+   },
+   {
+    "q": "De combien de bandes le Velcro est-il composé : les crochets et les ___ ?",
+    "c": [
+     "boucles",
+     "clous",
+     "aimants",
+     "boutons"
+    ],
+    "a": "boucles"
+   },
+   {
+    "q": "Quelle observation de la nature a inspiré le Velcro ? Les ___ accrochées aux poils du chien ?",
+    "c": [
+     "bardanes",
+     "fleurs",
+     "feuilles",
+     "graines de pissenlit"
+    ],
+    "a": "bardanes"
+   },
+   {
+    "q": "Le Velcro remplace avantageusement quel autre système de fermeture ? Les ___ (à nouer) ?",
+    "c": [
+     "lacets",
+     "clous",
+     "vis",
+     "aimants"
+    ],
+    "a": "lacets"
+   },
+   {
+    "q": "Dans quel domaine de pointe le Velcro a-t-il été très utilisé, en apesanteur ? L'___ (espace) ?",
+    "c": [
+     "astronautique",
+     "plongée",
+     "boulangerie",
+     "musique"
+    ],
+    "a": "astronautique"
+   },
+   {
+    "q": "De quelle nationalité était George de Mestral, l'inventeur du Velcro ?",
+    "c": [
+     "suisse",
+     "française",
+     "américaine",
+     "belge"
+    ],
+    "a": "suisse"
+   },
+   {
+    "q": "En quelle année George de Mestral a-t-il breveté le Velcro ?",
+    "a": "1955"
+   }
+  ]
+ },
+ {
+  "id": "original_020",
+  "cat": "insolite",
+  "name": "Les tongs",
+  "level": "classique",
+  "rw": true,
+  "levels": [
+   {
+    "q": "Sur quelle partie du corps porte-t-on des tongs ? Les ___ ?",
+    "c": [
+     "pieds",
+     "mains",
+     "oreilles",
+     "coudes"
+    ],
+    "a": "pieds"
+   },
+   {
+    "q": "Entre quels orteils passe la lanière d'une tong ? Le gros orteil et le ___ ?",
+    "c": [
+     "deuxième",
+     "petit",
+     "talon",
+     "genou"
+    ],
+    "a": "deuxième"
+   },
+   {
+    "q": "Dans quel lieu de vacances porte-t-on typiquement des tongs ? La ___ ?",
+    "c": [
+     "plage",
+     "banque",
+     "église",
+     "usine"
+    ],
+    "a": "plage"
+   },
+   {
+    "q": "Quel bruit font les tongs quand on marche ? Un « ___ » caractéristique ?",
+    "c": [
+     "flip-flop",
+     "toc-toc",
+     "cric-crac",
+     "bing"
+    ],
+    "a": "flip-flop"
+   },
+   {
+    "q": "En quelle matière souple sont souvent faites les tongs bon marché ? Le ___ ?",
+    "c": [
+     "caoutchouc",
+     "métal",
+     "bois massif",
+     "verre"
+    ],
+    "a": "caoutchouc"
+   },
+   {
+    "q": "Dans quel pays la tong est-elle presque une chaussure nationale, portée partout ? Le ___ ?",
+    "c": [
+     "Brésil",
+     "Canada",
+     "Russie",
+     "Islande"
+    ],
+    "a": "Brésil"
+   },
+   {
+    "q": "Quelle grande marque brésilienne de tongs colorées est mondialement connue ?",
+    "c": [
+     "Havaianas",
+     "Nike",
+     "Adidas",
+     "Crocs"
+    ],
+    "a": "Havaianas"
+   },
+   {
+    "q": "De quand datent les plus anciennes sandales à lanière entre les orteils (Égypte antique), en années av. J.-C. environ ?",
+    "a": "1500"
    }
   ]
  }
