@@ -14750,86 +14750,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Que signifie 5G ?",
+    "q": "Quelle génération de réseau mobile est la 5G ? La ___e ?",
     "c": [
-     "5 GHz",
-     "Cinquième génération de réseau mobile",
-     "5 gigabits",
-     "5Giga"
+     "5",
+     "3",
+     "4",
+     "6"
     ],
-    "a": 1
+    "a": "5"
    },
    {
-    "q": "Quelle est la différence principale entre 4G et 5G ?",
+    "q": "Quel grand avantage la 5G offre-t-elle par rapport à la 4G ? Plus de ___ ?",
     "c": [
-     "Même chose",
-     "Plus de couverture",
-     "Débit plus élevé et latence plus faible",
-     "Moins de consommation"
+     "vitesse",
+     "poids",
+     "bruit",
+     "prix"
     ],
-    "a": 2
+    "a": "vitesse"
    },
    {
-    "q": "En quelle année la 5G a-t-elle été lancée commercialement ?",
+    "q": "Sur quel appareil du quotidien profite-t-on surtout de la 5G ? Le ___ ?",
     "c": [
-     "2020",
-     "2018",
-     "2019",
-     "2021"
+     "smartphone",
+     "grille-pain",
+     "aspirateur",
+     "réveil"
     ],
-    "a": 2
+    "a": "smartphone"
    },
    {
-    "q": "Quel pays a déployé la 5G le plus rapidement ?",
+    "q": "Quelles installations émettent le signal 5G dans les villes ? Des ___ ?",
     "c": [
-     "Corée du Sud",
+     "antennes",
+     "moulins",
+     "fontaines",
+     "statues"
+    ],
+    "a": "antennes"
+   },
+   {
+    "q": "Quelle très faible latence la 5G permet-elle, utile pour la voiture autonome ? Un temps de réponse ___ ?",
+    "c": [
+     "court",
+     "long",
+     "nul",
+     "double"
+    ],
+    "a": "court"
+   },
+   {
+    "q": "Quel objet connecté en réseau la 5G doit-elle faire exploser ? L'Internet des ___ ?",
+    "c": [
+     "objets",
+     "gens",
+     "idées",
+     "rêves"
+    ],
+    "a": "objets"
+   },
+   {
+    "q": "Quel pays a été pionnier du déploiement massif de la 5G ? La ___ du Sud ?",
+    "c": [
+     "Corée",
      "Chine",
-     "Japon",
-     "États-Unis"
+     "Inde",
+     "Afrique"
     ],
-    "a": 0
+    "a": "Corée"
    },
    {
-    "q": "Quelle bande de fréquences utilise la 5G ?",
-    "c": [
-     "5 GHz",
-     "2,4 GHz",
-     "Sub-6 GHz et mmWave",
-     "3,5 GHz"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Qu'est-ce que la latence 5G ?",
-    "c": [
-     "1-10 ms",
-     "20-30 ms",
-     "100-200 ms",
-     "50-100 ms"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quels secteurs bénéficient le plus de la 5G ?",
-    "c": [
-     "Industrie, santé, transports",
-     "Télétravail",
-     "Jeux vidéo",
-     "Réseaux sociaux"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quelle est la vitesse théorique maximale de la 5G ?",
-    "c": [
-     "Jusqu'à 1 Gbit/s",
-     "Jusqu'à 10 Gbit/s",
-     "Jusqu'à 20 Gbit/s",
-     "Jusqu'à 5 Gbit/s"
-    ],
-    "a": 2
+    "q": "En quelle année les premiers réseaux 5G commerciaux ont-ils été lancés ?",
+    "a": "2019"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "tech_016",
@@ -14838,86 +14833,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a inventé le moteur électrique ?",
+    "q": "Quelle énergie alimente un moteur électrique ? L'___ ?",
     "c": [
-     "Michael Faraday",
-     "Nikola Tesla",
-     "Thomas Edison",
-     "James Watt"
+     "électricité",
+     "essence",
+     "vapeur",
+     "charbon"
     ],
-    "a": 0
+    "a": "électricité"
    },
    {
-    "q": "En quelle année le premier moteur électrique a-t-il été inventé ?",
+    "q": "Quel phénomène invisible fait tourner un moteur électrique ? Le ___ (magnétisme) ?",
     "c": [
-     "1821",
-     "1850",
-     "1800",
-     "1900"
+     "champ magnétique",
+     "vent",
+     "feu",
+     "son"
     ],
-    "a": 0
+    "a": "champ magnétique"
    },
    {
-    "q": "Quel type de moteur est utilisé dans les voitures électriques ?",
+    "q": "Quel gros avantage écologique le moteur électrique a-t-il ? Il ne rejette pas de ___ à l'usage ?",
     "c": [
-     "Moteur pas à pas",
-     "Moteur synchrone à aimants permanents",
-     "Moteur à courant continu",
-     "Moteur universel"
+     "CO2",
+     "eau",
+     "lumière",
+     "musique"
     ],
-    "a": 1
+    "a": "CO2"
    },
    {
-    "q": "Quelle est la différence entre moteur AC et DC ?",
+    "q": "Quelle partie tournante du moteur électrique porte ce nom ? Le ___ ?",
     "c": [
-     "DC est plus efficace",
-     "AC est plus petit",
-     "AC utilise courant alternatif, DC courant continu",
-     "AC est moins cher"
+     "rotor",
+     "piston",
+     "carter",
+     "vilebrequin"
     ],
-    "a": 2
+    "a": "rotor"
    },
    {
-    "q": "Quel véhicule électrique utilise un moteur dans chaque roue ?",
+    "q": "Quelle marque américaine de Elon Musk est pionnière de la voiture électrique ?",
     "c": [
-     "Voitures électriques modernes",
-     "Vélos électriques",
-     "Trottinettes",
-     "Bus électriques"
+     "Tesla",
+     "Ford",
+     "GM",
+     "Toyota"
     ],
-    "a": 0
+    "a": "Tesla"
    },
    {
-    "q": "Qu'inventeur a développé le moteur à induction ?",
+    "q": "Quelle partie fixe du moteur, autour du rotor, porte ce nom ? Le ___ ?",
     "c": [
-     "Nikola Tesla",
-     "Galileo Ferraris",
-     "Michael Faraday",
-     "Thomas Edison"
+     "stator",
+     "piston",
+     "arbre",
+     "carter"
     ],
-    "a": 0
+    "a": "stator"
    },
    {
-    "q": "Qu'est-ce qu'un moteur brushless ?",
+    "q": "Le moteur électrique est-il plus ou moins silencieux qu'un moteur thermique ?",
     "c": [
-     "Moteur sans balais",
-     "Moteur à induction",
-     "Moteur synchrone",
-     "Moteur à balais"
+     "plus",
+     "moins",
+     "autant",
+     "jamais"
     ],
-    "a": 0
+    "a": "plus"
    },
    {
-    "q": "Quel type de moteur équipe les robots industriels ?",
-    "c": [
-     "Moteurs à induction",
-     "Moteurs universels",
-     "Moteurs à courant continu",
-     "Moteurs pas à pas et servomoteurs"
-    ],
-    "a": 3
+    "q": "Quel pourcentage de rendement, environ, peut atteindre un bon moteur électrique ?",
+    "a": "95"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "auto_001",
@@ -14926,86 +14916,69 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a inventé le moteur à essence ?",
+    "q": "Quel carburant liquide alimente un moteur essence ? L'___ ?",
     "c": [
-     "Carl Benz",
-     "Rudolf Diesel",
-     "Gottlieb Daimler",
-     "Nikolaus Otto"
+     "essence",
+     "eau",
+     "lait",
+     "vin"
     ],
-    "a": 0
+    "a": "essence"
    },
    {
-    "q": "Quelle est la différence entre un moteur 2 temps et 4 temps ?",
+    "q": "Quelle pièce s'enfonce et remonte dans le cylindre du moteur ? Le ___ ?",
     "c": [
-     "Le nombre de cycles du piston",
-     "La cylindrée",
-     "La puissance",
-     "La taille"
+     "piston",
+     "volant",
+     "rétroviseur",
+     "pare-choc"
     ],
-    "a": 0
+    "a": "piston"
    },
    {
-    "q": "Qu'est-ce que la cylindrée d'un moteur ?",
+    "q": "Quelle petite pièce produit l'étincelle qui enflamme l'essence ? La ___ ?",
     "c": [
-     "Puissance",
-     "Consommation",
-     "Couple",
-     "Volume total des cylindres"
+     "bougie",
+     "batterie",
+     "courroie",
+     "durite"
     ],
-    "a": 3
+    "a": "bougie"
    },
    {
-    "q": "En quelle année le premier moteur à essence a-t-il été fabriqué ?",
-    "c": [
-     "1885",
-     "1890",
-     "1876",
-     "1900"
-    ],
-    "a": 2
+    "q": "Combien de cylindres a un moteur « 4 cylindres » ?",
+    "a": "4"
    },
    {
-    "q": "Qu'est-ce que le rendement d'un moteur à essence ?",
+    "q": "Comment appelle-t-on le mélange air-essence brûlé dans le moteur ? La ___ ?",
     "c": [
-     "Environ 30%",
-     "Environ 20%",
-     "Environ 70%",
-     "Environ 50%"
+     "combustion",
+     "évaporation",
+     "condensation",
+     "fusion"
     ],
-    "a": 0
+    "a": "combustion"
    },
    {
-    "q": "Quel type de carburant utilise un moteur essence ?",
+    "q": "En combien de « temps » fonctionne le moteur essence classique de voiture ?",
+    "a": "4"
+   },
+   {
+    "q": "Quel ingénieur allemand a donné son nom à un cycle de moteur essence ? Nikolaus ___ ?",
     "c": [
-     "Essence (SP95, SP98)",
-     "GPL",
+     "Otto",
      "Diesel",
-     "Électricité"
+     "Benz",
+     "Daimler"
     ],
-    "a": 0
+    "a": "Otto"
    },
    {
-    "q": "Qu'est-ce qu'un turbo dans un moteur ?",
-    "c": [
-     "Injecteur",
-     "Compresseur entraîné par les gaz d'échappement",
-     "Soupape",
-     "Bougie"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Combien de bougies d'allumage a un moteur 4 cylindres ?",
-    "c": [
-     "8",
-     "6",
-     "2",
-     "4"
-    ],
-    "a": 3
+    "q": "Quel taux de compression, environ (rapport), a un moteur essence atmosphérique typique ? Environ ___ pour 1 ?",
+    "a": "10"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "auto_002",
@@ -15014,86 +14987,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle entreprise domine le marché des voitures électriques ?",
+    "q": "Par quoi remplace-t-on le plein d'essence sur une voiture électrique ? La ___ ?",
+    "c": [
+     "recharge",
+     "vidange",
+     "purge",
+     "révision"
+    ],
+    "a": "recharge"
+   },
+   {
+    "q": "Quel composant stocke l'énergie d'une voiture électrique ? La ___ ?",
+    "c": [
+     "batterie",
+     "bougie",
+     "durite",
+     "courroie"
+    ],
+    "a": "batterie"
+   },
+   {
+    "q": "Quelle marque américaine d'Elon Musk domine la voiture électrique ?",
     "c": [
      "Tesla",
-     "Volkswagen",
-     "Toyota",
-     "BYD"
+     "Renault",
+     "Fiat",
+     "Ford"
     ],
-    "a": 0
+    "a": "Tesla"
    },
    {
-    "q": "Quel est l'avantage principal d'une voiture électrique ?",
+    "q": "Quel gaz d'échappement une voiture 100 % électrique n'émet-elle pas en roulant ? Le ___ ?",
     "c": [
-     "Autonomie",
-     "Zéro émission directe",
-     "Vitesse",
-     "Prix"
+     "CO2",
+     "oxygène",
+     "hélium",
+     "azote"
     ],
-    "a": 1
+    "a": "CO2"
    },
    {
-    "q": "Combien de temps faut-il pour recharger une voiture électrique ?",
+    "q": "Où branche-t-on une voiture électrique pour la recharger ? À une ___ ?",
     "c": [
-     "15 min",
-     "5 min",
-     "30 min à 8h selon la borne",
-     "1h"
+     "borne",
+     "pompe",
+     "prise d'eau",
+     "citerne"
     ],
-    "a": 2
+    "a": "borne"
    },
    {
-    "q": "Qu'est-ce qu'une batterie lithium-ion dans une voiture électrique ?",
+    "q": "Quel métal léger est au cœur des batteries de voitures électriques ? Le ___ ?",
     "c": [
-     "Transmission",
-     "Source d'énergie",
-     "Moteur",
-     "Système de refroidissement"
+     "lithium",
+     "plomb",
+     "fer",
+     "cuivre"
     ],
-    "a": 1
+    "a": "lithium"
    },
    {
-    "q": "Quelle est l'autonomie moyenne d'une voiture électrique moderne ?",
+    "q": "Quel modèle Tesla, berline familiale, est le plus vendu ? La Model ___ ?",
     "c": [
-     "700-900 km",
-     "500-700 km",
-     "100-200 km",
-     "300-500 km"
+     "3",
+     "X",
+     "S",
+     "Y"
     ],
-    "a": 3
+    "a": "3"
    },
    {
-    "q": "En quelle année Tesla a-t-elle sorti la Model S ?",
-    "c": [
-     "2012",
-     "2010",
-     "2008",
-     "2014"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Qu'est-ce qu'une borne de recharge rapide ?",
-    "c": [
-     "Borne délivrant une puissance élevée (50-350 kW)",
-     "Prise domestique",
-     "Chargeur mural",
-     "Câble de recharge"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quel pays interdit la vente de voitures thermiques neuves en 2035 ?",
-    "c": [
-     "Union européenne",
-     "États-Unis",
-     "Japon",
-     "Chine"
-    ],
-    "a": 0
+    "q": "Quelle autonomie, en km, environ, atteignent les meilleures voitures électriques récentes ?",
+    "a": "600"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "auto_003",
@@ -15102,86 +15070,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a inventé le pneu gonflable ?",
+    "q": "En quelle matière souple et noire les pneus sont-ils faits ? Le ___ ?",
     "c": [
-     "André Michelin",
-     "Édouard Michelin",
-     "Charles Goodyear",
-     "John Boyd Dunlop"
+     "caoutchouc",
+     "métal",
+     "bois",
+     "verre"
     ],
-    "a": 3
+    "a": "caoutchouc"
    },
    {
-    "q": "Qu'est-ce que l'indice de charge d'un pneu ?",
-    "c": [
-     "Taille",
-     "Pression",
-     "Poids maximal supporté",
-     "Vitesse maximale"
-    ],
-    "a": 2
+    "q": "Combien de pneus une voiture classique a-t-elle (hors secours) ?",
+    "a": "4"
    },
    {
-    "q": "Quand faut-il changer ses pneus hiver ?",
+    "q": "Comment appelle-t-on les rainures du pneu qui évacuent l'eau ? Les ___ ?",
     "c": [
-     "En été",
-     "De novembre à mars",
-     "En automne",
-     "Toute l'année"
+     "sculptures",
+     "boulons",
+     "jantes",
+     "valves"
     ],
-    "a": 1
+    "a": "sculptures"
    },
    {
-    "q": "Quelle pression doit avoir un pneu de voiture ?",
+    "q": "Quel gaz gonfle habituellement un pneu ? L'___ ?",
     "c": [
-     "2,0-2,5 bars",
-     "1,0-1,5 bars",
-     "3,0-3,5 bars",
-     "0,5-1,0 bars"
+     "air",
+     "hélium",
+     "eau",
+     "mousse"
     ],
-    "a": 0
+    "a": "air"
    },
    {
-    "q": "Qu'est-ce qu'un pneu 'runflat' ?",
+    "q": "Quels pneus, cloutés ou à gomme spéciale, utilise-t-on en montagne l'hiver ? Les pneus ___ ?",
     "c": [
-     "Pneu été",
-     "Pneu qui roule à plat après une crevaison",
-     "Pneu sport",
-     "Pneu hiver"
+     "neige",
+     "pluie",
+     "sable",
+     "boue"
     ],
-    "a": 1
+    "a": "neige"
    },
    {
-    "q": "Combien de pneus une voiture a-t-elle ?",
+    "q": "Quelle marque française au bonhomme blanc en pneus est un géant du secteur ?",
     "c": [
-     "6",
-     "4",
-     "3",
-     "5"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quel manufacturier a créé le pneu vert ?",
-    "c": [
-     "Pirelli",
+     "Michelin",
      "Goodyear",
-     "Bridgestone",
-     "Michelin"
+     "Pirelli",
+     "Dunlop"
     ],
-    "a": 3
+    "a": "Michelin"
    },
    {
-    "q": "Comment s'appelle la sculpture du pneu ?",
+    "q": "Comment appelle-t-on un pneu à plat, percé par un clou par exemple ? Une ___ ?",
     "c": [
-     "Profil",
-     "Bande de roulement",
-     "Semelle",
-     "Gomme"
+     "crevaison",
+     "vidange",
+     "panne",
+     "fuite"
     ],
-    "a": 1
+    "a": "crevaison"
+   },
+   {
+    "q": "Quelle pression, en bars, environ, gonfle-t-on un pneu de voiture de tourisme ?",
+    "a": "2"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "auto_004",
@@ -15190,86 +15147,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qu'est-ce qu'une boîte de vitesses ?",
+    "q": "À quoi sert la boîte de vitesses ? À changer de ___ ?",
     "c": [
-     "Système qui transmet la puissance du moteur aux roues",
-     "Moteur",
-     "Embrayage",
-     "Différentiel"
+     "vitesse",
+     "couleur",
+     "musique",
+     "siège"
     ],
-    "a": 0
+    "a": "vitesse"
    },
    {
-    "q": "Quelle est la différence entre boîte manuelle et automatique ?",
+    "q": "Quelle pédale enfonce-t-on pour changer de vitesse en boîte manuelle ? L'___ ?",
     "c": [
-     "Manuelle nécessite un embrayage, automatique non",
-     "Manuelle est plus rapide",
-     "Automatique consomme plus",
-     "Manuelle est plus moderne"
+     "embrayage",
+     "frein",
+     "accélérateur",
+     "klaxon"
     ],
-    "a": 0
+    "a": "embrayage"
    },
    {
-    "q": "Combien de vitesses a une boîte manuelle standard ?",
+    "q": "Comment appelle-t-on une boîte qui change les vitesses toute seule ? Une boîte ___ ?",
     "c": [
-     "2 ou 3",
-     "7 ou 8",
-     "5 ou 6",
-     "3 ou 4"
+     "automatique",
+     "manuelle",
+     "libre",
+     "double"
     ],
-    "a": 2
+    "a": "automatique"
    },
    {
-    "q": "Qui a inventé la boîte de vitesses synchronisée ?",
+    "q": "Quelle vitesse enclenche-t-on pour reculer ? La marche ___ ?",
     "c": [
-     "Henry Ford",
-     "Ettore Bugatti",
-     "Louis Renault",
-     "Charles Kettering"
+     "arrière",
+     "avant",
+     "lente",
+     "haute"
     ],
-    "a": 3
+    "a": "arrière"
    },
    {
-    "q": "Qu'est-ce qu'une boîte DSG ?",
+    "q": "Avec quel levier change-t-on les vitesses à la main ? Le levier de ___ ?",
     "c": [
-     "Boîte séquentielle",
-     "Boîte à double embrayage",
-     "Boîte CVT",
-     "Boîte automatique"
+     "vitesses",
+     "frein",
+     "phares",
+     "capot"
     ],
-    "a": 1
+    "a": "vitesses"
    },
    {
-    "q": "Qu'est-ce que l'embrayage ?",
+    "q": "Quelles pièces dentées s'engrènent dans une boîte de vitesses ? Les ___ ?",
     "c": [
-     "Pédale",
-     "Volant moteur",
-     "Dispositif qui accouple/désaccouple le moteur de la transmission",
-     "Frein"
+     "pignons",
+     "pistons",
+     "bougies",
+     "durites"
     ],
-    "a": 2
+    "a": "pignons"
    },
    {
-    "q": "Quelle est la fonction du point mort ?",
+    "q": "Quelle position de boîte automatique, marquée P, sert au stationnement ? Le mode ___ ?",
     "c": [
-     "Accélérer",
-     "Aucune transmission de puissance",
-     "Freiner",
-     "Ralentir"
+     "Parking",
+     "Drive",
+     "Neutral",
+     "Reverse"
     ],
-    "a": 1
+    "a": "Parking"
    },
    {
-    "q": "Qu'est-ce qu'une boîte CVT ?",
-    "c": [
-     "Boîte automatique",
-     "Boîte séquentielle",
-     "Transmission à variation continue",
-     "Boîte manuelle"
-    ],
-    "a": 2
+    "q": "Combien de rapports avant, au maximum, comptent souvent les boîtes automatiques modernes haut de gamme ?",
+    "a": "10"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "auto_005",
@@ -15278,86 +15230,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la course de rallye la plus célèbre ?",
+    "q": "Sur quels types de routes se court souvent le rallye, contrairement au circuit ? Des routes ___ ?",
     "c": [
-     "Rallye Monte-Carlo",
-     "Rallye de Suède",
-     "Rallye de Finlande",
-     "Rallye Dakar"
+     "ouvertes",
+     "fermées à vie",
+     "sous-marines",
+     "aériennes"
     ],
-    "a": 0
+    "a": "ouvertes"
    },
    {
-    "q": "Qu'est-ce qu'un rallye automobile ?",
+    "q": "Qui, à côté du pilote, lit les notes et annonce les virages ? Le ___ ?",
     "c": [
-     "Course sur routes fermées avec des spéciales chronométrées",
-     "Course sur circuit",
-     "Course tout-terrain",
-     "Course de côte"
+     "copilote",
+     "mécano",
+     "arbitre",
+     "médecin"
     ],
-    "a": 0
+    "a": "copilote"
    },
    {
-    "q": "Quel pilote français a remporté le championnat du monde des rallyes ?",
+    "q": "Comment appelle-t-on chaque portion chronométrée d'un rallye ? Une ___ spéciale ?",
     "c": [
-     "Tous les trois",
-     "Sébastien Ogier",
-     "Sébastien Loeb",
-     "Didier Auriol"
+     "épreuve",
+     "pause",
+     "sieste",
+     "réunion"
     ],
-    "a": 0
+    "a": "épreuve"
    },
    {
-    "q": "Combien de titres Loeb a-t-il gagnés ?",
+    "q": "Quel célèbre rallye-raid reliait autrefois deux capitales, en Afrique ? Le ___-Dakar ?",
     "c": [
-     "8",
-     "7",
-     "9",
-     "6"
+     "Paris",
+     "Rome",
+     "Berlin",
+     "Madrid"
     ],
-    "a": 2
+    "a": "Paris"
    },
    {
-    "q": "Quel constructeur domine le WRC dans les années 2010-2020 ?",
+    "q": "Sur quelle surface glissante de terre se court souvent le rallye ? La ___ ?",
     "c": [
-     "Hyundai",
-     "Toyota",
-     "Citroën",
-     "Ford"
+     "terre",
+     "glace",
+     "eau",
+     "sable seul"
     ],
-    "a": 0
+    "a": "terre"
    },
    {
-    "q": "Comment s'appelle le copilote en rallye ?",
+    "q": "Quel pilote français, nonuple champion du monde des rallyes, est une légende ? Sébastien ___ ?",
     "c": [
-     "Copilote",
-     "Navigateur",
-     "Guide",
-     "Coéquipier"
+     "Loeb",
+     "Ogier",
+     "Vettel",
+     "Alonso"
     ],
-    "a": 1
+    "a": "Loeb"
    },
    {
-    "q": "Qu'est-ce qu'un 'spéciale' en rallye ?",
+    "q": "Comment appelle-t-on le championnat du monde des rallyes (sigle anglais) ? Le ___ ?",
     "c": [
-     "Parc d'assistance",
-     "Essai",
-     "Section chronométrée sur route fermée",
-     "Étape de liaison"
+     "WRC",
+     "F1",
+     "WEC",
+     "NBA"
     ],
-    "a": 2
+    "a": "WRC"
    },
    {
-    "q": "Quelle voiture emblématique a dominé le rallye dans les années 1980 ?",
-    "c": [
-     "Audi Quattro",
-     "Lancia Delta Integrale",
-     "Peugeot 205 T16",
-     "Toyota Celica"
-    ],
-    "a": 1
+    "q": "Combien de titres de champion du monde des rallyes Sébastien Loeb a-t-il remportés d'affilée ?",
+    "a": "9"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "auto_006",
@@ -15366,86 +15313,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qu'est-ce qu'un dragster ?",
+    "q": "Sur quelle distance très courte et en ligne droite courent les dragsters ? Une ligne ___ ?",
     "c": [
-     "Voiture de circuit",
-     "Voiture de drift",
-     "Voiture de course ultra-rapide sur 1/4 de mile",
-     "Voiture de rallye"
+     "droite",
+     "courbe",
+     "ronde",
+     "brisée"
     ],
-    "a": 2
+    "a": "droite"
    },
    {
-    "q": "Quelle distance parcourt un dragster ?",
+    "q": "Que recherche avant tout un dragster ? L'___ maximale ?",
     "c": [
-     "100 mètres",
-     "200 mètres",
-     "402 mètres (1/4 mile)",
-     "1 km"
+     "accélération",
+     "endurance",
+     "économie",
+     "confort"
     ],
-    "a": 2
+    "a": "accélération"
    },
    {
-    "q": "Quelle vitesse atteint un dragster Top Fuel ?",
+    "q": "Quelle distance classique, en mètres (quart de mile), fait une course de dragster ?",
     "c": [
-     "Plus de 600 km/h",
-     "Plus de 500 km/h",
-     "Plus de 300 km/h",
-     "Plus de 400 km/h"
+     "402",
+     "1000",
+     "100",
+     "50"
     ],
-    "a": 1
+    "a": "402"
    },
    {
-    "q": "En combien de temps un dragster fait le 1/4 mile ?",
+    "q": "Que déploient les dragsters à l'arrivée pour freiner ? Un ___ ?",
     "c": [
-     "Moins de 10 secondes",
-     "Moins de 4 secondes",
-     "Moins de 6 secondes",
-     "Moins de 8 secondes"
+     "parachute",
+     "ancre",
+     "filet",
+     "mur"
     ],
-    "a": 1
+    "a": "parachute"
    },
    {
-    "q": "Quel type de carburant utilise un dragster ?",
+    "q": "Quels énormes pneus arrière équipent les dragsters ? Des pneus ___ (slicks) ?",
     "c": [
-     "Essence",
-     "Méthanol",
-     "Nitrométhane",
-     "Gaz"
+     "lisses",
+     "cloutés",
+     "fins",
+     "carrés"
     ],
-    "a": 2
+    "a": "lisses"
    },
    {
-    "q": "Qu'est-ce que le 'Christmas Tree' en dragster ?",
+    "q": "Que font les pilotes avant le départ pour chauffer les pneus ? Un burn___ ?",
     "c": [
-     "Feu de signalisation de départ",
-     "Drapeau",
-     "Arbre de Noël",
-     "Chronomètre"
+     "out",
+     "in",
+     "up",
+     "off"
     ],
-    "a": 0
+    "a": "out"
    },
    {
-    "q": "Quel pays organise les plus grandes compétitions de dragster ?",
+    "q": "De quel pays la culture des courses de dragsters est-elle originaire ? Les ___-Unis ?",
     "c": [
-     "États-Unis",
-     "Royaume-Uni",
-     "Canada",
-     "Australie"
+     "États",
+     "Émirats",
+     "Pays",
+     "Provinces"
     ],
-    "a": 0
+    "a": "États"
    },
    {
-    "q": "Qu'est-ce qu'un wheelie en dragster ?",
-    "c": [
-     "La roue avant se lève",
-     "La voiture vibre",
-     "La voiture dérape",
-     "Le moteur cale"
-    ],
-    "a": 0
+    "q": "En combien de secondes, environ, un Top Fuel dragster couvre-t-il les 402 m ?",
+    "a": "4"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "auto_007",
@@ -15454,86 +15396,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui a inventé la première moto ?",
-    "c": [
-     "Henry Ford",
-     "Carl Benz",
-     "Wilhelm Maybach",
-     "Gottlieb Daimler"
-    ],
-    "a": 3
+    "q": "Combien de roues a une moto classique ?",
+    "a": "2"
    },
    {
-    "q": "En quelle année la première moto a-t-elle été fabriquée ?",
+    "q": "Que porte obligatoirement un motard sur la tête pour sa sécurité ? Un ___ ?",
     "c": [
-     "1880",
-     "1900",
-     "1890",
-     "1885"
+     "casque",
+     "chapeau",
+     "béret",
+     "bonnet"
     ],
-    "a": 3
+    "a": "casque"
    },
    {
-    "q": "Quelle est la cylindrée minimale pour passer le permis A2 ?",
+    "q": "Avec quelle poignée droite accélère-t-on sur une moto ? La poignée d'___ ?",
     "c": [
-     "600 cm³",
-     "500 cm³",
-     "395 cm³",
-     "250 cm³"
+     "accélérateur",
+     "frein",
+     "embrayage",
+     "klaxon"
     ],
-    "a": 2
+    "a": "accélérateur"
    },
    {
-    "q": "Quel constructeur japonais domine le marché mondial de la moto ?",
+    "q": "Quelle grande marque américaine de grosses motos est mythique ? Harley-___ ?",
     "c": [
-     "Suzuki",
+     "Davidson",
+     "Johnson",
+     "Wilson",
+     "Anderson"
+    ],
+    "a": "Davidson"
+   },
+   {
+    "q": "Quelle discipline se court sur terre avec sauts et bosses ? Le moto___ ?",
+    "c": [
+     "cross",
+     "gp",
+     "ball",
+     "trial"
+    ],
+    "a": "cross"
+   },
+   {
+    "q": "Quel championnat est la « Formule 1 » de la moto de vitesse ? Le ___ ?",
+    "c": [
+     "MotoGP",
+     "WRC",
+     "F1",
+     "NBA"
+    ],
+    "a": "MotoGP"
+   },
+   {
+    "q": "Quelle marque japonaise fabrique motos, ainsi que des instruments de musique ?",
+    "c": [
      "Yamaha",
      "Honda",
+     "Suzuki",
      "Kawasaki"
     ],
-    "a": 2
+    "a": "Yamaha"
    },
    {
-    "q": "Qu'est-ce qu'un motard ?",
-    "c": [
-     "Moniteur",
-     "Personne qui conduit une moto",
-     "Passager",
-     "Pilote"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quelle est la vitesse maximale d'une moto de sport ?",
-    "c": [
-     "Plus de 300 km/h",
-     "Plus de 250 km/h",
-     "Plus de 350 km/h",
-     "Plus de 200 km/h"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Qu'est-ce qu'un guidon de moto ?",
-    "c": [
-     "Poignée",
-     "Rétroviseur",
-     "Selle",
-     "Pièce qui permet de diriger la moto"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel pilote français est champion du monde MotoGP ?",
-    "c": [
-     "Randy de Puniet",
-     "Johann Zarco",
-     "Olivier Jacque",
-     "Fabio Quartararo"
-    ],
-    "a": 3
+    "q": "Quelle cylindrée, en cm³, ont les motos de la catégorie reine MotoGP actuelle ?",
+    "a": "1000"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "auto_008",
@@ -15542,86 +15473,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Que signifie le tuning automobile ?",
+    "q": "Que cherche-t-on à faire à une voiture par le tuning ? La ___ ?",
     "c": [
-     "Conduite sportive",
-     "Personnalisation et modification des véhicules",
-     "Réparation",
-     "Nettoyage"
+     "personnaliser",
+     "détruire",
+     "vendre",
+     "cacher"
     ],
-    "a": 1
+    "a": "personnaliser"
    },
    {
-    "q": "Qu'est-ce qu'un kit carrosserie ?",
+    "q": "Quel dispositif lumineux coloré met-on souvent sous la caisse en tuning ? Des ___ (néons) ?",
     "c": [
-     "Kit de peinture",
-     "Kit de réparation",
-     "Kit d'outils",
-     "Ensemble de pièces esthétiques pour modifier l'apparence"
+     "néons",
+     "bougies",
+     "torches",
+     "lasers"
     ],
-    "a": 3
+    "a": "néons"
    },
    {
-    "q": "Qu'est-ce qu'un spoiler sur une voiture ?",
+    "q": "Quel aileron arrière ajoute-t-on souvent en tuning ? Un ___ ?",
     "c": [
-     "Feu",
-     "Aileron qui améliore l'appui aérodynamique",
-     "Rétroviseur",
-     "Pare-chocs"
+     "becquet",
+     "coffre",
+     "toit",
+     "capot"
     ],
-    "a": 1
+    "a": "becquet"
    },
    {
-    "q": "Quelle modification est souvent recherchée en tuning ?",
+    "q": "Quel gros système audio les passionnés de tuning installent-ils ? Un ___ puissant ?",
     "c": [
-     "Autoradio",
-     "Peinture",
-     "Jantes, suspension, échappement",
-     "Sièges"
+     "caisson",
+     "aquarium",
+     "moteur",
+     "radiateur"
     ],
-    "a": 2
+    "a": "caisson"
    },
    {
-    "q": "Qu'est-ce qu'un 'lowrider' ?",
+    "q": "Quelle saga de films au monde du tuning et des courses illégales est culte ? Fast and ___ ?",
     "c": [
-     "Voiture rapide",
-     "Voiture ancienne",
-     "Voiture avec suspension abaissée",
-     "Voiture surélevée"
+     "Furious",
+     "Fast",
+     "Speed",
+     "Race"
     ],
-    "a": 2
+    "a": "Furious"
    },
    {
-    "q": "Qu'est-ce qu'un néon sous une voiture ?",
+    "q": "Comment appelle-t-on le fait de rendre le moteur plus puissant électroniquement ? La ___ ?",
     "c": [
-     "Phare",
-     "Éclairage décoratif sous le châssis",
-     "Clignotant",
-     "Feu de détresse"
+     "reprogrammation",
+     "vidange",
+     "révision",
+     "carrosserie"
     ],
-    "a": 1
+    "a": "reprogrammation"
    },
    {
-    "q": "Quel film a popularisé le tuning dans les années 2000 ?",
+    "q": "Quels films et culture ont popularisé le tuning japonais des années 2000 ? Le style ___ (japonais) ?",
     "c": [
-     "Taxi",
-     "2 Fast 2 Furious",
-     "Fast and Furious",
-     "Need for Speed"
+     "JDM",
+     "USA",
+     "GTI",
+     "V8"
     ],
-    "a": 2
+    "a": "JDM"
    },
    {
-    "q": "Qu'est-ce qu'une jante en tuning ?",
-    "c": [
-     "Enjoliveur",
-     "Moyeu",
-     "Pneu",
-     "Roue modifiée pour l'esthétique et les performances"
-    ],
-    "a": 3
+    "q": "Combien de watts, environ, peut atteindre un très gros système son de tuning de compétition ?",
+    "a": "10000"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "auto_009",
