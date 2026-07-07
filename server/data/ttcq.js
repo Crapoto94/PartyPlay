@@ -12,12 +12,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de la France ?",
-    "a": "Paris"
+    "q": "La France, c'est : un pays, un fromage, une planète ou un logiciel ?",
+    "c": [
+     "un pays",
+     "un fromage",
+     "une planète",
+     "un logiciel"
+    ],
+    "a": "un pays"
    },
    {
-    "q": "Quel fleuve traverse Paris ?",
-    "a": "Seine"
+    "q": "La France se situe : en Europe, sur la Lune, dans un aquarium ou dans un four ?",
+    "c": [
+     "en Europe",
+     "sur la Lune",
+     "dans un aquarium",
+     "dans un four"
+    ],
+    "a": "en Europe"
    },
    {
     "q": "Quel monument parisien de fer, haut de 330 m, fut inauguré en 1889 ?",
@@ -59,18 +71,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale des États-Unis ?",
+    "q": "Les États-Unis, c'est : un pays, un plat, une étoile ou un jeu vidéo ?",
     "c": [
-     "Washington",
-     "New York",
-     "Boston",
-     "Los Angeles"
+     "un pays",
+     "un plat",
+     "une étoile",
+     "un jeu vidéo"
     ],
-    "a": "Washington"
+    "a": "un pays"
    },
    {
-    "q": "Comment se nomme la statue offerte par la France, à New York ? La statue de la ___ ?",
-    "a": "Liberte"
+    "q": "Les États-Unis se situe : en Amérique du Nord, sur la Lune, dans un aquarium ou dans un four ?",
+    "c": [
+     "en Amérique du Nord",
+     "sur la Lune",
+     "dans un aquarium",
+     "dans un four"
+    ],
+    "a": "en Amérique du Nord"
    },
    {
     "q": "Combien d'étoiles compte le drapeau américain ?",
@@ -118,12 +136,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de l'Allemagne ?",
-    "a": "Berlin"
+    "q": "L'Allemagne, c'est : un pays, une danse, une couleur ou un fruit ?",
+    "c": [
+     "un pays",
+     "une danse",
+     "une couleur",
+     "un fruit"
+    ],
+    "a": "un pays"
    },
    {
-    "q": "En quelle année le mur de Berlin est-il tombé ?",
-    "a": "1989"
+    "q": "L'Allemagne se situe : en Europe, sur la Lune, dans un aquarium ou dans un four ?",
+    "c": [
+     "en Europe",
+     "sur la Lune",
+     "dans un aquarium",
+     "dans un four"
+    ],
+    "a": "en Europe"
    },
    {
     "q": "Quelle boisson à base d'orge et de houblon est emblématique d'Allemagne ?",
@@ -171,12 +201,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de l'Espagne ?",
-    "a": "Madrid"
+    "q": "L'Espagne, c'est : un pays, un dessert, un animal ou une chanson ?",
+    "c": [
+     "un pays",
+     "un dessert",
+     "un animal",
+     "une chanson"
+    ],
+    "a": "un pays"
    },
    {
-    "q": "Quelle danse espagnole se rythme aux castagnettes ?",
-    "a": "Flamenco"
+    "q": "L'Espagne se situe : en Europe, sur la Lune, dans un aquarium ou dans un four ?",
+    "c": [
+     "en Europe",
+     "sur la Lune",
+     "dans un aquarium",
+     "dans un four"
+    ],
+    "a": "en Europe"
    },
    {
     "q": "Quel architecte a conçu la Sagrada Família à Barcelone ?",
@@ -212,12 +254,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de la Chine ?",
-    "a": "Pekin"
+    "q": "La Chine, c'est : un pays, un tissu, une comète ou un outil ?",
+    "c": [
+     "un pays",
+     "un tissu",
+     "une comète",
+     "un outil"
+    ],
+    "a": "un pays"
    },
    {
-    "q": "Quel long ouvrage défensif chinois est visible depuis l'espace, dit la légende ?",
-    "a": "Muraille"
+    "q": "La Chine se situe : en Asie, sur la Lune, dans un aquarium ou dans un four ?",
+    "c": [
+     "en Asie",
+     "sur la Lune",
+     "dans un aquarium",
+     "dans un four"
+    ],
+    "a": "en Asie"
    },
    {
     "q": "Quel animal noir et blanc est l'emblème de la Chine ?",
@@ -265,18 +319,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale du Brésil ?",
-    "a": "Brasilia"
+    "q": "Le Brésil, c'est : un pays, un fromage, une planète ou un meuble ?",
+    "c": [
+     "un pays",
+     "un fromage",
+     "une planète",
+     "un meuble"
+    ],
+    "a": "un pays"
    },
    {
-    "q": "Quelle est la langue officielle du Brésil ?",
+    "q": "Le Brésil se situe : en Amérique du Sud, sur la Lune, dans un aquarium ou dans un four ?",
     "c": [
-     "Portugais",
-     "Espagnol",
-     "Brésilien",
-     "Latin"
+     "en Amérique du Sud",
+     "sur la Lune",
+     "dans un aquarium",
+     "dans un four"
     ],
-    "a": "Portugais"
+    "a": "en Amérique du Sud"
    },
    {
     "q": "Comment surnomme-t-on la statue du Christ qui domine Rio ? Le Christ ___ ?",
@@ -318,18 +378,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de l'Inde ?",
-    "a": "Delhi"
+    "q": "L'Inde, c'est : un pays, une épice seule, une voiture ou un sport ?",
+    "c": [
+     "un pays",
+     "une épice seule",
+     "une voiture",
+     "un sport"
+    ],
+    "a": "un pays"
    },
    {
-    "q": "Quel mausolée de marbre blanc se dresse à Agra ?",
+    "q": "L'Inde se situe : en Asie, sur la Lune, dans un aquarium ou dans un four ?",
     "c": [
-     "Taj Mahal",
-     "Fort Rouge",
-     "Temple d'Or",
-     "Qutub Minar"
+     "en Asie",
+     "sur la Lune",
+     "dans un aquarium",
+     "dans un four"
     ],
-    "a": "Taj Mahal"
+    "a": "en Asie"
    },
    {
     "q": "Quelle est la religion majoritaire en Inde ?",
@@ -371,18 +437,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de la Russie ?",
-    "a": "Moscou"
+    "q": "La Russie, c'est : un pays, une boisson, un métal ou un film ?",
+    "c": [
+     "un pays",
+     "une boisson",
+     "un métal",
+     "un film"
+    ],
+    "a": "un pays"
    },
    {
-    "q": "Quelle cathédrale aux bulbes colorés orne la Place Rouge ?",
+    "q": "La Russie se situe : en Europe, sur la Lune, dans un aquarium ou dans un four ?",
     "c": [
-     "Saint-Basile",
-     "Kazan",
-     "Christ-Sauveur",
-     "Sainte-Sophie"
+     "en Europe",
+     "sur la Lune",
+     "dans un aquarium",
+     "dans un four"
     ],
-    "a": "Saint-Basile"
+    "a": "en Europe"
    },
    {
     "q": "Quel est le fleuve le plus long d'Europe, en Russie ?",
@@ -424,18 +496,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale du Canada ?",
+    "q": "Le Canada, c'est : un pays, un gâteau, une lune ou un magasin ?",
     "c": [
-     "Ottawa",
-     "Toronto",
-     "Montréal",
-     "Vancouver"
+     "un pays",
+     "un gâteau",
+     "une lune",
+     "un magasin"
     ],
-    "a": "Ottawa"
+    "a": "un pays"
    },
    {
-    "q": "Quelle feuille orne le drapeau du Canada ?",
-    "a": "Erable"
+    "q": "Le Canada se situe : en Amérique du Nord, sur la Lune, dans un aquarium ou dans un four ?",
+    "c": [
+     "en Amérique du Nord",
+     "sur la Lune",
+     "dans un aquarium",
+     "dans un four"
+    ],
+    "a": "en Amérique du Nord"
    },
    {
     "q": "Combien de langues officielles compte le Canada ?",
@@ -471,24 +549,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de l'Australie (ce n'est pas Sydney) ?",
+    "q": "L'Australie, c'est : un pays, une salade, un satellite ou une appli ?",
     "c": [
-     "Canberra",
-     "Sydney",
-     "Melbourne",
-     "Perth"
+     "un pays",
+     "une salade",
+     "un satellite",
+     "une appli"
     ],
-    "a": "Canberra"
+    "a": "un pays"
    },
    {
-    "q": "Quel marsupial sauteur est l'emblème de l'Australie ?",
+    "q": "L'Australie se situe : en Océanie, sur la Lune, dans un aquarium ou dans un four ?",
     "c": [
-     "Kangourou",
-     "Koala",
-     "Wombat",
-     "Émeu"
+     "en Océanie",
+     "sur la Lune",
+     "dans un aquarium",
+     "dans un four"
     ],
-    "a": "Kangourou"
+    "a": "en Océanie"
    },
    {
     "q": "Quel immense récif corallien longe la côte nord-est australienne ? La Grande ___ de corail ?",
@@ -524,18 +602,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale du Mexique ?",
+    "q": "Le Mexique, c'est : un pays, une sauce, une étoile ou un jeu ?",
     "c": [
-     "Mexico",
-     "Cancún",
-     "Guadalajara",
-     "Tijuana"
+     "un pays",
+     "une sauce",
+     "une étoile",
+     "un jeu"
     ],
-    "a": "Mexico"
+    "a": "un pays"
    },
    {
-    "q": "Quelle galette de maïs sert de base aux tacos ?",
-    "a": "Tortilla"
+    "q": "Le Mexique se situe : en Amérique du Nord, sur la Lune, dans un aquarium ou dans un four ?",
+    "c": [
+     "en Amérique du Nord",
+     "sur la Lune",
+     "dans un aquarium",
+     "dans un four"
+    ],
+    "a": "en Amérique du Nord"
    },
    {
     "q": "Quel alcool mexicain est distillé à partir de l'agave ?",
@@ -589,12 +673,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de l'Égypte ?",
-    "a": "Le Caire"
+    "q": "L'Égypte, c'est : un pays, un légume, une comète ou une marque ?",
+    "c": [
+     "un pays",
+     "un légume",
+     "une comète",
+     "une marque"
+    ],
+    "a": "un pays"
    },
    {
-    "q": "Quel long fleuve traverse l'Égypte du sud au nord ?",
-    "a": "Nil"
+    "q": "L'Égypte se situe : en Afrique, sur la Lune, dans un aquarium ou dans un four ?",
+    "c": [
+     "en Afrique",
+     "sur la Lune",
+     "dans un aquarium",
+     "dans un four"
+    ],
+    "a": "en Afrique"
    },
    {
     "q": "Comment nomme-t-on les tombeaux géants en pierre des pharaons ?",
@@ -648,18 +744,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de la Grèce ?",
-    "a": "Athenes"
+    "q": "La Grèce, c'est : un pays, une graisse, un poisson ou une danse ?",
+    "c": [
+     "un pays",
+     "une graisse",
+     "un poisson",
+     "une danse"
+    ],
+    "a": "un pays"
    },
    {
-    "q": "Quel temple antique domine l'Acropole d'Athènes ?",
+    "q": "La Grèce se situe : en Europe, sur la Lune, dans un aquarium ou dans un four ?",
     "c": [
-     "Parthénon",
-     "Panthéon",
-     "Colisée",
-     "Érechthéion"
+     "en Europe",
+     "sur la Lune",
+     "dans un aquarium",
+     "dans un four"
     ],
-    "a": "Parthénon"
+    "a": "en Europe"
    },
    {
     "q": "Sur quel mont vivaient les dieux de la mythologie grecque ?",
@@ -701,24 +803,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la plus grande ville de Turquie, à cheval sur deux continents ?",
+    "q": "La Turquie, c'est : un pays, un oiseau seulement, une planète ou un outil ?",
     "c": [
-     "Istanbul",
-     "Ankara",
-     "Izmir",
-     "Antalya"
+     "un pays",
+     "un oiseau seulement",
+     "une planète",
+     "un outil"
     ],
-    "a": "Istanbul"
+    "a": "un pays"
    },
    {
-    "q": "Quelle est la capitale officielle de la Turquie (pas Istanbul) ?",
+    "q": "La Turquie se situe : en Asie, sur la Lune, dans un aquarium ou dans un four ?",
     "c": [
-     "Ankara",
-     "Istanbul",
-     "Bursa",
-     "Konya"
+     "en Asie",
+     "sur la Lune",
+     "dans un aquarium",
+     "dans un four"
     ],
-    "a": "Ankara"
+    "a": "en Asie"
    },
    {
     "q": "Quel détroit sépare la partie européenne de la partie asiatique d'Istanbul ?",
@@ -772,18 +874,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de la Suisse ?",
+    "q": "La Suisse, c'est : un pays, un biscuit, une lune ou un logiciel ?",
     "c": [
-     "Berne",
-     "Genève",
-     "Zurich",
-     "Bâle"
+     "un pays",
+     "un biscuit",
+     "une lune",
+     "un logiciel"
     ],
-    "a": "Berne"
+    "a": "un pays"
    },
    {
-    "q": "Quelle spécialité suisse consiste à tremper du pain dans du fromage fondu ?",
-    "a": "Fondue"
+    "q": "La Suisse se situe : en Europe, sur la Lune, dans un aquarium ou dans un four ?",
+    "c": [
+     "en Europe",
+     "sur la Lune",
+     "dans un aquarium",
+     "dans un four"
+    ],
+    "a": "en Europe"
    },
    {
     "q": "Combien la Suisse compte-t-elle de cantons ?",
@@ -837,18 +945,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de la Belgique ?",
+    "q": "La Belgique, c'est : un pays, une frite géante, une étoile ou une danse ?",
     "c": [
-     "Bruxelles",
-     "Anvers",
-     "Liège",
-     "Gand"
+     "un pays",
+     "une frite géante",
+     "une étoile",
+     "une danse"
     ],
-    "a": "Bruxelles"
+    "a": "un pays"
    },
    {
-    "q": "Quelle petite statue de garçon qui urine est l'emblème de Bruxelles ? Le ___ Pis ?",
-    "a": "Manneken"
+    "q": "La Belgique se situe : en Europe, sur la Lune, dans un aquarium ou dans un four ?",
+    "c": [
+     "en Europe",
+     "sur la Lune",
+     "dans un aquarium",
+     "dans un four"
+    ],
+    "a": "en Europe"
    },
    {
     "q": "Quel aliment belge frit accompagne moules et mayonnaise ?",
@@ -896,18 +1010,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale des Pays-Bas ?",
+    "q": "Les Pays-Bas, c'est : un pays, un fromage seul, une galaxie ou un meuble ?",
     "c": [
-     "Amsterdam",
-     "Rotterdam",
-     "La Haye",
-     "Utrecht"
+     "un pays",
+     "un fromage seul",
+     "une galaxie",
+     "un meuble"
     ],
-    "a": "Amsterdam"
+    "a": "un pays"
    },
    {
-    "q": "Quelle fleur colorée est le symbole des Pays-Bas ?",
-    "a": "Tulipe"
+    "q": "Les Pays-Bas se situe : en Europe, sur la Lune, dans un aquarium ou dans un four ?",
+    "c": [
+     "en Europe",
+     "sur la Lune",
+     "dans un aquarium",
+     "dans un four"
+    ],
+    "a": "en Europe"
    },
    {
     "q": "Quel bâtiment traditionnel néerlandais à ailes servait à moudre le grain ?",
@@ -961,18 +1081,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de la Suède ?",
+    "q": "La Suède, c'est : un pays, une boulette, un astre ou une appli ?",
     "c": [
-     "Stockholm",
-     "Göteborg",
-     "Malmö",
-     "Uppsala"
+     "un pays",
+     "une boulette",
+     "un astre",
+     "une appli"
     ],
-    "a": "Stockholm"
+    "a": "un pays"
    },
    {
-    "q": "Quelle enseigne suédoise de meubles en kit est mondialement connue ?",
-    "a": "Ikea"
+    "q": "La Suède se situe : en Europe, sur la Lune, dans un aquarium ou dans un four ?",
+    "c": [
+     "en Europe",
+     "sur la Lune",
+     "dans un aquarium",
+     "dans un four"
+    ],
+    "a": "en Europe"
    },
    {
     "q": "Quel prix mondial, remis à Stockholm, récompense la paix et les sciences ?",
@@ -1020,18 +1146,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de la Norvège ?",
+    "q": "La Norvège, c'est : un pays, un poisson, une planète ou un jeu ?",
     "c": [
-     "Oslo",
-     "Bergen",
-     "Trondheim",
-     "Stavanger"
+     "un pays",
+     "un poisson",
+     "une planète",
+     "un jeu"
     ],
-    "a": "Oslo"
+    "a": "un pays"
    },
    {
-    "q": "Quels profonds bras de mer entre montagnes découpent la côte norvégienne ?",
-    "a": "Fjords"
+    "q": "La Norvège se situe : en Europe, sur la Lune, dans un aquarium ou dans un four ?",
+    "c": [
+     "en Europe",
+     "sur la Lune",
+     "dans un aquarium",
+     "dans un four"
+    ],
+    "a": "en Europe"
    },
    {
     "q": "Quel phénomène lumineux du ciel nocturne peut s'observer en Norvège ? L'aurore ___ ?",
@@ -1085,18 +1217,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale du Portugal ?",
+    "q": "Le Portugal, c'est : un pays, une tarte, une lune ou un outil ?",
     "c": [
-     "Lisbonne",
-     "Porto",
-     "Braga",
-     "Faro"
+     "un pays",
+     "une tarte",
+     "une lune",
+     "un outil"
     ],
-    "a": "Lisbonne"
+    "a": "un pays"
    },
    {
-    "q": "Quel chant traditionnel portugais mélancolique est classé à l'UNESCO ?",
-    "a": "Fado"
+    "q": "Le Portugal se situe : en Europe, sur la Lune, dans un aquarium ou dans un four ?",
+    "c": [
+     "en Europe",
+     "sur la Lune",
+     "dans un aquarium",
+     "dans un four"
+    ],
+    "a": "en Europe"
    },
    {
     "q": "Quelle petite tarte à la crème est la pâtisserie phare de Lisbonne ? Pastel de ___ ?",
@@ -1150,18 +1288,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de l'Argentine ?",
+    "q": "L'Argentine, c'est : un pays, une danse seule, un métal ou un fruit ?",
     "c": [
-     "Buenos Aires",
-     "Córdoba",
-     "Rosario",
-     "Mendoza"
+     "un pays",
+     "une danse seule",
+     "un métal",
+     "un fruit"
     ],
-    "a": "Buenos Aires"
+    "a": "un pays"
    },
    {
-    "q": "Quelle danse sensuelle est née dans les faubourgs de Buenos Aires ?",
-    "a": "Tango"
+    "q": "L'Argentine se situe : en Amérique du Sud, sur la Lune, dans un aquarium ou dans un four ?",
+    "c": [
+     "en Amérique du Sud",
+     "sur la Lune",
+     "dans un aquarium",
+     "dans un four"
+    ],
+    "a": "en Amérique du Sud"
    },
    {
     "q": "Quel footballeur argentin, champion du monde 2022, joue avec le numéro 10 ?",
@@ -1215,18 +1359,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de la Corée du Sud ?",
+    "q": "La Corée du Sud, c'est : un pays, un plat épicé, une comète ou un logiciel ?",
     "c": [
-     "Séoul",
-     "Busan",
-     "Incheon",
-     "Daegu"
+     "un pays",
+     "un plat épicé",
+     "une comète",
+     "un logiciel"
     ],
-    "a": "Séoul"
+    "a": "un pays"
    },
    {
-    "q": "Quel genre musical coréen a explosé avec le tube Gangnam Style ?",
-    "a": "Kpop"
+    "q": "La Corée du Sud se situe : en Asie, sur la Lune, dans un aquarium ou dans un four ?",
+    "c": [
+     "en Asie",
+     "sur la Lune",
+     "dans un aquarium",
+     "dans un four"
+    ],
+    "a": "en Asie"
    },
    {
     "q": "Quel plat coréen de chou fermenté et pimenté accompagne chaque repas ?",
@@ -1286,24 +1436,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle ville sud-africaine, au bord de l'océan, est dominée par la montagne de la Table ?",
+    "q": "L'Afrique du Sud, c'est : un pays, un fruit, une étoile ou une chanson ?",
     "c": [
-     "Le Cap",
-     "Johannesburg",
-     "Durban",
-     "Pretoria"
+     "un pays",
+     "un fruit",
+     "une étoile",
+     "une chanson"
     ],
-    "a": "Le Cap"
+    "a": "un pays"
    },
    {
-    "q": "Quel militant a mis fin à l'apartheid et est devenu président en 1994 ?",
+    "q": "L'Afrique du Sud se situe : en Afrique, sur la Lune, dans un aquarium ou dans un four ?",
     "c": [
-     "Mandela",
-     "Tutu",
-     "Biko",
-     "Sisulu"
+     "en Afrique",
+     "sur la Lune",
+     "dans un aquarium",
+     "dans un four"
     ],
-    "a": "Mandela"
+    "a": "en Afrique"
    },
    {
     "q": "Comment nomme-t-on le régime de ségrégation raciale aboli en Afrique du Sud ?",
@@ -1351,18 +1501,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale du Maroc ?",
+    "q": "Le Maroc, c'est : un pays, un tajine, une planète ou un meuble ?",
     "c": [
-     "Rabat",
-     "Casablanca",
-     "Marrakech",
-     "Fès"
+     "un pays",
+     "un tajine",
+     "une planète",
+     "un meuble"
     ],
-    "a": "Rabat"
+    "a": "un pays"
    },
    {
-    "q": "Quel plat marocain mijoté tient son nom de son plat en terre à couvercle conique ?",
-    "a": "Tajine"
+    "q": "Le Maroc se situe : en Afrique, sur la Lune, dans un aquarium ou dans un four ?",
+    "c": [
+     "en Afrique",
+     "sur la Lune",
+     "dans un aquarium",
+     "dans un four"
+    ],
+    "a": "en Afrique"
    },
    {
     "q": "Quelle semoule de blé roulée est la base d'un plat national marocain ?",
@@ -1410,18 +1566,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de la Thaïlande ?",
+    "q": "La Thaïlande, c'est : un pays, une soupe, un satellite ou une appli ?",
     "c": [
-     "Bangkok",
-     "Phuket",
-     "Chiang Mai",
-     "Pattaya"
+     "un pays",
+     "une soupe",
+     "un satellite",
+     "une appli"
     ],
-    "a": "Bangkok"
+    "a": "un pays"
    },
    {
-    "q": "Quelle soupe thaï épicée aux crevettes et à la citronnelle est célèbre ? Tom ___ ?",
-    "a": "Yum"
+    "q": "La Thaïlande se situe : en Asie, sur la Lune, dans un aquarium ou dans un four ?",
+    "c": [
+     "en Asie",
+     "sur la Lune",
+     "dans un aquarium",
+     "dans un four"
+    ],
+    "a": "en Asie"
    },
    {
     "q": "Quel plat thaï de nouilles de riz sautées est un incontournable ? Pad ___ ?",
@@ -1475,24 +1637,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de la Nouvelle-Zélande ?",
+    "q": "La Nouvelle-Zélande, c'est : un pays, un fruit vert, une lune ou un jeu ?",
     "c": [
-     "Wellington",
-     "Auckland",
-     "Christchurch",
-     "Hamilton"
+     "un pays",
+     "un fruit vert",
+     "une lune",
+     "un jeu"
     ],
-    "a": "Wellington"
+    "a": "un pays"
    },
    {
-    "q": "Quel peuple autochtone polynésien vivait en Nouvelle-Zélande avant les Européens ?",
+    "q": "La Nouvelle-Zélande se situe : en Océanie, sur la Lune, dans un aquarium ou dans un four ?",
     "c": [
-     "Maoris",
-     "Aborigènes",
-     "Inuits",
-     "Aztèques"
+     "en Océanie",
+     "sur la Lune",
+     "dans un aquarium",
+     "dans un four"
     ],
-    "a": "Maoris"
+    "a": "en Océanie"
    },
    {
     "q": "Quel petit oiseau nocturne sans ailes est l'emblème du pays et surnom des habitants ?",
@@ -1540,18 +1702,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale du Chili ?",
+    "q": "Le Chili, c'est : un pays, un piment seul, une comète ou un outil ?",
     "c": [
-     "Santiago",
-     "Valparaíso",
-     "Concepción",
-     "Antofagasta"
+     "un pays",
+     "un piment seul",
+     "une comète",
+     "un outil"
     ],
-    "a": "Santiago"
+    "a": "un pays"
    },
    {
-    "q": "Quelle très longue chaîne de montagnes borde le Chili à l'est ?",
-    "a": "Andes"
+    "q": "Le Chili se situe : en Amérique du Sud, sur la Lune, dans un aquarium ou dans un four ?",
+    "c": [
+     "en Amérique du Sud",
+     "sur la Lune",
+     "dans un aquarium",
+     "dans un four"
+    ],
+    "a": "en Amérique du Sud"
    },
    {
     "q": "Quel désert du nord du Chili est le plus aride du monde ?",
@@ -1617,18 +1785,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale du Danemark ?",
+    "q": "Le Danemark, c'est : un pays, une viennoiserie, une étoile ou une danse ?",
     "c": [
-     "Copenhague",
-     "Aarhus",
-     "Odense",
-     "Aalborg"
+     "un pays",
+     "une viennoiserie",
+     "une étoile",
+     "une danse"
     ],
-    "a": "Copenhague"
+    "a": "un pays"
    },
    {
-    "q": "Quelle statue de bronze inspirée d'un conte accueille les bateaux à Copenhague ? La petite ___ ?",
-    "a": "Sirene"
+    "q": "Le Danemark se situe : en Europe, sur la Lune, dans un aquarium ou dans un four ?",
+    "c": [
+     "en Europe",
+     "sur la Lune",
+     "dans un aquarium",
+     "dans un four"
+    ],
+    "a": "en Europe"
    },
    {
     "q": "Quel écrivain danois est l'auteur de La Petite Sirène et du Vilain Petit Canard ?",
@@ -1688,18 +1862,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de la Finlande ?",
+    "q": "La Finlande, c'est : un pays, un sauna seul, une planète ou un logiciel ?",
     "c": [
-     "Helsinki",
-     "Tampere",
-     "Turku",
-     "Oulu"
+     "un pays",
+     "un sauna seul",
+     "une planète",
+     "un logiciel"
     ],
-    "a": "Helsinki"
+    "a": "un pays"
    },
    {
-    "q": "Quel bain de chaleur sec, invention finlandaise, est pratiqué dans tout le pays ?",
-    "a": "Sauna"
+    "q": "La Finlande se situe : en Europe, sur la Lune, dans un aquarium ou dans un four ?",
+    "c": [
+     "en Europe",
+     "sur la Lune",
+     "dans un aquarium",
+     "dans un four"
+    ],
+    "a": "en Europe"
    },
    {
     "q": "Quel personnage rouge et blanc de Laponie finlandaise distribue les cadeaux ? Le père ___ ?",
@@ -1753,24 +1933,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de l'Irlande ?",
+    "q": "L'Irlande, c'est : un pays, une bière seule, une lune ou un meuble ?",
     "c": [
-     "Dublin",
-     "Cork",
-     "Galway",
-     "Limerick"
+     "un pays",
+     "une bière seule",
+     "une lune",
+     "un meuble"
     ],
-    "a": "Dublin"
+    "a": "un pays"
    },
    {
-    "q": "Quelle bière brune irlandaise à mousse crémeuse est mondialement connue ?",
+    "q": "L'Irlande se situe : en Europe, sur la Lune, dans un aquarium ou dans un four ?",
     "c": [
-     "Guinness",
-     "Heineken",
-     "Kilkenny",
-     "Murphy's"
+     "en Europe",
+     "sur la Lune",
+     "dans un aquarium",
+     "dans un four"
     ],
-    "a": "Guinness"
+    "a": "en Europe"
    },
    {
     "q": "Quelle plante à trois feuilles est le symbole national de l'Irlande ?",
