@@ -150,6 +150,9 @@
             </div>
             <div class="row">
               <div class="field"><label>Mot de passe de la console (optionnel)</label><input type="password" id="nPwd" placeholder="laisser vide = libre"></div>
+              <div class="field"><label>Date de la fête (optionnel)</label><input type="date" id="nDate"></div>
+            </div>
+            <div class="row">
               <div class="field"><label>URL publique pour les QR (optionnel)</label><input type="text" id="nUrl" placeholder="https://partyplay.fr"></div>
             </div>
             <button class="btn secondary" onclick="createParty()">Créer l'événement</button>
@@ -339,14 +342,14 @@
         <!-- ===== SECTION : SANS FILTRE !? (questions) ===== -->
         <section id="sec-privacy" class="admin-section" style="display:none">
           <h1 class="section-title">🤫 Sans Filtre !?</h1>
-          <p class="muted" style="margin-bottom:20px">Catalogue des questions du jeu de confessions anonymes (chacun répond OUI/NON en secret, puis parie sur le nombre de OUI). Deux niveaux au choix des joueurs : <strong>Intime</strong> et <strong>Intime trash</strong> (réservé aux adultes).</p>
+          <p class="muted" style="margin-bottom:20px">Catalogue des questions du jeu de confessions anonymes (chacun répond OUI/NON en secret, puis parie sur le nombre de OUI). Deux niveaux : <strong>18+</strong> et <strong>18+ trash</strong>.</p>
 
           <div class="card">
             <div class="inline" style="gap:12px;flex-wrap:wrap">
               <div class="field" style="margin:0;min-width:220px"><label>Niveau</label>
                 <select id="pqLevel" onchange="renderPrivacyQuestions()">
-                  <option value="intime">💗 Intime</option>
-                  <option value="trash">🌶️ Intime trash</option>
+                  <option value="intime">🔞 18+</option>
+                  <option value="trash">🌶️ 18+ trash</option>
                 </select>
               </div>
               <div class="field" style="margin:0;flex:1;min-width:220px"><label>Recherche</label>
@@ -750,6 +753,7 @@ async function createParty() {
     plan: document.getElementById('nPlan').value,
     adminPassword: document.getElementById('nPwd').value,
     publicUrl: document.getElementById('nUrl').value,
+    partyDate: document.getElementById('nDate').value || '',
   };
   errEl.textContent = '';
   let d;
@@ -761,6 +765,7 @@ async function createParty() {
   document.getElementById('nName').value = '';
   document.getElementById('nPwd').value = '';
   document.getElementById('nUrl').value = '';
+  document.getElementById('nDate').value = '';
   await loadEvents();
   errEl.style.color = 'var(--a-ok)';
   errEl.innerHTML = '✓ « '+esc(d.event.name)+' » créé — '
@@ -1221,25 +1226,14 @@ function ttcqToggleTheme(header) {
 }
 function ttcqLevelHtml(l, i) {
   const q = l ? esc(l.q || '') : '';
-  const c = (l && l.c) || ['', '', '', ''];
-  const a = l ? (l.a ?? 0) : 0;
-  const choicesHtml = c.map((ch, ci) =>
-    `<div class="field" style="margin:0;flex:1;min-width:60px"><label style="font-size:10px;color:var(--a-muted);font-weight:700">${'ABCD'[ci]}</label>
-      <input type="text" class="ttcq-choice" data-ci="${ci}" value="${esc(ch||'')}" placeholder="Choix ${'ABCD'[ci]}" style="font-size:12.5px;background:rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.06);border-radius:6px;padding:5px 7px;transition:border-color .2s"></div>`
-  ).join('');
+  const a = l ? esc(l.a || '') : '';
   return `<div class="ttcq-level">
     <div style="display:flex;gap:8px;align-items:flex-start;margin-bottom:2px">
       <span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.06);font-size:11px;font-weight:700;flex-shrink:0">${i+1}</span>
-      <div class="field" style="margin:0;flex:4"><label style="font-size:10.5px;color:var(--a-muted)">Question</label>
+      <div class="field" style="margin:0;flex:4"><label style="font-size:10.5px;color:var(--a-muted)">Question ${i===7?'(impossible)':''}</label>
         <input type="text" class="ttcq-q" value="${q}" placeholder="Question niveau ${i+1}" style="font-size:13px;background:rgba(0,0,0,.1);border:1px solid rgba(255,255,255,.06);border-radius:6px;padding:6px 8px;width:100%;transition:border-color .2s"></div>
-    </div>
-    <div style="display:flex;gap:6px;align-items:flex-end;flex-wrap:wrap;margin-top:6px;padding-left:34px">
-      ${choicesHtml}
-      <div class="field" style="margin:0;width:80px"><label style="font-size:10px;color:var(--a-muted);font-weight:700">Correcte</label>
-        <select class="ttcq-a" style="font-size:12px;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.06);border-radius:6px;padding:5px 6px">
-          ${[0,1,2,3].map(ci => `<option value="${ci}"${ci===a?' selected':''}>${'ABCD'[ci]}</option>`).join('')}
-        </select>
-      </div>
+      <div class="field" style="margin:0;flex:1;min-width:110px"><label style="font-size:10.5px;color:var(--a-muted)">Réponse attendue</label>
+        <input type="text" class="ttcq-a" value="${a}" maxlength="24" placeholder="mot ou nombre" style="font-size:13px;background:rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.06);border-radius:6px;padding:6px 8px;width:100%"></div>
     </div>
   </div>`;
 }
@@ -1254,10 +1248,8 @@ function ttcqCollect() {
     const levels = [];
     el.querySelectorAll('.ttcq-level').forEach(lel => {
       const q = lel.querySelector('.ttcq-q').value.trim();
-      const choices = [];
-      lel.querySelectorAll('.ttcq-choice').forEach(inp => { choices[parseInt(inp.dataset.ci)] = inp.value.trim(); });
-      const a = parseInt(lel.querySelector('.ttcq-a').value, 10);
-      levels.push({ q, c: choices.length ? choices : ['','','',''], a });
+      const a = lel.querySelector('.ttcq-a').value.trim();
+      levels.push({ q, a });
     });
     themes.push({ id: id || 'custom_' + Date.now() + '_' + Math.random().toString(36).slice(2,6), name, cat, level, levels });
   });

@@ -227,6 +227,17 @@ function render() {
     return;
   }
 
+  // --- Fête terminée ---
+  if (STATE.closed && STATE.phase === 'lobby') {
+    html += `
+    <div class="card center" style="border-color:var(--neon2)">
+      <div style="font-size:48px">🎉</div>
+      <h2 class="neon-cyan">FÊTE TERMINÉE</h2>
+      <p>Merci d'avoir joué à <strong>${esc(STATE.eventName)}</strong> !</p>
+      <p class="muted">Les jeux ne sont plus disponibles. Donne ton avis ci-dessous ⭐</p>
+    </div>`;
+  }
+
   // --- Lobby ---
   if (STATE.phase === 'lobby') {
     html += `
@@ -315,6 +326,30 @@ function render() {
 
   // --- Défis photo (toujours visibles hors activité) ---
   html += photoSection(me);
+
+  // --- Feedback post-fête ---
+  if (STATE.closed) {
+    const fb = me.myFeedback;
+    if (fb) {
+      html += `<div class="card center" style="border-color:var(--neon2)">
+        <div class="pill neon-green">✅ Avis envoyé</div>
+        <p class="muted">Merci pour ton retour ! ⭐ ${fb.rating||'—'}/5</p>
+        ${fb.comment ? `<p style="font-style:italic">« ${esc(fb.comment)} »</p>` : ''}
+      </div>`;
+    } else {
+      html += `<div class="card center" style="border-color:var(--neon2)">
+        <div class="pill neon-yellow">⭐ Donne ton avis</div>
+        <p class="muted">La fête est finie ! Note PartyPlay et laisse un commentaire.</p>
+        <div style="display:flex;gap:4px;justify-content:center;margin:8px 0" id="starRating">
+          ${[1,2,3,4,5].map(s => `<button class="btn" style="width:auto;font-size:22px;padding:4px 10px" onclick="setRating(${s})">${s>3?'⭐':'★'}</button>`).join('')}
+        </div>
+        <p style="font-size:13px;margin:4px 0"><span id="ratingLabel">Sélectionne une note</span></p>
+        <textarea id="fbComment" placeholder="Un commentaire ? (optionnel)" rows="3" style="width:100%"></textarea>
+        <button class="btn mt" onclick="submitFeedback()">💬 Envoyer mon avis</button>
+        <div id="fbStatus" class="muted mt" style="font-size:13px"></div>
+      </div>`;
+    }
+  }
 
   app.innerHTML = html + footer();
 }
@@ -1786,41 +1821,32 @@ function ttcqController(act){
     const q = act.myQuestion;
     const bet = act.myBet||1;
     if (act.sub==='answer' && q){
+      const already = act.myAnswer!=null && act.myAnswer!=='';
       return `<div class="card center glow-box">
         ${pill}
         <div class="pill ${adulte?'neon-pink':'neon-cyan'}">Niveau ${bet}/8</div>
         <p class="big" style="margin:12px 0">📖 ${themeName}</p>
         <p style="font-size:18px;margin:10px 0"><i>${esc(q.question)}</i></p>
-        <div style="display:flex;flex-direction:column;gap:6px;margin-top:10px">
-          ${q.choices.map((c,i)=>{
-            const sel = act.myAnswer === i;
-            const letter = ['A','B','C','D'][i]||'?';
-            return `<button class="btn ${sel?'secondary':''}" style="text-align:left;padding:12px 16px" onclick="ttcqAnswer(${i})">
-              <b>${letter}.</b> ${esc(c)}
-            </button>`;
-          }).join('')}
-        </div>
-        ${act.myAnswer!=null?`<p class="neon-cyan mt">✅ Réponse enregistrée</p>`:''}
-        <p class="muted">${act.answerCount}/${act.playerCount} ont répondu</p>
+        ${already
+          ? `<p class="neon-cyan mt">✅ Réponse envoyée : « ${esc(act.myAnswer)} »</p>`
+          : `<input id="ttcqAnswerInput" type="text" maxlength="24" autocomplete="off" autocapitalize="off" placeholder="Ta réponse (un mot ou un nombre)…"
+               style="width:100%;box-sizing:border-box;padding:12px;font-size:20px;text-align:center;border-radius:10px;margin-top:8px"
+               onkeydown="if(event.key==='Enter')ttcqSubmitAnswer()">
+             <button class="btn mt" onclick="ttcqSubmitAnswer()">✅ Valider ma réponse</button>`}
+        <p class="muted mt">${act.answerCount}/${act.playerCount} ont répondu</p>
       </div>`;
     }
     // Révélation
     if (act.sub==='reveal'){
       const myRes = act.myResult;
-      const qq = q || {};
+      const qq = q || myRes || {};
       const ca = act.myCorrectAnswer;
-      const cc = act.myChoices||[];
       return `<div class="card center glow-box" style="border-color:var(--neon3)">
         ${pill}
         <p class="big">📖 ${themeName}</p>
-        <p style="margin:8px 0"><i>${esc(qq.question||'')}</i></p>
-        ${cc.length?`<div style="display:flex;flex-direction:column;gap:2px;margin:6px 0">${cc.map((c,i)=>{
-          const isCa = i===ca;
-          const isMy = act.myAnswer===i;
-          return `<div style="padding:4px 8px;border-radius:4px;background:${isCa?'rgba(0,255,0,0.15)':isMy?'rgba(255,0,0,0.15)':'transparent'};border:1px solid ${isCa?'var(--neon3)':isMy?'var(--neon1)':'transparent'}">
-            ${['A','B','C','D'][i]||'?'}. ${esc(c)} ${isCa?'✅':''} ${isMy&&!isCa?'❌':''}
-          </div>`;
-        }).join('')}</div>`:''}
+        <p style="margin:8px 0"><i>${esc(qq.question||myRes?.question||'')}</i></p>
+        ${ca!=null?`<p class="big neon-cyan" style="margin:6px 0">✔️ Réponse : <b>${esc(ca)}</b></p>`:''}
+        ${myRes?`<p class="muted">Ta réponse : « ${esc(myRes.given||'—')} »</p>`:''}
         ${myRes?`<p class="big" style="margin:8px 0">${myRes.correct?'✅ Bon !':'❌ Faux !'} · misé ${myRes.bet} · avance <b class="neon-cyan">+${myRes.gained}</b></p>`:`<p class="muted">Pas de réponse</p>`}
         <p class="muted">Prochaine manche dans <span id="privacyCountdown" class="neon-yellow">${act.autoNextSeconds||20}</span>s</p>
       </div>`;
@@ -1831,7 +1857,11 @@ function ttcqController(act){
 }
 function ttcqSelect(themeId){ api('/api/ttcq/selectTheme', { themeId }); }
 function ttcqBet(level){ api('/api/ttcq/bet', { level }); }
-function ttcqAnswer(choice){ api('/api/ttcq/answer', { choice }); }
+function ttcqSubmitAnswer(){
+  const el = document.getElementById('ttcqAnswerInput'); if (!el) return;
+  const text = el.value.trim(); if (!text) return;
+  api('/api/ttcq/answer', { text });
+}
 function submitCode(){
   const v = document.getElementById('codeInput').value;
   api('/api/code', { code: v }).then(r=>{
@@ -1943,6 +1973,20 @@ function konamiPadHTML(opts){
     </div>
     <div id="codeMsg" class="center mt"></div>
   </div>`;
+}
+let fbRating = 0;
+function setRating(s){ fbRating=s; document.getElementById('ratingLabel').textContent='⭐ '.repeat(s)+'('+s+'/5)'; }
+async function submitFeedback(){
+  const st=document.getElementById('fbStatus');
+  if(!fbRating){ st.textContent='Choisis une note.'; return; }
+  st.textContent='Envoi…';
+  try{
+    const r=await fetch(API+'/api/feedback', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({ token:TOKEN, rating:fbRating, comment:document.getElementById('fbComment').value.trim() }) });
+    const d=await r.json();
+    if(!r.ok){ st.textContent=d.error||'Erreur'; return; }
+    st.textContent='✓ Merci pour ton avis !';
+    setTimeout(()=>render(),1500);
+  }catch(e){ st.textContent='Erreur réseau.'; }
 }
 </script>
 </body>

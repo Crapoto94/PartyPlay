@@ -765,10 +765,13 @@ function ttcqBorne(act){
       const nm = esc(p?.name||'?');
       const ic = r.correct ? '✅' : '❌';
       const mv = r.gained > 0 ? `+${r.gained}` : '0';
-      return `<div style="margin:4px 0">${ic} <b>${nm}</b> — misé ${r.bet} · avance <b class="neon-cyan">${mv}</b> · case ${r.position}</div>`;
+      return `<div style="margin:8px 0;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,.06)">
+        <div>${ic} <b>${nm}</b> — misé ${r.bet} · avance <b class="neon-cyan">${mv}</b> · case ${r.position}</div>
+        <div class="muted" style="font-size:12px;margin-top:2px"><i>${esc(r.question||'')}</i> → <b class="neon-yellow">${esc(r.correctAnswer||'')}</b> ${!r.correct?'<span style="opacity:.7">(réponse donnée : « '+esc(r.given||'—')+' »)</span>':''}</div>
+      </div>`;
     }).join('');
     body = `${pill}${themeHtml}
-      <div class="card" style="max-width:700px;margin:10px auto;text-align:left">${lines}</div>
+      <div class="card" style="max-width:760px;margin:10px auto;text-align:left">${lines}</div>
       <p class="muted">Prochaine manche dans <span id="privacyCountdown" class="neon-yellow">${act.autoNextSeconds||20}</span>s</p>`;
   }
   else if (act.sub==='final'){
@@ -1331,10 +1334,6 @@ function startShowPlayer(intro, main){
       }
     }
   });
-}
-
-
-  tickerEl.textContent = 'LA ROUE — '+(winners.join(', ')||'fin')+' !';
 }
 
 // =================== ENQUÊTE (affichage borne) ===================

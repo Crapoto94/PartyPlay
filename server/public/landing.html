@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
   <script src="/static/version-badge.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
   <style>
     /* =================================================================
        PARTYPLAY — landing festive (dark, néons, illustrations)
@@ -539,8 +540,15 @@
         <h2>Rejoindre une fête</h2>
         <p class="muted">Saisis ton <strong style="color:var(--ink)">code invité</strong> (reçu par QR ou par l'organisateur).</p>
         <div class="field"><input type="text" id="joinCode" placeholder="ex. PXL-LEA1" style="text-transform:uppercase"></div>
-        <button class="btn" style="width:100%" onclick="joinParty()">Rejoindre</button>
+        <div style="display:flex;gap:6px">
+          <button class="btn" style="flex:1" onclick="joinParty()">Rejoindre</button>
+          <button class="btn secondary" onclick="scanQR()" id="qrBtn">📷 QR</button>
+        </div>
         <div id="joinErr" class="muted" style="margin-top:10px;font-size:13.5px"></div>
+        <div id="qrReader" style="display:none;margin-top:10px;border-radius:10px;overflow:hidden;background:#000">
+          <video id="qrVideo" playsinline style="width:100%;display:block"></video>
+          <p class="muted" style="text-align:center;padding:6px 0">Place le QR code devant la caméra.</p>
+        </div>
       </div>
 
       <div class="card t-violet">
@@ -583,6 +591,10 @@
         <div class="field">
           <label>Email de contact <span class="muted" style="font-weight:400">(pour retrouver votre fête)</span></label>
           <input type="email" id="cEmail" placeholder="vous@exemple.com" autocomplete="email">
+        </div>
+        <div class="field">
+          <label>Date de la fête</label>
+          <input type="date" id="cDate">
         </div>
         <div class="field">
           <label>Mot de passe de la console <span class="muted" style="font-weight:400">(optionnel — sinon généré)</span></label>
@@ -777,6 +789,7 @@ async function createParty(){
     theme: document.getElementById('cTheme').value,
     plan: SELECTED,
     adminPassword: document.getElementById('cPwd').value.trim(),
+    partyDate: document.getElementById('cDate').value || null,
     seed: 'default',
   };
   if (GOOGLE_CRED) body.googleCredential = GOOGLE_CRED;
@@ -840,6 +853,34 @@ async function createParty(){
 
   const needPP = d.event.paymentStatus === 'pending' && !PRICING.freeMode && plan.paypalButtonId && PRICING.paypalClientId;
   openModal(modalHtml, needPP ? () => renderHostedButton('#'+ppId, plan.paypalButtonId, PRICING.paypalClientId, PRICING.currency) : null);
+}
+
+let qrStream = null;
+function stopQR(){ if (qrStream){ qrStream.getTracks().forEach(t=>t.stop()); qrStream=null; } document.getElementById('qrReader').style.display='none'; }
+function scanQR(){
+  const el=document.getElementById('qrReader');
+  if (el.style.display==='block'){ stopQR(); return; }
+  el.style.display='block'; document.getElementById('qrBtn').textContent='✕ Fermer';
+  const video=document.getElementById('qrVideo');
+  navigator.mediaDevices.getUserMedia({ video:{ facingMode:'environment' } }).then(s=>{
+    qrStream=s; video.srcObject=s; video.play();
+    tick();
+  }).catch(()=>{ document.getElementById('joinErr').textContent='📷 Accès caméra refusé.'; stopQR(); });
+}
+function tick(){
+  const video=document.getElementById('qrVideo');
+  if (!qrStream) return;
+  if (video.readyState !== video.HAVE_ENOUGH_DATA){ requestAnimationFrame(tick); return; }
+  const c=document.createElement('canvas'); c.width=video.videoWidth; c.height=video.videoHeight;
+  const ctx=c.getContext('2d'); ctx.drawImage(video,0,0);
+  const d=ctx.getImageData(0,0,c.width,c.height);
+  const code=jsQR(d.data,d.width,d.height);
+  if (code && code.data.startsWith(location.origin+'/')){
+    stopQR(); document.getElementById('qrBtn').textContent='📷 QR';
+    location.href=code.data;
+    return;
+  }
+  setTimeout(tick,400);
 }
 
 async function joinParty(){

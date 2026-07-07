@@ -16,6 +16,12 @@
       <strong style="color:#1f9d57">✅ Email confirmé !</strong> Votre fête est maintenant activée — vous pouvez démarrer la soirée.
     </div>
 
+    <!-- Bannière : fête terminée -->
+    <div id="closedBanner" style="display:none;background:#f3e8ff;border:1px solid #8b5cf6;border-radius:10px;padding:14px 16px;margin-bottom:16px">
+      <strong>🎉 Fête terminée</strong>
+      <p class="muted" style="margin:6px 0">Cette fête est terminée. Les jeux ne sont plus disponibles. Les joueurs ont reçu un récapitulatif par email.</p>
+    </div>
+
     <!-- Bannière : email en attente de vérification -->
     <div id="verifyBanner" style="display:none;background:#fef3c7;border:1px solid #f59e0b;border-radius:10px;padding:14px 16px;margin-bottom:16px">
       <strong>📧 Email non vérifié</strong>
@@ -76,8 +82,8 @@
           </div>
           <div class="field" data-cat="privacy" style="margin-top:10px"><label>🤫 Sans Filtre !? — confessions anonymes (adultes)</label>
             <div class="row">
-              <button class="btn" onclick="launch('privacy',{level:'intime',count:privacyCount()})">💗 Version intime</button>
-              <button class="btn" onclick="launch('privacy',{level:'trash',count:privacyCount()})">🌶️ Version intime TRASH</button>
+              <button class="btn" onclick="launch('privacy',{level:'intime',count:privacyCount()})">🔞 18+</button>
+              <button class="btn" onclick="launch('privacy',{level:'trash',count:privacyCount()})">🌶️ 18+ trash</button>
               <select id="privacyCount" style="width:auto">
                 <option value="5">5 questions</option>
                 <option value="10" selected>10 questions</option>
@@ -166,6 +172,7 @@
             </select>
           </div>
           <div class="field"><label>URL publique (QR)</label><input type="text" id="g_url" placeholder="https://…"></div>
+          <div class="field"><label>Date de la fête</label><input type="date" id="g_date"></div>
           <div class="field"><label>Mot de passe console (vide = libre)</label><input type="text" id="g_pwd"></div>
           <div class="field"><label>Libellé compte à rebours</label><input type="text" id="g_deadline"></div>
           <div class="field"><label>Ambiance YouTube (playlist)</label><input type="text" id="g_amb" placeholder="lien playlist YouTube"></div>
@@ -318,7 +325,7 @@
         <div class="card">
           <h3 class="neon-yellow">🎯 TTCQ — mes thèmes perso</h3>
           <p class="muted">Ajoute tes propres <b>thèmes de questions</b> : chaque thème contient 8 questions (niveaux 1 à 8). Format JSON : <code>[ { id, name, cat, level, levels: [{q, c:[4], a}] } ]</code>. Ils sont prioritaires sur le catalogue.</p>
-          <div class="field"><label>Thèmes TTCQ perso <span class="muted">(tableau JSON)</span></label><textarea id="c_ttcq" rows="6" placeholder='[{"id":"mon_theme","name":"Mon thème","cat":"custom","level":"classique","levels":[{"q":"Question niveau 1 ?","c":["A","B","C","D"],"a":0},{"q":"Question niveau 2 ?","c":["A","B","C","D"],"a":1},{"q":"Question niveau 3 ?","c":["A","B","C","D"],"a":2},{"q":"Question niveau 4 ?","c":["A","B","C","D"],"a":3},{"q":"Question niveau 5 ?","c":["A","B","C","D"],"a":0},{"q":"Question niveau 6 ?","c":["A","B","C","D"],"a":1},{"q":"Question niveau 7 ?","c":["A","B","C","D"],"a":2},{"q":"Question niveau 8 ?","c":["A","B","C","D"],"a":3}]}]'></textarea></div>
+          <div class="field"><label>Thèmes TTCQ perso <span class="muted">(tableau JSON — réponse libre : le joueur tape sa réponse au clavier, un mot ou un nombre)</span></label><textarea id="c_ttcq" rows="6" placeholder='[{"id":"mon_theme","name":"Mon thème","cat":"custom","level":"classique","levels":[{"q":"Question niveau 1 (très facile) ?","a":"reponse"},{"q":"Question niveau 2 ?","a":"reponse"},{"q":"Question niveau 3 ?","a":"reponse"},{"q":"Question niveau 4 ?","a":"reponse"},{"q":"Question niveau 5 ?","a":"reponse"},{"q":"Question niveau 6 ?","a":"reponse"},{"q":"Question niveau 7 ?","a":"reponse"},{"q":"Question niveau 8 (impossible) ?","a":"reponse"}]}]'></textarea></div>
           <div class="row">
             <button class="btn secondary" onclick="saveTtcqCustom()">💾 Enregistrer mes thèmes</button>
             <span class="muted" id="ttcq_saved"></span>
@@ -411,6 +418,11 @@ async function loadConfig(){
     document.getElementById('verifyBanner').style.display = 'block';
     document.getElementById('verifyEmailAddr').textContent = META.contactEmail || '';
   }
+  // Bannière fête terminée
+  if (CFG.closed) {
+    document.getElementById('closedBanner').style.display = 'block';
+    fillLaunchers(true);
+  }
   await loadEqzDefaults(); eqzDefLoaded=true;
   fillGeneral(); fillPlayers(); fillActivities(); fillContent(); fillLaunchers();
   ttcqInitCats();
@@ -443,6 +455,7 @@ function fillGeneral(){
   const themes = (META && META.themes) ? META.themes : ['retro','neon','chic','kids','casino'];
   g_theme.innerHTML = themes.map(t=>`<option value="${t}">${THEME_LABELS[t]||t}</option>`).join('');
   g_name.value=CFG.name||''; g_theme.value=CFG.theme||themes[0]; g_url.value=CFG.publicUrl||'';
+  g_date.value=CFG.partyDate||'';
   g_pwd.value=CFG.adminPassword||''; g_deadline.value=(CFG.settings&&CFG.settings.deadlineLabel)||'';
   g_amb.value=(CFG.settings&&CFG.settings.ambianceYoutube)||'';
   // Bandeau formule
@@ -466,7 +479,7 @@ function fillGeneral(){
   }
 }
 async function saveGeneral(){
-  const patch={ name:g_name.value, theme:g_theme.value, publicUrl:g_url.value, adminPassword:g_pwd.value,
+  const patch={ name:g_name.value, theme:g_theme.value, publicUrl:g_url.value, partyDate:g_date.value || '', adminPassword:g_pwd.value,
     settings:{ ...CFG.settings, deadlineLabel:g_deadline.value, ambianceYoutube:g_amb.value } };
   await push(patch); document.getElementById('g_saved').textContent=' ✓ enregistré';
   setTimeout(()=>document.getElementById('g_saved').textContent='',1500);
@@ -654,7 +667,7 @@ const ONB_SLIDES = [
       <li><b>🧩 Mosaïque / 🎹 Piano / 🎵 Séquence</b> — mini-jeux collaboratifs à plusieurs téléphones.</li>
       <li><b>🕹️ Mini-jeux arcade</b> — Pac-Man, Tetris, Tron, 2048, Pong en multijoueur.</li>
       <li><b>📸 Défi photo</b> — missions photo à réaliser, puis vote de la salle.</li>
-      <li><b>🤫 Sans Filtre !?</b> — confessions anonymes : chacun répond OUI/NON en secret, puis on parie sur le nombre de OUI. Version « Intime » ou « Intime trash » (réservée aux adultes).</li>
+      <li><b>🤫 Sans Filtre !?</b> — confessions anonymes : chacun répond OUI/NON en secret, puis on parie sur le nombre de OUI. Version « 18+ » ou « 18+ trash ».</li>
       <li><b>🃏 Bouche-Trou !?</b> — une question à trou sur la borne, chacun joue sa carte-réponse la plus drôle, un arbitre tournant élit la meilleure. Version « Classique » ou « 18+ ». Tu peux ajouter tes propres questions (onglet 📚 Contenu).</li>
       <li><b>🧠 Un Seul Mot !?</b> — coopératif : un·e devineur·se tournant·e ne voit jamais le mot secret, les autres proposent chacun UN indice (les doublons s'annulent), puis il/elle tente sa chance. Score d'équipe !</li>
     </ul>` },
@@ -1152,7 +1165,7 @@ async function seed(mode){
 async function push(patch){ await fetch(API+'/api/admin/config',{method:'POST',headers:H(),body:JSON.stringify({config:patch})}); }
 
 /* ---- Lanceurs dynamiques ---- */
-function fillLaunchers(){
+function fillLaunchers(closed){
   const decks=(CFG.content&&CFG.content.quiz&&CFG.content.quiz.decks)||{};
   document.getElementById('quizDeck').innerHTML=Object.keys(decks).map(d=>`<option value="${d}">${esc(d)}</option>`).join('')||'<option>—</option>';
   // Fusionne les blind-tests de l'événement AVEC ceux par défaut (admin générale).
@@ -1167,6 +1180,16 @@ function fillLaunchers(){
   if(ap) ap.innerHTML = anec.length
     ? anec.map((a,i)=>`<option value="${i}">${esc(a.titre||('Anecdote '+(i+1)))}${a.video?' 📤':' ▶'}</option>`).join('')
     : '<option value="">— aucune anecdote (onglet Contenu) —</option>';
+  // Désactive les lanceurs si fête terminée
+  document.querySelectorAll('[data-cat]').forEach(el=>{
+    const btns=el.querySelectorAll('button');
+    btns.forEach(b=>{b.disabled=closed; b.style.opacity=closed?'0.4':'1';});
+  });
+  document.querySelectorAll('.tab,.tabbar button,.btn').forEach(b=>{
+    if(b.id==='simBtn') return; // la simulation reste accessible
+    if(b.classList.contains('tab')) return; // les onglets restent accessibles
+    if(b.onclick && b.onclick.toString().includes('act(')) b.disabled=closed;
+  });
 }
 
 /* ---- Pilotage live ---- */

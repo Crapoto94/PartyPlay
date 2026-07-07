@@ -4,17 +4,17 @@
 //  tout le monde parie sur le nombre de OUI).
 //
 //  500 questions ORIGINALES en deux niveaux :
-//   - intime : amour, hontes, secrets, soirées… piquant mais soft
-//   - trash  : sexualité et confessions crues — adultes consentants only
+//  - 18+    : amour, hontes, secrets, soirées… piquant mais soft
+//  - trash  : sexualité et confessions crues — adultes consentants only
 //
-//  ⚠️ Contenu adulte pour le niveau « trash ». À réserver aux soirées
+//  ⚠️ Contenu adulte pour les deux niveaux. À réserver aux soirées
 //  entre adultes. Aucune question n'implique de mineurs ni d'actes
 //  non consentis.
 // =====================================================================
 
 export const PRIVACY_LEVELS = {
-  intime: { label: 'Intime', emoji: '💗', desc: 'Confessions piquantes mais soft — amour, hontes, secrets, soirées.' },
-  trash:  { label: 'Intime trash', emoji: '🌶️', desc: 'Version très crue — sexualité et confessions sans tabou (adultes).' },
+  intime: { label: '18+', emoji: '🔞', desc: 'Confessions piquantes mais soft — amour, hontes, secrets, soirées.' },
+  trash:  { label: '18+ trash', emoji: '🌶️', desc: 'Version très crue — sexualité et confessions sans tabou (adultes).' },
 };
 
 export const PRIVACY_QUESTIONS = {

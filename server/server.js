@@ -163,7 +163,7 @@ app.post('/api/promo/validate', (req, res) => {
 });
 
 app.post('/api/parties', async (req, res) => {
-  const { name, theme, plan, adminPassword, publicUrl, seed, contactEmail, promoCode, googleCredential } = req.body || {};
+  const { name, theme, plan, adminPassword, publicUrl, seed, contactEmail, promoCode, googleCredential, partyDate } = req.body || {};
   if (!name || !name.trim()) return res.status(400).json({ error: 'Nom de la fête requis.' });
 
   // Connexion Google : si un jeton est fourni, on le vérifie côté serveur et on
@@ -183,7 +183,7 @@ app.post('/api/parties', async (req, res) => {
   const planName = promo ? promo.plan : (planExists(plan) ? plan : 'free');
   // Mot de passe console : fourni, sinon généré.
   const pwd = (adminPassword && adminPassword.trim()) || ('p' + Math.random().toString(36).slice(2, 8));
-  const cfg = createEvent({ name: name.trim(), theme, plan: planName, adminPassword: pwd, publicUrl, seed: seed || 'default', contactEmail: finalEmail });
+  const cfg = createEvent({ name: name.trim(), theme, plan: planName, adminPassword: pwd, publicUrl, seed: seed || 'default', contactEmail: finalEmail, partyDate });
   cfg.avatars = DEFAULT_AVATARS;
   cfg.creatorIp = clientIp(req) || 'unknown';
   // Email vérifié par Google → fête activée immédiatement, aucun email envoyé.
@@ -211,7 +211,7 @@ app.post('/api/parties', async (req, res) => {
       htmlContent: buildVerifyEmail(cfg, verifyUrl, consoleUrl, borneUrl, planInfo),
     }).catch(() => {});
   }
-  res.json({ ok: true, event: { id: cfg.id, name: cfg.name, theme: cfg.theme, plan: cfg.plan, paymentStatus: cfg.paymentStatus, emailVerified: cfg.emailVerified !== false, contactEmail: cfg.contactEmail || '' }, adminPassword: pwd });
+  res.json({ ok: true, event: { id: cfg.id, name: cfg.name, theme: cfg.theme, plan: cfg.plan, paymentStatus: cfg.paymentStatus, emailVerified: cfg.emailVerified !== false, contactEmail: cfg.contactEmail || '', partyDate: cfg.partyDate || '' }, adminPassword: pwd });
 });
 
 // Résout un token joueur → l'événement qui le contient (rejoindre par code).
@@ -308,10 +308,10 @@ app.post('/api/admin/events/:id/force-verify', (req, res) => {
 
 app.post('/api/admin/events', (req, res) => {
   if (!requireAdmin(req, res)) return;
-  const { name, theme, adminPassword, publicUrl, seed, plan } = req.body || {};
+  const { name, theme, adminPassword, publicUrl, seed, plan, partyDate } = req.body || {};
   if (!name || !name.trim()) return res.status(400).json({ error: 'Nom requis.' });
   // Les événements créés par le super-admin sont directement vérifiés.
-  const cfg = createEvent({ name: name.trim(), theme, adminPassword, publicUrl, seed: seed || 'default', plan: plan || 'free', bypassVerification: true });
+  const cfg = createEvent({ name: name.trim(), theme, adminPassword, publicUrl, seed: seed || 'default', plan: plan || 'free', bypassVerification: true, partyDate });
   cfg.avatars = DEFAULT_AVATARS;
   saveConfig(cfg);
   res.json({ ok: true, event: { id: cfg.id, name: cfg.name, theme: cfg.theme, plan: cfg.plan } });
@@ -826,7 +826,7 @@ ev.post('/api/carton/pick', (req, res) => { const p = requirePlayer(req, res); i
 // TTMC — le joueur choisit un thème, mise, puis répond.
 ev.post('/api/ttcq/selectTheme', (req, res) => { const p = requirePlayer(req, res); if (!p) return; res.json(req.game.ttcqSelectTheme(p.id, req.body.themeId)); });
 ev.post('/api/ttcq/bet', (req, res) => { const p = requirePlayer(req, res); if (!p) return; res.json(req.game.ttcqBet(p.id, req.body.level)); });
-ev.post('/api/ttcq/answer', (req, res) => { const p = requirePlayer(req, res); if (!p) return; res.json(req.game.ttcqAnswer(p.id, req.body.choice)); });
+ev.post('/api/ttcq/answer', (req, res) => { const p = requirePlayer(req, res); if (!p) return; res.json(req.game.ttcqAnswer(p.id, req.body.text)); });
 
 // Un Seul Mot !? — un indice (un seul mot) pour tous sauf le devineur, qui propose sa réponse.
 ev.post('/api/justone/clue', (req, res) => { const p = requirePlayer(req, res); if (!p) return; res.json(req.game.justoneClue(p.id, req.body.text)); });
@@ -1048,6 +1048,9 @@ ev.post('/api/admin/action', (req, res) => {
   if (req.cfg.emailVerified === false && !SIM_ACTIONS.has(action)) {
     return res.status(403).json({ error: 'Vérifiez votre email avant de démarrer la soirée.' });
   }
+  if (req.cfg.closed && ['start', 'startActivity', 'scoreboard', 'hub'].includes(action)) {
+    return res.status(403).json({ error: 'Cette fête est terminée. Les jeux ne sont plus disponibles.' });
+  }
   switch (action) {
     case 'start': g.startGame(); break;
     case 'scoreboard': g.showScoreboard(); break;
@@ -1124,6 +1127,65 @@ ev.post('/api/admin/action', (req, res) => {
   }
   res.json({ ok: true });
 });
+
+// ---- Feedback / notation post-fête ----
+ev.post('/api/feedback', (req, res) => {
+  const token = req.body.token;
+  const p = token && req.game.playerByToken(token);
+  if (!p) return res.status(403).json({ error: 'Token invalide.' });
+  const cfg = req.cfg;
+  if (!cfg.closed) return res.status(400).json({ error: 'La fête n\'est pas encore terminée.' });
+  const { rating, comment } = req.body;
+  const feedback = cfg.feedback || [];
+  const existing = feedback.findIndex(f => f.playerId === p.id);
+  const entry = { playerId: p.id, playerName: p.name, rating: rating || null, comment: comment || '', createdAt: Date.now() };
+  if (existing >= 0) feedback[existing] = entry;
+  else feedback.push(entry);
+  cfg.feedback = feedback;
+  saveConfig(cfg);
+  res.json({ ok: true });
+});
+
+// ---- Vérification de clôture J+1 ----
+function closeExpiredParties() {
+  const now = Date.now();
+  for (const e of listEvents()) {
+    const cfg = getConfig(e.id);
+    if (!cfg || cfg.closed || !cfg.partyDate) continue;
+    // partyDate est "YYYY-MM-DD", minuit local → 1 jour après = +24h
+    const partyEnd = new Date(cfg.partyDate + 'T23:59:59').getTime();
+    if (now > partyEnd + 86400000) {
+      cfg.closed = true;
+      cfg.closedAt = now;
+      // Envoi d'email aux joueurs avec email (non-bloquant)
+      const players = (cfg.players || []).filter(p => p.email);
+      if (players.length) {
+        const base = cfg.publicUrl || `http://localhost:${PORT}`;
+        const consoleUrl = `${base}/e/${cfg.id}/admin`;
+        for (const p of players) {
+          const resultsUrl = `${base}/e/${cfg.id}/j/${p.token}#resultats`;
+          sendMail({
+            to: p.email,
+            subject: `Merci d'avoir joué à « ${cfg.name} » ! 🎉`,
+            htmlContent: `<div style="font-family:sans-serif;max-width:560px;margin:auto;padding:20px">
+<h2 style="color:#8b5cf6">${cfg.name.replace(/[&<>"]/g,c=>'&#'+c.charCodeAt(0)+';')} — la fête est finie ! 🎉</h2>
+<p>Merci à tous d'avoir joué à <strong>PartyPlay</strong> !</p>
+<p>📸 <a href="${resultsUrl}">Voir les photos et les résultats</a></p>
+<p>💬 <a href="${resultsUrl}">Revoir les anecdotes</a></p>
+<p>⭐ <a href="${resultsUrl}">Donner ton avis et noter l'application</a></p>
+<hr style="margin:20px 0;border:none;border-top:1px solid #eee">
+<p style="color:#888">Tu aussi peux organiser une fête gratuitement sur <a href="${base}">PartyPlay</a> !</p>
+</div>`,
+          }).catch(() => {});
+        }
+      }
+      saveConfig(cfg);
+      if (getGame(cfg.id)) reloadConfig(cfg.id);
+    }
+  }
+}
+closeExpiredParties();
+setInterval(closeExpiredParties, 3600000);
 
 app.listen(PORT, () => {
   console.log(`\n🎉  Plateforme multi-événements en ligne`);

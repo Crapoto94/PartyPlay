@@ -1474,10 +1474,12 @@ export class GameState {
     this.touch();
     return { ok: true };
   }
-  ttcqAnswer(playerId, choice) {
+  // Réponse LIBRE saisie au clavier du téléphone (nombre ou mot court) —
+  // comparée avec tolérance aux fautes de frappe (looseMatch) à la révélation.
+  ttcqAnswer(playerId, text) {
     const a = this.activity;
     if (!a || a.type !== 'ttcq' || a.sub !== 'answer') return { error: 'Pas le bon moment' };
-    a.answers[playerId] = parseInt(choice, 10);
+    a.answers[playerId] = (text == null ? '' : String(text)).trim().slice(0, 40);
     const all = this.players.filter(p => p.connected);
     const allAns = all.every(p => a.answers[p.id] != null);
     if (allAns && all.length >= 1) this.ttcqReveal();
@@ -1495,7 +1497,7 @@ export class GameState {
       const bet = a.bets[p.id] || 1;
       const lvlData = theme.levels[Math.min(bet - 1, theme.levels.length - 1)];
       const chosen = a.answers[p.id];
-      const correct = chosen != null && chosen === lvlData.a;
+      const correct = !!chosen && looseMatch(chosen, lvlData.a);
       let gained = 0;
       if (correct) {
         gained = bet;
@@ -1509,7 +1511,7 @@ export class GameState {
           a.positions[p.id] = Math.min(47, a.positions[p.id] + extra);
         } else if (space === '🪙 Bonus') a.coins[p.id] = (a.coins[p.id] || 0) + 2;
       }
-      results[p.id] = { bet, correct, gained, position: a.positions[p.id] || 0 };
+      results[p.id] = { bet, correct, gained, position: a.positions[p.id] || 0, question: lvlData.q, correctAnswer: lvlData.a, given: chosen || '' };
     });
     a.results = results;
     a.round++;
@@ -1572,7 +1574,7 @@ export class GameState {
       this.addLog(`⏭ GM force — paris par défaut pour les absents.`);
     } else if (a.sub === 'answer') {
       const connected = this.players.filter(p => p.connected);
-      connected.forEach(p => { if (a.answers[p.id] == null) a.answers[p.id] = 0; });
+      connected.forEach(p => { if (a.answers[p.id] == null) a.answers[p.id] = ''; });
       this.addLog(`⏭ GM force — révélation forcée.`);
       this.ttcqReveal();
       return;
@@ -1591,7 +1593,7 @@ export class GameState {
       if (!theme || a.sub !== 'answer' && a.sub !== 'reveal') return null;
       const bet = a.bets[pid] || 1;
       const lvl = theme.levels[Math.min(bet - 1, theme.levels.length - 1)];
-      return lvl ? { question: lvl.q, choices: lvl.c, level: bet } : null;
+      return lvl ? { question: lvl.q, level: bet } : null;
     };
     const base = {
       type: 'ttcq', sub: a.sub, round: a.round, totalRounds: a.totalRounds,
@@ -1630,7 +1632,6 @@ export class GameState {
           const bet = a.bets[forPlayerId] || 1;
           const lvlData = theme.levels[Math.min(bet - 1, theme.levels.length - 1)];
           base.myCorrectAnswer = lvlData.a;
-          base.myChoices = lvlData.c;
         }
       }
     }
@@ -1911,7 +1912,11 @@ export class GameState {
         if (a.state === 'running' && !a.resolved && !(a.buzzes || []).find((x) => x.id === b.id)) this.buzz(b.id);
       } else if (a.type === 'ttcq') {
         if (a.sub === 'bet' && a.bets[b.id] == null) this.ttcqBet(b.id, rint(8) + 1);
-        if (a.sub === 'answer' && a.answers[b.id] == null) this.ttcqAnswer(b.id, rint(4));
+        if (a.sub === 'answer' && a.answers[b.id] == null) {
+          const bet = a.bets[b.id] || 1;
+          const lvlData = a.currentTheme?.levels?.[Math.min(bet - 1, (a.currentTheme?.levels?.length || 1) - 1)];
+          this.ttcqAnswer(b.id, (lvlData && Math.random() < 0.5) ? lvlData.a : 'xxx');
+        }
         if (a.sub === 'theme_pick' && a.themePickerId === b.id && !a.currentTheme) {
           const used = a._usedThemes || [];
           const pool = a._pool || getTtcq();
@@ -2472,6 +2477,9 @@ export class GameState {
       eventId: this.eventId,
       eventName: this.cfg?.name || '',
       theme: this.cfg?.theme || 'retro',
+      closed: !!this.cfg?.closed,
+      partyDate: this.cfg?.partyDate || '',
+      feedbackCount: (this.cfg?.feedback || []).length,
       phase: this.phase,
       deadlineLabel: this.cfg?.settings?.deadlineLabel || '',
       ambientPaused: this.ambientPaused,
@@ -2501,6 +2509,7 @@ export class GameState {
   }
 
   privateView(me) {
+    const fb = (this.cfg?.feedback || []).find(f => f.playerId === me.id);
     return {
       id: me.id,
       name: me.name,
@@ -2510,6 +2519,7 @@ export class GameState {
       coins: me.coins,
       ready: me.ready,
       isHost: !!me.isHost,
+      myFeedback: fb || null,
       // Défis photo
       photoMissions: this.photoMissions(me.avatar),
       myPhotos: this.photos.filter(p => p.playerId === me.id).map(p => ({ missionIdx: p.missionIdx, url: p.url })),
