@@ -7310,86 +7310,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel instrument est emblématique de la musique folk ?",
+    "q": "De quel type d'instrument acoustique à cordes le folk fait-il grand usage ? La ___ ?",
     "c": [
-     "L'harmonica",
-     "Le banjo",
-     "La guitare acoustique",
-     "Le violon"
+     "guitare",
+     "batterie",
+     "trompette",
+     "synthé"
     ],
-    "a": 2
+    "a": "guitare"
    },
    {
-    "q": "Quelle chanteuse folk canadienne est mondialement connue ?",
+    "q": "Quel chanteur folk américain à l'harmonica, prix Nobel de littérature, a écrit « Blowin' in the Wind » ? Bob ___ ?",
     "c": [
-     "Carly Simon",
-     "Carole King",
-     "Joan Baez",
-     "Joni Mitchell"
+     "Dylan",
+     "Young",
+     "Guthrie",
+     "Baez"
     ],
-    "a": 3
+    "a": "Dylan"
    },
    {
-    "q": "Quel festival de 1969 a marqué l'apogée du folk ?",
+    "q": "Le folk s'inspire des musiques ___ transmises de génération en génération ?",
     "c": [
-     "Newport Folk Festival",
-     "Woodstock",
-     "Glastonbury",
-     "Coachella"
+     "traditionnelles",
+     "électroniques",
+     "militaires",
+     "religieuses"
     ],
-    "a": 1
+    "a": "traditionnelles"
    },
    {
-    "q": "En quelle année Bob Dylan est-il passé à l'électrique ?",
+    "q": "Quel petit instrument à cordes hawaïen, proche de la guitare, est utilisé en folk ? Le ___ ?",
     "c": [
-     "1967",
-     "1963",
-     "1965",
-     "1969"
+     "ukulélé",
+     "banjo",
+     "sitar",
+     "luth"
     ],
-    "a": 2
+    "a": "ukulélé"
    },
    {
-    "q": "Quel groupe français chante 'Le métèque' dans le style folk ?",
+    "q": "Quel instrument à cordes pincées, typique de la country et du folk américain, a une caisse ronde ? Le ___ ?",
     "c": [
-     "Maxime Le Forestier",
-     "Francis Cabrel",
-     "Georges Moustaki",
-     "Alain Souchon"
+     "banjo",
+     "violon",
+     "piano",
+     "accordéon"
     ],
-    "a": 2
+    "a": "banjo"
    },
    {
-    "q": "Quelle chanson folk est un hymne mondial pour la paix ?",
+    "q": "Quelle chanteuse folk engagée, amie de Dylan, s'appelle Joan ___ ?",
     "c": [
-     "Blowin' in the Wind",
-     "Give Peace a Chance",
-     "Imagine",
-     "The Times They Are A-Changin'"
+     "Baez",
+     "Mitchell",
+     "Collins",
+     "Joplin"
     ],
-    "a": 2
+    "a": "Baez"
    },
    {
-    "q": "Quel chanteur folk américain a écrit 'Blowin' in the Wind' ?",
+    "q": "Quel duo folk-rock a chanté « The Sound of Silence » ? Simon & ___ ?",
     "c": [
-     "Woody Guthrie",
-     "Pete Seeger",
-     "Johnny Cash",
-     "Bob Dylan"
+     "Garfunkel",
+     "Young",
+     "Crosby",
+     "Nash"
     ],
-    "a": 3
+    "a": "Garfunkel"
    },
    {
-    "q": "Quel chanteur folk français est connu pour 'Amsterdam' ?",
-    "c": [
-     "Jacques Brel",
-     "Léo Ferré",
-     "Georges Brassens",
-     "Serge Gainsbourg"
-    ],
-    "a": 0
+    "q": "En quelle année Bob Dylan a-t-il reçu le prix Nobel de littérature ?",
+    "a": "2016"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "musique_012",
@@ -7398,86 +7393,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel genre de musique électronique est né à Détroit ?",
+    "q": "Avec quel type d'instrument principal fait-on de la musique électro ? Des instruments ___ ?",
     "c": [
-     "La techno",
-     "Le dubstep",
-     "Le drum and bass",
-     "La house"
+     "électroniques",
+     "acoustiques",
+     "à cordes",
+     "à vent"
     ],
-    "a": 0
+    "a": "électroniques"
    },
    {
-    "q": "Quel DJ français est mondialement connu ?",
+    "q": "Quel duo français masqué en casques de robots a fait danser le monde ? Daft ___ ?",
     "c": [
-     "Bob Sinclar",
-     "Martin Solveig",
-     "Daft Punk",
-     "David Guetta"
+     "Punk",
+     "Rock",
+     "Beat",
+     "House"
     ],
-    "a": 3
+    "a": "Punk"
    },
    {
-    "q": "Quelle ville allemande est le berceau de la techno ?",
+    "q": "Comment appelle-t-on les grandes fêtes dansantes électro, souvent clandestines ? Des ___ ?",
     "c": [
-     "Francfort",
-     "Munich",
-     "Hambourg",
-     "Berlin"
+     "raves",
+     "bals",
+     "galas",
+     "kermesses"
     ],
-    "a": 3
+    "a": "raves"
    },
    {
-    "q": "Quel groupe français a sorti 'Around the World' ?",
+    "q": "Quel appareil permet à un DJ de mélanger deux morceaux ? La table de ___ ?",
     "c": [
-     "M83",
-     "Justice",
-     "Daft Punk",
-     "Air"
+     "mixage",
+     "montage",
+     "réglage",
+     "mesure"
     ],
-    "a": 2
+    "a": "mixage"
    },
    {
-    "q": "Quel instrument est essentiel à la musique électronique ?",
+    "q": "Comment appelle-t-on le moment de montée puis lâcher rythmique en électro ? Le ___ ?",
     "c": [
-     "Le synthétiseur",
-     "La guitare électrique",
-     "La batterie",
-     "Le piano"
+     "drop",
+     "flow",
+     "beat",
+     "riff"
     ],
-    "a": 0
+    "a": "drop"
    },
    {
-    "q": "Quel festival est le plus grand festival de musique électronique ?",
+    "q": "Quel style électro répétitif est né à Détroit dans les années 80 ? La ___ ?",
     "c": [
-     "Tomorrowland",
-     "Creamfields",
-     "Ultra Music Festival",
-     "Electric Daisy Carnival"
+     "techno",
+     "salsa",
+     "bossa",
+     "polka"
     ],
-    "a": 0
+    "a": "techno"
    },
    {
-    "q": "Quel sous-genre de l'électro se caractérise par des BPM très élevés ?",
+    "q": "Quel nombre de battements par minute (BPM) caractérise environ la techno ? Environ ___ BPM ?",
     "c": [
-     "Le trance",
-     "La techno",
-     "Le hardstyle",
-     "La house"
+     "130",
+     "60",
+     "200",
+     "90"
     ],
-    "a": 2
+    "a": "130"
    },
    {
-    "q": "Quel pionnier de la musique électronique a sorti 'Autobahn' ?",
-    "c": [
-     "Jean-Michel Jarre",
-     "Tangerine Dream",
-     "Kraftwerk",
-     "Brian Eno"
-    ],
-    "a": 2
+    "q": "En quelle année sort « Homework », premier album de Daft Punk ?",
+    "a": "1997"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "musique_013",
@@ -7486,86 +7476,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle chanteuse R&B a sorti 'Crazy in Love' ?",
+    "q": "Que signifie le sigle R&B ? Rhythm and ___ ?",
     "c": [
-     "Mary J. Blige",
-     "Alicia Keys",
-     "Rihanna",
-     "Beyoncé"
+     "Blues",
+     "Beat",
+     "Bass",
+     "Ballad"
     ],
-    "a": 3
+    "a": "Blues"
    },
    {
-    "q": "Quel label est à l'origine du R&B moderne ?",
+    "q": "Quelle chanteuse américaine, ex-Destiny's Child, est une reine du R&B ? ___ ?",
     "c": [
-     "Roc-A-Fella",
-     "Motown",
-     "Bad Boy",
-     "Def Jam"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quel groupe R&B des années 1990 a connu un énorme succès ?",
-    "c": [
-     "En Vogue",
-     "TLC",
-     "Destiny's Child",
-     "Boyz II Men"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quelle chanteuse R&B est connue pour 'No Scrubs' ?",
-    "c": [
-     "TLC",
-     "Enya",
-     "Destiny's Child",
-     "Beyoncé"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quel chanteur R&B a collaboré avec Daft Punk sur 'Get Lucky' ?",
-    "c": [
-     "Bruno Mars",
-     "Justin Timberlake",
-     "The Weeknd",
-     "Pharrell Williams"
-    ],
-    "a": 3
-   },
-   {
-    "q": "En quelle année le terme R&B a-t-il été inventé ?",
-    "c": [
-     "1930",
-     "1960",
-     "1949",
-     "1955"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quel chanteur R&B est surnommé 'The King of R&B' ?",
-    "c": [
-     "Usher",
-     "R. Kelly",
-     "Stevie Wonder",
-     "Chris Brown"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quel musicien R&B a remporté le plus de Grammy Awards ?",
-    "c": [
-     "Stevie Wonder",
-     "Aretha Franklin",
      "Beyoncé",
-     "Ray Charles"
+     "Rihanna",
+     "Alicia",
+     "Ciara"
     ],
-    "a": 0
+    "a": "Beyoncé"
+   },
+   {
+    "q": "Quel chanteur canadien de R&B masqué au début a chanté « Blinding Lights » ? The ___ ?",
+    "c": [
+     "Weeknd",
+     "Dream",
+     "Voice",
+     "Sound"
+    ],
+    "a": "Weeknd"
+   },
+   {
+    "q": "De quels genres afro-américains le R&B moderne est-il l'héritier ? Soul et ___ ?",
+    "c": [
+     "funk",
+     "punk",
+     "folk",
+     "rock"
+    ],
+    "a": "funk"
+   },
+   {
+    "q": "Quelle chanteuse et pianiste de R&B a chanté « Fallin' » ? Alicia ___ ?",
+    "c": [
+     "Keys",
+     "Badu",
+     "Blige",
+     "Hill"
+    ],
+    "a": "Keys"
+   },
+   {
+    "q": "Quel chanteur de R&B au falsetto a chanté « Ignition » et « I Believe I Can Fly » ? R. ___ ?",
+    "c": [
+     "Kelly",
+     "City",
+     "Ross",
+     "Wave"
+    ],
+    "a": "Kelly"
+   },
+   {
+    "q": "Quel girl group des années 90-2000 lançait la carrière de Beyoncé ? Destiny's ___ ?",
+    "c": [
+     "Child",
+     "Girls",
+     "Angels",
+     "Voices"
+    ],
+    "a": "Child"
+   },
+   {
+    "q": "En quelle année, environ, l'expression « rhythm and blues » remplace-t-elle « race records » (fin années 40) ?",
+    "a": "1948"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "musique_014",
@@ -7574,86 +7559,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel instrument est emblématique de la musique country ?",
+    "q": "Dans quelle grande nation la musique country est-elle née et reine ? Les ___-Unis ?",
     "c": [
-     "La mandoline",
-     "La steel guitar",
-     "L'harmonica",
-     "Le banjo"
+     "États",
+     "Émirats",
+     "Provinces",
+     "Cantons"
     ],
-    "a": 1
+    "a": "États"
    },
    {
-    "q": "Quelle ville du Tennessee est la capitale de la country ?",
+    "q": "Quel couvre-chef à larges bords est associé aux chanteurs country ? Le chapeau de ___ ?",
     "c": [
-     "Knoxville",
+     "cowboy",
+     "paille",
+     "feutre",
+     "soleil"
+    ],
+    "a": "cowboy"
+   },
+   {
+    "q": "Quel instrument à cordes rapide anime les morceaux country ? Le ___ ?",
+    "c": [
+     "banjo",
+     "sitar",
+     "orgue",
+     "piano"
+    ],
+    "a": "banjo"
+   },
+   {
+    "q": "Quelle chanteuse country à forte poitrine a écrit « Jolene » et « I Will Always Love You » ? Dolly ___ ?",
+    "c": [
+     "Parton",
+     "Lynn",
+     "Cline",
+     "Twain"
+    ],
+    "a": "Parton"
+   },
+   {
+    "q": "Quelle ville du Tennessee est la capitale mondiale de la country ?",
+    "c": [
      "Nashville",
      "Memphis",
-     "Chattanooga"
+     "Austin",
+     "Dallas"
     ],
-    "a": 1
+    "a": "Nashville"
    },
    {
-    "q": "Quel chanteur country a écrit 'Ring of Fire' ?",
+    "q": "Quel chanteur country en noir était surnommé « The Man in Black » ? Johnny ___ ?",
     "c": [
-     "June Carter",
-     "Merle Kilgore",
-     "Johnny Cash",
-     "Harlan Howard"
+     "Cash",
+     "Nelson",
+     "Jennings",
+     "Haggard"
     ],
-    "a": 2
+    "a": "Cash"
    },
    {
-    "q": "En quelle année le Grand Ole Opry a-t-il été fondé ?",
+    "q": "Quel instrument à cordes frottées, appelé aussi violon, est central en country ? Le ___ (fiddle) ?",
     "c": [
-     "1925",
-     "1920",
-     "1930",
-     "1935"
+     "violon",
+     "violoncelle",
+     "alto",
+     "contrebasse"
     ],
-    "a": 0
+    "a": "violon"
    },
    {
-    "q": "Quel chanteur français est connu pour sa country ?",
-    "c": [
-     "Michel Sardou",
-     "Joe Dassin",
-     "Hugues Aufray",
-     "Eddy Mitchell"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quel chanteur country est surnommé 'The Man in Black' ?",
-    "c": [
-     "Merle Haggard",
-     "Willie Nelson",
-     "Johnny Cash",
-     "Waylon Jennings"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Quelle chanteuse country est la plus vendue de tous les temps ?",
-    "c": [
-     "Taylor Swift",
-     "Shania Twain",
-     "Carrie Underwood",
-     "Dolly Parton"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quel chanteur country a eu un tube avec 'Achy Breaky Heart' ?",
-    "c": [
-     "Tim McGraw",
-     "Blake Shelton",
-     "Billy Ray Cyrus",
-     "Garth Brooks"
-    ],
-    "a": 2
+    "q": "En quelle année ont eu lieu les premiers enregistrements country célèbres (Bristol Sessions) ?",
+    "a": "1927"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "musique_015",
@@ -7662,86 +7642,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel musicien est considéré comme le père du funk ?",
+    "q": "Quelle qualité rythmique, très dansante, définit le funk ? Le ___ (groove) ?",
     "c": [
-     "George Clinton",
-     "Sly Stone",
-     "Bootsy Collins",
-     "James Brown"
+     "groove",
+     "silence",
+     "calme",
+     "lent"
     ],
-    "a": 3
+    "a": "groove"
    },
    {
-    "q": "Quel riff de basse est le plus célèbre du funk ?",
+    "q": "Quel instrument à cordes graves porte le rythme du funk ? La ___ ?",
     "c": [
-     "Flash Light de Parliament",
-     "Good Times de Chic",
-     "Super Freak de Rick James",
-     "Get Up Offa That Thing de James Brown"
+     "basse",
+     "flûte",
+     "harpe",
+     "trompette"
     ],
-    "a": 1
+    "a": "basse"
    },
    {
-    "q": "Quel groupe a fusionné funk et rock dans les années 1980 ?",
+    "q": "Quel « Godfather of Soul » est aussi pionnier du funk ? James ___ ?",
+    "c": [
+     "Brown",
+     "Clinton",
+     "Wonder",
+     "Prince"
+    ],
+    "a": "Brown"
+   },
+   {
+    "q": "Quel artiste de Minneapolis, symbole ambigu, a fait fusionner funk, rock et pop ?",
     "c": [
      "Prince",
-     "Parliament",
-     "Red Hot Chili Peppers",
-     "Earth, Wind & Fire"
+     "Bowie",
+     "Michael",
+     "Lenny"
     ],
-    "a": 2
+    "a": "Prince"
    },
    {
-    "q": "Quel bassiste de funk est connu pour son style slap ?",
+    "q": "Quel collectif funk mené par George Clinton comprend Parliament et ___ ?",
     "c": [
-     "Bootsy Collins",
-     "Stanley Clarke",
-     "Larry Graham",
-     "Marcus Miller"
+     "Funkadelic",
+     "Earth",
+     "Chic",
+     "Kool"
     ],
-    "a": 2
+    "a": "Funkadelic"
    },
    {
-    "q": "En quelle année James Brown a-t-il enregistré 'Papa's Got a Brand New Bag' ?",
+    "q": "Quel groupe funk-rock californien a chanté « Californication » ? Red Hot Chili ___ ?",
     "c": [
-     "1968",
-     "1970",
-     "1963",
-     "1965"
+     "Peppers",
+     "Beans",
+     "Onions",
+     "Grapes"
     ],
-    "a": 3
+    "a": "Peppers"
    },
    {
-    "q": "Quel groupe de funk a une section de cuivres légendaire ?",
+    "q": "Comment appelle-t-on la technique de basse claquée si typique du funk ? Le ___ (slap) ?",
     "c": [
-     "The Commodores",
-     "Earth, Wind & Fire",
-     "Kool & the Gang",
-     "Tower of Power"
+     "slap",
+     "tap",
+     "pull",
+     "clap"
     ],
-    "a": 3
+    "a": "slap"
    },
    {
-    "q": "Quel chanteur funk a sorti 'Super Freak' ?",
-    "c": [
-     "Prince",
-     "Rick James",
-     "James Brown",
-     "George Clinton"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quelle chanson funk de 1976 est devenue un hymne disco ?",
-    "c": [
-     "Flash Light de Parliament",
-     "Pick Up the Pieces d'Average White Band",
-     "Le Freak de Chic",
-     "Super Freak de Rick James"
-    ],
-    "a": 0
+    "q": "En quelle année sort « Papa's Got a Brand New Bag » de James Brown, jalon du funk ?",
+    "a": "1965"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "musique_016",
@@ -7750,86 +7725,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel groupe suédois a dominé l'ère disco ?",
+    "q": "Dans quel lieu de fête, avec boule à facettes, danse-t-on sur le disco ? La ___ ?",
     "c": [
-     "ABBA",
-     "Chic",
-     "Bee Gees",
-     "Earth, Wind & Fire"
+     "discothèque",
+     "bibliothèque",
+     "cafétéria",
+     "galerie"
     ],
-    "a": 0
+    "a": "discothèque"
    },
    {
-    "q": "Quelle chanson des Bee Gees est emblématique du disco ?",
+    "q": "Quel objet à facettes brillantes tourne au plafond des clubs disco ? La boule à ___ ?",
     "c": [
-     "More Than a Woman",
-     "Stayin' Alive",
-     "Night Fever",
-     "How Deep Is Your Love"
+     "facettes",
+     "neige",
+     "cristal",
+     "lumière"
     ],
-    "a": 1
+    "a": "facettes"
    },
    {
-    "q": "Quel film de 1977 a popularisé le disco ?",
+    "q": "Quel film de 1977 avec John Travolta a popularisé le disco ? La ___ du samedi soir ?",
     "c": [
-     "Saturday Night Fever",
-     "Flashdance",
-     "The Sound of Music",
-     "Grease"
+     "Fièvre",
+     "Danse",
+     "Nuit",
+     "Folie"
     ],
-    "a": 0
+    "a": "Fièvre"
    },
    {
-    "q": "Quelle discothèque new-yorkaise était mythique ?",
+    "q": "Quel groupe de frères aux voix aiguës a chanté « Stayin' Alive » ? Les Bee ___ ?",
     "c": [
-     "Paradise Garage",
-     "The Loft",
-     "Studio 54",
-     "Studio One"
+     "Gees",
+     "Boys",
+     "Stars",
+     "Cool"
     ],
-    "a": 2
+    "a": "Gees"
    },
    {
-    "q": "Quel mouvement a tué le disco en 1979 ?",
+    "q": "Quel groupe disco déguisé (Indien, policier, cowboy...) a chanté « Y.M.C.A. » ? Village ___ ?",
     "c": [
-     "Le punk",
-     "Disco Demolition Night",
-     "La new wave",
-     "Le nouveau romantisme"
+     "People",
+     "Boys",
+     "Stars",
+     "Men"
     ],
-    "a": 1
+    "a": "People"
    },
    {
-    "q": "Quelle chanteuse disco a eu un tube avec 'I Will Survive' ?",
+    "q": "Quelle chanteuse est surnommée « la Reine du Disco » ? Donna ___ ?",
     "c": [
-     "Donna Summer",
-     "Gloria Gaynor",
-     "Cher",
-     "Diana Ross"
+     "Summer",
+     "Ross",
+     "Gaynor",
+     "Khan"
     ],
-    "a": 1
+    "a": "Summer"
    },
    {
-    "q": "En quelle année le disco a-t-il culminé ?",
+    "q": "Quel tube de Gloria Gaynor est un hymne disco de survie ? « I Will ___ » ?",
     "c": [
-     "1974",
-     "1976",
-     "1980",
-     "1978"
+     "Survive",
+     "Dance",
+     "Love",
+     "Live"
     ],
-    "a": 3
+    "a": "Survive"
    },
    {
-    "q": "Quel groupe disco a sorti 'Good Times' ?",
-    "c": [
-     "Chic",
-     "ABBA",
-     "Kool & the Gang",
-     "Bee Gees"
-    ],
-    "a": 0
+    "q": "En quelle année sort le film « La Fièvre du samedi soir » ?",
+    "a": "1977"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "musique_017",
@@ -7838,86 +7808,87 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel chanteur de gospel légendaire a écrit 'Oh Happy Day' ?",
+    "q": "Dans quel lieu de culte le gospel est-il chanté à l'origine ? L'___ ?",
     "c": [
-     "Thomas A. Dorsey",
-     "Edwin Hawkins",
-     "Aretha Franklin",
-     "Mahalia Jackson"
+     "église",
+     "stade",
+     "théâtre",
+     "cinéma"
     ],
-    "a": 1
+    "a": "église"
    },
    {
-    "q": "Quelle chanteuse de gospel est surnommée 'The Queen of Gospel' ?",
+    "q": "Quel thème central les chants gospel célèbrent-ils ? La foi en ___ ?",
     "c": [
-     "Shirley Caesar",
-     "CeCe Winans",
-     "Mahalia Jackson",
-     "Aretha Franklin"
+     "Dieu",
+     "l'argent",
+     "l'amour",
+     "la fête"
     ],
-    "a": 2
+    "a": "Dieu"
    },
    {
-    "q": "Quel instrument accompagne traditionnellement le gospel ?",
+    "q": "Comment appelle-t-on le groupe de chanteurs qui interprète le gospel ? La ___ (chorale) ?",
     "c": [
-     "Le piano",
-     "La guitare",
-     "La batterie",
-     "L'orgue Hammond"
+     "chorale",
+     "fanfare",
+     "troupe",
+     "clique"
     ],
-    "a": 3
+    "a": "chorale"
    },
    {
-    "q": "Quel chanteur de gospel a influencé Elvis Presley ?",
+    "q": "De quelle communauté américaine le gospel est-il issu ? La communauté ___ ?",
     "c": [
-     "The Soul Stirrers",
-     "The Blind Boys of Alabama",
-     "The Dixie Hummingbirds",
-     "The Staple Singers"
+     "afro-américaine",
+     "amérindienne",
+     "asiatique",
+     "irlandaise"
     ],
-    "a": 0
+    "a": "afro-américaine"
    },
    {
-    "q": "En quelle année le gospel a-t-il émergé ?",
+    "q": "Quel chant gospel très célèbre commence par « Amazing ___ » ?",
     "c": [
-     "Années 1950",
-     "Fin du XIXe siècle",
-     "Début du XXe siècle",
-     "Années 1930"
+     "Grace",
+     "Love",
+     "God",
+     "Day"
     ],
-    "a": 2
+    "a": "Grace"
    },
    {
-    "q": "Quel style musical dérive du gospel ?",
+    "q": "De quel genre profane, né du gospel, la soul est-elle proche ? Le gospel a donné la ___ ?",
     "c": [
-     "Le blues",
-     "La soul",
-     "Le jazz",
-     "Le rock"
+     "soul",
+     "techno",
+     "country",
+     "polka"
     ],
-    "a": 1
+    "a": "soul"
    },
    {
-    "q": "Quel chanteur de gospel a remporté un Grammy pour 'Amazing Grace' ?",
+    "q": "Comment appelle-t-on l'échange chanté entre le meneur et le chœur ? Le ___ et réponse ?",
     "c": [
-     "CeCe Winans",
-     "Aretha Franklin",
-     "Yolanda Adams",
-     "Mahalia Jackson"
+     "appel",
+     "cri",
+     "chant",
+     "refrain"
     ],
-    "a": 1
+    "a": "appel"
    },
    {
-    "q": "Quel gospel américain est connu pour sa chorale ?",
+    "q": "En quel siècle le gospel afro-américain moderne prend-il forme ? Au ___e siècle ?",
     "c": [
-     "The Staple Singers",
-     "The Blind Boys of Alabama",
-     "The Dixie Hummingbirds",
-     "The Harlem Gospel Choir"
+     "20",
+     "18",
+     "17",
+     "16"
     ],
-    "a": 3
+    "a": "20"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "musique_018",
@@ -7926,86 +7897,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "De quelle région d'Espagne vient le flamenco ?",
+    "q": "De quel pays le flamenco est-il originaire ?",
     "c": [
-     "La Catalogne",
-     "Le Pays basque",
-     "L'Andalousie",
-     "La Galice"
+     "Espagne",
+     "Portugal",
+     "Italie",
+     "Mexique"
     ],
-    "a": 2
+    "a": "Espagne"
    },
    {
-    "q": "Quel instrument est essentiel au flamenco ?",
+    "q": "De quelle région du sud de l'Espagne le flamenco est-il le cœur ? L'___ ?",
     "c": [
-     "La guitare flamenca",
-     "La guitare classique",
-     "Les castagnettes",
-     "Le cajón"
+     "Andalousie",
+     "Catalogne",
+     "Galice",
+     "Aragon"
     ],
-    "a": 0
+    "a": "Andalousie"
    },
    {
-    "q": "Comment s'appelle le chant dans le flamenco ?",
+    "q": "Quel instrument à cordes accompagne le flamenco ? La ___ ?",
     "c": [
-     "El cante",
-     "El jaleo",
-     "El baile",
-     "El toque"
+     "guitare",
+     "harpe",
+     "flûte",
+     "trompette"
     ],
-    "a": 0
+    "a": "guitare"
    },
    {
-    "q": "Quel danseur de flamenco est mondialement connu ?",
+    "q": "Quels petits instruments à claquer entre les doigts rythment le flamenco ? Des ___ ?",
     "c": [
-     "Joaquín Cortés",
-     "Sara Baras",
-     "Paco de Lucía",
-     "Antonio Gades"
+     "castagnettes",
+     "maracas",
+     "cymbales",
+     "grelots"
     ],
-    "a": 0
+    "a": "castagnettes"
    },
    {
-    "q": "Quel guitariste de flamenco est une légende ?",
+    "q": "Comment appelle-t-on les frappes de pieds rythmées des danseurs ? Le ___ (zapateado) ?",
     "c": [
-     "Paco de Lucía",
-     "Manolo Sanlúcar",
-     "Vicente Amigo",
-     "Tomatito"
+     "zapateado",
+     "moonwalk",
+     "tap",
+     "pas"
     ],
-    "a": 0
+    "a": "zapateado"
    },
    {
-    "q": "Quels sont les trois éléments du flamenco ?",
+    "q": "Quel peuple, présent en Andalousie, a profondément influencé le flamenco ? Les ___ (gitans) ?",
     "c": [
-     "Chant, danse, percussions",
-     "Danse, guitare, palmas",
-     "Chant, danse, guitare",
-     "Chant, guitare, castagnettes"
+     "gitans",
+     "vikings",
+     "berbères",
+     "celtes"
     ],
-    "a": 2
+    "a": "gitans"
    },
    {
-    "q": "En quelle année le flamenco a-t-il été déclaré patrimoine de l'UNESCO ?",
+    "q": "Comment appelle-t-on les claquements de mains rythmés du flamenco ? Les ___ ?",
     "c": [
-     "2010",
-     "2020",
-     "2015",
-     "2005"
+     "palmas",
+     "olé",
+     "duende",
+     "cante"
     ],
-    "a": 0
+    "a": "palmas"
    },
    {
-    "q": "Quel chanteur de flamenco est surnommé 'El Camarón' ?",
-    "c": [
-     "El Fary",
-     "José Mercé",
-     "Camarón de la Isla",
-     "Enrique Morente"
-    ],
-    "a": 2
+    "q": "En quelle année l'UNESCO a-t-elle inscrit le flamenco au patrimoine immatériel ?",
+    "a": "2010"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "musique_019",
@@ -8014,86 +7980,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "De quel pays vient la salsa ?",
+    "q": "Sur quel continent, dans les Caraïbes latines, la salsa a-t-elle pris son essor ? L'Amérique ___ ?",
     "c": [
-     "Cuba et Porto Rico",
-     "Brésil",
-     "Colombie",
-     "République dominicaine"
+     "latine",
+     "du Nord",
+     "asiatique",
+     "africaine"
     ],
-    "a": 0
+    "a": "latine"
    },
    {
-    "q": "Quel musicien est surnommé 'El Rey de la Salsa' ?",
+    "q": "La salsa est avant tout une musique faite pour ___ ?",
     "c": [
-     "Marc Anthony",
-     "Celia Cruz",
-     "Willie Colón",
-     "Héctor Lavoe"
+     "danser",
+     "dormir",
+     "prier",
+     "pleurer"
     ],
-    "a": 1
+    "a": "danser"
    },
    {
-    "q": "Quelle chanteuse de salsa est surnommée 'La Guarachera de Cuba' ?",
+    "q": "De quelle île des Caraïbes viennent beaucoup de rythmes de la salsa ?",
     "c": [
-     "Celia Cruz",
-     "Milly Quezada",
-     "Gloria Estefan",
-     "La India"
+     "Cuba",
+     "Islande",
+     "Malte",
+     "Chypre"
     ],
-    "a": 0
+    "a": "Cuba"
    },
    {
-    "q": "Quel instrument donne le rythme à la salsa ?",
+    "q": "Quel instrument à deux fûts frappés à la main est typique de la salsa ? Les ___ ?",
     "c": [
-     "Le piano",
-     "La basse",
-     "Les claves",
-     "La trompette"
+     "congas",
+     "timbales",
+     "maracas",
+     "claves"
     ],
-    "a": 2
+    "a": "congas"
    },
    {
-    "q": "Quel groupe de salsa new-yorkais est le plus célèbre ?",
+    "q": "Dans quelle ville américaine, capitale latino, la salsa moderne s'est-elle développée ? New ___ ?",
     "c": [
-     "El Gran Combo",
-     "Sonora Ponceña",
-     "Fania All-Stars",
-     "Mongo Santamaria"
+     "York",
+     "Orleans",
+     "Jersey",
+     "Haven"
     ],
-    "a": 2
+    "a": "York"
    },
    {
-    "q": "En quelle année la salsa est-elle devenue populaire aux États-Unis ?",
+    "q": "Quelle chanteuse cubaine est surnommée « la Reine de la Salsa » ? Celia ___ ?",
     "c": [
-     "Années 1950",
-     "Années 1960",
-     "Années 1980",
-     "Années 1970"
+     "Cruz",
+     "Estefan",
+     "Ronstadt",
+     "Lupe"
     ],
-    "a": 3
+    "a": "Cruz"
    },
    {
-    "q": "Quel danseur de salsa est connu pour ses acrobaties ?",
+    "q": "Que signifie « salsa » en espagnol, mot qui a donné son nom au genre ?",
     "c": [
-     "Eddie Torres",
-     "Mambo",
-     "Johnny Vazquez",
-     "Frankie Martinez"
+     "sauce",
+     "danse",
+     "fête",
+     "soleil"
     ],
-    "a": 0
+    "a": "sauce"
    },
    {
-    "q": "Quel musicien de salsa new-yorkais a composé 'El Cantante' ?",
-    "c": [
-     "Willie Colón",
-     "Ruben Blades",
-     "Héctor Lavoe",
-     "Marc Anthony"
-    ],
-    "a": 2
+    "q": "En quelle année, environ, le mot « salsa » s'impose-t-il pour ce genre (années 1970) ?",
+    "a": "1970"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "musique_020",
@@ -8102,86 +8063,87 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "De quelle île des Caraïbes vient le calypso ?",
+    "q": "De quelle île des Caraïbes le calypso est-il originaire ? ___-et-Tobago ?",
     "c": [
-     "Barbade",
-     "Trinidad-et-Tobago",
+     "Trinité",
      "Cuba",
-     "Jamaïque"
+     "Jamaïque",
+     "Haïti"
     ],
-    "a": 1
+    "a": "Trinité"
    },
    {
-    "q": "Quel instrument est typique du calypso ?",
+    "q": "Quel instrument fait de bidons de métal accordés accompagne le calypso ? Le steel ___ ?",
     "c": [
-     "Le steel drum",
-     "Le bongo",
-     "Le ukulélé",
-     "Les maracas"
+     "drum",
+     "guitar",
+     "piano",
+     "horn"
     ],
-    "a": 0
+    "a": "drum"
    },
    {
-    "q": "Quel chanteur de calypso est le plus célèbre ?",
+    "q": "Pendant quelle grande fête populaire le calypso résonne-t-il ? Le ___ ?",
     "c": [
-     "Lord Kitchener",
-     "King Radio",
-     "Harry Belafonte",
-     "Mighty Sparrow"
+     "carnaval",
+     "mariage",
+     "baptême",
+     "marché"
     ],
-    "a": 2
+    "a": "carnaval"
    },
    {
-    "q": "Quelle chanson de Belafonte est un standard calypso ?",
+    "q": "Les chansons de calypso sont réputées pour leurs paroles pleines d'___ (moqueries) ?",
     "c": [
-     "Jamaica Farewell",
-     "Day-O (The Banana Boat Song)",
-     "Calypso Blues",
-     "Island in the Sun"
+     "humour",
+     "tristesse",
+     "colère",
+     "silence"
     ],
-    "a": 1
+    "a": "humour"
    },
    {
-    "q": "Quelle fête annuelle de Trinidad est inséparable du calypso ?",
+    "q": "Quel chanteur américano-jamaïcain a popularisé le calypso avec « Banana Boat » ? Harry ___ ?",
     "c": [
-     "La fête de l'indépendance",
-     "La fête du rhum",
-     "Le carnaval",
-     "Le festival de jazz"
+     "Belafonte",
+     "Marley",
+     "Cliff",
+     "Tosh"
     ],
-    "a": 2
+    "a": "Belafonte"
    },
    {
-    "q": "Quel style de musique dérive du calypso ?",
+    "q": "Quel mot revient dans le refrain de « Banana Boat Song » ? « ___ » ?",
     "c": [
-     "Le ska",
-     "Le dancehall",
-     "Le reggae",
-     "Le soca"
+     "Day-O",
+     "Hey-O",
+     "Yo-Ho",
+     "Ai-Ai"
     ],
-    "a": 3
+    "a": "Day-O"
    },
    {
-    "q": "En quelle année le calypso a-t-il connu son âge d'or ?",
+    "q": "De quel instrument de fortune le steel drum est-il fabriqué ? Un ___ de pétrole ?",
     "c": [
-     "Années 1970-1980",
-     "Années 1930-1940",
-     "Années 1950-1960",
-     "Années 1920-1930"
+     "bidon",
+     "seau",
+     "tonneau",
+     "pot"
     ],
-    "a": 2
+    "a": "bidon"
    },
    {
-    "q": "Quel chanteur de calypso a remporté un Grammy ?",
+    "q": "En quel siècle le calypso est-il né à Trinité-et-Tobago ? Au ___e siècle ?",
     "c": [
-     "Mighty Sparrow",
-     "Calypso Rose",
-     "Lord Kitchener",
-     "Harry Belafonte"
+     "19",
+     "17",
+     "18",
+     "20"
     ],
-    "a": 3
+    "a": "19"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "musique_021",
