@@ -5680,86 +5680,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "À quelle espèce appartient le chien domestique ?",
+    "q": "Quel cri pousse le chien ? Il ___ ?",
     "c": [
-     "Canis lupus familiaris (une seule espèce)",
-     "Il existe environ 350 espèces différentes",
-     "Canis leo",
-     "Felis catus"
+     "aboie",
+     "miaule",
+     "hennit",
+     "meugle"
     ],
-    "a": 0
+    "a": "aboie"
    },
    {
-    "q": "Combien de races de chiens sont reconnues mondialement ?",
+    "q": "Comment appelle-t-on un bébé chien ?",
     "c": [
-     "Environ 350",
-     "Environ 200",
-     "Environ 500",
-     "Environ 100"
+     "chiot",
+     "chaton",
+     "poulain",
+     "veau"
     ],
-    "a": 0
+    "a": "chiot"
    },
    {
-    "q": "Quel est le chien le plus rapide ?",
-    "c": [
-     "Le husky",
-     "le golden retriever",
-     "Le berger allemand",
-     "Le lévrier"
-    ],
-    "a": 3
+    "q": "Combien de pattes a un chien ?",
+    "a": "4"
    },
    {
-    "q": "Combien de dents un chien adulte a-t-il ?",
+    "q": "Quelle race de petit chien saucisse a de très courtes pattes ?",
     "c": [
-     "42",
-     "36",
-     "32",
-     "48"
+     "teckel",
+     "caniche",
+     "bouledogue",
+     "labrador"
     ],
-    "a": 0
+    "a": "teckel"
    },
    {
-    "q": "Quelle race de chien est la plus intelligente ?",
+    "q": "Quel sens est extrêmement développé chez le chien, bien plus que chez l'humain ? L'___ ?",
     "c": [
-     "Border Collie",
-     "Golden Retriever",
-     "Berger Allemand",
-     "Caniche"
+     "odorat",
+     "vue",
+     "goût",
+     "toucher"
     ],
-    "a": 0
+    "a": "odorat"
    },
    {
-    "q": "Quel chien a le meilleur odorat ?",
+    "q": "Quelle grande race de chien de montagne suisse portait un tonnelet au cou ? Le saint-___ ?",
     "c": [
-     "Le chien de Saint-Hubert",
-     "le labrador",
-     "Le beagle",
-     "Le berger allemand"
+     "bernard",
+     "hubert",
+     "germain",
+     "louis"
     ],
-    "a": 0
+    "a": "bernard"
    },
    {
-    "q": "Combien d'os a un chien ?",
+    "q": "Quel colley, star de cinéma et de télévision, porte un prénom féminin célèbre ?",
     "c": [
-     "250",
-     "400",
-     "319",
-     "206"
+     "Lassie",
+     "Rex",
+     "Milou",
+     "Rintintin"
     ],
-    "a": 2
+    "a": "Lassie"
    },
    {
-    "q": "Quelle race de chien a vécu le plus longtemps (record) ?",
-    "c": [
-     "Jack Russell",
-     "Chien de berger australien",
-     "Caniche",
-     "Chihuahua"
-    ],
-    "a": 1
+    "q": "Combien de récepteurs olfactifs, en millions, possède environ le nez d'un chien ?",
+    "a": "220"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "animaux_002",
@@ -5768,86 +5757,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Combien d'espèces de les chats existe-t-il environ ?",
+    "q": "Quel cri pousse le chat ? Il ___ ?",
     "c": [
-     "70",
-     "100",
-     "30",
-     "50"
+     "miaule",
+     "aboie",
+     "hennit",
+     "coasse"
     ],
-    "a": 0
+    "a": "miaule"
    },
    {
-    "q": "Combien d'heures un chat dort-il par jour en moyenne ?",
+    "q": "Comment appelle-t-on un bébé chat ?",
     "c": [
-     "12 à 16",
-     "20 à 22",
-     "4 à 6",
-     "8 à 10"
+     "chaton",
+     "chiot",
+     "agneau",
+     "faon"
     ],
-    "a": 0
+    "a": "chaton"
    },
    {
-    "q": "Combien de races de chats existe-t-il ?",
+    "q": "Quel bruit fait un chat content quand on le caresse ? Il ___ ?",
     "c": [
-     "Environ 100",
-     "Environ 50",
-     "Environ 40",
-     "Environ 70"
+     "ronronne",
+     "grogne",
+     "siffle",
+     "crache"
     ],
-    "a": 3
+    "a": "ronronne"
    },
    {
-    "q": "Quel est le plus grand félin du monde ?",
+    "q": "Sur quelles parties de ses pattes le chat rentre-t-il ses griffes ? Ses ___ ?",
     "c": [
-     "La panthère",
-     "Le jaguar",
-     "Le lion",
-     "Le tigre"
+     "coussinets",
+     "sabots",
+     "palmes",
+     "serres"
     ],
-    "a": 3
+    "a": "coussinets"
    },
    {
-    "q": "Combien de moustaches un chat a-t-il en moyenne ?",
+    "q": "Quelle race de chat sans poils est reconnaissable à sa peau nue ?",
     "c": [
-     "24",
-     "18",
+     "sphynx",
+     "persan",
+     "siamois",
+     "maine coon"
+    ],
+    "a": "sphynx"
+   },
+   {
+    "q": "Combien d'heures par jour un chat dort-il en moyenne ?",
+    "c": [
+     "16",
+     "8",
      "12",
-     "30"
+     "20"
     ],
-    "a": 0
+    "a": "16"
    },
    {
-    "q": "Quelle race de chat est considérée comme la plus affectueuse ?",
+    "q": "Dans quelle civilisation antique le chat était-il un animal sacré ?",
     "c": [
-     "Le Persan",
-     "Le Maine Coon",
-     "Le Ragdoll",
-     "Le Siamois"
+     "Égypte",
+     "Grèce",
+     "Rome",
+     "Perse"
     ],
-    "a": 2
+    "a": "Égypte"
    },
    {
-    "q": "Combien de muscles l'oreille d'un chat compte-t-elle ?",
-    "c": [
-     "40",
-     "32",
-     "24",
-     "18"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quelle race de chat est la plus grande ?",
-    "c": [
-     "Le Ragdoll",
-     "Le Norvégien",
-     "Le Maine Coon",
-     "Le Savannah"
-    ],
-    "a": 2
+    "q": "Combien de vibrisses (moustaches) un chat possède-t-il en moyenne de chaque côté du museau ?",
+    "a": "12"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "animaux_003",
@@ -5856,86 +5840,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Combien d'espèces de les oiseaux existe-t-il environ ?",
+    "q": "Grâce à quoi les oiseaux peuvent-ils voler ? Leurs ___ ?",
     "c": [
-     "5000",
-     "3000",
-     "10000",
-     "20000"
+     "ailes",
+     "pattes",
+     "becs",
+     "queues"
     ],
-    "a": 2
+    "a": "ailes"
    },
    {
-    "q": "Combien d'espèces d'oiseaux existe-t-il dans le monde ?",
+    "q": "Dans quoi les oiseaux pondent-ils leurs petits ? Des ___ ?",
     "c": [
-     "Environ 10 000",
-     "Environ 20 000",
-     "Environ 50 000",
-     "Environ 5 000"
+     "œufs",
+     "cocons",
+     "graines",
+     "nids"
     ],
-    "a": 0
+    "a": "œufs"
    },
    {
-    "q": "Quel est l'oiseau le plus rapide en piqué ?",
+    "q": "Quel grand oiseau coureur africain est le plus grand du monde et ne vole pas ?",
     "c": [
-     "Le faucon pèlerin",
-     "Le martinet",
-     "L'aigle royal",
-     "L'hirondelle"
+     "autruche",
+     "aigle",
+     "pélican",
+     "flamant"
     ],
-    "a": 0
+    "a": "autruche"
    },
    {
-    "q": "Quel oiseau ne peut pas voler ?",
+    "q": "Quel oiseau nocturne au visage rond et hululant chasse la nuit ? La ___ ?",
     "c": [
-     "L'oie",
-     "Le pingouin",
-     "Le canard",
-     "Le poulet"
+     "chouette",
+     "colombe",
+     "pie",
+     "grue"
     ],
-    "a": 1
+    "a": "chouette"
    },
    {
-    "q": "Quel est le plus grand oiseau du monde ?",
+    "q": "Quel minuscule oiseau bat des ailes très vite et butine les fleurs ? Le ___-mouche ?",
     "c": [
-     "L'émeu",
-     "Le condor",
-     "L'autruche",
-     "Le casoar"
+     "oiseau",
+     "colibri",
+     "martin",
+     "gobe"
     ],
-    "a": 2
+    "a": "oiseau"
    },
    {
-    "q": "Combien de battements d'ailes un colibri fait-il par seconde ?",
+    "q": "Quel oiseau noir et blanc de l'Antarctique nage mais ne vole pas ?",
     "c": [
-     "Jusqu'à 50",
-     "Jusqu'à 30",
-     "Jusqu'à 100",
-     "Jusqu'à 80"
+     "manchot",
+     "goéland",
+     "héron",
+     "cygne"
     ],
-    "a": 3
+    "a": "manchot"
    },
    {
-    "q": "Quel oiseau est un symbole de paix ?",
+    "q": "Quel oiseau est réputé imiter la parole humaine ? Le ___ ?",
     "c": [
-     "le cygne",
-     "La colombe",
-     "l'hirondelle",
-     "Le pigeon"
+     "perroquet",
+     "moineau",
+     "pigeon",
+     "corbeau"
     ],
-    "a": 1
+    "a": "perroquet"
    },
    {
-    "q": "Quel oiseau a la plus grande envergure ?",
-    "c": [
-     "le pélican",
-     "l'aigle",
-     "L'albatros",
-     "Le condor"
-    ],
-    "a": 2
+    "q": "Combien de plumes, environ, possède un cygne, l'un des oiseaux les plus emplumés ?",
+    "a": "25000"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "animaux_004",
@@ -5944,86 +5923,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Combien d'espèces de les poissons existe-t-il environ ?",
+    "q": "Grâce à quel organe les poissons respirent-ils sous l'eau ? Leurs ___ ?",
     "c": [
-     "5000",
-     "32000",
-     "50000",
-     "10000"
+     "branchies",
+     "poumons",
+     "nageoires",
+     "écailles"
     ],
-    "a": 1
+    "a": "branchies"
    },
    {
-    "q": "Quel est le plus grand poisson du monde ?",
+    "q": "Quel petit poisson orange est le héros du film « Le Monde de Nemo » ?",
     "c": [
-     "Le requin baleine",
-     "Le mérou",
-     "Le requin blanc",
-     "La baleine bleue"
+     "poisson-clown",
+     "requin",
+     "raie",
+     "thon"
     ],
-    "a": 0
+    "a": "poisson-clown"
    },
    {
-    "q": "Combien d'espèces de poissons existe-t-il ?",
+    "q": "De quoi est recouvert le corps de la plupart des poissons ? D'___ ?",
     "c": [
-     "Environ 50 000",
-     "Environ 32 000",
-     "Environ 10 000",
-     "Environ 20 000"
+     "écailles",
+     "poils",
+     "plumes",
+     "carapace"
     ],
-    "a": 1
+    "a": "écailles"
    },
    {
-    "q": "Quel poisson peut changer de sexe ?",
+    "q": "Quel poisson rouge est le plus commun des animaux de compagnie aquatiques ? Le poisson ___ ?",
     "c": [
-     "le thon",
-     "le saumon",
-     "Le mérou",
-     "Le poisson clown"
+     "rouge",
+     "bleu",
+     "chat",
+     "lune"
     ],
-    "a": 3
+    "a": "rouge"
    },
    {
-    "q": "Quel est le poisson le plus venimeux ?",
+    "q": "Quel poisson plat vit au fond de la mer, les deux yeux du même côté ? La ___ ?",
     "c": [
-     "Le poisson-pierre",
-     "la rascasse",
-     "le fugu",
-     "le poisson-lion"
+     "sole",
+     "carpe",
+     "truite",
+     "anguille"
     ],
-    "a": 0
+    "a": "sole"
    },
    {
-    "q": "Comment respire un poisson ?",
+    "q": "Quel énorme poisson au corps tacheté est le plus grand du monde ? Le requin-___ ?",
     "c": [
-     "Avec la peau",
-     "Avec des branchies",
-     "Avec la bouche",
-     "Avec des poumons"
+     "baleine",
+     "marteau",
+     "tigre",
+     "blanc"
     ],
-    "a": 1
+    "a": "baleine"
    },
    {
-    "q": "Quel poisson migrateur remonte les rivières pour se reproduire ?",
+    "q": "Quel poisson électrique d'Amazonie peut envoyer des décharges ? L'anguille ___ ?",
     "c": [
-     "Le saumon",
-     "le brochet",
-     "la truite",
-     "le thon"
+     "électrique",
+     "géante",
+     "royale",
+     "dorée"
     ],
-    "a": 0
+    "a": "électrique"
    },
    {
-    "q": "Quel poisson est connu pour son venin mortel dans la cuisine japonaise ?",
-    "c": [
-     "Le fugu",
-     "le thon",
-     "la dorade",
-     "le maquereau"
-    ],
-    "a": 0
+    "q": "Combien d'espèces de poissons, environ, sont connues sur Terre ?",
+    "a": "34000"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "animaux_005",
@@ -6032,86 +6006,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Combien d'espèces de les chevaux existe-t-il environ ?",
+    "q": "Quel cri pousse le cheval ? Il ___ ?",
     "c": [
-     "350",
-     "200",
-     "500",
-     "100"
+     "hennit",
+     "aboie",
+     "miaule",
+     "beugle"
     ],
-    "a": 0
+    "a": "hennit"
    },
    {
-    "q": "Combien de temps dure la gestation d'un cheval ?",
+    "q": "Comment appelle-t-on un bébé cheval ?",
     "c": [
-     "9 mois",
-     "13 mois",
-     "11 mois",
-     "7 mois"
+     "poulain",
+     "veau",
+     "chiot",
+     "agneau"
     ],
-    "a": 2
+    "a": "poulain"
    },
    {
-    "q": "Quelle est la race de cheval la plus rapide ?",
+    "q": "Que met-on sur le dos du cheval pour le monter ? Une ___ ?",
     "c": [
-     "le quarter horse",
-     "le trotteur",
-     "L'arabe",
-     "Le pur-sang anglais"
+     "selle",
+     "bride",
+     "housse",
+     "couverture"
     ],
-    "a": 3
+    "a": "selle"
    },
    {
-    "q": "Comment s'appelle le bébé de la jument ?",
+    "q": "Comment appelle-t-on un cheval femelle adulte ? Une ___ ?",
     "c": [
-     "l'ânon",
-     "le veau",
-     "Le poulain",
-     "le poney"
+     "jument",
+     "vache",
+     "brebis",
+     "truie"
     ],
-    "a": 2
+    "a": "jument"
    },
    {
-    "q": "Quelle est la hauteur d'un cheval mesurée ?",
+    "q": "Quelle protection métallique cloue-t-on sous les sabots du cheval ? Un ___ ?",
     "c": [
-     "Au garrot",
-     "À la tête",
-     "à la croupe",
-     "au dos"
+     "fer",
+     "clou",
+     "patin",
+     "sabot"
     ],
-    "a": 0
+    "a": "fer"
    },
    {
-    "q": "Combien de races de chevaux existe-t-il dans le monde ?",
+    "q": "Quelle allure la plus rapide du cheval précède le trot dans le galop ? Le ___ ?",
     "c": [
-     "Environ 100",
-     "Plus de 500",
-     "Plus de 300",
-     "Environ 200"
+     "galop",
+     "pas",
+     "trot",
+     "amble"
     ],
-    "a": 2
+    "a": "galop"
    },
    {
-    "q": "Quel cheval légendaire portait Alexandre le Grand ?",
+    "q": "Comment appelle-t-on les longs poils qui tombent sur le cou du cheval ? La ___ ?",
     "c": [
-     "Pégase",
-     "Bucéphale",
-     "Sleipnir",
-     "Cronos"
+     "crinière",
+     "toison",
+     "fourrure",
+     "barbe"
     ],
-    "a": 1
+    "a": "crinière"
    },
    {
-    "q": "Quelle discipline équestre est olympique ?",
-    "c": [
-     "la monte",
-     "l'équitation western",
-     "l'attelage",
-     "Le dressage"
-    ],
-    "a": 3
+    "q": "Combien d'os, environ, compte le squelette d'un cheval ?",
+    "a": "205"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "animaux_006",
@@ -6120,86 +6089,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Combien d'espèces de les dauphins existe-t-il environ ?",
+    "q": "Dans quel milieu vivent les dauphins ? La ___ ?",
     "c": [
-     "20",
-     "40",
-     "60",
-     "10"
+     "mer",
+     "montagne",
+     "forêt",
+     "désert"
     ],
-    "a": 1
+    "a": "mer"
    },
    {
-    "q": "Quel est le mammifère le plus intelligent après l'homme ?",
+    "q": "Le dauphin est-il un poisson ou un mammifère ?",
     "c": [
-     "l'éléphant",
-     "Le dauphin",
-     "le chimpanzé",
-     "le chien"
+     "mammifère",
+     "poisson",
+     "reptile",
+     "amphibien"
     ],
-    "a": 1
+    "a": "mammifère"
    },
    {
-    "q": "Combien de dents a un dauphin adulte ?",
+    "q": "Par quel orifice sur le dessus de sa tête le dauphin respire-t-il ? L'___ ?",
     "c": [
-     "Environ 100",
-     "Environ 200",
-     "Environ 150",
-     "Environ 50"
+     "évent",
+     "nez",
+     "branchie",
+     "bec"
     ],
-    "a": 0
+    "a": "évent"
    },
    {
-    "q": "Comment les dauphins dorment-ils ?",
+    "q": "Quel sens permet au dauphin de « voir » avec des sons ? L'écho___ ?",
     "c": [
-     "Jamais",
-     "Par cycles courts",
-     "Un hémisphère du cerveau à la fois",
-     "Complètement"
+     "location",
+     "graphie",
+     "logie",
+     "scopie"
     ],
-    "a": 2
+    "a": "location"
    },
    {
-    "q": "Quelle est la vitesse maximale d'un dauphin ?",
+    "q": "Quelle grande espèce de dauphin, joueur et souriant, est la plus connue ? Le grand ___ ?",
     "c": [
-     "60 km/h",
-     "80 km/h",
-     "40 km/h",
-     "30 km/h"
+     "dauphin",
+     "cachalot",
+     "narval",
+     "béluga"
     ],
-    "a": 0
+    "a": "dauphin"
    },
    {
-    "q": "Combien de temps un dauphin peut-il rester sous l'eau ?",
+    "q": "Le dauphin est réputé pour être très ___ (capable d'apprendre et résoudre des problèmes) ?",
     "c": [
-     "5 minutes",
-     "15 minutes",
-     "30 minutes",
-     "1 minute"
+     "intelligent",
+     "lent",
+     "sourd",
+     "aveugle"
     ],
-    "a": 1
+    "a": "intelligent"
    },
    {
-    "q": "Quel est le plus grand dauphin ?",
+    "q": "Quel très gros cousin du dauphin, noir et blanc, est appelé « baleine tueuse » ? L'___ ?",
     "c": [
-     "le dauphin de Risso",
-     "le dauphin bleu",
-     "le grand dauphin",
-     "L'orque"
+     "orque",
+     "requin",
+     "morse",
+     "phoque"
     ],
-    "a": 3
+    "a": "orque"
    },
    {
-    "q": "Comment les dauphins communiquent-ils ?",
-    "c": [
-     "Par écholocalisation et sifflements",
-     "Par les gestes",
-     "Par des cris",
-     "Par télépathie"
-    ],
-    "a": 0
+    "q": "Combien de dents, environ, un grand dauphin possède-t-il ?",
+    "a": "100"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "animaux_007",
@@ -6208,86 +6172,69 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Combien d'espèces de les insectes existe-t-il environ ?",
-    "c": [
-     "500K",
-     "1M",
-     "10M",
-     "100K"
-    ],
-    "a": 1
+    "q": "Combien de pattes possède un insecte ?",
+    "a": "6"
    },
    {
-    "q": "Combien d'espèces d'insectes existe-t-il ?",
+    "q": "Quel insecte produit du miel ? L'___ ?",
     "c": [
-     "environ 500 000",
-     "environ 100 000",
-     "Plus d'un million",
-     "environ 2 millions"
+     "abeille",
+     "guêpe",
+     "mouche",
+     "fourmi"
     ],
-    "a": 2
+    "a": "abeille"
    },
    {
-    "q": "Quel insecte est connu pour son travail d'équipe ?",
+    "q": "Quel insecte coloré aux grandes ailes naît d'une chenille ? Le ___ ?",
     "c": [
-     "La fourmi",
-     "la termite",
-     "l'abeille",
-     "le scarabée"
+     "papillon",
+     "scarabée",
+     "criquet",
+     "moustique"
     ],
-    "a": 0
+    "a": "papillon"
    },
    {
-    "q": "Combien de pattes a un insecte ?",
+    "q": "Quel insecte rouge à points noirs porte bonheur ? La ___ ?",
     "c": [
-     "6",
-     "10",
-     "8",
-     "4"
+     "coccinelle",
+     "sauterelle",
+     "libellule",
+     "cigale"
     ],
-    "a": 0
+    "a": "coccinelle"
    },
    {
-    "q": "Quel est l'insecte le plus rapide ?",
+    "q": "Quel insecte social vit en colonie et peut porter bien plus lourd que son poids ? La ___ ?",
     "c": [
-     "La libellule",
-     "la mouche",
-     "le frelon",
-     "l'abeille"
+     "fourmi",
+     "abeille",
+     "termite",
+     "guêpe"
     ],
-    "a": 0
+    "a": "fourmi"
    },
    {
-    "q": "Combien d'yeux a une abeille ?",
-    "c": [
-     "3",
-     "8",
-     "2",
-     "5"
-    ],
-    "a": 3
+    "q": "En combien de parties le corps d'un insecte est-il divisé (tête, thorax, abdomen) ?",
+    "a": "3"
    },
    {
-    "q": "Quel insecte peut soulever jusqu'à 50 fois son poids ?",
+    "q": "Quel insecte chante en été en frottant ses ailes dans le sud de la France ? La ___ ?",
     "c": [
-     "La fourmi",
-     "la coccinelle",
-     "la sauterelle",
-     "le scarabée"
+     "cigale",
+     "grillon",
+     "abeille",
+     "mouche"
     ],
-    "a": 0
+    "a": "cigale"
    },
    {
-    "q": "Quel est l'insecte le plus venimeux du monde ?",
-    "c": [
-     "La fourmi Moïse",
-     "le frelon géant",
-     "l'abeille tueuse",
-     "la veuve noire"
-    ],
-    "a": 0
+    "q": "Combien d'espèces d'insectes, environ en millions, les scientifiques estiment-ils qu'il existe sur Terre ?",
+    "a": "10"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "animaux_008",
@@ -6296,86 +6243,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Combien d'espèces de les serpents existe-t-il environ ?",
-    "c": [
-     "500",
-     "5000",
-     "3500",
-     "1000"
-    ],
-    "a": 2
+    "q": "Combien de pattes possède un serpent ?",
+    "a": "0"
    },
    {
-    "q": "Quel est le serpent le plus venimeux du monde ?",
+    "q": "Comment le serpent goûte-t-il l'air autour de lui ? Avec sa ___ ?",
     "c": [
-     "le mamba noir",
-     "le serpent corail",
-     "Le taïpan du désert",
-     "le cobra royal"
+     "langue",
+     "queue",
+     "peau",
+     "narine"
     ],
-    "a": 2
+    "a": "langue"
    },
    {
-    "q": "Combien d'espèces de serpents existe-t-il ?",
+    "q": "Comment appelle-t-on le venin injecté par certains serpents lors d'une morsure ? Du ___ ?",
     "c": [
-     "Environ 5 000",
-     "Environ 2 000",
-     "Environ 3 000",
-     "Environ 1 000"
+     "venin",
+     "poison",
+     "acide",
+     "nectar"
     ],
-    "a": 2
+    "a": "venin"
    },
    {
-    "q": "Quel serpent est le plus long ?",
+    "q": "Quel grand serpent constricteur étouffe ses proies plutôt que de les mordre ? Le ___ ?",
     "c": [
-     "L'anaconda",
-     "le python réticulé",
-     "le cobra royal",
-     "le boa"
+     "boa",
+     "cobra",
+     "vipère",
+     "python"
     ],
-    "a": 0
+    "a": "boa"
    },
    {
-    "q": "Comment les serpents chassent-ils ?",
+    "q": "Quel serpent dresse un capuchon et est charmé par les fakirs en Inde ? Le ___ ?",
     "c": [
-     "par la vue",
-     "Par odorat et détection de chaleur",
-     "par l'ouïe",
-     "par le toucher"
+     "cobra",
+     "boa",
+     "python",
+     "mamba"
     ],
-    "a": 1
+    "a": "cobra"
    },
    {
-    "q": "Quel serpent peut avaler une proie entière ?",
+    "q": "Que fait un serpent quand il change et perd sa vieille peau ? Il ___ ?",
     "c": [
-     "Le python",
-     "le cobra",
-     "la vipère",
-     "la couleuvre"
+     "mue",
+     "fond",
+     "gèle",
+     "fane"
     ],
-    "a": 0
+    "a": "mue"
    },
    {
-    "q": "Combien de temps un serpent peut-il jeûner ?",
+    "q": "Quel est le serpent le plus venimeux du monde vit en Australie ? Le taïpan du ___ ?",
     "c": [
-     "Plusieurs mois",
-     "plusieurs jours",
-     "plusieurs semaines",
-     "plusieurs années"
+     "désert",
+     "nord",
+     "sud",
+     "centre"
     ],
-    "a": 0
+    "a": "désert"
    },
    {
-    "q": "Quel serpent est connu pour danser face à un charmeur ?",
-    "c": [
-     "le python",
-     "Le cobra",
-     "le boa",
-     "la vipère"
-    ],
-    "a": 1
+    "q": "Quelle longueur, en mètres, peut atteindre un python réticulé, le plus long serpent ?",
+    "a": "7"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "animaux_009",
@@ -6384,86 +6320,75 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Combien d'espèces de les ours existe-t-il environ ?",
+    "q": "Quel grand mammifère polaire est blanc et vit sur la banquise ? L'ours ___ ?",
     "c": [
-     "5",
-     "3",
-     "12",
-     "8"
+     "blanc",
+     "brun",
+     "noir",
+     "gris"
     ],
-    "a": 3
+    "a": "blanc"
    },
    {
-    "q": "Quel est le plus grand ours du monde ?",
+    "q": "Que font les ours pendant l'hiver, dans leur tanière ? Ils ___ ?",
     "c": [
-     "L'ours polaire",
-     "l'ours noir",
-     "l'ours kodiak",
-     "l'ours brun"
+     "hibernent",
+     "migrent",
+     "chantent",
+     "nagent"
     ],
-    "a": 0
+    "a": "hibernent"
    },
    {
-    "q": "Combien de temps dure l'hibernation d'un ours ?",
+    "q": "Quel aliment sucré les ours adorent-ils dérober aux abeilles ? Le ___ ?",
     "c": [
-     "1 à 2 mois",
-     "2 à 3 mois",
-     "5 à 7 mois",
-     "8 à 9 mois"
+     "miel",
+     "sucre",
+     "sirop",
+     "lait"
     ],
-    "a": 2
+    "a": "miel"
    },
    {
-    "q": "Quel est le régime alimentaire des ours ?",
+    "q": "Quel ours noir et blanc de Chine se nourrit de bambou ? Le ___ ?",
     "c": [
-     "insectivore",
-     "carnivore",
-     "Omnivore",
-     "herbivore"
+     "panda",
+     "grizzly",
+     "koala",
+     "kodiak"
     ],
-    "a": 2
+    "a": "panda"
    },
    {
-    "q": "À quelle vitesse un ours peut-il courir ?",
+    "q": "Quel grand ours brun d'Amérique du Nord est réputé féroce ? Le ___ ?",
     "c": [
-     "Jusqu'à 50 km/h",
-     "jusqu'à 40 km/h",
-     "jusqu'à 70 km/h",
-     "jusqu'à 30 km/h"
+     "grizzly",
+     "panda",
+     "malais",
+     "lippu"
     ],
-    "a": 0
+    "a": "grizzly"
    },
    {
-    "q": "Quelle espèce d'ours n'existe pas ?",
+    "q": "Comment appelle-t-on un bébé ours ?",
     "c": [
-     "L'ours vert",
-     "l'ours brun",
-     "l'ours noir",
-     "l'ours polaire"
+     "ourson",
+     "oursin",
+     "faon",
+     "veau"
     ],
-    "a": 0
+    "a": "ourson"
    },
    {
-    "q": "Quel ours est le plus menacé d'extinction ?",
-    "c": [
-     "l'ours noir",
-     "l'ours brun",
-     "l'ours kodiak",
-     "L'ours polaire"
-    ],
-    "a": 3
+    "q": "Combien de grandes espèces d'ours existent-elles dans le monde ?",
+    "a": "8"
    },
    {
-    "q": "Combien de petits une ourse a-t-elle en moyenne ?",
-    "c": [
-     "2",
-     "1",
-     "3",
-     "4"
-    ],
-    "a": 0
+    "q": "Combien de kilos, au maximum, peut peser un grand ours polaire mâle ?",
+    "a": "800"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "animaux_010",
@@ -6472,86 +6397,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Combien d'espèces de les requins existe-t-il environ ?",
+    "q": "Dans quel milieu vivent les requins ? La ___ ?",
     "c": [
-     "500",
-     "200",
-     "300",
-     "800"
+     "mer",
+     "montagne",
+     "forêt",
+     "rivière"
     ],
-    "a": 0
+    "a": "mer"
    },
    {
-    "q": "Quel est le plus grand requin du monde ?",
+    "q": "Qu'est-ce que les requins ont en grand nombre, en plusieurs rangées, dans la gueule ? Des ___ ?",
     "c": [
-     "le requin tigre",
-     "le grand requin blanc",
-     "le requin marteau",
-     "Le requin baleine"
+     "dents",
+     "poils",
+     "plumes",
+     "pattes"
     ],
-    "a": 3
+    "a": "dents"
    },
    {
-    "q": "Combien d'espèces de requins existe-t-il ?",
+    "q": "Quel grand requin blanc est le plus célèbre et le plus redouté ? Le grand requin ___ ?",
     "c": [
-     "plus de 200",
-     "Plus de 500",
-     "plus de 800",
-     "plus de 300"
+     "blanc",
+     "bleu",
+     "noir",
+     "rouge"
     ],
-    "a": 1
+    "a": "blanc"
    },
    {
-    "q": "Quel requin est le plus dangereux pour l'homme ?",
+    "q": "Quel requin a une tête en forme d'outil aplati ? Le requin-___ ?",
     "c": [
-     "Le grand requin blanc",
-     "le requin marteau",
-     "le requin tigre",
-     "le requin taureau"
+     "marteau",
+     "scie",
+     "épée",
+     "tournevis"
     ],
-    "a": 0
+    "a": "marteau"
    },
    {
-    "q": "Combien de dents un requin perd-il dans sa vie ?",
+    "q": "Quelle nageoire du requin dépasse souvent de l'eau, signe de sa présence ? La nageoire ___ ?",
     "c": [
-     "environ 500",
-     "environ 100",
-     "environ une dizaine",
-     "Des milliers"
+     "dorsale",
+     "caudale",
+     "pectorale",
+     "ventrale"
     ],
-    "a": 3
+    "a": "dorsale"
    },
    {
-    "q": "Comment les requins détectent-ils leurs proies ?",
+    "q": "Le requin est-il un poisson ou un mammifère ?",
     "c": [
-     "par l'odorat",
-     "Par l'électro-réception",
-     "par la vue",
-     "par l'ouïe"
+     "poisson",
+     "mammifère",
+     "reptile",
+     "amphibien"
     ],
-    "a": 1
+    "a": "poisson"
    },
    {
-    "q": "Quel requin peut vivre en eau douce ?",
+    "q": "Quel gigantesque requin filtreur, inoffensif, est le plus grand poisson du monde ? Le requin-___ ?",
     "c": [
-     "le requin tigre",
-     "Le requin taureau",
-     "le requin marteau",
-     "le grand requin blanc"
+     "baleine",
+     "tigre",
+     "bouledogue",
+     "renard"
     ],
-    "a": 1
+    "a": "baleine"
    },
    {
-    "q": "À quelle vitesse un grand requin blanc peut-il nager ?",
-    "c": [
-     "Jusqu'à 56 km/h",
-     "jusqu'à 40 km/h",
-     "jusqu'à 70 km/h",
-     "jusqu'à 30 km/h"
-    ],
-    "a": 0
+    "q": "Combien de dents, environ, un requin peut-il produire au cours de toute sa vie ?",
+    "a": "30000"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "musique_001",
