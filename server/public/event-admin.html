@@ -364,7 +364,7 @@ const API = '/e/' + EVENT.id;
 let PWD = sessionStorage.getItem('evpwd_'+EVENT.id) || '';
 let CFG = null, AV = {}, META = null, DEFAULT_BT = {};
 const AVATAR_KEYS = [];
-const THEME_LABELS = { retro:'Rétro jeux vidéo', neon:'Néon / Clubbing', chic:'Chic / Élégant', kids:'Anniversaire enfant', casino:'Casino / Vegas' };
+const THEME_LABELS = { retro:'Rétro jeux vidéo', neon:'Néon / Clubbing', chic:'Chic / Élégant', kids:'Anniversaire enfant', casino:'Casino / Vegas', minimal:'Minimal épuré', sunset:'Sunset californien', ocean:'Océan profond' };
 
 function H(){ return { 'Content-Type':'application/json', 'x-admin-password': PWD }; }
 function val(id){ return document.getElementById(id).value; }

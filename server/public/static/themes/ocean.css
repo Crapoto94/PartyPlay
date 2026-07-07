@@ -1,0 +1,40 @@
+/* THÈME : OCÉAN — bleu profond, émeraude, vagues. Frais, apaisant, tendance. */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg: #041725;
+  --bg2: #082338;
+  --neon: #38d9a9;    /* menthe / émeraude */
+  --neon2: #4dabf7;   /* bleu ciel */
+  --neon3: #748ffc;   /* pervenche */
+  --neon4: #174670;   /* bleu profond */
+  --ink: #e0fbfc;
+  --danger: #ff6b6b;
+  --ok: #20c997;
+
+  --pixel: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --term: 'DM Sans', system-ui, -apple-system, sans-serif;
+
+  --radius: 10px;
+  --btn-radius: 8px;
+  --neon-lite: #63e6be;
+  --neon-shade: #0d9488;
+  --neon2-shade: #1c7ed6;
+  --neon3-shade: #4c6ef5;
+  --btn-ink: #00141f;
+  --btn-ink2: #00141f;
+  --input-bg: #041e32;
+  --card-glow: rgba(56,217,169,.18);
+  --title-shadow: 0 0 10px rgba(56,217,169,.3), 0 0 2px rgba(77,171,247,.2);
+  --scanlines-opacity: 0;
+}
+body {
+  font-size: 22px;
+  background:
+    radial-gradient(1000px 500px at 20% -15%, rgba(77,171,247,.15) 0%, transparent 50%),
+    radial-gradient(800px 400px at 80% 0%, rgba(56,217,169,.1) 0%, transparent 50%),
+    repeating-linear-gradient(80deg, transparent 0 40px, rgba(255,255,255,.012) 40px 42px),
+    var(--bg);
+}
+h1, h2, h3, .title { letter-spacing: -.01em; }
+.card { border-color: rgba(56,217,169,.15); }

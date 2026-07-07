@@ -1,0 +1,41 @@
+/* THÈME : SUNSET — coucher de soleil, dégradé chaud, vibes tropicales/californiennes. */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --bg: #13071a;
+  --bg2: #26122e;
+  --neon: #ff6b6b;    /* corail / rouge coucher */
+  --neon2: #ffa94d;   /* orange */
+  --neon3: #ffd43b;   /* jaune doré */
+  --neon4: #b354ce;   /* violet */
+  --ink: #fff5ed;
+  --danger: #e03131;
+  --ok: #69db7c;
+
+  --pixel: 'Playfair Display', serif;
+  --term: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --radius: 12px;
+  --btn-radius: 10px;
+  --neon-lite: #ff9999;
+  --neon-shade: #c92a2a;
+  --neon2-shade: #e67700;
+  --neon3-shade: #e3a008;
+  --btn-ink: #1a040d;
+  --btn-ink2: #1a0f00;
+  --input-bg: #1c0d22;
+  --card-glow: rgba(255,107,107,.25);
+  --title-shadow: 0 0 16px rgba(255,107,107,.4), 0 0 4px rgba(255,169,77,.3);
+  --scanlines-opacity: 0;
+}
+body {
+  font-size: 22px;
+  background:
+    radial-gradient(1100px 600px at 30% -20%, rgba(255,107,107,.2) 0%, transparent 50%),
+    radial-gradient(900px 500px at 70% 0%, rgba(179,84,206,.25) 0%, transparent 50%),
+    radial-gradient(600px 400px at 50% 100%, rgba(255,169,77,.12) 0%, transparent 50%),
+    var(--bg);
+}
+h1, h2, h3, .title { letter-spacing: .02em; }
+.btn { letter-spacing: .5px; }
+.card { border-color: rgba(255,107,107,.15); }

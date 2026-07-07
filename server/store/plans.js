@@ -13,7 +13,7 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PRICING_FILE = path.join(__dirname, '..', 'pricing.json');
 
-export const ALL_THEMES = ['retro', 'neon', 'chic', 'kids', 'casino'];
+export const ALL_THEMES = ['retro', 'neon', 'chic', 'kids', 'casino', 'minimal', 'sunset', 'ocean'];
 // Ordre canonique des activités (sert au plafonnement du plan gratuit).
 export const ACTIVITY_ORDER = ['quiz', 'anecdotes', 'blindtest', 'photo', 'spotlight', 'draw', 'arcade', 'collab'];
 
@@ -32,7 +32,7 @@ export function defaultPricing() {
       free: {
         label: 'Gratuit', price: 0, kind: 'free', premium: false, payLink: '', paypalButtonId: '',
         tagline: 'Pour tester en petit comité.',
-        limits: { maxPlayers: 4, maxActivities: 3, themes: ['retro'], photo: false },
+        limits: { maxPlayers: 4, maxActivities: 3, themes: ['retro','minimal','sunset','ocean'], photo: false },
       },
       full: {
         label: 'Fête complète', price: 1.99, kind: 'oneshot', premium: false,
