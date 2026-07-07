@@ -1202,30 +1202,65 @@ function quizController(act) {
     </div>`;
   }
   const reveal = act.sub === 'reveal';
-  const my = act.myAnswer;
-  const choices = (act.choices||[]).map((c,i)=>{
-    let cls = 'btn';
-    if (reveal) {
-      if (i === act.answer) cls = 'btn secondary';        // bonne réponse
-      else if (i === my) cls = 'btn danger';              // mon erreur
-      else cls = 'btn';
-    } else if (i === my) {
-      cls = 'btn warn';                                   // mon choix verrouillé
-    }
-    const dis = (reveal || my!==null) ? 'disabled' : '';
-    return `<button class="${cls}" ${dis} onclick="answer(${i})">${letters[i]}. ${esc(c)}</button>`;
-  }).join('');
+  const free = act.freeAnswer;
+  const my = free ? act.myAnswerText : act.myAnswer;
+  const myAnswerSet = free ? (my && my.length > 0) : (my !== null);
 
+  let inputHtml = '';
   let status = '';
-  if (reveal) {
-    const good = my !== null && my === act.answer;
-    status = my===null ? '<p class="muted">Pas de réponse… 😬</p>'
-      : good ? '<p class="neon-cyan pixel" style="font-size:12px">✔ BONNE RÉPONSE !</p>'
-             : '<p class="pixel" style="font-size:11px;color:var(--danger)">✘ Raté !</p>';
-  } else if (my !== null) {
-    status = '<p class="neon-cyan">Réponse enregistrée. Regarde la BORNE…</p>';
+  if (free) {
+    if (reveal) {
+      const good = myAnswerSet; // le serveur détermine si c'est correct ; ici on le voit dans act
+      const correctText = act.correctAnswerText || '';
+      status = !myAnswerSet ? '<p class="muted">Pas de réponse… 😬</p>'
+        : '<p class="neon-cyan pixel" style="font-size:12px">✔ Réponse envoyée !</p>';
+      // Montrer la réponse correcte et ce que le joueur a tapé
+      inputHtml = `<div style="margin:12px 0;background:#f8f9fb;border-radius:9px;padding:16px;color:#1f2430">
+        <p style="margin:0 0 4px;font-size:13px;color:#666">Ta réponse :</p>
+        <p style="margin:0 0 12px;font-size:18px;font-weight:700">${esc(my || '—')}</p>
+        <p style="margin:0 0 4px;font-size:13px;color:#666">Bonne réponse :</p>
+        <p style="margin:0;font-size:18px;font-weight:700;color:#059669">${esc(correctText)}</p>
+      </div>`;
+    } else if (myAnswerSet) {
+      status = '<p class="neon-cyan">Réponse enregistrée. Regarde la BORNE…</p>';
+      inputHtml = `<div style="margin:12px 0;background:#f8f9fb;border-radius:9px;padding:16px;color:#1f2430">
+        <p style="margin:0 0 4px;font-size:13px;color:#666">Ta réponse :</p>
+        <p style="margin:0;font-size:18px;font-weight:700">${esc(my)}</p>
+      </div>`;
+    } else {
+      status = '<p>Question ' + (act.qIndex+1) + '/' + act.total + ' — tape ta réponse !</p>';
+      inputHtml = `<div style="display:flex;gap:8px;margin-top:12px">
+        <input type="text" id="freeAnswerInput" placeholder="Tape ta réponse…" autocomplete="off"
+          style="flex:1;padding:12px;border-radius:10px;border:2px solid #3b6ef5;background:#fff;color:#1f2430;font-size:16px;outline:none"
+          onkeydown="if(event.key==='Enter'){document.getElementById('freeAnswerBtn').click()}">
+        <button id="freeAnswerBtn" class="btn" onclick="answerFree()" style="white-space:nowrap">✅ OK</button>
+      </div>`;
+    }
   } else {
-    status = '<p>Question ' + (act.qIndex+1) + '/' + act.total + ' — réponds vite !</p>';
+    const choices = (act.choices||[]).map((c,i)=>{
+      let cls = 'btn';
+      if (reveal) {
+        if (i === act.answer) cls = 'btn secondary';
+        else if (i === my) cls = 'btn danger';
+        else cls = 'btn';
+      } else if (i === my) {
+        cls = 'btn warn';
+      }
+      const dis = (reveal || my!==null) ? 'disabled' : '';
+      return `<button class="${cls}" ${dis} onclick="answer(${i})">${letters[i]}. ${esc(c)}</button>`;
+    }).join('');
+
+    if (reveal) {
+      const good = my !== null && my === act.answer;
+      status = my===null ? '<p class="muted">Pas de réponse… 😬</p>'
+        : good ? '<p class="neon-cyan pixel" style="font-size:12px">✔ BONNE RÉPONSE !</p>'
+               : '<p class="pixel" style="font-size:11px;color:var(--danger)">✘ Raté !</p>';
+    } else if (my !== null) {
+      status = '<p class="neon-cyan">Réponse enregistrée. Regarde la BORNE…</p>';
+    } else {
+      status = '<p>Question ' + (act.qIndex+1) + '/' + act.total + ' — réponds vite !</p>';
+    }
+    inputHtml = `<div>${choices}</div>`;
   }
 
   const joueurPhoto = act.photo ? (`<img src="${esc(act.photo)}" style="width:140px;height:140px;object-fit:cover;border-radius:10px;border:2px solid #fff3;margin:8px auto;display:block">`) : ``;
@@ -1235,7 +1270,7 @@ function quizController(act) {
     ${joueurPhoto}
     <h2 class="neon-pink">${esc(act.prompt)}</h2>
     ${btHint}
-    <div>${choices}</div>
+    ${inputHtml}
     <div class="center mt">${status}</div>
   </div>`;
 }
@@ -1453,6 +1488,7 @@ function photoVote(photoId, category) {
 function toggleReady(){ api('/api/ready', { ready: !STATE.me.ready }); }
 function buzz(){ api('/api/buzz'); }
 function answer(i){ api('/api/answer', { choice: i }); }
+function answerFree(){ const el=document.getElementById('freeAnswerInput'); if(!el||!el.value.trim()) return; api('/api/answer', { choice: el.value.trim() }); }
 function spotlightVote(v){ api('/api/spotlight/vote', { verdict: v }); }
 function privacyAnswer(v){ api('/api/privacy/answer', { yes: v }); }
 function privacyGuess(n){ api('/api/privacy/guess', { n }); }

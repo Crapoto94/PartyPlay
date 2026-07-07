@@ -35,7 +35,28 @@ function shuffled(arr) {
 // activités « Dessine-moi » et « Mosaïque ».
 function normalize(s) {
   return (s || '').toString().toUpperCase().normalize('NFD')
-    .replace(/[̀-ͯ]/g, '').replace(/[^A-Z0-9]/g, '');
+    .replace(/[\u0300-\u036f]/g, '').replace(/[^A-Z0-9]/g, '');
+}
+
+// Appariement flou pour réponses en saisie libre (quiz étonnant)
+function fuzzyMatch(playerAnswer, correctAnswer, acceptList = []) {
+  const p = normalize(playerAnswer);
+  const c = normalize(correctAnswer);
+  if (!p || !c) return false;
+  // 1 — exact
+  if (p === c) return true;
+  // 2 — accept list
+  for (const alt of acceptList) {
+    if (p === normalize(alt)) return true;
+  }
+  // 3 — Levenshtein ≤ 2 (tolérance typo)
+  if (levenshtein(p, c) <= 2) return true;
+  for (const alt of acceptList) {
+    if (levenshtein(p, normalize(alt)) <= 2) return true;
+  }
+  // 4 — contient (p dans c ou c dans p) pour les réponses composées
+  if (c.length >= 4 && p.length >= 4 && (c.includes(p) || p.includes(c))) return true;
+  return false;
 }
 
 // Distance de Levenshtein (nombre minimal d'éditions lettre à lettre).
@@ -144,7 +165,12 @@ export class GameState {
   get _content() { return (this.cfg && this.cfg.content) || {}; }
   get _avatars() { return (this.cfg && this.cfg.avatars) || {}; }
   avatarInfo(key) { return this._avatars[key] || null; }
-  quizDeck(name) { return (this._content.quiz?.decks?.[name]) || []; }
+  quizDeck(name) {
+    if (name === 'burger' && this.activity && this.activity.burgerQuestions) {
+      return this.activity.burgerQuestions;
+    }
+    return (this._content.quiz?.decks?.[name]) || [];
+  }
   photoMissions(avatar) { return (this._content.photoMissions?.[avatar]) || []; }
   // ---- Cycle de vie -------------------------------------------------
   reset(persist = true) {
@@ -617,6 +643,16 @@ export class GameState {
       this.activity.sub = 'question'; // question | reveal
       this.activity.answers = {}; // { playerId: { choice, t } }
       this.activity.scores = {};
+      // Burger deck : 50 questions, on en pioche 15 au hasard au lancement
+      if (deck === 'burger') {
+        const list = this.quizDeck('burger');
+        if (list.length > 15) {
+          this.activity.burgerIndex = {};
+          const picked = shuffled(list).slice(0, 15);
+          picked.forEach((q, i) => { this.activity.burgerIndex[i] = list.indexOf(q); });
+          this.activity.burgerQuestions = picked;
+        }
+      }
     }
     // Dessine-moi : un joueur dessine, les autres devinent (rotation des dessinateurs).
     if (type === 'draw') {
@@ -848,7 +884,11 @@ export class GameState {
     const a = this.activity;
     if (!a || a.sub !== 'question') return;
     if (a.answers[playerId]) return; // déjà répondu, on garde la 1ʳᵉ
-    a.answers[playerId] = { choice: Number(choice), t: Date.now() };
+    const q = this.quizQuestion();
+    const ans = q && q.freeAnswer
+      ? { text: String(choice ?? '').trim(), t: Date.now() }
+      : { choice: Number(choice), t: Date.now() };
+    a.answers[playerId] = ans;
     // Auto-révéler quand tous les joueurs connectés ont répondu
     const connected = this.players.filter(p => p.connected).length;
     if (Object.keys(a.answers).length >= connected) {
@@ -863,9 +903,10 @@ export class GameState {
     const q = this.quizQuestion();
     if (!a || !q || a.sub !== 'question') return;
     a.sub = 'reveal';
+    const free = q.freeAnswer;
     // Attribution des points : bonne réponse = points (+ bonus rapidité léger)
     const corrects = Object.entries(a.answers)
-      .filter(([, ans]) => ans.choice === q.answer)
+      .filter(([, ans]) => free ? fuzzyMatch(ans.text, q.answer, q.accept) : ans.choice === q.answer)
       .sort((x, y) => x[1].t - y[1].t);
     corrects.forEach(([pid], i) => {
       const bonus = i === 0 ? 50 : 0;
@@ -882,7 +923,8 @@ export class GameState {
     } else {
       a.firstCorrectName = null;
     }
-    this.addLog(`💡 Réponse : « ${q.choices[q.answer]} » (${corrects.length} bonne(s) réponse(s)).`);
+    const answerText = free ? q.answer : (q.choices ? q.choices[q.answer] : '');
+    this.addLog(`💡 Réponse : « ${answerText} » (${corrects.length} bonne(s) réponse(s)).`);
     this.touch();
     // Auto-passage : chanson/question suivante après 13 s (laisse le temps de
     // voir le titre, féliciter, souffler entre deux morceaux)
@@ -949,7 +991,10 @@ export class GameState {
       answers: reveal ? a.answers : null,
       scores: reveal ? a.scores : null,
       leaderboard: reveal ? this.quizLeaderboard() : null,
+      freeAnswer: q ? q.freeAnswer || false : false,
+      correctAnswerText: reveal && q ? (q.freeAnswer ? q.answer : (q.choices ? q.choices[q.answer] : null)) : null,
       myAnswer: forPlayerId && a.answers[forPlayerId] ? a.answers[forPlayerId].choice : null,
+      myAnswerText: forPlayerId && a.answers[forPlayerId] ? (a.answers[forPlayerId].text || null) : null,
       // Blind-test dynamique
       dynamicBlindtest: a.dynamicBlindtest || false,
       source: a.source || 'youtube',

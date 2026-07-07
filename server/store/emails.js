@@ -96,8 +96,80 @@ const DEFAULT_TEMPLATES = {
       </tbody>
     </table>
     <p>Vous pouvez dès maintenant inviter vos joueurs et préparer vos activités !</p>
+    <p style="margin:16px 0 6px;font-weight:600">💡 Pour personnaliser votre fête :</p>
+    <ul style="margin:0 0 20px;padding-left:20px;font-size:14px;line-height:1.7">
+      <li>📹 Demandez à vos invités d'enregistrer une anecdote face caméra (on vous explique comment dans l'admin)</li>
+      <li>🎯 Créez un quiz personnalisé avec vos propres questions !</li>
+      <li>🎵 Ajoutez un blind test perso : il suffit de choisir une playlist YouTube/Deezer (50+ titres)</li>
+    </ul>
+    <p style="text-align:center;margin:0 0 16px">
+      <a href="{{consoleUrl}}" style="display:inline-block;background:#3b6ef5;color:#fff;padding:12px 28px;border-radius:10px;text-decoration:none;font-weight:700;font-size:15px">⚙️ Personnaliser dans l'admin</a>
+    </p>
     <hr style="border:none;border-top:1px solid #e2e5ea;margin:0 0 16px">
     <p style="font-size:12px;color:#9ca3af;margin:0">Si vous n'avez pas créé cette fête, ignorez cet email.</p>
+  </div>
+</div>`,
+  },
+  dminus7: {
+    subject: "J-7 — Personnalisez votre fête « {{eventName}} » ! 🎉",
+    html: `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:540px;margin:0 auto;color:#1f2430">
+  <div style="background:#3b6ef5;border-radius:12px 12px 0 0;padding:28px 28px 20px;text-align:center">
+    <p style="color:#c7d7ff;font-size:13px;margin:0 0 6px;text-transform:uppercase;letter-spacing:.05em">PartyPlay</p>
+    <h1 style="color:#fff;margin:0;font-size:22px;font-weight:800">⏰ J-7 — Personnalisez votre fête !</h1>
+  </div>
+  <div style="background:#fff;border:1px solid #e2e5ea;border-top:none;border-radius:0 0 12px 12px;padding:28px">
+    <p style="margin:0 0 6px">Bonjour,</p>
+    <p style="margin:0 0 20px">Dans une semaine, c'est la fête <strong>« {{eventName}} »</strong> ! 🎊 Rendez votre fête encore plus folle avec ces personnalisations :</p>
+    <table style="width:100%;border-collapse:collapse;background:#f8f9fb;border-radius:9px;padding:0;margin-bottom:20px">
+      <tbody>
+        <tr><td style="padding:14px 16px;border-bottom:1px solid #e2e5ea;vertical-align:top"><strong style="font-size:18px">📹</strong></td>
+            <td style="padding:14px 16px 14px 0;border-bottom:1px solid #e2e5ea;font-size:14px"><strong>Anedoctes face caméra</strong><br>Demandez à vos amis et à votre famille de raconter une anecdote sur vous face caméra (auto-filmage). Vous pouvez les lancer pendant la soirée — c'est toujours un moment génial !</td></tr>
+        <tr><td style="padding:14px 16px;border-bottom:1px solid #e2e5ea;vertical-align:top"><strong style="font-size:18px">🎯</strong></td>
+            <td style="padding:14px 16px 14px 0;border-bottom:1px solid #e2e5ea;font-size:14px"><strong>Quiz personnalisé</strong><br>Créez vos propres questions sur la personne fêtée ! Qui la connaît le mieux ? Dans l'admin, allez dans l'onglet Quiz et ajoutez un deck personnalisé.</td></tr>
+        <tr><td style="padding:14px 16px;vertical-align:top"><strong style="font-size:18px">🎵</strong></td>
+            <td style="padding:14px 16px 14px 0;font-size:14px"><strong>Blind test personnalisé</strong><br>Ajoutez un blind test en 2 clics : choisissez une playlist YouTube ou Deezer (50 titres minimum). Pas besoin de sélectionner les morceaux un par un !</td></tr>
+      </tbody>
+    </table>
+    <p style="text-align:center;margin:0 0 20px">
+      <a href="{{consoleUrl}}" style="display:inline-block;background:#10b981;color:#fff;padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:700;font-size:16px">⚙️ Personnaliser maintenant</a>
+    </p>
+    <hr style="border:none;border-top:1px solid #e2e5ea;margin:0 0 16px">
+    <p style="font-size:12px;color:#9ca3af;margin:0">Identifiant de la fête : <strong>{{eventId}}</strong></p>
+  </div>
+</div>`,
+  },
+  dminus1: {
+    subject: "C'est demain ! 🎉 « {{eventName}} » arrive !",
+    html: `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:540px;margin:0 auto;color:#1f2430">
+  <div style="background:#f59e0b;border-radius:12px 12px 0 0;padding:28px 28px 20px;text-align:center">
+    <p style="color:#fde68a;font-size:13px;margin:0 0 6px;text-transform:uppercase;letter-spacing:.05em">PartyPlay</p>
+    <h1 style="color:#fff;margin:0;font-size:22px;font-weight:800">🎊 C'est demain !</h1>
+  </div>
+  <div style="background:#fff;border:1px solid #e2e5ea;border-top:none;border-radius:0 0 12px 12px;padding:28px">
+    <p style="margin:0 0 6px">Bonjour,</p>
+    <p style="margin:0 0 20px">Rappel : la fête <strong>« {{eventName}} »</strong> a lieu <strong>demain</strong> ! 🥳</p>
+    <table style="width:100%;border-collapse:collapse;background:#f8f9fb;border-radius:9px;padding:0;margin-bottom:20px">
+      <tbody>
+        <tr><td style="padding:14px 16px;vertical-align:top;white-space:nowrap;font-size:14px">📌 Consignes :</td>
+            <td style="padding:14px 16px 14px 0;font-size:14px">
+              <ul style="margin:0;padding-left:16px">
+                <li>Vérifiez que vos invités ont reçu leur lien de jeu</li>
+                <li>Connectez la borne (PC fixe) sur le grand écran</li>
+                <li>Les joueurs jouent depuis leur téléphone</li>
+                <li>Préparez les anecdotes face caméra si vous en avez</li>
+              </ul>
+            </td></tr>
+        <tr><td style="padding:14px 16px;vertical-align:top;font-size:14px">🔗 Lien de la borne :</td>
+            <td style="padding:14px 16px 14px 0;font-size:14px"><a href="{{borneUrl}}" style="color:#3b6ef5;word-break:break-all">{{borneUrl}}</a></td></tr>
+        <tr><td style="padding:14px 16px;vertical-align:top;font-size:14px">⚙️ Console :</td>
+            <td style="padding:14px 16px 14px 0;font-size:14px"><a href="{{consoleUrl}}" style="color:#3b6ef5;word-break:break-all">{{consoleUrl}}</a></td></tr>
+      </tbody>
+    </table>
+    <p style="text-align:center;margin:0 0 20px">
+      <a href="{{consoleUrl}}" style="display:inline-block;background:#f59e0b;color:#fff;padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:700;font-size:16px">⚙️ Accéder à l'admin</a>
+    </p>
+    <hr style="border:none;border-top:1px solid #e2e5ea;margin:0 0 16px">
+    <p style="font-size:12px;color:#9ca3af;margin:0">Besoin d'aide ? Répondez à cet email.</p>
   </div>
 </div>`,
   },
@@ -124,6 +196,57 @@ export function saveEmailTemplates(templates) {
   }
   writeFileSync(EMAILS_FILE, JSON.stringify(clean, null, 2));
   return clean;
+}
+
+export function sendAutoEmails(events, deps) {
+  const { sendMail, saveConfig } = deps;
+  const now = new Date();
+  const today = new Date(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()));
+  const templates = getEmailTemplates();
+  const PH = { baseUrl: process.env.BASE_URL || 'http://localhost:8080' };
+
+  for (const ev of events) {
+    if (!ev.cfg || !ev.cfg.partyDate || ev.cfg.closed) continue;
+    const partyDate = new Date(ev.cfg.partyDate + 'T00:00:00Z');
+    if (isNaN(partyDate.getTime())) continue;
+
+    const diffDays = Math.round((partyDate.getTime() - today.getTime()) / 86400000);
+    const sent = ev.cfg.emailsSent || {};
+    let modified = false;
+
+    if (diffDays === 7 && !sent.dminus7 && templates.dminus7) {
+      console.log(`[auto-email] J-7 pour ${ev.id} — envoi du rappel de personnalisation`);
+      const html = fillTemplate(templates.dminus7.html, {
+        eventName: ev.name || ev.id,
+        eventId: ev.id,
+        consoleUrl: `${PH.baseUrl}/e/${ev.id}/admin`,
+        ...PH,
+      });
+      ev.cfg.emailsSent = { ...sent, dminus7: Date.now() };
+      modified = true;
+      sendMail(ev.id, ev.adminEmail, templates.dminus7.subject, html).catch(err => {
+        console.error(`[auto-email] Erreur J-7 pour ${ev.id}:`, err?.message);
+      });
+    }
+
+    if (diffDays === 1 && !sent.dminus1 && templates.dminus1) {
+      console.log(`[auto-email] J-1 pour ${ev.id} — envoi du rappel de la fête`);
+      const html = fillTemplate(templates.dminus1.html, {
+        eventName: ev.name || ev.id,
+        eventId: ev.id,
+        consoleUrl: `${PH.baseUrl}/e/${ev.id}/admin`,
+        borneUrl: `${PH.baseUrl}/e/${ev.id}/borne`,
+        ...PH,
+      });
+      ev.cfg.emailsSent = { ...(ev.cfg.emailsSent || {}), dminus1: Date.now() };
+      modified = true;
+      sendMail(ev.id, ev.adminEmail, templates.dminus1.subject, html).catch(err => {
+        console.error(`[auto-email] Erreur J-1 pour ${ev.id}:`, err?.message);
+      });
+    }
+
+    if (modified && saveConfig) saveConfig(ev.cfg);
+  }
 }
 
 export function fillTemplate(html, vars) {

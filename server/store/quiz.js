@@ -12,13 +12,25 @@ function defaults() {
 
 function cleanDeck(arr) {
   if (!Array.isArray(arr)) return [];
-  return arr.filter(q => q && q.prompt && Array.isArray(q.choices) && q.choices.length >= 2).map(q => ({
-    prompt: String(q.prompt).trim().slice(0, 300),
-    choices: (q.choices || ['', '', '', '']).slice(0, 4).map(s => String(s == null ? '' : s).trim().slice(0, 200)),
-    answer: typeof q.answer === 'number' ? Math.min(Math.max(0, q.answer), 3) : 0,
-    points: typeof q.points === 'number' ? q.points : 50,
-    media: q.media || null,
-  }));
+  return arr.filter(q => q && q.prompt).map(q => {
+    if (q.freeAnswer) {
+      return {
+        prompt: String(q.prompt).trim().slice(0, 300),
+        answer: String(q.answer ?? '').trim().slice(0, 300),
+        points: typeof q.points === 'number' ? q.points : 50,
+        freeAnswer: true,
+        accept: Array.isArray(q.accept) ? q.accept.slice(0, 10).map(s => String(s).trim().slice(0, 200)) : [],
+        media: q.media || null,
+      };
+    }
+    return {
+      prompt: String(q.prompt).trim().slice(0, 300),
+      choices: (q.choices || ['', '', '', '']).slice(0, 4).map(s => String(s == null ? '' : s).trim().slice(0, 200)),
+      answer: typeof q.answer === 'number' ? Math.min(Math.max(0, q.answer), 3) : 0,
+      points: typeof q.points === 'number' ? q.points : 50,
+      media: q.media || null,
+    };
+  }).filter(q => q.freeAnswer ? q.answer.length > 0 : (q.choices && q.choices.length >= 2));
 }
 
 function normalize(data) {

@@ -288,10 +288,12 @@
               Personnalisez les emails automatiques envoyés par PartyPlay. Utilisez les variables <code>{{placeholder}}</code> dans le texte ou le HTML.
             </p>
             <div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:16px" id="etTabs">
-              <button class="btn secondary" data-et="verify" onclick="switchEmailTemplate('verify')">✅ Vérification</button>
+               <button class="btn secondary" data-et="verify" onclick="switchEmailTemplate('verify')">✅ Vérification</button>
               <button class="btn secondary" data-et="welcome" onclick="switchEmailTemplate('welcome')">🎊 Bienvenue</button>
               <button class="btn secondary" data-et="invite" onclick="switchEmailTemplate('invite')">📨 Invitation</button>
               <button class="btn secondary" data-et="recap" onclick="switchEmailTemplate('recap')">📬 Clôture</button>
+              <button class="btn secondary" data-et="dminus7" onclick="switchEmailTemplate('dminus7')">⏰ J-7</button>
+              <button class="btn secondary" data-et="dminus1" onclick="switchEmailTemplate('dminus1')">🎊 J-1</button>
             </div>
             <div class="field">
               <label>Objet <span class="muted">(variables autorisées)</span></label>
@@ -1049,6 +1051,12 @@ const ET_PLACEHOLDERS = {
   ],
   recap: [
     '{{eventName}}', '{{playerName}}', '{{resultsUrl}}', '{{baseUrl}}',
+  ],
+  dminus7: [
+    '{{eventName}}', '{{eventId}}', '{{consoleUrl}}', '{{baseUrl}}',
+  ],
+  dminus1: [
+    '{{eventName}}', '{{eventId}}', '{{consoleUrl}}', '{{borneUrl}}', '{{baseUrl}}',
   ],
 };
 

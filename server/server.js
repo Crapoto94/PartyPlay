@@ -35,7 +35,7 @@ import { getQuiz, saveQuiz } from './store/quiz.js';
 import { getPhotos, savePhotos } from './store/photos.js';
 import { getSpotlight, saveSpotlight } from './store/spotlight.js';
 import { getGoogleConfig, googleClientId, googleEnabled, saveGoogleConfig } from './store/google.js';
-import { getEmailTemplates, saveEmailTemplates, fillTemplate } from './store/emails.js';
+import { getEmailTemplates, saveEmailTemplates, fillTemplate, sendAutoEmails } from './store/emails.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC = path.join(__dirname, 'public');
@@ -1177,6 +1177,17 @@ function closeExpiredParties() {
 }
 closeExpiredParties();
 setInterval(closeExpiredParties, 3600000);
+
+// ---- Envoi automatique des emails J-7 et J-1 ----
+function runAutoEmails() {
+  const events = listEvents().map(e => ({ cfg: getConfig(e.id), id: e.id, name: getConfig(e.id)?.name, adminEmail: getConfig(e.id)?.adminEmail })).filter(e => e.cfg && e.adminEmail);
+  sendAutoEmails(events, {
+    sendMail: (eventId, to, subject, html) => sendMail({ to, subject, htmlContent: html, tags: ['auto-email', eventId] }),
+    saveConfig: cfg => saveConfig(cfg),
+  });
+}
+runAutoEmails();
+setInterval(runAutoEmails, 3600000);
 
 app.listen(PORT, () => {
   console.log(`\n🎉  Plateforme multi-événements en ligne`);

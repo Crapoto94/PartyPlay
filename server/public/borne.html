@@ -850,15 +850,9 @@ function quizBorne(act){
     </div>`;
   }
 
-  const choices = (act.choices||[]).map((c,i)=>{
-    let bg = '#1a0b2e', bd='#ffffff33';
-    if (reveal && i===act.answer){ bg='#063d1e'; bd='var(--ok)'; }
-    return `<div class="qchoice" style="background:${bg};border-color:${bd}">
-      <b class="neon-yellow">${letters[i]}</b> ${esc(c)} ${reveal&&i===act.answer?'✔':''}</div>`;
-  }).join('');
+  const free = act.freeAnswer;
   const audio = (reveal && act.audioUrl) ? `<audio autoplay src="${esc(act.audioUrl)}"></audio>` : '';
   const progress = `${act.answeredCount}/${act.playerCount} ont répondu`;
-
   const qnum = `Q${act.qIndex+1}${act.total!=null?'/'+act.total:''}`;
 
   // RÉVÉLATION : mise en page 2 colonnes (choix | résultats) pour tenir sur iPad 4:3
@@ -871,13 +865,24 @@ function quizBorne(act){
       ${act.leaderboard.map(p=>`<div>${p.correct?'✅':'❌'} ${esc(p.name)}${p.pts?` <span class="coins">+${p.pts}</span>`:''}</div>`).join('')||'<div class="muted center">Aucun joueur.</div>'}
     </div>`;
     const revPhotoHtml = act.photo ? `<img src="${esc(act.photo)}" style="width:120px;height:120px;object-fit:cover;border-radius:10px;border:3px solid var(--ok);margin:4px 0">` : '';
+    const answerBlock = free
+      ? `<div style="background:#063d1e;border:2px solid var(--ok);border-radius:12px;padding:20px;margin:8px 0;max-width:520px">
+          <p style="color:#fff;font-size:14px;margin:0 0 6px;opacity:0.7">Bonne réponse :</p>
+          <p style="color:#fff;font-size:26px;font-weight:800;margin:0">${esc(act.correctAnswerText || '')}</p>
+        </div>`
+      : (act.choices||[]).map((c,i)=>{
+          let bg = '#1a0b2e', bd='#ffffff33';
+          if (reveal && i===act.answer){ bg='#063d1e'; bd='var(--ok)'; }
+          return `<div class="qchoice" style="background:${bg};border-color:${bd}">
+            <b class="neon-yellow">${letters[i]}</b> ${esc(c)} ${reveal&&i===act.answer?'✔':''}</div>`;
+        }).join('');
     return `<div class="center">
       <div ${pill}>${title} — ${qnum}</div>
       ${revPhotoHtml}
       <h1 class="big neon-pink" style="margin:4px 0">${esc(act.prompt)}</h1>
       ${champ}
       <div style="display:flex;gap:22px;justify-content:center;align-items:flex-start;flex-wrap:wrap;max-width:1000px;margin:4px auto 0">
-        <div style="flex:1 1 300px;max-width:520px;text-align:left">${choices}</div>
+        <div style="flex:1 1 300px;max-width:520px">${answerBlock}</div>
         <div style="flex:1 1 260px;max-width:400px">${results}</div>
       </div>${audio}
     </div>`;
@@ -885,12 +890,22 @@ function quizBorne(act){
 
   // QUESTION en cours
   const photoHtml = act.photo ? `<img src="${esc(act.photo)}" style="width:200px;height:200px;object-fit:cover;border-radius:12px;border:3px solid #fff3;margin:8px 0">` : '';
+  const choices = free
+    ? `<div class="big muted" style="margin:20px 0">✏️ Les joueurs tapent leur réponse…</div>`
+    : `<div style="max-width:760px;margin:auto;text-align:left">${
+        (act.choices||[]).map((c,i)=>{
+          let bg = '#1a0b2e', bd='#ffffff33';
+          if (reveal && i===act.answer){ bg='#063d1e'; bd='var(--ok)'; }
+          return `<div class="qchoice" style="background:${bg};border-color:${bd}">
+            <b class="neon-yellow">${letters[i]}</b> ${esc(c)} ${reveal&&i===act.answer?'✔':''}</div>`;
+        }).join('')
+      }</div>`;
   return `<div class="center">
     <div ${pill}>${title} — ${qnum}</div>
     ${photoHtml}
     <h1 class="big neon-pink" style="margin:6px 0">${esc(act.prompt)}</h1>
     ${act.type==='blindtest' && !reveal ? '<p class="big neon-yellow blink">🔊 ÉCOUTEZ…</p>':''}
-    <div style="max-width:760px;margin:auto;text-align:left">${choices}</div>
+    ${choices}
     <p class="big muted center mt">${progress}</p>${audio}
   </div>`;
 }
