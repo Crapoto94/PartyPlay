@@ -20573,58 +20573,52 @@ export const TTCQ_THEMES = [
     "a": "consentement des deux"
    },
    {
-    "q": "Qu'est-ce qui rend une position « bonne » avant tout ? Le ___ des deux partenaires ?",
+    "q": "Quelle position classique voit un partenaire allongé sur le dos, l'autre au-dessus, face à face ? Le ___ ?",
     "c": [
-     "confort",
-     "prix",
-     "bruit",
-     "décor"
+     "missionnaire",
+     "levrette",
+     "lotus",
+     "cuillère"
     ],
-    "a": "confort"
+    "a": "missionnaire"
    },
    {
-    "q": "La communication entre partenaires est-elle utile pour trouver ce qui plaît ? ___ ?",
+    "q": "Quelle position, un partenaire pénétré par-derrière, porte un nom de petit chien de chasse ? La ___ ?",
     "c": [
-     "oui",
-     "non",
-     "seulement par écrit",
-     "seulement au médecin"
+     "levrette",
+     "cigogne",
+     "girafe",
+     "tortue"
     ],
-    "a": "oui"
+    "a": "levrette"
    },
    {
-    "q": "Comment appelle-t-on une position où les partenaires se font face ? En ___ à ___ ? (face-à-face)",
+    "q": "Quelle position, allongés dans le même sens comme des couverts rangés, porte un nom d'ustensile ? La position de la ___ ?",
     "c": [
-     "face-à-face",
-     "dos-à-dos",
-     "côte perpendiculaire",
-     "à l'envers"
+     "cuillère",
+     "fourchette",
+     "louche",
+     "spatule"
     ],
-    "a": "face-à-face"
+    "a": "cuillère"
    },
    {
-    "q": "Quel accessoire de confort peut aider à soulager le dos ou le bassin ? Un ___ ?",
-    "c": [
-     "coussin",
-     "casque",
-     "gant",
-     "parapluie"
-    ],
-    "a": "coussin"
+    "q": "Quel nombre désigne la position d'attentions orales mutuelles et simultanées ? Le ___ ?",
+    "a": "69"
    },
    {
-    "q": "Existe-t-il UNE position « meilleure » universelle, ou cela dépend-il de chaque couple ? Cela ___ ?",
+    "q": "Quelle position, où la personne pénétrée est assise à califourchon et mène, porte un nom de reine de la mythologie grecque ? L'___ ?",
     "c": [
-     "dépend",
-     "est fixe",
-     "est unique",
-     "est interdit"
+     "Andromaque",
+     "Pénélope",
+     "Cassandre",
+     "Ariane"
     ],
-    "a": "dépend"
+    "a": "Andromaque"
    },
    {
-    "q": "Combien de positions principales le Kamasutra décrit-il environ (souvent cité) ?",
-    "a": "64"
+    "q": "En quelle année est paru le célèbre manuel illustré « The Joy of Sex » d'Alex Comfort ?",
+    "a": "1972"
    }
   ],
   "rw": true
@@ -21836,63 +21830,57 @@ export const TTCQ_THEMES = [
     "a": "un délit"
    },
    {
-    "q": "Quelle notion essentielle distingue la nudité consentie de l'exhibitionnisme imposé ? Le ___ ?",
+    "q": "Comment appelle-t-on, en psychiatrie, l'exhibitionnisme quand il devient compulsif et pathologique ? Une ___ ?",
     "c": [
-     "consentement",
-     "climat",
-     "décor",
-     "budget"
+     "paraphilie",
+     "allergie",
+     "carence",
+     "phobie sociale"
     ],
-    "a": "consentement"
+    "a": "paraphilie"
    },
    {
-    "q": "L'exhibitionnisme imposé porte atteinte à quoi chez la victime ? À sa ___ ?",
+    "q": "L'exhibitionnisme consiste à exposer sa nudité ou sa sexualité à une personne : non consentante, consentante, imaginaire ou en photo de vacances ?",
     "c": [
-     "dignité",
-     "adresse",
-     "coiffure",
-     "montre"
+     "non consentante",
+     "consentante",
+     "imaginaire",
+     "en photo de vacances"
     ],
-    "a": "dignité"
+    "a": "non consentante"
    },
    {
-    "q": "Dans quel cadre la nudité peut-elle être légale et consentie ? Le ___ (plage naturiste) ?",
+    "q": "En quoi le naturisme se distingue-t-il de l'exhibitionnisme ? Le naturisme se pratique dans un cadre : consenti et prévu, imposé aux passants, secret ou illégal ?",
     "c": [
-     "naturisme",
-     "délit",
-     "vol",
-     "harcèlement"
+     "consenti et prévu",
+     "imposé aux passants",
+     "secret",
+     "illégal"
     ],
-    "a": "naturisme"
+    "a": "consenti et prévu"
    },
    {
-    "q": "Comment nomme-t-on, en psychiatrie, l'exhibitionnisme pathologique et répétitif ? Un ___ ?",
+    "q": "Comment nomme-t-on familièrement, en anglais, l'acte de s'exposer brusquement ? Le « ___ » ?",
     "c": [
-     "trouble",
-     "loisir",
-     "métier",
-     "sport"
-    ],
-    "a": "trouble"
-   },
-   {
-    "q": "Quel autre comportement, s'exposer en ligne sans consentement d'autrui, est aussi répréhensible ? L'envoi non sollicité de photos, dit « cyber___ » ?",
-    "c": [
-     "exhibition",
+     "flashing",
+     "gaming",
      "shopping",
-     "café",
-     "tourisme"
+     "jogging"
     ],
-    "a": "exhibition"
+    "a": "flashing"
    },
    {
-    "q": "De quel article, environ, du Code pénal français relève l'exhibition sexuelle (222-32) ? L'article 222-___ ?",
+    "q": "Le trouble exhibitionniste touche très majoritairement quel sexe selon les études cliniques ? Les ___ ?",
     "c": [
-     "32",
-     "10",
-     "99",
-     "1"
+     "hommes",
+     "femmes",
+     "personne",
+     "les deux à parts égales"
     ],
+    "a": "hommes"
+   },
+   {
+    "q": "De quel article du Code pénal français relève l'exhibition sexuelle ? L'article 222-___ ?",
     "a": "32"
    }
   ],
@@ -21925,57 +21913,57 @@ export const TTCQ_THEMES = [
     "a": "interdit"
    },
    {
-    "q": "Quelle notion, absente dans le voyeurisme, est pourtant essentielle ? Le ___ ?",
+    "q": "Comment appelle-t-on, en psychiatrie, le voyeurisme pathologique et compulsif ? Une ___ ?",
     "c": [
-     "consentement",
-     "budget",
-     "décor",
-     "éclairage"
+     "paraphilie",
+     "allergie",
+     "phobie",
+     "carence"
     ],
-    "a": "consentement"
+    "a": "paraphilie"
    },
    {
-    "q": "Quel droit fondamental le voyeurisme viole-t-il ? Le droit à la ___ privée ?",
+    "q": "Le voyeurisme consiste à observer une personne nue ou intime : à son insu, avec son accord, en photo publique ou à la télévision ?",
     "c": [
-     "vie",
-     "route",
-     "parole libre",
-     "propriété seule"
+     "à son insu",
+     "avec son accord",
+     "en photo publique",
+     "à la télévision"
     ],
-    "a": "vie"
+    "a": "à son insu"
    },
    {
-    "q": "Comment appelle-t-on le fait de placer une caméra cachée dans un lieu intime ? Un acte de ___ ?",
+    "q": "Le voyeurisme est le pendant « observateur » de quelle autre paraphilie « exposante » ? L'___ ?",
     "c": [
-     "voyeurisme",
-     "journalisme",
-     "cinéma",
-     "sondage"
+     "exhibitionnisme",
+     "fétichisme",
+     "asexualité",
+     "bisexualité"
     ],
-    "a": "voyeurisme"
+    "a": "exhibitionnisme"
    },
    {
-    "q": "Dans quel type de lieux privés le voyeurisme est-il particulièrement grave ? Les ___ (vestiaires, toilettes) ?",
+    "q": "Quel objet moderne aggrave le voyeurisme illégal en permettant de filmer discrètement ? Une caméra ___ ?",
     "c": [
-     "intimes",
-     "publics ouverts",
-     "commerciaux",
-     "sportifs bruyants"
+     "cachée",
+     "de recul",
+     "de cinéma",
+     "thermique"
     ],
-    "a": "intimes"
+    "a": "cachée"
    },
    {
-    "q": "Comment nomme-t-on en psychiatrie le voyeurisme pathologique et compulsif ? Un ___ ?",
+    "q": "Comment nomme-t-on la prise de photos sous les vêtements à l'insu de la victime ? L'« ___ » ?",
     "c": [
-     "trouble",
-     "hobby",
-     "talent",
-     "réflexe sain"
+     "upskirting",
+     "planking",
+     "surfing",
+     "trekking"
     ],
-    "a": "trouble"
+    "a": "upskirting"
    },
    {
-    "q": "Le « upskirting » (photo sous les vêtements) a été spécifiquement pénalisé en France en quelle année (2018) ?",
+    "q": "En quelle année la France a-t-elle spécifiquement pénalisé l'« upskirting » (photo sous les vêtements) ?",
     "a": "2018"
    }
   ],
