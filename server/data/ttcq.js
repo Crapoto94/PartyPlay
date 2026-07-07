@@ -17192,86 +17192,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle tradition écossaise consiste à lancer un tronc d'arbre ?",
+    "q": "Dans quel pays lance-t-on des bébés depuis un balcon sur un matelas (tradition religieuse) ? L'___ ?",
     "c": [
-     "Le lancer de poids",
-     "Le lancer de tronc (Caber toss)",
-     "Le lancer de marteau",
-     "Le lancer de disque"
+     "Inde",
+     "France",
+     "Japon",
+     "Canada"
     ],
-    "a": 1
+    "a": "Inde"
    },
    {
-    "q": "Quelle tradition en Inde consiste à se jeter du lait sur la tête ?",
+    "q": "Quel fromage sarde interdit contient des ___ vivantes ? (casu marzu)",
     "c": [
-     "Fête du lait",
-     "Pongal",
-     "Diwali",
-     "Holi"
+     "larves",
+     "olives",
+     "herbes",
+     "épices"
     ],
-    "a": 0
+    "a": "larves"
    },
    {
-    "q": "Quelle tradition japonaise consiste à manger du fugu (poisson-globe) ?",
+    "q": "En Finlande, quelle discipline sportive fait porter sa compagne sur le dos ? Le porter d'___ ?",
     "c": [
-     "Sashimi",
-     "Un plat dangereux nécessitant un chef certifié",
-     "Sushi",
-     "Tempura"
+     "épouse",
+     "sac",
+     "tronc",
+     "enfant"
     ],
-    "a": 1
+    "a": "épouse"
    },
    {
-    "q": "Quelle tradition française implique de s'embrasser sous le gui ?",
+    "q": "Dans quelle ville anglaise dévale-t-on une colline en poursuivant un fromage ? La course au ___ ?",
     "c": [
-     "La galette des rois",
-     "Les crêpes de la Chandeleur",
-     "Le baiser sous le gui au Nouvel An",
-     "Le muguet du 1er mai"
+     "fromage",
+     "tonneau",
+     "ballon",
+     "œuf"
     ],
-    "a": 2
+    "a": "fromage"
    },
    {
-    "q": "Quelle tradition en Belgique consiste à jeter des chats du haut d'un beffroi ?",
+    "q": "Quelle tradition espagnole voit un homme sauter par-dessus des bébés couchés au sol ? El ___ (le diable saute) ?",
     "c": [
-     "Le Kattenstoet (fête des chats) à Ypres",
-     "Procession",
-     "Carnaval",
-     "Fête des chats"
+     "Colacho",
+     "Toro",
+     "Fuego",
+     "Salto"
     ],
-    "a": 0
+    "a": "Colacho"
    },
    {
-    "q": "Quelle tradition espagnole consiste à courir devant des taureaux ?",
+    "q": "Dans quel pays nordique organise-t-on des championnats de lancer de téléphone portable ?",
     "c": [
-     "Les San Fermín à Pampelune",
-     "La corrida",
-     "Les taureaux de feu",
-     "La feria"
+     "Finlande",
+     "Espagne",
+     "Grèce",
+     "Portugal"
     ],
-    "a": 0
+    "a": "Finlande"
    },
    {
-    "q": "Quelle tradition amérindienne implique une hutte de sudation ?",
+    "q": "Quel insecte grillé et frit est une friandise de rue traditionnelle en Thaïlande ? Le ___ ?",
     "c": [
-     "Le sweat lodge",
-     "Le potlatch",
-     "La danse du soleil",
-     "Le pow-wow"
+     "criquet",
+     "escargot",
+     "ver de terre",
+     "papillon"
     ],
-    "a": 0
+    "a": "criquet"
    },
    {
-    "q": "Quelle tradition tibétaine consiste à exposer les morts aux vautours ?",
-    "c": [
-     "L'incinération",
-     "L'enterrement céleste",
-     "La crémation",
-     "L'inhumation"
-    ],
-    "a": 1
+    "q": "En quelle année a débuté le championnat du monde de porter d'épouse en Finlande ?",
+    "a": "1992"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "insolite_010",
@@ -17280,86 +17275,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qu'est-ce qu'un phénomène paranormal ?",
+    "q": "Comment appelle-t-on l'esprit d'un mort qui hanterait un lieu ? Un ___ ?",
     "c": [
-     "Hasard",
-     "Événement qui dépasse les lois scientifiques connues",
-     "Miracle",
-     "Coïncidence"
+     "fantôme",
+     "robot",
+     "clown",
+     "voisin"
     ],
-    "a": 1
+    "a": "fantôme"
    },
    {
-    "q": "Qu'est-ce qu'une OVNI ?",
+    "q": "Quel pouvoir supposé permettrait de deviner les pensées d'autrui ? La ___ ?",
     "c": [
-     "Objet volant non identifié",
-     "Vaisseau spatial",
-     "Extraterrestre",
-     "Soucoupe volante"
+     "télépathie",
+     "gravité",
+     "photosynthèse",
+     "digestion"
     ],
-    "a": 0
+    "a": "télépathie"
    },
    {
-    "q": "Qu'est-ce qu'un fantôme selon les croyances populaires ?",
+    "q": "Quel pouvoir supposé permettrait de déplacer des objets par la pensée ? La ___ ?",
     "c": [
-     "Ombre",
-     "Esprit d'un défunt qui apparaît aux vivants",
-     "Apparition",
-     "Hallucination"
+     "télékinésie",
+     "photographie",
+     "calligraphie",
+     "chorégraphie"
     ],
-    "a": 1
+    "a": "télékinésie"
    },
    {
-    "q": "Qu'est-ce que la télépathie ?",
+    "q": "Comment appelle-t-on une maison hantée par des esprits ? Une maison ___ ?",
     "c": [
-     "Médium",
-     "Communication par la pensée",
-     "Hypnose",
-     "Lire dans les pensées"
+     "hantée",
+     "chantée",
+     "plantée",
+     "montée"
     ],
-    "a": 1
+    "a": "hantée"
    },
    {
-    "q": "Qu'est-ce qu'un médium ?",
+    "q": "Quel objet à lettres et planchette sert prétendument à parler aux esprits ? La planche de ___ ? (Ouija)",
     "c": [
-     "Personne qui prétend communiquer avec les esprits",
-     "Voyant",
-     "Magicien",
-     "Sorcier"
+     "Ouija",
+     "Scrabble",
+     "Uno",
+     "Ludo"
     ],
-    "a": 0
+    "a": "Ouija"
    },
    {
-    "q": "Quel événement de 1947 au Nouveau-Mexique est lié aux OVNIs ?",
+    "q": "Comment appelle-t-on la personne qui prétend communiquer avec les morts ? Un ___ ?",
     "c": [
-     "L'incident de Rendlesham",
-     "L'incident de Kecksburg",
-     "L'incident de Roswell",
-     "L'incident d'Aurora"
+     "médium",
+     "arbitre",
+     "notaire",
+     "plombier"
     ],
-    "a": 2
+    "a": "médium"
    },
    {
-    "q": "Qu'est-ce que le triangle des Bermudes ?",
+    "q": "Quelle discipline étudie scientifiquement (et souvent démonte) ces phénomènes ? La ___ ?",
     "c": [
-     "Zone de disparitions mystérieuses",
-     "Zone de formation",
-     "Zone militaire",
-     "Zone protégée"
+     "zététique",
+     "botanique",
+     "mécanique",
+     "logistique"
     ],
-    "a": 0
+    "a": "zététique"
    },
    {
-    "q": "Qu'est-ce que la voyance ?",
-    "c": [
-     "Médium",
-     "Prétention de prédire l'avenir",
-     "Clairvoyance",
-     "Télépathie"
-    ],
-    "a": 1
+    "q": "Combien de dollars James Randi offrait-il à qui prouverait un pouvoir paranormal (défi jamais remporté), en millions ?",
+    "a": "1"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "societe_001",
@@ -17368,86 +17358,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "En France, quelle loi absurde interdit d'appeler un cochon Napoléon ?",
+    "q": "Comment appelle-t-on une règle votée que tous doivent respecter ? Une ___ ?",
     "c": [
-     "Arrêté municipal",
-     "Aucune, c'est une légende urbaine",
-     "Loi de 1804",
-     "Code civil"
+     "loi",
+     "chanson",
+     "recette",
+     "rumeur"
     ],
-    "a": 1
+    "a": "loi"
    },
    {
-    "q": "Dans quel pays est-il interdit de mâcher du chewing-gum ?",
+    "q": "Dans quel pays est-il interdit (loi ancienne) de mourir au Parlement, dit-on ? Le ___-Uni ?",
     "c": [
-     "Singapour",
-     "États-Unis",
-     "Japon",
-     "France"
+     "Royaume",
+     "États",
+     "Pays",
+     "Emirats"
     ],
-    "a": 0
+    "a": "Royaume"
    },
    {
-    "q": "Quelle loi française interdit aux femmes de porter un pantalon ?",
+    "q": "Quel animal aurait été « élu » maire dans certaines villes américaines pour l'insolite ? Un ___ ?",
     "c": [
-     "Abrogée en 2013",
-     "Supprimée en 1900",
-     "Toujours en vigueur",
-     "Jamais existé"
+     "chien",
+     "poisson",
+     "serpent",
+     "aigle"
     ],
-    "a": 0
+    "a": "chien"
    },
    {
-    "q": "Dans quel pays est-il interdit de mourir dans certaines villes ?",
+    "q": "Dans quelle ville italienne serait-il interdit de mourir faute de place au cimetière (arrêté insolite) ? En ___ ?",
     "c": [
-     "Longyearbyen (Norvège)",
-     "Londres",
-     "New York",
-     "Paris"
+     "Italie",
+     "France",
+     "Espagne",
+     "Grèce"
     ],
-    "a": 0
+    "a": "Italie"
    },
    {
-    "q": "Quelle loi étrange existe en Arizona (USA) ?",
+    "q": "Quelle activité bruyante est réglementée le dimanche dans beaucoup de communes ? La ___ (bricolage/jardin) ?",
     "c": [
-     "Interdiction de courir",
-     "Interdiction de dormir",
-     "Interdiction de chasser les chameaux dans le désert",
-     "Interdiction de chanter"
+     "tonte",
+     "lecture",
+     "sieste",
+     "prière"
     ],
-    "a": 2
+    "a": "tonte"
    },
    {
-    "q": "Quelle loi suisse interdit de... ?",
+    "q": "En France, quel vêtement fut légalement interdit aux femmes (loi de 1800, abrogée tard) ? Le port du ___ ?",
     "c": [
-     "Fumer dans les lieux publics",
-     "Conduire sans permis",
-     "Tirer des coups de feu dans les élevages de poulets",
-     "Boire de l'alcool"
+     "pantalon",
+     "chapeau",
+     "manteau",
+     "gant"
     ],
-    "a": 2
+    "a": "pantalon"
    },
    {
-    "q": "Dans quel état américain est-il interdit de vendre des voitures le dimanche ?",
+    "q": "Comment appelle-t-on une loi tombée en désuétude mais jamais abrogée ? Une loi ___ ?",
     "c": [
-     "Michigan",
-     "Floride",
-     "Californie",
-     "Texas"
+     "obsolète",
+     "récente",
+     "urgente",
+     "secrète"
     ],
-    "a": 0
+    "a": "obsolète"
    },
    {
-    "q": "Quelle loi absurde française interdisait d'embrasser dans le métro ?",
-    "c": [
-     "Toujours en vigueur",
-     "A existé jusqu'à la fin du XXe siècle",
-     "Jamais existé",
-     "Annulée en 1950"
-    ],
-    "a": 1
+    "q": "En quelle année la loi française interdisant le pantalon aux femmes a-t-elle été officiellement abrogée ?",
+    "a": "2013"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "societe_002",
@@ -17456,86 +17441,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qu'est-ce que la démocratie ?",
+    "q": "Que signifie « démocratie » : le pouvoir du ___ ?",
     "c": [
-     "Système politique où le peuple est souverain",
-     "Oligarchie",
-     "Monarchie",
-     "Dictature"
+     "peuple",
+     "roi",
+     "prêtre",
+     "juge"
     ],
-    "a": 0
+    "a": "peuple"
    },
    {
-    "q": "Où la démocratie a-t-elle été inventée ?",
+    "q": "Comment les citoyens choisissent-ils leurs dirigeants en démocratie ? Par le ___ ?",
     "c": [
-     "Athènes (Grèce antique)",
+     "vote",
+     "hasard",
+     "combat",
+     "silence"
+    ],
+    "a": "vote"
+   },
+   {
+    "q": "Dans quelle cité antique la démocratie est-elle née ?",
+    "c": [
+     "Athènes",
      "Rome",
-     "Londres",
-     "Paris"
+     "Sparte",
+     "Thèbes"
     ],
-    "a": 0
+    "a": "Athènes"
    },
    {
-    "q": "En quelle année la démocratie athénienne a-t-elle été établie ?",
+    "q": "Comment appelle-t-on l'urne dans laquelle on glisse son bulletin ? L'___ ?",
     "c": [
-     "600 av. J.-C.",
-     "300 av. J.-C.",
-     "508 av. J.-C.",
-     "400 av. J.-C."
+     "urne",
+     "boîte aux lettres",
+     "tirelire",
+     "corbeille"
     ],
-    "a": 2
+    "a": "urne"
    },
    {
-    "q": "Qu'est-ce qu'une démocratie représentative ?",
+    "q": "Quels trois pouvoirs sont séparés en démocratie : législatif, exécutif et ___ ?",
     "c": [
-     "Suffrage universel",
-     "Les citoyens élisent des représentants",
-     "Dictature",
-     "Démocratie directe"
+     "judiciaire",
+     "militaire",
+     "religieux",
+     "médiatique"
     ],
-    "a": 1
+    "a": "judiciaire"
    },
    {
-    "q": "Quelles sont les cinq grandes démocraties occidentales ?",
+    "q": "Comment appelle-t-on un vote direct du peuple sur une question précise ? Un ___ ?",
     "c": [
-     "France, Chine, Russie, USA, UK",
-     "France, Royaume-Uni, États-Unis, Allemagne, Canada",
-     "Allemagne, Autriche, Suisse, Belgique, Luxembourg",
-     "France, Algérie, Maroc, Tunisie, Sénégal"
+     "référendum",
+     "sondage",
+     "recensement",
+     "concours"
     ],
-    "a": 1
+    "a": "référendum"
    },
    {
-    "q": "Qu'est-ce que le suffrage universel ?",
+    "q": "Quel philosophe français a théorisé la séparation des pouvoirs ?",
     "c": [
-     "Vote à bulletin secret",
-     "Droit de vote pour tous les citoyens",
-     "Vote limité",
-     "Vote obligatoire"
+     "Montesquieu",
+     "Voltaire",
+     "Rousseau",
+     "Diderot"
     ],
-    "a": 1
+    "a": "Montesquieu"
    },
    {
-    "q": "En quelle année les femmes ont-elles obtenu le droit de vote en France ?",
-    "c": [
-     "1936",
-     "1948",
-     "1944",
-     "1950"
-    ],
-    "a": 2
-   },
-   {
-    "q": "Qu'est-ce qu'une république ?",
-    "c": [
-     "Régime politique sans monarque",
-     "Démocratie",
-     "Dictature",
-     "Monarchie"
-    ],
-    "a": 0
+    "q": "En quelle année, avant J.-C., environ, la démocratie athénienne fut-elle instaurée par Clisthène ? En -___ ?",
+    "a": "508"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "societe_003",
@@ -17544,86 +17524,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qu'est-ce que l'écologie ?",
+    "q": "Quelle couleur symbolise l'écologie et la nature ?",
     "c": [
-     "Économie verte",
-     "Protection de la nature",
-     "Développement durable",
-     "Science des relations entre les êtres vivants et leur environnement"
+     "vert",
+     "rouge",
+     "noir",
+     "gris"
     ],
-    "a": 3
+    "a": "vert"
    },
    {
-    "q": "Qu'est-ce que l'empreinte carbone ?",
+    "q": "Quel geste consiste à trier ses déchets pour les réutiliser ? Le ___ ?",
     "c": [
-     "Déchet",
-     "Recyclage",
-     "Pollution",
-     "Quantité de CO2 émise par une activité"
+     "recyclage",
+     "gaspillage",
+     "brûlage",
+     "enfouissement"
     ],
-    "a": 3
+    "a": "recyclage"
    },
    {
-    "q": "Qu'est-ce que l'effet de serre ?",
+    "q": "Quel gaz, rejeté par les voitures, contribue au réchauffement ? Le dioxyde de ___ ?",
     "c": [
-     "Gaz qui retiennent la chaleur dans l'atmosphère",
-     "Pollution",
-     "Vague de chaleur",
-     "Changement climatique"
+     "carbone",
+     "oxygène",
+     "azote",
+     "hélium"
     ],
-    "a": 0
+    "a": "carbone"
    },
    {
-    "q": "Quel gaz à effet de serre est le plus émis par les activités humaines ?",
+    "q": "Comment appelle-t-on la hausse des températures mondiales ? Le réchauffement ___ ?",
     "c": [
-     "CO2",
-     "Méthane",
-     "Protoxyde d'azote",
-     "Vapeur d'eau"
+     "climatique",
+     "local",
+     "nocturne",
+     "hivernal"
     ],
-    "a": 0
+    "a": "climatique"
    },
    {
-    "q": "Que signifie le recyclage ?",
+    "q": "Quelle énergie du vent est renouvelable et propre ? L'énergie ___ ?",
     "c": [
-     "Transformer des déchets en nouveaux produits",
-     "Enterrer",
-     "Jeter",
-     "Brûler"
+     "éolienne",
+     "nucléaire",
+     "fossile",
+     "charbon"
     ],
-    "a": 0
+    "a": "éolienne"
    },
    {
-    "q": "Quel pays a produit le plus d'émissions de CO2 en 2023 ?",
+    "q": "Quel accord international de 2015 vise à limiter le réchauffement climatique ? L'accord de ___ ?",
     "c": [
-     "Inde",
-     "États-Unis",
-     "Russie",
-     "Chine"
+     "Paris",
+     "Kyoto",
+     "Rome",
+     "Genève"
     ],
-    "a": 3
+    "a": "Paris"
    },
    {
-    "q": "Qu'est-ce que la biodiversité ?",
+    "q": "Comment appelle-t-on l'empreinte que laisse notre consommation sur la planète ? L'empreinte ___ ?",
     "c": [
-     "Variété des espèces vivantes sur Terre",
-     "Océans",
-     "Forêts",
-     "Nombre d'animaux"
+     "carbone",
+     "digitale",
+     "sonore",
+     "lumineuse"
     ],
-    "a": 0
+    "a": "carbone"
    },
    {
-    "q": "En quelle année l'Accord de Paris sur le climat a-t-il été signé ?",
-    "c": [
-     "2020",
-     "2018",
-     "2015",
-     "2012"
-    ],
-    "a": 2
+    "q": "À combien de degrés, maximum, l'accord de Paris veut-il limiter le réchauffement (objectif ambitieux) ?",
+    "a": "1.5"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "societe_004",
@@ -17632,86 +17607,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qu'est-ce que le PIB ?",
+    "q": "Avec quel objet paie-t-on couramment ses achats ? L'___ ?",
     "c": [
-     "Revenu national",
-     "Produit intérieur brut (valeur des biens et services)",
-     "Salaire",
-     "Impôt"
+     "argent",
+     "eau",
+     "air",
+     "sable"
     ],
-    "a": 1
+    "a": "argent"
    },
    {
-    "q": "Qu'est-ce que le taux de chômage ?",
+    "q": "Quelle est la monnaie unique de nombreux pays européens ?",
     "c": [
-     "Emploi",
-     "Population inactive",
-     "Pourcentage de la population active sans emploi",
-     "Nombre de chômeurs"
+     "euro",
+     "dollar",
+     "yen",
+     "livre"
     ],
-    "a": 2
+    "a": "euro"
    },
    {
-    "q": "Que signifie l'inflation ?",
+    "q": "Comment appelle-t-on la hausse générale des prix ? L'___ ?",
     "c": [
-     "Baisse des prix",
-     "Hausse généralisée des prix",
-     "Augmentation des salaires",
-     "Crise économique"
+     "inflation",
+     "déflation",
+     "récession",
+     "expansion"
     ],
-    "a": 1
+    "a": "inflation"
    },
    {
-    "q": "Qu'est-ce qu'un impôt ?",
+    "q": "Comment appelle-t-on l'échange de biens entre pays ? Le ___ international ?",
     "c": [
-     "Prélèvement obligatoire pour financer l'État",
-     "Taxe",
-     "Redevance",
-     "Contribution"
+     "commerce",
+     "silence",
+     "voyage",
+     "sommeil"
     ],
-    "a": 0
+    "a": "commerce"
    },
    {
-    "q": "Quelle est la monnaie officielle de l'Union européenne ?",
+    "q": "Quel indicateur mesure la richesse produite par un pays ? Le ___ ?",
     "c": [
-     "Le dollar",
-     "La livre",
-     "L'euro",
-     "Le franc"
+     "PIB",
+     "QI",
+     "IMC",
+     "ADN"
     ],
-    "a": 2
+    "a": "PIB"
    },
    {
-    "q": "En quelle année l'euro a-t-il été introduit ?",
+    "q": "Comment appelle-t-on une longue période de baisse de l'activité économique ? Une ___ ?",
     "c": [
-     "1998",
-     "1999 (virtuel) puis 2002 (pièces/billets)",
-     "2000",
-     "2001"
+     "récession",
+     "expansion",
+     "inflation",
+     "croissance"
     ],
-    "a": 1
+    "a": "récession"
    },
    {
-    "q": "Qu'est-ce qu'une banque centrale ?",
+    "q": "Quel économiste écossais est l'auteur de « La Richesse des nations » ? Adam ___ ?",
     "c": [
-     "Assurance",
-     "Institution qui gère la politique monétaire d'un pays",
-     "Caisse d'épargne",
-     "Banque commerciale"
+     "Smith",
+     "Keynes",
+     "Marx",
+     "Ricardo"
     ],
-    "a": 1
+    "a": "Smith"
    },
    {
-    "q": "Quel économiste a écrit 'La Richesse des nations' ?",
-    "c": [
-     "Karl Marx",
-     "Adam Smith",
-     "John Maynard Keynes",
-     "Milton Friedman"
-    ],
-    "a": 1
+    "q": "En quelle année a éclaté la grande crise financière mondiale des subprimes ?",
+    "a": "2008"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "societe_005",
@@ -17720,86 +17690,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qu'est-ce que la Déclaration universelle des droits de l'homme ?",
+    "q": "Les droits humains sont les droits de tout être ___ ?",
     "c": [
+     "humain",
+     "vivant",
+     "riche",
+     "adulte"
+    ],
+    "a": "humain"
+   },
+   {
+    "q": "Quel texte de 1789 déclare les droits de l'Homme et du citoyen ? La ___ ?",
+    "c": [
+     "Déclaration",
      "Constitution",
      "Loi",
-     "Document proclamant les droits fondamentaux",
-     "Traité"
+     "Charte"
     ],
-    "a": 2
+    "a": "Déclaration"
    },
    {
-    "q": "En quelle année la DUDH a-t-elle été adoptée ?",
-    "c": [
-     "1950",
-     "1939",
-     "1945",
-     "1948"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quelle organisation a adopté la DUDH ?",
+    "q": "Quelle organisation mondiale veille aux droits humains, créée en 1945 ? L'___ (ONU) ?",
     "c": [
      "ONU",
-     "Conseil de l'Europe",
-     "UNESCO",
-     "OTAN"
+     "OTAN",
+     "OMS",
+     "FMI"
     ],
-    "a": 0
+    "a": "ONU"
    },
    {
-    "q": "Combien d'articles contient la DUDH ?",
+    "q": "Quel droit fondamental garantit de dire ce que l'on pense ? La liberté d'___ ?",
     "c": [
-     "25",
-     "20",
-     "40",
-     "30"
+     "expression",
+     "circulation",
+     "réunion",
+     "commerce"
     ],
-    "a": 3
+    "a": "expression"
    },
    {
-    "q": "Quel était le premier droit de l'homme proclamé en France en 1789 ?",
+    "q": "Quel militant sud-africain a lutté contre l'apartheid pour l'égalité ? Nelson ___ ?",
     "c": [
-     "Droit de vote",
-     "DDHC (Déclaration des droits de l'homme et du citoyen)",
-     "Égalité",
-     "Liberté d'expression"
+     "Mandela",
+     "Gandhi",
+     "King",
+     "Tutu"
     ],
-    "a": 1
+    "a": "Mandela"
    },
    {
-    "q": "Qu'est-ce que la liberté d'expression ?",
+    "q": "Quel pasteur américain a rêvé d'égalité dans son discours « I have a dream » ? Martin Luther ___ ?",
     "c": [
-     "Droit de manifester",
-     "Droit de vote",
-     "Droit de se réunir",
-     "Droit d'exprimer ses opinions sans censure"
+     "King",
+     "Parks",
+     "Malcolm",
+     "Ali"
     ],
-    "a": 3
+    "a": "King"
    },
    {
-    "q": "Qu'est-ce que le droit d'asile ?",
+    "q": "Comment appelle-t-on l'abolition de la distinction entre les êtres humains par la loi ? L'___ des droits ?",
     "c": [
-     "Protection accordée à un réfugié politique",
-     "Droit de voyager",
-     "Droit de travailler",
-     "Droit de vote"
+     "égalité",
+     "loterie",
+     "hiérarchie",
+     "vente"
     ],
-    "a": 0
+    "a": "égalité"
    },
    {
-    "q": "Quelle organisation défend les droits humains mondialement ?",
-    "c": [
-     "Greenpeace",
-     "Médecins sans frontières",
-     "Croix-Rouge",
-     "Amnesty International"
-    ],
-    "a": 3
+    "q": "En quelle année l'ONU a-t-elle adopté la Déclaration universelle des droits de l'homme ?",
+    "a": "1948"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "societe_006",
@@ -17808,86 +17773,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qu'est-ce que la mondialisation ?",
+    "q": "La mondialisation relie les pays du ___ entier ?",
     "c": [
-     "Commerce international",
-     "Globalisation",
-     "Interdépendance croissante des économies et sociétés",
-     "Ouverture des frontières"
+     "monde",
+     "quartier",
+     "village",
+     "jardin"
     ],
-    "a": 2
+    "a": "monde"
    },
    {
-    "q": "Quelle organisation régule le commerce mondial ?",
+    "q": "Quel réseau mondial a accéléré la mondialisation des échanges d'informations ? L'___ ?",
     "c": [
-     "FMI",
-     "OMC (Organisation mondiale du commerce)",
-     "ONU",
-     "Banque mondiale"
+     "Internet",
+     "métro",
+     "canal",
+     "sentier"
     ],
-    "a": 1
+    "a": "Internet"
    },
    {
-    "q": "Qu'est-ce qu'une multinationale ?",
+    "q": "Comment appelle-t-on une entreprise présente dans de nombreux pays ? Une ___ ?",
     "c": [
-     "Entreprise présente dans plusieurs pays",
-     "Start-up",
-     "PME",
-     "Entreprise locale"
+     "multinationale",
+     "boulangerie",
+     "mairie",
+     "école"
     ],
-    "a": 0
+    "a": "multinationale"
    },
    {
-    "q": "Quel pays est le plus grand exportateur mondial ?",
+    "q": "Par quel moyen de transport voyagent la plupart des marchandises mondialisées ? Le ___ (bateau) ?",
     "c": [
-     "Allemagne",
+     "cargo",
+     "vélo",
+     "traîneau",
+     "char"
+    ],
+    "a": "cargo"
+   },
+   {
+    "q": "Dans quelle grande boîte métallique standardisée transporte-t-on les marchandises ? Un ___ ?",
+    "c": [
+     "conteneur",
+     "panier",
+     "sac",
+     "carton"
+    ],
+    "a": "conteneur"
+   },
+   {
+    "q": "Quelle organisation mondiale régule le commerce entre pays ? L'___ (OMC) ?",
+    "c": [
+     "OMC",
+     "OMS",
+     "OTAN",
+     "ONU"
+    ],
+    "a": "OMC"
+   },
+   {
+    "q": "Quel pays est devenu « l'usine du monde » par sa production massive ?",
+    "c": [
      "Chine",
-     "États-Unis",
-     "Japon"
+     "Islande",
+     "Malte",
+     "Suisse"
     ],
-    "a": 1
+    "a": "Chine"
    },
    {
-    "q": "Qu'est-ce que la délocalisation ?",
-    "c": [
-     "Fermeture",
-     "Transfert d'activités vers un pays étranger",
-     "Exportation",
-     "Importation"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quel accord commercial a été signé entre USA, Canada et Mexique ?",
-    "c": [
-     "USMCA (nouvel ALENA)",
-     "Partenariat transpacifique",
-     "Trait",
-     "Accord de libre-échange"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Qu'est-ce que le protectionnisme ?",
-    "c": [
-     "Politique qui protège l'économie nationale",
-     "Libre-échange",
-     "Ouverture",
-     "Mondialisation"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quelle conférence a établi le système monétaire international en 1944 ?",
-    "c": [
-     "Yalta",
-     "Bretton Woods",
-     "Versailles",
-     "Genève"
-    ],
-    "a": 1
+    "q": "Combien de mètres, environ, de long fait un conteneur maritime standard (40 pieds) ? Environ ___ m ?",
+    "a": "12"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "societe_007",
@@ -17896,86 +17856,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qu'est-ce qu'un migrant ?",
+    "q": "Comment appelle-t-on une personne qui quitte son pays pour s'installer ailleurs ? Un ___ ?",
     "c": [
-     "Touriste",
-     "Personne qui se déplace d'un pays à un autre",
-     "Expatrié",
-     "Réfugié"
+     "migrant",
+     "touriste",
+     "voisin",
+     "client"
     ],
-    "a": 1
+    "a": "migrant"
    },
    {
-    "q": "Qu'est-ce qu'un réfugié ?",
+    "q": "Comment appelle-t-on quelqu'un qui fuit la guerre ou les persécutions ? Un ___ ?",
     "c": [
-     "Migrant économique",
-     "Étudiant",
-     "Touriste",
-     "Personne fuyant la guerre ou les persécutions"
+     "réfugié",
+     "vacancier",
+     "champion",
+     "artiste"
     ],
-    "a": 3
+    "a": "réfugié"
    },
    {
-    "q": "Quelle organisation définit le statut de réfugié ?",
+    "q": "Quel oiseau, comme les humains, migre chaque année vers le sud ? L'___ ?",
     "c": [
-     "ONU",
-     "Croix-Rouge",
-     "UNESCO",
-     "HCR (Haut Commissariat pour les Réfugiés)"
+     "hirondelle",
+     "poule",
+     "pingouin",
+     "autruche"
     ],
-    "a": 3
+    "a": "hirondelle"
    },
    {
-    "q": "Combien de réfugiés y a-t-il dans le monde ?",
+    "q": "Comment appelle-t-on l'arrivée d'une personne dans un nouveau pays ? L'___ ?",
     "c": [
-     "Plus de 50 millions",
-     "Plus de 30 millions",
-     "Plus de 10 millions",
-     "Plus de 20 millions"
+     "immigration",
+     "exportation",
+     "livraison",
+     "évaporation"
     ],
-    "a": 1
+    "a": "immigration"
    },
    {
-    "q": "Quel pays accueille le plus de réfugiés ?",
+    "q": "Comment appelle-t-on le départ hors de son propre pays ? L'___ ?",
     "c": [
-     "France",
-     "Turquie",
-     "États-Unis",
-     "Allemagne"
+     "émigration",
+     "importation",
+     "récréation",
+     "hibernation"
     ],
-    "a": 1
+    "a": "émigration"
    },
    {
-    "q": "Qu'est-ce que le droit d'asile ?",
+    "q": "Par quelle grande île de New York transitaient les migrants vers les USA au XIXe-XXe s. ? ___ Island ?",
     "c": [
-     "Permis de séjour",
-     "Droit de travailler",
-     "Droit de vote",
-     "Protection accordée aux réfugiés politiques"
+     "Ellis",
+     "Long",
+     "Rhode",
+     "Coney"
     ],
-    "a": 3
+    "a": "Ellis"
    },
    {
-    "q": "Qu'est-ce que la Convention de Genève de 1951 ?",
+    "q": "Quel document officiel permet de voyager légalement à l'étranger ? Le ___ ?",
     "c": [
-     "Traité commercial",
-     "Traité de paix",
-     "Traité définissant le statut de réfugié",
-     "Convention sur le climat"
+     "passeport",
+     "ticket",
+     "reçu",
+     "diplôme"
     ],
-    "a": 2
+    "a": "passeport"
    },
    {
-    "q": "Qu'est-ce qu'un passeport ?",
-    "c": [
-     "Carte d'identité",
-     "Permis",
-     "Visa",
-     "Document d'identité pour voyager à l'étranger"
-    ],
-    "a": 3
+    "q": "Combien de migrants, environ en millions, sont passés par Ellis Island entre 1892 et 1954 ?",
+    "a": "12"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "societe_008",
@@ -17984,86 +17939,81 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qu'est-ce qu'une inégalité sociale ?",
+    "q": "Une inégalité, c'est quand les gens ne sont pas traités de façon ___ ?",
     "c": [
-     "Différence de poids",
-     "Différence d'accès aux ressources et opportunités",
-     "Différence de taille",
-     "Différence d'âge"
+     "égale",
+     "rapide",
+     "sonore",
+     "colorée"
     ],
-    "a": 1
+    "a": "égale"
    },
    {
-    "q": "Qu'est-ce que le coefficient de Gini ?",
+    "q": "Quelle inégalité concerne l'écart de salaire entre hommes et femmes ? L'inégalité de ___ ?",
     "c": [
-     "Indice de pauvreté",
-     "Mesure des inégalités de revenus",
-     "Taux de chômage",
-     "PIB"
+     "genre",
+     "taille",
+     "âge",
+     "poids"
     ],
-    "a": 1
+    "a": "genre"
    },
    {
-    "q": "Quel pourcentage des richesses mondiales possède le 1% le plus riche ?",
+    "q": "Comment appelle-t-on l'écart entre les très riches et les très pauvres ? Les inégalités de ___ ?",
     "c": [
-     "Près de 30%",
-     "Près de 70%",
-     "Près de 20%",
-     "Près de 50%"
+     "richesse",
+     "hauteur",
+     "vitesse",
+     "couleur"
     ],
-    "a": 3
+    "a": "richesse"
    },
    {
-    "q": "Qu'est-ce que la pauvreté selon la Banque mondiale ?",
+    "q": "Quel service public gratuit aide à réduire les inégalités par le savoir ? L'___ ?",
     "c": [
-     "Vivre avec moins de 5 $ par jour",
-     "Vivre avec moins de 1 $ par jour",
-     "Vivre avec moins de 2,15 $ par jour",
-     "Vivre avec moins de 10 $ par jour"
+     "école",
+     "casino",
+     "usine",
+     "banque"
     ],
-    "a": 2
+    "a": "école"
    },
    {
-    "q": "Quel pays a le plus fort taux d'inégalités ?",
+    "q": "Comment appelle-t-on l'impôt qui fait payer plus les riches pour réduire les écarts ? L'impôt ___ ?",
     "c": [
-     "Brésil",
-     "Afrique du Sud",
-     "États-Unis",
-     "Inde"
+     "progressif",
+     "gratuit",
+     "secret",
+     "unique"
     ],
-    "a": 1
+    "a": "progressif"
    },
    {
-    "q": "Qu'est-ce que la discrimination ?",
+    "q": "Quel mouvement dénonce que 1 % des gens possèdent une énorme part des richesses ? Occupy ___ ?",
     "c": [
-     "Différence",
-     "Préjugé",
-     "Traitement inégal basé sur des critères injustes",
-     "Stéréotype"
+     "Wall Street",
+     "Main Street",
+     "Baker Street",
+     "Downing Street"
     ],
-    "a": 2
+    "a": "Wall Street"
    },
    {
-    "q": "Qu'est-ce que l'égalité des chances ?",
+    "q": "Quel coefficient, entre 0 et 1, mesure les inégalités de revenus dans un pays ? Le coefficient de ___ ?",
     "c": [
-     "Justice sociale",
-     "Égalité des résultats",
-     "Égalité de traitement",
-     "Principe où chacun peut réussir indépendamment de ses origines"
+     "Gini",
+     "Pareto",
+     "Nash",
+     "Euler"
     ],
-    "a": 3
+    "a": "Gini"
    },
    {
-    "q": "Quelle organisation mesure les inégalités mondiales ?",
-    "c": [
-     "FMI",
-     "OCDE",
-     "Banque mondiale",
-     "ONU (PNUD)"
-    ],
-    "a": 3
+    "q": "Quel pourcentage, environ, de la richesse mondiale les 1 % les plus riches détiennent-ils (estimations récentes) ?",
+    "a": "45"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "voyage_001",
