@@ -300,6 +300,7 @@
               <input type="text" id="etSubject" placeholder="Objet de l'email" style="font-weight:600">
             </div>
             <div id="etPlaceholders" style="margin-bottom:10px;font-size:12px;color:var(--a-muted,#888)"></div>
+            <div id="etDebug" style="margin-bottom:8px;font-size:11px;color:var(--a-muted,#888);word-break:break-all"></div>
             <div style="display:flex;gap:4px;margin-bottom:8px" id="etModeBar">
               <button class="btn secondary" data-et-mode="visual" onclick="switchEtMode('visual')">🖌️ Visuel</button>
               <button class="btn secondary" data-et-mode="code" onclick="switchEtMode('code')">&lt;/&gt; Code</button>
@@ -1090,6 +1091,10 @@ function switchEmailTemplate(key) {
   });
   const tpl = etTemplates[key] || { subject: '', html: '' };
   document.getElementById('etSubject').value = tpl.subject || '';
+  // Debug
+  const dEl = document.getElementById('etDebug');
+  if (dEl) dEl.textContent = '[' + key + '] subject=' + (tpl.subject||'').slice(0,40) + '… html=' + (tpl.html||'').length + ' octets';
+  console.log('switchEmailTemplate', key, 'subject:', tpl.subject, 'html length:', (tpl.html||'').length);
   // Afficher les placeholders
   const ph = ET_PLACEHOLDERS[key] || [];
   document.getElementById('etPlaceholders').innerHTML = 'Variables disponibles : ' + ph.map(p => '<code>' + esc(p) + '</code>').join(' ');
@@ -1097,13 +1102,19 @@ function switchEmailTemplate(key) {
   const codeEl = document.getElementById('etCodeEditor');
   if (codeEl) codeEl.value = tpl.html || '';
   // Mettre à jour Quill (try/catch pour éviter qu'un HTML complexe casse tout l'éditeur)
-  if (etQuill) {
+  if (etQuill && tpl.html) {
     try {
-      etQuill.root.innerHTML = '';
-      if (tpl.html) etQuill.clipboard.dangerouslyPasteHTML(tpl.html, 'silent');
+      etQuill.setContents([{ insert: '\n' }], 'silent');
+      etQuill.clipboard.dangerouslyPasteHTML(tpl.html, 'silent');
+      // Vérifier si Quill a bien conservé le contenu (sinon on bascule en mode code)
+      const qh = etQuill.root.innerText.replace(/\s+/g, '').trim();
+      if (qh.length < 10 && tpl.html.length > 100) {
+        console.warn('Quill a vidé le contenu pour', key, '- bascule en mode code');
+        if (etMode === 'visual') switchEtMode('code', true);
+      }
+      if (dEl) dEl.textContent += ' | Quill OK (' + qh.length + ' car.)';
     } catch (e) {
       console.warn('Quill paste error for', key, e);
-      // Si Quill a planté (ex: table complexe), on bascule automatiquement en mode code
       if (etMode === 'visual') switchEtMode('code', true);
     }
   }

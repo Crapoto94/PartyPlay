@@ -17,19 +17,17 @@ const DEFAULT_TEMPLATES = {
     <p style="margin:0 0 6px">Bonjour,</p>
     <p style="margin:0 0 20px">La fête <strong>« {{eventName}} »</strong> a bien été créée. Voici toutes vos informations :</p>
     <div style="background:#f8f9fb;border-radius:9px;padding:12px;margin-bottom:20px">
-      <div style="padding:4px 0;display:flex;gap:12px"><span style="color:#6b7280;white-space:nowrap;font-size:13.5px">Identifiant</span><span style="font-weight:600;word-break:break-all;font-size:13.5px"><code style="background:#e8ebf0;padding:2px 6px;border-radius:4px;font-size:13px">{{eventId}}</code></span></div>
-      <div style="padding:4px 0;display:flex;gap:12px"><span style="color:#6b7280;white-space:nowrap;font-size:13.5px">Formule</span><span style="font-weight:600;word-break:break-all;font-size:13.5px">{{planLabel}}</span></div>
-      <div style="padding:4px 0;display:flex;gap:12px"><span style="color:#6b7280;white-space:nowrap;font-size:13.5px">Console admin</span><span style="font-weight:600;word-break:break-all;font-size:13.5px"><a href="{{consoleUrl}}" style="color:#3b6ef5">{{consoleUrl}}</a></span></div>
-      <div style="padding:4px 0;display:flex;gap:12px"><span style="color:#6b7280;white-space:nowrap;font-size:13.5px">Borne joueurs</span><span style="font-weight:600;word-break:break-all;font-size:13.5px"><a href="{{borneUrl}}" style="color:#3b6ef5">{{borneUrl}}</a></span></div>
+      <p style="margin:4px 0"><strong>Identifiant :</strong> <code style="background:#e8ebf0;padding:2px 6px;border-radius:4px;font-size:13px">{{eventId}}</code></p>
+      <p style="margin:4px 0"><strong>Formule :</strong> {{planLabel}}</p>
+      <p style="margin:4px 0"><strong>Console admin :</strong> <a href="{{consoleUrl}}" style="color:#3b6ef5">{{consoleUrl}}</a></p>
+      <p style="margin:4px 0"><strong>Borne joueurs :</strong> <a href="{{borneUrl}}" style="color:#3b6ef5">{{borneUrl}}</a></p>
     </div>
     <p style="margin:0 0 8px;font-weight:600">📧 Confirmez votre email pour activer la fête</p>
     <p style="margin:0 0 20px;font-size:13.5px;color:#555">Le démarrage est bloqué jusqu'à confirmation :</p>
-    <p style="text-align:center;margin:0 0 20px">
+    <p style="text-align:center;margin:15px 0">
       <a href="{{verifyUrl}}" style="display:inline-block;background:#3b6ef5;color:#fff;padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:700;font-size:16px">✅ Confirmer mon email</a>
     </p>
-    <p style="font-size:12px;color:#9ca3af;margin:0 0 4px">Lien de confirmation :</p>
-    <p style="font-size:12px;margin:0 0 20px"><a href="{{verifyUrl}}" style="color:#3b6ef5;word-break:break-all">{{verifyUrl}}</a></p>
-    <hr style="border:none;border-top:1px solid #e2e5ea;margin:0 0 16px">
+    <hr style="border:none;border-top:1px solid #e2e5ea;margin:20px 0">
     <p style="font-size:12px;color:#9ca3af;margin:0">Si vous n'avez pas créé cette fête, ignorez cet email.</p>
   </div>
 </div>`,
