@@ -80,10 +80,10 @@
             <button class="btn" data-cat="spotlight" onclick="launch('spotlight',{})">🔦 Spotlight</button>
             <button class="btn" data-cat="draw" onclick="launch('draw',{})">🎨 Dessine-moi</button>
           </div>
-          <div class="field" data-cat="privacy" style="margin-top:10px"><label>🤫 Sans Filtre !? — confessions anonymes (adultes)</label>
+          <div class="field" data-cat="privacy" style="margin-top:10px"><label>🤫 Sans Filtre !? — confessions anonymes (18+ soft = normal · 18+ hard = vrai 18+)</label>
             <div class="row">
-              <button class="btn" onclick="launch('privacy',{level:'intime',count:privacyCount()})">🔞 18+</button>
-              <button class="btn" onclick="launch('privacy',{level:'trash',count:privacyCount()})">🌶️ 18+ trash</button>
+              <button class="btn" onclick="launch('privacy',{level:'intime',count:privacyCount()})">🔞 18+ soft</button>
+              <button class="btn" onclick="launch('privacy',{level:'trash',count:privacyCount()})">🌶️ 18+ hard</button>
               <select id="privacyCount" style="width:auto">
                 <option value="5">5 questions</option>
                 <option value="10" selected>10 questions</option>
