@@ -1187,6 +1187,50 @@ ev.post('/api/feedback', (req, res) => {
   res.json({ ok: true });
 });
 
+// ---- Feedback public (aucun auth requis) ----
+app.post('/api/public-feedback', (req, res) => {
+  const { eventId, rating, comment } = req.body || {};
+  if (!eventId) return res.status(400).json({ error: 'ID de la fête requis.' });
+  if (!rating || rating < 1 || rating > 5) return res.status(400).json({ error: 'Note entre 1 et 5 requise.' });
+  const cfg = getConfig(eventId);
+  if (!cfg) return res.status(404).json({ error: 'Fête inconnue.' });
+  const feedback = cfg.feedback || [];
+  const entry = { playerId: '', playerName: comment?.startsWith('[') ? comment.split(']')[0].slice(1) : '', rating: Number(rating), comment: comment || '', createdAt: Date.now() };
+  feedback.push(entry);
+  cfg.feedback = feedback;
+  saveConfig(cfg);
+  res.json({ ok: true });
+});
+
+// ---- Stats générales (admin seulement) ----
+app.get('/api/admin/stats', (req, res) => {
+  if (!requireAdmin(req, res)) return;
+  const events = listEvents();
+  let allFeedback = [];
+  const perEvent = [];
+  for (const e of events) {
+    const cfg = getConfig(e.id);
+    if (!cfg || !cfg.feedback || !cfg.feedback.length) continue;
+    const ratings = cfg.feedback.map(f => f.rating).filter(r => r && r >= 1 && r <= 5);
+    if (!ratings.length) continue;
+    allFeedback = allFeedback.concat(cfg.feedback);
+    perEvent.push({
+      id: cfg.id, name: cfg.name,
+      count: ratings.length,
+      avg: (ratings.reduce((a, b) => a + b, 0) / ratings.length).toFixed(1),
+      distribution: [1,2,3,4,5].map(n => ratings.filter(r => Math.round(r) === n).length),
+    });
+  }
+  const allRatings = allFeedback.map(f => f.rating).filter(r => r && r >= 1 && r <= 5);
+  res.json({
+    totalFeedback: allFeedback.length,
+    totalRatings: allRatings.length,
+    avgRating: allRatings.length ? (allRatings.reduce((a, b) => a + b, 0) / allRatings.length).toFixed(1) : '—',
+    distribution: [1,2,3,4,5].map(n => allRatings.filter(r => Math.round(r) === n).length),
+    perEvent: perEvent.sort((a, b) => b.count - a.count),
+  });
+});
+
 // ---- Vérification de clôture J+1 ----
 function closeExpiredParties() {
   const now = Date.now();

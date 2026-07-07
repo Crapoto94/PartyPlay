@@ -79,6 +79,9 @@
           <a class="nav-item" data-sec="promos" onclick="showSection('promos')">
             <span>🎟️</span> Codes promo
           </a>
+          <a class="nav-item" data-sec="stats" onclick="showSection('stats')">
+            <span>📊</span> Stats et avis
+          </a>
           <a class="nav-item" data-sec="legal" onclick="showSection('legal')">
             <span>⚖️</span> Légal
           </a>
@@ -317,6 +320,15 @@
               <button class="btn secondary" onclick="sendTestEmail()">📤 Envoyer un test</button>
               <span id="etSaved" class="muted" style="margin-left:8px;font-size:13px"></span>
             </div>
+          </div>
+        </section>
+
+        <!-- ===== SECTION : STATS ET AVIS ===== -->
+        <section id="sec-stats" class="admin-section" style="display:none">
+          <h1 class="section-title">📊 Stats et avis</h1>
+          <p class="muted" style="margin-bottom:20px">Notes et commentaires laissés par les joueurs (publiques, sans mot de passe).</p>
+          <div id="statsContent">
+            <p class="muted">Chargement…</p>
           </div>
         </section>
 
@@ -601,7 +613,7 @@ const themeLabel = { retro:'Rétro', neon:'Néon', chic:'Chic', kids:'Enfant', c
 const ALL_THEMES = ['retro','neon','chic','kids','casino'];
 const PLAN_ORDER = ['free','full','infinite'];
 let PWD = sessionStorage.getItem('admPwd') || '';
-let PRICING = null, BREVO = null, _emailLoaded = false, _legalLoaded = false, _promosLoaded = false, _privacyLoaded = false, _btLoaded = false, _cartonLoaded = false, _ttcqLoaded = false, _googleLoaded = false, _justoneLoaded = false, _quizLoaded = false, _photosLoaded = false, _spotlightLoaded = false;
+let PRICING = null, BREVO = null, _emailLoaded = false, _legalLoaded = false, _promosLoaded = false, _privacyLoaded = false, _btLoaded = false, _cartonLoaded = false, _ttcqLoaded = false, _googleLoaded = false, _justoneLoaded = false, _quizLoaded = false, _photosLoaded = false, _spotlightLoaded = false, _statsLoaded = false;
 let PRIVACY_DATA = null;
 let CARTON_DATA = null;
 let TTCQ_DATA = null;
@@ -638,6 +650,7 @@ function showSection(name) {
   if (name === 'quiz' && !_quizLoaded) { _quizLoaded = true; loadQuizAdmin(); }
   if (name === 'photos' && !_photosLoaded) { _photosLoaded = true; loadPhotosAdmin(); }
   if (name === 'spotlight' && !_spotlightLoaded) { _spotlightLoaded = true; loadSpotlightAdmin(); }
+  if (name === 'stats' && !_statsLoaded) { _statsLoaded = true; loadStats(); }
 }
 
 // ---- Auth ----
@@ -1941,6 +1954,53 @@ async function saveSpotlightAdmin() {
   const s = document.getElementById('slSaved');
   s.textContent = ' ✓ enregistré'; s.style.color = 'var(--a-ok)';
   setTimeout(() => { s.textContent = ''; s.style.color = ''; }, 1800);
+}
+
+// ---- Section Stats ----
+async function loadStats() {
+  const el = document.getElementById('statsContent');
+  try {
+    const r = await fetch('/api/admin/stats', { headers: headers() });
+    if (!r.ok) { el.innerHTML = '<p class="muted">Erreur ('+r.status+').</p>'; return; }
+    const d = await r.json();
+    let html = '<div class="card"><h2>⭐ Notes globales</h2>';
+    html += '<div style="display:flex;gap:24px;flex-wrap:wrap;margin:16px 0">';
+    html += `<div><strong style="font-size:36px">${d.avgRating}</strong><br><span class="muted">moyenne sur ${d.totalRatings} note(s)</span></div>`;
+    html += `<div><strong style="font-size:36px">${d.totalFeedback}</strong><br><span class="muted">avis au total</span></div>`;
+    html += '</div>';
+    // Distribution
+    if (d.distribution && d.distribution.length) {
+      const max = Math.max(...d.distribution, 1);
+      html += '<h3 style="margin:12px 0 6px">Répartition</h3>';
+      html += '<div style="display:flex;gap:6px;align-items:end;height:80px;margin-bottom:10px">';
+      d.distribution.forEach((n, i) => {
+        const pct = (n / max * 100);
+        html += `<div style="display:flex;flex-direction:column;align-items:center;flex:1">`;
+        html += `<span style="font-size:11px;color:var(--a-muted,#888)">${n}</span>`;
+        html += `<div style="width:100%;height:${pct}%;background:var(--grad);border-radius:4px 4px 0 0;min-height:${n>0?'6px':'0'}"></div>`;
+        html += `<span style="font-size:13px;margin-top:4px">${'⭐'.repeat(i+1)}</span>`;
+        html += `</div>`;
+      });
+      html += '</div>';
+    }
+    html += '</div>';
+    // Par fête
+    if (d.perEvent && d.perEvent.length) {
+      html += '<div class="card" style="margin-top:16px"><h2>📅 Notes par fête</h2>';
+      html += '<table style="width:100%;border-collapse:collapse;margin-top:12px">';
+      html += '<tr style="border-bottom:1px solid rgba(255,255,255,.1);font-size:12px;color:var(--a-muted,#888)"><th style="text-align:left;padding:6px 8px">Fête</th><th style="padding:6px 8px">Notes</th><th style="padding:6px 8px">Moy.</th><th style="padding:6px 8px">Répartition</th></tr>';
+      d.perEvent.forEach(e => {
+        html += `<tr style="border-bottom:1px solid rgba(255,255,255,.05)"><td style="padding:8px;font-weight:600"><a href="/e/${e.id}/admin" style="color:var(--a-accent,#a78bfa)">${esc(e.name)}</a></td>`;
+        html += `<td style="padding:8px;text-align:center">${e.count}</td>`;
+        html += `<td style="padding:8px;text-align:center;font-weight:700">${e.avg}</td>`;
+        html += `<td style="padding:8px">${e.distribution.map((n,i) => n ? '⭐'.repeat(i+1)+n : '').filter(Boolean).join(' ')}</td></tr>`;
+      });
+      html += '</table></div>';
+    } else {
+      html += '<div class="card"><p class="muted">Aucun avis pour le moment.</p></div>';
+    }
+    el.innerHTML = html;
+  } catch { el.innerHTML = '<p class="muted">Erreur réseau.</p>'; }
 }
 
 boot();
