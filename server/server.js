@@ -423,7 +423,7 @@ app.post('/api/admin/email/send-template', async (req, res) => {
     joinUrl: `${baseUrl}/e/${cfg.id}/j/test`,
     playerName: 'Test',
     playerAvatar: '',
-    resultsUrl: `${baseUrl}/e/${cfg.id}/admin`,
+    resultsUrl: `${baseUrl}/e/${cfg.id}/resultats`,
     baseUrl,
   };
   try {
@@ -737,6 +737,58 @@ const anecUpload = multer({
 // --- Pages de l'événement (avec injection thème) ---------------------
 ev.get('/', (req, res) => res.redirect(`/e/${req.eventId}/borne`));
 ev.get('/borne', (req, res) => res.send(renderPage('borne.html', req.cfg)));
+
+// Page publique de résultats + notation (aucun mot de passe requis)
+ev.get('/resultats', (req, res) => {
+  const cfg = req.cfg;
+  const planInfo = (getPricing().plans || {})[cfg.plan] || {};
+  const fb = cfg.feedback || [];
+  const ratings = fb.map(f => f.rating).filter(r => r && r >= 1 && r <= 5);
+  const avg = ratings.length ? (ratings.reduce((a, b) => a + b, 0) / ratings.length).toFixed(1) : '—';
+  res.send(`<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Résultats — ${cfg.name} · PartyPlay</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c0a1e;--ink:#f5f3ff;--muted:#a5a0c6;--border:rgba(255,255,255,.1);--surface:rgba(255,255,255,.05);--accent:#8b5cf6;--pink:#ec4899;--grad:linear-gradient(100deg,#8b5cf6,#ec4899,#fb923c);--font:'Plus Jakarta Sans',sans-serif}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:var(--bg);color:var(--ink);font-family:var(--font);display:flex;flex-direction:column;align-items:center;padding:20px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:28px 30px;max-width:500px;width:100%;margin:20px 0;text-align:center}
+h1{font-size:24px;font-weight:800;margin:0 0 4px}.muted{color:var(--muted);font-size:14px}.stars{font-size:42px;margin:12px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font);font-size:15px;font-weight:700;padding:13px 26px;border-radius:14px;border:none;cursor:pointer;background:var(--grad);color:#fff;text-decoration:none;width:100%;margin-top:12px;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+input,textarea{width:100%;padding:12px 15px;border-radius:12px;border:1px solid var(--border);background:rgba(255,255,255,.055);color:var(--ink);font-size:14px;font-family:var(--font);margin:6px 0;outline:none}
+input:focus,textarea:focus{border-color:var(--pink)}
+textarea{min-height:70px;resize:vertical}
+.star{font-size:32px;cursor:pointer;transition:opacity .15s;display:inline-block;padding:0 2px}
+a{color:var(--accent)}
+</style>
+</head><body>
+<div class="card">
+<h1>🎉 ${cfg.name}</h1>
+<p class="muted">${planInfo.label || cfg.plan} · ${cfg.closed ? 'Fête terminée' : 'En cours'}</p>
+</div>
+<div class="card" id="fbBlock">
+<h2>⭐ Donne ton avis</h2>
+<p class="muted" style="margin:0 0 10px">Note l'application — sans inscription.</p>
+<div id="stars">${[1,2,3,4,5].map(n => '<span class="star" data-s="'+n+'" onclick="pick('+n+')" onmouseenter="hover('+n+')" onmouseleave="unhover()">☆</span>').join('')}</div>
+<p id="ratingLabel" class="muted" style="font-size:13px;margin:4px 0">Sélectionne une note</p>
+<textarea id="comment" placeholder="Un commentaire ? (optionnel)"></textarea>
+<button class="btn" onclick="send()">💬 Envoyer mon avis</button>
+<p id="status" class="muted" style="font-size:13px;margin:8px 0 0"></p>
+</div>
+<div class="card"><h2>📊 Notes</h2><div class="stars">${avg === '—' ? '—' : '<span style="color:#fbbf24">'+'⭐'.repeat(Math.round(Number(avg)))+'</span> '+(avg)+'/5'}</div><p class="muted">${ratings.length} avis</p></div>
+<script>
+let val=0;
+function hover(n){for(let i=1;i<=5;i++)document.querySelectorAll('.star')[i-1].textContent=i<=n?'⭐':'☆'}
+function unhover(){for(let i=1;i<=5;i++){const el=document.querySelectorAll('.star')[i-1];el.textContent=i<=val?'⭐':'☆'}}
+function pick(n){val=n;hover(n);document.getElementById('ratingLabel').textContent='⭐'.repeat(n)+' ('+n+'/5)'}
+async function send(){const st=document.getElementById('status');if(!val){st.textContent='Choisis une note.';return}
+st.textContent='Envoi…';try{const r=await fetch('/e/${cfg.id}/api/public-feedback',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({rating:val,comment:document.getElementById('comment').value.trim()})});const d=await r.json()
+if(!r.ok){st.textContent=d.error||'Erreur';return}
+st.textContent='✓ Merci pour ton avis ! 🎉'}
+catch(e){st.textContent='Erreur réseau.'}}
+</script>
+</body></html>`);
+});
 ev.get('/admin', (req, res) => res.send(renderPage('event-admin.html', req.cfg)));
 ev.get('/photos', (req, res) => res.send(renderPage('photos.html', req.cfg)));
 ev.get('/j/:token', (req, res) => {
@@ -1182,6 +1234,19 @@ ev.post('/api/feedback', (req, res) => {
   const entry = { playerId: p.id, playerName: p.name, rating: rating || null, comment: comment || '', createdAt: Date.now() };
   if (existing >= 0) feedback[existing] = entry;
   else feedback.push(entry);
+  cfg.feedback = feedback;
+  saveConfig(cfg);
+  res.json({ ok: true });
+});
+
+// ---- Feedback public (via la page publique /e/:id/resultats) ----
+ev.post('/api/public-feedback', (req, res) => {
+  const cfg = req.cfg;
+  const { rating, comment } = req.body || {};
+  if (!rating || rating < 1 || rating > 5) return res.status(400).json({ error: 'Note entre 1 et 5 requise.' });
+  const feedback = cfg.feedback || [];
+  const entry = { playerId: '', playerName: '', rating: Number(rating), comment: comment || '', createdAt: Date.now() };
+  feedback.push(entry);
   cfg.feedback = feedback;
   saveConfig(cfg);
   res.json({ ok: true });
