@@ -14026,24 +14026,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Sur quel type d'écran tactile navigue-t-on avec un smartphone ? Un écran ___ ?",
+    "q": "Un smartphone, c'est : un téléphone intelligent, un fromage, un légume ou une danse ?",
     "c": [
-     "tactile",
-     "cathodique",
-     "plasma",
-     "papier"
+     "un téléphone intelligent",
+     "un fromage",
+     "un légume",
+     "une danse"
     ],
-    "a": "tactile"
+    "a": "un téléphone intelligent"
    },
    {
-    "q": "Quelle marque à la pomme croquée fabrique l'iPhone ?",
+    "q": "On touche l'écran d'un smartphone avec : les doigts, les orteils, une fourchette ou une truelle ?",
     "c": [
-     "Apple",
-     "Samsung",
-     "Nokia",
-     "Sony"
+     "les doigts",
+     "les orteils",
+     "une fourchette",
+     "une truelle"
     ],
-    "a": "Apple"
+    "a": "les doigts"
    },
    {
     "q": "Comment appelle-t-on les petits logiciels que l'on installe sur un smartphone ? Des ___ ?",
@@ -14109,24 +14109,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Comment appelle-t-on le réseau mondial reliant les ordinateurs ? L'___ ?",
+    "q": "Internet, c'est : un réseau mondial d'ordinateurs, un fromage, une planète ou un fruit ?",
     "c": [
-     "Internet",
-     "Intranet",
-     "Ethernet",
-     "Extranet"
+     "un réseau mondial d'ordinateurs",
+     "un fromage",
+     "une planète",
+     "un fruit"
     ],
-    "a": "Internet"
+    "a": "un réseau mondial d'ordinateurs"
    },
    {
-    "q": "Quel symbole sépare l'utilisateur du domaine dans une adresse e-mail ? L'___ (arobase) ?",
+    "q": "Sur Internet, on peut surtout : chercher des infos, faire pousser des tomates, repasser ou dormir ?",
     "c": [
-     "@",
-     "#",
-     "&",
-     "%"
+     "chercher des infos",
+     "faire pousser des tomates",
+     "repasser",
+     "dormir"
     ],
-    "a": "@"
+    "a": "chercher des infos"
    },
    {
     "q": "Comment appelle-t-on une page web que l'on consulte dans un navigateur ? Un ___ ?",
@@ -14192,24 +14192,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Que signifie le sigle IA ? Intelligence ___ ?",
+    "q": "L'intelligence artificielle, c'est : une technologie informatique, un plat, une planète ou une danse ?",
     "c": [
-     "artificielle",
-     "avancée",
-     "automatique",
-     "analytique"
+     "une technologie informatique",
+     "un plat",
+     "une planète",
+     "une danse"
     ],
-    "a": "artificielle"
+    "a": "une technologie informatique"
    },
    {
-    "q": "Quel agent conversationnel d'OpenAI a rendu l'IA populaire fin 2022 ?",
+    "q": "L'intelligence artificielle est faite par des : ordinateurs, boulangers, jardiniers ou plombiers ?",
     "c": [
-     "ChatGPT",
-     "Siri",
-     "Alexa",
-     "Cortana"
+     "ordinateurs",
+     "boulangers",
+     "jardiniers",
+     "plombiers"
     ],
-    "a": "ChatGPT"
+    "a": "ordinateurs"
    },
    {
     "q": "Comment appelle-t-on l'apprentissage d'une IA à partir de données ? Le ___ learning ?",
@@ -14275,24 +14275,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Sur quel appareil de salon joue-t-on branché à la télé ? Une ___ ?",
+    "q": "Les jeux vidéo, c'est : des jeux électroniques, un fromage, un sport de plein air ou un légume ?",
     "c": [
-     "console",
-     "cassette",
-     "radio",
-     "platine"
+     "des jeux électroniques",
+     "un fromage",
+     "un sport de plein air",
+     "un légume"
     ],
-    "a": "console"
+    "a": "des jeux électroniques"
    },
    {
-    "q": "Quel plombier moustachu est la mascotte de Nintendo ?",
+    "q": "On joue aux jeux vidéo avec une : manette, casserole, fourchette ou éponge ?",
     "c": [
-     "Mario",
-     "Sonic",
-     "Link",
-     "Kirby"
+     "manette",
+     "casserole",
+     "fourchette",
+     "éponge"
     ],
-    "a": "Mario"
+    "a": "manette"
    },
    {
     "q": "Quel jeu de blocs à construire est le plus vendu de l'histoire ?",
@@ -14358,24 +14358,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Que met-on sur les yeux pour plonger en réalité virtuelle ? Un ___ (VR) ?",
+    "q": "La réalité virtuelle, c'est : une technologie immersive, un plat, une planète ou un sport ?",
     "c": [
-     "casque",
-     "chapeau",
-     "masque à gaz",
-     "bandeau"
+     "une technologie immersive",
+     "un plat",
+     "une planète",
+     "un sport"
     ],
-    "a": "casque"
+    "a": "une technologie immersive"
    },
    {
-    "q": "Que signifie le sigle VR (anglais) ? Virtual ___ ?",
+    "q": "Pour la réalité virtuelle, on met un : casque, chapeau de paille, bonnet de bain ou saladier ?",
     "c": [
-     "Reality",
-     "Room",
-     "Racing",
-     "Robot"
+     "casque",
+     "chapeau de paille",
+     "bonnet de bain",
+     "saladier"
     ],
-    "a": "Reality"
+    "a": "casque"
    },
    {
     "q": "Comment appelle-t-on un monde numérique où l'on s'immerge, popularisé par Meta ? Le ___ ?",
@@ -14441,24 +14441,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Sur quel réseau social, à l'oiseau bleu à l'origine, publie-t-on de courts messages ? X (ex-___) ?",
+    "q": "Les réseaux sociaux, c'est : des applications pour partager en ligne, un fromage, une planète ou un fruit ?",
     "c": [
-     "Twitter",
-     "Skype",
-     "MSN",
-     "Yahoo"
+     "des applications pour partager en ligne",
+     "un fromage",
+     "une planète",
+     "un fruit"
     ],
-    "a": "Twitter"
+    "a": "des applications pour partager en ligne"
    },
    {
-    "q": "Quel réseau social de partage de photos appartient à Meta ?",
+    "q": "Sur les réseaux sociaux, on peut : publier des photos, cuire un poulet, laver la voiture ou tondre le gazon ?",
     "c": [
-     "Instagram",
-     "LinkedIn",
-     "Pinterest",
-     "Reddit"
+     "publier des photos",
+     "cuire un poulet",
+     "laver la voiture",
+     "tondre le gazon"
     ],
-    "a": "Instagram"
+    "a": "publier des photos"
    },
    {
     "q": "Comment appelle-t-on un mot-clé précédé d'un dièse sur les réseaux ? Un ___ ?",
@@ -14524,24 +14524,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Comment appelle-t-on une machine programmable qui exécute des tâches ? Un ___ ?",
+    "q": "La robotique, c'est : la science des robots, un plat, une danse ou un légume ?",
     "c": [
-     "robot",
-     "moteur",
-     "capteur",
-     "câble"
+     "la science des robots",
+     "un plat",
+     "une danse",
+     "un légume"
     ],
-    "a": "robot"
+    "a": "la science des robots"
    },
    {
-    "q": "Quel robot aspirateur autonome nettoie les sols tout seul ?",
+    "q": "La robotique fabrique des : robots, gâteaux, chaussettes ou nuages ?",
     "c": [
-     "aspirateur",
-     "grille-pain",
-     "réveil",
-     "ventilateur"
+     "robots",
+     "gâteaux",
+     "chaussettes",
+     "nuages"
     ],
-    "a": "aspirateur"
+    "a": "robots"
    },
    {
     "q": "Comment appelle-t-on un robot à l'apparence humaine ? Un ___ ?",
@@ -14607,24 +14607,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Que signifie « cloud » en anglais, ce mot désignant le stockage en ligne ? Le ___ ?",
+    "q": "Le cloud, c'est : le stockage de fichiers en ligne, un vrai nuage de pluie, un fromage ou un légume ?",
     "c": [
-     "nuage",
-     "ciel",
-     "brouillard",
-     "orage"
+     "le stockage de fichiers en ligne",
+     "un vrai nuage de pluie",
+     "un fromage",
+     "un légume"
     ],
-    "a": "nuage"
+    "a": "le stockage de fichiers en ligne"
    },
    {
-    "q": "Où sont réellement stockées les données du cloud ? Dans des ___ (data centers) ?",
+    "q": "Le cloud sert à : stocker des fichiers, faire pleuvoir, chauffer la maison ou cuire des pâtes ?",
     "c": [
-     "serveurs",
-     "nuages",
-     "satellites",
-     "clés USB"
+     "stocker des fichiers",
+     "faire pleuvoir",
+     "chauffer la maison",
+     "cuire des pâtes"
     ],
-    "a": "serveurs"
+    "a": "stocker des fichiers"
    },
    {
     "q": "Quel service Google permet de stocker fichiers et documents en ligne ? Google ___ ?",
@@ -14690,24 +14690,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "À quoi sert la cryptographie ? À ___ des messages ?",
+    "q": "La cryptographie, c'est : l'art de coder des messages secrets, un plat, une planète ou une danse ?",
     "c": [
-     "chiffrer",
-     "afficher",
-     "imprimer",
-     "traduire"
+     "l'art de coder des messages secrets",
+     "un plat",
+     "une planète",
+     "une danse"
     ],
-    "a": "chiffrer"
+    "a": "l'art de coder des messages secrets"
    },
    {
-    "q": "Comment appelle-t-on un message rendu illisible par chiffrement ? Un message ___ ?",
+    "q": "La cryptographie sert à : cacher/protéger des messages, cuisiner, jardiner ou repasser ?",
     "c": [
-     "crypté",
-     "clair",
-     "public",
-     "ouvert"
+     "cacher/protéger des messages",
+     "cuisiner",
+     "jardiner",
+     "repasser"
     ],
-    "a": "crypté"
+    "a": "cacher/protéger des messages"
    },
    {
     "q": "Quelle machine allemande de chiffrement de la 2e Guerre mondiale a été cassée par les Alliés ?",
@@ -14773,18 +14773,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Dans quel milieu se déplace principalement un drone ? Dans les ___ ?",
+    "q": "Un drone, c'est : un petit engin volant, un fromage, un légume ou un meuble ?",
     "c": [
-     "airs",
-     "mers",
-     "tunnels",
-     "égouts"
+     "un petit engin volant",
+     "un fromage",
+     "un légume",
+     "un meuble"
     ],
-    "a": "airs"
+    "a": "un petit engin volant"
    },
    {
-    "q": "Combien d'hélices possède un « quadricoptère », le drone grand public typique ?",
-    "a": "4"
+    "q": "Un drone se déplace surtout dans : les airs, les égouts, les tiroirs ou les casseroles ?",
+    "c": [
+     "les airs",
+     "les égouts",
+     "les tiroirs",
+     "les casseroles"
+    ],
+    "a": "les airs"
    },
    {
     "q": "À quoi sert souvent la caméra embarquée sous un drone de loisir ? À ___ ?",
@@ -14850,18 +14856,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "En combien de dimensions une imprimante 3D crée-t-elle un objet ?",
-    "a": "3"
+    "q": "L'impression 3D, c'est : une technologie qui fabrique des objets en volume, un plat, une danse ou un sport ?",
+    "c": [
+     "une technologie qui fabrique des objets en volume",
+     "un plat",
+     "une danse",
+     "un sport"
+    ],
+    "a": "une technologie qui fabrique des objets en volume"
    },
    {
-    "q": "Quelle matière l'imprimante 3D grand public fait-elle fondre couche par couche ? Le ___ ?",
+    "q": "Une imprimante 3D fabrique des objets en : trois dimensions, deux dimensions, chocolat liquide ou fumée ?",
     "c": [
-     "plastique",
-     "verre",
-     "papier",
-     "tissu"
+     "trois dimensions",
+     "deux dimensions",
+     "chocolat liquide",
+     "fumée"
     ],
-    "a": "plastique"
+    "a": "trois dimensions"
    },
    {
     "q": "Comment appelle-t-on la superposition successive de fines couches en impression 3D ? La fabrication ___ ?",
@@ -14927,24 +14939,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "À quoi sert une batterie ? À stocker de l'___ ?",
+    "q": "Une batterie, c'est : un objet qui stocke de l'énergie, un fromage, un légume ou une danse ?",
     "c": [
-     "énergie",
-     "eau",
-     "air",
-     "lumière"
+     "un objet qui stocke de l'énergie",
+     "un fromage",
+     "un légume",
+     "une danse"
     ],
-    "a": "énergie"
+    "a": "un objet qui stocke de l'énergie"
    },
    {
-    "q": "Quel métal léger équipe la plupart des batteries de smartphones ? Le ___ ?",
+    "q": "Une batterie sert à : stocker de l'énergie, faire du bruit en cuisine, arroser ou coudre ?",
     "c": [
-     "lithium",
-     "plomb",
-     "fer",
-     "or"
+     "stocker de l'énergie",
+     "faire du bruit en cuisine",
+     "arroser",
+     "coudre"
     ],
-    "a": "lithium"
+    "a": "stocker de l'énergie"
    },
    {
     "q": "Comment appelle-t-on l'action de redonner de l'énergie à une batterie ? La ___ ?",
@@ -15010,24 +15022,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Que produit principalement une LED ? De la ___ ?",
+    "q": "Une LED, c'est : une petite lampe électronique, un fromage, un légume ou un fruit ?",
     "c": [
-     "lumière",
-     "chaleur",
-     "eau",
-     "fumée"
+     "une petite lampe électronique",
+     "un fromage",
+     "un légume",
+     "un fruit"
     ],
-    "a": "lumière"
+    "a": "une petite lampe électronique"
    },
    {
-    "q": "Que signifie le sigle LED : Diode Électro___ ? (Light Emitting Diode)",
+    "q": "Une LED produit surtout de la : lumière, soupe, musique ou neige ?",
     "c": [
-     "luminescente",
-     "magnétique",
-     "statique",
-     "thermique"
+     "lumière",
+     "soupe",
+     "musique",
+     "neige"
     ],
-    "a": "luminescente"
+    "a": "lumière"
    },
    {
     "q": "Quel gros avantage la LED a-t-elle face à l'ampoule classique ? Elle consomme ___ ?",
@@ -15093,24 +15105,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle source d'énergie les panneaux solaires captent-ils ? Le ___ ?",
+    "q": "Un panneau solaire, c'est : un dispositif qui capte l'énergie du Soleil, un fromage, un légume ou un meuble ?",
     "c": [
-     "soleil",
-     "vent",
-     "charbon",
-     "gaz"
+     "un dispositif qui capte l'énergie du Soleil",
+     "un fromage",
+     "un légume",
+     "un meuble"
     ],
-    "a": "soleil"
+    "a": "un dispositif qui capte l'énergie du Soleil"
    },
    {
-    "q": "En quoi les panneaux solaires transforment-ils la lumière ? En ___ ?",
+    "q": "Un panneau solaire capte l'énergie : du Soleil, du frigo, du micro-ondes ou de la télé ?",
     "c": [
-     "électricité",
-     "eau",
-     "essence",
-     "chaleur"
+     "du Soleil",
+     "du frigo",
+     "du micro-ondes",
+     "de la télé"
     ],
-    "a": "électricité"
+    "a": "du Soleil"
    },
    {
     "q": "Comment appelle-t-on la technologie qui transforme la lumière en courant ? Le ___ ?",
@@ -15176,24 +15188,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle génération de réseau mobile est la 5G ? La ___e ?",
+    "q": "La 5G, c'est : une technologie de réseau mobile, un fromage, une planète ou une danse ?",
     "c": [
-     "5",
-     "3",
-     "4",
-     "6"
+     "une technologie de réseau mobile",
+     "un fromage",
+     "une planète",
+     "une danse"
     ],
-    "a": "5"
+    "a": "une technologie de réseau mobile"
    },
    {
-    "q": "Quel grand avantage la 5G offre-t-elle par rapport à la 4G ? Plus de ___ ?",
+    "q": "La 5G sert surtout à : téléphoner et surfer plus vite, faire la vaisselle, cuire le riz ou repasser ?",
     "c": [
-     "vitesse",
-     "poids",
-     "bruit",
-     "prix"
+     "téléphoner et surfer plus vite",
+     "faire la vaisselle",
+     "cuire le riz",
+     "repasser"
     ],
-    "a": "vitesse"
+    "a": "téléphoner et surfer plus vite"
    },
    {
     "q": "Sur quel appareil du quotidien profite-t-on surtout de la 5G ? Le ___ ?",
@@ -15259,24 +15271,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle énergie alimente un moteur électrique ? L'___ ?",
+    "q": "Le moteur électrique, c'est : un moteur alimenté par l'électricité, un fromage, un légume ou une danse ?",
     "c": [
-     "électricité",
-     "essence",
-     "vapeur",
-     "charbon"
+     "un moteur alimenté par l'électricité",
+     "un fromage",
+     "un légume",
+     "une danse"
     ],
-    "a": "électricité"
+    "a": "un moteur alimenté par l'électricité"
    },
    {
-    "q": "Quel phénomène invisible fait tourner un moteur électrique ? Le ___ (magnétisme) ?",
+    "q": "Un moteur électrique fonctionne à l': électricité, huile d'olive, eau de mer ou jus d'orange ?",
     "c": [
-     "champ magnétique",
-     "vent",
-     "feu",
-     "son"
+     "électricité",
+     "huile d'olive",
+     "eau de mer",
+     "jus d'orange"
     ],
-    "a": "champ magnétique"
+    "a": "électricité"
    },
    {
     "q": "Quel gros avantage écologique le moteur électrique a-t-il ? Il ne rejette pas de ___ à l'usage ?",
@@ -15342,24 +15354,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quel carburant liquide alimente un moteur essence ? L'___ ?",
+    "q": "Le moteur essence, c'est : un moteur de voiture, un fromage, un légume ou une danse ?",
     "c": [
-     "essence",
-     "eau",
-     "lait",
-     "vin"
+     "un moteur de voiture",
+     "un fromage",
+     "un légume",
+     "une danse"
     ],
-    "a": "essence"
+    "a": "un moteur de voiture"
    },
    {
-    "q": "Quelle pièce s'enfonce et remonte dans le cylindre du moteur ? Le ___ ?",
+    "q": "Un moteur essence a besoin de : carburant, jus d'orange, lait ou limonade ?",
     "c": [
-     "piston",
-     "volant",
-     "rétroviseur",
-     "pare-choc"
+     "carburant",
+     "jus d'orange",
+     "lait",
+     "limonade"
     ],
-    "a": "piston"
+    "a": "carburant"
    },
    {
     "q": "Quelle petite pièce produit l'étincelle qui enflamme l'essence ? La ___ ?",
@@ -15413,24 +15425,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Par quoi remplace-t-on le plein d'essence sur une voiture électrique ? La ___ ?",
+    "q": "La voiture électrique, c'est : une voiture, un fromage, une planète ou un fruit ?",
     "c": [
-     "recharge",
-     "vidange",
-     "purge",
-     "révision"
+     "une voiture",
+     "un fromage",
+     "une planète",
+     "un fruit"
     ],
-    "a": "recharge"
+    "a": "une voiture"
    },
    {
-    "q": "Quel composant stocke l'énergie d'une voiture électrique ? La ___ ?",
+    "q": "On recharge une voiture électrique en la branchant à : une borne électrique, une fontaine, un four ou un aquarium ?",
     "c": [
-     "batterie",
-     "bougie",
-     "durite",
-     "courroie"
+     "une borne électrique",
+     "une fontaine",
+     "un four",
+     "un aquarium"
     ],
-    "a": "batterie"
+    "a": "une borne électrique"
    },
    {
     "q": "Quelle marque américaine d'Elon Musk domine la voiture électrique ?",
@@ -15496,18 +15508,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "En quelle matière souple et noire les pneus sont-ils faits ? Le ___ ?",
+    "q": "Un pneu, c'est : une pièce de voiture, un fromage, un légume ou un dessert ?",
     "c": [
-     "caoutchouc",
-     "métal",
-     "bois",
-     "verre"
+     "une pièce de voiture",
+     "un fromage",
+     "un légume",
+     "un dessert"
     ],
-    "a": "caoutchouc"
+    "a": "une pièce de voiture"
    },
    {
-    "q": "Combien de pneus une voiture classique a-t-elle (hors secours) ?",
-    "a": "4"
+    "q": "Un pneu est fait surtout en : caoutchouc, chocolat, verre ou papier ?",
+    "c": [
+     "caoutchouc",
+     "chocolat",
+     "verre",
+     "papier"
+    ],
+    "a": "caoutchouc"
    },
    {
     "q": "Comment appelle-t-on les rainures du pneu qui évacuent l'eau ? Les ___ ?",
@@ -15573,24 +15591,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "À quoi sert la boîte de vitesses ? À changer de ___ ?",
+    "q": "La boîte de vitesses, c'est : une pièce mécanique d'une voiture, un fromage, un légume ou un jouet ?",
     "c": [
-     "vitesse",
-     "couleur",
-     "musique",
-     "siège"
+     "une pièce mécanique d'une voiture",
+     "un fromage",
+     "un légume",
+     "un jouet"
     ],
-    "a": "vitesse"
+    "a": "une pièce mécanique d'une voiture"
    },
    {
-    "q": "Quelle pédale enfonce-t-on pour changer de vitesse en boîte manuelle ? L'___ ?",
+    "q": "La boîte de vitesses sert à : changer de vitesse, ranger les gants, garder le café au chaud ou écouter la radio ?",
     "c": [
-     "embrayage",
-     "frein",
-     "accélérateur",
-     "klaxon"
+     "changer de vitesse",
+     "ranger les gants",
+     "garder le café au chaud",
+     "écouter la radio"
     ],
-    "a": "embrayage"
+    "a": "changer de vitesse"
    },
    {
     "q": "Comment appelle-t-on une boîte qui change les vitesses toute seule ? Une boîte ___ ?",
@@ -15656,24 +15674,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Sur quels types de routes se court souvent le rallye, contrairement au circuit ? Des routes ___ ?",
+    "q": "Le rallye, c'est : une course automobile, un fromage, une danse ou un légume ?",
     "c": [
-     "ouvertes",
-     "fermées à vie",
-     "sous-marines",
-     "aériennes"
+     "une course automobile",
+     "un fromage",
+     "une danse",
+     "un légume"
     ],
-    "a": "ouvertes"
+    "a": "une course automobile"
    },
    {
-    "q": "Qui, à côté du pilote, lit les notes et annonce les virages ? Le ___ ?",
+    "q": "Le rallye se court souvent sur des routes : de terre et de campagne, sous l'eau, dans le ciel ou dans un salon ?",
     "c": [
-     "copilote",
-     "mécano",
-     "arbitre",
-     "médecin"
+     "de terre et de campagne",
+     "sous l'eau",
+     "dans le ciel",
+     "dans un salon"
     ],
-    "a": "copilote"
+    "a": "de terre et de campagne"
    },
    {
     "q": "Comment appelle-t-on chaque portion chronométrée d'un rallye ? Une ___ spéciale ?",
@@ -15739,24 +15757,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Sur quelle distance très courte et en ligne droite courent les dragsters ? Une ligne ___ ?",
+    "q": "Le dragster, c'est : une voiture de course en ligne droite, un fromage, un légume ou un meuble ?",
     "c": [
-     "droite",
-     "courbe",
-     "ronde",
-     "brisée"
+     "une voiture de course en ligne droite",
+     "un fromage",
+     "un légume",
+     "un meuble"
     ],
-    "a": "droite"
+    "a": "une voiture de course en ligne droite"
    },
    {
-    "q": "Que recherche avant tout un dragster ? L'___ maximale ?",
+    "q": "Un dragster cherche surtout à aller très : vite, lentement, haut ou profond ?",
     "c": [
-     "accélération",
-     "endurance",
-     "économie",
-     "confort"
+     "vite",
+     "lentement",
+     "haut",
+     "profond"
     ],
-    "a": "accélération"
+    "a": "vite"
    },
    {
     "q": "Quelle distance classique, en mètres (quart de mile), fait une course de dragster ?",
@@ -15822,16 +15840,22 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Combien de roues a une moto classique ?",
-    "a": "2"
+    "q": "La moto, c'est : un véhicule à deux roues, un fromage, un légume ou une danse ?",
+    "c": [
+     "un véhicule à deux roues",
+     "un fromage",
+     "un légume",
+     "une danse"
+    ],
+    "a": "un véhicule à deux roues"
    },
    {
-    "q": "Que porte obligatoirement un motard sur la tête pour sa sécurité ? Un ___ ?",
+    "q": "En moto, on porte obligatoirement un : casque, tablier, maillot de bain ou pyjama ?",
     "c": [
      "casque",
-     "chapeau",
-     "béret",
-     "bonnet"
+     "tablier",
+     "maillot de bain",
+     "pyjama"
     ],
     "a": "casque"
    },
@@ -15899,24 +15923,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Que cherche-t-on à faire à une voiture par le tuning ? La ___ ?",
+    "q": "Le tuning, c'est : la personnalisation de voitures, un plat, une planète ou un sport ?",
     "c": [
-     "personnaliser",
-     "détruire",
-     "vendre",
-     "cacher"
+     "la personnalisation de voitures",
+     "un plat",
+     "une planète",
+     "un sport"
     ],
-    "a": "personnaliser"
+    "a": "la personnalisation de voitures"
    },
    {
-    "q": "Quel dispositif lumineux coloré met-on souvent sous la caisse en tuning ? Des ___ (néons) ?",
+    "q": "Le tuning consiste à : décorer et modifier sa voiture, la manger, la planter ou la coudre ?",
     "c": [
-     "néons",
-     "bougies",
-     "torches",
-     "lasers"
+     "décorer et modifier sa voiture",
+     "la manger",
+     "la planter",
+     "la coudre"
     ],
-    "a": "néons"
+    "a": "décorer et modifier sa voiture"
    },
    {
     "q": "Quel aileron arrière ajoute-t-on souvent en tuning ? Un ___ ?",
@@ -15982,18 +16006,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Combien d'heures dure la mythique course d'endurance du Mans ?",
-    "a": "24"
+    "q": "Les 24 Heures du Mans, c'est : une course automobile, un fromage, une danse ou un légume ?",
+    "c": [
+     "une course automobile",
+     "un fromage",
+     "une danse",
+     "un légume"
+    ],
+    "a": "une course automobile"
    },
    {
-    "q": "Dans quelle ville française se court cette course d'endurance ?",
+    "q": "Les 24 Heures du Mans durent : 24 heures, 24 secondes, 24 ans ou 24 minutes ?",
     "c": [
-     "Le Mans",
-     "Reims",
-     "Lyon",
-     "Nice"
+     "24 heures",
+     "24 secondes",
+     "24 ans",
+     "24 minutes"
     ],
-    "a": "Le Mans"
+    "a": "24 heures"
    },
    {
     "q": "Quel type d'épreuve automobile sont les 24 Heures du Mans ? Une course d'___ ?",
@@ -16059,18 +16089,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Combien de roues a une monoplace de Formule 1 ?",
-    "a": "4"
+    "q": "La Formule 1, c'est : une course automobile, un fromage, une planète ou un fruit ?",
+    "c": [
+     "une course automobile",
+     "un fromage",
+     "une planète",
+     "un fruit"
+    ],
+    "a": "une course automobile"
    },
    {
-    "q": "Quelle écurie italienne rouge est la plus mythique de la F1 ?",
+    "q": "Une voiture de Formule 1 a : 4 roues, 2 roues, 10 roues ou aucune roue ?",
     "c": [
-     "Ferrari",
-     "McLaren",
-     "Williams",
-     "Renault"
+     "4 roues",
+     "2 roues",
+     "10 roues",
+     "aucune roue"
     ],
-    "a": "Ferrari"
+    "a": "4 roues"
    },
    {
     "q": "Quel drapeau à damier marque la fin d'un Grand Prix ?",
@@ -16136,24 +16172,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Sur quel type d'écran regarde-t-on une série télé ? La ___ ?",
+    "q": "Les séries télé françaises, c'est : des programmes de télévision, un fromage, une planète ou un légume ?",
+    "c": [
+     "des programmes de télévision",
+     "un fromage",
+     "une planète",
+     "un légume"
+    ],
+    "a": "des programmes de télévision"
+   },
+   {
+    "q": "Une série télé se regarde à la : télévision, à la radio, au téléphone fixe ou dans le journal ?",
     "c": [
      "télévision",
      "radio",
-     "montre",
-     "boussole"
+     "téléphone fixe",
+     "journal"
     ],
     "a": "télévision"
-   },
-   {
-    "q": "Quelle série policière française suit l'équipe du « 36 » avec le capitaine Berthaud ? ___ ?",
-    "c": [
-     "Engrenages",
-     "Braquo",
-     "Profilage",
-     "Section"
-    ],
-    "a": "Engrenages"
    },
    {
     "q": "Quelle longue série quotidienne suit les habitants d'un quartier de Marseille (France 3) ? Plus belle la ___ ?",
@@ -16219,24 +16255,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Sur quelle plateforme de streaming au logo rouge regarde-t-on ces séries ?",
+    "q": "Les séries Netflix, c'est : des séries diffusées en streaming, un fromage, une planète ou un légume ?",
     "c": [
-     "Netflix",
-     "YouTube",
-     "Twitch",
-     "Spotify"
+     "des séries diffusées en streaming",
+     "un fromage",
+     "une planète",
+     "un légume"
     ],
-    "a": "Netflix"
+    "a": "des séries diffusées en streaming"
    },
    {
-    "q": "Quelle série espagnole de braqueurs en combinaison rouge et masque de Dalí a cartonné ? La Casa de ___ ?",
+    "q": "Netflix se regarde surtout : sur un écran, dans un four, dans une casserole ou dans un frigo ?",
     "c": [
-     "Papel",
-     "Campo",
-     "Sol",
-     "Mar"
+     "sur un écran",
+     "dans un four",
+     "dans une casserole",
+     "dans un frigo"
     ],
-    "a": "Papel"
+    "a": "sur un écran"
    },
    {
     "q": "Quelle série coréenne de jeux mortels pour de l'argent a battu tous les records en 2021 ? ___ Game ?",
@@ -16302,24 +16338,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "À quelle heure du soir est diffusé le grand JT en France ? À ___ heures ?",
+    "q": "Le journal télévisé, c'est : une émission d'informations, un fromage, une danse ou un sport ?",
     "c": [
-     "20",
-     "12",
-     "18",
-     "22"
+     "une émission d'informations",
+     "un fromage",
+     "une danse",
+     "un sport"
     ],
-    "a": "20"
+    "a": "une émission d'informations"
    },
    {
-    "q": "Qui présente et lit les informations à la télévision ? Le ___ ?",
+    "q": "Au journal télévisé, on présente : les informations du jour, des recettes de gâteaux, des tours de magie ou des combats ?",
     "c": [
-     "présentateur",
-     "acteur",
-     "chanteur",
-     "arbitre"
+     "les informations du jour",
+     "des recettes de gâteaux",
+     "des tours de magie",
+     "des combats"
     ],
-    "a": "présentateur"
+    "a": "les informations du jour"
    },
    {
     "q": "Comment appelle-t-on l'ensemble des informations du jour présentées ? Les ___ ?",
@@ -16385,24 +16421,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Que gagne-t-on souvent en participant à un jeu télévisé ? De l'___ ?",
+    "q": "Les jeux télévisés, c'est : des émissions de jeux, un fromage, une planète ou un légume ?",
     "c": [
-     "argent",
-     "eau",
-     "air",
-     "temps"
+     "des émissions de jeux",
+     "un fromage",
+     "une planète",
+     "un légume"
     ],
-    "a": "argent"
+    "a": "des émissions de jeux"
    },
    {
-    "q": "Quel jeu de lettres et chiffres de France 2 est un classique de l'après-midi ? Des chiffres et des ___ ?",
+    "q": "Dans un jeu télévisé, on peut souvent gagner de l': argent, la pluie, la neige ou le vent ?",
     "c": [
-     "lettres",
-     "mots",
-     "sons",
-     "nombres"
+     "argent",
+     "la pluie",
+     "la neige",
+     "le vent"
     ],
-    "a": "lettres"
+    "a": "argent"
    },
    {
     "q": "Dans « Qui veut gagner des millions », combien de jokers le candidat a-t-il au départ ?",
@@ -16462,24 +16498,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Autour de quoi les invités d'un talk-show discutent-ils ? Ils ___ ?",
+    "q": "Les talk-shows, c'est : des émissions où l'on discute, un fromage, une planète ou un sport ?",
+    "c": [
+     "des émissions où l'on discute",
+     "un fromage",
+     "une planète",
+     "un sport"
+    ],
+    "a": "des émissions où l'on discute"
+   },
+   {
+    "q": "Dans un talk-show, les invités surtout : parlent, dorment, nagent ou courent ?",
     "c": [
      "parlent",
      "dorment",
-     "courent",
-     "nagent"
+     "nagent",
+     "courent"
     ],
     "a": "parlent"
-   },
-   {
-    "q": "Qui mène la discussion et pose les questions dans un talk-show ? L'___ ?",
-    "c": [
-     "animateur",
-     "cameraman",
-     "figurant",
-     "spectateur"
-    ],
-    "a": "animateur"
    },
    {
     "q": "Comment appelle-t-on les gens assis dans le studio qui applaudissent ? Le ___ ?",
@@ -16545,24 +16581,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Sous quelle forme dessinée sont faites les séries animées ? Des ___ animés ?",
+    "q": "Les séries animées, c'est : des séries en dessins animés, un fromage, une planète ou un légume ?",
     "c": [
-     "dessins",
-     "photos",
-     "sculptures",
-     "collages"
+     "des séries en dessins animés",
+     "un fromage",
+     "une planète",
+     "un légume"
     ],
-    "a": "dessins"
+    "a": "des séries en dessins animés"
    },
    {
-    "q": "Quelle famille jaune de Springfield est la plus célèbre des séries animées ? Les ___ ?",
+    "q": "Une série animée est faite de : dessins, vraies personnes uniquement, cailloux ou nuages ?",
     "c": [
-     "Simpson",
-     "Griffin",
-     "Smith",
-     "Belcher"
+     "dessins",
+     "vraies personnes uniquement",
+     "cailloux",
+     "nuages"
     ],
-    "a": "Simpson"
+    "a": "dessins"
    },
    {
     "q": "De quel pays viennent les séries animées appelées « animes » ?",
@@ -16628,24 +16664,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Que filment en continu les caméras de téléréalité ? La ___ des candidats ?",
+    "q": "La téléréalité, c'est : un type d'émission de télévision, un fromage, une planète ou un sport ?",
     "c": [
-     "vie",
-     "voiture",
-     "maison vide",
-     "télé"
+     "un type d'émission de télévision",
+     "un fromage",
+     "une planète",
+     "un sport"
     ],
-    "a": "vie"
+    "a": "un type d'émission de télévision"
    },
    {
-    "q": "Dans quel type de lieu clos les candidats de « Loft Story » vivaient-ils enfermés ? Un ___ ?",
+    "q": "La téléréalité filme surtout : la vie de vrais candidats, des dessins animés, des matchs de foot ou la météo ?",
     "c": [
-     "loft",
-     "château",
-     "bateau",
-     "train"
+     "la vie de vrais candidats",
+     "des dessins animés",
+     "des matchs de foot",
+     "la météo"
     ],
-    "a": "loft"
+    "a": "la vie de vrais candidats"
    },
    {
     "q": "Comment sort-on un candidat de téléréalité que le public n'aime plus ? On l'___ ?",
@@ -16711,24 +16747,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Un documentaire montre-t-il des faits réels ou de la fiction ?",
+    "q": "Le documentaire, c'est : un programme qui montre des faits réels, un fromage, une danse ou un légume ?",
     "c": [
-     "réels",
-     "inventés",
-     "magiques",
-     "faux"
+     "un programme qui montre des faits réels",
+     "un fromage",
+     "une danse",
+     "un légume"
     ],
-    "a": "réels"
+    "a": "un programme qui montre des faits réels"
    },
    {
-    "q": "Quel type de documentaire filme les lions, éléphants et autres bêtes sauvages ? Un docu ___ ?",
+    "q": "Un documentaire montre surtout : des choses réelles, des histoires inventées, des blagues ou des pubs ?",
     "c": [
-     "animalier",
-     "culinaire",
-     "sportif",
-     "musical"
+     "des choses réelles",
+     "des histoires inventées",
+     "des blagues",
+     "des pubs"
     ],
-    "a": "animalier"
+    "a": "des choses réelles"
    },
    {
     "q": "Comment appelle-t-on la voix qui commente un documentaire sans être vue ? La voix ___ ?",
@@ -16794,24 +16830,24 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Que cherche à faire vendre une publicité ? Un ___ ?",
+    "q": "La publicité, c'est : un message pour vendre un produit, un fromage, une planète ou un sport ?",
     "c": [
-     "produit",
-     "secret",
-     "nuage",
-     "silence"
+     "un message pour vendre un produit",
+     "un fromage",
+     "une planète",
+     "un sport"
     ],
-    "a": "produit"
+    "a": "un message pour vendre un produit"
    },
    {
-    "q": "Comment appelle-t-on la petite phrase accrocheuse qui résume une pub ? Un ___ ?",
+    "q": "Une publicité cherche surtout à : faire acheter un produit, endormir, faire pleuvoir ou cuire un plat ?",
     "c": [
-     "slogan",
-     "roman",
-     "sermon",
-     "dossier"
+     "faire acheter un produit",
+     "endormir",
+     "faire pleuvoir",
+     "cuire un plat"
     ],
-    "a": "slogan"
+    "a": "faire acheter un produit"
    },
    {
     "q": "Quand diffuse-t-on des publicités pendant un film à la télé ? Pendant la ___ de pub ?",
@@ -16877,22 +16913,22 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui, dans une série policière, cherche à résoudre les crimes ? Un ___ ?",
+    "q": "Les séries policières, c'est : des séries sur des enquêtes, un fromage, une planète ou un légume ?",
     "c": [
-     "enquêteur",
-     "boulanger",
-     "jardinier",
-     "pilote"
+     "des séries sur des enquêtes",
+     "un fromage",
+     "une planète",
+     "un légume"
     ],
-    "a": "enquêteur"
+    "a": "des séries sur des enquêtes"
    },
    {
-    "q": "Que cherche-t-on à identifier dans une série policière ? Le ___ ?",
+    "q": "Dans une série policière, on cherche surtout à trouver le : coupable, meilleur gâteau, plus beau paysage ou plus grand nombre ?",
     "c": [
      "coupable",
-     "cuisinier",
-     "facteur",
-     "voisin"
+     "meilleur gâteau",
+     "plus beau paysage",
+     "plus grand nombre"
     ],
     "a": "coupable"
    },
