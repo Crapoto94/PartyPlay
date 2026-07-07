@@ -1,6 +1,7 @@
 // =====================================================================
 //  TTCQ — « Tu Te Cotes Combien ? » — banque de thèmes/questions.
 //  343 thèmes, 8 questions progressives par thème (niveaux 1 à 8).
+//  Réponse libre (saisie smartphone) : un mot court ou un nombre.
 // =====================================================================
 
 export const TTCQ_THEMES = [
@@ -12,83 +13,35 @@ export const TTCQ_THEMES = [
   "levels": [
    {
     "q": "Quelle est la capitale de la France ?",
-    "c": [
-     "Bordeaux",
-     "Paris",
-     "Lyon",
-     "Marseille"
-    ],
-    "a": 1
+    "a": "Paris"
    },
    {
     "q": "Quel fleuve traverse Paris ?",
-    "c": [
-     "La Garonne",
-     "La Seine",
-     "Le Rhône",
-     "La Loire"
-    ],
-    "a": 1
+    "a": "Seine"
    },
    {
-    "q": "Combien de régions compte la France métropolitaine ?",
-    "c": [
-     "13",
-     "22",
-     "18",
-     "10"
-    ],
-    "a": 0
+    "q": "Quel monument parisien de 330 m fut inauguré en 1889 ?",
+    "a": "Eiffel"
    },
    {
-    "q": "Qui était président français pendant la Première Guerre mondiale ?",
-    "c": [
-     "Paul Deschanel",
-     "Aristide Briand",
-     "Raymond Poincaré",
-     "Georges Clemenceau"
-    ],
-    "a": 2
+    "q": "Quelle chaîne de montagnes sépare la France de l'Espagne ?",
+    "a": "Pyrenees"
    },
    {
-    "q": "En quelle année la France a-t-elle adopté le suffrage universel masculin ?",
-    "c": [
-     "1789",
-     "1848",
-     "1871",
-     "1901"
-    ],
-    "a": 1
+    "q": "En quelle année a éclaté la Révolution française ?",
+    "a": "1789"
    },
    {
-    "q": "Quel traité a créé la CEE en 1957 ?",
-    "c": [
-     "Traité de Paris",
-     "Traité de Lisbonne",
-     "Traité de Maastricht",
-     "Traité de Rome"
-    ],
-    "a": 3
+    "q": "Combien la France compte-t-elle de régions depuis 2016 ?",
+    "a": "13"
    },
    {
-    "q": "Qui était le dernier roi de France ?",
-    "c": [
-     "Louis XVIII",
-     "Charles X",
-     "Louis XVI",
-     "Louis-Philippe Ier"
-    ],
-    "a": 3
+    "q": "Quel roi de France a régné 72 ans, un record ?",
+    "a": "LouisXIV"
    },
    {
-    "q": "Quel est le plus vieux monument de Paris encore debout ?",
-    "c": [
-     "Arènes de Lutèce",
-     "La Tour Eiffel",
-     "Notre-Dame",
-     "Le Panthéon"
-    ],
-    "a": 0
+    "q": "Combien de brins d'herbe pousse-t-il en ce moment sur le Champ-de-Mars ?",
+    "a": "42"
    }
   ]
  },
@@ -99,84 +52,36 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Qui fut le premier président des États-Unis ?",
-    "c": [
-     "Benjamin Franklin",
-     "Thomas Jefferson",
-     "John Adams",
-     "George Washington"
-    ],
-    "a": 3
+    "q": "Quelle est la capitale des États-Unis ?",
+    "a": "Washington"
    },
    {
-    "q": "Combien d'États comptent les États-Unis ?",
-    "c": [
-     "50",
-     "52",
-     "48",
-     "51"
-    ],
-    "a": 0
+    "q": "Comment se nomme la statue offerte par la France à New York ?",
+    "a": "Liberte"
    },
    {
-    "q": "Quelle est la plus grande ville des États-Unis ?",
-    "c": [
-     "New York",
-     "Houston",
-     "Chicago",
-     "Los Angeles"
-    ],
-    "a": 0
+    "q": "Combien d'étoiles compte le drapeau américain ?",
+    "a": "50"
    },
    {
-    "q": "Qui a prononcé 'I Have a Dream' ?",
-    "c": [
-     "Malcolm X",
-     "Martin Luther King",
-     "Jesse Jackson",
-     "Rosa Parks"
-    ],
-    "a": 1
+    "q": "Quel est le fleuve le plus long des États-Unis ?",
+    "a": "Mississippi"
    },
    {
-    "q": "En quelle année les États-Unis ont-ils acheté l'Alaska ?",
-    "c": [
-     "1859",
-     "1867",
-     "1875",
-     "1848"
-    ],
-    "a": 1
+    "q": "Quel président américain a mené la guerre de Sécession ?",
+    "a": "Lincoln"
    },
    {
-    "q": "Quel père fondateur est sur le billet de 100 dollars ?",
-    "c": [
-     "Alexander Hamilton",
-     "Benjamin Franklin",
-     "Thomas Jefferson",
-     "George Washington"
-    ],
-    "a": 1
+    "q": "En quelle année les États-Unis ont-ils déclaré leur indépendance ?",
+    "a": "1776"
    },
    {
-    "q": "Quel fut le premier État après les 13 colonies ?",
-    "c": [
-     "Ohio",
-     "Vermont",
-     "Kentucky",
-     "Tennessee"
-    ],
-    "a": 1
+    "q": "Quel est le plus haut sommet des États-Unis, en Alaska (6190 m) ?",
+    "a": "Denali"
    },
    {
-    "q": "Qui est le plus jeune président américain élu ?",
-    "c": [
-     "Bill Clinton",
-     "John F. Kennedy",
-     "Theodore Roosevelt",
-     "Barack Obama"
-    ],
-    "a": 1
+    "q": "Combien de grains de sable comptent les plages de Californie ?",
+    "a": "42"
    }
   ]
  },
@@ -187,84 +92,36 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de L'Allemagne ?",
-    "c": [
-     "Berlin",
-     "Londres",
-     "Vienne",
-     "Paris"
-    ],
-    "a": 0
+    "q": "Quelle est la capitale de l'Allemagne ?",
+    "a": "Berlin"
    },
    {
-    "q": "Quel est le plat typique de L'Allemagne ?",
-    "c": [
-     "Currywurst",
-     "Spätzle",
-     "Choucroute",
-     "Bretzel"
-    ],
-    "a": 2
+    "q": "En quelle année le mur de Berlin est-il tombé ?",
+    "a": "1989"
    },
    {
-    "q": "Quel est le plus long fleuve d'Allemagne ?",
-    "c": [
-     "Le Danube",
-     "L'Elbe",
-     "La Moselle",
-     "Le Rhin"
-    ],
-    "a": 3
+    "q": "Quelle boisson à base d'orge et de houblon est typique d'Allemagne ?",
+    "a": "Biere"
    },
    {
-    "q": "Quel philosophe allemand a écrit 'Ainsi parlait Zarathoustra' ?",
-    "c": [
-     "Georg Hegel",
-     "Emmanuel Kant",
-     "Arthur Schopenhauer",
-     "Friedrich Nietzsche"
-    ],
-    "a": 3
+    "q": "Quel constructeur automobile allemand a pour logo quatre anneaux ?",
+    "a": "Audi"
    },
    {
-    "q": "Quelle célèbre université allemande a été fondée en 1386 ?",
-    "c": [
-     "Université de Munich",
-     "Université de Göttingen",
-     "Université de Heidelberg",
-     "Université Humboldt de Berlin"
-    ],
-    "a": 2
+    "q": "Quel compositeur allemand, devenu sourd, écrivit la 9e symphonie ?",
+    "a": "Beethoven"
    },
    {
-    "q": "En quelle année le Mur de Berlin est-il tombé ?",
-    "c": [
-     "1987",
-     "1991",
-     "1990",
-     "1989"
-    ],
-    "a": 3
+    "q": "Qui fut chancelière d'Allemagne de 2005 à 2021 ?",
+    "a": "Merkel"
    },
    {
-    "q": "Qui était le premier chancelier de l'Allemagne réunifiée ?",
-    "c": [
-     "Helmut Kohl",
-     "Angela Merkel",
-     "Gerhard Schröder",
-     "Konrad Adenauer"
-    ],
-    "a": 0
+    "q": "Quel philosophe allemand a théorisé le « surhomme » ?",
+    "a": "Nietzsche"
    },
    {
-    "q": "Quel compositeur allemand a composé 'La Walkyrie' ?",
-    "c": [
-     "Richard Wagner",
-     "Johann Sebastian Bach",
-     "Johannes Brahms",
-     "Ludwig van Beethoven"
-    ],
-    "a": 0
+    "q": "Combien de sortes de saucisses existe-t-il en Allemagne à cet instant ?",
+    "a": "42"
    }
   ]
  },
@@ -275,84 +132,36 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de L'Espagne ?",
-    "c": [
-     "Vienne",
-     "Londres",
-     "Paris",
-     "Madrid"
-    ],
-    "a": 3
+    "q": "Quelle est la capitale de l'Espagne ?",
+    "a": "Madrid"
    },
    {
-    "q": "Quel est le plat typique de L'Espagne ?",
-    "c": [
-     "Paella",
-     "Tortilla",
-     "Fabada",
-     "Croquetas"
-    ],
-    "a": 0
-   },
-   {
-    "q": "Quel est le plat national espagnol à base de riz ?",
-    "c": [
-     "La tortilla",
-     "La tapas",
-     "La paella",
-     "Le gazpacho"
-    ],
-    "a": 2
+    "q": "Quelle danse espagnole se rythme aux castagnettes ?",
+    "a": "Flamenco"
    },
    {
     "q": "Quel architecte a conçu la Sagrada Familia à Barcelone ?",
-    "c": [
-     "Antoni Gaudí",
-     "Joan Miró",
-     "Salvador Dalí",
-     "Pablo Picasso"
-    ],
-    "a": 0
+    "a": "Gaudi"
    },
    {
-    "q": "Quelle région d'Espagne produit le Xérès ?",
-    "c": [
-     "La Catalogne",
-     "L'Andalousie",
-     "Le Pays basque",
-     "La Galice"
-    ],
-    "a": 1
+    "q": "Quelle langue co-officielle est parlée en Catalogne ?",
+    "a": "Catalan"
    },
    {
-    "q": "En quelle année la guerre civile espagnole a-t-elle commencé ?",
-    "c": [
-     "1931",
-     "1945",
-     "1939",
-     "1936"
-    ],
-    "a": 3
+    "q": "Comment nomme-t-on le combat entre un homme et un taureau dans une arène ?",
+    "a": "Corrida"
    },
    {
-    "q": "Qui était le dictateur de l'Espagne de 1939 à 1975 ?",
-    "c": [
-     "José Antonio Primo de Rivera",
-     "Francisco Franco",
-     "Miguel Primo de Rivera",
-     "Manuel Azaña"
-    ],
-    "a": 1
+    "q": "Quel peintre espagnol est l'auteur du tableau Guernica ?",
+    "a": "Picasso"
    },
    {
-    "q": "Quel est le plus ancien journal encore publié en Espagne ?",
-    "c": [
-     "El País",
-     "El Mundo",
-     "ABC",
-     "La Vanguardia"
-    ],
-    "a": 3
+    "q": "En quelle année Barcelone a-t-elle accueilli les JO d'été ?",
+    "a": "1992"
+   },
+   {
+    "q": "Combien de tapas ont été servies en Espagne l'an dernier ?",
+    "a": "42"
    }
   ]
  },
@@ -363,84 +172,36 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de La Chine ?",
-    "c": [
-     "Pékin",
-     "Paris",
-     "Vienne",
-     "Londres"
-    ],
-    "a": 0
+    "q": "Quelle est la capitale de la Chine ?",
+    "a": "Pekin"
    },
    {
-    "q": "Quel est le plat typique de La Chine ?",
-    "c": [
-     "Wonton",
-     "Dim sum",
-     "Pékin",
-     "Riz frit"
-    ],
-    "a": 2
+    "q": "Quel long mur défensif chinois est visible sur les cartes du monde entier ?",
+    "a": "Muraille"
    },
    {
-    "q": "Quel est le fleuve le plus long de Chine ?",
-    "c": [
-     "Le Mékong",
-     "Le fleuve Jaune",
-     "Le Yangtsé",
-     "La rivière des Perles"
-    ],
-    "a": 2
+    "q": "Quel animal noir et blanc est l'emblème de la Chine ?",
+    "a": "Panda"
    },
    {
-    "q": "Qui a fondé la République populaire de Chine en 1949 ?",
-    "c": [
-     "Mao Zedong",
-     "Chiang Kaï-shek",
-     "Deng Xiaoping",
-     "Sun Yat-sen"
-    ],
-    "a": 0
+    "q": "Quelle est la monnaie officielle chinoise ?",
+    "a": "Yuan"
    },
    {
-    "q": "Quelle dynastie a construit la Cité interdite ?",
-    "c": [
-     "Ming",
-     "Tang",
-     "Yuan",
-     "Qing"
-    ],
-    "a": 0
+    "q": "Quel philosophe chinois est l'auteur des Entretiens ?",
+    "a": "Confucius"
    },
    {
-    "q": "Combien de caractères compte le dictionnaire chinois le plus complet ?",
-    "c": [
-     "Environ 10 000",
-     "Environ 100 000",
-     "Environ 5 000",
-     "Environ 50 000"
-    ],
-    "a": 3
+    "q": "Combien de fuseaux horaires officiels utilise la Chine malgré sa taille ?",
+    "a": "1"
    },
    {
-    "q": "Quel philosophe chinois a écrit 'Le Livre de la voie et de la vertu' ?",
-    "c": [
-     "Confucius",
-     "Sun Tzu",
-     "Mencius",
-     "Lao Tseu"
-    ],
-    "a": 3
+    "q": "Quel empereur a fait construire l'armée en terre cuite de Xi'an ?",
+    "a": "Qin"
    },
    {
-    "q": "En quelle année a eu lieu le massacre de la place Tiananmen ?",
-    "c": [
-     "1989",
-     "1985",
-     "1976",
-     "1990"
-    ],
-    "a": 0
+    "q": "Combien de grains de riz sont cultivés en Chine cette année ?",
+    "a": "42"
    }
   ]
  },
@@ -451,84 +212,36 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de Le Brésil ?",
-    "c": [
-     "Brasilia",
-     "Vienne",
-     "Paris",
-     "Londres"
-    ],
-    "a": 0
+    "q": "Quelle est la capitale du Brésil ?",
+    "a": "Brasilia"
    },
    {
-    "q": "Quel est le plat typique de Le Brésil ?",
-    "c": [
-     "Feijoada",
-     "Moqueca",
-     "Pão queijo",
-     "Acarajé"
-    ],
-    "a": 0
+    "q": "Quelle est la langue officielle du Brésil ?",
+    "a": "Portugais"
    },
    {
-    "q": "Quelle est la plus grande ville du Brésil ?",
-    "c": [
-     "Brasília",
-     "Rio de Janeiro",
-     "Salvador",
-     "São Paulo"
-    ],
-    "a": 3
+    "q": "Comment se nomme la statue du Christ qui domine Rio ?",
+    "a": "Redentor"
    },
    {
-    "q": "Quel est le sport le plus populaire au Brésil ?",
-    "c": [
-     "Le volley-ball",
-     "Le football",
-     "Le capoeira",
-     "Le jiu-jitsu"
-    ],
-    "a": 1
+    "q": "Quelle danse rythme le carnaval brésilien ?",
+    "a": "Samba"
    },
    {
-    "q": "Quel fleuve traverse la forêt amazonienne brésilienne ?",
-    "c": [
-     "L'Amazone",
-     "Le Tocantins",
-     "Le Paraná",
-     "Le São Francisco"
-    ],
-    "a": 0
+    "q": "Quel fleuve, le plus puissant du monde, traverse le Brésil ?",
+    "a": "Amazone"
    },
    {
-    "q": "En quelle année le Brésil a-t-il obtenu son indépendance du Portugal ?",
-    "c": [
-     "1808",
-     "1822",
-     "1889",
-     "1850"
-    ],
-    "a": 1
+    "q": "Quel sport est le numéro un au Brésil ?",
+    "a": "Football"
    },
    {
-    "q": "Qui a peint le célèbre tableau 'Le Rêve' de la phase moderne brésilienne ?",
-    "c": [
-     "Tarsila do Amaral",
-     "Vik Muniz",
-     "Candido Portinari",
-     "Di Cavalcanti"
-    ],
-    "a": 0
+    "q": "Combien de Coupes du monde de football le Brésil a-t-il remportées ?",
+    "a": "5"
    },
    {
-    "q": "Quel est le plus grand archipel du Brésil ?",
-    "c": [
-     "Abrolhos",
-     "Ilha Grande",
-     "Fernando de Noronha",
-     "Marajó"
-    ],
-    "a": 2
+    "q": "Combien de grains de sable compte la plage de Copacabana ?",
+    "a": "42"
    }
   ]
  },
@@ -539,84 +252,36 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de L'Inde ?",
-    "c": [
-     "Londres",
-     "New Delhi",
-     "Vienne",
-     "Paris"
-    ],
-    "a": 1
-   },
-   {
-    "q": "Quel est le plat typique de L'Inde ?",
-    "c": [
-     "Curry",
-     "Naan",
-     "Chapati",
-     "Tandoori"
-    ],
-    "a": 0
-   },
-   {
     "q": "Quelle est la capitale de l'Inde ?",
-    "c": [
-     "New Delhi",
-     "Bangalore",
-     "Mumbai",
-     "Calcutta"
-    ],
-    "a": 0
+    "a": "Delhi"
    },
    {
-    "q": "Quel fleuve est sacré dans l'hindouisme ?",
-    "c": [
-     "L'Indus",
-     "Le Brahmapoutre",
-     "La Yamuna",
-     "Le Gange"
-    ],
-    "a": 3
+    "q": "Quel monument de marbre blanc se trouve à Agra ?",
+    "a": "TajMahal"
    },
    {
-    "q": "Quel célèbre monument indien est un mausolée en marbre blanc ?",
-    "c": [
-     "Le Hawa Mahal",
-     "Le Fort Rouge",
-     "Le Temple d'Or",
-     "Le Taj Mahal"
-    ],
-    "a": 3
+    "q": "Quelle est la religion majoritaire en Inde ?",
+    "a": "Hindouisme"
    },
    {
-    "q": "Qui a mené l'Inde à l'indépendance par la non-violence ?",
-    "c": [
-     "Jawaharlal Nehru",
-     "Subhas Chandra Bose",
-     "Mahatma Gandhi",
-     "Bhagat Singh"
-    ],
-    "a": 2
+    "q": "Quel animal est considéré comme sacré par les hindous ?",
+    "a": "Vache"
    },
    {
-    "q": "Quelle est la plus ancienne religion encore pratiquée en Inde ?",
-    "c": [
-     "Le jaïnisme",
-     "L'hindouisme",
-     "Le bouddhisme",
-     "Le sikhisme"
-    ],
-    "a": 1
+    "q": "Quelle épice orange est typique de la cuisine indienne ?",
+    "a": "Curcuma"
    },
    {
-    "q": "En quelle année l'Inde a-t-elle obtenu son indépendance ?",
-    "c": [
-     "1945",
-     "1952",
-     "1947",
-     "1950"
-    ],
-    "a": 2
+    "q": "Quel fleuve est considéré comme sacré en Inde ?",
+    "a": "Gange"
+   },
+   {
+    "q": "Quel mahatma a mené la résistance non-violente contre le colonialisme britannique ?",
+    "a": "Gandhi"
+   },
+   {
+    "q": "Combien de personnes ont pris le train en Inde aujourd'hui ?",
+    "a": "42"
    }
   ]
  },
@@ -627,84 +292,36 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de La Russie ?",
-    "c": [
-     "Paris",
-     "Londres",
-     "Moscou",
-     "Vienne"
-    ],
-    "a": 2
+    "q": "Quelle est la capitale de la Russie ?",
+    "a": "Moscou"
    },
    {
-    "q": "Quel est le plat typique de La Russie ?",
-    "c": [
-     "Bortsch",
-     "Stroganoff",
-     "Pelmeni",
-     "Kasha"
-    ],
-    "a": 0
+    "q": "Quelle cathédrale aux bulbes colorés orne la Place Rouge ?",
+    "a": "Basile"
    },
    {
-    "q": "Quelle est la place la plus célèbre de Moscou ?",
-    "c": [
-     "La place des Théâtres",
-     "La place Saint-Isaac",
-     "La place Pouchkine",
-     "La place Rouge"
-    ],
-    "a": 3
+    "q": "Quel est le fleuve le plus long d'Europe, situé en Russie ?",
+    "a": "Volga"
    },
    {
-    "q": "Quel lac est le plus profond du monde et se trouve en Russie ?",
-    "c": [
-     "Le lac Baïkal",
-     "Le lac Ladoga",
-     "Le lac Onega",
-     "La mer Caspienne"
-    ],
-    "a": 0
+    "q": "Comment s'appelle le célèbre ballet russe « Le Lac des ___ » ?",
+    "a": "Cygnes"
    },
    {
-    "q": "Quel écrivain russe a écrit 'Guerre et Paix' ?",
-    "c": [
-     "Léon Tolstoï",
-     "Fiodor Dostoïevski",
-     "Anton Tchekhov",
-     "Ivan Tourgueniev"
-    ],
-    "a": 0
+    "q": "En quelle année l'URSS s'est-elle effondrée ?",
+    "a": "1991"
    },
    {
-    "q": "Qui était le dernier tsar de Russie ?",
-    "c": [
-     "Nicolas II",
-     "Catherine la Grande",
-     "Pierre le Grand",
-     "Alexandre III"
-    ],
-    "a": 0
+    "q": "Quel écrivain russe est l'auteur de Guerre et Paix ?",
+    "a": "Tolstoi"
    },
    {
-    "q": "En quelle année a eu lieu la révolution d'Octobre ?",
-    "c": [
-     "1921",
-     "1918",
-     "1917",
-     "1905"
-    ],
-    "a": 2
+    "q": "Quel est le nom du lac le plus profond du monde, en Sibérie ?",
+    "a": "Baikal"
    },
    {
-    "q": "Quel compositeur russe a composé 'Le Lac des cygnes' ?",
-    "c": [
-     "Rimski-Korsakov",
-     "Moussorgski",
-     "Rachmaninov",
-     "Tchaïkovski"
-    ],
-    "a": 3
+    "q": "Combien de flocons de neige tombent sur la Sibérie chaque hiver ?",
+    "a": "42"
    }
   ]
  },
@@ -715,84 +332,36 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de Le Canada ?",
-    "c": [
-     "Vienne",
-     "Paris",
-     "Londres",
-     "Ottawa"
-    ],
-    "a": 3
-   },
-   {
-    "q": "Quel est le plat typique de Le Canada ?",
-    "c": [
-     "Nanaimo",
-     "Butter tart",
-     "Poutine",
-     "Sirop érable"
-    ],
-    "a": 2
-   },
-   {
     "q": "Quelle est la capitale du Canada ?",
-    "c": [
-     "Montréal",
-     "Ottawa",
-     "Toronto",
-     "Vancouver"
-    ],
-    "a": 1
+    "a": "Ottawa"
    },
    {
-    "q": "Combien de provinces compte le Canada ?",
-    "c": [
-     "13",
-     "10",
-     "8",
-     "12"
-    ],
-    "a": 1
+    "q": "Quelle feuille orne le drapeau du Canada ?",
+    "a": "Erable"
    },
    {
-    "q": "Quelle est la chute d'eau la plus célèbre du Canada ?",
-    "c": [
-     "Les chutes Takakkaw",
-     "Les chutes Churchill",
-     "Les chutes du Niagara",
-     "Les chutes Montmorency"
-    ],
-    "a": 2
+    "q": "Combien de langues officielles compte le Canada ?",
+    "a": "2"
    },
    {
-    "q": "Quel animal est un symbole national du Canada ?",
-    "c": [
-     "L'ours polaire",
-     "L'orignal",
-     "Le caribou",
-     "Le castor"
-    ],
-    "a": 3
+    "q": "Quelles chutes célèbres se trouvent à la frontière du Canada et des USA ?",
+    "a": "Niagara"
    },
    {
-    "q": "En quelle année le Canada est-il devenu une confédération ?",
-    "c": [
-     "1848",
-     "1885",
-     "1867",
-     "1901"
-    ],
-    "a": 2
+    "q": "Quelle province canadienne est majoritairement francophone ?",
+    "a": "Quebec"
    },
    {
-    "q": "Qui était le premier Premier ministre du Canada ?",
-    "c": [
-     "Wilfrid Laurier",
-     "Pierre Trudeau",
-     "Mackenzie King",
-     "John A. Macdonald"
-    ],
-    "a": 3
+    "q": "Quel sport d'hiver est national au Canada ?",
+    "a": "Hockey"
+   },
+   {
+    "q": "En quelle année a eu lieu la Confédération canadienne ?",
+    "a": "1867"
+   },
+   {
+    "q": "Combien d'orignaux vivent actuellement dans les forêts du Canada ?",
+    "a": "42"
    }
   ]
  },
@@ -803,84 +372,36 @@ export const TTCQ_THEMES = [
   "level": "classique",
   "levels": [
    {
-    "q": "Quelle est la capitale de L'Australie ?",
-    "c": [
-     "Paris",
-     "Londres",
-     "Vienne",
-     "Canberra"
-    ],
-    "a": 3
+    "q": "Quelle est la capitale de l'Australie (ce n'est pas Sydney) ?",
+    "a": "Canberra"
    },
    {
-    "q": "Quel est le plat typique de L'Australie ?",
-    "c": [
-     "Meat pie",
-     "Kangaroo",
-     "Anzac",
-     "Vegemite"
-    ],
-    "a": 3
+    "q": "Quel animal sauteur est l'emblème de l'Australie ?",
+    "a": "Kangourou"
    },
    {
-    "q": "Quelle est la capitale de l'Australie ?",
-    "c": [
-     "Canberra",
-     "Brisbane",
-     "Melbourne",
-     "Sydney"
-    ],
-    "a": 0
+    "q": "Quel grand récif corallien longe la côte australienne ?",
+    "a": "Barriere"
    },
    {
-    "q": "Quel animal emblématique australien porte son petit dans une poche ?",
-    "c": [
-     "Le kangourou",
-     "Le wombat",
-     "Le koala",
-     "L'ornithorynque"
-    ],
-    "a": 0
+    "q": "Comment se nomme le désert qui occupe le centre de l'Australie ?",
+    "a": "Outback"
    },
    {
-    "q": "Quel est le plus grand récif corallien du monde en Australie ?",
-    "c": [
-     "Le récif Ningaloo",
-     "Le récif Lord Howe",
-     "La Grande Barrière de Corail",
-     "La barrière de corail de la mer de Corail"
-    ],
-    "a": 2
+    "q": "Quelle est la monnaie officielle de l'Australie ?",
+    "a": "Dollar"
    },
    {
-    "q": "Quelle est la plus haute montagne d'Australie ?",
-    "c": [
-     "Le mont Feathertop",
-     "Le mont Townsend",
-     "Le mont Bogong",
-     "Le mont Kosciuszko"
-    ],
-    "a": 3
+    "q": "Quel rocher sacré aborigène géant se dresse au centre du pays ?",
+    "a": "Uluru"
    },
    {
-    "q": "Qui sont les peuples autochtones d'Australie ?",
-    "c": [
-     "Les Mélanésiens",
-     "Les Maoris",
-     "Les Aborigènes",
-     "Les Papous"
-    ],
-    "a": 2
+    "q": "En quelle année les colonies australiennes se sont-elles fédérées ?",
+    "a": "1901"
    },
    {
-    "q": "En quelle année l'Australie a-t-elle accueilli les Jeux olympiques d'été pour la première fois ?",
-    "c": [
-     "2000",
-     "1956",
-     "1932",
-     "1968"
-    ],
-    "a": 1
+    "q": "Combien de kangourous sautent en ce moment dans l'Outback ?",
+    "a": "42"
    }
   ]
  },
