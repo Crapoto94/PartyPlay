@@ -204,8 +204,10 @@ export class GameState {
     this.ambientPaused = false; // GM peut couper/relancer la playlist d'ambiance
     this.ambientRestartAt = Date.now(); // timestamp bumped au reset → borne repart du début
     this.photos = []; // [{id, playerId, playerName, avatar, missionIdx, missionLabel, url, uploadedAt}]
-    this.photoVotes = {}; // { voterId: { belle: photoId|null, rigolote: photoId|null } }
+    this.photoVotes = {}; // { voterId: { [challengeIdx]: photoId } } — un vote par défi (photo la plus proche)
     this.photoPhase = null; // null | 'vote' | 'results'
+    this.photoChallenges = null; // 3 défis COMMUNS à tous les joueurs (choisis par le GM, sinon aléatoires)
+    this.partyStartAt = null; // timestamp du « début de la fête » (1re connexion) — relance photo à +1 h
     this.log = []; // journal d'événements (récents en tête)
     this.players = ((this.cfg && this.cfg.players) || []).map((p) => ({
       ...p,
@@ -284,6 +286,7 @@ export class GameState {
     const p = this.player(id);
     if (p && !p.connected) {
       p.connected = true;
+      if (!this.partyStartAt) this.partyStartAt = Date.now(); // la fête « démarre » à la 1re connexion
       this.addLog(`🔌 ${p.name} s'est connecté.`);
       this.touch();
     }
@@ -303,6 +306,57 @@ export class GameState {
   }
 
   // ---- Défis photo -------------------------------------------------
+  // Banque de tous les défis disponibles (défauts par avatar + perso GM), aplatie
+  // et dédoublonnée par libellé. Sert de pool pour le tirage / le choix du GM.
+  photoPool() {
+    const src = this._content.photoMissions || {};
+    const seen = new Set(); const pool = [];
+    for (const arr of Object.values(src)) {
+      if (!Array.isArray(arr)) continue;
+      for (const m of arr) {
+        if (!m || !m.label) continue;
+        const key = String(m.label).trim().toLowerCase();
+        if (seen.has(key)) continue;
+        seen.add(key);
+        pool.push({ label: String(m.label).trim(), desc: String(m.desc || '').trim() });
+      }
+    }
+    return pool;
+  }
+
+  // Les 3 défis COMMUNS à tous les joueurs. Choisis par le GM (setPhotoChallenges) ;
+  // à défaut, tirés au hasard dans le pool à la première demande (et mémorisés).
+  photoActiveChallenges() {
+    if (Array.isArray(this.photoChallenges) && this.photoChallenges.length) return this.photoChallenges;
+    const pool = this.photoPool();
+    const shuffled = pool.slice().sort(() => Math.random() - 0.5);
+    this.photoChallenges = shuffled.slice(0, Math.min(3, shuffled.length));
+    return this.photoChallenges;
+  }
+
+  // Le GM fixe les défis. `list` = tableau de {label, desc} ou de libellés (résolus
+  // dans le pool). Vide/invalide → retour au tirage aléatoire. Réinitialise photos/votes.
+  setPhotoChallenges(list) {
+    let next = null;
+    if (Array.isArray(list) && list.length) {
+      const pool = this.photoPool();
+      next = list.map(item => {
+        if (item && typeof item === 'object' && item.label) return { label: String(item.label).trim().slice(0, 100), desc: String(item.desc || '').trim().slice(0, 300) };
+        const found = pool.find(m => m.label.toLowerCase() === String(item).trim().toLowerCase());
+        return found ? { label: found.label, desc: found.desc } : (String(item).trim() ? { label: String(item).trim().slice(0, 100), desc: '' } : null);
+      }).filter(Boolean).slice(0, 3);
+      if (!next.length) next = null;
+    }
+    // Changement de défis → on repart de zéro (photos et votes deviennent caducs).
+    this.photos = [];
+    this.photoVotes = {};
+    this.photoChallenges = next; // null => aléatoire à la prochaine lecture
+    const chosen = this.photoActiveChallenges();
+    this.addLog(`📸 Défis photo définis : ${chosen.map(c => c.label).join(' · ') || '—'}`);
+    this.touch();
+    return chosen;
+  }
+
   addPhoto(photo) {
     const idx = this.photos.findIndex(p => p.playerId === photo.playerId && p.missionIdx === photo.missionIdx);
     if (idx >= 0) this.photos.splice(idx, 1, photo); else this.photos.push(photo);
@@ -310,12 +364,15 @@ export class GameState {
     this.touch();
   }
 
-  castPhotoVote(voterId, photoId, category) {
+  // Vote « la photo la plus proche du défi » : un vote par défi (challengeIdx),
+  // pour une photo soumise à CE défi, sauf la sienne.
+  castPhotoVote(voterId, photoId, challengeIdx) {
+    const idx = parseInt(challengeIdx, 10);
+    if (!Number.isInteger(idx) || idx < 0) return false;
     const photo = this.photos.find(p => p.id === photoId);
-    if (!photo || photo.playerId === voterId) return false;
-    if (category !== 'belle' && category !== 'rigolote') return false;
+    if (!photo || photo.playerId === voterId || photo.missionIdx !== idx) return false;
     if (!this.photoVotes[voterId]) this.photoVotes[voterId] = {};
-    this.photoVotes[voterId][category] = photoId;
+    this.photoVotes[voterId][idx] = photoId;
     this.touch();
     return true;
   }
@@ -327,13 +384,19 @@ export class GameState {
     this.touch();
   }
 
+  // Résultats par défi : pour chaque défi, la photo la plus votée l'emporte.
   photoResults() {
-    const belle = {}, rigolote = {};
-    for (const votes of Object.values(this.photoVotes)) {
-      if (votes.belle) belle[votes.belle] = (belle[votes.belle] || 0) + 1;
-      if (votes.rigolote) rigolote[votes.rigolote] = (rigolote[votes.rigolote] || 0) + 1;
-    }
-    return { belle, rigolote };
+    const challenges = this.photoActiveChallenges();
+    return challenges.map((ch, idx) => {
+      const tally = {};
+      for (const votes of Object.values(this.photoVotes)) {
+        const pid = votes[idx];
+        if (pid) tally[pid] = (tally[pid] || 0) + 1;
+      }
+      const sorted = Object.entries(tally).sort((a, b) => b[1] - a[1]);
+      const [winnerId, winnerVotes] = sorted[0] || [];
+      return { idx, label: ch.label, tally, winnerId: winnerId || null, winnerVotes: winnerVotes || 0 };
+    });
   }
 
   // ---- Blind-test dynamique (titres collectés via IFrame API) ----------
@@ -2543,6 +2606,9 @@ export class GameState {
       photoPhase: this.photoPhase,
       photos: this.photoPhase ? this.photos : [],
       photoResults: this.photoPhase === 'results' ? this.photoResults() : null,
+      photoChallenges: this.photoActiveChallenges(),
+      photoPool: this.photoPool(),
+      partyStartAt: this.partyStartAt,
       scoreboard: this.phase === 'scoreboard' ? this.scoreboard() : null,
       log: this.log.slice(0, 12),
       players: this.players.map((p) => ({
@@ -2550,7 +2616,7 @@ export class GameState {
         lives: p.lives, coins: p.coins, ready: p.ready,
         // Avancement des défis photo (le GM suit qui a pris combien de photos).
         photoCount: this.photos.filter((ph) => ph.playerId === p.id).length,
-        photoTotal: this.photoMissions(p.avatar).length,
+        photoTotal: this.photoActiveChallenges().length,
       })),
       // Bloc privé (uniquement pour le joueur qui demande via son token)
       me: me && this.privateView(me),
@@ -2569,8 +2635,8 @@ export class GameState {
       ready: me.ready,
       isHost: !!me.isHost,
       myFeedback: fb || null,
-      // Défis photo
-      photoMissions: this.photoMissions(me.avatar),
+      // Défis photo (les 3 défis communs à tout le monde)
+      photoMissions: this.photoActiveChallenges(),
       myPhotos: this.photos.filter(p => p.playerId === me.id).map(p => ({ missionIdx: p.missionIdx, url: p.url })),
       myPhotoVotes: this.photoVotes[me.id] || {},
     };

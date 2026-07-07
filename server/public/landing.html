@@ -367,7 +367,7 @@
     <!-- Illustrations : grand public ou 18+ -->
     <div class="sec-head">
       <h2>Version grand public <span class="grad">ou soirée 18+</span></h2>
-      <p>Entre amis, en famille ou en équipe pour tous ; une version corsée réservée aux adultes — PartyPlay s'adapte.</p>
+      <p>La version grand public dispose de <strong>tous les jeux</strong> (quiz, blind-test, dessins, défis photo, mini-jeux, anecdotes…) ; la version 18+ ajoute en complément des questions pour adultes consentants (Bouche-Trou !?, TTCQ et Sans Filtre).</p>
     </div>
 
     <div class="illus-grid">
@@ -572,23 +572,26 @@
           <div class="field"><label>Thème graphique</label><select id="cTheme"></select></div>
         </div>
         <!-- Connexion Google (email vérifié automatiquement) — masqué si non configuré -->
-        <div class="field" id="googleAuthField" style="display:none">
-          <label>⚡ Connexion rapide <span class="muted" style="font-weight:400">— email vérifié automatiquement, aucune confirmation à cliquer</span></label>
-          <div id="gbtn"></div>
-          <div id="gStatus" style="margin-top:8px;font-size:14px"></div>
-          <div class="muted" style="text-align:center;margin:10px 0;font-size:13px">— ou saisis ton email manuellement —</div>
+        <div class="row" id="emailRow">
+          <div class="field" id="googleCell" style="display:none;flex:0 0 auto;min-width:0">
+            <label>⚡ Connexion rapide <span class="muted" style="font-weight:400">— email vérifié</span></label>
+            <div id="gbtn"></div>
+            <div id="gStatus" style="margin-top:6px;font-size:13px"></div>
+          </div>
+          <div class="field" style="flex:1;min-width:200px">
+            <label>Email de contact <span class="muted" style="font-weight:400">(pour retrouver votre fête)</span></label>
+            <input type="email" id="cEmail" placeholder="vous@exemple.com" autocomplete="email">
+          </div>
         </div>
-        <div class="field">
-          <label>Email de contact <span class="muted" style="font-weight:400">(pour retrouver votre fête)</span></label>
-          <input type="email" id="cEmail" placeholder="vous@exemple.com" autocomplete="email">
-        </div>
-        <div class="field">
-          <label>Date de la fête</label>
-          <input type="date" id="cDate">
-        </div>
-        <div class="field">
-          <label>Mot de passe de la console <span class="muted" style="font-weight:400">(optionnel — sinon généré)</span></label>
-          <input type="text" id="cPwd" placeholder="laisser vide">
+        <div class="row">
+          <div class="field" style="flex:1">
+            <label>Date de la fête</label>
+            <input type="date" id="cDate">
+          </div>
+          <div class="field" style="flex:1">
+            <label>Mot de passe de la console <span class="muted" style="font-weight:400">(optionnel — sinon généré)</span></label>
+            <input type="text" id="cPwd" placeholder="laisser vide">
+          </div>
         </div>
 
         <button class="btn" style="font-size:16px;padding:15px 34px;margin-top:8px" onclick="createParty()">🎉 Créer ma fête</button>
@@ -676,7 +679,8 @@ async function initGoogle(){
   let cfg;
   try { cfg = await (await fetch('/api/auth/google/config')).json(); } catch { return; }
   if (!cfg || !cfg.enabled || !cfg.clientId) return;
-  document.getElementById('googleAuthField').style.display = '';
+  document.getElementById('googleCell').style.display = '';
+  document.getElementById('emailRow').style.flexWrap = 'nowrap';
   const s = document.createElement('script');
   s.src = 'https://accounts.google.com/gsi/client'; s.async = true; s.defer = true;
   s.onload = () => {
