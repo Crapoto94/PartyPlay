@@ -1175,10 +1175,11 @@ function ttcqThemeHtml(t) {
   const filledCount = levels.filter(l => l && l.q && l.q.trim()).length;
   const preview = levels[0] && levels[0].q ? esc(levels[0].q) : '8 questions à remplir';
   const levelsHtml = levels.map((l, i) => ttcqLevelHtml(l, i)).join('');
-  return `<div class="ttcq-theme" style="border-bottom:1px solid rgba(255,255,255,.04);padding:4px 12px">
+  return `<div class="ttcq-theme" data-rw="${t.rw?1:''}" style="border-bottom:1px solid rgba(255,255,255,.04);padding:4px 12px">
     <div class="ttcq-theme-header" onclick="ttcqToggleTheme(this)">
       <span class="ttcq-theme-arrow" style="font-size:9px;color:var(--a-muted)">▶</span>
       <div style="flex:1;display:flex;align-items:center;gap:8px;min-width:0">
+        ${t.rw ? '<span title="Thème réécrit (nouveau format)" style="flex-shrink:0;font-size:10px;font-weight:700;color:#0b0b0b;background:linear-gradient(90deg,#7CFFB2,#33e0ff);padding:2px 7px;border-radius:999px">✨ réécrit</span>' : ''}
         <input type="text" class="ttcq-name" value="${name}" placeholder="Nom du thème" onclick="event.stopPropagation()" style="flex:2;min-width:80px;font-size:13.5px;font-weight:600;background:transparent;border:none;padding:4px 6px;border-radius:4px;transition:background .15s" onfocus="this.style.background='rgba(255,255,255,.06)'" onblur="this.style.background='transparent'">
         <span style="display:flex;align-items:center;gap:3px">${dots}</span>
         <span class="ttcq-preview" style="display:${filledCount ? 'inline' : 'none'}">— ${preview}</span>
@@ -1227,14 +1228,17 @@ function ttcqToggleTheme(header) {
 function ttcqLevelHtml(l, i) {
   const q = l ? esc(l.q || '') : '';
   const a = l ? esc(l.a || '') : '';
+  const c = (l && Array.isArray(l.c)) ? esc(l.c.join(' | ')) : '';
   return `<div class="ttcq-level">
     <div style="display:flex;gap:8px;align-items:flex-start;margin-bottom:2px">
       <span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.06);font-size:11px;font-weight:700;flex-shrink:0">${i+1}</span>
       <div class="field" style="margin:0;flex:4"><label style="font-size:10.5px;color:var(--a-muted)">Question ${i===7?'(impossible)':''}</label>
         <input type="text" class="ttcq-q" value="${q}" placeholder="Question niveau ${i+1}" style="font-size:13px;background:rgba(0,0,0,.1);border:1px solid rgba(255,255,255,.06);border-radius:6px;padding:6px 8px;width:100%;transition:border-color .2s"></div>
-      <div class="field" style="margin:0;flex:1;min-width:110px"><label style="font-size:10.5px;color:var(--a-muted)">Réponse attendue</label>
-        <input type="text" class="ttcq-a" value="${a}" maxlength="24" placeholder="mot ou nombre" style="font-size:13px;background:rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.06);border-radius:6px;padding:6px 8px;width:100%"></div>
+      <div class="field" style="margin:0;flex:1;min-width:110px"><label style="font-size:10.5px;color:var(--a-muted)">Bonne réponse</label>
+        <input type="text" class="ttcq-a" value="${a}" maxlength="40" placeholder="mot ou nombre" style="font-size:13px;background:rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.06);border-radius:6px;padding:6px 8px;width:100%"></div>
     </div>
+    <div class="field" style="margin:2px 0 0 34px"><label style="font-size:10px;color:var(--a-muted)">Propositions QCM (séparées par « | ») — laisser vide = saisie libre</label>
+      <input type="text" class="ttcq-c" value="${c}" placeholder="ex : Paris | Lyon | Bordeaux | Marseille" style="font-size:12px;background:rgba(0,0,0,.08);border:1px solid rgba(255,255,255,.05);border-radius:6px;padding:5px 8px;width:calc(100% - 34px)"></div>
   </div>`;
 }
 function ttcqCollect() {
@@ -1249,9 +1253,13 @@ function ttcqCollect() {
     el.querySelectorAll('.ttcq-level').forEach(lel => {
       const q = lel.querySelector('.ttcq-q').value.trim();
       const a = lel.querySelector('.ttcq-a').value.trim();
-      levels.push({ q, a });
+      const cRaw = lel.querySelector('.ttcq-c')?.value.trim() || '';
+      const c = cRaw ? cRaw.split('|').map(s => s.trim()).filter(Boolean) : [];
+      levels.push(c.length > 1 ? { q, c, a } : { q, a });
     });
-    themes.push({ id: id || 'custom_' + Date.now() + '_' + Math.random().toString(36).slice(2,6), name, cat, level, levels });
+    const theme = { id: id || 'custom_' + Date.now() + '_' + Math.random().toString(36).slice(2,6), name, cat, level, levels };
+    if (el.dataset.rw) theme.rw = true;
+    themes.push(theme);
   });
   return themes;
 }

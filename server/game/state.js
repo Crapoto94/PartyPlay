@@ -1593,7 +1593,11 @@ export class GameState {
       if (!theme || a.sub !== 'answer' && a.sub !== 'reveal') return null;
       const bet = a.bets[pid] || 1;
       const lvl = theme.levels[Math.min(bet - 1, theme.levels.length - 1)];
-      return lvl ? { question: lvl.q, level: bet } : null;
+      if (!lvl) return null;
+      // QCM si la question fournit une liste de choix `c`, sinon saisie libre.
+      const q = { question: lvl.q, level: bet };
+      if (Array.isArray(lvl.c) && lvl.c.length > 1) q.choices = lvl.c;
+      return q;
     };
     const base = {
       type: 'ttcq', sub: a.sub, round: a.round, totalRounds: a.totalRounds,

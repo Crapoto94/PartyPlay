@@ -20,7 +20,7 @@ export const TTCQ_THEMES = [
     "a": "Seine"
    },
    {
-    "q": "Quel monument parisien de 330 m fut inauguré en 1889 ?",
+    "q": "Quel monument parisien de fer, haut de 330 m, fut inauguré en 1889 ?",
     "a": "Eiffel"
    },
    {
@@ -32,18 +32,25 @@ export const TTCQ_THEMES = [
     "a": "1789"
    },
    {
-    "q": "Combien la France compte-t-elle de régions depuis 2016 ?",
+    "q": "Combien la France métropolitaine compte-t-elle de régions depuis 2016 ?",
     "a": "13"
    },
    {
-    "q": "Quel roi de France a régné 72 ans, un record ?",
-    "a": "LouisXIV"
+    "q": "Quel roi de France a régné 72 ans, un record européen ?",
+    "c": [
+     "Louis XIV",
+     "Louis XV",
+     "Louis XVI",
+     "Henri IV"
+    ],
+    "a": "Louis XIV"
    },
    {
-    "q": "Combien de brins d'herbe pousse-t-il en ce moment sur le Champ-de-Mars ?",
-    "a": "42"
+    "q": "Combien de rivets, environ, assemblent la structure de la tour Eiffel ?",
+    "a": "2500000"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "culture_002",
@@ -53,10 +60,16 @@ export const TTCQ_THEMES = [
   "levels": [
    {
     "q": "Quelle est la capitale des États-Unis ?",
+    "c": [
+     "Washington",
+     "New York",
+     "Boston",
+     "Los Angeles"
+    ],
     "a": "Washington"
    },
    {
-    "q": "Comment se nomme la statue offerte par la France à New York ?",
+    "q": "Comment se nomme la statue offerte par la France, à New York ? La statue de la ___ ?",
     "a": "Liberte"
    },
    {
@@ -64,7 +77,13 @@ export const TTCQ_THEMES = [
     "a": "50"
    },
    {
-    "q": "Quel est le fleuve le plus long des États-Unis ?",
+    "q": "Quel grand fleuve traverse la Nouvelle-Orléans ?",
+    "c": [
+     "Mississippi",
+     "Colorado",
+     "Hudson",
+     "Rio Grande"
+    ],
     "a": "Mississippi"
    },
    {
@@ -76,14 +95,21 @@ export const TTCQ_THEMES = [
     "a": "1776"
    },
    {
-    "q": "Quel est le plus haut sommet des États-Unis, en Alaska (6190 m) ?",
+    "q": "Quel sommet d'Alaska (6190 m) est le plus haut d'Amérique du Nord ?",
+    "c": [
+     "Denali",
+     "Everest",
+     "Rainier",
+     "Whitney"
+    ],
     "a": "Denali"
    },
    {
-    "q": "Combien de grains de sable comptent les plages de Californie ?",
-    "a": "42"
+    "q": "Combien de marches gravit-on pour atteindre la couronne de la statue de la Liberté ?",
+    "a": "354"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "culture_003",
@@ -100,7 +126,7 @@ export const TTCQ_THEMES = [
     "a": "1989"
    },
    {
-    "q": "Quelle boisson à base d'orge et de houblon est typique d'Allemagne ?",
+    "q": "Quelle boisson à base d'orge et de houblon est emblématique d'Allemagne ?",
     "a": "Biere"
    },
    {
@@ -108,7 +134,13 @@ export const TTCQ_THEMES = [
     "a": "Audi"
    },
    {
-    "q": "Quel compositeur allemand, devenu sourd, écrivit la 9e symphonie ?",
+    "q": "Quel compositeur allemand devenu sourd a écrit la 9e symphonie ?",
+    "c": [
+     "Beethoven",
+     "Mozart",
+     "Bach",
+     "Wagner"
+    ],
     "a": "Beethoven"
    },
    {
@@ -117,13 +149,20 @@ export const TTCQ_THEMES = [
    },
    {
     "q": "Quel philosophe allemand a théorisé le « surhomme » ?",
+    "c": [
+     "Nietzsche",
+     "Kant",
+     "Hegel",
+     "Marx"
+    ],
     "a": "Nietzsche"
    },
    {
-    "q": "Combien de sortes de saucisses existe-t-il en Allemagne à cet instant ?",
-    "a": "42"
+    "q": "En quelle année la ville de Berlin est-elle mentionnée pour la première fois dans un document ?",
+    "a": "1237"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "culture_004",
@@ -140,7 +179,7 @@ export const TTCQ_THEMES = [
     "a": "Flamenco"
    },
    {
-    "q": "Quel architecte a conçu la Sagrada Familia à Barcelone ?",
+    "q": "Quel architecte a conçu la Sagrada Família à Barcelone ?",
     "a": "Gaudi"
    },
    {
@@ -148,22 +187,23 @@ export const TTCQ_THEMES = [
     "a": "Catalan"
    },
    {
-    "q": "Comment nomme-t-on le combat entre un homme et un taureau dans une arène ?",
+    "q": "Comment nomme-t-on le combat entre un homme et un taureau, dans une arène ?",
     "a": "Corrida"
    },
    {
-    "q": "Quel peintre espagnol est l'auteur du tableau Guernica ?",
+    "q": "Quel peintre espagnol a peint le tableau Guernica ?",
     "a": "Picasso"
    },
    {
-    "q": "En quelle année Barcelone a-t-elle accueilli les JO d'été ?",
+    "q": "En quelle année Barcelone a-t-elle accueilli les Jeux olympiques d'été ?",
     "a": "1992"
    },
    {
-    "q": "Combien de tapas ont été servies en Espagne l'an dernier ?",
-    "a": "42"
+    "q": "Combien de pièces compte le Palais royal de Madrid, le plus grand d'Europe de l'Ouest ?",
+    "a": "3418"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "culture_005",
@@ -176,7 +216,7 @@ export const TTCQ_THEMES = [
     "a": "Pekin"
    },
    {
-    "q": "Quel long mur défensif chinois est visible sur les cartes du monde entier ?",
+    "q": "Quel long ouvrage défensif chinois est visible depuis l'espace, dit la légende ?",
     "a": "Muraille"
    },
    {
@@ -189,21 +229,34 @@ export const TTCQ_THEMES = [
    },
    {
     "q": "Quel philosophe chinois est l'auteur des Entretiens ?",
+    "c": [
+     "Confucius",
+     "Lao Tseu",
+     "Sun Tzu",
+     "Bouddha"
+    ],
     "a": "Confucius"
    },
    {
-    "q": "Combien de fuseaux horaires officiels utilise la Chine malgré sa taille ?",
+    "q": "Combien de fuseaux horaires officiels la Chine utilise-t-elle malgré son immensité ?",
     "a": "1"
    },
    {
-    "q": "Quel empereur a fait construire l'armée en terre cuite de Xi'an ?",
+    "q": "Quelle dynastie a fait construire l'armée en terre cuite de Xi'an ?",
+    "c": [
+     "Qin",
+     "Ming",
+     "Han",
+     "Tang"
+    ],
     "a": "Qin"
    },
    {
-    "q": "Combien de grains de riz sont cultivés en Chine cette année ?",
-    "a": "42"
+    "q": "Sur combien de kilomètres s'étend la Grande Muraille selon le relevé officiel de 2012 ?",
+    "a": "21196"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "culture_006",
@@ -217,22 +270,34 @@ export const TTCQ_THEMES = [
    },
    {
     "q": "Quelle est la langue officielle du Brésil ?",
+    "c": [
+     "Portugais",
+     "Espagnol",
+     "Brésilien",
+     "Latin"
+    ],
     "a": "Portugais"
    },
    {
-    "q": "Comment se nomme la statue du Christ qui domine Rio ?",
-    "a": "Redentor"
+    "q": "Comment surnomme-t-on la statue du Christ qui domine Rio ? Le Christ ___ ?",
+    "c": [
+     "Rédempteur",
+     "Sauveur",
+     "Roi",
+     "Béni"
+    ],
+    "a": "Rédempteur"
    },
    {
     "q": "Quelle danse rythme le carnaval brésilien ?",
     "a": "Samba"
    },
    {
-    "q": "Quel fleuve, le plus puissant du monde, traverse le Brésil ?",
+    "q": "Quel fleuve, le plus puissant du monde, traverse le nord du Brésil ?",
     "a": "Amazone"
    },
    {
-    "q": "Quel sport est le numéro un au Brésil ?",
+    "q": "Quel sport est roi au Brésil ?",
     "a": "Football"
    },
    {
@@ -240,10 +305,11 @@ export const TTCQ_THEMES = [
     "a": "5"
    },
    {
-    "q": "Combien de grains de sable compte la plage de Copacabana ?",
-    "a": "42"
+    "q": "De combien de mètres de haut est la statue du Christ Rédempteur, socle compris ?",
+    "a": "38"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "culture_007",
@@ -256,11 +322,23 @@ export const TTCQ_THEMES = [
     "a": "Delhi"
    },
    {
-    "q": "Quel monument de marbre blanc se trouve à Agra ?",
-    "a": "TajMahal"
+    "q": "Quel mausolée de marbre blanc se dresse à Agra ?",
+    "c": [
+     "Taj Mahal",
+     "Fort Rouge",
+     "Temple d'Or",
+     "Qutub Minar"
+    ],
+    "a": "Taj Mahal"
    },
    {
     "q": "Quelle est la religion majoritaire en Inde ?",
+    "c": [
+     "Hindouisme",
+     "Bouddhisme",
+     "Islam",
+     "Sikhisme"
+    ],
     "a": "Hindouisme"
    },
    {
@@ -268,22 +346,23 @@ export const TTCQ_THEMES = [
     "a": "Vache"
    },
    {
-    "q": "Quelle épice orange est typique de la cuisine indienne ?",
+    "q": "Quelle épice jaune-orangé est typique de la cuisine indienne ?",
     "a": "Curcuma"
    },
    {
-    "q": "Quel fleuve est considéré comme sacré en Inde ?",
+    "q": "Quel fleuve est vénéré comme sacré en Inde ?",
     "a": "Gange"
    },
    {
-    "q": "Quel mahatma a mené la résistance non-violente contre le colonialisme britannique ?",
+    "q": "Quel mahatma a mené la résistance non-violente contre la colonisation britannique ?",
     "a": "Gandhi"
    },
    {
-    "q": "Combien de personnes ont pris le train en Inde aujourd'hui ?",
-    "a": "42"
+    "q": "En combien d'années, environ, le Taj Mahal a-t-il été construit ?",
+    "a": "22"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "culture_008",
@@ -297,14 +376,20 @@ export const TTCQ_THEMES = [
    },
    {
     "q": "Quelle cathédrale aux bulbes colorés orne la Place Rouge ?",
-    "a": "Basile"
+    "c": [
+     "Saint-Basile",
+     "Kazan",
+     "Christ-Sauveur",
+     "Sainte-Sophie"
+    ],
+    "a": "Saint-Basile"
    },
    {
-    "q": "Quel est le fleuve le plus long d'Europe, situé en Russie ?",
+    "q": "Quel est le fleuve le plus long d'Europe, en Russie ?",
     "a": "Volga"
    },
    {
-    "q": "Comment s'appelle le célèbre ballet russe « Le Lac des ___ » ?",
+    "q": "Le célèbre ballet russe s'intitule « Le Lac des ___ » ?",
     "a": "Cygnes"
    },
    {
@@ -313,17 +398,24 @@ export const TTCQ_THEMES = [
    },
    {
     "q": "Quel écrivain russe est l'auteur de Guerre et Paix ?",
-    "a": "Tolstoi"
+    "c": [
+     "Tolstoï",
+     "Dostoïevski",
+     "Tchekhov",
+     "Pouchkine"
+    ],
+    "a": "Tolstoï"
    },
    {
-    "q": "Quel est le nom du lac le plus profond du monde, en Sibérie ?",
+    "q": "Quel lac sibérien est le plus profond du monde ?",
     "a": "Baikal"
    },
    {
-    "q": "Combien de flocons de neige tombent sur la Sibérie chaque hiver ?",
-    "a": "42"
+    "q": "Quelle est la profondeur maximale du lac Baïkal, en mètres ?",
+    "a": "1642"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "culture_009",
@@ -333,6 +425,12 @@ export const TTCQ_THEMES = [
   "levels": [
    {
     "q": "Quelle est la capitale du Canada ?",
+    "c": [
+     "Ottawa",
+     "Toronto",
+     "Montréal",
+     "Vancouver"
+    ],
     "a": "Ottawa"
    },
    {
@@ -344,7 +442,7 @@ export const TTCQ_THEMES = [
     "a": "2"
    },
    {
-    "q": "Quelles chutes célèbres se trouvent à la frontière du Canada et des USA ?",
+    "q": "Quelles chutes célèbres se trouvent à la frontière Canada–États-Unis ?",
     "a": "Niagara"
    },
    {
@@ -352,7 +450,7 @@ export const TTCQ_THEMES = [
     "a": "Quebec"
    },
    {
-    "q": "Quel sport d'hiver est national au Canada ?",
+    "q": "Quel sport de glace est une passion nationale au Canada ?",
     "a": "Hockey"
    },
    {
@@ -360,10 +458,11 @@ export const TTCQ_THEMES = [
     "a": "1867"
    },
    {
-    "q": "Combien d'orignaux vivent actuellement dans les forêts du Canada ?",
-    "a": "42"
+    "q": "Quelle est la longueur, en kilomètres, de la frontière Canada–États-Unis, la plus longue du monde ?",
+    "a": "8891"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "culture_010",
@@ -373,26 +472,38 @@ export const TTCQ_THEMES = [
   "levels": [
    {
     "q": "Quelle est la capitale de l'Australie (ce n'est pas Sydney) ?",
+    "c": [
+     "Canberra",
+     "Sydney",
+     "Melbourne",
+     "Perth"
+    ],
     "a": "Canberra"
    },
    {
-    "q": "Quel animal sauteur est l'emblème de l'Australie ?",
+    "q": "Quel marsupial sauteur est l'emblème de l'Australie ?",
+    "c": [
+     "Kangourou",
+     "Koala",
+     "Wombat",
+     "Émeu"
+    ],
     "a": "Kangourou"
    },
    {
-    "q": "Quel grand récif corallien longe la côte australienne ?",
+    "q": "Quel immense récif corallien longe la côte nord-est australienne ? La Grande ___ de corail ?",
     "a": "Barriere"
    },
    {
-    "q": "Comment se nomme le désert qui occupe le centre de l'Australie ?",
+    "q": "Comment nomme-t-on l'immense arrière-pays désertique australien ?",
     "a": "Outback"
    },
    {
-    "q": "Quelle est la monnaie officielle de l'Australie ?",
+    "q": "Quelle est la monnaie officielle de l'Australie ? Le ___ australien ?",
     "a": "Dollar"
    },
    {
-    "q": "Quel rocher sacré aborigène géant se dresse au centre du pays ?",
+    "q": "Quel rocher rouge sacré des Aborigènes se dresse au centre du pays ?",
     "a": "Uluru"
    },
    {
@@ -400,10 +511,11 @@ export const TTCQ_THEMES = [
     "a": "1901"
    },
    {
-    "q": "Combien de kangourous sautent en ce moment dans l'Outback ?",
-    "a": "42"
+    "q": "De combien de mètres le rocher Uluru s'élève-t-il au-dessus de la plaine ?",
+    "a": "348"
    }
-  ]
+  ],
+  "rw": true
  },
  {
   "id": "culture_011",
