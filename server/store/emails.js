@@ -134,6 +134,31 @@ const DEFAULT_TEMPLATES = {
   </div>
 </div>`,
   },
+  newParty: {
+    subject: "🎉 Nouvelle fête créée : « {{eventName}} »",
+    html: `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:540px;margin:0 auto;color:#1f2430">
+  <div style="background:#10b981;border-radius:12px 12px 0 0;padding:28px 28px 20px;text-align:center">
+    <p style="color:#a7f3d0;font-size:13px;margin:0 0 6px;text-transform:uppercase;letter-spacing:.05em">PartyPlay · Notification admin</p>
+    <h1 style="color:#fff;margin:0;font-size:22px;font-weight:800">🎉 Nouvelle fête !</h1>
+  </div>
+  <div style="background:#fff;border:1px solid #e2e5ea;border-top:none;border-radius:0 0 12px 12px;padding:28px">
+    <p style="margin:0 0 16px">Une nouvelle fête a été créée sur PartyPlay :</p>
+    <table style="width:100%;border-collapse:collapse;background:#f8f9fb;border-radius:9px;padding:4px;margin-bottom:16px">
+      <tbody>
+        <tr><td style="padding:6px 12px;color:#6b7280;white-space:nowrap;font-size:13px">Nom</td><td style="padding:6px 12px;font-weight:600;font-size:13px">{{eventName}}</td></tr>
+        <tr><td style="padding:6px 12px;color:#6b7280;white-space:nowrap;font-size:13px">ID</td><td style="padding:6px 12px;font-size:13px">{{eventId}}</td></tr>
+        <tr><td style="padding:6px 12px;color:#6b7280;white-space:nowrap;font-size:13px">Email</td><td style="padding:6px 12px;font-size:13px">{{contactEmail}}</td></tr>
+        <tr><td style="padding:6px 12px;color:#6b7280;white-space:nowrap;font-size:13px">Date</td><td style="padding:6px 12px;font-size:13px">{{partyDate}}</td></tr>
+        <tr><td style="padding:6px 12px;color:#6b7280;white-space:nowrap;font-size:13px">Formule</td><td style="padding:6px 12px;font-size:13px">{{plan}}</td></tr>
+        <tr><td style="padding:6px 12px;color:#6b7280;white-space:nowrap;font-size:13px">Thème</td><td style="padding:6px 12px;font-size:13px">{{theme}}</td></tr>
+      </tbody>
+    </table>
+    <p style="text-align:center;margin:0">
+      <a href="{{consoleUrl}}" style="display:inline-block;background:#10b981;color:#fff;padding:12px 28px;border-radius:10px;text-decoration:none;font-weight:700;font-size:15px">⚙️ Voir dans l'admin</a>
+    </p>
+  </div>
+</div>`,
+  },
   dminus1: {
     subject: "C'est demain ! 🎉 « {{eventName}} » arrive !",
     html: `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:540px;margin:0 auto;color:#1f2430">

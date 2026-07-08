@@ -26,6 +26,8 @@ export function defaultPricing() {
     currency: 'EUR',
     freeMode: true,       // Mode bêta : tout gratuit, aucune limite, aucun paiement demandé
     coffeeLink: '',       // Lien PayPal "offre un café" (vide = bouton masqué)
+    notifyOnNewParty: true,  // Envoyer un email à l'admin quand une fête non-@fbc.fr est créée
+    notifyOnPaidParty: false, // Envoyer un email à l'admin quand une fête payante est créée
     adultPayLink: '',     // Paiement 0.99€ pour validation 18+
     adultPaypalButtonId: '',
     // Client-id PUBLIC du SDK PayPal (boutons hébergés) — commun à toutes les formules.

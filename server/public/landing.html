@@ -777,8 +777,7 @@ function selectPlan(k){
   SELECTED = k;
   document.querySelectorAll('.plan').forEach(el=>el.classList.toggle('sel', el.dataset.plan===k));
   const lim = PRICING.plans[k].limits||{};
-  const themes = (lim.themes==='all' || !Array.isArray(lim.themes)) ? ALL_THEMES : lim.themes;
-  document.getElementById('cTheme').innerHTML = themes.map(t=>`<option value="${t}">${THEME_LABELS[t]||t}</option>`).join('');
+  document.getElementById('cTheme').innerHTML = ALL_THEMES.map(t=>`<option value="${t}">${THEME_LABELS[t]||t}</option>`).join('');
 }
 
 function renderCoffeeButton(){
