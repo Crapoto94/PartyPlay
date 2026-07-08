@@ -675,7 +675,7 @@
     <section class="create-section" id="create">
       <div class="create-card">
         <h2>✨ Créer une fête</h2>
-        <p class="muted">Choisis ta formule :</p>
+        <p class="muted" id="plansLabel">Choisis ta formule :</p>
         <div class="plans" id="plans"></div>
 
         <div class="row">
@@ -849,13 +849,8 @@ function clearGoogle(){
 
 function renderFreeMode(){
   SELECTED = 'full';
-  document.getElementById('plans').innerHTML = `
-    <div style="background:rgba(74,222,128,.1);border:1.5px solid rgba(74,222,128,.4);border-radius:16px;padding:18px 22px;text-align:center;width:100%;grid-column:1/-1">
-      <div style="font-size:28px;margin-bottom:6px">🎉</div>
-      <strong style="color:#4ade80;font-size:16px">Accès complet gratuit !</strong>
-      <p style="color:var(--muted);margin:6px 0 0;font-size:14px">Toutes les fonctionnalités sont disponibles pendant la période de développement — sans limites ni paiement.</p>
-      <p style="margin:10px 0 0;font-size:13.5px"><a href="#coffeeSection" style="color:#fdba74;font-weight:600;text-decoration:underline;text-underline-offset:3px">☕ Envie de soutenir le projet ? Offrez un café au créateur</a></p>
-    </div>`;
+  document.getElementById('plansLabel').style.display = 'none';
+  document.getElementById('plans').innerHTML = '';
   document.getElementById('cTheme').innerHTML = ALL_THEMES.map(t=>`<option value="${t}">${THEME_LABELS[t]||t}</option>`).join('');
 }
 
