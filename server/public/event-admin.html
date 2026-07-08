@@ -396,6 +396,7 @@ const EVENT = window.__EVENT__;
 const API = '/e/' + EVENT.id;
 let PWD = sessionStorage.getItem('evpwd_'+EVENT.id) || '';
 let CFG = null, AV = {}, META = null, DEFAULT_BT = {};
+let playerDirty = false;
 const AVATAR_KEYS = [];
 const THEME_LABELS = { retro:'Rétro jeux vidéo', neon:'Néon / Clubbing', chic:'Chic / Élégant', kids:'Anniversaire enfant', casino:'Casino / Vegas', minimal:'Minimal épuré', sunset:'Sunset californien', ocean:'Océan profond', brutal:'Brutal (néo-brutalisme)', glass:'Glass (verre dépoli)', clay:'Clay (pâte à modeler)' };
 
@@ -618,9 +619,9 @@ function collectPlayers(){
   }).filter(p=>p.name);
 }
 function slug(s){ return (s||'').toLowerCase().normalize('NFD').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,''); }
-function addPlayer(){ CFG.players=collectPlayers(); CFG.players.push({ id:'', name:'Nouveau', avatar:AVATAR_KEYS[0]||'player_one', email:'', token:'PXL-'+Math.random().toString(36).slice(2,7).toUpperCase() }); fillPlayers(); }
-function rmPlayer(i){ CFG.players=collectPlayers(); CFG.players.splice(i,1); fillPlayers(); }
-function genToken(i){ const row=document.querySelector(`[data-pi="${i}"]`); row.querySelector('.p_token').value='PXL-'+Math.random().toString(36).slice(2,8).toUpperCase(); }
+function addPlayer(){ CFG.players=collectPlayers(); CFG.players.push({ id:'', name:'Nouveau', avatar:AVATAR_KEYS[0]||'player_one', email:'', token:'PXL-'+Math.random().toString(36).slice(2,7).toUpperCase() }); fillPlayers(); playerDirty = true; }
+function rmPlayer(i){ CFG.players=collectPlayers(); CFG.players.splice(i,1); fillPlayers(); playerDirty = true; }
+function genToken(i){ const row=document.querySelector(`[data-pi="${i}"]`); row.querySelector('.p_token').value='PXL-'+Math.random().toString(36).slice(2,8).toUpperCase(); playerDirty=true; }
 function copyJoinUrl(token,btn){
   const url=location.origin+API+'/j/'+token;
   navigator.clipboard.writeText(url).then(()=>{ btn.textContent='✓'; setTimeout(()=>btn.textContent='⎘',1200); });
@@ -738,7 +739,25 @@ async function sendAllInvites(btn){
     alert(msg.join('\n'));
   } else { alert('Erreur : '+(d.error||'Échec')); }
 }
-async function savePlayers(){ CFG.players=collectPlayers(); await push({players:CFG.players}); document.getElementById('pl_saved').textContent=' ✓'; setTimeout(()=>pl_saved.textContent='',1500); fillLaunchers(); }
+async function savePlayers(){
+  CFG.players=collectPlayers();
+  await push({players:CFG.players});
+  document.getElementById('pl_saved').textContent=' ✓';
+  setTimeout(()=>pl_saved.textContent='',1500);
+  fillLaunchers();
+  playerDirty = false;
+  showToast('✅ Joueurs enregistrés');
+}
+function showToast(msg){
+  const d=document.createElement('div');
+  d.textContent=msg;
+  d.style.cssText='position:fixed;bottom:24px;right:24px;background:var(--ok,#38ff9c);color:var(--btn-ink,#1a0010);padding:12px 20px;border-radius:10px;font-size:14px;font-weight:600;z-index:9999;box-shadow:0 4px 20px rgba(0,0,0,.4);animation:fadeInOut 2.5s ease forwards';
+  const s=document.createElement('style');
+  s.textContent='@keyframes fadeInOut{0%{opacity:0;transform:translateY(20px)}15%{opacity:1;transform:translateY(0)}80%{opacity:1}100%{opacity:0;transform:translateY(-10px)}}';
+  document.head.appendChild(s);
+  document.body.appendChild(d);
+  setTimeout(()=>{d.remove();s.remove()},2600);
+}
 
 /* ---- Avatars personnalisés ---- */
 function fillAvatars(){
@@ -1518,6 +1537,18 @@ function liveControls(st){
 }
 function btn(action,label){ return `<button class="btn" style="width:auto" onclick="act('${action}')">${label}</button>`; }
 function btnP(action,payload,label){ return `<button class="btn" style="width:auto" onclick='act("${action}",${JSON.stringify(payload)})'>${label}</button>`; }
+
+// Détection de modifications non sauvegardées (joueurs)
+document.addEventListener('input', e => {
+  const row = e.target.closest('[data-pi]');
+  if (row && (e.target.classList.contains('p_name') || e.target.classList.contains('p_email') || e.target.classList.contains('p_avatar') || e.target.classList.contains('p_token')))
+    playerDirty = true;
+});
+window.addEventListener('beforeunload', e => {
+  if (!playerDirty) return;
+  e.preventDefault();
+  e.returnValue = '';
+});
 
 boot();
 </script>
