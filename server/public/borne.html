@@ -12,6 +12,7 @@
 <script src="/static/sound.js"></script>
 <script src="/static/fullscreen.js"></script>
 <script src="/static/pacman-render.js"></script>
+<script src="/static/ttcq-board.js"></script>
 <script src="https://www.youtube.com/iframe_api"></script>
 <style>
   #soundhint { position: fixed; top: 8px; left: 8px; z-index: 100000; cursor: pointer;
@@ -795,81 +796,7 @@ function ttcqLeaderboardHtml(board){
   </div>`;
 }
 
-// Couleur de pion STABLE par joueur (hash de l'id → palette), pour suivre son
-// pion sur le plateau même quand le classement se réordonne.
-const TTCQ_PAWN_COLORS = ['#e11d48','#2563eb','#059669','#d97706','#7c3aed','#0891b2','#db2777','#4d7c0f','#b91c1c','#1d4ed8','#a21caf','#ca8a04'];
-function ttcqPawnColor(id){
-  let h = 0; const s = String(id||'');
-  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
-  return TTCQ_PAWN_COLORS[h % TTCQ_PAWN_COLORS.length];
-}
 
-// Plateau TTCQ façon TTMC : piste serpentante de cases colorées numérotées,
-// cases spéciales illustrées, pions des joueurs posés sur leur case.
-function ttcqBoardSvg(act, adulte){
-  const board = act.board || [];
-  const N = board.length;
-  if (!N) return '';
-  const cols = 8, cell = 88, gap = 12, pad = 18;
-  const rows = Math.ceil(N / cols);
-  const W = pad*2 + cols*cell + (cols-1)*gap;
-  const H = pad*2 + rows*cell + (rows-1)*gap;
-  // Position d'une case : lignes en serpentin (gauche→droite puis droite→gauche).
-  const P = i => {
-    const r = Math.floor(i / cols); let c = i % cols;
-    if (r % 2 === 1) c = cols - 1 - c;
-    return { x: pad + c*(cell+gap), y: pad + r*(cell+gap) };
-  };
-  const CYCLE = ['#ffd23f','#ff8fab','#5ec8f8','#7ce577','#ffa94d'];
-  const SPECIAL = {
-    '🟦 Départ':        { fill:'#4ade80', emoji:'🚩', label:'DÉPART' },
-    '🏁 Arrivée':       { fill:'#f8fafc', emoji:'🏁', label:'ARRIVÉE' },
-    '⭐ Compte double': { fill:'#ffe14d', emoji:'⭐', label:'COMPTE ×2' },
-    '💀 Défi':          { fill:'#52525b', emoji:'💀', label:'DÉFI', ink:'#fff' },
-    '🎲 Relance':       { fill:'#67e8f9', emoji:'🎲', label:'RELANCE' },
-    '🪙 Bonus':         { fill:'#fcd34d', emoji:'🪙', label:'BONUS' },
-  };
-  // Ruban de piste reliant les centres des cases.
-  let track = '';
-  for (let i = 0; i < N; i++){ const p = P(i); track += (i ? ' L' : 'M') + (p.x+cell/2) + ' ' + (p.y+cell/2); }
-  // Cases.
-  let cells = '';
-  for (let i = 0; i < N; i++){
-    const p = P(i), sp = SPECIAL[board[i]];
-    const fill = sp ? sp.fill : CYCLE[i % CYCLE.length];
-    const ink = (sp && sp.ink) || '#1f2937';
-    cells += `<rect x="${p.x}" y="${p.y}" width="${cell}" height="${cell}" rx="16" fill="${fill}" stroke="#00000026" stroke-width="2"/>`
-      + `<text x="${p.x+10}" y="${p.y+22}" font-size="15" font-weight="800" fill="${ink}" opacity=".7" font-family="Arial, sans-serif">${i}</text>`
-      + (sp ? `<text x="${p.x+cell/2}" y="${p.y+cell/2+10}" font-size="28" text-anchor="middle">${sp.emoji}</text>`
-            + `<text x="${p.x+cell/2}" y="${p.y+cell-8}" font-size="10.5" font-weight="800" text-anchor="middle" fill="${ink}" font-family="Arial, sans-serif">${sp.label}</text>` : '');
-  }
-  // Pions (regroupés par case, max 3 par rangée dans la case).
-  const players = act.leaderboard || [];
-  const byCell = {};
-  players.forEach(pl => {
-    const pos = Math.min(Math.max((act.positions||{})[pl.id] ?? 0, 0), N-1);
-    (byCell[pos] = byCell[pos] || []).push(pl);
-  });
-  let pawns = '';
-  Object.entries(byCell).forEach(([ci, list]) => {
-    const p = P(+ci);
-    list.forEach((pl, k) => {
-      const px = p.x + 17 + (k % 3) * 27;
-      const py = p.y + cell - 20 - Math.floor(k / 3) * 26;
-      pawns += `<circle cx="${px}" cy="${py}" r="13" fill="${ttcqPawnColor(pl.id)}" stroke="#fff" stroke-width="2.5"/>`
-        + `<text x="${px}" y="${py+5}" font-size="14" text-anchor="middle">${avatarEmoji(pl.avatar)}</text>`;
-    });
-  });
-  const legend = players.map(pl =>
-    `<span style="display:inline-flex;align-items:center;gap:4px;font-size:12px;margin:0 7px;white-space:nowrap">
-      <span style="width:10px;height:10px;border-radius:50%;background:${ttcqPawnColor(pl.id)};display:inline-block"></span>${avatarEmoji(pl.avatar)} ${esc(pl.name)} <span class="muted">(case ${pl.position})</span></span>`).join('');
-  return `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" style="display:block;width:auto;max-width:100%;max-height:46vh;margin:8px auto">
-      <rect x="2" y="2" width="${W-4}" height="${H-4}" rx="24" fill="${adulte ? '#2a0a2e' : '#101935'}" stroke="${adulte ? 'var(--neon, #ff2e88)' : 'var(--neon4, #7a5cff)'}" stroke-width="3"/>
-      <path d="${track}" fill="none" stroke="#ffffff14" stroke-width="${Math.round(cell*0.92)}" stroke-linejoin="round" stroke-linecap="round"/>
-      ${cells}${pawns}
-    </svg>
-    <div class="center" style="margin-top:2px">${legend}</div>`;
-}
 
 function quizBorne(act){
   const letters=['A','B','C','D','E'];

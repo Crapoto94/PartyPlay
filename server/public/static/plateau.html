@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plateau TTCQ — aperçu</title>
+  <style>
+    body { margin: 0; min-height: 100vh; background: #0a0118; color: #eafffb; font-family: Arial, sans-serif; padding: 24px; box-sizing: border-box; }
+    h1 { font-size: 22px; margin: 0 0 4px; }
+    h2 { font-size: 15px; margin: 26px 0 6px; opacity: .85; }
+    p.hint { font-size: 13px; opacity: .6; margin: 0 0 14px; }
+    .muted { opacity: .6; }
+    .center { text-align: center; }
+    svg { max-height: none !important; }
+    .wrap { max-width: 1100px; margin: 0 auto; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>🎯 Plateau TTCQ — aperçu de vérification</h1>
+    <p class="hint">Rendu identique à celui de la borne (même code : /static/ttcq-board.js). Pions de démonstration : Alice (case 0), Bob &amp; Cléo (case 14), Dan (case 30), Emma (case 47).</p>
+    <h2>Mode classique</h2>
+    <div id="classique"></div>
+    <h2>Mode 18+ (cadre rose)</h2>
+    <div id="adulte"></div>
+  </div>
+  <script>
+    // Avatars de démo (la borne fournit les siens via avatarEmoji).
+    function avatarEmoji(a){ return ({ a:'👑', b:'🦔', c:'🗡️', d:'🍄', e:'⚡' }[a]) || '🎮'; }
+  </script>
+  <script src="/static/ttcq-board.js"></script>
+  <script>
+    // Même plateau que le moteur (state.js → _ttcqBoard) : 48 cases.
+    const board = ['🟦 Départ'];
+    for (let i = 1; i < 48; i++) {
+      if (i === 47) board.push('🏁 Arrivée');
+      else if (i % 12 === 6) board.push('⭐ Compte double');
+      else if (i % 15 === 0) board.push('💀 Défi');
+      else if (i % 20 === 0) board.push('🎲 Relance');
+      else if (i % 18 === 0) board.push('🪙 Bonus');
+      else board.push('🟦');
+    }
+    const act = {
+      board,
+      positions: { p1: 0, p2: 14, p3: 14, p4: 30, p5: 47 },
+      leaderboard: [
+        { id: 'p5', name: 'Emma',  avatar: 'e', position: 47, coins: 6 },
+        { id: 'p4', name: 'Dan',   avatar: 'd', position: 30, coins: 4 },
+        { id: 'p2', name: 'Bob',   avatar: 'b', position: 14, coins: 2 },
+        { id: 'p3', name: 'Cléo',  avatar: 'c', position: 14, coins: 1 },
+        { id: 'p1', name: 'Alice', avatar: 'a', position: 0,  coins: 0 },
+      ],
+    };
+    document.getElementById('classique').innerHTML = ttcqBoardSvg(act, false);
+    document.getElementById('adulte').innerHTML = ttcqBoardSvg(act, true);
+  </script>
+</body>
+</html>
