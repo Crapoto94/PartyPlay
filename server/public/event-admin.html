@@ -248,6 +248,7 @@
           <div class="inline" style="justify-content:space-between;flex-wrap:wrap;gap:8px">
             <h3 class="neon-cyan" style="margin:0">Joueurs</h3>
             <button class="btn secondary" style="width:auto" onclick="sendAllInvites(this)">📧 Envoyer à tous</button>
+            <button class="btn secondary" style="width:auto" onclick="printAllCards()">🖨️ Imprimer le matériel</button>
           </div>
           <div id="players"></div>
           <div class="row" style="margin-top:12px">
@@ -636,10 +637,90 @@ function copyJoinUrl(token,btn){
   const url=location.origin+API+'/j/'+token;
   navigator.clipboard.writeText(url).then(()=>{ btn.textContent='✓'; setTimeout(()=>btn.textContent='⎘',1200); });
 }
+function playerCardHtml(p, joinUrl, qrDataUrl){
+  const av = AV[p.avatar] || {};
+  const emoji = av.emoji || '';
+  const name = esc(p.name || '');
+  const email = esc(p.email || '');
+  const qrImg = qrDataUrl ? `<img src="${qrDataUrl}" style="width:140px;height:140px;image-rendering:pixelated">` : '';
+  const url = esc(joinUrl);
+  return `<div style="text-align:center;padding:12px">
+    <div style="font-size:56px;margin-bottom:6px">${emoji}</div>
+    <div style="font-size:18px;font-weight:700;margin:4px 0">${name}</div>
+    <div style="font-size:12px;color:var(--muted)">${email}</div>
+    <div style="margin:12px auto;width:140px">${qrImg}</div>
+    <div style="font-size:11px;word-break:break-all;color:var(--muted)">${url}</div>
+  </div>`;
+}
+
+function showPlayerCardModal(html){
+  const existing = document.getElementById('playerCardModal');
+  if(existing) existing.remove();
+  const div = document.createElement('div');
+  div.id = 'playerCardModal';
+  div.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center';
+  div.onclick = e => { if(e.target===div) div.remove(); };
+  div.innerHTML = `<div class="card" style="max-width:340px;width:90%;position:relative">
+    <button onclick="this.closest('#playerCardModal').remove()" style="position:absolute;top:8px;right:12px;background:none;border:none;font-size:22px;cursor:pointer;color:var(--ink)">✕</button>
+    ${html}
+  </div>`;
+  document.body.appendChild(div);
+}
+
 async function showQR(token){
+  const i = parseInt(event.target.closest('[data-pi]')?.dataset?.pi, 10);
+  if(isNaN(i)) return;
+  const p = collectPlayers()[i];
+  if(!p){ alert('Joueur introuvable.'); return; }
   const r=await fetch(API+'/api/admin/qr/'+encodeURIComponent(token),{headers:H()}); const d=await r.json();
-  const box=event.target.closest('.card').querySelector('.qrbox');
-  box.innerHTML = d.qr ? `<img src="${d.qr}" style="width:160px"><div class="muted">${esc(d.joinUrl)}</div>` : '';
+  const html = playerCardHtml(p, d.joinUrl, d.qr);
+  showPlayerCardModal(html);
+}
+
+function printSection(el){
+  const w = window.open('', '', 'width=800,height=600');
+  const style = document.querySelector('style,link[rel=stylesheet]')?.outerHTML || '';
+  w.document.write(`<!DOCTYPE html><html><head><title>Cartes joueurs</title>${style}</head><body>`);
+  w.document.write('<div style="padding:20px;font-family:sans-serif">');
+  w.document.write('<h2 style="text-align:center;margin-bottom:20px">Cartes joueurs</h2>');
+  w.document.write('<div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center">');
+  w.document.write(el.innerHTML);
+  w.document.write('</div></div></body></html>');
+  w.document.close();
+  w.focus();
+  w.print();
+}
+
+async function printAllCards(){
+  const players = collectPlayers().filter(p => p.name);
+  if(!players.length){ alert('Aucun joueur.'); return; }
+  const cards = [];
+  for(const p of players){
+    let html;
+    try {
+      const r = await fetch(API+'/api/admin/qr/'+encodeURIComponent(p.token), {headers:H()});
+      const d = await r.json();
+      html = playerCardHtml(p, d.joinUrl, d.qr);
+    } catch {
+      html = playerCardHtml(p, '', '');
+    }
+    cards.push(`<div style="border:1px solid #ccc;border-radius:12px;padding:10px;width:220px;page-break-inside:avoid;break-inside:avoid">${html}</div>`);
+  }
+  const w = window.open('', '', 'width=800,height=600');
+  w.document.write(`<!DOCTYPE html><html><head><title>Cartes joueurs</title>
+    <style>
+      body { font-family: system-ui, sans-serif; margin: 0; padding: 20px; }
+      h2 { text-align: center; margin-bottom: 20px; }
+      .grid { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; }
+      .card-print { border: 1px solid #ccc; border-radius: 12px; padding: 10px; width: 220px; }
+      @media print { @page { margin: 10mm; } }
+    </style>
+  </head><body>
+    <h2>Cartes joueurs</h2>
+    <div class="grid">${cards.join('')}</div>
+    <script>window.onload=function(){window.print();window.close()}<\/script>
+  </body></html>`);
+  w.document.close();
 }
 async function sendInvite(i,btn){
   CFG.players=collectPlayers();
