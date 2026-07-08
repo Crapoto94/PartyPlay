@@ -141,7 +141,7 @@
           <div class="field" data-cat="privacy" style="margin-top:10px"><label>🤫 Sans Filtre !? — confessions anonymes (Intime = normal · 18+ = vrai 18+, nécessite validation)</label>
             <div class="row">
               <button class="btn" onclick="launch('privacy',{level:'intime',count:privacyCount()})">🔞 Intime</button>
-              <button class="btn" id="btnPrivacyHard">🌶️ 18+</button>
+              <button class="btn" id="btnPrivacyHard" onclick="launch('privacy',{level:'trash',count:privacyCount()})">🌶️ 18+</button>
               <select id="privacyCount" style="width:auto">
                 <option value="5">5 questions</option>
                 <option value="10" selected>10 questions</option>
@@ -153,7 +153,7 @@
           <div class="field" data-cat="carton" style="margin-top:10px"><label>🃏 Bouche-Trou !? — questions à trou + cartes-réponses</label>
             <div class="row">
               <button class="btn" onclick="launch('carton',{level:'classique',rounds:cartonRounds()})">🎉 Classique</button>
-              <button class="btn" id="btnCartonAdult">🔞 Version 18+</button>
+              <button class="btn" id="btnCartonAdult" onclick="launch('carton',{level:'adulte',rounds:cartonRounds()})">🔞 Version 18+</button>
               <select id="cartonRounds" style="width:auto">
                 <option value="5">5 manches</option>
                 <option value="8" selected>8 manches</option>
@@ -165,7 +165,7 @@
           <div class="field" data-cat="ttcq" style="margin-top:10px"><label>🎯 TTCQ — Tu Te Cotes Combien ? — plateau, pari, questions</label>
             <div class="row" style="margin-bottom:6px">
               <button class="btn" onclick="ttcqLaunch('classique')">🎉 Classique</button>
-              <button class="btn" id="btnTtcqAdult">🔞 18+</button>
+              <button class="btn" id="btnTtcqAdult" onclick="ttcqLaunch('adulte')">🔞 18+</button>
               <button class="btn secondary" onclick="ttcqLaunch('classique',true)">📋 Mes questionnaires</button>
               <select id="ttcqRounds" style="width:auto">
                 <option value="5">5 manches</option>
@@ -179,7 +179,7 @@
           <div class="field" data-cat="justone" style="margin-top:10px"><label>🧠 Un Seul Mot !? — un indice, un seul mot, en équipe</label>
             <div class="row">
               <button class="btn" onclick="launch('justone',{level:'classique',rounds:justoneRounds()})">🎉 Classique</button>
-              <button class="btn" id="btnJustoneAdult">🔞 Version 18+</button>
+              <button class="btn" id="btnJustoneAdult" onclick="launch('justone',{level:'adulte',rounds:justoneRounds()})">🔞 Version 18+</button>
               <select id="justoneRounds" style="width:auto">
                 <option value="5">5 manches</option>
                 <option value="8" selected>8 manches</option>
