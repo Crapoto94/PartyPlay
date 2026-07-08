@@ -35,6 +35,10 @@
     .launch-grid select { width: auto; }
     .launch-grid .row, .launch-grid .inline { gap: 8px; }
     section[data-pane] .card h3 { margin: 2px 0 10px; }
+    .act-help-btn { display:inline-flex; align-items:center; justify-content:center; width:20px; height:20px; border-radius:50%; font-size:12px; line-height:1; cursor:pointer; background:rgba(255,255,255,.08); color:var(--muted); border:1px solid rgba(255,255,255,.12); transition:.15s; user-select:none; }
+    .act-help-btn:hover { background:var(--accent); color:#fff; border-color:var(--accent); }
+    .act-help-box { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:10px; padding:10px 12px; margin:6px 0 2px; font-size:13px; line-height:1.5; color:var(--muted); width:100%; }
+    .act-help-box b { color:var(--ink); }
     @media (max-width: 640px){ .launch-grid { grid-template-columns: 1fr; } }
   </style>
   <div class="admin-wrap">
@@ -728,13 +732,34 @@ async function removeAvatar(key){
 
 /* ---- Activités ---- */
 const ACT_LABELS={ quiz:'Quiz', blindtest:'Blind-test', anecdotes:'Anecdotes', photo:'Défi photo', spotlight:'Spotlight', draw:'Dessine-moi', arcade:'Mini-jeux arcade', collab:'Collaboratifs (mosaïque/piano)', carton:'🃏 Bouche-Trou !? (cartes à trou)', privacy:'🤫 Sans Filtre !? (confessions, adultes)', ttcq:'🎯 TTCQ (Tu Te Cotes Combien)', justone:'🧠 Un Seul Mot !? (coopératif)' };
-// Sans Filtre !? est un contenu adulte : activé seulement si explicitement
-// coché (contrairement aux autres activités, actives par défaut).
-function actDefaultOn(k, a){ return k==='privacy' ? (a[k]===true) : (a[k]!==false); }
+const ACTIVITY_HELP={
+  quiz:'Questions à choix multiples. <b>Personnalisation :</b> decks prédéfinis (jeux vidéo, années 80/90, anime, étonnant, burger) ou crée tes propres decks dans l\'onglet <b>⚙️ Général → Jeux</b>.',
+  blindtest:'Devine les chansons. <b>Personnalisation :</b> ajoute tes propres playlists YouTube/Deezer dans l\'onglet <b>🕹️ Activités</b>.',
+  anecdotes:'« Breaking News » — une vidéo puis des questions. <b>Personnalisation :</b> upload ta propre vidéo ou colle un lien YouTube dans l\'onglet <b>🕹️ Activités</b>.',
+  photo:'Les joueurs prennent une photo selon un thème. <b>Personnalisation :</b> ajoute/supprime des thèmes dans l\'onglet <b>⚙️ Général → Jeux</b>.',
+  spotlight:'« Qui est-ce ? » — un joueur est masqué, les autres devinent son identité à travers des questions.',
+  draw:'Un joueur dessine sur son téléphone, les autres devinent. Pas de personnalisation.',
+  arcade:'Collection de mini-jeux rétro (Pac-Man, 2048, Pong).',
+  collab:'Activités collaboratives où tout le monde participe en même temps sur un même écran (mosaïque, piano).',
+  carton:'Questions à trou avec cartes-réponses loufoques. <b>Personnalisation :</b> ajoute tes propres cartes dans l\'onglet <b>⚙️ Général → Jeux</b>.',
+  privacy:'Confessions anonymes entre adultes consentants. <b>Niveaux :</b> « Intime » (soft) et « 18+ » (hard, nécessite validation 🔞). Les questions sont modifiables dans l\'onglet <b>⚙️ Général → Jeux</b>.',
+  ttcq:'« Tu Te Cotes Combien ? » — plateau, paris, questions à choix libre. <b>Personnalisation :</b> choisis les thèmes et questions dans l\'onglet <b>⚙️ Général → Jeux</b>.',
+  justone:'Jeu coopératif : un indice, un seul mot, devine le mot secret. <b>Personnalisation :</b> active des univers bonus (geek, gaming, fantasy, sport) dans <b>l\'admin générale</b>.',
+};
+function actToggleHelp(k){
+  const el=document.getElementById('ah_'+k);
+  if(el) el.style.display=el.style.display==='none'?'':'none';
+}
+function actHelpHtml(k){
+  const d=ACTIVITY_HELP[k]; if(!d) return '';
+  return `<span class="act-help-btn" onclick="actToggleHelp('${k}')" title="En savoir plus">ⓘ</span>
+    <div id="ah_${k}" class="act-help-box" style="display:none">${d}</div>`;
+}
+function actDefaultOn(k, a){ return a[k]!==false; }
 function fillActivities(){
   const a=CFG.activities||{};
   document.getElementById('acts').innerHTML=Object.keys(ACT_LABELS).map(k=>
-    `<label class="inline" style="margin:6px 0"><input type="checkbox" class="a_${k}" ${actDefaultOn(k,a)?'checked':''} style="width:auto"> ${ACT_LABELS[k]}</label>`).join('');
+    `<label class="inline" style="margin:6px 0;flex-wrap:wrap;gap:4px"><input type="checkbox" class="a_${k}" ${actDefaultOn(k,a)?'checked':''} style="width:auto"> ${ACT_LABELS[k]}${actHelpHtml(k)}</label>`).join('');
 }
 async function saveActivities(){
   const a={}; Object.keys(ACT_LABELS).forEach(k=>a[k]=document.querySelector('.a_'+k).checked);
@@ -817,7 +842,7 @@ function goToActivityPicker(){
     <p class="muted">Décoche ce que tu ne veux pas proposer — modifiable à tout moment dans l'onglet 🕹️ Activités.</p></div>
     <div id="onbActs" style="margin-top:12px"></div>`;
   document.getElementById('onbActs').innerHTML = Object.keys(ACT_LABELS).map(k =>
-    `<label class="inline" style="margin:7px 0"><input type="checkbox" class="onb_${k}" ${actDefaultOn(k,a)?'checked':''} style="width:auto"> ${ACT_LABELS[k]}</label>`
+    `<label class="inline" style="margin:7px 0;flex-wrap:wrap;gap:4px"><input type="checkbox" class="onb_${k}" ${actDefaultOn(k,a)?'checked':''} style="width:auto"> ${ACT_LABELS[k]}${actHelpHtml(k)}</label>`
   ).join('');
   document.getElementById('onbNav').innerHTML = `<button class="btn" onclick="finishOnboarding()">🎉 C'est parti !</button>`;
 }
