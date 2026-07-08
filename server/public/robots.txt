@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /e/*/admin
+Disallow: /e/*/borne
+Disallow: /e/*/j/
+Disallow: /e/*/photos
+
+Sitemap: https://partyplay.app/sitemap.xml

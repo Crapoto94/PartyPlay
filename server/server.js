@@ -67,9 +67,18 @@ function renderPage(file, cfg) {
     settings: cfg ? cfg.settings : {},
     activities: cfg ? cfg.activities : {},
   };
+  const eventName = (cfg && cfg.name) || '';
+  const ogBase = process.env.PUBLIC_URL || '';
   const head = `
     <link rel="stylesheet" href="/static/base.css">
     <link rel="stylesheet" href="/static/themes/${theme}.css" id="theme-css">
+    <meta property="og:title" content="${eventName} · PartyPlay">
+    <meta property="og:description" content="Rejoins la fête « ${eventName} » sur PartyPlay — quiz, blind-test, défis photo et bien plus !">
+    <meta property="og:url" content="${ogBase}/e/${cfg ? cfg.id : ''}">
+    <meta property="og:image" content="${ogBase}/api/og/${cfg ? cfg.id : ''}">
+    <meta name="twitter:title" content="${eventName} · PartyPlay">
+    <meta name="twitter:description" content="Rejoins la fête « ${eventName} » sur PartyPlay.">
+    <meta name="twitter:image" content="${ogBase}/api/og/${cfg ? cfg.id : ''}">
     <script>window.__EVENT__ = ${JSON.stringify(ctx)};</script>
     <script src="/static/version-badge.js" defer></script>`;
   if (html.includes('<!--EVENT_HEAD-->')) html = html.replace('<!--EVENT_HEAD-->', head);
@@ -83,6 +92,40 @@ function renderPage(file, cfg) {
 // Page d'accueil PUBLIQUE : rejoindre / créer / accéder à l'admin de sa fête.
 app.get('/', (req, res) => res.sendFile(path.join(PUBLIC, 'landing.html')));
 app.get('/admin', (req, res) => res.sendFile(path.join(PUBLIC, 'admin.html')));
+app.get('/robots.txt', (req, res) => res.sendFile(path.join(PUBLIC, 'robots.txt')));
+app.get('/sitemap.xml', (req, res) => res.sendFile(path.join(PUBLIC, 'sitemap.xml')));
+
+// --- OG Image (Social Preview) ---
+app.get('/api/og/:id?', (req, res) => {
+  const cfg = req.params.id ? getConfig(req.params.id) : null;
+  const name = (cfg && cfg.name) ? cfg.name : 'PartyPlay';
+  const tag = (cfg && cfg.name) ? `${cfg.plan || 'free'} · ${cfg.closed ? 'Terminée' : 'En cours'}` : 'Jeu géant pour soirées';
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0c0a1e"/>
+      <stop offset="50%" stop-color="#2e1065"/>
+      <stop offset="100%" stop-color="#0c0a1e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="45%" stop-color="#ec4899"/>
+      <stop offset="80%" stop-color="#fb923c"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="150" cy="180" r="300" fill="#7c3aed" opacity=".12"/>
+  <circle cx="1050" cy="450" r="250" fill="#db2777" opacity=".1"/>
+  <text x="600" y="240" text-anchor="middle" font-family="system-ui,sans-serif" font-weight="800" font-size="72" fill="#fff">${htmlEsc(name)}</text>
+  <rect x="360" y="280" width="480" height="6" rx="3" fill="url(#accent)"/>
+  <text x="600" y="370" text-anchor="middle" font-family="system-ui,sans-serif" font-weight="600" font-size="32" fill="#a5a0c6">${htmlEsc(tag)}</text>
+  <text x="600" y="440" text-anchor="middle" font-family="system-ui,sans-serif" font-weight="700" font-size="24" fill="#8b5cf6">🎉 PartyPlay</text>
+</svg>`;
+  res.set('Content-Type', 'image/svg+xml');
+  res.set('Cache-Control', 'max-age=3600, public');
+  res.send(svg);
+});
 
 // =====================================================================
 //  ESPACE PUBLIC (sans mot de passe super-admin)
@@ -793,8 +836,17 @@ ev.get('/resultats', (req, res) => {
   const fb = cfg.feedback || [];
   const ratings = fb.map(f => f.rating).filter(r => r && r >= 1 && r <= 5);
   const avg = ratings.length ? (ratings.reduce((a, b) => a + b, 0) / ratings.length).toFixed(1) : '—';
+  const baseUrl = process.env.PUBLIC_URL || '';
   res.send(`<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Résultats — ${cfg.name} · PartyPlay</title>
+<meta name="description" content="Notes et avis pour la fête « ${cfg.name} » sur PartyPlay.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Résultats — ${cfg.name} · PartyPlay">
+<meta property="og:type" content="website">
+<meta property="og:description" content="Notes et avis pour la fête « ${cfg.name} » sur PartyPlay.">
+<meta property="og:url" content="${baseUrl}/e/${cfg.id}/resultats">
+<meta property="og:image" content="${baseUrl}/api/og/${cfg.id}">
+<meta name="twitter:card" content="summary">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#0c0a1e;--ink:#f5f3ff;--muted:#a5a0c6;--border:rgba(255,255,255,.1);--surface:rgba(255,255,255,.05);--accent:#8b5cf6;--pink:#ec4899;--grad:linear-gradient(100deg,#8b5cf6,#ec4899,#fb923c);--font:'Plus Jakarta Sans',sans-serif}

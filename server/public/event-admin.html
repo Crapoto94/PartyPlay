@@ -12,6 +12,31 @@
   <!--EVENT_HEAD-->
 </head>
 <body class="scanlines">
+  <style>
+    /* ---- Console GM : mise en page simplifiée (au-dessus du thème) ---- */
+    .admin-wrap { max-width: 1120px; }
+    #evTitle { margin-bottom: 2px; }
+    /* Onglets : barre collante, cibles plus grandes, actif bien visible */
+    .tabbar { position: sticky; top: 0; z-index: 60; gap: 8px;
+      background: linear-gradient(var(--bg), var(--bg) 70%, transparent);
+      padding: 10px 2px; margin: 6px -2px 16px; }
+    .tabbar .tab { width: auto; flex: 0 0 auto; font-size: 13px; padding: 11px 16px; opacity: .8; }
+    .tabbar .tab.active { opacity: 1; transform: translateY(-1px); }
+    /* Barre d'actions principale (Démarrer / Hub / Scores / Reset) */
+    .ctlbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+    .ctlbar .btn { width: auto; flex: 1 1 150px; }
+    .phase-badge { font-size: 15px; }
+    /* Grille des lanceurs d'activité : une tuile claire par jeu */
+    .launch-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 12px; margin-top: 10px; }
+    .launch-grid > * { margin: 0 !important; background: var(--surface, rgba(255,255,255,.04));
+      border: 1px solid var(--neon4); border-radius: 14px; padding: 13px 14px; }
+    .launch-grid > * > label, .launch-grid > * .field label { display: block; margin-bottom: 9px; font-size: 12px; line-height: 1.35; }
+    .launch-grid .btn { width: auto; flex: 1 1 auto; font-size: 12px; padding: 11px 12px; }
+    .launch-grid select { width: auto; }
+    .launch-grid .row, .launch-grid .inline { gap: 8px; }
+    section[data-pane] .card h3 { margin: 2px 0 10px; }
+    @media (max-width: 640px){ .launch-grid { grid-template-columns: 1fr; } }
+  </style>
   <div class="admin-wrap">
     <h1 class="neon-pink" id="evTitle">🎛️ Console</h1>
     <p class="muted">Configurez votre événement et pilotez la soirée en direct.</p>
@@ -79,11 +104,11 @@
       <!-- ============ PILOTER ============ -->
       <section data-pane="piloter">
         <div class="card">
-          <div class="inline" style="justify-content:space-between">
-            <div>Phase : <strong id="phase" class="neon-cyan">—</strong></div>
+          <div class="inline" style="justify-content:space-between;margin-bottom:12px">
+            <div class="phase-badge">Phase : <strong id="phase" class="neon-cyan">—</strong></div>
             <div id="connCount" class="muted"></div>
           </div>
-          <div class="row mt">
+          <div class="ctlbar">
             <button class="btn secondary" onclick="act('start')">▶ Démarrer la soirée</button>
             <button class="btn warn" onclick="act('scoreboard')">🏆 Scores</button>
             <button class="btn" onclick="act('hub')">↩ Hub</button>
@@ -94,6 +119,7 @@
         <div class="card">
           <h3 class="neon-yellow">Lancer une activité</h3>
           <p class="muted" style="font-size:12.5px;margin:0 0 10px" id="actFilterHint" hidden>Seules les activités choisies au démarrage sont affichées — modifiable dans l'onglet 🕹️ Activités.</p>
+          <div class="launch-grid">
           <div class="field" data-cat="quiz"><label>Quiz — choisir un deck</label>
             <div class="inline"><select id="quizDeck"></select><button class="btn" style="width:auto" onclick="launch('quiz',{deck:val('quizDeck')})">Lancer</button></div>
           </div>
@@ -170,6 +196,7 @@
             <button class="btn" onclick="launch('2048',{})">🔢 2048</button>
             <button class="btn" onclick="launch('pong',{})">🏓 Pong</button>
           </div>
+          </div><!-- /.launch-grid -->
           <div class="row mt">
             <button class="btn warn" onclick="act('stopActivity')">⏹ Stopper l'activité</button>
             <button class="btn secondary" onclick="act('scoreboard')">Afficher scores</button>
