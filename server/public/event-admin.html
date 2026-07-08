@@ -367,28 +367,16 @@
           </div>
         </div>
 
-        <!-- TTCQ (JSON) -->
+        <!-- TTCQ graphique -->
         <div class="card">
           <h3 class="neon-yellow">🎯 TTCQ — mes thèmes perso</h3>
-          <p class="muted">Ajoute tes propres <b>thèmes de questions</b> : chaque thème contient 8 questions (niveaux 1 à 8, la 8 impossible). Format JSON : <code>[ { id, name, cat, level, levels: [{q, a}] } ]</code>. Deux formats de réponse au choix, par question : <b>saisie libre</b> <code>{q, a:"Paris"}</code> (le joueur tape un mot ou un nombre) ou <b>QCM</b> <code>{q, c:["Paris","Lyon","Nice","Metz"], a:"Paris"}</code> (4 propositions ; <code>a</code> = la bonne). Prioritaires sur le catalogue.</p>
-          <div class="field"><label>Thèmes TTCQ perso <span class="muted">(tableau JSON — saisie libre pour un mot court/nombre, QCM sinon)</span></label><textarea id="c_ttcq" rows="6" placeholder='[{"id":"mon_theme","name":"Mon thème","cat":"custom","level":"classique","levels":[{"q":"Niveau 1 très facile ?","a":"Paris"},{"q":"Niveau 2 ?","c":["Lyon","Nice","Metz","Caen"],"a":"Lyon"},{"q":"Niveau 3 ?","a":"12"},{"q":"Niveau 4 ?","a":"reponse"},{"q":"Niveau 5 ?","a":"reponse"},{"q":"Niveau 6 ?","a":"reponse"},{"q":"Niveau 7 ?","a":"reponse"},{"q":"Niveau 8 impossible ?","a":"?"}]}]'></textarea></div>
-          <div class="row">
+          <p class="muted" style="margin-bottom:12px">Ajoute tes propres thèmes de questions. Chaque thème contient 8 questions (niveaux 1 à 8).</p>
+          <div id="ttcqCustomList"></div>
+          <button class="btn" style="margin-top:8px" onclick="ttcqAddTheme()">＋ Ajouter un thème</button>
+          <div class="row" style="margin-top:10px">
             <button class="btn secondary" onclick="saveTtcqCustom()">💾 Enregistrer mes thèmes</button>
             <span class="muted" id="ttcq_saved"></span>
           </div>
-        </div>
-
-        <!-- Autres contenus (JSON) -->
-        <div class="card">
-          <details>
-            <summary style="cursor:pointer;font-weight:600;font-size:14px">⚙️ Autres contenus (édition JSON avancée)</summary>
-            <div style="margin-top:12px">
-              <div class="field"><label>Mots Dessine-moi <span class="muted">[ {word, cat} ]</span></label><textarea id="c_draw" rows="4"></textarea></div>
-              <div class="field"><label>Playlists blind-test <span class="muted">{ theme: "ID ou URL playlist" }</span></label><textarea id="c_bt" rows="4"></textarea></div>
-              <button class="btn secondary" onclick="saveDrawAndBt()">💾 Enregistrer</button>
-              <span class="muted" id="c_extra_saved"></span>
-            </div>
-          </details>
         </div>
       </section>
     </div>
@@ -1045,8 +1033,7 @@ function fillContent(){
   espData=[...(ct.spotlightDefis||[])];
   renderEsp();
   // TTCQ
-  const ttcq=ct.ttcq||{};
-  document.getElementById('c_ttcq').value=JSON.stringify(ttcq.themes||[],null,1);
+  renderTtcqThemes((ct.ttcq||{}).themes||[]);
   // Carton
   const cart=ct.carton||{};
   document.getElementById('c_carton_p').value=(cart.prompts||[]).join('\n');
@@ -1055,9 +1042,6 @@ function fillContent(){
   const jo=ct.justone||{};
   document.getElementById('c_jo_words').value=(jo.words||[]).join('\n');
   document.getElementById('c_jo_adult').value=(jo.wordsAdult||[]).join('\n');
-  // Extra JSON
-  c_draw.value=JSON.stringify(ct.drawWords||[],null,1);
-  c_bt.value=JSON.stringify(ct.blindtest?ct.blindtest.playlists:{},null,1);
   fillBlindtests();
   fillAnecdotes();
 }
@@ -1251,48 +1235,108 @@ async function saveSpotlightCustom(){
 }
 
 /* ---- Draw + Blindtest (JSON) ---- */
-async function saveDrawAndBt(){
-  try{
-    const drawWords=JSON.parse(c_draw.value||'[]');
-    const playlists=JSON.parse(c_bt.value||'{}');
-    const content={...(CFG.content||{}),drawWords,blindtest:{playlists}};
-    await push({content}); CFG.content=content;
-    const s=document.getElementById('c_extra_saved'); s.textContent=' ✓ enregistré'; setTimeout(()=>s.textContent='',2000);
-    fillLaunchers();
-  }catch(e){ document.getElementById('c_extra_saved').textContent=' ✗ Erreur JSON : '+e.message; }
-}
-
 async function saveTtcqCustom(){
-  try{
-    const raw=document.getElementById('c_ttcq').value;
-    const themes=JSON.parse(raw||'[]');
-    if(!Array.isArray(themes)) throw new Error('Doit être un tableau');
-    themes.forEach((t,i)=>{
-      if(!t.name) throw new Error('Thème '+(i+1)+' : name requis');
-      if(!Array.isArray(t.levels)||t.levels.length!==8) throw new Error('Thème "'+t.name+'" : 8 niveaux requis');
-    });
-    const ttcq={ themes };
-    const content={ ...(CFG.content||{}), ttcq };
-    await push({content}); CFG.content=content;
-    const s=document.getElementById('ttcq_saved'); s.textContent=' ✓ '+themes.length+' thème(s) enregistré(s)'; setTimeout(()=>s.textContent='',2500);
-  }catch(e){ document.getElementById('ttcq_saved').textContent=' ✗ Erreur : '+e.message; }
+  const themes = collectTtcqThemes();
+  if(themes === null) return;
+  const ttcq={ themes };
+  const content={ ...(CFG.content||{}), ttcq };
+  await push({content}); CFG.content=content;
+  renderTtcqThemes(themes);
+  const s=document.getElementById('ttcq_saved'); s.textContent=' ✓ '+themes.length+' thème(s) enregistré(s)'; setTimeout(()=>s.textContent='',2500);
 }
-async function saveContent(){
-  try{
-    const content={
-      quiz:{ decks: JSON.parse(c_quiz.value||'{}') },
-      anecdotes: (CFG.content&&CFG.content.anecdotes)||[],
-
-      spotlightDefis: JSON.parse(c_spot.value||'[]'),
-      drawWords: JSON.parse(c_draw.value||'[]'),
-      blindtest:{ playlists: JSON.parse(c_bt.value||'{}') },
-      carton: (CFG.content&&CFG.content.carton)||{ prompts:[], answers:[] },
-      ttcq: (CFG.content&&CFG.content.ttcq)||{ themes:[] },
-      justone: (CFG.content&&CFG.content.justone)||{ words:[], wordsAdult:[] },
-    };
-    await push({content}); CFG.content=content; c_err.textContent=' ✓ enregistré'; c_err.className='ok';
-    fillLaunchers();
-  }catch(e){ c_err.textContent=' Erreur JSON : '+e.message; c_err.className='neon-pink'; }
+function collectTtcqThemes(){
+  const themes=[];
+  document.querySelectorAll('#ttcqCustomList .ttcq-theme').forEach(el=>{
+    const name=el.querySelector('.ttcq-name').value.trim();
+    if(!name) return;
+    const cat=el.querySelector('.ttcq-cat').value.trim()||'custom';
+    const level=el.querySelector('.ttcq-level').value;
+    const levels=[];
+    el.querySelectorAll('.ttcq-level-row').forEach((row,i)=>{
+      const q=row.querySelector('.ttcq-q').value.trim();
+      if(!q) return;
+      const mode=row.querySelector('.ttcq-mode').value;
+      const a=row.querySelector('.ttcq-a').value.trim();
+      if(mode==='mcq'){
+        const c1=row.querySelector('.ttcq-c1').value.trim();
+        const c2=row.querySelector('.ttcq-c2').value.trim();
+        const c3=row.querySelector('.ttcq-c3').value.trim();
+        const c4=row.querySelector('.ttcq-c4').value.trim();
+        const choices=[c1,c2,c3,c4].filter(Boolean);
+        if(choices.length<2) return;
+        levels.push({q, c:choices, a});
+      } else {
+        if(!a) return;
+        levels.push({q, a});
+      }
+    });
+    if(levels.length<1) return;
+    const id=slug(name)||('custom_'+Date.now());
+    themes.push({id, name, cat, level, levels});
+  });
+  return themes;
+}
+function renderTtcqThemes(themes){
+  const box=document.getElementById('ttcqCustomList');
+  if(!box) return;
+  box.innerHTML=themes.map((t,i)=>ttcqThemeHtml(t,i)).join('')||'<p class="muted">Aucun thème perso. Ajoutes-en un !</p>';
+}
+function ttcqThemeHtml(t,i){
+  const levs=[1,2,3,4,5,6,7,8];
+  return `<div class="card ttcq-theme" style="margin:10px 0;padding:14px" data-ti="${i}">
+    <div class="row" style="gap:8px;flex-wrap:wrap">
+      <div class="field" style="flex:2;margin:0"><label>Nom du thème</label><input type="text" class="ttcq-name" value="${esc(t.name||'')}" placeholder="Ex: Culture geek"></div>
+      <div class="field" style="flex:1;margin:0"><label>Catégorie</label><input type="text" class="ttcq-cat" value="${esc(t.cat||'custom')}" placeholder="custom"></div>
+      <div class="field" style="flex:1;margin:0"><label>Niveau</label><select class="ttcq-level">
+        <option value="classique" ${t.level==='classique'?'selected':''}>Classique</option>
+        <option value="adulte" ${t.level==='adulte'?'selected':''}>18+</option>
+      </select></div>
+      <button class="btn danger" style="width:auto;margin-top:18px" onclick="this.closest('.ttcq-theme').remove()">✕</button>
+    </div>
+    <div style="margin-top:10px">${levs.map(j=>ttcqLevelHtml(t.levels&&t.levels[j-1],j)).join('')}</div>
+  </div>`;
+}
+function ttcqLevelHtml(lv,n){
+  const q=(lv&&lv.q)||'';
+  const a=(lv&&lv.a)||'';
+  const c=(lv&&lv.c)||[];
+  const mode=(lv&&lv.c)?'mcq':'free';
+  const choices=mode==='mcq'?['','','',''].map((_,j)=>c[j]||''):[];
+  return `<div class="ttcq-level-row" style="border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:10px;margin:6px 0">
+    <div class="row" style="gap:6px;flex-wrap:wrap;align-items:center">
+      <span style="font-size:13px;font-weight:600;min-width:30px">N${n}</span>
+      <div class="field" style="flex:3;margin:0"><input type="text" class="ttcq-q" value="${esc(q)}" placeholder="Question niveau ${n}"></div>
+      <div class="field" style="flex:1;margin:0"><label style="font-size:11px;margin-bottom:2px">Mode réponse</label>
+        <select class="ttcq-mode" onchange="ttcqToggleMode(this)">
+          <option value="free" ${mode==='free'?'selected':''}>Saisie libre</option>
+          <option value="mcq" ${mode==='mcq'?'selected':''}>QCM</option>
+        </select>
+      </div>
+    </div>
+    <div class="row ttcq-answer-row" style="gap:6px;margin-top:4px;flex-wrap:wrap">
+      <div class="field ttcq-free-field" style="flex:2;margin:0;${mode==='mcq'?'display:none':''}">
+        <label style="font-size:11px;margin-bottom:2px">Réponse</label>
+        <input type="text" class="ttcq-a" value="${esc(a)}" placeholder="La bonne réponse">
+      </div>
+      <div class="field ttcq-mcq-field" style="flex:4;margin:0;${mode==='free'?'display:none':''}">
+        <label style="font-size:11px;margin-bottom:2px">4 choix (séparés)</label>
+        <div class="row" style="gap:4px">${choices.map((v,j)=>`<input type="text" class="ttcq-c${j+1}" value="${esc(v)}" placeholder="Choix ${j+1}" style="flex:1;padding:6px 8px;font-size:13px">`).join('')}</div>
+        <div style="margin-top:4px"><input type="text" class="ttcq-a" value="${esc(a)}" placeholder="Bonne réponse (texte exact)" style="padding:6px 8px;font-size:13px;width:100%"></div>
+      </div>
+    </div>
+  </div>`;
+}
+function ttcqToggleMode(sel){
+  const row=sel.closest('.ttcq-level-row');
+  const isMcq=sel.value==='mcq';
+  row.querySelector('.ttcq-free-field').style.display=isMcq?'none':'';
+  row.querySelector('.ttcq-mcq-field').style.display=isMcq?'':'none';
+}
+function ttcqAddTheme(){
+  const box=document.getElementById('ttcqCustomList');
+  const empty=box.querySelector('.muted'); if(empty) empty.remove();
+  const i=box.querySelectorAll('.ttcq-theme').length;
+  box.insertAdjacentHTML('beforeend', ttcqThemeHtml({name:'',cat:'custom',level:'classique',levels:[]},i));
 }
 async function seed(mode){
   const r=await fetch(API+'/api/admin/seed',{method:'POST',headers:H(),body:JSON.stringify({mode})});
