@@ -27,7 +27,7 @@ export function defaultContent() {
   return JSON.parse(JSON.stringify({
     quiz: { decks: getQuiz() },
     blindtest: { playlists: {} },
-    anecdotes: [],
+    anecdotes: [{ titre:'🎵 Never Gonna Give You Up', youtube:'https://www.youtube.com/watch?v=dQw4w9WgXcQ', video:'', vignette:'https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg' }],
     spotlightDefis: getSpotlight(),
     drawWords: DRAW_WORDS,
     photoMissions: getPhotos(),
