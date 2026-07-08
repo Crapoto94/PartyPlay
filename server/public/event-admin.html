@@ -30,7 +30,7 @@
     .launch-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 12px; margin-top: 10px; }
     .launch-grid > * { margin: 0 !important; background: var(--surface, rgba(255,255,255,.04));
       border: 1px solid var(--neon4); border-radius: 14px; padding: 13px 14px; }
-    .launch-grid > * > label, .launch-grid > * .field label { display: block; margin-bottom: 9px; font-size: 12px; line-height: 1.35; }
+    .launch-grid > * > label, .launch-grid > * .field label { display: block; margin-bottom: 9px; font-size: 14px; line-height: 1.35; }
     .launch-grid .btn { width: auto; flex: 1 1 auto; font-size: 12px; padding: 11px 12px; }
     .launch-grid select { width: auto; }
     .launch-grid .row, .launch-grid .inline { gap: 8px; }
@@ -130,7 +130,8 @@
             <div class="inline"><select id="btTheme"></select><button class="btn" style="width:auto" onclick="launch('blindtest',{theme:val('btTheme')})">Lancer</button></div>
           </div>
           <div class="field" data-cat="anecdotes"><label>📰 Anecdote — Breaking News vidéo</label>
-            <div class="inline"><select id="anecPick"></select><button class="btn" style="width:auto" onclick="launchAnecdote()">🔴 Lancer</button></div>
+            <select id="anecPick" style="width:100%;margin-bottom:6px"></select>
+            <button class="btn" style="width:auto" onclick="launchAnecdote()">🔴 Lancer</button>
           </div>
           <div class="row">
   
@@ -206,15 +207,6 @@
           </div>
         </div>
         <div class="card" id="liveCtl"></div>
-        <div class="card" data-cat="photo">
-          <h3>📸 Défi photo</h3>
-          <div id="photoCtl"></div>
-          <div class="row" style="margin-top:10px">
-            <button class="btn" onclick="act('setPhotoPhase',{phase:'vote'})">📸 Ouvrir le vote</button>
-            <button class="btn" onclick="act('setPhotoPhase',{phase:'results'})">🏆 Résultats</button>
-            <button class="btn" onclick="act('setPhotoPhase',{phase:null})">✕ Fermer</button>
-          </div>
-        </div>
         <div class="card"><h3>Journal</h3><div class="log" id="log"></div></div>
       </section>
 
@@ -360,6 +352,17 @@
             <button class="btn secondary" onclick="saveSpotlightCustom()">💾 Enregistrer</button>
             <span class="muted" id="esp_saved"></span>
             <span class="tag" id="espCount">—</span>
+          </div>
+        </div>
+
+        <!-- Défis photo -->
+        <div class="card" data-cat="photo">
+          <h3 class="neon-yellow">📸 Défis photo</h3>
+          <div id="photoCtl"></div>
+          <div class="row" style="margin-top:10px">
+            <button class="btn" onclick="act('setPhotoPhase',{phase:'vote'})">📸 Ouvrir le vote</button>
+            <button class="btn" onclick="act('setPhotoPhase',{phase:'results'})">🏆 Résultats</button>
+            <button class="btn" onclick="act('setPhotoPhase',{phase:null})">✕ Fermer</button>
           </div>
         </div>
 
@@ -824,7 +827,7 @@ function goToActivityPicker(){
     <p class="muted">Décoche ce que tu ne veux pas proposer — modifiable à tout moment dans l'onglet 🕹️ Activités.</p></div>
     <div id="onbActs" style="margin-top:12px"></div>`;
   document.getElementById('onbActs').innerHTML = Object.keys(ACT_LABELS).map(k =>
-    `<label class="inline" style="margin:7px 0;flex-wrap:wrap;gap:4px"><input type="checkbox" class="onb_${k}" ${actDefaultOn(k,a)?'checked':''} style="width:auto"> ${ACT_LABELS[k]}${actHelpHtml(k)}</label>`
+    `<label class="inline" style="margin:7px 0;flex-wrap:wrap;gap:4px"><input type="checkbox" class="onb_${k}" ${actDefaultOn(k,a)?'checked':''} style="width:auto"> ${ACT_LABELS[k]}<span class="act-help-btn" onclick="event.preventDefault();var c=this.closest('label').querySelector('input[type=checkbox]');c.checked=!c.checked" title="Activer/désactiver">ⓘ</span></label>`
   ).join('');
   document.getElementById('onbNav').innerHTML = `<button class="btn" onclick="finishOnboarding()">🎉 C'est parti !</button>`;
 }
