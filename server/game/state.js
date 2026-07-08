@@ -207,7 +207,8 @@ export class GameState {
     this.photoVotes = {}; // { voterId: { [challengeIdx]: photoId } } — un vote par défi (photo la plus proche)
     this.photoPhase = null; // null | 'vote' | 'results'
     this.photoChallenges = null; // 3 défis COMMUNS à tous les joueurs (choisis par le GM, sinon aléatoires)
-    this.partyStartAt = null; // timestamp du « début de la fête » (1re connexion) — relance photo à +1 h
+    this.partyStartAt = null; // timestamp du « début de la fête » (1re connexion) — base de la relance photo
+    this.photoRemindMinutes = 60; // délai (min) avant la popup de relance photo ; 0 = désactivée. Réglable par le GM.
     this.log = []; // journal d'événements (récents en tête)
     this.players = ((this.cfg && this.cfg.players) || []).map((p) => ({
       ...p,
@@ -375,6 +376,14 @@ export class GameState {
     this.photoVotes[voterId][idx] = photoId;
     this.touch();
     return true;
+  }
+
+  // Délai (minutes) avant la popup de relance photo ; 0 = désactivée. Réglé par le GM.
+  setPhotoRemindMinutes(n) {
+    const v = parseInt(n, 10);
+    this.photoRemindMinutes = (Number.isFinite(v) && v >= 0) ? Math.min(v, 720) : 60;
+    this.addLog(this.photoRemindMinutes ? `📸 Relance photo réglée à ${this.photoRemindMinutes} min après le début de la fête.` : '📸 Relance photo désactivée.');
+    this.touch();
   }
 
   setPhotoPhase(phase) {
@@ -2611,6 +2620,7 @@ export class GameState {
       photoChallenges: this.photoActiveChallenges(),
       photoPool: this.photoPool(),
       partyStartAt: this.partyStartAt,
+      photoRemindMinutes: this.photoRemindMinutes,
       scoreboard: this.phase === 'scoreboard' ? this.scoreboard() : null,
       log: this.log.slice(0, 12),
       players: this.players.map((p) => ({

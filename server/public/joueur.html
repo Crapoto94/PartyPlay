@@ -1505,7 +1505,8 @@ function checkPhotoReminder(s) {
   const done = (me && me.myPhotos) || [];
   const missing = missions.length - done.length;
   const inVote = s && (s.photoPhase === 'vote' || s.photoPhase === 'results');
-  const due = photoOn && me && started && !inVote && missing > 0 && (Date.now() - started >= 3600000) && Date.now() >= _photoRemindSnoozeUntil;
+  const remindMs = ((s && s.photoRemindMinutes != null) ? s.photoRemindMinutes : 60) * 60000; // 0 = désactivée
+  const due = photoOn && me && started && remindMs > 0 && !inVote && missing > 0 && (Date.now() - started >= remindMs) && Date.now() >= _photoRemindSnoozeUntil;
   if (!due) { if (box) box.remove(); return; }
   if (box) return; // déjà affichée
   const el = document.createElement('div');

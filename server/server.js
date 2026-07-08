@@ -228,6 +228,24 @@ app.post('/api/parties', async (req, res) => {
       htmlContent: fillTemplate(tpl.html, { eventName: cfg.name, eventId: cfg.id, verifyUrl, consoleUrl, borneUrl, planLabel: planInfo.label || cfg.plan }),
     }).catch(() => {});
   }
+  // Notification admin pour les fêtes non-test
+  try {
+    const pricing = getPricing();
+    if (pricing.notifyOnNewParty !== false && cfg.contactEmail && !cfg.contactEmail.endsWith('@fbc.fr')) {
+      const proto = req.get('x-forwarded-proto') || req.protocol;
+      const host = req.get('x-forwarded-host') || req.get('host');
+      const baseUrl = process.env.PUBLIC_URL || `${proto}://${host}`;
+      const tpl = getEmailTemplates().newParty;
+      if (tpl) {
+        sendMail({
+          to: 'marc@fbc.fr',
+          subject: fillTemplate(tpl.subject, { eventName: cfg.name }),
+          htmlContent: fillTemplate(tpl.html, { eventName: cfg.name, eventId: cfg.id, contactEmail: cfg.contactEmail || '', partyDate: cfg.partyDate || '', plan: cfg.plan || '', theme: cfg.theme || '', consoleUrl: `${baseUrl}/e/${cfg.id}/admin` }),
+        }).catch(() => {});
+      }
+    }
+  } catch (e) { console.error('[notify] Erreur:', e.message); }
+
   res.json({ ok: true, event: { id: cfg.id, name: cfg.name, theme: cfg.theme, plan: cfg.plan, paymentStatus: cfg.paymentStatus, emailVerified: cfg.emailVerified !== false, contactEmail: cfg.contactEmail || '', partyDate: cfg.partyDate || '', adultParty: !!cfg.adultParty, adultVerified: !!cfg.adultVerified }, adminPassword: pwd });
 });
 
@@ -470,6 +488,22 @@ app.post('/api/admin/events/:id/payment', (req, res) => {
   cfg.paymentStatus = req.body.status === 'paid' ? 'paid' : 'pending';
   saveConfig(cfg);
   reloadConfig(cfg.id);
+  // Notification pour les fêtes payantes
+  if (cfg.paymentStatus === 'paid') {
+    try {
+      const pricing = getPricing();
+      if (pricing.notifyOnPaidParty && cfg.contactEmail) {
+        const tpl = getEmailTemplates().newParty;
+        if (tpl) {
+          sendMail({
+            to: 'marc@fbc.fr',
+            subject: '💰 Paiement reçu — ' + (cfg.name || cfg.id),
+            htmlContent: fillTemplate(tpl.html, { eventName: cfg.name || '', eventId: cfg.id, contactEmail: cfg.contactEmail || '', partyDate: cfg.partyDate || '', plan: cfg.plan || '', theme: cfg.theme || '', consoleUrl: `${process.env.PUBLIC_URL || 'http://localhost:8080'}/e/${cfg.id}/admin` }),
+          }).catch(() => {});
+        }
+      }
+    } catch (e) { console.error('[notify] Erreur paiement:', e.message); }
+  }
   res.json({ ok: true, paymentStatus: cfg.paymentStatus });
 });
 
@@ -1190,6 +1224,7 @@ ev.post('/api/admin/action', (req, res) => {
     case 'reset': g.reset(); break;
     case 'setPhotoPhase': g.setPhotoPhase(payload.phase ?? null); break;
     case 'setPhotoChallenges': g.setPhotoChallenges(payload.challenges); break;
+    case 'setPhotoRemindMinutes': g.setPhotoRemindMinutes(payload.minutes); break;
     case 'blindtestAsk': g.blindtestAsk(); break;
     case 'spotlightOpenVote': g.spotlightOpenVote(); break;
     case 'spotlightTally': g.spotlightTally(); break;

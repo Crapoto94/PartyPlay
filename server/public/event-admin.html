@@ -1359,6 +1359,13 @@ function photoCtl(st){
     <div class="row">
       <button class="btn" onclick="applyPhotoChallenges()">✅ Appliquer les défis cochés</button>
       <button class="btn secondary" onclick="if(confirm('Tirer 3 défis au hasard ? Les photos déjà prises seront réinitialisées.'))act('setPhotoChallenges',{challenges:null})">🎲 3 au hasard</button>
+    </div>
+    <div class="row" style="margin-top:10px;align-items:center;gap:8px">
+      <span class="muted" style="font-size:12.5px">⏰ Relance « pense à tes photos » :</span>
+      <select onchange="act('setPhotoRemindMinutes',{minutes:parseInt(this.value,10)})" style="padding:4px 8px">
+        ${[[0,'Désactivée'],[30,'30 min'],[60,'1 h'],[90,'1 h 30'],[120,'2 h'],[180,'3 h']].map(([v,l])=>`<option value="${v}" ${Number(st.photoRemindMinutes)===v?'selected':''}>${l}</option>`).join('')}
+      </select>
+      <span class="muted" style="font-size:11.5px">après le début de la fête</span>
     </div>`;
 }
 function applyPhotoChallenges(){
