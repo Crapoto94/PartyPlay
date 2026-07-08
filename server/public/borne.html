@@ -743,13 +743,11 @@ function ttcqBorne(act){
   }
   else if (act.sub==='bet'){
     body = `${pill}${themeHtml}
-      <p class="big neon-cyan blink">Chaque joueur mise sur son téléphone 📱</p>
-      <div class="huge pixel" style="margin-top:8px">${act.betCount} / ${act.playerCount} ont misé</div>`;
+      <p class="big neon-cyan blink">Chaque joueur mise sur son téléphone 📱</p>`;
   }
   else if (act.sub==='answer'){
     body = `${pill}${themeHtml}
-      <p class="big neon-cyan blink">Questions en cours — répondez sur vos téléphones 📱</p>
-      <div class="huge pixel" style="margin-top:8px">${act.answerCount} / ${act.playerCount} ont répondu</div>`;
+      <p class="big neon-cyan blink">Questions en cours — répondez sur vos téléphones 📱</p>`;
   }
   else if (act.sub==='reveal'){
     const res = act.results||{};
@@ -780,9 +778,12 @@ function ttcqBorne(act){
   }
   else body = pill;
 
+  const counterHtml = (act.sub==='bet'||act.sub==='answer')
+    ? `<div class="muted pixel center" style="font-size:13px;padding:6px 0">${act.sub==='bet'?act.betCount:act.answerCount} / ${act.playerCount} ${act.sub==='bet'?'ont misé':'ont répondu'}</div>`
+    : '';
   return `<div style="display:flex;gap:16px;align-items:flex-start;height:100%;padding:0 6px">
     <div style="flex:1;min-width:0;overflow:hidden">${body}${boardHtml}</div>
-    <div style="width:280px;flex-shrink:0;text-align:left">${scores}</div>
+    <div style="width:280px;flex-shrink:0;text-align:left">${scores}${counterHtml}</div>
   </div>`;
 }
 function ttcqLeaderboardHtml(board){

@@ -8,7 +8,7 @@ export const TTCQ_THEMES = [
  {
   "id": "culture_001",
   "cat": "culture",
-  "name": "La France",
+  "name": "France",
   "level": "classique",
   "levels": [
    {
@@ -67,7 +67,7 @@ export const TTCQ_THEMES = [
  {
   "id": "culture_002",
   "cat": "culture",
-  "name": "Les États-Unis",
+  "name": "États-Unis",
   "level": "classique",
   "levels": [
    {
@@ -132,7 +132,7 @@ export const TTCQ_THEMES = [
  {
   "id": "culture_003",
   "cat": "culture",
-  "name": "L'Allemagne",
+  "name": "Allemagne",
   "level": "classique",
   "levels": [
    {
@@ -197,7 +197,7 @@ export const TTCQ_THEMES = [
  {
   "id": "culture_004",
   "cat": "culture",
-  "name": "L'Espagne",
+  "name": "Espagne",
   "level": "classique",
   "levels": [
    {
@@ -250,7 +250,7 @@ export const TTCQ_THEMES = [
  {
   "id": "culture_005",
   "cat": "culture",
-  "name": "La Chine",
+  "name": "Chine",
   "level": "classique",
   "levels": [
    {
@@ -315,7 +315,7 @@ export const TTCQ_THEMES = [
  {
   "id": "culture_006",
   "cat": "culture",
-  "name": "Le Brésil",
+  "name": "Brésil",
   "level": "classique",
   "levels": [
    {
@@ -374,7 +374,7 @@ export const TTCQ_THEMES = [
  {
   "id": "culture_007",
   "cat": "culture",
-  "name": "L'Inde",
+  "name": "Inde",
   "level": "classique",
   "levels": [
    {
@@ -433,7 +433,7 @@ export const TTCQ_THEMES = [
  {
   "id": "culture_008",
   "cat": "culture",
-  "name": "La Russie",
+  "name": "Russie",
   "level": "classique",
   "levels": [
    {
@@ -492,7 +492,7 @@ export const TTCQ_THEMES = [
  {
   "id": "culture_009",
   "cat": "culture",
-  "name": "Le Canada",
+  "name": "Canada",
   "level": "classique",
   "levels": [
    {
@@ -545,7 +545,7 @@ export const TTCQ_THEMES = [
  {
   "id": "culture_010",
   "cat": "culture",
-  "name": "L'Australie",
+  "name": "Australie",
   "level": "classique",
   "levels": [
    {
@@ -598,7 +598,7 @@ export const TTCQ_THEMES = [
  {
   "id": "culture_011",
   "cat": "culture",
-  "name": "Le Mexique",
+  "name": "Mexique",
   "level": "classique",
   "levels": [
    {
@@ -669,7 +669,7 @@ export const TTCQ_THEMES = [
  {
   "id": "culture_012",
   "cat": "culture",
-  "name": "L'Égypte",
+  "name": "Égypte",
   "level": "classique",
   "levels": [
    {
@@ -740,7 +740,7 @@ export const TTCQ_THEMES = [
  {
   "id": "culture_013",
   "cat": "culture",
-  "name": "La Grèce",
+  "name": "Grèce",
   "level": "classique",
   "levels": [
    {
@@ -799,7 +799,7 @@ export const TTCQ_THEMES = [
  {
   "id": "culture_014",
   "cat": "culture",
-  "name": "La Turquie",
+  "name": "Turquie",
   "level": "classique",
   "levels": [
    {
@@ -870,7 +870,7 @@ export const TTCQ_THEMES = [
  {
   "id": "culture_015",
   "cat": "culture",
-  "name": "La Suisse",
+  "name": "Suisse",
   "level": "classique",
   "levels": [
    {
@@ -941,7 +941,7 @@ export const TTCQ_THEMES = [
  {
   "id": "culture_016",
   "cat": "culture",
-  "name": "La Belgique",
+  "name": "Belgique",
   "level": "classique",
   "levels": [
    {
@@ -1006,7 +1006,7 @@ export const TTCQ_THEMES = [
  {
   "id": "culture_017",
   "cat": "culture",
-  "name": "Les Pays-Bas",
+  "name": "Pays-Bas",
   "level": "classique",
   "levels": [
    {
@@ -1077,7 +1077,7 @@ export const TTCQ_THEMES = [
  {
   "id": "culture_018",
   "cat": "culture",
-  "name": "La Suède",
+  "name": "Suède",
   "level": "classique",
   "levels": [
    {
@@ -1142,7 +1142,7 @@ export const TTCQ_THEMES = [
  {
   "id": "culture_019",
   "cat": "culture",
-  "name": "La Norvège",
+  "name": "Norvège",
   "level": "classique",
   "levels": [
    {
@@ -1213,7 +1213,7 @@ export const TTCQ_THEMES = [
  {
   "id": "culture_020",
   "cat": "culture",
-  "name": "Le Portugal",
+  "name": "Portugal",
   "level": "classique",
   "levels": [
    {
@@ -1284,7 +1284,7 @@ export const TTCQ_THEMES = [
  {
   "id": "culture_021",
   "cat": "culture",
-  "name": "L'Argentine",
+  "name": "Argentine",
   "level": "classique",
   "levels": [
    {
@@ -1355,7 +1355,7 @@ export const TTCQ_THEMES = [
  {
   "id": "culture_022",
   "cat": "culture",
-  "name": "La Corée du Sud",
+  "name": "Corée du Sud",
   "level": "classique",
   "levels": [
    {
@@ -1432,7 +1432,7 @@ export const TTCQ_THEMES = [
  {
   "id": "culture_023",
   "cat": "culture",
-  "name": "L'Afrique du Sud",
+  "name": "Afrique du Sud",
   "level": "classique",
   "levels": [
    {
@@ -1497,7 +1497,7 @@ export const TTCQ_THEMES = [
  {
   "id": "culture_024",
   "cat": "culture",
-  "name": "Le Maroc",
+  "name": "Maroc",
   "level": "classique",
   "levels": [
    {
@@ -1562,7 +1562,7 @@ export const TTCQ_THEMES = [
  {
   "id": "culture_025",
   "cat": "culture",
-  "name": "La Thaïlande",
+  "name": "Thaïlande",
   "level": "classique",
   "levels": [
    {
@@ -1698,7 +1698,7 @@ export const TTCQ_THEMES = [
  {
   "id": "culture_027",
   "cat": "culture",
-  "name": "Le Chili",
+  "name": "Chili",
   "level": "classique",
   "levels": [
    {
@@ -6042,7 +6042,7 @@ export const TTCQ_THEMES = [
  {
   "id": "animaux_001",
   "cat": "animaux",
-  "name": "Les chiens",
+  "name": "chiens",
   "level": "classique",
   "levels": [
    {
@@ -6119,7 +6119,7 @@ export const TTCQ_THEMES = [
  {
   "id": "animaux_002",
   "cat": "animaux",
-  "name": "Les chats",
+  "name": "chats",
   "level": "classique",
   "levels": [
    {
@@ -6202,7 +6202,7 @@ export const TTCQ_THEMES = [
  {
   "id": "animaux_003",
   "cat": "animaux",
-  "name": "Les oiseaux",
+  "name": "oiseaux",
   "level": "classique",
   "levels": [
    {
@@ -6285,7 +6285,7 @@ export const TTCQ_THEMES = [
  {
   "id": "animaux_004",
   "cat": "animaux",
-  "name": "Les poissons",
+  "name": "poissons",
   "level": "classique",
   "levels": [
    {
@@ -6368,7 +6368,7 @@ export const TTCQ_THEMES = [
  {
   "id": "animaux_005",
   "cat": "animaux",
-  "name": "Les chevaux",
+  "name": "chevaux",
   "level": "classique",
   "levels": [
    {
@@ -6451,7 +6451,7 @@ export const TTCQ_THEMES = [
  {
   "id": "animaux_006",
   "cat": "animaux",
-  "name": "Les dauphins",
+  "name": "dauphins",
   "level": "classique",
   "levels": [
    {
@@ -6534,7 +6534,7 @@ export const TTCQ_THEMES = [
  {
   "id": "animaux_007",
   "cat": "animaux",
-  "name": "Les insectes",
+  "name": "insectes",
   "level": "classique",
   "levels": [
    {
@@ -6611,7 +6611,7 @@ export const TTCQ_THEMES = [
  {
   "id": "animaux_008",
   "cat": "animaux",
-  "name": "Les serpents",
+  "name": "serpents",
   "level": "classique",
   "levels": [
    {
@@ -6694,7 +6694,7 @@ export const TTCQ_THEMES = [
  {
   "id": "animaux_009",
   "cat": "animaux",
-  "name": "Les ours",
+  "name": "ours",
   "level": "classique",
   "levels": [
    {
@@ -6771,7 +6771,7 @@ export const TTCQ_THEMES = [
  {
   "id": "animaux_010",
   "cat": "animaux",
-  "name": "Les requins",
+  "name": "requins",
   "level": "classique",
   "levels": [
    {
@@ -6854,7 +6854,7 @@ export const TTCQ_THEMES = [
  {
   "id": "musique_001",
   "cat": "musique",
-  "name": "Le Rock",
+  "name": "Rock",
   "level": "classique",
   "levels": [
    {
@@ -6937,7 +6937,7 @@ export const TTCQ_THEMES = [
  {
   "id": "musique_002",
   "cat": "musique",
-  "name": "Le Jazz",
+  "name": "Jazz",
   "level": "classique",
   "levels": [
    {
@@ -7020,7 +7020,7 @@ export const TTCQ_THEMES = [
  {
   "id": "musique_003",
   "cat": "musique",
-  "name": "Le Rap",
+  "name": "Rap",
   "level": "classique",
   "levels": [
    {
@@ -7103,7 +7103,7 @@ export const TTCQ_THEMES = [
  {
   "id": "musique_004",
   "cat": "musique",
-  "name": "La Pop",
+  "name": "Pop",
   "level": "classique",
   "levels": [
    {
@@ -7186,7 +7186,7 @@ export const TTCQ_THEMES = [
  {
   "id": "musique_005",
   "cat": "musique",
-  "name": "Le Classique",
+  "name": "Classique",
   "level": "classique",
   "levels": [
    {
@@ -7269,7 +7269,7 @@ export const TTCQ_THEMES = [
  {
   "id": "musique_006",
   "cat": "musique",
-  "name": "Le Blues",
+  "name": "Blues",
   "level": "classique",
   "levels": [
    {
@@ -7352,7 +7352,7 @@ export const TTCQ_THEMES = [
  {
   "id": "musique_007",
   "cat": "musique",
-  "name": "Le Reggae",
+  "name": "Reggae",
   "level": "classique",
   "levels": [
    {
@@ -7435,7 +7435,7 @@ export const TTCQ_THEMES = [
  {
   "id": "musique_008",
   "cat": "musique",
-  "name": "La Soul",
+  "name": "Soul",
   "level": "classique",
   "levels": [
    {
@@ -7518,7 +7518,7 @@ export const TTCQ_THEMES = [
  {
   "id": "musique_009",
   "cat": "musique",
-  "name": "Le Metal",
+  "name": "Metal",
   "level": "classique",
   "levels": [
    {
@@ -7601,7 +7601,7 @@ export const TTCQ_THEMES = [
  {
   "id": "musique_010",
   "cat": "musique",
-  "name": "Le Punk",
+  "name": "Punk",
   "level": "classique",
   "levels": [
    {
@@ -7684,7 +7684,7 @@ export const TTCQ_THEMES = [
  {
   "id": "musique_011",
   "cat": "musique",
-  "name": "Le Folk",
+  "name": "Folk",
   "level": "classique",
   "levels": [
    {
@@ -7767,7 +7767,7 @@ export const TTCQ_THEMES = [
  {
   "id": "musique_012",
   "cat": "musique",
-  "name": "L'Électro",
+  "name": "Électro",
   "level": "classique",
   "levels": [
    {
@@ -7850,7 +7850,7 @@ export const TTCQ_THEMES = [
  {
   "id": "musique_013",
   "cat": "musique",
-  "name": "Le R&B",
+  "name": "R&B",
   "level": "classique",
   "levels": [
    {
@@ -7933,7 +7933,7 @@ export const TTCQ_THEMES = [
  {
   "id": "musique_014",
   "cat": "musique",
-  "name": "La Country",
+  "name": "Country",
   "level": "classique",
   "levels": [
    {
@@ -8016,7 +8016,7 @@ export const TTCQ_THEMES = [
  {
   "id": "musique_015",
   "cat": "musique",
-  "name": "Le Funk",
+  "name": "Funk",
   "level": "classique",
   "levels": [
    {
@@ -8099,7 +8099,7 @@ export const TTCQ_THEMES = [
  {
   "id": "musique_016",
   "cat": "musique",
-  "name": "Le Disco",
+  "name": "Disco",
   "level": "classique",
   "levels": [
    {
@@ -8182,7 +8182,7 @@ export const TTCQ_THEMES = [
  {
   "id": "musique_017",
   "cat": "musique",
-  "name": "Le Gospel",
+  "name": "Gospel",
   "level": "classique",
   "levels": [
    {
@@ -8271,7 +8271,7 @@ export const TTCQ_THEMES = [
  {
   "id": "musique_018",
   "cat": "musique",
-  "name": "Le Flamenco",
+  "name": "Flamenco",
   "level": "classique",
   "levels": [
    {
@@ -8354,7 +8354,7 @@ export const TTCQ_THEMES = [
  {
   "id": "musique_019",
   "cat": "musique",
-  "name": "Le Salsa",
+  "name": "Salsa",
   "level": "classique",
   "levels": [
    {
@@ -8437,7 +8437,7 @@ export const TTCQ_THEMES = [
  {
   "id": "musique_020",
   "cat": "musique",
-  "name": "Le Calypso",
+  "name": "Calypso",
   "level": "classique",
   "levels": [
    {
@@ -8526,7 +8526,7 @@ export const TTCQ_THEMES = [
  {
   "id": "musique_021",
   "cat": "musique",
-  "name": "Le Bhangra",
+  "name": "Bhangra",
   "level": "classique",
   "levels": [
    {
@@ -8615,7 +8615,7 @@ export const TTCQ_THEMES = [
  {
   "id": "musique_022",
   "cat": "musique",
-  "name": "Le Fado",
+  "name": "Fado",
   "level": "classique",
   "levels": [
    {
@@ -8698,7 +8698,7 @@ export const TTCQ_THEMES = [
  {
   "id": "histoire_001",
   "cat": "histoire",
-  "name": "La Révolution française",
+  "name": "Révolution française",
   "level": "classique",
   "levels": [
    {
@@ -8781,7 +8781,7 @@ export const TTCQ_THEMES = [
  {
   "id": "histoire_002",
   "cat": "histoire",
-  "name": "La Rome antique",
+  "name": "Rome antique",
   "level": "classique",
   "levels": [
    {
@@ -8864,7 +8864,7 @@ export const TTCQ_THEMES = [
  {
   "id": "histoire_003",
   "cat": "histoire",
-  "name": "L'Égypte ancienne",
+  "name": "Égypte ancienne",
   "level": "classique",
   "levels": [
    {
@@ -8947,7 +8947,7 @@ export const TTCQ_THEMES = [
  {
   "id": "histoire_004",
   "cat": "histoire",
-  "name": "La Guerre froide",
+  "name": "Guerre froide",
   "level": "classique",
   "levels": [
    {
@@ -9030,7 +9030,7 @@ export const TTCQ_THEMES = [
  {
   "id": "histoire_005",
   "cat": "histoire",
-  "name": "La Renaissance",
+  "name": "Renaissance",
   "level": "classique",
   "levels": [
    {
@@ -9113,7 +9113,7 @@ export const TTCQ_THEMES = [
  {
   "id": "histoire_006",
   "cat": "histoire",
-  "name": "Les Vikings",
+  "name": "Vikings",
   "level": "classique",
   "levels": [
    {
@@ -9196,7 +9196,7 @@ export const TTCQ_THEMES = [
  {
   "id": "histoire_007",
   "cat": "histoire",
-  "name": "La Chine ancienne",
+  "name": "Chine ancienne",
   "level": "classique",
   "levels": [
    {
@@ -9279,7 +9279,7 @@ export const TTCQ_THEMES = [
  {
   "id": "histoire_008",
   "cat": "histoire",
-  "name": "La Seconde Guerre mondiale",
+  "name": "Seconde Guerre mondiale",
   "level": "classique",
   "levels": [
    {
@@ -9362,7 +9362,7 @@ export const TTCQ_THEMES = [
  {
   "id": "histoire_009",
   "cat": "histoire",
-  "name": "La Grèce antique",
+  "name": "Grèce antique",
   "level": "classique",
   "levels": [
    {
@@ -9445,7 +9445,7 @@ export const TTCQ_THEMES = [
  {
   "id": "histoire_010",
   "cat": "histoire",
-  "name": "L'Empire byzantin",
+  "name": "Empire byzantin",
   "level": "classique",
   "levels": [
    {
@@ -9528,7 +9528,7 @@ export const TTCQ_THEMES = [
  {
   "id": "histoire_011",
   "cat": "histoire",
-  "name": "La Guerre du Vietnam",
+  "name": "Guerre du Vietnam",
   "level": "classique",
   "levels": [
    {
@@ -9611,7 +9611,7 @@ export const TTCQ_THEMES = [
  {
   "id": "histoire_012",
   "cat": "histoire",
-  "name": "La Révolution industrielle",
+  "name": "Révolution industrielle",
   "level": "classique",
   "levels": [
    {
@@ -9694,7 +9694,7 @@ export const TTCQ_THEMES = [
  {
   "id": "histoire_013",
   "cat": "histoire",
-  "name": "Les Croisades",
+  "name": "Croisades",
   "level": "classique",
   "levels": [
    {
@@ -9771,7 +9771,7 @@ export const TTCQ_THEMES = [
  {
   "id": "histoire_014",
   "cat": "histoire",
-  "name": "La Guerre de Cent Ans",
+  "name": "Guerre de Cent Ans",
   "level": "classique",
   "levels": [
    {
@@ -9854,7 +9854,7 @@ export const TTCQ_THEMES = [
  {
   "id": "histoire_015",
   "cat": "histoire",
-  "name": "La Chute de Berlin",
+  "name": "Chute de Berlin",
   "level": "classique",
   "levels": [
    {
@@ -9937,7 +9937,7 @@ export const TTCQ_THEMES = [
  {
   "id": "histoire_016",
   "cat": "histoire",
-  "name": "La Conquête spatiale",
+  "name": "Conquête spatiale",
   "level": "classique",
   "levels": [
    {
@@ -10020,7 +10020,7 @@ export const TTCQ_THEMES = [
  {
   "id": "histoire_017",
   "cat": "histoire",
-  "name": "L'Empire aztèque",
+  "name": "Empire aztèque",
   "level": "classique",
   "levels": [
    {
@@ -10103,7 +10103,7 @@ export const TTCQ_THEMES = [
  {
   "id": "histoire_018",
   "cat": "histoire",
-  "name": "La Révolution russe",
+  "name": "Révolution russe",
   "level": "classique",
   "levels": [
    {
@@ -10186,7 +10186,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sciences_001",
   "cat": "sciences",
-  "name": "L'Électricité",
+  "name": "Électricité",
   "level": "classique",
   "levels": [
    {
@@ -10269,7 +10269,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sciences_002",
   "cat": "sciences",
-  "name": "La Gravité",
+  "name": "Gravité",
   "level": "classique",
   "levels": [
    {
@@ -10352,7 +10352,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sciences_003",
   "cat": "sciences",
-  "name": "La Théorie de l'évolution",
+  "name": "Théorie de l'évolution",
   "level": "classique",
   "levels": [
    {
@@ -10435,7 +10435,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sciences_004",
   "cat": "sciences",
-  "name": "La Radioactivité",
+  "name": "Radioactivité",
   "level": "classique",
   "levels": [
    {
@@ -10518,7 +10518,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sciences_005",
   "cat": "sciences",
-  "name": "Les trous noirs",
+  "name": "trous noirs",
   "level": "classique",
   "levels": [
    {
@@ -10601,7 +10601,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sciences_006",
   "cat": "sciences",
-  "name": "La Photosynthèse",
+  "name": "Photosynthèse",
   "level": "classique",
   "levels": [
    {
@@ -10684,7 +10684,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sciences_007",
   "cat": "sciences",
-  "name": "La Relativité",
+  "name": "Relativité",
   "level": "classique",
   "levels": [
    {
@@ -10767,7 +10767,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sciences_008",
   "cat": "sciences",
-  "name": "L'ADN",
+  "name": "ADN",
   "level": "classique",
   "levels": [
    {
@@ -10850,7 +10850,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sciences_009",
   "cat": "sciences",
-  "name": "Les volcans",
+  "name": "volcans",
   "level": "classique",
   "levels": [
    {
@@ -10933,7 +10933,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sciences_010",
   "cat": "sciences",
-  "name": "La Mécanique quantique",
+  "name": "Mécanique quantique",
   "level": "classique",
   "levels": [
    {
@@ -11016,7 +11016,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sciences_011",
   "cat": "sciences",
-  "name": "Le système solaire",
+  "name": "système solaire",
   "level": "classique",
   "levels": [
    {
@@ -11099,7 +11099,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sciences_012",
   "cat": "sciences",
-  "name": "Les aimants",
+  "name": "aimants",
   "level": "classique",
   "levels": [
    {
@@ -11182,7 +11182,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sciences_013",
   "cat": "sciences",
-  "name": "La Thermodynamique",
+  "name": "Thermodynamique",
   "level": "classique",
   "levels": [
    {
@@ -11253,7 +11253,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sciences_014",
   "cat": "sciences",
-  "name": "Les atomes",
+  "name": "atomes",
   "level": "classique",
   "levels": [
    {
@@ -11336,7 +11336,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sciences_015",
   "cat": "sciences",
-  "name": "Les virus",
+  "name": "virus",
   "level": "classique",
   "levels": [
    {
@@ -11419,7 +11419,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sciences_016",
   "cat": "sciences",
-  "name": "Les nombres premiers",
+  "name": "nombres premiers",
   "level": "classique",
   "levels": [
    {
@@ -11490,7 +11490,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sciences_017",
   "cat": "sciences",
-  "name": "La Fission nucléaire",
+  "name": "Fission nucléaire",
   "level": "classique",
   "levels": [
    {
@@ -11573,7 +11573,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sciences_018",
   "cat": "sciences",
-  "name": "Les cristaux",
+  "name": "cristaux",
   "level": "classique",
   "levels": [
    {
@@ -11656,7 +11656,7 @@ export const TTCQ_THEMES = [
  {
   "id": "arts_001",
   "cat": "arts",
-  "name": "La Peinture",
+  "name": "Peinture",
   "level": "classique",
   "levels": [
    {
@@ -11745,7 +11745,7 @@ export const TTCQ_THEMES = [
  {
   "id": "arts_002",
   "cat": "arts",
-  "name": "La Sculpture",
+  "name": "Sculpture",
   "level": "classique",
   "levels": [
    {
@@ -11828,7 +11828,7 @@ export const TTCQ_THEMES = [
  {
   "id": "arts_003",
   "cat": "arts",
-  "name": "La Poésie",
+  "name": "Poésie",
   "level": "classique",
   "levels": [
    {
@@ -11911,7 +11911,7 @@ export const TTCQ_THEMES = [
  {
   "id": "arts_004",
   "cat": "arts",
-  "name": "La Photographie",
+  "name": "Photographie",
   "level": "classique",
   "levels": [
    {
@@ -11994,7 +11994,7 @@ export const TTCQ_THEMES = [
  {
   "id": "arts_005",
   "cat": "arts",
-  "name": "Le Théâtre",
+  "name": "Théâtre",
   "level": "classique",
   "levels": [
    {
@@ -12077,7 +12077,7 @@ export const TTCQ_THEMES = [
  {
   "id": "arts_006",
   "cat": "arts",
-  "name": "L'Architecture",
+  "name": "Architecture",
   "level": "classique",
   "levels": [
    {
@@ -12160,7 +12160,7 @@ export const TTCQ_THEMES = [
  {
   "id": "arts_007",
   "cat": "arts",
-  "name": "La Bande dessinée",
+  "name": "Bande dessinée",
   "level": "classique",
   "levels": [
    {
@@ -12243,7 +12243,7 @@ export const TTCQ_THEMES = [
  {
   "id": "arts_008",
   "cat": "arts",
-  "name": "La Calligraphie",
+  "name": "Calligraphie",
   "level": "classique",
   "levels": [
    {
@@ -12332,7 +12332,7 @@ export const TTCQ_THEMES = [
  {
   "id": "arts_009",
   "cat": "arts",
-  "name": "La Danse",
+  "name": "Danse",
   "level": "classique",
   "levels": [
    {
@@ -12421,7 +12421,7 @@ export const TTCQ_THEMES = [
  {
   "id": "arts_010",
   "cat": "arts",
-  "name": "L'Opéra",
+  "name": "Opéra",
   "level": "classique",
   "levels": [
    {
@@ -12510,7 +12510,7 @@ export const TTCQ_THEMES = [
  {
   "id": "arts_011",
   "cat": "arts",
-  "name": "Le Cinéma muet",
+  "name": "Cinéma muet",
   "level": "classique",
   "levels": [
    {
@@ -12593,7 +12593,7 @@ export const TTCQ_THEMES = [
  {
   "id": "arts_012",
   "cat": "arts",
-  "name": "La Céramique",
+  "name": "Céramique",
   "level": "classique",
   "levels": [
    {
@@ -12676,7 +12676,7 @@ export const TTCQ_THEMES = [
  {
   "id": "arts_013",
   "cat": "arts",
-  "name": "La Mosaïque",
+  "name": "Mosaïque",
   "level": "classique",
   "levels": [
    {
@@ -12765,7 +12765,7 @@ export const TTCQ_THEMES = [
  {
   "id": "arts_014",
   "cat": "arts",
-  "name": "Le Street art",
+  "name": "Street art",
   "level": "classique",
   "levels": [
    {
@@ -12854,7 +12854,7 @@ export const TTCQ_THEMES = [
  {
   "id": "cuisine_001",
   "cat": "cuisine",
-  "name": "La Pizza",
+  "name": "Pizza",
   "level": "classique",
   "levels": [
    {
@@ -12937,7 +12937,7 @@ export const TTCQ_THEMES = [
  {
   "id": "cuisine_002",
   "cat": "cuisine",
-  "name": "Le Chocolat",
+  "name": "Chocolat",
   "level": "classique",
   "levels": [
    {
@@ -13020,7 +13020,7 @@ export const TTCQ_THEMES = [
  {
   "id": "cuisine_003",
   "cat": "cuisine",
-  "name": "Le Fromage",
+  "name": "Fromage",
   "level": "classique",
   "levels": [
    {
@@ -13103,7 +13103,7 @@ export const TTCQ_THEMES = [
  {
   "id": "cuisine_004",
   "cat": "cuisine",
-  "name": "Le Vin",
+  "name": "Vin",
   "level": "classique",
   "levels": [
    {
@@ -13186,7 +13186,7 @@ export const TTCQ_THEMES = [
  {
   "id": "cuisine_005",
   "cat": "cuisine",
-  "name": "La Pâtisserie",
+  "name": "Pâtisserie",
   "level": "classique",
   "levels": [
    {
@@ -13269,7 +13269,7 @@ export const TTCQ_THEMES = [
  {
   "id": "cuisine_006",
   "cat": "cuisine",
-  "name": "Le Pain",
+  "name": "Pain",
   "level": "classique",
   "levels": [
    {
@@ -13352,7 +13352,7 @@ export const TTCQ_THEMES = [
  {
   "id": "cuisine_007",
   "cat": "cuisine",
-  "name": "La Cuisine asiatique",
+  "name": "Cuisine asiatique",
   "level": "classique",
   "levels": [
    {
@@ -13435,7 +13435,7 @@ export const TTCQ_THEMES = [
  {
   "id": "cuisine_008",
   "cat": "cuisine",
-  "name": "Le Café",
+  "name": "Café",
   "level": "classique",
   "levels": [
    {
@@ -13518,7 +13518,7 @@ export const TTCQ_THEMES = [
  {
   "id": "cuisine_009",
   "cat": "cuisine",
-  "name": "Les pâtes",
+  "name": "pâtes",
   "level": "classique",
   "levels": [
    {
@@ -13601,7 +13601,7 @@ export const TTCQ_THEMES = [
  {
   "id": "cuisine_010",
   "cat": "cuisine",
-  "name": "La Bière",
+  "name": "Bière",
   "level": "classique",
   "levels": [
    {
@@ -13684,7 +13684,7 @@ export const TTCQ_THEMES = [
  {
   "id": "cuisine_011",
   "cat": "cuisine",
-  "name": "La Gastronomie française",
+  "name": "Gastronomie française",
   "level": "classique",
   "levels": [
    {
@@ -13767,7 +13767,7 @@ export const TTCQ_THEMES = [
  {
   "id": "cuisine_012",
   "cat": "cuisine",
-  "name": "Les épices",
+  "name": "épices",
   "level": "classique",
   "levels": [
    {
@@ -13850,7 +13850,7 @@ export const TTCQ_THEMES = [
  {
   "id": "cuisine_013",
   "cat": "cuisine",
-  "name": "Les sushis",
+  "name": "sushis",
   "level": "classique",
   "levels": [
    {
@@ -13939,7 +13939,7 @@ export const TTCQ_THEMES = [
  {
   "id": "cuisine_014",
   "cat": "cuisine",
-  "name": "Les barbecues",
+  "name": "barbecues",
   "level": "classique",
   "levels": [
    {
@@ -14022,7 +14022,7 @@ export const TTCQ_THEMES = [
  {
   "id": "tech_001",
   "cat": "tech",
-  "name": "Les smartphones",
+  "name": "smartphones",
   "level": "classique",
   "levels": [
    {
@@ -14188,7 +14188,7 @@ export const TTCQ_THEMES = [
  {
   "id": "tech_003",
   "cat": "tech",
-  "name": "L'Intelligence artificielle",
+  "name": "Intelligence artificielle",
   "level": "classique",
   "levels": [
    {
@@ -14271,7 +14271,7 @@ export const TTCQ_THEMES = [
  {
   "id": "tech_004",
   "cat": "tech",
-  "name": "Les jeux vidéo",
+  "name": "jeux vidéo",
   "level": "classique",
   "levels": [
    {
@@ -14354,7 +14354,7 @@ export const TTCQ_THEMES = [
  {
   "id": "tech_005",
   "cat": "tech",
-  "name": "La réalité virtuelle",
+  "name": "réalité virtuelle",
   "level": "classique",
   "levels": [
    {
@@ -14437,7 +14437,7 @@ export const TTCQ_THEMES = [
  {
   "id": "tech_006",
   "cat": "tech",
-  "name": "Les réseaux sociaux",
+  "name": "réseaux sociaux",
   "level": "classique",
   "levels": [
    {
@@ -14520,7 +14520,7 @@ export const TTCQ_THEMES = [
  {
   "id": "tech_007",
   "cat": "tech",
-  "name": "La robotique",
+  "name": "robotique",
   "level": "classique",
   "levels": [
    {
@@ -14603,7 +14603,7 @@ export const TTCQ_THEMES = [
  {
   "id": "tech_008",
   "cat": "tech",
-  "name": "Le cloud computing",
+  "name": "cloud computing",
   "level": "classique",
   "levels": [
    {
@@ -14686,7 +14686,7 @@ export const TTCQ_THEMES = [
  {
   "id": "tech_009",
   "cat": "tech",
-  "name": "La cryptographie",
+  "name": "cryptographie",
   "level": "classique",
   "levels": [
    {
@@ -14769,7 +14769,7 @@ export const TTCQ_THEMES = [
  {
   "id": "tech_010",
   "cat": "tech",
-  "name": "Les drones",
+  "name": "drones",
   "level": "classique",
   "levels": [
    {
@@ -14852,7 +14852,7 @@ export const TTCQ_THEMES = [
  {
   "id": "tech_011",
   "cat": "tech",
-  "name": "L'impression 3D",
+  "name": "impression 3D",
   "level": "classique",
   "levels": [
    {
@@ -14935,7 +14935,7 @@ export const TTCQ_THEMES = [
  {
   "id": "tech_012",
   "cat": "tech",
-  "name": "Les batteries",
+  "name": "batteries",
   "level": "classique",
   "levels": [
    {
@@ -15018,7 +15018,7 @@ export const TTCQ_THEMES = [
  {
   "id": "tech_013",
   "cat": "tech",
-  "name": "Les LED",
+  "name": "LED",
   "level": "classique",
   "levels": [
    {
@@ -15101,7 +15101,7 @@ export const TTCQ_THEMES = [
  {
   "id": "tech_014",
   "cat": "tech",
-  "name": "Les panneaux solaires",
+  "name": "panneaux solaires",
   "level": "classique",
   "levels": [
    {
@@ -15184,7 +15184,7 @@ export const TTCQ_THEMES = [
  {
   "id": "tech_015",
   "cat": "tech",
-  "name": "La 5G",
+  "name": "5G",
   "level": "classique",
   "levels": [
    {
@@ -15267,7 +15267,7 @@ export const TTCQ_THEMES = [
  {
   "id": "tech_016",
   "cat": "tech",
-  "name": "Les moteurs électriques",
+  "name": "moteurs électriques",
   "level": "classique",
   "levels": [
    {
@@ -15350,7 +15350,7 @@ export const TTCQ_THEMES = [
  {
   "id": "auto_001",
   "cat": "auto",
-  "name": "Les moteurs essence",
+  "name": "moteurs essence",
   "level": "classique",
   "levels": [
    {
@@ -15421,7 +15421,7 @@ export const TTCQ_THEMES = [
  {
   "id": "auto_002",
   "cat": "auto",
-  "name": "Les voitures électriques",
+  "name": "voitures électriques",
   "level": "classique",
   "levels": [
    {
@@ -15504,7 +15504,7 @@ export const TTCQ_THEMES = [
  {
   "id": "auto_003",
   "cat": "auto",
-  "name": "Les pneus",
+  "name": "pneus",
   "level": "classique",
   "levels": [
    {
@@ -15587,7 +15587,7 @@ export const TTCQ_THEMES = [
  {
   "id": "auto_004",
   "cat": "auto",
-  "name": "Les boîtes de vitesses",
+  "name": "boîtes de vitesses",
   "level": "classique",
   "levels": [
    {
@@ -15670,7 +15670,7 @@ export const TTCQ_THEMES = [
  {
   "id": "auto_005",
   "cat": "auto",
-  "name": "Le rallye",
+  "name": "rallye",
   "level": "classique",
   "levels": [
    {
@@ -15753,7 +15753,7 @@ export const TTCQ_THEMES = [
  {
   "id": "auto_006",
   "cat": "auto",
-  "name": "Les courses de dragsters",
+  "name": "courses de dragsters",
   "level": "classique",
   "levels": [
    {
@@ -15836,7 +15836,7 @@ export const TTCQ_THEMES = [
  {
   "id": "auto_007",
   "cat": "auto",
-  "name": "Les motos",
+  "name": "motos",
   "level": "classique",
   "levels": [
    {
@@ -15919,7 +15919,7 @@ export const TTCQ_THEMES = [
  {
   "id": "auto_008",
   "cat": "auto",
-  "name": "Le tuning",
+  "name": "tuning",
   "level": "classique",
   "levels": [
    {
@@ -16002,7 +16002,7 @@ export const TTCQ_THEMES = [
  {
   "id": "auto_009",
   "cat": "auto",
-  "name": "Le Mans",
+  "name": "Mans",
   "level": "classique",
   "levels": [
    {
@@ -16085,7 +16085,7 @@ export const TTCQ_THEMES = [
  {
   "id": "auto_010",
   "cat": "auto",
-  "name": "La Formule 1",
+  "name": "Formule 1",
   "level": "classique",
   "levels": [
    {
@@ -16168,7 +16168,7 @@ export const TTCQ_THEMES = [
  {
   "id": "tv_001",
   "cat": "tv",
-  "name": "Les séries télé françaises",
+  "name": "séries télé françaises",
   "level": "classique",
   "levels": [
    {
@@ -16251,7 +16251,7 @@ export const TTCQ_THEMES = [
  {
   "id": "tv_002",
   "cat": "tv",
-  "name": "Les séries Netflix",
+  "name": "séries Netflix",
   "level": "classique",
   "levels": [
    {
@@ -16334,7 +16334,7 @@ export const TTCQ_THEMES = [
  {
   "id": "tv_003",
   "cat": "tv",
-  "name": "Le Journal télévisé",
+  "name": "Journal télévisé",
   "level": "classique",
   "levels": [
    {
@@ -16417,7 +16417,7 @@ export const TTCQ_THEMES = [
  {
   "id": "tv_004",
   "cat": "tv",
-  "name": "Les jeux télévisés",
+  "name": "jeux télévisés",
   "level": "classique",
   "levels": [
    {
@@ -16494,7 +16494,7 @@ export const TTCQ_THEMES = [
  {
   "id": "tv_005",
   "cat": "tv",
-  "name": "Les talk-shows",
+  "name": "talk-shows",
   "level": "classique",
   "levels": [
    {
@@ -16577,7 +16577,7 @@ export const TTCQ_THEMES = [
  {
   "id": "tv_006",
   "cat": "tv",
-  "name": "Les séries animées",
+  "name": "séries animées",
   "level": "classique",
   "levels": [
    {
@@ -16660,7 +16660,7 @@ export const TTCQ_THEMES = [
  {
   "id": "tv_007",
   "cat": "tv",
-  "name": "La téléréalité",
+  "name": "téléréalité",
   "level": "classique",
   "levels": [
    {
@@ -16743,7 +16743,7 @@ export const TTCQ_THEMES = [
  {
   "id": "tv_008",
   "cat": "tv",
-  "name": "Les documentaires",
+  "name": "documentaires",
   "level": "classique",
   "levels": [
    {
@@ -16826,7 +16826,7 @@ export const TTCQ_THEMES = [
  {
   "id": "tv_009",
   "cat": "tv",
-  "name": "Les publicités",
+  "name": "publicités",
   "level": "classique",
   "levels": [
    {
@@ -16909,7 +16909,7 @@ export const TTCQ_THEMES = [
  {
   "id": "tv_010",
   "cat": "tv",
-  "name": "Les séries policières",
+  "name": "séries policières",
   "level": "classique",
   "levels": [
    {
@@ -16992,7 +16992,7 @@ export const TTCQ_THEMES = [
  {
   "id": "insolite_001",
   "cat": "insolite",
-  "name": "Les sitcoms",
+  "name": "sitcoms",
   "level": "classique",
   "levels": [
    {
@@ -17075,7 +17075,7 @@ export const TTCQ_THEMES = [
  {
   "id": "insolite_002",
   "cat": "insolite",
-  "name": "Les extrêmes météo",
+  "name": "extrêmes météo",
   "level": "classique",
   "levels": [
    {
@@ -17158,7 +17158,7 @@ export const TTCQ_THEMES = [
  {
   "id": "insolite_003",
   "cat": "insolite",
-  "name": "Les coïncidences",
+  "name": "coïncidences",
   "level": "classique",
   "levels": [
    {
@@ -17235,7 +17235,7 @@ export const TTCQ_THEMES = [
  {
   "id": "insolite_004",
   "cat": "insolite",
-  "name": "Les superstitions",
+  "name": "superstitions",
   "level": "classique",
   "levels": [
    {
@@ -17324,7 +17324,7 @@ export const TTCQ_THEMES = [
  {
   "id": "insolite_005",
   "cat": "insolite",
-  "name": "Les records insolites",
+  "name": "records insolites",
   "level": "classique",
   "levels": [
    {
@@ -17401,7 +17401,7 @@ export const TTCQ_THEMES = [
  {
   "id": "insolite_006",
   "cat": "insolite",
-  "name": "Les mystères",
+  "name": "mystères",
   "level": "classique",
   "levels": [
    {
@@ -17484,7 +17484,7 @@ export const TTCQ_THEMES = [
  {
   "id": "insolite_007",
   "cat": "insolite",
-  "name": "Les fêtes insolites",
+  "name": "fêtes insolites",
   "level": "classique",
   "levels": [
    {
@@ -17567,7 +17567,7 @@ export const TTCQ_THEMES = [
  {
   "id": "insolite_008",
   "cat": "insolite",
-  "name": "Les musées étranges",
+  "name": "musées étranges",
   "level": "classique",
   "levels": [
    {
@@ -17650,7 +17650,7 @@ export const TTCQ_THEMES = [
  {
   "id": "insolite_009",
   "cat": "insolite",
-  "name": "Les traditions bizarres",
+  "name": "traditions bizarres",
   "level": "classique",
   "levels": [
    {
@@ -17733,7 +17733,7 @@ export const TTCQ_THEMES = [
  {
   "id": "insolite_010",
   "cat": "insolite",
-  "name": "Les phénomènes paranormaux",
+  "name": "phénomènes paranormaux",
   "level": "classique",
   "levels": [
    {
@@ -17816,7 +17816,7 @@ export const TTCQ_THEMES = [
  {
   "id": "societe_001",
   "cat": "societe",
-  "name": "Les lois absurdes",
+  "name": "lois absurdes",
   "level": "classique",
   "levels": [
    {
@@ -17899,7 +17899,7 @@ export const TTCQ_THEMES = [
  {
   "id": "societe_002",
   "cat": "societe",
-  "name": "La Démocratie",
+  "name": "Démocratie",
   "level": "classique",
   "levels": [
    {
@@ -17982,7 +17982,7 @@ export const TTCQ_THEMES = [
  {
   "id": "societe_003",
   "cat": "societe",
-  "name": "L'Écologie",
+  "name": "Écologie",
   "level": "classique",
   "levels": [
    {
@@ -18065,7 +18065,7 @@ export const TTCQ_THEMES = [
  {
   "id": "societe_004",
   "cat": "societe",
-  "name": "L'Économie",
+  "name": "Économie",
   "level": "classique",
   "levels": [
    {
@@ -18148,7 +18148,7 @@ export const TTCQ_THEMES = [
  {
   "id": "societe_005",
   "cat": "societe",
-  "name": "Les droits humains",
+  "name": "droits humains",
   "level": "classique",
   "levels": [
    {
@@ -18231,7 +18231,7 @@ export const TTCQ_THEMES = [
  {
   "id": "societe_006",
   "cat": "societe",
-  "name": "La Mondialisation",
+  "name": "Mondialisation",
   "level": "classique",
   "levels": [
    {
@@ -18314,7 +18314,7 @@ export const TTCQ_THEMES = [
  {
   "id": "societe_007",
   "cat": "societe",
-  "name": "Les migrations",
+  "name": "migrations",
   "level": "classique",
   "levels": [
    {
@@ -18397,7 +18397,7 @@ export const TTCQ_THEMES = [
  {
   "id": "societe_008",
   "cat": "societe",
-  "name": "Les inégalités",
+  "name": "inégalités",
   "level": "classique",
   "levels": [
    {
@@ -18480,7 +18480,7 @@ export const TTCQ_THEMES = [
  {
   "id": "voyage_001",
   "cat": "societe",
-  "name": "La Laïcité",
+  "name": "Laïcité",
   "level": "classique",
   "levels": [
    {
@@ -18563,7 +18563,7 @@ export const TTCQ_THEMES = [
  {
   "id": "voyage_002",
   "cat": "voyage",
-  "name": "L'Europe",
+  "name": "Europe",
   "level": "classique",
   "levels": [
    {
@@ -18640,7 +18640,7 @@ export const TTCQ_THEMES = [
  {
   "id": "voyage_003",
   "cat": "voyage",
-  "name": "L'Asie",
+  "name": "Asie",
   "level": "classique",
   "levels": [
    {
@@ -18717,7 +18717,7 @@ export const TTCQ_THEMES = [
  {
   "id": "voyage_004",
   "cat": "voyage",
-  "name": "L'Afrique",
+  "name": "Afrique",
   "level": "classique",
   "levels": [
    {
@@ -18800,7 +18800,7 @@ export const TTCQ_THEMES = [
  {
   "id": "voyage_005",
   "cat": "voyage",
-  "name": "L'Amérique latine",
+  "name": "Amérique latine",
   "level": "classique",
   "levels": [
    {
@@ -18883,7 +18883,7 @@ export const TTCQ_THEMES = [
  {
   "id": "voyage_006",
   "cat": "voyage",
-  "name": "L'Océanie",
+  "name": "Océanie",
   "level": "classique",
   "levels": [
    {
@@ -18966,7 +18966,7 @@ export const TTCQ_THEMES = [
  {
   "id": "voyage_007",
   "cat": "voyage",
-  "name": "Le Moyen-Orient",
+  "name": "Moyen-Orient",
   "level": "classique",
   "levels": [
    {
@@ -19049,7 +19049,7 @@ export const TTCQ_THEMES = [
  {
   "id": "voyage_008",
   "cat": "voyage",
-  "name": "Les Caraïbes",
+  "name": "Caraïbes",
   "level": "classique",
   "levels": [
    {
@@ -19132,7 +19132,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_001",
   "cat": "sexe",
-  "name": "La fellation",
+  "name": "fellation",
   "level": "adulte",
   "levels": [
    {
@@ -19215,7 +19215,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_002",
   "cat": "sexe",
-  "name": "La sodomie",
+  "name": "sodomie",
   "level": "adulte",
   "levels": [
    {
@@ -19298,7 +19298,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_003",
   "cat": "sexe",
-  "name": "L'homosexualité",
+  "name": "homosexualité",
   "level": "adulte",
   "levels": [
    {
@@ -19375,7 +19375,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_004",
   "cat": "sexe",
-  "name": "Le Kamasutra",
+  "name": "Kamasutra",
   "level": "adulte",
   "levels": [
    {
@@ -19464,7 +19464,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_005",
   "cat": "sexe",
-  "name": "La contraception",
+  "name": "contraception",
   "level": "adulte",
   "levels": [
    {
@@ -19547,7 +19547,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_006",
   "cat": "sexe",
-  "name": "Les MST",
+  "name": "MST",
   "level": "adulte",
   "levels": [
    {
@@ -19630,7 +19630,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_007",
   "cat": "sexe",
-  "name": "L'anatomie féminine",
+  "name": "anatomie féminine",
   "level": "adulte",
   "levels": [
    {
@@ -19713,7 +19713,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_008",
   "cat": "sexe",
-  "name": "L'anatomie masculine",
+  "name": "anatomie masculine",
   "level": "adulte",
   "levels": [
    {
@@ -19796,7 +19796,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_009",
   "cat": "sexe",
-  "name": "La pornographie",
+  "name": "pornographie",
   "level": "adulte",
   "levels": [
    {
@@ -19879,7 +19879,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_010",
   "cat": "sexe",
-  "name": "La virginité",
+  "name": "virginité",
   "level": "adulte",
   "levels": [
    {
@@ -19962,7 +19962,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_011",
   "cat": "sexe",
-  "name": "Les phéromones",
+  "name": "phéromones",
   "level": "adulte",
   "levels": [
    {
@@ -20045,7 +20045,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_012",
   "cat": "sexe",
-  "name": "L'orgasme",
+  "name": "orgasme",
   "level": "adulte",
   "levels": [
    {
@@ -20128,7 +20128,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_013",
   "cat": "sexe",
-  "name": "Le clitoris",
+  "name": "clitoris",
   "level": "adulte",
   "levels": [
    {
@@ -20211,7 +20211,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_014",
   "cat": "sexe",
-  "name": "Le vagin",
+  "name": "vagin",
   "level": "adulte",
   "levels": [
    {
@@ -20300,7 +20300,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_015",
   "cat": "sexe",
-  "name": "Le pénis",
+  "name": "pénis",
   "level": "adulte",
   "levels": [
    {
@@ -20383,7 +20383,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_016",
   "cat": "sexe",
-  "name": "Les testicules",
+  "name": "testicules",
   "level": "adulte",
   "levels": [
    {
@@ -20466,7 +20466,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_017",
   "cat": "sexe",
-  "name": "La masturbation",
+  "name": "masturbation",
   "level": "adulte",
   "levels": [
    {
@@ -20549,7 +20549,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_018",
   "cat": "sexe",
-  "name": "Les positions sexuelles",
+  "name": "positions sexuelles",
   "level": "adulte",
   "levels": [
    {
@@ -20626,7 +20626,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_019",
   "cat": "sexe",
-  "name": "Le préservatif",
+  "name": "préservatif",
   "level": "adulte",
   "levels": [
    {
@@ -20703,7 +20703,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_020",
   "cat": "sexe",
-  "name": "La pilule",
+  "name": "pilule",
   "level": "adulte",
   "levels": [
    {
@@ -20786,7 +20786,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_021",
   "cat": "sexe",
-  "name": "La stérilisation",
+  "name": "stérilisation",
   "level": "adulte",
   "levels": [
    {
@@ -20869,7 +20869,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_022",
   "cat": "sexe",
-  "name": "L'avortement",
+  "name": "avortement",
   "level": "adulte",
   "levels": [
    {
@@ -20952,7 +20952,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_023",
   "cat": "sexe",
-  "name": "La puberté",
+  "name": "puberté",
   "level": "adulte",
   "levels": [
    {
@@ -21035,7 +21035,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_024",
   "cat": "sexe",
-  "name": "La ménopause",
+  "name": "ménopause",
   "level": "adulte",
   "levels": [
    {
@@ -21118,7 +21118,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_025",
   "cat": "sexe",
-  "name": "Le VIH",
+  "name": "VIH",
   "level": "adulte",
   "levels": [
    {
@@ -21201,7 +21201,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_026",
   "cat": "sexe",
-  "name": "La syphilis",
+  "name": "syphilis",
   "level": "adulte",
   "levels": [
    {
@@ -21290,7 +21290,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_027",
   "cat": "sexe",
-  "name": "L'herpès",
+  "name": "herpès",
   "level": "adulte",
   "levels": [
    {
@@ -21373,7 +21373,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_028",
   "cat": "sexe",
-  "name": "Les papillomavirus",
+  "name": "papillomavirus",
   "level": "adulte",
   "levels": [
    {
@@ -21456,7 +21456,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_029",
   "cat": "sexe",
-  "name": "La chlamydia",
+  "name": "chlamydia",
   "level": "adulte",
   "levels": [
    {
@@ -21545,7 +21545,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_030",
   "cat": "sexe",
-  "name": "La gonorrhée",
+  "name": "gonorrhée",
   "level": "adulte",
   "levels": [
    {
@@ -21628,7 +21628,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_031",
   "cat": "sexe",
-  "name": "Le BDSM",
+  "name": "BDSM",
   "level": "adulte",
   "levels": [
    {
@@ -21717,7 +21717,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_032",
   "cat": "sexe",
-  "name": "Le fétichisme",
+  "name": "fétichisme",
   "level": "adulte",
   "levels": [
    {
@@ -21806,7 +21806,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_033",
   "cat": "sexe",
-  "name": "L'exhibitionnisme",
+  "name": "exhibitionnisme",
   "level": "adulte",
   "levels": [
    {
@@ -21889,7 +21889,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_034",
   "cat": "sexe",
-  "name": "Le voyeurisme",
+  "name": "voyeurisme",
   "level": "adulte",
   "levels": [
    {
@@ -21972,7 +21972,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_035",
   "cat": "sexe",
-  "name": "La bisexualité",
+  "name": "bisexualité",
   "level": "adulte",
   "levels": [
    {
@@ -22061,7 +22061,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_036",
   "cat": "sexe",
-  "name": "La transidentité",
+  "name": "transidentité",
   "level": "adulte",
   "levels": [
    {
@@ -22144,7 +22144,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_037",
   "cat": "sexe",
-  "name": "L'asexualité",
+  "name": "asexualité",
   "level": "adulte",
   "levels": [
    {
@@ -22227,7 +22227,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_038",
   "cat": "sexe",
-  "name": "Le polyamour",
+  "name": "polyamour",
   "level": "adulte",
   "levels": [
    {
@@ -22316,7 +22316,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_039",
   "cat": "sexe",
-  "name": "Le mariage homosexuel",
+  "name": "mariage homosexuel",
   "level": "adulte",
   "levels": [
    {
@@ -22399,7 +22399,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_040",
   "cat": "sexe",
-  "name": "Les hormones sexuelles",
+  "name": "hormones sexuelles",
   "level": "adulte",
   "levels": [
    {
@@ -22482,7 +22482,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_041",
   "cat": "sexe",
-  "name": "Le sperme",
+  "name": "sperme",
   "level": "adulte",
   "levels": [
    {
@@ -22559,7 +22559,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_042",
   "cat": "sexe",
-  "name": "Les ovules",
+  "name": "ovules",
   "level": "adulte",
   "levels": [
    {
@@ -22636,7 +22636,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_043",
   "cat": "sexe",
-  "name": "La fécondation",
+  "name": "fécondation",
   "level": "adulte",
   "levels": [
    {
@@ -22713,7 +22713,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_044",
   "cat": "sexe",
-  "name": "La grossesse",
+  "name": "grossesse",
   "level": "adulte",
   "levels": [
    {
@@ -22790,7 +22790,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_045",
   "cat": "sexe",
-  "name": "L'accouchement",
+  "name": "accouchement",
   "level": "adulte",
   "levels": [
    {
@@ -22873,7 +22873,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_046",
   "cat": "sexe",
-  "name": "L'allaitement",
+  "name": "allaitement",
   "level": "adulte",
   "levels": [
    {
@@ -22956,7 +22956,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_047",
   "cat": "sexe",
-  "name": "Le post-partum",
+  "name": "post-partum",
   "level": "adulte",
   "levels": [
    {
@@ -23039,7 +23039,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_048",
   "cat": "sexe",
-  "name": "La libido",
+  "name": "libido",
   "level": "adulte",
   "levels": [
    {
@@ -23128,7 +23128,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_049",
   "cat": "sexe",
-  "name": "Les aphrodisiaques",
+  "name": "aphrodisiaques",
   "level": "adulte",
   "levels": [
    {
@@ -23217,7 +23217,7 @@ export const TTCQ_THEMES = [
  {
   "id": "sexe_050",
   "cat": "sexe",
-  "name": "La sexologie",
+  "name": "sexologie",
   "level": "adulte",
   "levels": [
    {
@@ -23300,7 +23300,7 @@ export const TTCQ_THEMES = [
  {
   "id": "drogues_001",
   "cat": "drogues",
-  "name": "Le cannabis",
+  "name": "cannabis",
   "level": "adulte",
   "levels": [
    {
@@ -23383,7 +23383,7 @@ export const TTCQ_THEMES = [
  {
   "id": "drogues_002",
   "cat": "drogues",
-  "name": "La cocaïne",
+  "name": "cocaïne",
   "level": "adulte",
   "levels": [
    {
@@ -23472,7 +23472,7 @@ export const TTCQ_THEMES = [
  {
   "id": "drogues_003",
   "cat": "drogues",
-  "name": "L'héroïne",
+  "name": "héroïne",
   "level": "adulte",
   "levels": [
    {
@@ -23561,7 +23561,7 @@ export const TTCQ_THEMES = [
  {
   "id": "drogues_004",
   "cat": "drogues",
-  "name": "L'ecstasy",
+  "name": "ecstasy",
   "level": "adulte",
   "levels": [
    {
@@ -23650,7 +23650,7 @@ export const TTCQ_THEMES = [
  {
   "id": "drogues_005",
   "cat": "drogues",
-  "name": "Le LSD",
+  "name": "LSD",
   "level": "adulte",
   "levels": [
    {
@@ -23733,7 +23733,7 @@ export const TTCQ_THEMES = [
  {
   "id": "drogues_006",
   "cat": "drogues",
-  "name": "Les champignons",
+  "name": "champignons",
   "level": "adulte",
   "levels": [
    {
@@ -23822,7 +23822,7 @@ export const TTCQ_THEMES = [
  {
   "id": "drogues_007",
   "cat": "drogues",
-  "name": "Les amphétamines",
+  "name": "amphétamines",
   "level": "adulte",
   "levels": [
    {
@@ -23905,7 +23905,7 @@ export const TTCQ_THEMES = [
  {
   "id": "drogues_008",
   "cat": "drogues",
-  "name": "La méthamphétamine",
+  "name": "méthamphétamine",
   "level": "adulte",
   "levels": [
    {
@@ -23994,7 +23994,7 @@ export const TTCQ_THEMES = [
  {
   "id": "drogues_009",
   "cat": "drogues",
-  "name": "La caféine",
+  "name": "caféine",
   "level": "adulte",
   "levels": [
    {
@@ -24077,7 +24077,7 @@ export const TTCQ_THEMES = [
  {
   "id": "drogues_010",
   "cat": "drogues",
-  "name": "Le tabac",
+  "name": "tabac",
   "level": "adulte",
   "levels": [
    {
@@ -24160,7 +24160,7 @@ export const TTCQ_THEMES = [
  {
   "id": "drogues_011",
   "cat": "drogues",
-  "name": "La MDMA",
+  "name": "MDMA",
   "level": "adulte",
   "levels": [
    {
@@ -24243,7 +24243,7 @@ export const TTCQ_THEMES = [
  {
   "id": "drogues_012",
   "cat": "drogues",
-  "name": "Le GHB",
+  "name": "GHB",
   "level": "adulte",
   "levels": [
    {
@@ -24332,7 +24332,7 @@ export const TTCQ_THEMES = [
  {
   "id": "drogues_013",
   "cat": "drogues",
-  "name": "La kétamine",
+  "name": "kétamine",
   "level": "adulte",
   "levels": [
    {
@@ -24415,7 +24415,7 @@ export const TTCQ_THEMES = [
  {
   "id": "drogues_014",
   "cat": "drogues",
-  "name": "Le crack",
+  "name": "crack",
   "level": "adulte",
   "levels": [
    {
@@ -24504,7 +24504,7 @@ export const TTCQ_THEMES = [
  {
   "id": "drogues_015",
   "cat": "drogues",
-  "name": "L'opium",
+  "name": "opium",
   "level": "adulte",
   "levels": [
    {
@@ -24593,7 +24593,7 @@ export const TTCQ_THEMES = [
  {
   "id": "drogues_016",
   "cat": "drogues",
-  "name": "La morphine",
+  "name": "morphine",
   "level": "adulte",
   "levels": [
    {
@@ -24682,7 +24682,7 @@ export const TTCQ_THEMES = [
  {
   "id": "drogues_017",
   "cat": "drogues",
-  "name": "Les benzodiazépines",
+  "name": "benzodiazépines",
   "level": "adulte",
   "levels": [
    {
@@ -24765,7 +24765,7 @@ export const TTCQ_THEMES = [
  {
   "id": "drogues_018",
   "cat": "drogues",
-  "name": "Les antidépresseurs",
+  "name": "antidépresseurs",
   "level": "adulte",
   "levels": [
    {
@@ -24848,7 +24848,7 @@ export const TTCQ_THEMES = [
  {
   "id": "drogues_019",
   "cat": "drogues",
-  "name": "La mescaline",
+  "name": "mescaline",
   "level": "adulte",
   "levels": [
    {
@@ -24931,7 +24931,7 @@ export const TTCQ_THEMES = [
  {
   "id": "drogues_020",
   "cat": "drogues",
-  "name": "Le DMT",
+  "name": "DMT",
   "level": "adulte",
   "levels": [
    {
@@ -25014,7 +25014,7 @@ export const TTCQ_THEMES = [
  {
   "id": "drogues_021",
   "cat": "drogues",
-  "name": "Le poppers",
+  "name": "poppers",
   "level": "adulte",
   "levels": [
    {
@@ -25103,7 +25103,7 @@ export const TTCQ_THEMES = [
  {
   "id": "drogues_022",
   "cat": "drogues",
-  "name": "La salvia",
+  "name": "salvia",
   "level": "adulte",
   "levels": [
    {
@@ -25192,7 +25192,7 @@ export const TTCQ_THEMES = [
  {
   "id": "drogues_023",
   "cat": "drogues",
-  "name": "Les opiacés",
+  "name": "opiacés",
   "level": "adulte",
   "levels": [
    {
@@ -25275,7 +25275,7 @@ export const TTCQ_THEMES = [
  {
   "id": "drogues_024",
   "cat": "drogues",
-  "name": "La codéine",
+  "name": "codéine",
   "level": "adulte",
   "levels": [
    {
@@ -25364,7 +25364,7 @@ export const TTCQ_THEMES = [
  {
   "id": "drogues_025",
   "cat": "drogues",
-  "name": "La nicotine",
+  "name": "nicotine",
   "level": "adulte",
   "levels": [
    {
@@ -25447,7 +25447,7 @@ export const TTCQ_THEMES = [
  {
   "id": "alcool_001",
   "cat": "alcool",
-  "name": "Le vin rouge",
+  "name": "vin rouge",
   "level": "adulte",
   "levels": [
    {
@@ -25530,7 +25530,7 @@ export const TTCQ_THEMES = [
  {
   "id": "alcool_002",
   "cat": "alcool",
-  "name": "Le vin blanc",
+  "name": "vin blanc",
   "level": "adulte",
   "levels": [
    {
@@ -25613,7 +25613,7 @@ export const TTCQ_THEMES = [
  {
   "id": "alcool_003",
   "cat": "alcool",
-  "name": "La bière",
+  "name": "bière",
   "level": "adulte",
   "levels": [
    {
@@ -25696,7 +25696,7 @@ export const TTCQ_THEMES = [
  {
   "id": "alcool_004",
   "cat": "alcool",
-  "name": "Le champagne",
+  "name": "champagne",
   "level": "adulte",
   "levels": [
    {
@@ -25779,7 +25779,7 @@ export const TTCQ_THEMES = [
  {
   "id": "alcool_005",
   "cat": "alcool",
-  "name": "Le whisky",
+  "name": "whisky",
   "level": "adulte",
   "levels": [
    {
@@ -25862,7 +25862,7 @@ export const TTCQ_THEMES = [
  {
   "id": "alcool_006",
   "cat": "alcool",
-  "name": "La vodka",
+  "name": "vodka",
   "level": "adulte",
   "levels": [
    {
@@ -25945,7 +25945,7 @@ export const TTCQ_THEMES = [
  {
   "id": "alcool_007",
   "cat": "alcool",
-  "name": "Le rhum",
+  "name": "rhum",
   "level": "adulte",
   "levels": [
    {
@@ -26028,7 +26028,7 @@ export const TTCQ_THEMES = [
  {
   "id": "alcool_008",
   "cat": "alcool",
-  "name": "La tequila",
+  "name": "tequila",
   "level": "adulte",
   "levels": [
    {
@@ -26111,7 +26111,7 @@ export const TTCQ_THEMES = [
  {
   "id": "alcool_009",
   "cat": "alcool",
-  "name": "Le gin",
+  "name": "gin",
   "level": "adulte",
   "levels": [
    {
@@ -26194,7 +26194,7 @@ export const TTCQ_THEMES = [
  {
   "id": "alcool_010",
   "cat": "alcool",
-  "name": "Le cognac",
+  "name": "cognac",
   "level": "adulte",
   "levels": [
    {
@@ -26277,7 +26277,7 @@ export const TTCQ_THEMES = [
  {
   "id": "alcool_011",
   "cat": "alcool",
-  "name": "La liqueur",
+  "name": "liqueur",
   "level": "adulte",
   "levels": [
    {
@@ -26360,7 +26360,7 @@ export const TTCQ_THEMES = [
  {
   "id": "alcool_012",
   "cat": "alcool",
-  "name": "Le cidre",
+  "name": "cidre",
   "level": "adulte",
   "levels": [
    {
@@ -26443,7 +26443,7 @@ export const TTCQ_THEMES = [
  {
   "id": "alcool_013",
   "cat": "alcool",
-  "name": "Le pastis",
+  "name": "pastis",
   "level": "adulte",
   "levels": [
    {
@@ -26526,7 +26526,7 @@ export const TTCQ_THEMES = [
  {
   "id": "alcool_014",
   "cat": "alcool",
-  "name": "Le saké",
+  "name": "saké",
   "level": "adulte",
   "levels": [
    {
@@ -26609,7 +26609,7 @@ export const TTCQ_THEMES = [
  {
   "id": "alcool_015",
   "cat": "alcool",
-  "name": "Le porto",
+  "name": "porto",
   "level": "adulte",
   "levels": [
    {
@@ -26692,7 +26692,7 @@ export const TTCQ_THEMES = [
  {
   "id": "alcool_016",
   "cat": "alcool",
-  "name": "La sangria",
+  "name": "sangria",
   "level": "adulte",
   "levels": [
    {
@@ -26775,7 +26775,7 @@ export const TTCQ_THEMES = [
  {
   "id": "alcool_017",
   "cat": "alcool",
-  "name": "Le martini",
+  "name": "martini",
   "level": "adulte",
   "levels": [
    {
@@ -26858,7 +26858,7 @@ export const TTCQ_THEMES = [
  {
   "id": "alcool_018",
   "cat": "alcool",
-  "name": "Le punch",
+  "name": "punch",
   "level": "adulte",
   "levels": [
    {
@@ -26941,7 +26941,7 @@ export const TTCQ_THEMES = [
  {
   "id": "alcool_019",
   "cat": "alcool",
-  "name": "La absinthe",
+  "name": "absinthe",
   "level": "adulte",
   "levels": [
    {
@@ -27024,7 +27024,7 @@ export const TTCQ_THEMES = [
  {
   "id": "alcool_020",
   "cat": "alcool",
-  "name": "La chartreuse",
+  "name": "chartreuse",
   "level": "adulte",
   "levels": [
    {
@@ -27107,7 +27107,7 @@ export const TTCQ_THEMES = [
  {
   "id": "alcool_021",
   "cat": "alcool",
-  "name": "Le calvados",
+  "name": "calvados",
   "level": "adulte",
   "levels": [
    {
@@ -27190,7 +27190,7 @@ export const TTCQ_THEMES = [
  {
   "id": "alcool_022",
   "cat": "alcool",
-  "name": "L'armagnac",
+  "name": "armagnac",
   "level": "adulte",
   "levels": [
    {
@@ -27273,7 +27273,7 @@ export const TTCQ_THEMES = [
  {
   "id": "alcool_023",
   "cat": "alcool",
-  "name": "Le bourbon",
+  "name": "bourbon",
   "level": "adulte",
   "levels": [
    {
@@ -27356,7 +27356,7 @@ export const TTCQ_THEMES = [
  {
   "id": "alcool_024",
   "cat": "alcool",
-  "name": "La stout",
+  "name": "stout",
   "level": "adulte",
   "levels": [
    {
@@ -27439,7 +27439,7 @@ export const TTCQ_THEMES = [
  {
   "id": "alcool_025",
   "cat": "alcool",
-  "name": "Le lambic",
+  "name": "lambic",
   "level": "adulte",
   "levels": [
    {
@@ -27522,7 +27522,7 @@ export const TTCQ_THEMES = [
  {
   "id": "insolite_101",
   "cat": "insolite",
-  "name": "Le corps humain insolite",
+  "name": "corps humain insolite",
   "level": "classique",
   "levels": [
    {
@@ -27682,7 +27682,7 @@ export const TTCQ_THEMES = [
  {
   "id": "insolite_103",
   "cat": "insolite",
-  "name": "L'espace insolite",
+  "name": "espace insolite",
   "level": "classique",
   "levels": [
    {
@@ -27931,7 +27931,7 @@ export const TTCQ_THEMES = [
  {
   "id": "original_001",
   "cat": "insolite",
-  "name": "Les essuie-glaces",
+  "name": "essuie-glaces",
   "level": "classique",
   "rw": true,
   "levels": [
@@ -28091,7 +28091,7 @@ export const TTCQ_THEMES = [
  {
   "id": "original_003",
   "cat": "insolite",
-  "name": "La langue (l'organe)",
+  "name": "langue (l'organe)",
   "level": "classique",
   "rw": true,
   "levels": [
@@ -28168,7 +28168,7 @@ export const TTCQ_THEMES = [
  {
   "id": "original_004",
   "cat": "insolite",
-  "name": "Les ronds-points",
+  "name": "ronds-points",
   "level": "classique",
   "rw": true,
   "levels": [
@@ -28251,7 +28251,7 @@ export const TTCQ_THEMES = [
  {
   "id": "original_005",
   "cat": "insolite",
-  "name": "Le papier toilette",
+  "name": "papier toilette",
   "level": "classique",
   "rw": true,
   "levels": [
@@ -28334,7 +28334,7 @@ export const TTCQ_THEMES = [
  {
   "id": "original_006",
   "cat": "insolite",
-  "name": "Les moustaches",
+  "name": "moustaches",
   "level": "classique",
   "rw": true,
   "levels": [
@@ -28417,7 +28417,7 @@ export const TTCQ_THEMES = [
  {
   "id": "original_007",
   "cat": "insolite",
-  "name": "La sieste",
+  "name": "sieste",
   "level": "classique",
   "rw": true,
   "levels": [
@@ -28500,7 +28500,7 @@ export const TTCQ_THEMES = [
  {
   "id": "original_008",
   "cat": "insolite",
-  "name": "Le Nutella",
+  "name": "Nutella",
   "level": "classique",
   "rw": true,
   "levels": [
@@ -28583,7 +28583,7 @@ export const TTCQ_THEMES = [
  {
   "id": "original_009",
   "cat": "insolite",
-  "name": "Les licornes",
+  "name": "licornes",
   "level": "classique",
   "rw": true,
   "levels": [
@@ -28672,7 +28672,7 @@ export const TTCQ_THEMES = [
  {
   "id": "original_010",
   "cat": "insolite",
-  "name": "La raclette",
+  "name": "raclette",
   "level": "classique",
   "rw": true,
   "levels": [
@@ -28755,7 +28755,7 @@ export const TTCQ_THEMES = [
  {
   "id": "original_011",
   "cat": "insolite",
-  "name": "Les chaussettes",
+  "name": "chaussettes",
   "level": "classique",
   "rw": true,
   "levels": [
@@ -28838,7 +28838,7 @@ export const TTCQ_THEMES = [
  {
   "id": "original_012",
   "cat": "insolite",
-  "name": "Les emojis",
+  "name": "emojis",
   "level": "classique",
   "rw": true,
   "levels": [
@@ -28921,7 +28921,7 @@ export const TTCQ_THEMES = [
  {
   "id": "original_013",
   "cat": "insolite",
-  "name": "Le papier bulle",
+  "name": "papier bulle",
   "level": "classique",
   "rw": true,
   "levels": [
@@ -29004,7 +29004,7 @@ export const TTCQ_THEMES = [
  {
   "id": "original_014",
   "cat": "insolite",
-  "name": "Le hoquet",
+  "name": "hoquet",
   "level": "classique",
   "rw": true,
   "levels": [
@@ -29087,7 +29087,7 @@ export const TTCQ_THEMES = [
  {
   "id": "original_015",
   "cat": "insolite",
-  "name": "La barbe à papa",
+  "name": "barbe à papa",
   "level": "classique",
   "rw": true,
   "levels": [
@@ -29170,7 +29170,7 @@ export const TTCQ_THEMES = [
  {
   "id": "original_016",
   "cat": "insolite",
-  "name": "Le four à micro-ondes",
+  "name": "four à micro-ondes",
   "level": "classique",
   "rw": true,
   "levels": [
@@ -29253,7 +29253,7 @@ export const TTCQ_THEMES = [
  {
   "id": "original_017",
   "cat": "insolite",
-  "name": "Le canard de bain",
+  "name": "canard de bain",
   "level": "classique",
   "rw": true,
   "levels": [
@@ -29336,7 +29336,7 @@ export const TTCQ_THEMES = [
  {
   "id": "original_018",
   "cat": "insolite",
-  "name": "Les cotons-tiges",
+  "name": "cotons-tiges",
   "level": "classique",
   "rw": true,
   "levels": [
@@ -29413,7 +29413,7 @@ export const TTCQ_THEMES = [
  {
   "id": "original_019",
   "cat": "insolite",
-  "name": "Le Velcro",
+  "name": "Velcro",
   "level": "classique",
   "rw": true,
   "levels": [
@@ -29496,7 +29496,7 @@ export const TTCQ_THEMES = [
  {
   "id": "original_020",
   "cat": "insolite",
-  "name": "Les tongs",
+  "name": "tongs",
   "level": "classique",
   "rw": true,
   "levels": [
