@@ -18,7 +18,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export const EVENTS_DIR = path.join(__dirname, '..', 'events');
 const INDEX_FILE = path.join(EVENTS_DIR, 'index.json');
 
-const THEMES = ['retro', 'neon', 'chic', 'kids', 'casino', 'minimal', 'sunset', 'ocean'];
+const THEMES = ['retro', 'neon', 'chic', 'kids', 'casino', 'minimal', 'sunset', 'ocean', 'brutal', 'glass', 'clay'];
 
 function ensureRoot() { fs.mkdirSync(EVENTS_DIR, { recursive: true }); }
 

@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Administration — PartyPlay</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Interface d'administration PartyPlay — gestion des fêtes, tarifs, templates d'emails et jeux.">
   <link rel="stylesheet" href="/static/admin.css?v=2">
   <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.min.js"></script>
@@ -624,8 +626,8 @@
   </div>
 
 <script>
-const themeLabel = { retro:'Rétro', neon:'Néon', chic:'Chic', kids:'Enfant', casino:'Casino', minimal:'Minimal', sunset:'Sunset', ocean:'Océan' };
-const ALL_THEMES = ['retro','neon','chic','kids','casino'];
+const themeLabel = { retro:'Rétro', neon:'Néon', chic:'Chic', kids:'Enfant', casino:'Casino', minimal:'Minimal', sunset:'Sunset', ocean:'Océan', brutal:'Brutal', glass:'Glass', clay:'Clay' };
+const ALL_THEMES = ['retro','neon','chic','kids','casino','minimal','sunset','ocean','brutal','glass','clay'];
 const PLAN_ORDER = ['free','full','infinite'];
 let PWD = sessionStorage.getItem('admPwd') || '';
 let PRICING = null, BREVO = null, _emailLoaded = false, _legalLoaded = false, _promosLoaded = false, _privacyLoaded = false, _btLoaded = false, _cartonLoaded = false, _ttcqLoaded = false, _googleLoaded = false, _justoneLoaded = false, _quizLoaded = false, _photosLoaded = false, _spotlightLoaded = false, _statsLoaded = false;

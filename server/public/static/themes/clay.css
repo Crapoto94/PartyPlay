@@ -1,0 +1,76 @@
+/* THÈME : CLAY — claymorphisme (tendance). Fond pastel doux, boutons « pâte à
+   modeler » tout ronds et bombés (double ombre extérieure + lumière intérieure),
+   sans bordure. Ambiance douce et ludique. Inspiration Dribbble / apps modernes. */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700&display=swap');
+
+:root {
+  --bg: #e7e3ff;
+  --bg2: #f4f1ff;
+  --neon: #8b7cff;   /* violet doux (principal) */
+  --neon2: #4fd6c4;  /* turquoise */
+  --neon3: #ffb454;  /* orange doux (warn) */
+  --neon4: #d9d3ff;  /* lilas bordure */
+  --ink: #3a3350;
+  --danger: #ff6b8a;
+  --ok: #48c78e;
+
+  --pixel: 'Baloo 2', system-ui, sans-serif;
+  --term: 'Nunito', system-ui, sans-serif;
+
+  --radius: 24px;
+  --btn-radius: 999px;
+  --neon-lite: #a99bff;
+  --btn-ink: #ffffff;
+  --btn-ink2: #ffffff;
+  --input-bg: #f4f1ff;
+  --card-glow: rgba(139,124,255,.18);
+  --title-shadow: none;
+  --scanlines-opacity: 0;
+}
+body { font-size: 22px; font-weight: 600;
+  background:
+    radial-gradient(900px 600px at 15% -10%, #d9d0ff 0%, transparent 55%),
+    radial-gradient(800px 500px at 85% 0%, #d3f6ef 0%, transparent 55%),
+    var(--bg); }
+h1, h2, h3, .title { font-weight: 700; letter-spacing: 0; text-shadow: none; color: var(--ink); }
+
+.card {
+  background: var(--bg2);
+  border: none;
+  border-radius: 28px;
+  box-shadow: 10px 10px 22px rgba(150,140,200,.35), -8px -8px 20px rgba(255,255,255,.9);
+}
+
+.btn, .btn.secondary, .btn.warn, .btn.danger {
+  font-family: var(--pixel);
+  font-weight: 700;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  box-shadow: 6px 6px 14px rgba(120,110,170,.4), -4px -4px 12px rgba(255,255,255,.85),
+              inset 2px 2px 5px rgba(255,255,255,.55), inset -2px -2px 6px rgba(0,0,0,.12);
+  transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+}
+.btn { background: var(--neon); }
+.btn.secondary { background: var(--neon2); }
+.btn.warn { background: var(--neon3); }
+.btn.danger { background: var(--danger); }
+.btn:hover { transform: translateY(-2px); filter: brightness(1.05); }
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: inset 4px 4px 9px rgba(0,0,0,.18), inset -3px -3px 8px rgba(255,255,255,.5);
+}
+
+.btn-buzz {
+  background: var(--neon); border: none; border-radius: 40px; color: #fff;
+  box-shadow: 10px 10px 22px rgba(120,110,170,.45), -6px -6px 16px rgba(255,255,255,.85),
+              inset 2px 2px 6px rgba(255,255,255,.5), inset -3px -3px 8px rgba(0,0,0,.14);
+}
+.btn-buzz:active { box-shadow: inset 6px 6px 14px rgba(0,0,0,.2), inset -4px -4px 10px rgba(255,255,255,.5); }
+
+input[type=text], .field input, .field select, .field textarea {
+  background: var(--input-bg); color: var(--ink); border: none; border-radius: 16px;
+  box-shadow: inset 4px 4px 9px rgba(150,140,200,.3), inset -4px -4px 9px rgba(255,255,255,.9);
+}
+.pill { border-color: var(--neon); color: var(--ink); }
+.log div { border-bottom-color: #0001; }

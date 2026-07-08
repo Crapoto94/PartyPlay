@@ -3,7 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Console événement</title>
+  <title>Console événement — PartyPlay</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:title" content="Console — PartyPlay">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="PartyPlay">
+  <meta name="twitter:card" content="summary">
   <!--EVENT_HEAD-->
 </head>
 <body class="scanlines">
@@ -387,7 +392,7 @@ const API = '/e/' + EVENT.id;
 let PWD = sessionStorage.getItem('evpwd_'+EVENT.id) || '';
 let CFG = null, AV = {}, META = null, DEFAULT_BT = {};
 const AVATAR_KEYS = [];
-const THEME_LABELS = { retro:'Rétro jeux vidéo', neon:'Néon / Clubbing', chic:'Chic / Élégant', kids:'Anniversaire enfant', casino:'Casino / Vegas', minimal:'Minimal épuré', sunset:'Sunset californien', ocean:'Océan profond' };
+const THEME_LABELS = { retro:'Rétro jeux vidéo', neon:'Néon / Clubbing', chic:'Chic / Élégant', kids:'Anniversaire enfant', casino:'Casino / Vegas', minimal:'Minimal épuré', sunset:'Sunset californien', ocean:'Océan profond', brutal:'Brutal (néo-brutalisme)', glass:'Glass (verre dépoli)', clay:'Clay (pâte à modeler)' };
 
 function H(){ return { 'Content-Type':'application/json', 'x-admin-password': PWD }; }
 function val(id){ return document.getElementById(id).value; }

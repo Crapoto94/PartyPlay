@@ -13,7 +13,7 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PRICING_FILE = path.join(__dirname, '..', 'pricing.json');
 
-export const ALL_THEMES = ['retro', 'neon', 'chic', 'kids', 'casino', 'minimal', 'sunset', 'ocean'];
+export const ALL_THEMES = ['retro', 'neon', 'chic', 'kids', 'casino', 'minimal', 'sunset', 'ocean', 'brutal', 'glass', 'clay'];
 // Ordre canonique des activités (sert au plafonnement du plan gratuit).
 export const ACTIVITY_ORDER = ['quiz', 'anecdotes', 'blindtest', 'photo', 'spotlight', 'draw', 'arcade', 'collab'];
 

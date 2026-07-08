@@ -3,7 +3,38 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PartyPlay — animez votre fête</title>
+  <title>PartyPlay — Jeu géant personnalisé pour soirées · Quiz, blind-test, défis</title>
+  <meta name="description" content="PartyPlay transforme votre soirée en jeu géant personnalisé. Quiz, blind-test, défis photo, mini-jeux arcade, dessine-moi, anecdotes — chaque joueur joue depuis son smartphone, un écran partagé fait le show.">
+  <meta name="keywords" content="jeu de soirée, quiz party, blind-test, jeu smartphone, animation fête, jeu géant, PartyPlay, jeu personnalisé, soirée quiz, multi-joueurs">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="PartyPlay">
+  <meta name="application-name" content="PartyPlay">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="PartyPlay">
+  <meta property="og:title" content="PartyPlay — Transforme ta soirée en jeu géant personnalisé">
+  <meta property="og:description" content="Quiz, blind-test, défis photo, mini-jeux… chaque joueur joue depuis son smartphone, un écran partagé fait le show. Prêt en 2 minutes.">
+  <meta property="og:url" content="https://partyplay.app">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PartyPlay — Jeu géant personnalisé pour soirées">
+  <meta name="twitter:description" content="Quiz, blind-test, défis photo, mini-jeux… chaque joueur joue depuis son smartphone pendant que la borne fait le show.">
+  <link rel="canonical" href="https://partyplay.app">
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "PartyPlay",
+    "url": "https://partyplay.app",
+    "description": "Transforme ta soirée en jeu géant personnalisé. Quiz, blind-test, défis photo, mini-jeux arcade, dessine-moi, anecdotes — chaque joueur joue depuis son smartphone, un écran partagé fait le show.",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    "author": { "@type": "Organization", "name": "PartyPlay" }
+  }</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
@@ -334,7 +365,7 @@
     <button onclick="this.parentElement.style.display='none';localStorage.setItem('devBannerDismissed','1')" title="Fermer">×</button>
   </div>
 
-  <div class="page">
+  <main class="page">
 
     <nav class="nav">
       <a class="nav-logo" href="/"><span class="emo">🎉</span> PartyPlay</a>
@@ -376,7 +407,7 @@
 
     <div class="illus-grid">
       <!-- Version grand public -->
-      <div class="illus-card kids">
+      <figure class="illus-card kids">
         <svg viewBox="0 0 420 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fête grand public">
           <defs>
             <linearGradient id="kbg" x1="0" y1="0" x2="0" y2="1">
@@ -443,14 +474,14 @@
           <rect x="356" y="216" width="30" height="22" rx="4" fill="#a78bfa"/>
           <rect x="368" y="216" width="6" height="22" fill="#f5f3ff"/>
         </svg>
-        <div class="illus-body">
+        <figcaption class="illus-body">
           <h3><span class="dot"></span>Version grand public</h3>
           <p>Quiz, blind-test, dessins, défis photo et mini-jeux : tout le monde joue sur son téléphone pendant que la borne fait le show. Idéal entre amis, en famille ou en équipe. 🎉</p>
-        </div>
-      </div>
+        </figcaption>
+      </figure>
 
       <!-- Soirée adultes -->
-      <div class="illus-card adult">
+      <figure class="illus-card adult">
         <svg viewBox="0 0 420 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Soirée entre adultes">
           <defs>
             <linearGradient id="abg" x1="0" y1="0" x2="0" y2="1">
@@ -520,11 +551,11 @@
             <rect x="360" y="244" width="60" height="6" fill="#22d3ee"/>
           </g>
         </svg>
-        <div class="illus-body">
+        <figcaption class="illus-body">
           <h3><span class="dot"></span>Version 18+ · réservée aux adultes</h3>
           <p>Contenus corsés entre adultes avertis : Bouche-Trou !? et TTCQ en mode 18+, confessions Sans Filtre, blind-test et anecdotes croustillantes. Accès réservé aux majeurs. 🔞</p>
-        </div>
-      </div>
+        </figcaption>
+      </figure>
     </div>
 
     <!-- Accès rapide -->
@@ -641,12 +672,12 @@
       <a href="/mentions-legales">Mentions légales</a>
     </footer>
 
-  </div><!-- /.page -->
+  </main><!-- /.page -->
 
 <script>
 let PRICING = null, SELECTED = 'free';
-const THEME_LABELS = { retro:'Rétro jeux vidéo', neon:'Néon / Clubbing', chic:'Chic / Élégant', casino:'Casino / Vegas', minimal:'Minimal épuré', sunset:'Sunset californien', ocean:'Océan profond' };
-const ALL_THEMES = ['retro','neon','chic','casino'];
+const THEME_LABELS = { retro:'Rétro jeux vidéo', neon:'Néon / Clubbing', chic:'Chic / Élégant', casino:'Casino / Vegas', minimal:'Minimal épuré', sunset:'Sunset californien', ocean:'Océan profond', brutal:'Brutal (néo-brutalisme)', glass:'Glass (verre dépoli)', clay:'Clay (pâte à modeler)' };
+const ALL_THEMES = ['retro','neon','chic','casino','minimal','sunset','ocean','brutal','glass','clay'];
 
 // Masquer la bannière si déjà fermée
 if (localStorage.getItem('devBannerDismissed') === '1') document.getElementById('devBanner').style.display = 'none';
