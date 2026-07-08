@@ -250,6 +250,10 @@ app.post('/api/parties', async (req, res) => {
   if (promo) {
     cfg.paymentStatus = 'free';
     cfg.promoCode = promoCode.toUpperCase().trim();
+    if (cfg.adultParty) {
+      cfg.adultPaymentStatus = 'paid';
+      cfg.adultVerified = true;
+    }
     usePromoCode(promoCode);
   } else if (isFreeMode()) {
     cfg.paymentStatus = 'free'; // mode bêta gratuit global

@@ -726,6 +726,13 @@
           </p>
         </div>
 
+        <details style="margin-top:6px;cursor:pointer">
+          <summary style="font-size:12.5px;color:var(--muted);display:inline-block">🎟️ J'ai un code promo</summary>
+          <div style="margin-top:6px">
+            <input type="text" id="cPromoCode" placeholder="Entrez votre code" style="text-transform:uppercase;max-width:200px;padding:8px 12px;font-size:14px;border:1px solid var(--neon4);border-radius:8px;background:var(--bg);color:var(--ink)" oninput="this.value=this.value.toUpperCase()">
+          </div>
+        </details>
+
         <button class="btn" style="font-size:16px;padding:15px 34px;margin-top:8px" onclick="createParty()" id="createBtn">🎉 Créer ma fête</button>
         <div id="createErr" style="margin-top:12px;color:var(--danger);font-size:14px"></div>
       </div>
@@ -914,6 +921,7 @@ async function createParty(){
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { errEl.textContent = 'Adresse email invalide.'; return; }
   }
 
+  const promo = document.getElementById('cPromoCode').value.trim();
   const body = {
     name, contactEmail: email,
     theme: document.getElementById('cTheme').value,
@@ -922,6 +930,7 @@ async function createParty(){
     partyDate: document.getElementById('cDate').value || null,
     seed: 'default',
     adultParty,
+    promoCode: promo || undefined,
   };
   if (GOOGLE_CRED) body.googleCredential = GOOGLE_CRED;
   let d;
