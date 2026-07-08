@@ -612,7 +612,7 @@ function playerRow(p,i){
         <input type="text" class="p_token" value="${esc(p.token||'')}">
         <button class="btn" style="width:auto" onclick="genToken(${i})">🎲</button>
         <button class="btn secondary" style="width:auto" onclick="copyJoinUrl('${esc(p.token||'')}',this)" title="Copier l'URL">⎘</button>
-        <button class="btn secondary" style="width:auto" onclick="showQR('${esc(p.token||'')}')">QR</button>
+        <button class="btn secondary" style="width:auto" onclick="showQR(${i})">QR</button>
         <button class="btn danger" style="width:auto" onclick="rmPlayer(${i})">✕</button>
       </div>
       <small class="muted" style="word-break:break-all;display:block;margin-top:4px">${joinUrl}</small>
@@ -647,9 +647,9 @@ function playerCardHtml(p, joinUrl, qrDataUrl){
   return `<div style="text-align:center;padding:12px">
     <div style="font-size:56px;margin-bottom:6px">${emoji}</div>
     <div style="font-size:18px;font-weight:700;margin:4px 0">${name}</div>
-    <div style="font-size:12px;color:var(--muted)">${email}</div>
+    <div style="font-size:11px;color:var(--muted)">${email}</div>
     <div style="margin:12px auto;width:140px">${qrImg}</div>
-    <div style="font-size:11px;word-break:break-all;color:var(--muted)">${url}</div>
+    <div style="font-size:10px;word-break:break-all;color:var(--muted)">${url}</div>
   </div>`;
 }
 
@@ -667,12 +667,10 @@ function showPlayerCardModal(html){
   document.body.appendChild(div);
 }
 
-async function showQR(token){
-  const i = parseInt(event.target.closest('[data-pi]')?.dataset?.pi, 10);
-  if(isNaN(i)) return;
+async function showQR(i){
   const p = collectPlayers()[i];
   if(!p){ alert('Joueur introuvable.'); return; }
-  const r=await fetch(API+'/api/admin/qr/'+encodeURIComponent(token),{headers:H()}); const d=await r.json();
+  const r=await fetch(API+'/api/admin/qr/'+encodeURIComponent(p.token),{headers:H()}); const d=await r.json();
   const html = playerCardHtml(p, d.joinUrl, d.qr);
   showPlayerCardModal(html);
 }
