@@ -422,6 +422,12 @@ export class GameState {
     if (!videoId || !videoTitle) return;
     const pool = this.themePool(theme);
     if (!pool.find(t => t.id === videoId)) pool.push({ id: videoId, title: videoTitle, audioUrl: audioUrl || null });
+    // Relance automatiquement la 1ère chanson dès que le moissonnage (borne ou
+    // téléphone du GM) a rassemblé assez de titres — sans ça, un blind-test
+    // lancé avec une playlist vide restait bloqué en silence, sans musique
+    // jusqu'à ce que le GM pense à cliquer manuellement « Nouvelle chanson ».
+    const a = this.activity;
+    if (a && a.type === 'blindtest' && a.theme === theme && !a.playRequestedAt && pool.length >= 4) this.blindtestAsk();
   }
 
   // URL de playlist configurée pour ce blind-test (clé = nom du blind-test).
