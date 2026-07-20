@@ -94,14 +94,27 @@ function _getTingCtx(){
   if (_tingCtx && _tingCtx.state === 'suspended') _tingCtx.resume().catch(()=>{});
   return _tingCtx;
 }
-// Crée + résume l'AudioContext dès le premier geste (obligatoire iOS/Android)
-['click','touchstart'].forEach(ev => document.addEventListener(ev, () => {
+// Minuscule WAV silencieux : sert d'amorce pour débloquer l'élément <audio>
+// du blind-test. Sans SOURCE valide, un play() "à vide" ne compte pas comme
+// une vraie lecture pour le navigateur (Chrome/Safari mobile) et ne débloque
+// donc PAS les lectures programmatiques futures (déclenchées par l'état
+// serveur, hors geste utilisateur) — c'était la cause du son muet en Deezer.
+const SILENT_WAV = 'data:audio/wav;base64,UklGRiQAAAAWQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=';
+// Débloque AudioContext (sons "ting"/clic) + l'élément <audio> (blind-test
+// sans borne). Rappelé à chaque geste (pas juste le 1er) car sur la page
+// joueur le tout premier tap peut avoir lieu DANS l'overlay Console GM (un
+// autre document, dont les clics ne remontent pas ici) — voir openGmOverlay().
+function unlockAudio(){
   if (!_tingCtx) try { _tingCtx = new (window.AudioContext || window.webkitAudioContext)(); } catch(_){}
   if (_tingCtx && _tingCtx.state === 'suspended') _tingCtx.resume().catch(()=>{});
-  // Débloque aussi l'élément <audio> du blind-test (sans borne, c'est le
-  // téléphone du GM qui joue le son) : play()+pause() immédiat au premier tap.
-  try { const el = _ensureBtAudio(); el.muted = true; el.play().then(()=>{ el.pause(); el.muted = false; }).catch(()=>{ el.muted = false; }); } catch(_){}
-}, { passive: true, once: true }));
+  try {
+    const el = _ensureBtAudio();
+    if (!el.src) el.src = SILENT_WAV;
+    el.muted = true;
+    el.play().then(()=>{ el.pause(); el.muted = false; }).catch(()=>{ el.muted = false; });
+  } catch(_){}
+}
+['click','touchstart'].forEach(ev => document.addEventListener(ev, unlockAudio, { passive: true }));
 
 // --- Blind-test sans borne : le téléphone du GM (avec une enceinte
 // Bluetooth connectée dessus) prend le relais de la BORNE pour jouer le son
@@ -325,11 +338,23 @@ function updateQuickLinks(s){
 // Ouvre la console GM en overlay DANS CET ONGLET (voir commentaire sur #gmOverlay).
 function openGmOverlay(){
   const frame = document.getElementById('gmOverlayFrame');
-  if (frame.src === 'about:blank' || !frame.src) frame.src = '/e/' + EVENT.id + '/admin';
+  if (frame.src === 'about:blank' || !frame.src) {
+    frame.src = '/e/' + EVENT.id + '/admin';
+    // Le GM clique/tape surtout DANS l'overlay une fois ouvert : ces gestes-là
+    // ont lieu dans un autre document (l'iframe), donc ne remontent jamais au
+    // document parent — sans ça, unlockAudio() ne serait jamais rappelé et le
+    // son du blind-test resterait bloqué. Même origine ⇒ on peut écouter
+    // directement dans le contentDocument de l'iframe.
+    frame.addEventListener('load', () => {
+      try { ['click','touchstart'].forEach(ev => frame.contentDocument.addEventListener(ev, unlockAudio, { passive: true })); } catch(_){}
+    });
+  }
   document.getElementById('gmOverlay').style.display = 'block';
+  unlockAudio();
 }
 function closeGmOverlay(){
   document.getElementById('gmOverlay').style.display = 'none';
+  unlockAudio();
 }
 let _prevTtcqRevealAt = 0;
 function checkTtcqReveal(s){
