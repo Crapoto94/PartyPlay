@@ -82,7 +82,106 @@ function _getTingCtx(){
 ['click','touchstart'].forEach(ev => document.addEventListener(ev, () => {
   if (!_tingCtx) try { _tingCtx = new (window.AudioContext || window.webkitAudioContext)(); } catch(_){}
   if (_tingCtx && _tingCtx.state === 'suspended') _tingCtx.resume().catch(()=>{});
-}, { passive: true }));
+  // Débloque aussi l'élément <audio> du blind-test (sans borne, c'est le
+  // téléphone du GM qui joue le son) : play()+pause() immédiat au premier tap.
+  try { const el = _ensureBtAudio(); el.muted = true; el.play().then(()=>{ el.pause(); el.muted = false; }).catch(()=>{ el.muted = false; }); } catch(_){}
+}, { passive: true, once: true }));
+
+// --- Blind-test sans borne : le téléphone du GM (avec une enceinte
+// Bluetooth connectée dessus) prend le relais de la BORNE pour jouer le son
+// ET moissonner les playlists YouTube (les thèmes par défaut sont des
+// playlists YouTube, pas des extraits Deezer — sans ça aucune chanson ne
+// serait jamais détectée si personne n'a la BORNE ouverte). ---
+let _prevBtPlayReq = 0;
+let _btAudioEl = null;
+function _ensureBtAudio(){
+  if (!_btAudioEl) { _btAudioEl = new Audio(); _btAudioEl.preload = 'auto'; }
+  return _btAudioEl;
+}
+let _ytApiReady = false, _ytApiRequested = false, _ytApiCallbacks = [];
+function _loadYtApi(cb){
+  if (_ytApiReady) { cb(); return; }
+  _ytApiCallbacks.push(cb);
+  if (_ytApiRequested) return;
+  _ytApiRequested = true;
+  if (window.YT && window.YT.Player) { _onYtApiReady(); return; }
+  const prevCb = window.onYouTubeIframeAPIReady;
+  window.onYouTubeIframeAPIReady = function(){ if (typeof prevCb === 'function') prevCb(); _onYtApiReady(); };
+  const s = document.createElement('script'); s.src = 'https://www.youtube.com/iframe_api';
+  document.head.appendChild(s);
+}
+function _onYtApiReady(){ _ytApiReady = true; _ytApiCallbacks.splice(0).forEach(cb => cb()); }
+function _ytHost(id){
+  let host = document.getElementById(id);
+  if (!host) { host = document.createElement('div'); host.id = id; host.style.cssText = 'position:fixed;top:-9999px;width:1px;height:1px;opacity:0;pointer-events:none'; document.body.appendChild(host); }
+  return host;
+}
+// Lecteur de LECTURE : joue la chanson précise piochée par le serveur.
+let _ytBt = null, _ytPendingVideoId = null;
+function _initYtBt(){
+  if (_ytBt) return;
+  _ytHost('jytbt');
+  _ytBt = new YT.Player('jytbt', { height:'1', width:'1', playerVars:{ autoplay:0, controls:0 }, events:{ onReady(){
+    if (_ytPendingVideoId){ const id=_ytPendingVideoId; _ytPendingVideoId=null; _ytBt.loadVideoById(id); _ytBt.unMute(); _ytBt.playVideo(); }
+  } } });
+}
+// Moissonneur : charge la playlist du thème en cours (muette, mélangée, en
+// boucle) et poste chaque titre détecté au serveur — identique au mécanisme
+// de borne.html, ne tourne que pour LE thème actif (pas tous les thèmes).
+let _btHarvestTheme = null, _ytHarvester = null;
+function _startBtHarvest(theme, listId){
+  _ytHost('jytbth');
+  _ytHarvester = new YT.Player('jytbth', {
+    height:'1', width:'1',
+    playerVars:{ listType:'playlist', list:listId, autoplay:1, loop:1, controls:0, disablekb:1, fs:0, modestbranding:1, mute:1 },
+    events:{
+      onReady(e){ try{ e.target.setShuffle(true); e.target.mute(); e.target.playVideo(); }catch(_){} },
+      onStateChange(e){
+        if (e.data === YT.PlayerState.PLAYING) {
+          try {
+            const d = e.target.getVideoData();
+            if (d && d.video_id && d.title) {
+              fetch(API + '/api/blindtest/addtrack', { method:'POST', headers:{'Content-Type':'application/json'},
+                body: JSON.stringify({ theme, videoId: d.video_id, videoTitle: d.title }) }).catch(()=>{});
+            }
+          } catch(_){}
+        }
+        if (e.data === YT.PlayerState.ENDED) e.target.nextVideo();
+      }
+    }
+  });
+}
+function ensureBlindtestHarvest(a){
+  if (!a || a.type !== 'blindtest' || a.source !== 'youtube' || !a.theme) return;
+  if (_btHarvestTheme === a.theme) return;
+  _btHarvestTheme = a.theme;
+  fetch(API + '/api/ytconfig').then(r=>r.json()).then(cfg=>{
+    const listId = cfg && cfg.blindtest && cfg.blindtest[a.theme];
+    if (!listId) return;
+    _loadYtApi(() => _startBtHarvest(a.theme, listId));
+  }).catch(()=>{});
+}
+function checkBlindtestAudio(s){
+  // Seule la page du GM joue le son, et seulement si la fête n'a pas de borne
+  // (sinon c'est la BORNE qui joue déjà — on éviterait de jouer deux fois).
+  if (!s || !s.isGM || s.hasBorne) return;
+  const a = s.activity;
+  if (!a || a.type !== 'blindtest') return;
+  ensureBlindtestHarvest(a);
+  if (!a.playRequestedAt || a.playRequestedAt === _prevBtPlayReq) return;
+  _prevBtPlayReq = a.playRequestedAt;
+  try {
+    if (a.playAudioUrl) {
+      const el = _ensureBtAudio();
+      el.muted = false; el.src = a.playAudioUrl; el.currentTime = 0; el.play().catch(()=>{});
+    } else if (a.playVideoId) {
+      _loadYtApi(() => {
+        if (_ytBt) { _ytBt.loadVideoById(a.playVideoId); _ytBt.unMute(); _ytBt.playVideo(); }
+        else { _ytPendingVideoId = a.playVideoId; _initYtBt(); }
+      });
+    }
+  } catch(_){}
+}
 function playTing(){
   try {
     const ctx = _getTingCtx(); if (!ctx) return;
@@ -157,6 +256,7 @@ function applyState(s){
   _lastJoueurJson = j;
   checkEnqHint(s);
   checkTtcqReveal(s);
+  checkBlindtestAudio(s);
   updateQuickLinks(s);
   STATE = s; render();
   detectPianoDemo(s); // surligne mes touches si la borne (re)joue la mélodie
@@ -1339,7 +1439,11 @@ function quizController(act) {
   }
 
   const joueurPhoto = act.photo ? (`<img src="${esc(act.photo)}" style="width:140px;height:140px;object-fit:cover;border-radius:10px;border:2px solid #fff3;margin:8px auto;display:block">`) : ``;
-  const btHint = (act.type === "blindtest" && !reveal) ? `<p class="muted">🔊 Écoute l’extrait joué sur la BORNE.</p>` : ``;
+  const btHint = (act.type === "blindtest" && !reveal)
+    ? (!STATE.hasBorne && STATE.isGM ? `<p class="muted">🔊 L'extrait joue sur ce téléphone (connecte une enceinte Bluetooth).</p>`
+       : !STATE.hasBorne ? `<p class="muted">🔊 Écoute l'extrait joué sur le téléphone du GM.</p>`
+       : `<p class="muted">🔊 Écoute l'extrait joué sur la BORNE.</p>`)
+    : ``;
   return `<div class="card glow-box">
     <div class="pill neon-cyan">${title} — Q${act.qIndex+1}/${act.total}</div>
     ${joueurPhoto}
