@@ -99,7 +99,7 @@ function _getTingCtx(){
 // une vraie lecture pour le navigateur (Chrome/Safari mobile) et ne débloque
 // donc PAS les lectures programmatiques futures (déclenchées par l'état
 // serveur, hors geste utilisateur) — c'était la cause du son muet en Deezer.
-const SILENT_WAV = 'data:audio/wav;base64,UklGRiQAAAAWQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=';
+const SILENT_WAV = 'data:audio/wav;base64,UklGRiUAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQEAAACA';
 // Débloque AudioContext (sons "ting"/clic) + l'élément <audio> (blind-test
 // sans borne). Rappelé à chaque geste (pas juste le 1er) car sur la page
 // joueur le tout premier tap peut avoir lieu DANS l'overlay Console GM (un
