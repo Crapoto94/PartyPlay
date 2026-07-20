@@ -113,7 +113,6 @@
         <button class="btn tab active" data-tab="piloter" onclick="tab('piloter')">🎮 Piloter</button>
         <button class="btn tab" data-tab="general" onclick="tab('general')">⚙️ Général</button>
         <button class="btn tab" data-tab="contenu" onclick="tab('contenu')">📚 Contenu</button>
-        <a id="tabPlayerLink" class="btn tab secondary" href="#" target="_blank" style="display:none">🙋 Ma page joueur</a>
       </div>
 
       <!-- ============ PILOTER ============ -->
@@ -481,7 +480,6 @@ async function loadConfig(){
   // Bannière 18+ non payée
   gateAdultContent();
   await loadEqzDefaults(); eqzDefLoaded=true;
-  fillQuickLinks();
   fillGeneral(); fillPlayers(); fillActivities(); fillContent(); fillLaunchers();
   ttcqInitCats();
   applyActivityFilter();
@@ -502,17 +500,6 @@ async function resendVerification(btn) {
   setTimeout(() => { st.textContent = ''; st.style.color = ''; }, 4000);
 }
 
-function fillQuickLinks(){
-  const s = CFG.settings || {};
-  const link = document.getElementById('tabPlayerLink');
-  if (!link) return;
-  if (!s.gmDedicatedDevice && CFG.gmPlayerToken) {
-    link.href = `/e/${EVENT.id}/j/${esc(CFG.gmPlayerToken)}`;
-    link.style.display = '';
-  } else {
-    link.style.display = 'none';
-  }
-}
 function tab(name){
   document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active', b.dataset.tab===name));
   document.querySelectorAll('[data-pane]').forEach(s=>s.hidden = s.dataset.pane!==name);
@@ -611,7 +598,7 @@ async function saveGeneral(){
       hasBorne:g_hasBorne.checked, gmDedicatedDevice:g_gmDevice.checked, playersRemote:g_remote.checked } };
   await push(patch); document.getElementById('g_saved').textContent=' ✓ enregistré';
   setTimeout(()=>document.getElementById('g_saved').textContent='',1500);
-  CFG.settings = patch.settings; fillQuickLinks();
+  CFG.settings = patch.settings;
   if (patch.theme!==EVENT.theme) location.reload();
 }
 
