@@ -733,14 +733,12 @@ function ttcqBorne(act){
 
   let body;
   if (act.sub==='theme_pick'){
-    const cats = act.availableThemes ? Object.keys(act.availableThemes) : [];
-    const catHtml = cats.map(c=>{
-      const themes = (act.availableThemes[c]||[]).map(t=>esc(t.name)).join(', ');
-      return `<div style="margin:4px 0"><span class="pill neon-cyan">${esc(c)}</span> ${themes}</div>`;
-    }).join('');
+    const cats = act.availableCategories || [];
+    const catHtml = cats.map(c=>`<span class="pill neon-cyan" style="margin:4px">${esc(c)}</span>`).join('');
     body = `${pill}
-      <p class="big">👑 <b class="neon-yellow">${esc(act.themePickerName||'?')}</b> choisit le thème !</p>
-      ${catHtml ? `<div class="card" style="max-width:800px;margin:10px auto;text-align:left;font-size:14px">${catHtml}</div>` : '<p class="big neon-cyan blink">Sur ton téléphone 📱</p>'}`;
+      <p class="big">👑 <b class="neon-yellow">${esc(act.themePickerName||'?')}</b> choisit la thématique !</p>
+      ${catHtml ? `<div style="max-width:800px;margin:10px auto">${catHtml}</div>` : ''}
+      <p class="big neon-cyan blink">Sur ton téléphone 📱</p>`;
   }
   else if (act.sub==='bet'){
     body = `${pill}${themeHtml}

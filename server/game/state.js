@@ -872,7 +872,9 @@ export class GameState {
       a.sub = 'theme_pick';
       a.categories = cats;
       a.categoriesUsed = [];
-      a.themePickerId = null;
+      // Démarre directement sur un·e premier·ère joueur·se connecté·e : pas besoin
+      // d'attendre une action du GM pour lancer la première manche.
+      a.themePickerId = this.players.find(p => p.connected)?.id || this.players[0]?.id || null;
       a.currentTheme = null;
       a.bets = {};
       a.answers = {};
@@ -1555,11 +1557,16 @@ export class GameState {
     }
     return pool[Math.floor(Math.random() * pool.length)];
   }
-  ttcqSelectTheme(playerId, themeId) {
+  // Le joueur choisit une THÉMATIQUE (ex: "alcool") ; la CARTE (8 questions,
+  // ex: "Fellation vin blanc") est piochée automatiquement dedans, au hasard
+  // parmi celles pas encore utilisées — le nom de la carte n'est jamais
+  // montré avant d'être révélé, pour ne pas gâcher la surprise.
+  ttcqSelectCategory(playerId, category) {
     const a = this.activity;
     if (!a || a.type !== 'ttcq' || a.sub !== 'theme_pick') return { error: 'Pas le bon moment' };
-    const theme = (a._pool || getTtcq()).find(t => t.id === themeId);
-    if (!theme) return { error: 'Thème inconnu' };
+    if (!category || !(a.categories || []).includes(category)) return { error: 'Thématique inconnue' };
+    const theme = this._ttcqRandomTheme(category);
+    if (!theme) return { error: 'Plus de cartes dans cette thématique' };
     a.currentTheme = theme;
     a.themePickerId = playerId;
     if (!a._usedThemes) a._usedThemes = [];
@@ -1568,7 +1575,7 @@ export class GameState {
     a.bets = {};
     a.answers = {};
     a.results = {};
-    this.addLog(`📖 ${this.player(playerId)?.name || '?'} choisit le thème : ${theme.name}`);
+    this.addLog(`📖 ${this.player(playerId)?.name || '?'} choisit la thématique « ${category} » — carte : ${theme.name}`);
     this.touch();
     return { ok: true };
   }
@@ -1756,14 +1763,14 @@ export class GameState {
         }
       }
     }
-    // En phase theme_pick, envoyer les thèmes disponibles de la catégorie
-    if (a.sub === 'theme_pick' && forPlayerId != null) {
+    // En phase theme_pick, on n'envoie QUE la liste des thématiques
+    // disponibles — jamais le nom des cartes, qui sont piochées au hasard
+    // dedans une fois la thématique choisie (garde la surprise).
+    if (a.sub === 'theme_pick') {
       const used = a._usedThemes || [];
       const pool = a._pool || getTtcq();
       const available = pool.filter(t => !used.includes(t.id));
-      const byCat = {};
-      available.forEach(t => { if (!byCat[t.cat]) byCat[t.cat] = []; byCat[t.cat].push({ id: t.id, name: t.name }); });
-      base.availableThemes = byCat;
+      base.availableCategories = (a.categories || []).filter(c => available.some(t => t.cat === c));
       base.totalThemeCount = available.length;
     }
     return base;
@@ -1779,14 +1786,13 @@ export class GameState {
     if (a.sub === 'theme_pick' && a.themePickerId) {
       const picker = this.player(a.themePickerId);
       if (picker && picker.simBot && !a.currentTheme) {
-        const used = a._usedThemes || [];
-        const pool = a._pool || getTtcq();
-        const avail = pool.filter(t => !used.includes(t.id));
-        if (avail.length) this.ttcqSelectTheme(a.themePickerId, avail[Math.floor(Math.random() * avail.length)].id);
+        const cats = a.categories || [];
+        if (cats.length) this.ttcqSelectCategory(a.themePickerId, cats[Math.floor(Math.random() * cats.length)]);
       }
     } else if (a.sub === 'theme_pick' && !a.themePickerId && bots.length) {
       const picker = bots[Math.floor(Math.random() * bots.length)];
-      this.ttcqSelectTheme(picker.id, this._ttcqRandomTheme().id);
+      const cats = a.categories || [];
+      if (cats.length) this.ttcqSelectCategory(picker.id, cats[Math.floor(Math.random() * cats.length)]);
     }
   }
 
@@ -2039,14 +2045,11 @@ export class GameState {
           this.ttcqAnswer(b.id, (lvlData && Math.random() < 0.5) ? lvlData.a : 'xxx');
         }
         if (a.sub === 'theme_pick' && a.themePickerId === b.id && !a.currentTheme) {
-          const used = a._usedThemes || [];
-          const pool = a._pool || getTtcq();
-          const avail = pool.filter(t => !used.includes(t.id));
-          if (avail.length) this.ttcqSelectTheme(b.id, avail[rint(avail.length)].id);
+          const cats = a.categories || [];
+          if (cats.length) this.ttcqSelectCategory(b.id, cats[rint(cats.length)]);
         } else if (a.sub === 'theme_pick' && !a.themePickerId) {
-          const pool = a._pool || getTtcq();
-          const avail = pool.filter(t => !(a._usedThemes||[]).includes(t.id));
-          if (avail.length) this.ttcqSelectTheme(b.id, avail[rint(avail.length)].id);
+          const cats = a.categories || [];
+          if (cats.length) this.ttcqSelectCategory(b.id, cats[rint(cats.length)]);
           break;
         }
       } else if (a.type === 'justone') {
@@ -2605,6 +2608,10 @@ export class GameState {
       feedbackCount: (this.cfg?.feedback || []).length,
       phase: this.phase,
       deadlineLabel: this.cfg?.settings?.deadlineLabel || '',
+      hasBorne: !!this.cfg?.settings?.hasBorne,
+      gmDedicatedDevice: !!this.cfg?.settings?.gmDedicatedDevice,
+      playersRemote: !!this.cfg?.settings?.playersRemote,
+      isGM: !!forToken && forToken === this.cfg?.gmPlayerToken,
       ambientPaused: this.ambientPaused,
       ambientRestartAt: this.ambientRestartAt,
       currentGage: this.currentGage,

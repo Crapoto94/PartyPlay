@@ -27,6 +27,7 @@
 <!-- Barre flottante Game Master (Vincent) : visible pendant les activités du Monde 4
      pour stopper l'activité en cours et revenir à la checklist des missions. -->
 <div id="gmbar" style="display:none;position:fixed;left:0;right:0;bottom:0;z-index:50;padding:8px;background:#14001aee;border-top:2px solid var(--neon);text-align:center"></div>
+<div id="pxlQuickLinks" style="display:none;position:fixed;top:8px;right:8px;z-index:50;flex-direction:column;gap:4px;align-items:flex-end"></div>
 <div class="wrap" id="app">
   <div class="card center"><span class="pixel blink">CONNEXION…</span></div>
 </div>
@@ -84,11 +85,59 @@ function checkEnqHint(s){
   if (_prevEnqCount >= 0 && cur > _prevEnqCount) playTing();
   _prevEnqCount = cur;
 }
+function updateQuickLinks(s){
+  const bar = document.getElementById('pxlQuickLinks');
+  if (!bar) return;
+  let html = '';
+  if (s.isGM && !s.gmDedicatedDevice) {
+    html += `<a class="btn secondary" style="width:auto;font-size:11px;padding:6px 10px" href="/e/${s.eventId}/admin" target="_blank">⚙️ Console GM</a>`;
+  }
+  if (s.playersRemote) {
+    html += `<a class="btn secondary" style="width:auto;font-size:11px;padding:6px 10px" href="/e/${s.eventId}/borne" target="_blank">📺 Voir la BORNE</a>`;
+  }
+  bar.innerHTML = html;
+  bar.style.display = html ? 'flex' : 'none';
+}
+let _prevTtcqRevealAt = 0;
+function checkTtcqReveal(s){
+  const a = s && s.activity;
+  if (!a || a.type !== 'ttcq'){ _prevTtcqRevealAt = 0; return; }
+  if (a.sub !== 'reveal' || !a.revealAt || a.revealAt === _prevTtcqRevealAt) return;
+  _prevTtcqRevealAt = a.revealAt;
+  if (a.myResult && a.myResult.correct) playTing();
+  showTtcqResultsPopup(a);
+}
+function showTtcqResultsPopup(act){
+  const existing = document.getElementById('ttcqResultsPopup');
+  if (existing) existing.remove();
+  const rows = (act.leaderboard||[]).map(p=>{
+    const r = (act.results||{})[p.id];
+    let status;
+    if (!r || r.given === '') status = '<span class="muted">⏳ N\'a pas répondu</span>';
+    else status = r.correct ? '<span class="neon-cyan">✅ Bonne réponse</span>' : '<span class="neon-pink">❌ Mauvaise réponse</span>';
+    return `<div style="display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px solid #ffffff14">
+      <span>${esc(p.name)}</span>${status}
+    </div>`;
+  }).join('');
+  const div = document.createElement('div');
+  div.id = 'ttcqResultsPopup';
+  div.style.cssText = 'position:fixed;inset:0;z-index:9998;background:rgba(0,0,0,.75);display:flex;align-items:center;justify-content:center';
+  div.onclick = () => div.remove();
+  div.innerHTML = `<div class="card" style="max-width:340px;width:90%;max-height:70vh;overflow-y:auto" onclick="event.stopPropagation()">
+    <h3 class="neon-yellow" style="margin-top:0">📋 Résultats de la manche</h3>
+    ${rows}
+    <p class="muted" style="font-size:11px;margin-top:10px;text-align:center">Touche l'écran pour fermer</p>
+  </div>`;
+  document.body.appendChild(div);
+  setTimeout(()=>{ const el=document.getElementById('ttcqResultsPopup'); if(el) el.remove(); }, 8000);
+}
 function applyState(s){
   const j = JSON.stringify(s);
   if (j === _lastJoueurJson) return;
   _lastJoueurJson = j;
   checkEnqHint(s);
+  checkTtcqReveal(s);
+  updateQuickLinks(s);
   STATE = s; render();
   detectPianoDemo(s); // surligne mes touches si la borne (re)joue la mélodie
   checkPhotoReminder(s); // relance « pense à tes photos » 1 h après le début de la fête
@@ -1849,25 +1898,19 @@ function ttcqController(act){
     </div>`;
   }
 
-  // ---- CHOIX DU THÈME ----
+  // ---- CHOIX DE LA THÉMATIQUE (la carte à l'intérieur est piochée au hasard) ----
   if (act.sub==='theme_pick'){
     const iAmPicker = act.themePickerId === me.id;
     if (iAmPicker){
-      const cats = act.availableThemes||{};
-      const catKeys = Object.keys(cats);
+      const cats = act.availableCategories||[];
       return `<div class="card center glow-box">
         ${pill}
-        <h2 class="neon-yellow">👑 Choisis le thème !</h2>
-        <p class="muted">Sélectionne une catégorie puis un thème</p>
-        <div style="max-height:60vh;overflow-y:auto">
-        ${catKeys.map(c=>`<div style="margin:8px 0">
-          <div class="pill neon-cyan" style="font-size:12px;margin-bottom:4px">${esc(c)}</div>
-          <div style="display:flex;flex-wrap:wrap;gap:4px;justify-content:center">
-            ${(cats[c]||[]).map(t=>`<button class="btn" style="font-size:13px;padding:6px 10px" onclick="ttcqSelect('${t.id}')">${esc(t.name)}</button>`).join('')}
-          </div>
-        </div>`).join('')}
-        ${!catKeys.length?'<p class="neon-pink">⚠️ Plus de thèmes disponibles</p>':''}
+        <h2 class="neon-yellow">👑 Choisis la thématique !</h2>
+        <p class="muted">La carte sera piochée au hasard dedans — surprise !</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;max-height:60vh;overflow-y:auto">
+          ${cats.map(c=>`<button class="btn" style="font-size:14px;padding:8px 14px" onclick="ttcqSelect('${esc(c).replace(/'/g,"\\'")}')">${esc(c)}</button>`).join('')}
         </div>
+        ${!cats.length?'<p class="neon-pink">⚠️ Plus de thématiques disponibles</p>':''}
       </div>`;
     }
     return `<div class="card center glow-box">
@@ -1949,7 +1992,7 @@ function ttcqController(act){
 
   return `<div class="card center"><h2>🎯 TTCQ</h2><p>Regarde la BORNE 📺</p></div>`;
 }
-function ttcqSelect(themeId){ api('/api/ttcq/selectTheme', { themeId }); }
+function ttcqSelect(category){ api('/api/ttcq/selectCategory', { category }); }
 function ttcqBet(level){ api('/api/ttcq/bet', { level }); }
 function ttcqSubmitAnswer(){
   const el = document.getElementById('ttcqAnswerInput'); if (!el) return;

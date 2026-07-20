@@ -97,6 +97,7 @@
     </div>
 
     <div id="app" style="display:none">
+      <div id="quickLinks" class="row" style="gap:8px;margin-bottom:10px"></div>
       <div class="tabbar">
         <button class="btn tab active" data-tab="piloter" onclick="tab('piloter')">🎮 Piloter</button>
         <button class="btn tab" data-tab="general" onclick="tab('general')">⚙️ Général</button>
@@ -227,6 +228,15 @@
           <div class="field"><label>Mot de passe console (vide = libre)</label><input type="text" id="g_pwd"></div>
           <div class="field"><label>Libellé compte à rebours</label><input type="text" id="g_deadline"></div>
           <div class="field"><label>Ambiance YouTube (playlist)</label><input type="text" id="g_amb" placeholder="lien playlist YouTube"></div>
+          <div class="field">
+            <label style="display:flex;align-items:center;gap:8px;cursor:pointer"><input type="checkbox" id="g_hasBorne" style="width:auto;transform:scale(1.3)"> <span>📺 On a une borne (PC/tablette branché sur une TV)</span></label>
+          </div>
+          <div class="field">
+            <label style="display:flex;align-items:center;gap:8px;cursor:pointer"><input type="checkbox" id="g_gmDevice" style="width:auto;transform:scale(1.3)"> <span>🎮 J'ai un appareil dédié pour piloter la partie</span></label>
+          </div>
+          <div class="field">
+            <label style="display:flex;align-items:center;gap:8px;cursor:pointer"><input type="checkbox" id="g_remote" style="width:auto;transform:scale(1.3)"> <span>🌍 Les joueurs sont à distance</span></label>
+          </div>
           <button class="btn secondary" onclick="saveGeneral()">💾 Enregistrer</button>
           <span class="muted" id="g_saved"></span>
         </div>
@@ -461,6 +471,7 @@ async function loadConfig(){
   // Bannière 18+ non payée
   gateAdultContent();
   await loadEqzDefaults(); eqzDefLoaded=true;
+  fillQuickLinks();
   fillGeneral(); fillPlayers(); fillActivities(); fillContent(); fillLaunchers();
   ttcqInitCats();
   applyActivityFilter();
@@ -481,6 +492,19 @@ async function resendVerification(btn) {
   setTimeout(() => { st.textContent = ''; st.style.color = ''; }, 4000);
 }
 
+function fillQuickLinks(){
+  const c = document.getElementById('quickLinks');
+  const s = CFG.settings || {};
+  const borneLabel = s.hasBorne ? '📺 Ouvrir la Borne' : '📺 Ouvrir la Borne (sur ton téléphone)';
+  let html = `<a class="btn secondary" style="width:auto" href="/e/${EVENT.id}/borne" target="_blank">${borneLabel}</a>`;
+  if (!s.hasBorne) {
+    html += `<span class="muted" style="font-size:12px;align-self:center">🔊 Pas de borne : connecte une enceinte Bluetooth à cet appareil.</span>`;
+  }
+  if (!s.gmDedicatedDevice && CFG.gmPlayerToken) {
+    html += `<a class="btn secondary" style="width:auto" href="/e/${EVENT.id}/j/${esc(CFG.gmPlayerToken)}" target="_blank">🙋 Ma page joueur</a>`;
+  }
+  c.innerHTML = html;
+}
 function tab(name){
   document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active', b.dataset.tab===name));
   document.querySelectorAll('[data-pane]').forEach(s=>s.hidden = s.dataset.pane!==name);
@@ -495,6 +519,9 @@ function fillGeneral(){
   g_date.value=CFG.partyDate||'';
   g_pwd.value=CFG.adminPassword||''; g_deadline.value=(CFG.settings&&CFG.settings.deadlineLabel)||'';
   g_amb.value=(CFG.settings&&CFG.settings.ambianceYoutube)||'';
+  g_hasBorne.checked=!!(CFG.settings&&CFG.settings.hasBorne);
+  g_gmDevice.checked=!!(CFG.settings&&CFG.settings.gmDedicatedDevice);
+  g_remote.checked=!!(CFG.settings&&CFG.settings.playersRemote);
   // Bandeau formule
   const planEl = document.getElementById('planBanner');
   if (planEl && META){
@@ -572,9 +599,11 @@ async function markAdultPaid(btn){
 
 async function saveGeneral(){
   const patch={ name:g_name.value, theme:g_theme.value, publicUrl:g_url.value, partyDate:g_date.value || '', adminPassword:g_pwd.value,
-    settings:{ ...CFG.settings, deadlineLabel:g_deadline.value, ambianceYoutube:g_amb.value } };
+    settings:{ ...CFG.settings, deadlineLabel:g_deadline.value, ambianceYoutube:g_amb.value,
+      hasBorne:g_hasBorne.checked, gmDedicatedDevice:g_gmDevice.checked, playersRemote:g_remote.checked } };
   await push(patch); document.getElementById('g_saved').textContent=' ✓ enregistré';
   setTimeout(()=>document.getElementById('g_saved').textContent='',1500);
+  CFG.settings = patch.settings; fillQuickLinks();
   if (patch.theme!==EVENT.theme) location.reload();
 }
 

@@ -11,8 +11,15 @@ import path from 'path';
 import { randomBytes } from 'crypto';
 import { fileURLToPath } from 'url';
 import { defaultSettings, defaultContent, emptyContent, defaultActivities } from '../data/defaults.js';
+import { AVATARS } from '../data/avatars.js';
 import { enforcePlan, planExists } from './plans.js';
 import { defaultPlaylistsMap } from './blindtests.js';
+
+const AVATAR_KEYS = Object.keys(AVATARS);
+function playerSlug(name) {
+  return (name || '').toString().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export const EVENTS_DIR = path.join(__dirname, '..', 'events');
@@ -82,11 +89,12 @@ export function findEventByVerificationToken(token) {
   return null;
 }
 
-export function createEvent({ name, theme = 'retro', adminPassword = '', publicUrl = '', seed = 'default', plan = 'free', contactEmail = '', bypassVerification = false, partyDate = '', adultParty = false }) {
+export function createEvent({ name, theme = 'retro', adminPassword = '', publicUrl = '', seed = 'default', plan = 'free', contactEmail = '', bypassVerification = false, partyDate = '', adultParty = false, gmName = 'Game Master', hasBorne = false, gmDedicatedDevice = false, playersRemote = false }) {
   ensureRoot();
   const id = slugify(name);
   fs.mkdirSync(uploadsDir(id), { recursive: true });
   const needsVerification = !!contactEmail && !bypassVerification;
+  const gmPlayerToken = 'PXL-' + randomBytes(4).toString('hex').toUpperCase();
   const cfg = {
     id,
     name: name || id,
@@ -107,8 +115,9 @@ export function createEvent({ name, theme = 'retro', adminPassword = '', publicU
     closed: false,
     closedAt: null,
     feedback: [],
-    settings: defaultSettings(),
-    players: [],
+    settings: { ...defaultSettings(), hasBorne: !!hasBorne, gmDedicatedDevice: !!gmDedicatedDevice, playersRemote: !!playersRemote },
+    gmPlayerToken,
+    players: [{ id: playerSlug(gmName) || 'gm', name: (gmName || 'Game Master').trim() || 'Game Master', avatar: AVATAR_KEYS[0], email: contactEmail || '', token: gmPlayerToken }],
     activities: defaultActivities(),
     content: seed === 'default' ? defaultContent() : emptyContent(),
   };

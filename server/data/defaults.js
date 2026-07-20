@@ -20,6 +20,9 @@ export function defaultSettings() {
     briefingYoutube: '',
     debriefYoutube: '',
     pacmanYoutube: '',
+    hasBorne: false,
+    gmDedicatedDevice: false,
+    playersRemote: false,
   };
 }
 

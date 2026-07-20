@@ -207,8 +207,9 @@ app.post('/api/promo/validate', (req, res) => {
 });
 
 app.post('/api/parties', async (req, res) => {
-  const { name, theme, plan, adminPassword, publicUrl, seed, contactEmail, promoCode, googleCredential, partyDate, adultParty } = req.body || {};
+  const { name, theme, plan, adminPassword, publicUrl, seed, contactEmail, promoCode, googleCredential, partyDate, adultParty, gmName, hasBorne, gmDedicatedDevice, playersRemote } = req.body || {};
   if (!name || !name.trim()) return res.status(400).json({ error: 'Nom de la fête requis.' });
+  if (!gmName || !gmName.trim()) return res.status(400).json({ error: 'Ton pseudo est requis.' });
 
   // Connexion Google : si un jeton est fourni, on le vérifie côté serveur et on
   // en tire un email DÉJÀ vérifié (pas d'email de confirmation à cliquer).
@@ -227,7 +228,7 @@ app.post('/api/parties', async (req, res) => {
   const planName = promo ? promo.plan : (planExists(plan) ? plan : 'free');
   // Mot de passe console : fourni, sinon généré.
   const pwd = (adminPassword && adminPassword.trim()) || ('p' + Math.random().toString(36).slice(2, 8));
-  const cfg = createEvent({ name: name.trim(), theme, plan: planName, adminPassword: pwd, publicUrl, seed: seed || 'default', contactEmail: finalEmail, partyDate, adultParty: !!adultParty });
+  const cfg = createEvent({ name: name.trim(), theme, plan: planName, adminPassword: pwd, publicUrl, seed: seed || 'default', contactEmail: finalEmail, partyDate, adultParty: !!adultParty, gmName: gmName.trim(), hasBorne: !!hasBorne, gmDedicatedDevice: !!gmDedicatedDevice, playersRemote: !!playersRemote });
   cfg.avatars = DEFAULT_AVATARS;
   cfg.creatorIp = clientIp(req) || 'unknown';
   cfg.creatorOs = detectOs(req.get('user-agent'));
@@ -293,7 +294,8 @@ app.post('/api/parties', async (req, res) => {
     }
   } catch (e) { console.error('[notify] Erreur:', e.message); }
 
-  res.json({ ok: true, event: { id: cfg.id, name: cfg.name, theme: cfg.theme, plan: cfg.plan, paymentStatus: cfg.paymentStatus, emailVerified: cfg.emailVerified !== false, contactEmail: cfg.contactEmail || '', partyDate: cfg.partyDate || '', adultParty: !!cfg.adultParty, adultVerified: !!cfg.adultVerified }, adminPassword: pwd });
+  const baseUrl0 = process.env.PUBLIC_URL || `${req.get('x-forwarded-proto') || req.protocol}://${req.get('x-forwarded-host') || req.get('host')}`;
+  res.json({ ok: true, event: { id: cfg.id, name: cfg.name, theme: cfg.theme, plan: cfg.plan, paymentStatus: cfg.paymentStatus, emailVerified: cfg.emailVerified !== false, contactEmail: cfg.contactEmail || '', partyDate: cfg.partyDate || '', adultParty: !!cfg.adultParty, adultVerified: !!cfg.adultVerified }, adminPassword: pwd, gmPlayerToken: cfg.gmPlayerToken, gmJoinUrl: `${baseUrl0}/e/${cfg.id}/j/${cfg.gmPlayerToken}` });
 });
 
 // Résout un token joueur → l'événement qui le contient (rejoindre par code).
@@ -1022,7 +1024,7 @@ ev.post('/api/carton/play', (req, res) => { const p = requirePlayer(req, res); i
 ev.post('/api/carton/pick', (req, res) => { const p = requirePlayer(req, res); if (!p) return; res.json(req.game.cartonPick(p.id, req.body.choice)); });
 
 // TTMC — le joueur choisit un thème, mise, puis répond.
-ev.post('/api/ttcq/selectTheme', (req, res) => { const p = requirePlayer(req, res); if (!p) return; res.json(req.game.ttcqSelectTheme(p.id, req.body.themeId)); });
+ev.post('/api/ttcq/selectCategory', (req, res) => { const p = requirePlayer(req, res); if (!p) return; res.json(req.game.ttcqSelectCategory(p.id, req.body.category)); });
 ev.post('/api/ttcq/bet', (req, res) => { const p = requirePlayer(req, res); if (!p) return; res.json(req.game.ttcqBet(p.id, req.body.level)); });
 ev.post('/api/ttcq/answer', (req, res) => { const p = requirePlayer(req, res); if (!p) return; res.json(req.game.ttcqAnswer(p.id, req.body.text)); });
 
