@@ -144,9 +144,15 @@
             <button class="btn" style="width:auto" onclick="launchAnecdote()">🔴 Lancer</button>
           </div>
           <div class="row">
-  
+
             <button class="btn" data-cat="spotlight" onclick="launch('spotlight',{})">🔦 Spotlight</button>
-            <button class="btn" data-cat="draw" onclick="launch('draw',{})">🎨 Dessine-moi</button>
+          </div>
+          <div class="field" data-cat="draw" style="margin-top:10px"><label>🎨 Dessine-moi — un joueur dessine, les autres devinent</label>
+            <div class="row">
+              <button class="btn" onclick="launch('draw',{level:'simple'})">🙂 Simple</button>
+              <button class="btn" onclick="launch('draw',{level:'complique'})">🧠 Compliqué</button>
+              <button class="btn" id="btnDrawAdult" onclick="launch('draw',{level:'adulte'})">🔞 18+</button>
+            </div>
           </div>
           <div class="field" data-cat="privacy" style="margin-top:10px"><label>🤫 Sans Filtre !? — confessions anonymes (Intime = normal · 18+ = vrai 18+, nécessite validation)</label>
             <div class="row">
@@ -330,6 +336,17 @@
           <div class="row">
             <button class="btn secondary" onclick="saveJustoneCustom()">💾 Enregistrer mes mots</button>
             <span class="muted" id="jo_saved"></span>
+          </div>
+        </div>
+        <div class="card">
+          <h3 class="neon-yellow">🎨 Dessine-moi — mes mots perso</h3>
+          <p class="muted">Ajoute tes propres mots à faire deviner, par niveau. Un mot (ou petite expression) par ligne.</p>
+          <div class="field"><label>Mots perso — Simple</label><textarea id="c_draw_simple" rows="4" placeholder="mon mot perso"></textarea></div>
+          <div class="field"><label>Mots perso — Compliqué</label><textarea id="c_draw_complique" rows="4" placeholder="mon mot perso"></textarea></div>
+          <div class="field"><label>Mots perso — 18+ <span class="muted">(mots coquins)</span></label><textarea id="c_draw_adulte" rows="4" placeholder="mon mot perso 18+"></textarea></div>
+          <div class="row">
+            <button class="btn secondary" onclick="saveDrawCustom()">💾 Enregistrer mes mots</button>
+            <span class="muted" id="draw_saved"></span>
           </div>
         </div>
         <div class="card">
@@ -537,7 +554,7 @@ function fillGeneral(){
     }
   }
 }
-const ADULT_BTN_IDS = ['btnPrivacyHard','btnCartonAdult','btnTtcqAdult','btnJustoneAdult'];
+const ADULT_BTN_IDS = ['btnPrivacyHard','btnCartonAdult','btnTtcqAdult','btnJustoneAdult','btnDrawAdult'];
 
 function gateAdultContent(){
   const adultBtns = ADULT_BTN_IDS.map(id => document.getElementById(id)).filter(Boolean);
@@ -863,7 +880,7 @@ const ACTIVITY_HELP={
   anecdotes:'« Breaking News » — une vidéo puis des questions. <b>Personnalisation :</b> upload ta propre vidéo ou colle un lien YouTube dans l\'onglet <b>🕹️ Activités</b>.',
   photo:'Les joueurs prennent une photo selon un thème. <b>Personnalisation :</b> ajoute/supprime des thèmes dans l\'onglet <b>⚙️ Général → Jeux</b>.',
   spotlight:'« Qui est-ce ? » — un joueur est masqué, les autres devinent son identité à travers des questions.',
-  draw:'Un joueur dessine sur son téléphone, les autres devinent. Pas de personnalisation.',
+  draw:'Un joueur dessine sur son téléphone, les autres devinent. 3 niveaux : Simple, Compliqué, 18+ (mots coquins). <b>Personnalisation :</b> ajoute tes propres mots par niveau dans l\'onglet <b>📚 Contenu</b>.',
   arcade:'Collection de mini-jeux rétro (Pac-Man, 2048, Pong).',
   collab:'Activités collaboratives où tout le monde participe en même temps sur un même écran (mosaïque, piano).',
   carton:'Questions à trou avec cartes-réponses loufoques. <b>Personnalisation :</b> ajoute tes propres cartes dans l\'onglet <b>⚙️ Général → Jeux</b>.',
@@ -1113,6 +1130,11 @@ function fillContent(){
   const jo=ct.justone||{};
   document.getElementById('c_jo_words').value=(jo.words||[]).join('\n');
   document.getElementById('c_jo_adult').value=(jo.wordsAdult||[]).join('\n');
+  // Dessine-moi
+  const dr=ct.draw||{};
+  document.getElementById('c_draw_simple').value=(dr.wordsSimple||[]).join('\n');
+  document.getElementById('c_draw_complique').value=(dr.wordsComplique||[]).join('\n');
+  document.getElementById('c_draw_adulte').value=(dr.wordsAdulte||[]).join('\n');
   fillBlindtests();
   fillAnecdotes();
 }
@@ -1131,6 +1153,14 @@ async function saveJustoneCustom(){
   const content={ ...(CFG.content||{}), justone };
   await push({content}); CFG.content=content;
   const s=document.getElementById('jo_saved'); s.textContent=' ✓ enregistré ('+justone.words.length+' + '+justone.wordsAdult.length+' 18+)'; setTimeout(()=>s.textContent='',2500);
+}
+// Enregistre les mots perso « Dessine-moi » (par niveau).
+async function saveDrawCustom(){
+  const lines=(id)=>document.getElementById(id).value.split('\n').map(s=>s.trim()).filter(Boolean);
+  const draw={ wordsSimple:lines('c_draw_simple'), wordsComplique:lines('c_draw_complique'), wordsAdulte:lines('c_draw_adulte') };
+  const content={ ...(CFG.content||{}), draw };
+  await push({content}); CFG.content=content;
+  const s=document.getElementById('draw_saved'); s.textContent=' ✓ enregistré ('+draw.wordsSimple.length+' + '+draw.wordsComplique.length+' + '+draw.wordsAdulte.length+' 18+)'; setTimeout(()=>s.textContent='',2500);
 }
 /* ---- Quiz (graphique) ---- */
 let eqzDefaultsCatalog={}; // {deckName: [questions]} from /api/admin/quiz

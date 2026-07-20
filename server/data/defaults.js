@@ -6,7 +6,7 @@
 // =====================================================================
 
 import { AVATARS } from './avatars.js';
-import { DRAW_WORDS } from './draw_words.js';
+import { DRAW_WORDS, DRAW_WORDS_ADULT } from './draw_words.js';
 import { getQuiz } from '../store/quiz.js';
 import { getSpotlight } from '../store/spotlight.js';
 import { getPhotos } from '../store/photos.js';
@@ -32,7 +32,8 @@ export function defaultContent() {
     blindtest: { playlists: {} },
     anecdotes: [{ titre:'🎵 Never Gonna Give You Up', youtube:'https://www.youtube.com/watch?v=dQw4w9WgXcQ', video:'', vignette:'https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg' }],
     spotlightDefis: getSpotlight(),
-    drawWords: DRAW_WORDS,
+    drawWords: [...DRAW_WORDS, ...DRAW_WORDS_ADULT],
+    draw: { wordsSimple: [], wordsComplique: [], wordsAdulte: [] },
     photoMissions: getPhotos(),
     ttcq: { themes: [] },
   }));
@@ -46,6 +47,7 @@ export function emptyContent() {
     anecdotes: [],
     spotlightDefis: [],
     drawWords: [],
+    draw: { wordsSimple: [], wordsComplique: [], wordsAdulte: [] },
     photoMissions: {},
     ttcq: { themes: [] },
   };

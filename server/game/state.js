@@ -733,7 +733,17 @@ export class GameState {
       }
     }
     // Dessine-moi : un joueur dessine, les autres devinent (rotation des dessinateurs).
+    // 3 niveaux : simple, complique, adulte (18+, mots coquins).
     if (type === 'draw') {
+      const level = ['simple', 'complique', 'adulte'].includes(opts.level) ? opts.level : 'simple';
+      const builtIn = (this._content?.drawWords || []).filter(w => (w.level || 'simple') === level);
+      const customKey = level === 'simple' ? 'wordsSimple' : level === 'complique' ? 'wordsComplique' : 'wordsAdulte';
+      const custom = (this._content?.draw?.[customKey] || [])
+        .map(s => (s == null ? '' : String(s)).trim()).filter(Boolean)
+        .map(w => ({ word: w, cat: 'Perso', level }));
+      this.activity.level = level;
+      this.activity.levelLabel = level === 'simple' ? 'Simple' : level === 'complique' ? 'Compliqué' : '18+';
+      this.activity._pool = [...custom, ...builtIn];
       this.activity.scores = {};       // { playerId: points }
       this.activity.round = 0;
       this.activity.order = this.players.filter((p) => p.connected).map((p) => p.id);
@@ -2285,8 +2295,7 @@ export class GameState {
     a.drawerPos = ((a.drawerPos ?? -1) + 1) % a.order.length;
     a.drawerId = a.order[a.drawerPos];
     a.turns = (a.turns || 0) + 1;
-    const words = (this._content.drawWords && this._content.drawWords.length)
-      ? this._content.drawWords : [{ word: 'chat', cat: 'Animal' }];
+    const words = (a._pool && a._pool.length) ? a._pool : [{ word: 'chat', cat: 'Animal' }];
     const w = words[Math.floor(Math.random() * words.length)];
     a.word = w.word; a.category = w.cat;
     a.strokes = []; a.guessed = {}; a.phase = 'draw'; a.winnerName = null; a.round = (a.round || 0) + 1;
@@ -2347,6 +2356,7 @@ export class GameState {
     const isDrawer = !!(forPlayerId && forPlayerId === a.drawerId);
     return {
       type: 'draw', state: a.state, phase: a.phase, round: a.round,
+      level: a.level || 'simple', levelLabel: a.levelLabel || 'Simple',
       turns: a.turns || 0, maxTurns: a.maxTurns || 0,
       drawerId: a.drawerId, drawerName: this.player(a.drawerId)?.name || '?',
       category: a.category, wordLen: (a.word || '').length,
