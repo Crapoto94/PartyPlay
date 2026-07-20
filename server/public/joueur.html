@@ -21,6 +21,10 @@
   .tbtn { font-size:26px; padding:16px 0; border:3px solid #000; border-radius:12px;
     background:var(--neon4); color:#fff; box-shadow:0 5px 0 #3a2bd0; touch-action:manipulation; }
   .tbtn:active { transform:translateY(4px); box-shadow:0 1px 0 #3a2bd0; }
+  /* Retour tactile instantané au clic sur un bouton de réponse : reste "enfoncé"
+     tant que le serveur n'a pas confirmé (utile quand la connexion lag un peu). */
+  .btn-pressed { transform:translateY(3px) !important; filter:brightness(.85); opacity:.9; transition:none !important; }
+  .btn-pressed.btn-acked { outline:2px solid var(--ok, #2ee6a6); outline-offset:-2px; filter:none; opacity:1; }
 </style>
 </head>
 <body class="scanlines">
@@ -44,6 +48,22 @@ function api(path, body) {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ token: TOKEN, ...body })
   }).then(r => r.json());
+}
+
+// --- Retour tactile instantané sur les boutons de réponse (jeux + quiz) ---
+// Le clic déclenche TOUT DE SUITE côté client — avant même que la requête
+// réseau parte — l'effet "enfoncé" + une vibration, pour que le joueur sente
+// que son tap est pris en compte même si la connexion lag un peu. Un petit ✓
+// (contour vert) s'ajoute une fois que le serveur a accusé réception ; le
+// prochain re-render (état serveur synchronisé) prend ensuite le relais.
+function hapticTap(){ try { if (navigator.vibrate) navigator.vibrate(15); } catch(_){} }
+function pressAnswerBtn(btn, promise){
+  if (!btn) return promise;
+  hapticTap();
+  btn.classList.add('btn-pressed');
+  const group = btn.parentElement;
+  if (group) group.querySelectorAll('button').forEach(b => { if (b !== btn) b.disabled = true; });
+  return promise.then(r => { btn.classList.add('btn-acked'); return r; });
 }
 
 // --- Flux temps réel (SSE) + repli en polling si un proxy bufferise le flux ---
@@ -445,7 +465,7 @@ function controllerView(act) {
     return `<div class="card center glow-box">
       <h2 class="neon-cyan">REACTION RACE</h2>
       <p>Regarde la BORNE puis BUZZE !</p>
-      <button class="btn-buzz" ${buzzed?'disabled':''} onclick="buzz()">${buzzed?'BUZZÉ ✔':'BUZZ'}</button>
+      <button class="btn-buzz" ${buzzed?'disabled':''} onclick="buzz(this)">${buzzed?'BUZZÉ ✔':'BUZZ'}</button>
     </div>`;
   }
   if (act.type === 'spotlight') {
@@ -476,8 +496,8 @@ function controllerView(act) {
         <p><b>${esc(target)}</b> a tenté : <i>${esc(d.defi||'')}</i></p>
         <p>A-t-il/elle réussi ?</p>
         <div class="row">
-          <button class="btn ${my==='ok'?'secondary':''}" onclick="spotlightVote('ok')">RÉUSSI 👏</button>
-          <button class="btn ${my==='ko'?'danger':''}" onclick="spotlightVote('ko')">RATÉ 💀</button>
+          <button class="btn ${my==='ok'?'secondary':''}" onclick="spotlightVote('ok',this)">RÉUSSI 👏</button>
+          <button class="btn ${my==='ko'?'danger':''}" onclick="spotlightVote('ko',this)">RATÉ 💀</button>
         </div>
         ${my?'<p class="neon-cyan mt">Vote enregistré ✔ (modifiable)</p>':''}
       </div>`;
@@ -1302,7 +1322,7 @@ function quizController(act) {
         cls = 'btn warn';
       }
       const dis = (reveal || my!==null) ? 'disabled' : '';
-      return `<button class="${cls}" ${dis} onclick="answer(${i})">${letters[i]}. ${esc(c)}</button>`;
+      return `<button class="${cls}" ${dis} onclick="answer(${i},this)">${letters[i]}. ${esc(c)}</button>`;
     }).join('');
 
     if (reveal) {
@@ -1582,29 +1602,29 @@ function checkPhotoReminder(s) {
 
 // --- Actions ---
 function toggleReady(){ api('/api/ready', { ready: !STATE.me.ready }); }
-function buzz(){ api('/api/buzz'); }
-function answer(i){ api('/api/answer', { choice: i }); }
-function answerFree(){ const el=document.getElementById('freeAnswerInput'); if(!el||!el.value.trim()) return; api('/api/answer', { choice: el.value.trim() }); }
-function spotlightVote(v){ api('/api/spotlight/vote', { verdict: v }); }
-function privacyAnswer(v){ api('/api/privacy/answer', { yes: v }); }
-function privacyGuess(n){ api('/api/privacy/guess', { n }); }
+function buzz(btn){ pressAnswerBtn(btn, api('/api/buzz')); }
+function answer(i, btn){ pressAnswerBtn(btn, api('/api/answer', { choice: i })); }
+function answerFree(){ const el=document.getElementById('freeAnswerInput'); if(!el||!el.value.trim()) return; pressAnswerBtn(document.getElementById('freeAnswerBtn'), api('/api/answer', { choice: el.value.trim() })); }
+function spotlightVote(v, btn){ pressAnswerBtn(btn, api('/api/spotlight/vote', { verdict: v })); }
+function privacyAnswer(v, btn){ pressAnswerBtn(btn, api('/api/privacy/answer', { yes: v })); }
+function privacyGuess(n, btn){ pressAnswerBtn(btn, api('/api/privacy/guess', { n })); }
 // BOUCHE-TROU !? — sélection locale de cartes + envoi.
 let cartonSel = [];
 let _cartonRound = -1;
-function cartonToggle(i, blanks){
+function cartonToggle(i, blanks, btn){
   const pos = cartonSel.indexOf(i);
   if (pos >= 0) cartonSel.splice(pos, 1);
   else { if (cartonSel.length >= blanks) cartonSel.shift(); cartonSel.push(i); }
-  if (blanks === 1 && cartonSel.length === 1){ cartonSubmit(); return; }
+  if (blanks === 1 && cartonSel.length === 1){ cartonSubmit(btn); return; }
   render();
 }
-function cartonSubmit(){
+function cartonSubmit(btn){
   if (!cartonSel.length) return;
   const cards = cartonSel.slice();
   cartonSel = [];
-  api('/api/carton/play', { cards });
+  pressAnswerBtn(btn, api('/api/carton/play', { cards }));
 }
-function cartonPick(i){ api('/api/carton/pick', { choice: i }); }
+function cartonPick(i, btn){ pressAnswerBtn(btn, api('/api/carton/pick', { choice: i })); }
 // UN SEUL MOT !? — envoi de l'indice (un mot) ou de la réponse du devineur.
 function justoneClue(){
   const el = document.getElementById('joClueInput'); if (!el) return;
@@ -1636,8 +1656,8 @@ function privacyController(act){
       <p class="big" style="margin:14px 0">${esc(act.prompt||'')}</p>
       <p class="muted">Réponse 100% SECRÈTE — personne ne saura jamais qui a dit quoi.</p>
       <div class="row">
-        <button class="btn ${mine && act.myAnswer===true?'secondary':''}" onclick="privacyAnswer(true)">OUI 😏</button>
-        <button class="btn ${mine && act.myAnswer===false?'secondary':''}" onclick="privacyAnswer(false)">NON 😇</button>
+        <button class="btn ${mine && act.myAnswer===true?'secondary':''}" onclick="privacyAnswer(true,this)">OUI 😏</button>
+        <button class="btn ${mine && act.myAnswer===false?'secondary':''}" onclick="privacyAnswer(false,this)">NON 😇</button>
       </div>
       ${mine?'<p class="neon-cyan mt">Réponse enregistrée ✔ (modifiable tant que tout le monde n\'a pas répondu)</p>':''}
       <p class="muted mt">${act.answeredCount}/${act.playerCount} ont répondu…</p>
@@ -1648,7 +1668,7 @@ function privacyController(act){
     const btns = [];
     for (let i = 0; i <= (act.maxGuess||0); i++) {
       const sel = act.myGuess === i;
-      btns.push(`<button class="btn ${sel?'secondary':''}" style="min-width:64px;flex:0 1 auto" onclick="privacyGuess(${i})">${i}</button>`);
+      btns.push(`<button class="btn ${sel?'secondary':''}" style="min-width:64px;flex:0 1 auto" onclick="privacyGuess(${i},this)">${i}</button>`);
     }
     return `<div class="card center glow-box">
       ${head}
@@ -1710,7 +1730,7 @@ function cartonController(act){
   if (act.iAmJudge){
     if (act.sub==='judge'){
       const subs = act.submissions||[];
-      const btns = subs.map(s=>`<button class="btn" style="text-align:left;white-space:normal;height:auto;padding:12px 14px;margin:6px 0" onclick="cartonPick(${s.i})">${cartonFillHtml(act.prompt, s.cards)}</button>`).join('');
+      const btns = subs.map(s=>`<button class="btn" style="text-align:left;white-space:normal;height:auto;padding:12px 14px;margin:6px 0" onclick="cartonPick(${s.i},this)">${cartonFillHtml(act.prompt, s.cards)}</button>`).join('');
       return `<div class="card center glow-box" style="border-color:var(--neon3)">
         ${head}
         <div class="pill neon-yellow">👑 TU ES L'ARBITRE</div>
@@ -1781,10 +1801,10 @@ function cartonController(act){
   const cards = hand.map(c=>{
     const sel = cartonSel.includes(c.i);
     const badge = sel && blanks>1 ? `<span class="neon-yellow">${cartonSel.indexOf(c.i)+1}. </span>` : '';
-    return `<button class="btn ${sel?'secondary':''}" style="text-align:left;white-space:normal;height:auto;padding:12px 14px;margin:6px 0" onclick="cartonToggle(${c.i},${blanks})">${badge}${esc(c.text)}</button>`;
+    return `<button class="btn ${sel?'secondary':''}" style="text-align:left;white-space:normal;height:auto;padding:12px 14px;margin:6px 0" onclick="cartonToggle(${c.i},${blanks},this)">${badge}${esc(c.text)}</button>`;
   }).join('');
   const validate = blanks>1
-    ? `<button class="btn ${cartonSel.length===blanks?'':'ghost'}" ${cartonSel.length===blanks?'':'disabled'} onclick="cartonSubmit()">✅ Jouer ${cartonSel.length}/${blanks}</button>`
+    ? `<button class="btn ${cartonSel.length===blanks?'':'ghost'}" ${cartonSel.length===blanks?'':'disabled'} onclick="cartonSubmit(this)">✅ Jouer ${cartonSel.length}/${blanks}</button>`
     : '';
   return `<div class="card center glow-box">
     ${head}
@@ -1932,7 +1952,7 @@ function ttcqController(act){
         ${Array.from({length: act.betMax||8}, (_,i)=>i+1).map(n=>{
           const sel = myBet === n;
           const cls = ['','neon-green','neon-green','neon-cyan','neon-cyan','neon-yellow','neon-yellow','neon-pink','neon-pink'][n];
-          return `<button class="btn ${sel?'secondary':''}" style="min-width:48px;font-size:20px;font-weight:800" onclick="ttcqBet(${n})">
+          return `<button class="btn ${sel?'secondary':''}" style="min-width:48px;font-size:20px;font-weight:800" onclick="ttcqBet(${n},this)">
             <span class="${sel?'':cls}">${n}</span>
           </button>`;
         }).join('')}
@@ -1955,14 +1975,14 @@ function ttcqController(act){
       } else if (isQcm){
         // QCM : le joueur choisit une proposition, on renvoie son TEXTE.
         inputHtml = `<div class="ttcq-choices" style="display:flex;flex-direction:column;gap:8px;margin-top:8px">`
-          + q.choices.map(c=>`<button class="btn" style="width:100%" onclick="ttcqPickChoice(this.dataset.v)" data-v="${esc(c)}">${esc(c)}</button>`).join('')
+          + q.choices.map(c=>`<button class="btn" style="width:100%" onclick="ttcqPickChoice(this.dataset.v,this)" data-v="${esc(c)}">${esc(c)}</button>`).join('')
           + `</div>`;
       } else {
         // Saisie libre (nombre ou mot court).
         inputHtml = `<input id="ttcqAnswerInput" type="text" maxlength="24" autocomplete="off" autocapitalize="off" placeholder="Ta réponse (un mot ou un nombre)…"
                style="width:100%;box-sizing:border-box;padding:12px;font-size:20px;text-align:center;border-radius:10px;margin-top:8px"
                onkeydown="if(event.key==='Enter')ttcqSubmitAnswer()">
-             <button class="btn mt" onclick="ttcqSubmitAnswer()">✅ Valider ma réponse</button>`;
+             <button id="ttcqAnswerBtn" class="btn mt" onclick="ttcqSubmitAnswer()">✅ Valider ma réponse</button>`;
       }
       return `<div class="card center glow-box">
         ${pill}
@@ -1993,13 +2013,13 @@ function ttcqController(act){
   return `<div class="card center"><h2>🎯 TTCQ</h2><p>Regarde la BORNE 📺</p></div>`;
 }
 function ttcqSelect(category){ api('/api/ttcq/selectCategory', { category }); }
-function ttcqBet(level){ api('/api/ttcq/bet', { level }); }
+function ttcqBet(level, btn){ pressAnswerBtn(btn, api('/api/ttcq/bet', { level })); }
 function ttcqSubmitAnswer(){
   const el = document.getElementById('ttcqAnswerInput'); if (!el) return;
   const text = el.value.trim(); if (!text) return;
-  api('/api/ttcq/answer', { text });
+  pressAnswerBtn(document.getElementById('ttcqAnswerBtn'), api('/api/ttcq/answer', { text }));
 }
-function ttcqPickChoice(v){ if (v==null||v==='') return; api('/api/ttcq/answer', { text: v }); }
+function ttcqPickChoice(v, btn){ if (v==null||v==='') return; pressAnswerBtn(btn, api('/api/ttcq/answer', { text: v })); }
 function submitCode(){
   const v = document.getElementById('codeInput').value;
   api('/api/code', { code: v }).then(r=>{
