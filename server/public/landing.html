@@ -271,8 +271,9 @@
     .field select option { background: #191434; color: var(--ink); }
 
     /* ---- Toggle switch (remplace les cases à cocher classiques) ---- */
-    /* Spécificité ".field label.toggle-row" nécessaire pour battre ".field label { display:block }" ci-dessus. */
-    .field label.toggle-row { display: flex; align-items: flex-start; gap: 12px; cursor: pointer; }
+    /* La règle ".field label" nécessite le doublon ci-dessous pour être battue quand le
+       toggle est imbriqué dans un ".field" (sinon la règle générale suffit). */
+    .toggle-row, .field label.toggle-row { display: flex; align-items: flex-start; gap: 12px; cursor: pointer; }
     .toggle-row input[type="checkbox"] { position: absolute; opacity: 0; width: 0; height: 0; }
     .toggle-track {
       position: relative; flex: 0 0 auto; width: 46px; height: 26px; margin-top: 1px;
