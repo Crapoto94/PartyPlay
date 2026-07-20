@@ -40,9 +40,10 @@
     .act-help-box { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:10px; padding:10px 12px; margin:6px 0 2px; font-size:13px; line-height:1.5; color:var(--muted); width:100%; }
     .act-help-box b { color:var(--ink); }
     @media (max-width: 640px){ .launch-grid { grid-template-columns: 1fr; } }
-    /* ---- Toggle switch compact (catégories TTCQ) ---- */
-    /* Spécificité ".field label.toggle-chip" nécessaire pour battre ".field label { display:block }" de base.css. */
-    .field label.toggle-chip { display: inline-flex; align-items: center; gap: 6px; margin: 2px 4px; font-size: 13px; cursor: pointer; }
+    /* ---- Toggle switch compact (catégories TTCQ + liste des activités) ---- */
+    /* La règle ".field label" nécessite le doublon ci-dessous pour être battue quand le
+       toggle est imbriqué dans un ".field" (sinon la règle générale suffit). */
+    .toggle-chip, .field label.toggle-chip { display: inline-flex; align-items: center; gap: 6px; margin: 2px 4px; font-size: 13px; cursor: pointer; }
     .toggle-chip input[type="checkbox"] { position: absolute; opacity: 0; width: 0; height: 0; }
     .toggle-chip .toggle-track { position: relative; flex: 0 0 auto; width: 30px; height: 17px;
       border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid var(--neon4, rgba(255,255,255,.15));
@@ -108,12 +109,11 @@
     </div>
 
     <div id="app" style="display:none">
-      <div id="quickLinks" class="row" style="gap:8px;margin-bottom:10px"></div>
       <div class="tabbar">
         <button class="btn tab active" data-tab="piloter" onclick="tab('piloter')">🎮 Piloter</button>
         <button class="btn tab" data-tab="general" onclick="tab('general')">⚙️ Général</button>
-        <button class="btn tab" data-tab="joueurs" onclick="tab('joueurs')">🧑‍🤝‍🧑 Joueurs</button>
         <button class="btn tab" data-tab="contenu" onclick="tab('contenu')">📚 Contenu</button>
+        <a id="tabPlayerLink" class="btn tab secondary" href="#" target="_blank" style="display:none">🙋 Ma page joueur</a>
       </div>
 
       <!-- ============ PILOTER ============ -->
@@ -233,7 +233,6 @@
               <option value="casino">Casino / Vegas</option>
             </select>
           </div>
-          <div class="field"><label>URL publique (QR)</label><input type="text" id="g_url" placeholder="https://…"></div>
           <div class="field"><label>Date de la fête</label><input type="date" id="g_date"></div>
           <div class="field"><label>Mot de passe console (vide = libre)</label><input type="text" id="g_pwd"></div>
           <div class="field"><label>Libellé compte à rebours</label><input type="text" id="g_deadline"></div>
@@ -260,13 +259,11 @@
           <button class="btn secondary" onclick="saveActivities()">💾 Enregistrer</button>
           <span class="muted" id="ac_saved"></span>
         </div>
-      </section>
 
-      <!-- ============ JOUEURS ============ -->
-      <section data-pane="joueurs" hidden>
+        <!-- ---- Joueurs (fusionné dans Général) ---- -->
         <div class="card">
           <div class="inline" style="justify-content:space-between;flex-wrap:wrap;gap:8px">
-            <h3 class="neon-cyan" style="margin:0">Joueurs</h3>
+            <h3 class="neon-cyan" style="margin:0">🧑‍🤝‍🧑 Joueurs</h3>
             <button class="btn secondary" style="width:auto" onclick="sendAllInvites(this)">📧 Envoyer à tous</button>
             <button class="btn secondary" style="width:auto" onclick="printAllCards()">🖨️ Imprimer le matériel</button>
           </div>
@@ -506,17 +503,15 @@ async function resendVerification(btn) {
 }
 
 function fillQuickLinks(){
-  const c = document.getElementById('quickLinks');
   const s = CFG.settings || {};
-  const borneLabel = s.hasBorne ? '📺 Ouvrir la Borne' : '📺 Ouvrir la Borne (sur ton téléphone)';
-  let html = `<a class="btn secondary" style="width:auto" href="/e/${EVENT.id}/borne" target="_blank">${borneLabel}</a>`;
-  if (!s.hasBorne) {
-    html += `<span class="muted" style="font-size:12px;align-self:center">🔊 Pas de borne : connecte une enceinte Bluetooth à cet appareil.</span>`;
-  }
+  const link = document.getElementById('tabPlayerLink');
+  if (!link) return;
   if (!s.gmDedicatedDevice && CFG.gmPlayerToken) {
-    html += `<a class="btn secondary" style="width:auto" href="/e/${EVENT.id}/j/${esc(CFG.gmPlayerToken)}" target="_blank">🙋 Ma page joueur</a>`;
+    link.href = `/e/${EVENT.id}/j/${esc(CFG.gmPlayerToken)}`;
+    link.style.display = '';
+  } else {
+    link.style.display = 'none';
   }
-  c.innerHTML = html;
 }
 function tab(name){
   document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active', b.dataset.tab===name));
@@ -528,7 +523,7 @@ function fillGeneral(){
   // Thèmes restreints selon la formule de l'événement.
   const themes = (META && META.themes) ? META.themes : ['retro','neon','chic','kids','casino'];
   g_theme.innerHTML = themes.map(t=>`<option value="${t}">${THEME_LABELS[t]||t}</option>`).join('');
-  g_name.value=CFG.name||''; g_theme.value=CFG.theme||themes[0]; g_url.value=CFG.publicUrl||'';
+  g_name.value=CFG.name||''; g_theme.value=CFG.theme||themes[0];
   g_date.value=CFG.partyDate||'';
   g_pwd.value=CFG.adminPassword||''; g_deadline.value=(CFG.settings&&CFG.settings.deadlineLabel)||'';
   g_amb.value=(CFG.settings&&CFG.settings.ambianceYoutube)||'';
@@ -611,7 +606,7 @@ async function markAdultPaid(btn){
 }
 
 async function saveGeneral(){
-  const patch={ name:g_name.value, theme:g_theme.value, publicUrl:g_url.value, partyDate:g_date.value || '', adminPassword:g_pwd.value,
+  const patch={ name:g_name.value, theme:g_theme.value, partyDate:g_date.value || '', adminPassword:g_pwd.value,
     settings:{ ...CFG.settings, deadlineLabel:g_deadline.value, ambianceYoutube:g_amb.value,
       hasBorne:g_hasBorne.checked, gmDedicatedDevice:g_gmDevice.checked, playersRemote:g_remote.checked } };
   await push(patch); document.getElementById('g_saved').textContent=' ✓ enregistré';
@@ -902,7 +897,7 @@ function actDefaultOn(k, a){ return a[k]!==false; }
 function fillActivities(){
   const a=CFG.activities||{};
   document.getElementById('acts').innerHTML=Object.keys(ACT_LABELS).map(k=>
-    `<label class="inline" style="margin:6px 0;flex-wrap:wrap;gap:4px"><input type="checkbox" class="a_${k}" ${actDefaultOn(k,a)?'checked':''} style="width:auto"> ${ACT_LABELS[k]}${actHelpHtml(k)}</label>`).join('');
+    `<label class="toggle-chip" style="margin:6px 0;flex-wrap:wrap;width:100%"><input type="checkbox" class="a_${k}" ${actDefaultOn(k,a)?'checked':''}><span class="toggle-track" aria-hidden="true"></span>${ACT_LABELS[k]}${actHelpHtml(k)}</label>`).join('');
 }
 async function saveActivities(){
   const a={}; Object.keys(ACT_LABELS).forEach(k=>a[k]=document.querySelector('.a_'+k).checked);
@@ -930,9 +925,7 @@ const ONB_SLIDES = [
     <p>Cette console te permet de <b>configurer</b> ta fête puis de la <b>piloter en direct</b> le jour J.</p>
     <ul style="text-align:left;line-height:1.7">
       <li><b>🎮 Piloter</b> — lance les activités et pilote le déroulé en direct.</li>
-      <li><b>⚙️ Général</b> — nom, thème graphique, mot de passe, ambiance musicale.</li>
-      <li><b>🧑‍🤝‍🧑 Joueurs</b> — ajoute tes invités, envoie-leur leur lien/QR personnel.</li>
-      <li><b>⚙️ Général</b> — nom, thème, date, mot de passe, et <b>activités</b> proposées ce soir.</li>
+      <li><b>⚙️ Général</b> — nom, thème, date, mot de passe, ambiance musicale, <b>activités</b> proposées ce soir, et tes <b>joueurs</b> (invités, lien/QR personnel).</li>
       <li><b>📚 Contenu</b> — personnalise quiz, anecdotes, missions photo…</li>
     </ul>` },
   { icon:'📺', title:'Deux écrans, un seul jeu', body:`
