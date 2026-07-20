@@ -32,6 +32,15 @@
      pour stopper l'activité en cours et revenir à la checklist des missions. -->
 <div id="gmbar" style="display:none;position:fixed;left:0;right:0;bottom:0;z-index:50;padding:8px;background:#14001aee;border-top:2px solid var(--neon);text-align:center"></div>
 <div id="pxlQuickLinks" style="display:none;position:fixed;top:8px;right:8px;z-index:50;flex-direction:column;gap:4px;align-items:flex-end"></div>
+<!-- Console GM en overlay dans LE MÊME onglet (pas un nouvel onglet) : garde
+     un seul contexte de page, donc un seul AudioContext / lecteur audio pour
+     le blind-test — deux onglets séparés font que l'un des deux passe en
+     arrière-plan et le son du blind-test peut alors être coupé par le
+     navigateur (politiques d'autoplay des onglets non actifs). -->
+<div id="gmOverlay" style="display:none;position:fixed;inset:0;z-index:9998;background:#0a0014">
+  <button onclick="closeGmOverlay()" style="position:absolute;top:8px;right:8px;z-index:2;width:auto;padding:8px 14px;font-size:13px" class="btn danger">✕ Fermer la console</button>
+  <iframe id="gmOverlayFrame" style="width:100%;height:100%;border:0" src="about:blank"></iframe>
+</div>
 <div class="wrap" id="app">
   <div class="card center"><span class="pixel blink">CONNEXION…</span></div>
 </div>
@@ -42,6 +51,11 @@ const EVENT = window.__EVENT__ || {};
 const API = '/e/' + EVENT.id;            // base event-scopée pour toutes les requêtes
 const app = document.getElementById('app');
 let STATE = null;
+// "Regarde la BORNE" n'a aucun sens si la fête n'a pas de borne — le message
+// s'adapte : sans borne, chaque joueur suit déjà tout depuis son propre écran.
+function bornePh(withBorne, withoutBorne){
+  return (STATE && STATE.hasBorne) ? withBorne : (withoutBorne || 'Suis la partie sur ton écran 📱');
+}
 
 function api(path, body) {
   return fetch(API + path, {
@@ -56,7 +70,7 @@ function api(path, body) {
 // que son tap est pris en compte même si la connexion lag un peu. Un petit ✓
 // (contour vert) s'ajoute une fois que le serveur a accusé réception ; le
 // prochain re-render (état serveur synchronisé) prend ensuite le relais.
-function hapticTap(){ try { if (navigator.vibrate) navigator.vibrate(15); } catch(_){} }
+function hapticTap(){ try { if (navigator.vibrate) navigator.vibrate(45); } catch(_){} playClickTick(); }
 function pressAnswerBtn(btn, promise){
   if (!btn) return promise;
   hapticTap();
@@ -161,19 +175,38 @@ function ensureBlindtestHarvest(a){
     _loadYtApi(() => _startBtHarvest(a.theme, listId));
   }).catch(()=>{});
 }
+function _stopBlindtestAudio(){
+  // Coupe tout ce qui pourrait encore jouer/tourner — appelé quand l'activité
+  // blind-test s'arrête (bouton « Stopper l'activité ») ou change de type,
+  // sinon le son continuait sur le téléphone du GM après l'arrêt côté serveur.
+  try { if (_btAudioEl && !_btAudioEl.paused) _btAudioEl.pause(); } catch(_){}
+  try { if (_ytBt) _ytBt.stopVideo(); } catch(_){}
+  try { if (_ytHarvester) _ytHarvester.stopVideo(); } catch(_){}
+  _btHarvestTheme = null;
+  _prevBtPlayReq = 0;
+}
 function checkBlindtestAudio(s){
   // Seule la page du GM joue le son, et seulement si la fête n'a pas de borne
   // (sinon c'est la BORNE qui joue déjà — on éviterait de jouer deux fois).
-  if (!s || !s.isGM || s.hasBorne) return;
-  const a = s.activity;
-  if (!a || a.type !== 'blindtest') return;
+  const a = s && s.activity;
+  const active = !!(s && s.isGM && !s.hasBorne && a && a.type === 'blindtest');
+  if (!active) {
+    if (_btHarvestTheme !== null || _prevBtPlayReq !== 0) _stopBlindtestAudio();
+    return;
+  }
   ensureBlindtestHarvest(a);
   if (!a.playRequestedAt || a.playRequestedAt === _prevBtPlayReq) return;
   _prevBtPlayReq = a.playRequestedAt;
   try {
     if (a.playAudioUrl) {
       const el = _ensureBtAudio();
-      el.muted = false; el.src = a.playAudioUrl; el.currentTime = 0; el.play().catch(()=>{});
+      el.muted = false; el.src = a.playAudioUrl; el.load();
+      const p = el.play();
+      // Un premier play() peut être refusé par la politique autoplay (onglet
+      // en arrière-plan, contexte pas encore "débloqué") — on retente une
+      // fois après un court délai, ça suffit généralement une fois l'onglet
+      // redevenu actif (voir aussi l'overlay console GM : plus d'onglet séparé).
+      if (p && p.catch) p.catch(() => { setTimeout(() => { el.play().catch(()=>{}); }, 400); });
     } else if (a.playVideoId) {
       _loadYtApi(() => {
         if (_ytBt) { _ytBt.loadVideoById(a.playVideoId); _ytBt.unMute(); _ytBt.playVideo(); }
@@ -195,6 +228,60 @@ function playTing(){
     osc.start(ctx.currentTime); osc.stop(ctx.currentTime + 1.4);
   } catch(_){}
 }
+// Alias explicite : le petit carillon existant sert de son "bonne réponse".
+function playPositive(){ playTing(); }
+// Son "mauvaise réponse" — tonalité descendante, distincte du carillon positif.
+function playNegative(){
+  try {
+    const ctx = _getTingCtx(); if (!ctx) return;
+    const osc = ctx.createOscillator(); const gain = ctx.createGain();
+    osc.connect(gain); gain.connect(ctx.destination);
+    osc.type = 'sawtooth';
+    osc.frequency.setValueAtTime(392, ctx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(164, ctx.currentTime + 0.32);
+    gain.gain.setValueAtTime(0.35, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.38);
+    osc.start(ctx.currentTime); osc.stop(ctx.currentTime + 0.38);
+  } catch(_){}
+}
+// Petit "clic" sec au tap sur un bouton de réponse.
+function playClickTick(){
+  try {
+    const ctx = _getTingCtx(); if (!ctx) return;
+    const osc = ctx.createOscillator(); const gain = ctx.createGain();
+    osc.connect(gain); gain.connect(ctx.destination);
+    osc.type = 'square';
+    osc.frequency.setValueAtTime(1800, ctx.currentTime);
+    gain.gain.setValueAtTime(0.22, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.05);
+    osc.start(ctx.currentTime); osc.stop(ctx.currentTime + 0.05);
+  } catch(_){}
+}
+// --- Sons "bonne/mauvaise réponse" génériques (quiz/blind-test, Sans Filtre) ---
+let _prevQuizRevealKey = null;
+function checkQuizReveal(s){
+  const a = s && s.activity;
+  if (!a || (a.type !== 'quiz' && a.type !== 'blindtest' && a.type !== 'quiz_vincent')){ _prevQuizRevealKey = null; return; }
+  if (a.sub !== 'reveal'){ return; }
+  const key = a.type + ':' + a.qIndex;
+  if (key === _prevQuizRevealKey) return;
+  _prevQuizRevealKey = key;
+  // Uniquement les QCM (choix) : pour les réponses libres, la correction
+  // exacte (tolérance aux fautes) n'est faite que côté serveur.
+  if (a.freeAnswer || !Array.isArray(a.choices) || a.choices.length === 0) return;
+  if (a.myAnswer == null) return; // pas répondu → pas de son
+  if (a.myAnswer === a.answer) playPositive(); else playNegative();
+}
+let _prevPrivacyRevealAt = 0;
+function checkPrivacyReveal(s){
+  const a = s && s.activity;
+  if (!a || a.type !== 'privacy'){ _prevPrivacyRevealAt = 0; return; }
+  if (a.sub !== 'reveal' || !a.revealAt || a.revealAt === _prevPrivacyRevealAt) return;
+  _prevPrivacyRevealAt = a.revealAt;
+  const me = (a.roundResults || []).find(r => r.id === (STATE && STATE.me && STATE.me.id));
+  if (!me) return; // n'avait pas parié
+  if (me.exact || me.gain) playPositive(); else playNegative();
+}
 function checkEnqHint(s){
   const a = s && s.activity;
   if (!a || a.type !== 'enquete'){ _prevEnqCount = -1; return; }
@@ -209,7 +296,7 @@ function updateQuickLinks(s){
   if (!bar) return;
   let html = '';
   if (s.isGM && !s.gmDedicatedDevice) {
-    html += `<a class="btn secondary" style="width:auto;font-size:11px;padding:6px 10px" href="/e/${s.eventId}/admin" target="_blank">⚙️ Console GM</a>`;
+    html += `<button class="btn secondary" style="width:auto;font-size:11px;padding:6px 10px" onclick="openGmOverlay()">⚙️ Console GM</button>`;
   }
   if (s.hasBorne && s.playersRemote) {
     html += `<a class="btn secondary" style="width:auto;font-size:11px;padding:6px 10px" href="/e/${s.eventId}/borne" target="_blank">📺 Voir la BORNE</a>`;
@@ -217,13 +304,22 @@ function updateQuickLinks(s){
   bar.innerHTML = html;
   bar.style.display = html ? 'flex' : 'none';
 }
+// Ouvre la console GM en overlay DANS CET ONGLET (voir commentaire sur #gmOverlay).
+function openGmOverlay(){
+  const frame = document.getElementById('gmOverlayFrame');
+  if (frame.src === 'about:blank' || !frame.src) frame.src = '/e/' + EVENT.id + '/admin';
+  document.getElementById('gmOverlay').style.display = 'block';
+}
+function closeGmOverlay(){
+  document.getElementById('gmOverlay').style.display = 'none';
+}
 let _prevTtcqRevealAt = 0;
 function checkTtcqReveal(s){
   const a = s && s.activity;
   if (!a || a.type !== 'ttcq'){ _prevTtcqRevealAt = 0; return; }
   if (a.sub !== 'reveal' || !a.revealAt || a.revealAt === _prevTtcqRevealAt) return;
   _prevTtcqRevealAt = a.revealAt;
-  if (a.myResult && a.myResult.correct) playTing();
+  if (a.myResult && a.myResult.given !== '') { if (a.myResult.correct) playPositive(); else playNegative(); }
   showTtcqResultsPopup(a);
 }
 function showTtcqResultsPopup(act){
@@ -256,6 +352,8 @@ function applyState(s){
   _lastJoueurJson = j;
   checkEnqHint(s);
   checkTtcqReveal(s);
+  checkQuizReveal(s);
+  checkPrivacyReveal(s);
   checkBlindtestAudio(s);
   updateQuickLinks(s);
   STATE = s; render();
@@ -396,7 +494,7 @@ function render() {
     return;
   }
   if (STATE.photoPhase === 'results') {
-    html += `<div class="card center glow-box"><div class="pill neon-yellow">🏆 PALMARÈS PHOTO</div><p class="big">Regarde la BORNE ! 📺</p></div>`;
+    html += `<div class="card center glow-box"><div class="pill neon-yellow">🏆 PALMARÈS PHOTO</div><p class="big">${bornePh('Regarde la BORNE ! 📺', 'Le palmarès arrive 🏆')}</p></div>`;
     html += photoSection(me);
     app.innerHTML = html + footer();
     return;
@@ -418,7 +516,7 @@ function render() {
     html += `
     <div class="card center">
       <h2 class="neon-cyan">SALLE D'ATTENTE</h2>
-      <p>La BORNE chauffe… Prépare-toi, ${esc(me.name)}.</p>
+      <p>${bornePh('La BORNE chauffe…', 'La fête chauffe…')} Prépare-toi, ${esc(me.name)}.</p>
       <button class="btn ${me.ready?'secondary':''}" onclick="toggleReady()">
         ${me.ready ? '✔ PRÊT' : 'JE SUIS PRÊT'}
       </button>
@@ -446,7 +544,7 @@ function render() {
       // Monde 5 : LA GRANDE ENQUÊTE se joue en activité — rien à saisir ici.
       html += `<div class="card center" style="border-color:var(--neon2)">
         <div class="pill neon-cyan">🕵️ LA GRANDE ENQUÊTE</div>
-        <p>L'enquête démarre sur la BORNE 📺 — suivez les actes et tapez les codes !</p>
+        <p>${bornePh("L'enquête démarre sur la BORNE 📺 — suivez les actes et tapez les codes !", "L'enquête démarre — tapez les codes au fur et à mesure !")}</p>
       </div>`;
     } else {
       if (w.pianoWorld && STATE.piano) {
@@ -539,7 +637,7 @@ function controllerView(act) {
   if (act.type === 'briefing') {
     return `<div class="card center glow-box">
       <div class="pill neon-cyan">📖 BRIEFING</div>
-      <h2 class="neon-pink">Regarde la BORNE 📺</h2>
+      <h2 class="neon-pink">${bornePh('Regarde la BORNE 📺')}</h2>
       <p>Le scénario et ton rôle sont en train d'être présentés…</p>
     </div>`;
   }
@@ -564,7 +662,7 @@ function controllerView(act) {
     const buzzed = (act.buzzes||[]).find(b=>b.id===STATE.me.id);
     return `<div class="card center glow-box">
       <h2 class="neon-cyan">REACTION RACE</h2>
-      <p>Regarde la BORNE puis BUZZE !</p>
+      <p>${bornePh('Regarde la BORNE puis BUZZE !', 'BUZZE dès que tu es prêt !')}</p>
       <button class="btn-buzz" ${buzzed?'disabled':''} onclick="buzz(this)">${buzzed?'BUZZÉ ✔':'BUZZ'}</button>
     </div>`;
   }
@@ -613,7 +711,7 @@ function controllerView(act) {
     return `<div class="card center glow-box" style="border-color:var(--neon3)">
       <div class="pill neon-pink">🔴 BREAKING NEWS</div>
       <h2 class="neon-yellow">${esc(act.titre||'')}</h2>
-      <p class="big">📺 Tous les yeux sur la BORNE !</p>
+      <p class="big">${bornePh('📺 Tous les yeux sur la BORNE !', '📰 La news arrive…')}</p>
     </div>`;
   }
   // SANS FILTRE !? : réponse secrète OUI/NON, puis pari sur le nombre de OUI
@@ -635,7 +733,7 @@ function controllerView(act) {
   if (act.type === 'heroquiz') {
     return heroQuizController(act);
   }
-  return `<div class="card center"><h2>ACTIVITÉ EN COURS</h2><p>Regarde la BORNE.</p></div>`;
+  return `<div class="card center"><h2>ACTIVITÉ EN COURS</h2><p>${bornePh('Regarde la BORNE.')}</p></div>`;
 }
 // Anecdote 3 : seul VINCENT (le héros) saisit les initiales.
 function heroQuizController(act){
@@ -644,20 +742,20 @@ function heroQuizController(act){
     return `<div class="card center glow-box" style="border-color:var(--neon3)">
       <div class="pill neon-yellow">🎆 BRAVO VINCENT !</div>
       <p class="big">${me.isHero?'Tu as trouvé ! 🏆':'Vincent a trouvé ! 🏆'}</p>
-      <p class="muted">Regarde la BORNE 📺</p>
+      <p class="muted">${bornePh('Regarde la BORNE 📺')}</p>
     </div>`;
   }
   if (act.sub === 'play'){
     return `<div class="card center glow-box" style="border-color:var(--neon3)">
       <div class="pill neon-pink">💡 ANECDOTE</div>
-      <p class="big">Regarde la BORNE 📺</p>
+      <p class="big">${bornePh('Regarde la BORNE 📺')}</p>
       <p class="muted">La question arrive dans quelques secondes…</p>
     </div>`;
   }
   if (!me.isHero){
     return `<div class="card center glow-box" style="border-color:var(--neon3)">
       <div class="pill neon-pink">💡 ANECDOTE</div>
-      <p class="big">Regarde la BORNE 📺</p>
+      <p class="big">${bornePh('Regarde la BORNE 📺')}</p>
       <p>C'est à <b class="neon-yellow">VINCENT</b> de deviner !</p>
     </div>`;
   }
@@ -727,7 +825,7 @@ function renderMosaicPlayer(me) {
       <h2 class="${a.solved?'neon-cyan':'neon-pink'}">${a.solved?'✅ RÉSOLU !':'⏱ Réponse révélée'}</h2>
       <div class="big pixel neon-yellow" style="letter-spacing:6px">${esc(a.answer||'')}</div>
       ${a.solved&&a.solvedBy?`<p class="muted">Trouvé par ${esc(a.solvedBy)}</p>`:''}
-      <p class="muted">Regarde la BORNE 📺</p>
+      <p class="muted">${bornePh('Regarde la BORNE 📺')}</p>
     </div>`;
     return;
   }
@@ -1044,7 +1142,7 @@ function renderDrawPlayer(me){
         <div class="pill neon-yellow">🎨 SESSION TERMINÉE</div>
         ${w?`<p class="center ${w.id===me.id?'neon-yellow':'neon-cyan'} mt">🏆 ${esc(w.name)} — ${w.pts} pts${w.id===me.id?' (toi !)':''}</p>`:''}
         <div class="leaderboard mt">${lb.map((p,i)=>`<div>${['🥇','🥈','🥉'][i]||(i+1+'.')} ${esc(p.name)} <span class="coins">${p.pts} pts</span></div>`).join('')}</div>
-        <p class="muted mt">Regarde la BORNE 📺</p>
+        <p class="muted mt">${bornePh('Regarde la BORNE 📺')}</p>
       </div>`;
     }
     return;
@@ -1120,7 +1218,7 @@ function musicPress(index, freq){ if(window.SFX){ SFX.unlock(); SFX.note(freq); 
 function pianoController(act){
   if (act.myPos < 0){
     return `<div class="card center glow-box"><div class="pill neon-pink">🎹 PIANO GÉANT</div>
-      <p>Regarde la BORNE 📺 — tu rejoindras au prochain morceau.</p></div>`;
+      <p>${bornePh('Regarde la BORNE 📺')} — tu rejoindras au prochain morceau.</p></div>`;
   }
   const win = act.status==='win';
   const keys = act.myKeys || [];
@@ -1146,7 +1244,7 @@ function pianoController(act){
   });
   return `<div class="card center glow-box">
     <div class="pill neon-pink">🎹 PIANO — TÉLÉPHONE N°${act.myPos+1}</div>
-    <p class="muted" style="font-size:12px;margin:4px 0 10px">Écoute la mélodie sur la BORNE, puis retrouve-la sur ton clavier.</p>
+    <p class="muted" style="font-size:12px;margin:4px 0 10px">${bornePh('Écoute la mélodie sur la BORNE, puis retrouve-la sur ton clavier.', 'Écoute la mélodie, puis retrouve-la sur ton clavier.')}</p>
     <div style="position:relative;height:160px;background:#000;padding:3px;border-radius:0 0 12px 12px">
       <div style="display:flex;gap:1px;height:100%">${whiteH}</div>
       ${blackH}
@@ -1213,7 +1311,7 @@ function enqueteController(act) {
       <div class="pill neon-yellow">🔓 AFFAIRE RÉSOLUE</div>
       <h2 class="neon-pink">${esc(f.culprit||'')}</h2>
       <p>${esc(f.mobile||'')}</p>
-      <p class="muted">Regarde la BORNE 📺</p>
+      <p class="muted">${bornePh('Regarde la BORNE 📺')}</p>
     </div>`;
   }
   // Briefing d'ouverture en slides : chaque téléphone affiche juste le titre.
@@ -1397,7 +1495,7 @@ function quizController(act) {
         <p style="margin:0;font-size:18px;font-weight:700;color:#059669">${esc(correctText)}</p>
       </div>`;
     } else if (myAnswerSet) {
-      status = '<p class="neon-cyan">Réponse enregistrée. Regarde la BORNE…</p>';
+      status = `<p class="neon-cyan">Réponse enregistrée. ${bornePh('Regarde la BORNE…', 'Résultat dans un instant…')}</p>`;
       inputHtml = `<div style="margin:12px 0;background:#f8f9fb;border-radius:9px;padding:16px;color:#1f2430">
         <p style="margin:0 0 4px;font-size:13px;color:#666">Ta réponse :</p>
         <p style="margin:0;font-size:18px;font-weight:700">${esc(my)}</p>
@@ -1431,7 +1529,7 @@ function quizController(act) {
         : good ? '<p class="neon-cyan pixel" style="font-size:12px">✔ BONNE RÉPONSE !</p>'
                : '<p class="pixel" style="font-size:11px;color:var(--danger)">✘ Raté !</p>';
     } else if (my !== null) {
-      status = '<p class="neon-cyan">Réponse enregistrée. Regarde la BORNE…</p>';
+      status = `<p class="neon-cyan">Réponse enregistrée. ${bornePh('Regarde la BORNE…', 'Résultat dans un instant…')}</p>`;
     } else {
       status = '<p>Question ' + (act.qIndex+1) + '/' + act.total + ' — réponds vite !</p>';
     }
@@ -1792,7 +1890,7 @@ function privacyController(act){
       <p style="margin:10px 0"><i>${esc(act.prompt||'')}</i></p>
       <h2 class="neon-pink">${act.yesCount} OUI ${act.yesCount>1?'':''} sur ${act.maxGuess}</h2>
       ${me ? `<p class="big">${me.exact?'🎯 PARI EXACT ! +3 pts +1 🪙':(me.gain?'👌 À une unité près : +1 pt':'❌ Raté — ton pari : '+me.guess)}</p>` : '<p class="muted">Tu n\'avais pas parié.</p>'}
-      <p class="muted">Regarde la BORNE pour le détail 📺</p>
+      <p class="muted">${bornePh('Regarde la BORNE pour le détail 📺')}</p>
     </div>`;
   }
   // Fin de partie
@@ -1803,10 +1901,10 @@ function privacyController(act){
       ${head}
       <h2 class="neon-yellow">🏁 TERMINÉ !</h2>
       ${myRank>=0?`<p class="big">Tu finis ${myRank===0?'🥇 PREMIER(E)':myRank+1+'ᵉ'} avec ${board[myRank].pts} pts</p>`:''}
-      <p class="muted">Classement complet sur la BORNE 📺</p>
+      <p class="muted">${bornePh('Classement complet sur la BORNE 📺', 'Classement complet à la fin de la manche')}</p>
     </div>`;
   }
-  return `<div class="card center"><h2>🤫 SANS FILTRE !?</h2><p>Regarde la BORNE.</p></div>`;
+  return `<div class="card center"><h2>🤫 SANS FILTRE !?</h2><p>${bornePh('Regarde la BORNE.')}</p></div>`;
 }
 
 // BOUCHE-TROU !? — manette du joueur : joue une carte de ta main ; si tu es
@@ -1826,7 +1924,7 @@ function cartonController(act){
       ${head}
       <h2 class="neon-yellow">🏁 TERMINÉ !</h2>
       ${myRank>=0?`<p class="big">Tu finis ${myRank===0?'🥇 PREMIER(E)':(myRank+1)+'ᵉ'} avec ${board[myRank].pts} pt(s)</p>`:''}
-      <p class="muted">Classement complet sur la BORNE 📺</p>
+      <p class="muted">${bornePh('Classement complet sur la BORNE 📺', 'Classement complet à la fin de la manche')}</p>
     </div>`;
   }
 
@@ -1870,7 +1968,7 @@ function cartonController(act){
       <h2 class="neon-pink">🏆 ${esc(act.winnerName||'')} gagne la manche</h2>
       <p class="big">${cartonFillHtml(act.prompt, act.winningCards)}</p>
       ${iWon?'<p class="big neon-yellow">C\'est TOI ! +1 pt +1 🪙 🎉</p>':''}
-      <p class="muted">Regarde la BORNE 📺</p>
+      <p class="muted">${bornePh('Regarde la BORNE 📺')}</p>
     </div>`;
   }
   if (act.sub==='judge'){
@@ -1898,7 +1996,7 @@ function cartonController(act){
     return `<div class="card center glow-box">
       ${head}
       ${promptHtml}
-      <p class="muted">Tu rejoins à la prochaine manche — regarde la BORNE 📺</p>
+      <p class="muted">${bornePh('Tu rejoins à la prochaine manche — regarde la BORNE 📺', 'Tu rejoins à la prochaine manche…')}</p>
     </div>`;
   }
   const blanks = act.blanks||1;
@@ -1931,7 +2029,7 @@ function justoneController(act){
       ${head}
       <h2 class="neon-yellow">🏁 TERMINÉ !</h2>
       <p class="big">Votre équipe a trouvé <b class="neon-cyan">${act.successCount||0}</b> mot(s) sur ${act.totalRounds} !</p>
-      <p class="muted">Classement complet sur la BORNE 📺</p>
+      <p class="muted">${bornePh('Classement complet sur la BORNE 📺', 'Classement complet à la fin de la manche')}</p>
     </div>`;
   }
 
@@ -1941,7 +2039,7 @@ function justoneController(act){
       return `<div class="card center glow-box">
         ${head}
         <div class="pill neon-yellow">🙈 C'EST TOI QUI DEVINES</div>
-        <p class="big" style="margin-top:10px">Ne regarde pas la BORNE ! Les autres préparent leurs indices…</p>
+        <p class="big" style="margin-top:10px">${bornePh('Ne regarde pas la BORNE ! Les autres préparent leurs indices…', 'Les autres préparent leurs indices…')}</p>
         <p class="muted mt">${act.clueCount}/${act.neededCount} ont écrit leur indice</p>
       </div>`;
     }
@@ -1997,10 +2095,10 @@ function justoneController(act){
       <h2 class="${act.guessCorrect?'neon-cyan':'neon-pink'}">${act.guessCorrect?'✅ TROUVÉ !':'❌ RATÉ…'}</h2>
       <p class="big">Le mot était : <b class="neon-yellow">${esc(act.secretWord||'')}</b></p>
       <p class="muted">${esc(act.guesserName||'')} a répondu : « ${esc(act.guess||'')} »</p>
-      <p class="muted mt">Regarde la BORNE pour le détail des indices 📺</p>
+      <p class="muted mt">${bornePh('Regarde la BORNE pour le détail des indices 📺')}</p>
     </div>`;
   }
-  return `<div class="card center"><h2>🧠 UN SEUL MOT !?</h2><p>Regarde la BORNE.</p></div>`;
+  return `<div class="card center"><h2>🧠 UN SEUL MOT !?</h2><p>${bornePh('Regarde la BORNE.')}</p></div>`;
 }
 // TTCQ « TU TE METS COMBIEN ? » — choisis ton niveau, réponds à la question
 function ttcqController(act){
@@ -2018,7 +2116,7 @@ function ttcqController(act){
       ${pill}
       <h2 class="neon-yellow pixel">🏁 TERMINÉ !</h2>
       ${myRow?`<p class="big">Tu finis <b>${myPos+1}${myPos===0?'er':'e'}</b> — case ${myRow.position} · 🪙${myRow.coins}</p>`:''}
-      <p class="muted">Classement complet sur la BORNE 📺</p>
+      <p class="muted">${bornePh('Classement complet sur la BORNE 📺', 'Classement complet à la fin de la manche')}</p>
     </div>`;
   }
 
@@ -2041,7 +2139,7 @@ function ttcqController(act){
       ${pill}
       <h2 class="neon-cyan">Attends le choix du thème…</h2>
       <p class="big">👑 <b class="neon-yellow">${esc(act.themePickerName||'?')}</b> choisit</p>
-      <p class="muted">Regarde la BORNE 📺</p>
+      <p class="muted">${bornePh('Regarde la BORNE 📺')}</p>
     </div>`;
   }
 
@@ -2114,7 +2212,7 @@ function ttcqController(act){
     }
   }
 
-  return `<div class="card center"><h2>🎯 TTCQ</h2><p>Regarde la BORNE 📺</p></div>`;
+  return `<div class="card center"><h2>🎯 TTCQ</h2><p>${bornePh('Regarde la BORNE 📺')}</p></div>`;
 }
 function ttcqSelect(category){ api('/api/ttcq/selectCategory', { category }); }
 function ttcqBet(level, btn){ pressAnswerBtn(btn, api('/api/ttcq/bet', { level })); }
