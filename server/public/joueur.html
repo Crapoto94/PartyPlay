@@ -217,6 +217,22 @@ function checkBlindtestAudio(s){
     }
   } catch(_){}
 }
+// Décompte 4-3-2-1-0 (ticking) de la page interstitielle entre 2 morceaux.
+let _btIntermissionTimer = null;
+function tickBtIntermission(s){
+  const a = s && s.activity;
+  if (_btIntermissionTimer) { clearInterval(_btIntermissionTimer); _btIntermissionTimer = null; }
+  if (!a || a.type !== 'blindtest' || a.sub !== 'intermission' || !a.intermissionAt) return;
+  const total = a.intermissionSeconds || 5;
+  const tick = () => {
+    const elapsedS = Math.floor((Date.now() - a.intermissionAt) / 1000);
+    const left = Math.max(0, total - 1 - elapsedS);
+    const el = document.getElementById('btIntermissionCountdownJ');
+    if (el) el.textContent = left;
+  };
+  tick();
+  _btIntermissionTimer = setInterval(tick, 300);
+}
 function playTing(){
   try {
     const ctx = _getTingCtx(); if (!ctx) return;
@@ -357,6 +373,7 @@ function applyState(s){
   checkQuizReveal(s);
   checkPrivacyReveal(s);
   checkBlindtestAudio(s);
+  tickBtIntermission(s);
   updateQuickLinks(s);
   STATE = s; render();
   detectPianoDemo(s); // surligne mes touches si la borne (re)joue la mélodie
@@ -1474,6 +1491,19 @@ function quizController(act) {
       ${losers.length
         ? `<p class="center mt ${iLost?'neon-pink':''}">💔 ${losers.map(esc).join(', ')} perd une vie${iLost?' (toi !)':''}</p>`
         : `<p class="center muted mt">Égalité — personne ne perd de vie.</p>`}
+    </div>`;
+  }
+  // Page interstitielle entre 2 morceaux de blind-test : classement + décompte.
+  if (act.sub === 'intermission') {
+    const board = act.leaderboard || [];
+    return `<div class="card center glow-box">
+      <div class="pill" style="color:#fff;background:#7a5cff">🎵 BLIND-TEST</div>
+      <h2 class="neon-yellow pixel" style="margin:8px 0">🏆 CLASSEMENT</h2>
+      <div class="leaderboard mt">
+        ${board.map((p,i)=>`<div>${['🥇','🥈','🥉'][i]||(i+1+'.')} ${esc(p.name)} <span class="coins">${p.pts} pts</span></div>`).join('')||'<div class="muted center">Pas de score.</div>'}
+      </div>
+      <div class="pixel neon-pink" id="btIntermissionCountdownJ" style="font-size:48px;margin-top:10px">${Math.max(0,(act.intermissionSeconds||5)-1)}</div>
+      <p class="muted">Prochain morceau…</p>
     </div>`;
   }
   const reveal = act.sub === 'reveal';

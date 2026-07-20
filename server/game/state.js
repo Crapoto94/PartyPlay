@@ -621,6 +621,10 @@ export class GameState {
   startActivity(type, opts = {}) {
     // Toute nouvelle activité annule un éventuel auto-lancement du briefing.
     if (this._briefTimer) { clearTimeout(this._briefTimer); this._briefTimer = null; }
+    // … et un éventuel passage auto (reveal → interstitiel → question suivante)
+    // resté en vol depuis l'activité précédente (sinon il finit par se
+    // déclencher sur la NOUVELLE activité, au mauvais moment).
+    if (this._autoAdvanceTimer) { clearTimeout(this._autoAdvanceTimer); this._autoAdvanceTimer = null; }
     if (type === 'pacman') return this.startPacman(opts);
     if (type === 'tetris') return this.startTetris(opts);
     if (type === 'tron') return this.startTron(opts);
@@ -1021,8 +1025,27 @@ export class GameState {
     if (this._autoAdvanceTimer) clearTimeout(this._autoAdvanceTimer);
     this._autoAdvanceTimer = setTimeout(() => {
       this._autoAdvanceTimer = null;
-      this.quizNext();
+      // Blind-test : petite page interstitielle (classement + décompte) avant
+      // le morceau suivant. Quiz classique : on enchaîne directement.
+      if (a.dynamicBlindtest) this._blindtestIntermission();
+      else this.quizNext();
     }, 13000);
+  }
+
+  // Page interstitielle entre deux morceaux de blind-test : classement +
+  // décompte (4-3-2-1-0) avant que le prochain titre ne démarre.
+  _blindtestIntermission() {
+    const a = this.activity;
+    if (!a || a.type !== 'blindtest') return;
+    if (this._autoAdvanceTimer) { clearTimeout(this._autoAdvanceTimer); this._autoAdvanceTimer = null; }
+    a.sub = 'intermission';
+    a.intermissionAt = Date.now();
+    a.intermissionSeconds = 5; // décompte affiché : 4, 3, 2, 1, 0
+    this.touch();
+    this._autoAdvanceTimer = setTimeout(() => {
+      this._autoAdvanceTimer = null;
+      this.quizNext();
+    }, a.intermissionSeconds * 1000);
   }
 
   quizNext() {
@@ -1030,6 +1053,7 @@ export class GameState {
     if (!a) return;
     if (this._autoAdvanceTimer) { clearTimeout(this._autoAdvanceTimer); this._autoAdvanceTimer = null; }
     if (a.dynamicBlindtest) {
+      a.sub = 'question'; a.intermissionAt = null;
       this.blindtestAsk(); // pioche une autre chanson au hasard dans la playlist
       return;
     }
@@ -1061,6 +1085,8 @@ export class GameState {
     const q = this.quizQuestion();
     const list = a.dynamicBlindtest ? [] : (this.quizDeck(a.deck));
     const reveal = a.sub === 'reveal';
+    // Page interstitielle (blind-test only) : classement + décompte entre 2 morceaux.
+    const showBoard = reveal || a.sub === 'intermission';
     return {
       type: a.type,
       state: a.state,
@@ -1079,8 +1105,10 @@ export class GameState {
       // Seulement à la révélation :
       answer: reveal && q ? q.answer : null,
       answers: reveal ? a.answers : null,
-      scores: reveal ? a.scores : null,
-      leaderboard: reveal ? this.quizLeaderboard() : null,
+      scores: showBoard ? a.scores : null,
+      leaderboard: showBoard ? this.quizLeaderboard() : null,
+      intermissionAt: a.sub === 'intermission' ? (a.intermissionAt || null) : null,
+      intermissionSeconds: a.sub === 'intermission' ? (a.intermissionSeconds || 5) : null,
       freeAnswer: q ? q.freeAnswer || false : false,
       correctAnswerText: reveal && q ? (q.freeAnswer ? q.answer : (q.choices ? q.choices[q.answer] : null)) : null,
       myAnswer: forPlayerId && a.answers[forPlayerId] ? a.answers[forPlayerId].choice : null,

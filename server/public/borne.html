@@ -391,6 +391,17 @@ function render(){
     const tick = ()=>{ const left=Math.max(0,Math.ceil((_pa.revealAt+total*1000-Date.now())/1000)); const e=document.getElementById('privacyCountdown'); if(e)e.textContent=left; };
     if (el){ tick(); privacyCountTimer=setInterval(tick,500); }
   }
+  // Décompte 4-3-2-1-0 de la page interstitielle entre 2 morceaux de blind-test.
+  if (_pa && _pa.type==='blindtest' && _pa.sub==='intermission' && _pa.intermissionAt){
+    const total = _pa.intermissionSeconds || 5;
+    const tick = ()=>{
+      const elapsedS = Math.floor((Date.now()-_pa.intermissionAt)/1000);
+      const left = Math.max(0, total-1-elapsedS);
+      const e=document.getElementById('btIntermissionCountdown'); if(e) e.textContent = left;
+    };
+    const el = document.getElementById('btIntermissionCountdown');
+    if (el){ tick(); privacyCountTimer=setInterval(tick,300); }
+  }
   if (STATE.phase === 'win' && !winBuilt){ winBuilt = true; buildWinVideo(); }
   tickerEl.textContent = (STATE.log||[]).map(l=>l.msg).join('   ◆   ') || (window.__EVENT__&&window.__EVENT__.name) || 'PartyPlay';
 }
@@ -842,6 +853,19 @@ function quizBorne(act){
       <p class="huge">🎵</p>
       <p class="big ${act.loadError?'neon-pink':'neon-yellow blink'}">${msg}</p>
       <p class="muted">${sub}</p>
+    </div>`;
+  }
+
+  // Page interstitielle blind-test : classement + décompte 4-3-2-1-0 avant le morceau suivant.
+  if (act.sub==='intermission'){
+    return `<div class="center">
+      <div ${pill}>${title}</div>
+      <h1 class="huge neon-yellow pixel" style="margin:6px 0">🏆 CLASSEMENT</h1>
+      <div class="card leaderboard" style="max-width:520px;margin:10px auto;text-align:left">
+        ${(act.leaderboard||[]).map((p,i)=>`<div>${['🥇','🥈','🥉'][i]||(i+1+'.')} ${esc(p.name)} <span class="coins">${p.pts} pts</span></div>`).join('')||'<div class="muted center">Pas de score.</div>'}
+      </div>
+      <div class="huge pixel neon-pink" id="btIntermissionCountdown" style="font-size:80px;margin-top:6px">${Math.max(0, (act.intermissionSeconds||5) - 1)}</div>
+      <p class="muted">Prochain morceau…</p>
     </div>`;
   }
 
