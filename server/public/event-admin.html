@@ -40,6 +40,17 @@
     .act-help-box { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:10px; padding:10px 12px; margin:6px 0 2px; font-size:13px; line-height:1.5; color:var(--muted); width:100%; }
     .act-help-box b { color:var(--ink); }
     @media (max-width: 640px){ .launch-grid { grid-template-columns: 1fr; } }
+    /* ---- Toggle switch compact (catégories TTCQ) ---- */
+    /* Spécificité ".field label.toggle-chip" nécessaire pour battre ".field label { display:block }" de base.css. */
+    .field label.toggle-chip { display: inline-flex; align-items: center; gap: 6px; margin: 2px 4px; font-size: 13px; cursor: pointer; }
+    .toggle-chip input[type="checkbox"] { position: absolute; opacity: 0; width: 0; height: 0; }
+    .toggle-chip .toggle-track { position: relative; flex: 0 0 auto; width: 30px; height: 17px;
+      border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid var(--neon4, rgba(255,255,255,.15));
+      transition: background .15s ease, border-color .15s ease; }
+    .toggle-chip .toggle-track::after { content: ''; position: absolute; top: 1px; left: 1px; width: 13px; height: 13px;
+      border-radius: 50%; background: var(--muted); transition: transform .15s ease, background .15s ease; }
+    .toggle-chip input:checked + .toggle-track { background: var(--ok, #38ff9c); border-color: var(--ok, #38ff9c); }
+    .toggle-chip input:checked + .toggle-track::after { transform: translateX(13px); background: #fff; }
   </style>
   <div class="admin-wrap">
     <h1 class="neon-pink" id="evTitle">🎛️ Console</h1>
@@ -113,7 +124,6 @@
             <div id="connCount" class="muted"></div>
           </div>
           <div class="ctlbar">
-            <button class="btn secondary" onclick="act('start')">▶ Démarrer la soirée</button>
             <button class="btn warn" onclick="act('scoreboard')">🏆 Scores</button>
             <button class="btn" onclick="act('hub')">↩ Hub</button>
             <button class="btn danger" onclick="if(confirm('Réinitialiser la partie ?'))act('reset')">⟲ Reset</button>
@@ -404,7 +414,10 @@
 <script>
 const EVENT = window.__EVENT__;
 const API = '/e/' + EVENT.id;
-let PWD = sessionStorage.getItem('evpwd_'+EVENT.id) || '';
+// localStorage (pas sessionStorage) : le lien "Console GM" depuis la page joueur
+// ouvre un nouvel onglet, qui aurait sinon un sessionStorage vide et redemanderait
+// le mot de passe alors que le GM vient de le saisir sur cet appareil.
+let PWD = localStorage.getItem('evpwd_'+EVENT.id) || '';
 let CFG = null, AV = {}, META = null, DEFAULT_BT = {};
 let playerDirty = false;
 const AVATAR_KEYS = [];
@@ -447,7 +460,7 @@ async function login(){
   PWD = document.getElementById('pwd').value;
   const r = await fetch(API+'/api/admin/config', { headers:H() });
   if (!r.ok){ document.getElementById('loginErr').textContent='Mot de passe invalide.'; return; }
-  sessionStorage.setItem('evpwd_'+EVENT.id, PWD);
+  localStorage.setItem('evpwd_'+EVENT.id, PWD);
   document.getElementById('loginCard').style.display='none';
   await loadConfig();
 }
@@ -613,44 +626,74 @@ function fillPlayers(){
   c.innerHTML=(CFG.players||[]).map((p,i)=>playerRow(p,i)).join('') || '<p class="muted">Aucun joueur. Ajoutez-en un.</p>';
   fillAvatars();
 }
+// Ligne épurée : avatar + nom seulement. Tout le détail (email, token, QR,
+// suppression) est dans l'overlay ouvert par "✏️ Modifier" — évite une liste
+// à rallonge quand il y a beaucoup de joueurs.
 function playerRow(p,i){
-  const opts=AVATAR_KEYS.map(k=>`<option value="${k}" ${k===p.avatar?'selected':''}>${esc((AV[k]&&AV[k].name)||k)} ${(AV[k]&&AV[k].emoji)||''}</option>`).join('');
-  const joinUrl=location.origin+API+'/j/'+esc(p.token||'');
-  return `<div class="card" style="margin:8px 0;padding:14px" data-pi="${i}">
-    <div class="row">
-      <div class="field"><label>Nom</label><input type="text" class="p_name" value="${esc(p.name||'')}"></div>
-      <div class="field"><label>Avatar</label><select class="p_avatar">${opts}</select></div>
-    </div>
-    <div class="row" style="align-items:flex-end">
-      <div class="field" style="flex:2"><label>Email (invitation)</label><input type="email" class="p_email" value="${esc(p.email||'')}" placeholder="joueur@exemple.com"></div>
-      <button class="btn secondary" style="width:auto;margin-bottom:2px" title="Envoyer le lien par email" onclick="sendInvite(${i},this)">📧 Inviter</button>
-    </div>
-    <div class="field"><label>Token &amp; URL de connexion</label>
-      <div class="inline">
-        <input type="text" class="p_token" value="${esc(p.token||'')}">
-        <button class="btn" style="width:auto" onclick="genToken(${i})">🎲</button>
-        <button class="btn secondary" style="width:auto" onclick="copyJoinUrl('${esc(p.token||'')}',this)" title="Copier l'URL">⎘</button>
-        <button class="btn secondary" style="width:auto" onclick="showQR(${i})">QR</button>
-        <button class="btn danger" style="width:auto" onclick="rmPlayer(${i})">✕</button>
-      </div>
-      <small class="muted" style="word-break:break-all;display:block;margin-top:4px">${joinUrl}</small>
-    </div>
-    <div class="qrbox"></div>
+  const av = AV[p.avatar] || {};
+  return `<div class="card" style="margin:6px 0;padding:10px 14px;display:flex;align-items:center;gap:12px" data-pi="${i}">
+    <div style="font-size:26px;line-height:1">${av.emoji||'👤'}</div>
+    <div style="flex:1;font-weight:700;font-size:15px">${esc(p.name||'(sans nom)')}</div>
+    <button class="btn secondary" style="width:auto" onclick="editPlayer(${i})">✏️ Modifier</button>
   </div>`;
 }
-function collectPlayers(){
-  return [...document.querySelectorAll('[data-pi]')].map(row=>{
-    const name=row.querySelector('.p_name').value.trim();
-    return { id: slug(name)||('p'+Math.random().toString(36).slice(2,6)), name,
-      avatar: row.querySelector('.p_avatar').value,
-      email: row.querySelector('.p_email').value.trim(),
-      token: row.querySelector('.p_token').value.trim() };
-  }).filter(p=>p.name);
-}
+// CFG.players est maintenant la source de vérité (modifiée en place par
+// editPlayer/addPlayer/rmPlayer) — plus besoin de la reconstruire depuis le DOM.
+function collectPlayers(){ return CFG.players || []; }
 function slug(s){ return (s||'').toLowerCase().normalize('NFD').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,''); }
-function addPlayer(){ CFG.players=collectPlayers(); CFG.players.push({ id:'', name:'Nouveau', avatar:AVATAR_KEYS[0]||'player_one', email:'', token:'PXL-'+Math.random().toString(36).slice(2,7).toUpperCase() }); fillPlayers(); playerDirty = true; }
-function rmPlayer(i){ CFG.players=collectPlayers(); CFG.players.splice(i,1); fillPlayers(); playerDirty = true; }
-function genToken(i){ const row=document.querySelector(`[data-pi="${i}"]`); row.querySelector('.p_token').value='PXL-'+Math.random().toString(36).slice(2,8).toUpperCase(); playerDirty=true; }
+function addPlayer(){
+  CFG.players = CFG.players || [];
+  CFG.players.push({ id:'', name:'Nouveau', avatar:AVATAR_KEYS[0]||'player_one', email:'', token:'PXL-'+Math.random().toString(36).slice(2,7).toUpperCase() });
+  fillPlayers(); playerDirty = true;
+  editPlayer(CFG.players.length-1);
+}
+function rmPlayer(i){ CFG.players.splice(i,1); fillPlayers(); playerDirty = true; document.getElementById('playerCardModal')?.remove(); }
+
+/* ---- Overlay d'édition d'un joueur ---- */
+function editPlayer(i){
+  const p = CFG.players[i];
+  const opts=AVATAR_KEYS.map(k=>`<option value="${k}" ${k===p.avatar?'selected':''}>${esc((AV[k]&&AV[k].name)||k)} ${(AV[k]&&AV[k].emoji)||''}</option>`).join('');
+  const joinUrl=location.origin+API+'/j/'+esc(p.token||'');
+  const html = `<h3 style="margin:2px 0 12px">Modifier le joueur</h3>
+    <div class="field"><label>Nom</label><input type="text" id="pe_name" value="${esc(p.name||'')}"></div>
+    <div class="field"><label>Avatar</label><select id="pe_avatar">${opts}</select></div>
+    <div class="field"><label>Email (invitation)</label><input type="email" id="pe_email" value="${esc(p.email||'')}" placeholder="joueur@exemple.com"></div>
+    <div class="field"><label>Token &amp; URL de connexion</label>
+      <div class="inline">
+        <input type="text" id="pe_token" value="${esc(p.token||'')}">
+        <button class="btn" style="width:auto" onclick="genTokenModal()">🎲</button>
+        <button class="btn secondary" style="width:auto" onclick="copyJoinUrl(document.getElementById('pe_token').value,this)" title="Copier l'URL">⎘</button>
+      </div>
+      <small class="muted" style="word-break:break-all;display:block;margin-top:4px" id="pe_joinurl">${joinUrl}</small>
+    </div>
+    <div class="row" style="justify-content:space-between;margin-top:14px;flex-wrap:wrap;gap:8px">
+      <button class="btn secondary" style="width:auto" title="Envoyer le lien par email" onclick="sendInvite(${i},this)">📧 Inviter</button>
+      <button class="btn secondary" style="width:auto" onclick="showQR(${i})">QR</button>
+      <button class="btn danger" style="width:auto" onclick="rmPlayer(${i})">✕ Supprimer</button>
+    </div>
+    <button class="btn" style="margin-top:12px" onclick="savePlayerEdit(${i})">✅ Enregistrer</button>`;
+  showPlayerCardModal(html);
+}
+function genTokenModal(){
+  const token = 'PXL-'+Math.random().toString(36).slice(2,8).toUpperCase();
+  document.getElementById('pe_token').value = token;
+  document.getElementById('pe_joinurl').textContent = location.origin+API+'/j/'+token;
+  playerDirty = true;
+}
+function savePlayerEdit(i){
+  const name = document.getElementById('pe_name').value.trim();
+  const p = CFG.players[i];
+  CFG.players[i] = {
+    id: p.id || slug(name) || ('p'+Math.random().toString(36).slice(2,6)),
+    name,
+    avatar: document.getElementById('pe_avatar').value,
+    email: document.getElementById('pe_email').value.trim(),
+    token: document.getElementById('pe_token').value.trim(),
+  };
+  playerDirty = true;
+  document.getElementById('playerCardModal')?.remove();
+  fillPlayers();
+}
 function copyJoinUrl(token,btn){
   const url=location.origin+API+'/j/'+token;
   navigator.clipboard.writeText(url).then(()=>{ btn.textContent='✓'; setTimeout(()=>btn.textContent='⎘',1200); });
@@ -1439,7 +1482,7 @@ function ttcqInitCats(){
   const allCats = ['culture','cinema','musique','sport','histoire','sciences','arts','cuisine','tech','auto','animaux','tv','insolite','societe','voyage','sexe','drogues','alcool'];
   const container = document.getElementById('ttcqCatToggles');
   container.innerHTML = allCats.map(c =>
-    `<label class="inline" style="margin:2px 4px;font-size:13px"><input type="checkbox" value="${c}" checked> ${c}</label>`
+    `<label class="toggle-chip"><input type="checkbox" value="${c}" checked><span class="toggle-track" aria-hidden="true"></span>${c}</label>`
   ).join('');
 }
 
@@ -1567,12 +1610,6 @@ function liveControls(st){
 function btn(action,label){ return `<button class="btn" style="width:auto" onclick="act('${action}')">${label}</button>`; }
 function btnP(action,payload,label){ return `<button class="btn" style="width:auto" onclick='act("${action}",${JSON.stringify(payload)})'>${label}</button>`; }
 
-// Détection de modifications non sauvegardées (joueurs)
-document.addEventListener('input', e => {
-  const row = e.target.closest('[data-pi]');
-  if (row && (e.target.classList.contains('p_name') || e.target.classList.contains('p_email') || e.target.classList.contains('p_avatar') || e.target.classList.contains('p_token')))
-    playerDirty = true;
-});
 window.addEventListener('beforeunload', e => {
   if (!playerDirty) return;
   e.preventDefault();

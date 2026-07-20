@@ -112,7 +112,7 @@ function updateQuickLinks(s){
   if (s.isGM && !s.gmDedicatedDevice) {
     html += `<a class="btn secondary" style="width:auto;font-size:11px;padding:6px 10px" href="/e/${s.eventId}/admin" target="_blank">⚙️ Console GM</a>`;
   }
-  if (s.playersRemote) {
+  if (s.hasBorne && s.playersRemote) {
     html += `<a class="btn secondary" style="width:auto;font-size:11px;padding:6px 10px" href="/e/${s.eventId}/borne" target="_blank">📺 Voir la BORNE</a>`;
   }
   bar.innerHTML = html;
