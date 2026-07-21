@@ -226,6 +226,7 @@ function checkBlindtestAudio(s){
     _btDebug('');
     return;
   }
+  if (a.loadError) { _btDebug('❌ ' + (a.loadErrorMsg || 'playlist introuvable ou vide')); return; }
   ensureBlindtestHarvest(a);
   if (!a.playRequestedAt || a.playRequestedAt === _prevBtPlayReq) {
     if (!a.playRequestedAt) _btDebug(`en attente d'un morceau… (source: ${a.source||'?'})`);

@@ -842,7 +842,8 @@ function quizBorne(act){
   if (act.dynamicBlindtest && !(act.choices && act.choices.length)) {
     let msg, sub;
     if (act.loadError) {
-      msg = '😕 Playlist introuvable ou vide'; sub = 'Vérifiez l\'URL de la playlist dans la console (onglet 📚 Contenu).';
+      msg = '😕 ' + (act.loadErrorMsg || 'Playlist introuvable ou vide');
+      sub = act.loadErrorMsg ? '' : 'Vérifiez l\'URL de la playlist dans la console (onglet 📚 Contenu).';
     } else if (act.loading || act.source === 'deezer') {
       msg = '⏳ Chargement de la playlist…'; sub = 'Les morceaux arrivent, ça démarre dans un instant.';
     } else {

@@ -808,11 +808,13 @@ export class GameState {
       // Deezer : on récupère les titres + extraits 30 s côté serveur (API
       // publique), puis on lance la 1ère chanson. YouTube : titres moissonnés
       // par la borne, la 1ère chanson part dès qu'il y en a assez.
-      const dzId = deezerPlaylistId(this.blindtestUrl(theme));
+      const rawUrl = this.blindtestUrl(theme);
+      const dzId = deezerPlaylistId(rawUrl);
       if (dzId) {
         this.activity.source = 'deezer';
         this.activity.loading = true;   // ingestion en cours (borne : « chargement… »)
         this.activity.loadError = false;
+        this.activity.loadErrorMsg = null;
         this.ingestDeezer(theme, dzId).then(() => {
           if (!this.activity || this.activity.type !== 'blindtest') return;
           this.activity.loading = false;
@@ -821,8 +823,27 @@ export class GameState {
         }).catch(() => {
           if (this.activity && this.activity.type === 'blindtest') { this.activity.loading = false; this.activity.loadError = true; this.touch(); }
         });
+      } else if (/spotify\.com/i.test(rawUrl || '')) {
+        // Spotify n'est pas pris en charge (pas d'API publique d'extraits) :
+        // sans ce garde-fou, ça restait bloqué indéfiniment sur "en attente
+        // d'un morceau" sans jamais rien afficher au GM.
+        this.activity.source = 'unsupported';
+        this.activity.loading = false;
+        this.activity.loadError = true;
+        this.activity.loadErrorMsg = 'Spotify n\'est pas pris en charge — utilise un lien de playlist Deezer ou YouTube à la place.';
+        this.addLog(`🎵 Blind-test (${theme}) : lien Spotify non pris en charge.`);
+        this.touch();
+      } else if (!/youtube\.com|youtu\.be/i.test(rawUrl || '') && !/^[\w-]{10,}$/.test((rawUrl || '').trim())) {
+        this.activity.source = 'unsupported';
+        this.activity.loading = false;
+        this.activity.loadError = true;
+        this.activity.loadErrorMsg = 'Lien de playlist non reconnu — utilise un lien Deezer ou YouTube.';
+        this.addLog(`🎵 Blind-test (${theme}) : lien de playlist non reconnu.`);
+        this.touch();
       } else {
         this.activity.source = 'youtube';
+        this.activity.loadError = false;
+        this.activity.loadErrorMsg = null;
         this.blindtestAsk();
       }
     }
@@ -1138,6 +1159,7 @@ export class GameState {
       source: a.source || 'youtube',
       loading: a.loading || false,
       loadError: a.loadError || false,
+      loadErrorMsg: a.loadErrorMsg || null,
       theme: a.theme || null,
       playVideoId: a.playVideoId || null,
       playAudioUrl: a.playAudioUrl || null,
