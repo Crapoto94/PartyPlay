@@ -442,23 +442,31 @@ export class GameState {
   // Récupère la liste des titres + extraits 30 s d'une playlist DEEZER
   // (API publique, sans authentification). Peuple themePool avec des pistes
   // { id, title, audioUrl } directement jouables via <audio> sur la borne.
+  //
+  // IMPORTANT : l'URL d'extrait Deezer est un lien SIGNÉ à courte durée de
+  // vie (~15 min, paramètre hdnea=exp=...). Si on ne fait qu'AJOUTER les
+  // titres jamais vus (comme avant), relancer un blind-test plus tard dans
+  // la soirée réutilise les anciennes URL déjà en pool → expirées → lecture
+  // refusée par le CDN (NotSupportedError côté navigateur, quasi instantané,
+  // pas de son). On rafraîchit donc audioUrl à CHAQUE ingestion, même pour
+  // les titres déjà connus.
   async ingestDeezer(theme, playlistId) {
     if (!playlistId) return 0;
     const url = `https://api.deezer.com/playlist/${encodeURIComponent(playlistId)}/tracks?limit=100`;
     const d = await this._getJson(url);
     const tracks = (d && Array.isArray(d.data)) ? d.data : [];
     let added = 0;
+    const pool = this.themePool(theme);
     for (const t of tracks) {
       if (!t || !t.preview || !t.title) continue; // on ne garde que les titres avec extrait
       const label = t.artist?.name ? `${t.title} — ${t.artist.name}` : t.title;
       const id = 'dz' + t.id;
-      const pool = this.themePool(theme);
-      if (!pool.find((x) => x.id === id)) { pool.push({ id, title: label, audioUrl: t.preview }); added++; }
+      const existing = pool.find((x) => x.id === id);
+      if (existing) { existing.audioUrl = t.preview; existing.title = label; }
+      else { pool.push({ id, title: label, audioUrl: t.preview }); added++; }
     }
-    if (added) {
-      this.addLog(`🎵 Blind-test Deezer (${theme}) : ${this.themePool(theme).length} titres chargés.`);
-      this.touch();
-    }
+    this.addLog(`🎵 Blind-test Deezer (${theme}) : ${pool.length} titres (URL rafraîchies).`);
+    this.touch();
     return added;
   }
 
@@ -501,10 +509,22 @@ export class GameState {
   // Pioche un titre AU HASARD dans la playlist collectée, ordonne à la borne
   // de jouer cette vidéo précise, et génère le QCM (bon titre + 3 leurres).
   // La manche fait a.total morceaux ; au-delà → décompte final.
-  blindtestAsk() {
+  //
+  // Deezer : on rafraîchit systématiquement les URL d'extrait AVANT de
+  // piocher — même DANS une session déjà lancée, un blind-test complet
+  // (15 morceaux, questions + révélations + interstitiels) peut largement
+  // dépasser les ~15 min de validité du lien signé Deezer ingéré une seule
+  // fois au lancement, d'où un son qui s'arrête de fonctionner en cours de
+  // route sans que rien d'autre n'ait changé.
+  async blindtestAsk() {
     const a = this.activity;
     if (!a || a.type !== 'blindtest') return;
     if ((a.asked || 0) >= (a.total || 15)) { this.blindtestFinish(); return; }
+    if (a.source === 'deezer' && a.theme) {
+      const dzId = deezerPlaylistId(this.blindtestUrl(a.theme));
+      if (dzId) { try { await this.ingestDeezer(a.theme, dzId); } catch (_) {} }
+      if (this.activity !== a) return; // l'activité a changé pendant le rafraîchissement
+    }
     const pool = [...this.themePool(a.theme)];
     if (pool.length < 4) {
       this.addLog('🎵 Blind-test : pas encore assez de titres détectés — patientez quelques secondes…');
