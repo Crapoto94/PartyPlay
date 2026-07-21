@@ -131,6 +131,7 @@ export class GameState {
     this.applyConfig(cfg);
     this.playlistTracks = {}; // { theme: [{id,title}] } collectés depuis la borne — survit au reset()
     this._autoAdvanceTimer = null; // timer interne non persisté
+    this._questionTimeoutTimer = null; // passage auto après 30s sans réponse (blind-test)
     this.reset(false);
     this.load();
     // Resynchronise la liste des joueurs avec la config (ajouts/retraits via l'admin)
@@ -180,6 +181,7 @@ export class GameState {
     if (this.g2048Timer) { clearInterval(this.g2048Timer); this.g2048Timer = null; }
     if (this.pongTimer) { clearInterval(this.pongTimer); this.pongTimer = null; }
     if (this._autoAdvanceTimer) { clearTimeout(this._autoAdvanceTimer); this._autoAdvanceTimer = null; }
+    if (this._questionTimeoutTimer) { clearTimeout(this._questionTimeoutTimer); this._questionTimeoutTimer = null; }
     if (this._privacyTimer) { clearTimeout(this._privacyTimer); this._privacyTimer = null; }
     if (this._cartonTimer) { clearTimeout(this._cartonTimer); this._cartonTimer = null; }
     if (this._briefTimer) { clearTimeout(this._briefTimer); this._briefTimer = null; }
@@ -243,7 +245,7 @@ export class GameState {
     //  - pacman (partie en cours, recréée à chaque manche)
     const { listeners, cfg, savePath, eventId, pacmanTimer, pacman, tetrisTimer, tetris, tronTimer, tron,
       g2048Timer, g2048, pongTimer, pong,
-      _autoAdvanceTimer, _briefTimer, _drawTimer, _celebrateTimer, _enqueteBriefTimer, _enqueteDebriefTimer, _enqueteFinaleTimer, _hqTimer, _ttcqTimer, _justoneTimer, ...data } = this;
+      _autoAdvanceTimer, _questionTimeoutTimer, _briefTimer, _drawTimer, _celebrateTimer, _enqueteBriefTimer, _enqueteDebriefTimer, _enqueteFinaleTimer, _hqTimer, _ttcqTimer, _justoneTimer, ...data } = this;
     try {
       if (savePath) fs.writeFileSync(savePath, JSON.stringify(data, null, 2));
     } catch (e) {
@@ -519,6 +521,7 @@ export class GameState {
   async blindtestAsk() {
     const a = this.activity;
     if (!a || a.type !== 'blindtest') return;
+    if (this._questionTimeoutTimer) { clearTimeout(this._questionTimeoutTimer); this._questionTimeoutTimer = null; }
     if ((a.asked || 0) >= (a.total || 15)) { this.blindtestFinish(); return; }
     if (a.source === 'deezer' && a.theme) {
       const dzId = deezerPlaylistId(this.blindtestUrl(a.theme));
@@ -551,6 +554,14 @@ export class GameState {
     a.answers = {};
     this.addLog(`🎵 Blind-test ${a.asked}/${a.total} — nouvelle chanson !`);
     this.touch();
+    // Passe à l'extrait suivant après 30 s même si personne n'a répondu —
+    // sans ça une question ignorée par tout le monde bloquait la partie
+    // indéfiniment (le passage auto ne se déclenchait qu'une fois TOUS les
+    // joueurs connectés répondu).
+    this._questionTimeoutTimer = setTimeout(() => {
+      this._questionTimeoutTimer = null;
+      if (this.activity === a && a.sub === 'question') this.quizReveal();
+    }, 30000);
   }
 
   // Fin de manche : le dernier au classement (score le plus bas) perd une vie.
@@ -558,6 +569,7 @@ export class GameState {
     const a = this.activity;
     if (!a) return;
     if (this._autoAdvanceTimer) { clearTimeout(this._autoAdvanceTimer); this._autoAdvanceTimer = null; }
+    if (this._questionTimeoutTimer) { clearTimeout(this._questionTimeoutTimer); this._questionTimeoutTimer = null; }
     const connected = this.players.filter((p) => p.connected);
     const board = connected
       .map((p) => ({ id: p.id, name: p.name, pts: (a.scores && a.scores[p.id]) || 0 }))
@@ -645,6 +657,7 @@ export class GameState {
     // resté en vol depuis l'activité précédente (sinon il finit par se
     // déclencher sur la NOUVELLE activité, au mauvais moment).
     if (this._autoAdvanceTimer) { clearTimeout(this._autoAdvanceTimer); this._autoAdvanceTimer = null; }
+    if (this._questionTimeoutTimer) { clearTimeout(this._questionTimeoutTimer); this._questionTimeoutTimer = null; }
     if (type === 'pacman') return this.startPacman(opts);
     if (type === 'tetris') return this.startTetris(opts);
     if (type === 'tron') return this.startTron(opts);
@@ -1037,6 +1050,7 @@ export class GameState {
     const a = this.activity;
     const q = this.quizQuestion();
     if (!a || !q || a.sub !== 'question') return;
+    if (this._questionTimeoutTimer) { clearTimeout(this._questionTimeoutTimer); this._questionTimeoutTimer = null; }
     a.sub = 'reveal';
     const free = q.freeAnswer;
     // Attribution des points : bonne réponse = points (+ bonus rapidité léger)
@@ -2168,6 +2182,7 @@ export class GameState {
     if (this.g2048Timer) { clearInterval(this.g2048Timer); this.g2048Timer = null; }
     if (this.pongTimer) { clearInterval(this.pongTimer); this.pongTimer = null; }
     if (this._autoAdvanceTimer) { clearTimeout(this._autoAdvanceTimer); this._autoAdvanceTimer = null; }
+    if (this._questionTimeoutTimer) { clearTimeout(this._questionTimeoutTimer); this._questionTimeoutTimer = null; }
     if (this._drawTimer) { clearTimeout(this._drawTimer); this._drawTimer = null; }
     if (this._celebrateTimer) { clearTimeout(this._celebrateTimer); this._celebrateTimer = null; }
     if (this._enqueteBriefTimer) { clearTimeout(this._enqueteBriefTimer); this._enqueteBriefTimer = null; }

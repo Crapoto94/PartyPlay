@@ -109,6 +109,11 @@ function unlockAudio(){
   if (_tingCtx && _tingCtx.state === 'suspended') _tingCtx.resume().catch(()=>{});
   try {
     const el = _ensureBtAudio();
+    // Ne JAMAIS retoucher l'élément s'il joue déjà un vrai morceau Deezer :
+    // sinon chaque tap/scroll ultérieur (qui redéclenche ce handler) le
+    // mute puis le met en pause avant de le démuter — le son s'arrêtait net
+    // après ~1s au moindre geste sur l'écran.
+    if (_btRealTrackPlaying) return;
     if (!el.src) el.src = SILENT_WAV;
     el.muted = true;
     el.play().then(()=>{ el.pause(); el.muted = false; }).catch(()=>{ el.muted = false; });
@@ -123,8 +128,14 @@ function unlockAudio(){
 // serait jamais détectée si personne n'a la BORNE ouverte). ---
 let _prevBtPlayReq = 0;
 let _btAudioEl = null;
+// true tant qu'un vrai morceau Deezer est censé jouer — voir unlockAudio().
+let _btRealTrackPlaying = false;
 function _ensureBtAudio(){
-  if (!_btAudioEl) { _btAudioEl = new Audio(); _btAudioEl.preload = 'auto'; }
+  if (!_btAudioEl) {
+    _btAudioEl = new Audio(); _btAudioEl.preload = 'auto';
+    _btAudioEl.addEventListener('ended', () => { _btRealTrackPlaying = false; });
+    _btAudioEl.addEventListener('pause', () => { _btRealTrackPlaying = false; });
+  }
   return _btAudioEl;
 }
 let _ytApiReady = false, _ytApiRequested = false, _ytApiCallbacks = [];
@@ -199,6 +210,7 @@ function _stopBlindtestAudio(){
   try { if (_ytHarvester) _ytHarvester.stopVideo(); } catch(_){}
   _btHarvestTheme = null;
   _prevBtPlayReq = 0;
+  _btRealTrackPlaying = false;
 }
 // --- Badge de diagnostic visible (audio blind-test sans borne) --------
 // Ajouté après 3 correctifs infructueux signalés par le GM : au lieu de
@@ -237,6 +249,7 @@ function checkBlindtestAudio(s){
     if (a.playAudioUrl) {
       _btDebug('lecture Deezer en cours…');
       const el = _ensureBtAudio();
+      _btRealTrackPlaying = true;
       el.muted = false; el.src = a.playAudioUrl; el.load();
       const p = el.play();
       if (p && p.then) {
