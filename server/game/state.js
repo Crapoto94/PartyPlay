@@ -1061,8 +1061,9 @@ export class GameState {
     const answerText = free ? q.answer : (q.choices ? q.choices[q.answer] : '');
     this.addLog(`💡 Réponse : « ${answerText} » (${corrects.length} bonne(s) réponse(s)).`);
     this.touch();
-    // Auto-passage : chanson/question suivante après 13 s (laisse le temps de
-    // voir le titre, féliciter, souffler entre deux morceaux)
+    // Auto-passage : chanson/question suivante après 8 s (laisse le temps de
+    // voir le titre, féliciter, souffler entre deux morceaux — raccourci
+    // depuis 13 s pour un rythme plus soutenu).
     if (this._autoAdvanceTimer) clearTimeout(this._autoAdvanceTimer);
     this._autoAdvanceTimer = setTimeout(() => {
       this._autoAdvanceTimer = null;
@@ -1070,18 +1071,18 @@ export class GameState {
       // le morceau suivant. Quiz classique : on enchaîne directement.
       if (a.dynamicBlindtest) this._blindtestIntermission();
       else this.quizNext();
-    }, 13000);
+    }, 8000);
   }
 
   // Page interstitielle entre deux morceaux de blind-test : classement +
-  // décompte (4-3-2-1-0) avant que le prochain titre ne démarre.
+  // décompte (3-2-1-0) avant que le prochain titre ne démarre.
   _blindtestIntermission() {
     const a = this.activity;
     if (!a || a.type !== 'blindtest') return;
     if (this._autoAdvanceTimer) { clearTimeout(this._autoAdvanceTimer); this._autoAdvanceTimer = null; }
     a.sub = 'intermission';
     a.intermissionAt = Date.now();
-    a.intermissionSeconds = 5; // décompte affiché : 4, 3, 2, 1, 0
+    a.intermissionSeconds = 4; // décompte affiché : 3, 2, 1, 0 (raccourci depuis 5 s)
     this.touch();
     this._autoAdvanceTimer = setTimeout(() => {
       this._autoAdvanceTimer = null;

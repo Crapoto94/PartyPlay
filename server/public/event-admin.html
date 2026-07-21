@@ -300,7 +300,7 @@
       <section data-pane="contenu" hidden>
         <div class="card">
           <h3 class="neon-yellow">🎵 Mes blind-tests</h3>
-          <p class="muted">Crée tes propres blind-tests : donne un nom et colle l'URL d'une playlist <b>YouTube</b> ou <b>Deezer</b> (extraits 30 s). Ils apparaîtront dans l'onglet 🎮 Piloter.</p>
+          <p class="muted">Crée tes propres blind-tests : donne un nom et colle l'URL d'une playlist <b>YouTube</b> ou <b>Deezer</b> (extraits 30 s). Ils apparaîtront dans l'onglet 🎮 Piloter. <b>Spotify et Amazon Music ne sont pas pris en charge</b> (aucun extrait audio disponible via leur API).</p>
           <div id="btList"></div>
           <div class="row" style="margin-top:12px">
             <button class="btn" onclick="addBtRow()">＋ Ajouter un blind-test</button>
@@ -876,7 +876,7 @@ async function removeAvatar(key){
 const ACT_LABELS={ quiz:'Quiz', blindtest:'Blind-test', anecdotes:'Anecdotes', photo:'Défi photo', spotlight:'Spotlight', draw:'Dessine-moi', arcade:'Mini-jeux arcade', collab:'Collaboratifs (mosaïque/piano)', carton:'🃏 Bouche-Trou !? (cartes à trou)', privacy:'🤫 Sans Filtre !? (confessions, adultes)', ttcq:'🎯 TTCQ (Tu Te Cotes Combien)', justone:'🧠 Un Seul Mot !? (coopératif)' };
 const ACTIVITY_HELP={
   quiz:'Questions à choix multiples. <b>Personnalisation :</b> decks prédéfinis (jeux vidéo, années 80/90, anime, étonnant, burger) ou crée tes propres decks dans l\'onglet <b>⚙️ Général → Jeux</b>.',
-  blindtest:'Devine les chansons. <b>Personnalisation :</b> ajoute tes propres playlists YouTube/Deezer dans l\'onglet <b>🕹️ Activités</b>.',
+  blindtest:'Devine les chansons. <b>Personnalisation :</b> ajoute tes propres playlists YouTube/Deezer dans l\'onglet <b>🕹️ Activités</b>. Spotify et Amazon Music ne sont pas pris en charge (pas d\'extrait audio via leur API).',
   anecdotes:'« Breaking News » — une vidéo puis des questions. <b>Personnalisation :</b> upload ta propre vidéo ou colle un lien YouTube dans l\'onglet <b>🕹️ Activités</b>.',
   photo:'Les joueurs prennent une photo selon un thème. <b>Personnalisation :</b> ajoute/supprime des thèmes dans l\'onglet <b>⚙️ Général → Jeux</b>.',
   spotlight:'« Qui est-ce ? » — un joueur est masqué, les autres devinent son identité à travers des questions.',
@@ -1007,7 +1007,7 @@ function fillBlindtests(){
 function btRowHtml(name,url){
   return `<div class="row bt-row" style="align-items:flex-end;gap:8px;margin:8px 0">
     <div class="field" style="flex:1;margin:0"><label>Nom</label><input type="text" class="bt-name" value="${esc(name)}" placeholder="Rock 80s"></div>
-    <div class="field" style="flex:2;margin:0"><label>URL playlist YouTube ou Deezer</label><input type="text" class="bt-url" value="${esc(url)}" placeholder="YouTube …playlist?list=…  ou  Deezer …/playlist/…"></div>
+    <div class="field" style="flex:2;margin:0"><label>URL playlist YouTube ou Deezer <span class="muted">(pas Spotify/Amazon Music)</span></label><input type="text" class="bt-url" value="${esc(url)}" placeholder="YouTube …playlist?list=…  ou  Deezer …/playlist/…"></div>
     <button class="btn danger" style="width:auto" onclick="this.closest('.bt-row').remove()">✕</button>
   </div>`;
 }

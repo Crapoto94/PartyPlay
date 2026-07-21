@@ -267,7 +267,7 @@ function tickBtIntermission(s){
   const a = s && s.activity;
   if (_btIntermissionTimer) { clearInterval(_btIntermissionTimer); _btIntermissionTimer = null; }
   if (!a || a.type !== 'blindtest' || a.sub !== 'intermission' || !a.intermissionAt) return;
-  const total = a.intermissionSeconds || 5;
+  const total = a.intermissionSeconds || 4;
   const tick = () => {
     const elapsedS = Math.floor((Date.now() - a.intermissionAt) / 1000);
     const left = Math.max(0, total - 1 - elapsedS);
@@ -1558,7 +1558,7 @@ function quizController(act) {
       <div class="leaderboard mt">
         ${board.map((p,i)=>`<div>${['🥇','🥈','🥉'][i]||(i+1+'.')} ${esc(p.name)} <span class="coins">${p.pts} pts</span></div>`).join('')||'<div class="muted center">Pas de score.</div>'}
       </div>
-      <div class="pixel neon-pink" id="btIntermissionCountdownJ" style="font-size:48px;margin-top:10px">${Math.max(0,(act.intermissionSeconds||5)-1)}</div>
+      <div class="pixel neon-pink" id="btIntermissionCountdownJ" style="font-size:48px;margin-top:10px">${Math.max(0,(act.intermissionSeconds||4)-1)}</div>
       <p class="muted">Prochain morceau…</p>
     </div>`;
   }

@@ -393,7 +393,7 @@ function render(){
   }
   // Décompte 4-3-2-1-0 de la page interstitielle entre 2 morceaux de blind-test.
   if (_pa && _pa.type==='blindtest' && _pa.sub==='intermission' && _pa.intermissionAt){
-    const total = _pa.intermissionSeconds || 5;
+    const total = _pa.intermissionSeconds || 4;
     const tick = ()=>{
       const elapsedS = Math.floor((Date.now()-_pa.intermissionAt)/1000);
       const left = Math.max(0, total-1-elapsedS);
@@ -865,7 +865,7 @@ function quizBorne(act){
       <div class="card leaderboard" style="max-width:520px;margin:10px auto;text-align:left">
         ${(act.leaderboard||[]).map((p,i)=>`<div>${['🥇','🥈','🥉'][i]||(i+1+'.')} ${esc(p.name)} <span class="coins">${p.pts} pts</span></div>`).join('')||'<div class="muted center">Pas de score.</div>'}
       </div>
-      <div class="huge pixel neon-pink" id="btIntermissionCountdown" style="font-size:80px;margin-top:6px">${Math.max(0, (act.intermissionSeconds||5) - 1)}</div>
+      <div class="huge pixel neon-pink" id="btIntermissionCountdown" style="font-size:80px;margin-top:6px">${Math.max(0, (act.intermissionSeconds||4) - 1)}</div>
       <p class="muted">Prochain morceau…</p>
     </div>`;
   }
