@@ -200,6 +200,22 @@ function _stopBlindtestAudio(){
   _btHarvestTheme = null;
   _prevBtPlayReq = 0;
 }
+// --- Badge de diagnostic visible (audio blind-test sans borne) --------
+// Ajouté après 3 correctifs infructueux signalés par le GM : au lieu de
+// deviner encore à l'aveugle, ce badge montre EN DIRECT, sur le téléphone,
+// pourquoi le son ne sort pas (verrouillage navigateur ? pas d'URL reçue ?
+// erreur de lecture précise ?).
+function _btDebug(msg){
+  let el = document.getElementById('btDebugBadge');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'btDebugBadge';
+    el.style.cssText = 'position:fixed;left:8px;bottom:8px;z-index:9997;max-width:70vw;padding:6px 10px;font-size:11px;line-height:1.4;background:rgba(0,0,0,.75);color:#0ff;border:1px solid #0ff6;border-radius:8px;font-family:monospace';
+    document.body.appendChild(el);
+  }
+  el.textContent = '🎵 ' + msg;
+  el.style.display = msg ? 'block' : 'none';
+}
 function checkBlindtestAudio(s){
   // Seule la page du GM joue le son, et seulement si la fête n'a pas de borne
   // (sinon c'est la BORNE qui joue déjà — on éviterait de jouer deux fois).
@@ -207,28 +223,42 @@ function checkBlindtestAudio(s){
   const active = !!(s && s.isGM && !s.hasBorne && a && a.type === 'blindtest');
   if (!active) {
     if (_btHarvestTheme !== null || _prevBtPlayReq !== 0) _stopBlindtestAudio();
+    _btDebug('');
     return;
   }
   ensureBlindtestHarvest(a);
-  if (!a.playRequestedAt || a.playRequestedAt === _prevBtPlayReq) return;
+  if (!a.playRequestedAt || a.playRequestedAt === _prevBtPlayReq) {
+    if (!a.playRequestedAt) _btDebug(`en attente d'un morceau… (source: ${a.source||'?'})`);
+    return;
+  }
   _prevBtPlayReq = a.playRequestedAt;
   try {
     if (a.playAudioUrl) {
+      _btDebug('lecture Deezer en cours…');
       const el = _ensureBtAudio();
       el.muted = false; el.src = a.playAudioUrl; el.load();
       const p = el.play();
-      // Un premier play() peut être refusé par la politique autoplay (onglet
-      // en arrière-plan, contexte pas encore "débloqué") — on retente une
-      // fois après un court délai, ça suffit généralement une fois l'onglet
-      // redevenu actif (voir aussi l'overlay console GM : plus d'onglet séparé).
-      if (p && p.catch) p.catch(() => { setTimeout(() => { el.play().catch(()=>{}); }, 400); });
+      if (p && p.then) {
+        p.then(() => _btDebug('🔊 son OK (Deezer)'))
+         .catch((err) => {
+           _btDebug('🔇 1er play() refusé (' + (err && err.name || '?') + ') — nouvelle tentative…');
+           // Un premier play() peut être refusé par la politique autoplay (onglet
+           // en arrière-plan, contexte pas encore "débloqué") — on retente une
+           // fois après un court délai, ça suffit généralement une fois l'onglet
+           // redevenu actif (voir aussi l'overlay console GM : plus d'onglet séparé).
+           setTimeout(() => { el.play().then(()=>_btDebug('🔊 son OK (2e essai)')).catch((e2)=>_btDebug('🔇 BLOQUÉ : ' + (e2 && e2.name || e2))); }, 400);
+         });
+      }
     } else if (a.playVideoId) {
+      _btDebug('lecture YouTube en cours…');
       _loadYtApi(() => {
         if (_ytBt) { _ytBt.loadVideoById(a.playVideoId); _ytBt.unMute(); _ytBt.playVideo(); }
         else { _ytPendingVideoId = a.playVideoId; _initYtBt(); }
       });
+    } else {
+      _btDebug('⚠️ aucune URL audio ni vidéo reçue pour ce morceau (source: ' + (a.source||'?') + ')');
     }
-  } catch(_){}
+  } catch(err) { _btDebug('❌ exception : ' + (err && err.message || err)); }
 }
 // Décompte 4-3-2-1-0 (ticking) de la page interstitielle entre 2 morceaux.
 let _btIntermissionTimer = null;

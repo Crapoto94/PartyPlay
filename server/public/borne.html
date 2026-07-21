@@ -2095,7 +2095,11 @@ function syncBlindtest(s) {
     if (dzAudio) { try { dzAudio.pause(); } catch(_){} } // stoppe l'extrait Deezer hors blind-test
     return;
   }
-  if (a.playRequestedAt && a.playRequestedAt !== _lastPlayReq && a.sub === 'question') {
+  // Condition sur a.sub retirée : trop stricte (juste 'question'), un état
+  // reçu avec un peu de retard (SSE) peut arriver alors que la révélation a
+  // déjà eu lieu — playRequestedAt qui change reste le signal fiable, il ne
+  // bouge QUE quand le serveur pioche vraiment un nouveau morceau.
+  if (a.playRequestedAt && a.playRequestedAt !== _lastPlayReq) {
     _lastPlayReq = a.playRequestedAt;
     try {
       if (a.playAudioUrl) {
@@ -2105,7 +2109,7 @@ function syncBlindtest(s) {
         if (!dzAudio) { dzAudio = new Audio(); dzAudio.preload = 'auto'; }
         dzAudio.src = a.playAudioUrl;
         dzAudio.currentTime = 0;
-        dzAudio.play().catch(()=>{}); // silencieux tant qu'aucune interaction (comme YouTube muet)
+        dzAudio.play().catch((err)=>{ try{ console.warn('[blindtest] dzAudio.play() refusé :', err && err.name); }catch(_){} });
       } else if (a.playVideoId) {
         // YOUTUBE : lecture de la vidéo piochée.
         if (dzAudio) { try { dzAudio.pause(); } catch(_){} }
